@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://aitraining.id/contact",
   },
+  openGraph: {
+    url: "https://aitraining.id/contact",
+  },
 };
 
 export default function ContactPage() {

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://aitraining.id/cities",
   },
+  openGraph: {
+    url: "https://aitraining.id/cities",
+  },
 };
 
 const cities = [

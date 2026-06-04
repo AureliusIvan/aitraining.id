@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     absolute: "AI Corporate Training Indonesia — aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on workshops on AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya from aurelivan.com.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA.",
   alternates: {
     canonical: "https://aitraining.id",
   },
@@ -25,6 +25,14 @@ export default function HomePage() {
       "@type": "Person",
       name: "Aurelius Ivan Wijaya",
       url: "https://aurelivan.com",
+      jobTitle: [
+        "Corporate AI Trainer",
+        "AI Corporate Trainer",
+        "Generative AI Trainer",
+        "AI Consultant",
+      ],
+      description:
+        "Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA in Indonesia.",
       sameAs: ["https://aurelivan.com", "https://www.linkedin.com/in/aurelius-ivan-wijaya"],
     },
     areaServed: { "@type": "Country", name: "Indonesia" },
@@ -87,6 +95,14 @@ export default function HomePage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: "Tersedia tiga program utama: AI Workflow Automation (menggunakan n8n), AI-Powered Development (menggunakan Cursor), dan AI Strategy & Adoption untuk level eksekutif. Semua program 70% hands-on practice.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apakah training mencakup Generative AI dan prompt engineering?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ya. Seluruh program berbasis Generative AI dan large language model (LLM) seperti ChatGPT, Claude, dan Gemini. Prompt engineering diajarkan secara hands-on di setiap program — mulai dari menulis prompt yang efektif, prompt untuk coding tasks, hingga membangun AI automation dan AI agents untuk kebutuhan bisnis.",
         },
       },
       {
@@ -178,8 +194,9 @@ function HeroSection() {
           </h1>
 
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mt-10 animate-fade-in">
-            Program pelatihan AI korporat yang hands-on, praktis, dan langsung
-            applicable untuk tim perusahaan Anda. Delivered by{" "}
+            Program pelatihan Generative AI korporat yang hands-on — dari prompt
+            engineering hingga AI automation — praktis dan langsung applicable
+            untuk tim perusahaan Anda. Delivered by{" "}
             <a
               href="https://aurelivan.com"
               target="_blank"
@@ -188,7 +205,8 @@ function HeroSection() {
             >
               Aurelius Ivan Wijaya
             </a>{" "}
-            — corporate AI trainer berpengalaman di Indonesia.
+            — Corporate AI Trainer, Cursor Ambassador, dan founder AICON ASIA di
+            Indonesia.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10 animate-fade-in">
@@ -251,11 +269,14 @@ function TrainerSection() {
           </div>
           <div className="space-y-6">
             <p className="text-white/90 text-lg leading-relaxed">
-              Aurelius Ivan Wijaya adalah corporate AI trainer dan speaker terkemuka di
-              Indonesia. Ia telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
-              Indonesia), berbicara di{" "}
+              Aurelius Ivan Wijaya adalah Corporate AI Trainer dan speaker terkemuka di
+              Indonesia, <strong className="text-white">Cursor Ambassador</strong>, dan{" "}
+              <strong className="text-white">founder AICON ASIA</strong>. Ia telah
+              melatih staf DPD RI (Dewan Perwakilan Daerah Republik Indonesia),
+              berbicara di{" "}
               <strong className="text-white">Tech in Asia Conference 2025</strong>{" "}
-              di Jakarta, dan mengelola komunitas AI bulanan di seluruh Indonesia.
+              di Jakarta, dan mengelola komunitas Generative AI bulanan di seluruh
+              Indonesia.
             </p>
             <p className="text-white/90 text-lg leading-relaxed">
               Bermitra dengan{" "}
@@ -832,6 +853,11 @@ function FAQSection() {
       question: "Program AI training apa yang tersedia?",
       answer:
         "Tersedia empat program utama: AI Workflow Automation (n8n), AI-Powered Development (Cursor), AI Strategy & Adoption untuk level eksekutif, dan OpenClaw Training untuk deploying open-source AI assistants. Semua program 70% hands-on practice.",
+    },
+    {
+      question: "Apakah training mencakup Generative AI dan prompt engineering?",
+      answer:
+        "Ya. Seluruh program berbasis Generative AI dan large language model (LLM) seperti ChatGPT, Claude, dan Gemini. Prompt engineering diajarkan secara hands-on di setiap program — dari menulis prompt yang efektif, prompt untuk coding tasks, hingga membangun AI automation dan AI agents untuk kebutuhan bisnis Anda.",
     },
     {
       question: "Berapa durasi corporate AI training?",

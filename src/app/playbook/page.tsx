@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://aitraining.id/playbook',
   },
+  openGraph: {
+    url: 'https://aitraining.id/playbook',
+  },
 };
 
 const playbooks = [

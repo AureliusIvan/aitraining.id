@@ -19,10 +19,16 @@ export const metadata: Metadata = {
     template: "%s | aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on workshops on AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA.",
   keywords: [
     "corporate AI training Indonesia",
+    "Generative AI training Indonesia",
     "AI training Indonesia",
+    "AI Corporate Trainer Indonesia",
+    "Corporate AI Trainer Indonesia",
+    "Generative AI trainer Indonesia",
+    "prompt engineering training Indonesia",
+    "AI consultant Indonesia",
     "AI workshop perusahaan",
     "pelatihan AI korporat",
     "enterprise AI training Jakarta",
@@ -74,9 +80,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://aitraining.id",
-  },
 };
 
 export default function RootLayout({
@@ -91,13 +94,21 @@ export default function RootLayout({
     name: "aitraining.id",
     url: "https://aitraining.id",
     description:
-      "Corporate AI training programs in Indonesia. Hands-on workshops on AI automation, AI-powered development, and AI strategy for enterprise teams.",
+      "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams.",
     founder: {
       "@type": "Person",
       "@id": "https://aurelivan.com/#person",
       name: "Aurelius Ivan Wijaya",
       url: "https://aurelivan.com",
-      jobTitle: "Corporate AI Trainer & Speaker",
+      jobTitle: [
+        "Corporate AI Trainer",
+        "AI Corporate Trainer",
+        "Generative AI Trainer",
+        "AI Consultant",
+        "Speaker",
+      ],
+      description:
+        "Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA. Helps Indonesian enterprises adopt Generative AI through hands-on workshops on prompt engineering, AI automation, and AI-powered development.",
       sameAs: [
         "https://aurelivan.com",
         "https://www.linkedin.com/in/aurelius-ivan-wijaya",
@@ -116,6 +127,11 @@ export default function RootLayout({
     },
     knowsAbout: [
       "Corporate AI Training",
+      "Generative AI",
+      "Prompt Engineering",
+      "Large Language Models",
+      "AI Engineering",
+      "AI Consulting",
       "Enterprise AI Workshops",
       "AI Automation",
       "n8n Workflow Automation",

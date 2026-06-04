@@ -5,9 +5,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Program Corporate AI Training Indonesia",
   description:
-    "Detail program corporate AI training di Indonesia: AI Workflow Automation, AI-Powered Development, AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya dari aurelivan.com.",
+    "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development (prompt engineering), AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer & Cursor Ambassador dari aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/programs",
+  },
+  openGraph: {
+    url: "https://aitraining.id/programs",
   },
 };
 
@@ -41,13 +44,13 @@ const programs = [
   },
   {
     id: "development",
-    tags: "[ Cursor, AI coding, productivity, engineering ]",
+    tags: "[ Cursor, AI coding, prompt engineering, AI engineering ]",
     title: "AI-Powered Development",
     badge: "Untuk engineering & tech teams",
     duration: "Full-day (8 jam) atau 2-day intensive",
     audience: "Software developers, engineers, tech leads",
     description:
-      "Upskill tim engineering Anda dengan AI-powered development tools terkini. Program ini berfokus pada penggunaan Cursor IDE, AI coding assistants, dan modern AI development practices untuk mempercepat development cycle dan meningkatkan kualitas kode.",
+      "Upskill tim engineering Anda dengan Generative AI development tools terkini. Program ini berfokus pada penggunaan Cursor IDE, prompt engineering untuk coding, AI coding assistants, dan modern AI engineering practices untuk mempercepat development cycle dan meningkatkan kualitas kode. Disampaikan oleh Cursor Ambassador Indonesia.",
     outcomes: [
       "Master AI-assisted coding dengan Cursor IDE",
       "Percepat development speed 2–5x",
@@ -149,6 +152,12 @@ export default function ProgramsPage() {
           "@type": "Person",
           name: "Aurelius Ivan Wijaya",
           url: "https://aurelivan.com",
+          jobTitle: [
+            "Corporate AI Trainer",
+            "AI Corporate Trainer",
+            "Generative AI Trainer",
+            "AI Consultant",
+          ],
         },
         url: `https://aitraining.id/programs#${p.id}`,
       },
@@ -174,9 +183,10 @@ export default function ProgramsPage() {
                 <span className="text-white/60">Programs</span>
               </h1>
               <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
-                Empat program corporate AI training yang dirancang khusus untuk
-                kebutuhan tim dan perusahaan di Indonesia. Semua program didelivery
-                oleh{" "}
+                Empat program corporate Generative AI training — mencakup prompt
+                engineering, AI automation, dan AI-powered development — dirancang
+                khusus untuk kebutuhan tim dan perusahaan di Indonesia. Semua
+                program didelivery oleh{" "}
                 <a
                   href="https://aurelivan.com"
                   target="_blank"
@@ -185,7 +195,7 @@ export default function ProgramsPage() {
                 >
                   Aurelius Ivan Wijaya
                 </a>{" "}
-                — corporate AI trainer berpengalaman di Indonesia.
+                — Corporate AI Trainer & Cursor Ambassador di Indonesia.
               </p>
               <p className="text-white/50 text-sm">
                 Detail lebih lanjut:{" "}

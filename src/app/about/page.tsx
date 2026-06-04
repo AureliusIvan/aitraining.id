@@ -5,9 +5,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Corporate AI Trainer Indonesia — Aurelius Ivan Wijaya",
   description:
-    "Aurelius Ivan Wijaya adalah corporate AI trainer dan speaker terkemuka di Indonesia. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador dan founder AICON ASIA. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/about",
+  },
+  openGraph: {
+    url: "https://aitraining.id/about",
   },
 };
 
@@ -27,9 +30,27 @@ export default function AboutPage() {
     "@id": "https://aurelivan.com/#person",
     name: "Aurelius Ivan Wijaya",
     url: "https://aurelivan.com",
-    jobTitle: "Corporate AI Trainer & Speaker",
+    jobTitle: [
+      "Corporate AI Trainer",
+      "AI Corporate Trainer",
+      "Generative AI Trainer",
+      "AI Consultant",
+      "Speaker",
+    ],
     description:
-      "Aurelius Ivan Wijaya adalah corporate AI trainer dan speaker terkemuka di Indonesia yang membantu perusahaan mengadopsi AI melalui hands-on workshops dan enterprise training programs.",
+      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador dan founder AICON ASIA — yang membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, prompt engineering, dan enterprise training programs.",
+    knowsAbout: [
+      "Generative AI",
+      "Prompt Engineering",
+      "Large Language Models",
+      "AI Engineering",
+      "AI Consulting",
+      "AI Mentorship",
+      "Corporate AI Training",
+      "AI Automation",
+      "Cursor AI Development",
+      "AI Strategy",
+    ],
     sameAs: [
       "https://aurelivan.com",
       "https://www.linkedin.com/in/aurelius-ivan-wijaya",
@@ -46,11 +67,25 @@ export default function AboutPage() {
 
   const credentials = [
     {
+      event: "AICON ASIA",
+      role: "Founder",
+      location: "Indonesia / Asia",
+      description:
+        "Founder AICON ASIA — inisiatif komunitas dan konferensi Generative AI untuk praktisi dan perusahaan di Asia.",
+    },
+    {
+      event: "Cursor",
+      role: "Cursor Ambassador",
+      location: "Indonesia",
+      description:
+        "Cursor Ambassador resmi — memimpin adopsi AI-powered development dan prompt engineering dengan Cursor di Indonesia.",
+    },
+    {
       event: "Tech in Asia Conference 2025",
       role: "Speaker",
       location: "Jakarta, Indonesia",
       description:
-        "Berbicara tentang AI product development dan enterprise AI adoption di konferensi teknologi terbesar di Asia Tenggara.",
+        "Berbicara tentang AI product development dan enterprise Generative AI adoption di konferensi teknologi terbesar di Asia Tenggara.",
     },
     {
       event: "DPD RI — Dewan Perwakilan Daerah",
@@ -84,10 +119,16 @@ export default function AboutPage() {
 
   const expertise = [
     {
+      area: "Generative AI & Prompt Engineering",
+      tools: "ChatGPT, Claude, Gemini, LLM APIs",
+      description:
+        "Melatih tim menguasai Generative AI dan prompt engineering — dari menulis prompt efektif hingga membangun AI agents untuk kebutuhan bisnis.",
+    },
+    {
       area: "AI Workflow Automation",
       tools: "n8n, Make, Zapier, AI APIs",
       description:
-        "Membangun automated workflows yang mengintegrasikan AI ke proses bisnis nyata.",
+        "Membangun automated workflows yang mengintegrasikan Generative AI ke proses bisnis nyata.",
     },
     {
       area: "AI-Powered Development",
@@ -102,10 +143,10 @@ export default function AboutPage() {
         "Membantu eksekutif mengidentifikasi AI opportunities dan membangun AI-first culture.",
     },
     {
-      area: "Community Building",
-      tools: "Cursor Meetup, Build Club Indonesia",
+      area: "AI Mentorship & Community Building",
+      tools: "Cursor Meetup, Build Club, AICON ASIA",
       description:
-        "Membangun komunitas AI developer terbesar di Tangerang dan berkolaborasi dengan komunitas global.",
+        "Mentor komunitas AI developer terbesar di Tangerang dan corporate mentor untuk tim engineering — berkolaborasi dengan komunitas Generative AI global.",
     },
   ];
 
@@ -140,7 +181,8 @@ export default function AboutPage() {
                     </a>
                   </h1>
                   <p className="text-white/60 text-lg mb-6">
-                    Corporate AI Trainer & Speaker · Indonesia
+                    Corporate AI Trainer · Generative AI Consultant · Cursor
+                    Ambassador · Founder AICON ASIA · Indonesia
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a
@@ -184,17 +226,20 @@ export default function AboutPage() {
                 </div>
                 <div className="space-y-6">
                   <p className="text-white/90 text-lg leading-relaxed">
-                    Aurelius Ivan Wijaya adalah corporate AI trainer dan speaker
-                    terkemuka di Indonesia yang membantu perusahaan mengadopsi
-                    kecerdasan buatan melalui hands-on workshops, enterprise training
-                    programs, dan community events.
+                    Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI
+                    consultant, dan speaker terkemuka di Indonesia — juga{" "}
+                    <strong className="text-white">Cursor Ambassador</strong> dan{" "}
+                    <strong className="text-white">founder AICON ASIA</strong> — yang
+                    membantu perusahaan mengadopsi Generative AI melalui hands-on
+                    workshops, prompt engineering, enterprise training programs, dan
+                    community events.
                   </p>
                   <p className="text-white/90 text-lg leading-relaxed">
                     Ia telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
                     Indonesia), berbicara di{" "}
                     <strong className="text-white">Tech in Asia Conference 2025</strong>{" "}
-                    di Jakarta, dan menyelenggarakan komunitas AI developer bulanan di
-                    Tangerang, Indonesia.
+                    di Jakarta, dan menyelenggarakan komunitas Generative AI developer
+                    bulanan di Tangerang, Indonesia.
                   </p>
                   <p className="text-white/90 text-lg leading-relaxed">
                     Bermitra dengan{" "}
