@@ -1,0 +1,231 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
+import { cities, getCity } from "@/lib/cities";
+
+export function generateStaticParams() {
+  return cities.map((c) => ({ city: c.id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ city: string }>;
+}): Promise<Metadata> {
+  const { city: cityId } = await params;
+  const city = getCity(cityId);
+  if (!city) return {};
+  return {
+    title: city.title,
+    description: city.description,
+    alternates: { canonical: `https://aitraining.id/cities/${city.id}` },
+    openGraph: { url: `https://aitraining.id/cities/${city.id}` },
+  };
+}
+
+const programs = [
+  {
+    name: "AI Workflow Automation",
+    note: "n8n — operations, marketing, HR, finance",
+  },
+  {
+    name: "AI-Powered Development",
+    note: "Cursor + prompt engineering — engineering teams",
+  },
+  {
+    name: "AI Strategy & Adoption",
+    note: "executive session — C-suite & leaders",
+  },
+  { name: "OpenClaw Training", note: "hands-on AI agent workflows" },
+];
+
+export default async function CityPage({
+  params,
+}: {
+  params: Promise<{ city: string }>;
+}) {
+  const { city: cityId } = await params;
+  const city = getCity(cityId);
+  if (!city) notFound();
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: city.title,
+    description: city.description,
+    serviceType: "Corporate AI Training",
+    provider: {
+      "@type": "Person",
+      name: "Aurelius Ivan Wijaya",
+      url: "https://aurelivan.com",
+    },
+    areaServed: {
+      "@type": "City",
+      name: city.name,
+      containedInPlace: { "@type": "Country", name: "Indonesia" },
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "IDR",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "1500000",
+        priceCurrency: "IDR",
+        unitCode: "HUR",
+        unitText: "per hour",
+      },
+      url: "https://aitraining.id/pricing",
+    },
+    url: `https://aitraining.id/cities/${city.id}`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://aitraining.id",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Cities",
+        item: "https://aitraining.id/cities",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: city.name,
+        item: `https://aitraining.id/cities/${city.id}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <div className="min-h-screen bg-black text-white">
+        <Nav />
+        <main>
+          <section className="relative pt-32 pb-16 px-6 sm:px-8">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="max-w-3xl">
+                <p className="text-white/50 text-sm mb-4 tracking-wide">
+                  <Link
+                    href="/cities"
+                    className="hover:text-white transition-colors"
+                  >
+                    Cakupan Wilayah
+                  </Link>{" "}
+                  / {city.name}
+                </p>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95] tracking-tight mb-6">
+                  {city.title}
+                </h1>
+                <p className="text-white/70 text-lg sm:text-xl leading-relaxed">
+                  {city.intro}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-black py-12 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12">
+              <div>
+                <p className="text-sm text-white/70 font-medium tracking-wide mb-4">
+                  KENAPA DI {city.name.toUpperCase()}
+                </p>
+                <ul className="space-y-3">
+                  {city.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-3">
+                      <svg
+                        className="w-5 h-5 text-white/60 flex-shrink-0 mt-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span className="text-white/70 text-sm">{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-sm text-white/70 font-medium tracking-wide mb-4">
+                  PROGRAM DI {city.name.toUpperCase()}
+                </p>
+                <ul className="space-y-3">
+                  {programs.map((p) => (
+                    <li
+                      key={p.name}
+                      className="border border-white/10 rounded-xl p-4"
+                    >
+                      <p className="text-white font-medium text-sm">{p.name}</p>
+                      <p className="text-white/50 text-xs mt-1">{p.note}</p>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-white/40 text-xs mt-4">
+                  Rate dasar Rp 1.500.000 / jam ·{" "}
+                  <Link href="/pricing" className="underline hover:text-white">
+                    lihat paket lengkap
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="border border-white/10 rounded-2xl p-8 md:p-12 text-center">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                  Book corporate AI training di {city.name}
+                </h2>
+                <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
+                  Jadwalkan konsultasi gratis 30 menit untuk membahas kebutuhan
+                  tim Anda di {city.name}. On-site maupun virtual.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a
+                    href="https://calendly.com/aureliusivanwijaya/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all text-lg font-medium"
+                  >
+                    <span>Book di {city.name}</span>
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-all text-lg text-white/90"
+                  >
+                    Hubungi kami
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+}

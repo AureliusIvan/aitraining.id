@@ -167,14 +167,16 @@ export function Footer() {
               aurelivan.com
             </a>
             <span>/</span>
-            <Link href="/contact" className="hover:text-white/70 transition-colors">
+            <Link
+              href="/contact"
+              className="hover:text-white/70 transition-colors"
+            >
               Book a session
             </Link>
           </div>
           <div className="text-sm text-white/60">
             <p>
-              corporate{" "}
-              <strong className="text-white/60">AI training</strong>
+              corporate <strong className="text-white/60">AI training</strong>
             </p>
             <p>Indonesia · since 2024</p>
           </div>

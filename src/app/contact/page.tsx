@@ -1,6 +1,6 @@
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Hubungi Kami — Book Corporate AI Training",
@@ -109,7 +109,9 @@ export default function ContactPage() {
                   </p>
                   <a
                     href={channel.href}
-                    target={channel.href.startsWith("http") ? "_blank" : undefined}
+                    target={
+                      channel.href.startsWith("http") ? "_blank" : undefined
+                    }
                     rel={
                       channel.href.startsWith("http")
                         ? "noopener noreferrer"
@@ -188,12 +190,18 @@ export default function ContactPage() {
                 <div>
                   <p className="text-white/50 text-sm mb-2">Konsultasi awal</p>
                   <p className="text-2xl font-bold text-white">Gratis</p>
-                  <p className="text-white/40 text-xs mt-1">30 menit discovery call</p>
+                  <p className="text-white/40 text-xs mt-1">
+                    30 menit discovery call
+                  </p>
                 </div>
                 <div>
                   <p className="text-white/50 text-sm mb-2">Cakupan</p>
-                  <p className="text-2xl font-bold text-white">Seluruh Indonesia</p>
-                  <p className="text-white/40 text-xs mt-1">On-site & virtual</p>
+                  <p className="text-2xl font-bold text-white">
+                    Seluruh Indonesia
+                  </p>
+                  <p className="text-white/40 text-xs mt-1">
+                    On-site & virtual
+                  </p>
                 </div>
               </div>
             </div>

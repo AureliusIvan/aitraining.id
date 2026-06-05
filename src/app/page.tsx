@@ -1,6 +1,6 @@
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: {
@@ -33,7 +33,10 @@ export default function HomePage() {
       ],
       description:
         "Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA in Indonesia.",
-      sameAs: ["https://aurelivan.com", "https://www.linkedin.com/in/aurelius-ivan-wijaya"],
+      sameAs: [
+        "https://aurelivan.com",
+        "https://www.linkedin.com/in/aurelius-ivan-wijaya",
+      ],
     },
     areaServed: { "@type": "Country", name: "Indonesia" },
     serviceType: "Corporate AI Training",
@@ -250,7 +253,9 @@ function TrainerSection() {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="text-white/70 text-sm mb-6 tracking-wide">[ Trainer ]</p>
+            <p className="text-white/70 text-sm mb-6 tracking-wide">
+              [ Trainer ]
+            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
               Delivered by
               <br />
@@ -269,14 +274,17 @@ function TrainerSection() {
           </div>
           <div className="space-y-6">
             <p className="text-white/90 text-lg leading-relaxed">
-              Aurelius Ivan Wijaya adalah Corporate AI Trainer dan speaker terkemuka di
-              Indonesia, <strong className="text-white">Cursor Ambassador</strong>, dan{" "}
-              <strong className="text-white">founder AICON ASIA</strong>. Ia telah
-              melatih staf DPD RI (Dewan Perwakilan Daerah Republik Indonesia),
-              berbicara di{" "}
-              <strong className="text-white">Tech in Asia Conference 2025</strong>{" "}
-              di Jakarta, dan mengelola komunitas Generative AI bulanan di seluruh
-              Indonesia.
+              Aurelius Ivan Wijaya adalah Corporate AI Trainer dan speaker
+              terkemuka di Indonesia,{" "}
+              <strong className="text-white">Cursor Ambassador</strong>, dan{" "}
+              <strong className="text-white">founder AICON ASIA</strong>. Ia
+              telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
+              Indonesia), berbicara di{" "}
+              <strong className="text-white">
+                Tech in Asia Conference 2025
+              </strong>{" "}
+              di Jakarta, dan mengelola komunitas Generative AI bulanan di
+              seluruh Indonesia.
             </p>
             <p className="text-white/90 text-lg leading-relaxed">
               Bermitra dengan{" "}
@@ -413,7 +421,9 @@ function ProgramsSection() {
     <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-12">
-          <p className="text-white/70 text-sm mb-6 tracking-wide">[ Programs ]</p>
+          <p className="text-white/70 text-sm mb-6 tracking-wide">
+            [ Programs ]
+          </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
             Corporate AI training programs
           </h2>
@@ -657,7 +667,9 @@ function ProcessSection() {
     <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-12">
-          <p className="text-white/70 text-sm mb-6 tracking-wide">[ Process ]</p>
+          <p className="text-white/70 text-sm mb-6 tracking-wide">
+            [ Process ]
+          </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             Proses corporate AI training
           </h2>
@@ -665,8 +677,12 @@ function ProcessSection() {
         <div className="grid md:grid-cols-4 gap-6">
           {steps.map((step, i) => (
             <div key={i} className="border border-white/10 rounded-2xl p-8">
-              <p className="text-4xl font-bold text-white/20 mb-4">{step.step}</p>
-              <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+              <p className="text-4xl font-bold text-white/20 mb-4">
+                {step.step}
+              </p>
+              <h3 className="text-xl font-bold text-white mb-3">
+                {step.title}
+              </h3>
               <p className="text-white/70 text-sm leading-relaxed">
                 {step.description}
               </p>
@@ -713,8 +729,8 @@ function CitiesSection() {
             Corporate AI training di seluruh Indonesia
           </h2>
           <p className="text-white/70 text-lg max-w-2xl">
-            On-site di kota-kota besar, atau virtual untuk tim remote dan hybrid di
-            seluruh Indonesia.
+            On-site di kota-kota besar, atau virtual untuk tim remote dan hybrid
+            di seluruh Indonesia.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -766,9 +782,9 @@ function ComparisonSection() {
             Mengapa in-house AI training vs online course?
           </h2>
           <p className="text-white/70 text-lg max-w-2xl">
-            Banyak perusahaan di Indonesia sudah membeli akses online course AI untuk
-            karyawan — tapi completion rate-nya rendah dan hasilnya tidak terasa. Ini
-            perbedaannya.
+            Banyak perusahaan di Indonesia sudah membeli akses online course AI
+            untuk karyawan — tapi completion rate-nya rendah dan hasilnya tidak
+            terasa. Ini perbedaannya.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
@@ -845,7 +861,8 @@ function ComparisonSection() {
 function FAQSection() {
   const faqs = [
     {
-      question: "Siapa yang mendelivery corporate AI training di aitraining.id?",
+      question:
+        "Siapa yang mendelivery corporate AI training di aitraining.id?",
       answer:
         "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya — corporate AI trainer dan speaker terkemuka di Indonesia. Profil lengkap dan portofolio tersedia di aurelivan.com.",
     },
@@ -855,7 +872,8 @@ function FAQSection() {
         "Tersedia empat program utama: AI Workflow Automation (n8n), AI-Powered Development (Cursor), AI Strategy & Adoption untuk level eksekutif, dan OpenClaw Training untuk deploying open-source AI assistants. Semua program 70% hands-on practice.",
     },
     {
-      question: "Apakah training mencakup Generative AI dan prompt engineering?",
+      question:
+        "Apakah training mencakup Generative AI dan prompt engineering?",
       answer:
         "Ya. Seluruh program berbasis Generative AI dan large language model (LLM) seperti ChatGPT, Claude, dan Gemini. Prompt engineering diajarkan secara hands-on di setiap program — dari menulis prompt yang efektif, prompt untuk coding tasks, hingga membangun AI automation dan AI agents untuk kebutuhan bisnis Anda.",
     },
@@ -865,7 +883,8 @@ function FAQSection() {
         "Session training berkisar dari half-day intensive workshop (4 jam) hingga multi-day training program. Durasi bergantung pada kedalaman materi dan tingkat AI familiarity tim Anda. Sebagian besar perusahaan memulai dengan full-day workshop.",
     },
     {
-      question: "Apakah training bisa dilakukan on-site di kantor perusahaan kami?",
+      question:
+        "Apakah training bisa dilakukan on-site di kantor perusahaan kami?",
       answer:
         "Ya, corporate AI training tersedia on-site di seluruh Indonesia — Jakarta, Surabaya, Bandung, Tangerang, Yogyakarta, dan kota lainnya. Opsi virtual juga tersedia untuk tim remote dan hybrid.",
     },
@@ -882,7 +901,10 @@ function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
+    <section
+      id="faq"
+      className="bg-black py-24 px-6 sm:px-8 border-t border-white/10"
+    >
       <div className="max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
@@ -961,8 +983,8 @@ function CTASection() {
           >
             Aurelius Ivan Wijaya
           </a>{" "}
-          untuk mendiskusikan kebutuhan AI training perusahaan Anda. Program tersedia
-          di seluruh Indonesia.
+          untuk mendiskusikan kebutuhan AI training perusahaan Anda. Program
+          tersedia di seluruh Indonesia.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a

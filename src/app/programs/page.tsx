@@ -1,6 +1,6 @@
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Program Corporate AI Training Indonesia",
@@ -130,8 +130,18 @@ export default function ProgramsPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://aitraining.id" },
-      { "@type": "ListItem", position: 2, name: "Programs", item: "https://aitraining.id/programs" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://aitraining.id",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Programs",
+        item: "https://aitraining.id/programs",
+      },
     ],
   };
 
@@ -139,7 +149,8 @@ export default function ProgramsPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Corporate AI Training Programs Indonesia",
-    description: "Daftar program corporate AI training yang tersedia di Indonesia oleh Aurelius Ivan Wijaya.",
+    description:
+      "Daftar program corporate AI training yang tersedia di Indonesia oleh Aurelius Ivan Wijaya.",
     numberOfItems: 4,
     itemListElement: programs.map((p, i) => ({
       "@type": "ListItem",
@@ -166,27 +177,183 @@ export default function ProgramsPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }}
+      />
       <div className="min-h-screen bg-black text-white">
-      <Nav />
-      <main>
-        <section className="relative pt-32 pb-16 px-6 sm:px-8">
-          <div className="max-w-[1400px] mx-auto">
-            <div className="max-w-3xl">
-              <p className="text-white/70 text-sm mb-4 tracking-wide">
-                [ Corporate AI Training Programs ]
-              </p>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.9] tracking-tight mb-6">
-                <span className="text-white">Corporate AI Training</span>
-                <br />
-                <span className="text-white/60">Programs</span>
-              </h1>
-              <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
-                Empat program corporate Generative AI training — mencakup prompt
-                engineering, AI automation, dan AI-powered development — dirancang
-                khusus untuk kebutuhan tim dan perusahaan di Indonesia. Semua
-                program didelivery oleh{" "}
+        <Nav />
+        <main>
+          <section className="relative pt-32 pb-16 px-6 sm:px-8">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="max-w-3xl">
+                <p className="text-white/70 text-sm mb-4 tracking-wide">
+                  [ Corporate AI Training Programs ]
+                </p>
+                <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.9] tracking-tight mb-6">
+                  <span className="text-white">Corporate AI Training</span>
+                  <br />
+                  <span className="text-white/60">Programs</span>
+                </h1>
+                <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
+                  Empat program corporate Generative AI training — mencakup
+                  prompt engineering, AI automation, dan AI-powered development
+                  — dirancang khusus untuk kebutuhan tim dan perusahaan di
+                  Indonesia. Semua program didelivery oleh{" "}
+                  <a
+                    href="https://aurelivan.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-white/90 hover:text-white transition-colors"
+                  >
+                    Aurelius Ivan Wijaya
+                  </a>{" "}
+                  — Corporate AI Trainer & Cursor Ambassador di Indonesia.
+                </p>
+                <p className="text-white/50 text-sm">
+                  Detail lebih lanjut:{" "}
+                  <a
+                    href="https://aurelivan.com/corporate-training"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white/70 transition-colors"
+                  >
+                    aurelivan.com/corporate-training
+                  </a>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-black py-12 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto space-y-8">
+              {programs.map((program) => (
+                <div
+                  key={program.id}
+                  id={program.id}
+                  className="border border-white/10 rounded-2xl p-8 md:p-12 scroll-mt-24"
+                >
+                  <div className="grid md:grid-cols-2 gap-12">
+                    <div>
+                      <p className="text-sm text-white/70 mb-2">
+                        {program.tags}
+                      </p>
+                      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+                        {program.title}
+                      </h2>
+                      <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-white/70 text-xs mb-6">
+                        {program.badge}
+                      </span>
+                      <p className="text-white/70 leading-relaxed mb-6">
+                        {program.description}
+                      </p>
+                      <div className="space-y-2 text-sm">
+                        <p className="text-white/60">
+                          <span className="text-white/40">Durasi:</span>{" "}
+                          {program.duration}
+                        </p>
+                        <p className="text-white/60">
+                          <span className="text-white/40">Untuk:</span>{" "}
+                          {program.audience}
+                        </p>
+                      </div>
+                      <div className="flex gap-4 mt-8">
+                        <a
+                          href="https://calendly.com/aureliusivanwijaya/30min"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black rounded-full hover:bg-white/90 transition-all group text-sm font-medium"
+                        >
+                          <span>Book program ini</span>
+                          <svg
+                            className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </a>
+                        <a
+                          href={program.aurelivan}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 rounded-full hover:bg-white/5 transition-all text-sm text-white/80"
+                        >
+                          Detail di aurelivan.com ↗
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="space-y-8">
+                      <div>
+                        <p className="text-sm text-white/70 font-medium tracking-wide mb-4">
+                          OUTCOMES
+                        </p>
+                        <ul className="space-y-3">
+                          {program.outcomes.map((outcome, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <svg
+                                className="w-5 h-5 text-white/60 flex-shrink-0 mt-0.5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                              </svg>
+                              <span className="text-white/70 text-sm">
+                                {outcome}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <p className="text-sm text-white/70 font-medium tracking-wide mb-4">
+                          MODULES
+                        </p>
+                        <ol className="space-y-2">
+                          {program.modules.map((module, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <span className="text-white/30 text-sm font-mono flex-shrink-0 mt-0.5">
+                                {String(i + 1).padStart(2, "0")}
+                              </span>
+                              <span className="text-white/60 text-sm">
+                                {module}
+                              </span>
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Tidak yakin program mana yang tepat?
+              </h2>
+              <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
+                Jadwalkan konsultasi gratis dengan{" "}
                 <a
                   href="https://aurelivan.com"
                   target="_blank"
@@ -195,178 +362,34 @@ export default function ProgramsPage() {
                 >
                   Aurelius Ivan Wijaya
                 </a>{" "}
-                — Corporate AI Trainer & Cursor Ambassador di Indonesia.
+                untuk menentukan program yang paling sesuai untuk tim Anda.
               </p>
-              <p className="text-white/50 text-sm">
-                Detail lebih lanjut:{" "}
-                <a
-                  href="https://aurelivan.com/corporate-training"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-white/70 transition-colors"
-                >
-                  aurelivan.com/corporate-training
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-black py-12 px-6 sm:px-8 border-t border-white/10">
-          <div className="max-w-[1400px] mx-auto space-y-8">
-            {programs.map((program) => (
-              <div
-                key={program.id}
-                id={program.id}
-                className="border border-white/10 rounded-2xl p-8 md:p-12 scroll-mt-24"
-              >
-                <div className="grid md:grid-cols-2 gap-12">
-                  <div>
-                    <p className="text-sm text-white/70 mb-2">{program.tags}</p>
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-                      {program.title}
-                    </h2>
-                    <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-white/70 text-xs mb-6">
-                      {program.badge}
-                    </span>
-                    <p className="text-white/70 leading-relaxed mb-6">
-                      {program.description}
-                    </p>
-                    <div className="space-y-2 text-sm">
-                      <p className="text-white/60">
-                        <span className="text-white/40">Durasi:</span>{" "}
-                        {program.duration}
-                      </p>
-                      <p className="text-white/60">
-                        <span className="text-white/40">Untuk:</span>{" "}
-                        {program.audience}
-                      </p>
-                    </div>
-                    <div className="flex gap-4 mt-8">
-                      <a
-                        href="https://calendly.com/aureliusivanwijaya/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black rounded-full hover:bg-white/90 transition-all group text-sm font-medium"
-                      >
-                        <span>Book program ini</span>
-                        <svg
-                          className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
-                      </a>
-                      <a
-                        href={program.aurelivan}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 rounded-full hover:bg-white/5 transition-all text-sm text-white/80"
-                      >
-                        Detail di aurelivan.com ↗
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-8">
-                    <div>
-                      <p className="text-sm text-white/70 font-medium tracking-wide mb-4">
-                        OUTCOMES
-                      </p>
-                      <ul className="space-y-3">
-                        {program.outcomes.map((outcome, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <svg
-                              className="w-5 h-5 text-white/60 flex-shrink-0 mt-0.5"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
-                            <span className="text-white/70 text-sm">{outcome}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <p className="text-sm text-white/70 font-medium tracking-wide mb-4">
-                        MODULES
-                      </p>
-                      <ol className="space-y-2">
-                        {program.modules.map((module, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <span className="text-white/30 text-sm font-mono flex-shrink-0 mt-0.5">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <span className="text-white/60 text-sm">{module}</span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
-          <div className="max-w-[1400px] mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Tidak yakin program mana yang tepat?
-            </h2>
-            <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-              Jadwalkan konsultasi gratis dengan{" "}
               <a
-                href="https://aurelivan.com"
+                href="https://calendly.com/aureliusivanwijaya/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline text-white/90 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all group text-lg font-medium"
               >
-                Aurelius Ivan Wijaya
-              </a>{" "}
-              untuk menentukan program yang paling sesuai untuk tim Anda.
-            </p>
-            <a
-              href="https://calendly.com/aureliusivanwijaya/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all group text-lg font-medium"
-            >
-              <span>Konsultasi gratis</span>
-              <svg
-                className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+                <span>Konsultasi gratis</span>
+                <svg
+                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

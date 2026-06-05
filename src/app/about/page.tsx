@@ -1,6 +1,6 @@
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Corporate AI Trainer Indonesia — Aurelius Ivan Wijaya",
@@ -19,8 +19,18 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://aitraining.id" },
-      { "@type": "ListItem", position: 2, name: "About Trainer", item: "https://aitraining.id/about" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://aitraining.id",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About Trainer",
+        item: "https://aitraining.id/about",
+      },
     ],
   };
 
@@ -152,7 +162,10 @@ export default function AboutPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -226,20 +239,23 @@ export default function AboutPage() {
                 </div>
                 <div className="space-y-6">
                   <p className="text-white/90 text-lg leading-relaxed">
-                    Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI
-                    consultant, dan speaker terkemuka di Indonesia — juga{" "}
-                    <strong className="text-white">Cursor Ambassador</strong> dan{" "}
-                    <strong className="text-white">founder AICON ASIA</strong> — yang
-                    membantu perusahaan mengadopsi Generative AI melalui hands-on
-                    workshops, prompt engineering, enterprise training programs, dan
-                    community events.
+                    Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative
+                    AI consultant, dan speaker terkemuka di Indonesia — juga{" "}
+                    <strong className="text-white">Cursor Ambassador</strong>{" "}
+                    dan{" "}
+                    <strong className="text-white">founder AICON ASIA</strong> —
+                    yang membantu perusahaan mengadopsi Generative AI melalui
+                    hands-on workshops, prompt engineering, enterprise training
+                    programs, dan community events.
                   </p>
                   <p className="text-white/90 text-lg leading-relaxed">
-                    Ia telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
-                    Indonesia), berbicara di{" "}
-                    <strong className="text-white">Tech in Asia Conference 2025</strong>{" "}
-                    di Jakarta, dan menyelenggarakan komunitas Generative AI developer
-                    bulanan di Tangerang, Indonesia.
+                    Ia telah melatih staf DPD RI (Dewan Perwakilan Daerah
+                    Republik Indonesia), berbicara di{" "}
+                    <strong className="text-white">
+                      Tech in Asia Conference 2025
+                    </strong>{" "}
+                    di Jakarta, dan menyelenggarakan komunitas Generative AI
+                    developer bulanan di Tangerang, Indonesia.
                   </p>
                   <p className="text-white/90 text-lg leading-relaxed">
                     Bermitra dengan{" "}
@@ -269,8 +285,9 @@ export default function AboutPage() {
                     >
                       Artifisial
                     </a>
-                    , ia memberikan corporate AI training yang benar-benar praktis
-                    dan menghasilkan perubahan nyata bagi tim perusahaan.
+                    , ia memberikan corporate AI training yang benar-benar
+                    praktis dan menghasilkan perubahan nyata bagi tim
+                    perusahaan.
                   </p>
                   <p className="text-white/50 text-sm">
                     Profil lengkap, portofolio, dan artikel tersedia di{" "}
@@ -299,9 +316,9 @@ export default function AboutPage() {
                   Speaking & training credentials
                 </h2>
                 <p className="text-white/70 text-lg max-w-2xl">
-                  Dipercaya oleh konferensi dan organisasi terkemuka di Indonesia untuk
-                  menyampaikan AI training dan speaking engagements. Lihat portofolio
-                  lengkap di{" "}
+                  Dipercaya oleh konferensi dan organisasi terkemuka di
+                  Indonesia untuk menyampaikan AI training dan speaking
+                  engagements. Lihat portofolio lengkap di{" "}
                   <a
                     href="https://aurelivan.com/speaking"
                     target="_blank"
@@ -406,9 +423,7 @@ export default function AboutPage() {
                   <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
                     Bermitra dengan
                     <br />
-                    <span className="text-white/60">
-                      pemimpin industri AI
-                    </span>
+                    <span className="text-white/60">pemimpin industri AI</span>
                   </h2>
                 </div>
                 <div className="space-y-4">
@@ -478,8 +493,8 @@ export default function AboutPage() {
                 >
                   aurelivan.com
                 </a>{" "}
-                untuk informasi lengkap tentang corporate AI training programs di
-                Indonesia.
+                untuk informasi lengkap tentang corporate AI training programs
+                di Indonesia.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a

@@ -1,0 +1,32 @@
+# aitraining.id
+
+> Corporate AI training and consultation for companies in Indonesia. Hands-on
+> Generative AI workshops covering prompt engineering, AI automation (n8n),
+> AI-powered development (Cursor), and AI strategy for enterprise teams.
+> Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Cursor Ambassador,
+> and founder of AICON ASIA.
+
+## About
+- Trainer: Aurelius Ivan Wijaya (https://aurelivan.com) — Corporate AI Trainer, Cursor Ambassador, founder of AICON ASIA
+- Coverage: All of Indonesia (Jakarta, Surabaya, Bandung, Tangerang, others) — on-site and virtual
+- Languages: Bahasa Indonesia and English
+- Base training rate: IDR 1,500,000 per hour
+
+## Programs
+- AI Workflow Automation (n8n) — for operations, marketing, HR, finance teams: https://aitraining.id/programs#automation
+- AI-Powered Development (Cursor, prompt engineering) — for engineering teams: https://aitraining.id/programs#development
+- AI Strategy & Adoption — executive session for C-suite and business leaders: https://aitraining.id/programs#strategy
+- OpenClaw Training: https://aitraining.id/programs#openclaw
+
+## Key pages
+- Programs: https://aitraining.id/programs
+- Pricing: https://aitraining.id/pricing
+- Pricing (machine-readable): https://aitraining.id/pricing.md
+- About the trainer: https://aitraining.id/about
+- Cities served: https://aitraining.id/cities
+- Daily Prompt Playbook: https://aitraining.id/playbook/daily-prompt
+- Contact / book: https://aitraining.id/contact
+
+## Booking
+- Free 30-minute discovery call: https://calendly.com/aureliusivanwijaya/30min
+- Email: ivan@aurelivan.com
