@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
@@ -160,6 +161,7 @@ export default function HomePage() {
           <TrainerSection />
           <ProgramsSection />
           <StatsSection />
+          <DocumentationSection />
           <WhySection />
           <ProcessSection />
           <CitiesSection />
@@ -270,6 +272,15 @@ function TrainerSection() {
             <p className="text-white/60 mt-3 text-sm">
               Corporate AI Trainer & Speaker · Indonesia
             </p>
+            <div className="relative mt-8 rounded-2xl overflow-hidden border border-white/10 aspect-video">
+              <Image
+                src="/assets/hero.webp"
+                alt="Aurelius Ivan Wijaya — Corporate AI Trainer dan Cursor Ambassador, Indonesia"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
           <div className="space-y-6">
             <p className="text-white/90 text-lg leading-relaxed">
@@ -563,6 +574,96 @@ function StatsSection() {
             aurelivan.com
           </a>
         </p>
+      </div>
+    </section>
+  );
+}
+
+function DocumentationSection() {
+  const docs = [
+    {
+      src: "/assets/works/dpd-ri-webinar-ai.webp",
+      alt: "Aurelius Ivan Wijaya memberikan pelatihan AI di DPD RI — Webinar Transformasi Digital ASN melalui AI",
+      title: "DPD RI",
+      caption: "Pelatihan AI & transformasi digital untuk lembaga negara",
+    },
+    {
+      src: "/assets/works/ai-connect-from-idea-to-content.webp",
+      alt: "Aurelius Ivan Wijaya memimpin workshop AI Connect: From Idea to Content — Telkom AI Center Bandung",
+      title: "AI Connect — Telkom AI Center",
+      caption: "Workshop From Idea to Content, Bandung",
+    },
+    {
+      src: "/assets/works/jagoan-hosting-tech-corner.webp",
+      alt: "Jagoan Hosting Tech Corner — Aurelius Ivan Wijaya sebagai AI Engineer speaker pada peluncuran VM Ultra",
+      title: "Jagoan Hosting Tech Corner",
+      caption: "AI workshop & speaker peluncuran VM Ultra",
+    },
+  ];
+
+  const partners = [
+    {
+      src: "/assets/clients/cursor.webp",
+      alt: "Cursor — Aurelius Ivan Wijaya adalah Cursor Ambassador Indonesia",
+      name: "Cursor",
+    },
+    {
+      src: "/assets/clients/build-club.webp",
+      alt: "Build Club — partner komunitas AI",
+      name: "Build Club",
+    },
+    {
+      src: "/assets/clients/artifisial.png",
+      alt: "Artifisial — partner training AI Indonesia",
+      name: "Artifisial",
+    },
+  ];
+
+  return (
+    <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
+      <div className="max-w-[1400px] mx-auto">
+        <p className="text-white/70 text-sm mb-6 tracking-wide">
+          [ Dokumentasi ]
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-12">
+          Training & workshop yang sudah berjalan
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {docs.map((doc) => (
+            <figure key={doc.src}>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-[4/3]">
+                <Image
+                  src={doc.src}
+                  alt={doc.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <figcaption className="mt-3">
+                <p className="text-white font-medium text-sm">{doc.title}</p>
+                <p className="text-white/50 text-sm">{doc.caption}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="mt-16 pt-10 border-t border-white/10">
+          <p className="text-white/40 text-sm mb-6 text-center">
+            Bermitra dengan
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-10">
+            {partners.map((partner) => (
+              <Image
+                key={partner.name}
+                src={partner.src}
+                alt={partner.alt}
+                width={120}
+                height={40}
+                className="h-8 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

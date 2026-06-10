@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
@@ -229,6 +230,16 @@ export default function AboutPage() {
                       Speaking Portfolio ↗
                     </a>
                   </div>
+                  <div className="relative mt-10 rounded-2xl overflow-hidden border border-white/10 aspect-video">
+                    <Image
+                      src="/assets/hero.webp"
+                      alt="Aurelius Ivan Wijaya — Corporate AI Trainer dan Cursor Ambassador, Indonesia"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="space-y-6">
                   <p className="text-white/90 text-lg leading-relaxed">
@@ -291,6 +302,48 @@ export default function AboutPage() {
                       aurelivan.com
                     </a>
                   </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Documentation */}
+          <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <p className="text-white/70 text-sm mb-6 tracking-wide">
+                    [ Dokumentasi ]
+                  </p>
+                  <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+                    Pelatihan AI untuk DPD RI
+                  </h2>
+                  <p className="text-white/70 text-lg leading-relaxed mb-4">
+                    Webinar Transformasi Digital ASN melalui AI — membawa
+                    pemanfaatan Generative AI yang praktis ke Dewan Perwakilan
+                    Daerah Republik Indonesia.
+                  </p>
+                  <p className="text-white/50 text-sm">
+                    Dokumentasi training dan speaking lainnya tersedia di{" "}
+                    <a
+                      href="https://aurelivan.com/work"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-white/70 transition-colors"
+                    >
+                      aurelivan.com/work
+                    </a>
+                  </p>
+                </div>
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 max-w-sm w-full justify-self-center md:justify-self-end">
+                  <Image
+                    src="/assets/works/dpd-ri-webinar-ai-collage.webp"
+                    alt="Aurelius Ivan Wijaya memberikan pelatihan AI di DPD RI — Dewan Perwakilan Daerah Republik Indonesia"
+                    width={560}
+                    height={747}
+                    className="w-full h-auto"
+                    sizes="(max-width: 768px) 100vw, 384px"
+                  />
                 </div>
               </div>
             </div>
