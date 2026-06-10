@@ -104,6 +104,7 @@ export default function RootLayout({
         "https://aurelivan.com",
         "https://www.linkedin.com/in/aurelius-ivan-wijaya",
         "https://github.com/AureliusIvan",
+        "https://www.superprof.co.id/corporate-trainer-berpengalaman-indonesia-mengajar-workflow-automation-powered-development-dan-strategy-untuk-tim.html",
       ],
     },
     address: {
