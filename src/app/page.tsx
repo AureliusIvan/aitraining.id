@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     absolute: "AI Corporate Training Indonesia — aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer and Cursor Ambassador.",
   alternates: {
     canonical: "https://aitraining.id",
   },
@@ -32,7 +32,7 @@ export default function HomePage() {
         "AI Consultant",
       ],
       description:
-        "Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA in Indonesia.",
+        "Corporate AI Trainer and Cursor Ambassador in Indonesia.",
       sameAs: [
         "https://aurelivan.com",
         "https://www.linkedin.com/in/aurelius-ivan-wijaya",
@@ -208,8 +208,7 @@ function HeroSection() {
             >
               Aurelius Ivan Wijaya
             </a>{" "}
-            — Corporate AI Trainer, Cursor Ambassador, dan founder AICON ASIA di
-            Indonesia.
+            — Corporate AI Trainer dan Cursor Ambassador di Indonesia.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10 animate-fade-in">
@@ -275,9 +274,8 @@ function TrainerSection() {
           <div className="space-y-6">
             <p className="text-white/90 text-lg leading-relaxed">
               Aurelius Ivan Wijaya adalah Corporate AI Trainer dan speaker
-              terkemuka di Indonesia,{" "}
-              <strong className="text-white">Cursor Ambassador</strong>, dan{" "}
-              <strong className="text-white">founder AICON ASIA</strong>. Ia
+              terkemuka di Indonesia, juga{" "}
+              <strong className="text-white">Cursor Ambassador</strong>. Ia
               telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
               Indonesia), berbicara di{" "}
               <strong className="text-white">

@@ -10,7 +10,7 @@
 
 Wikidata's bar is **not** the same as Wikipedia's "general notability." Wikidata accepts an item if it meets *any* of: (a) a serious and publicly available reference exists about it, (b) it refers to a clearly identifiable conceptual/material entity that can be described with serious sources, or (c) it fulfills a structural need (e.g., links other items). The practical risk is **deletion for being unreferenceable / promotional**, not "not famous enough."
 
-**Person — Aurelius Ivan Wijaya:** *Borderline today.* You have strong identity anchors (personal site, LinkedIn, GitHub, a named role "Cursor Ambassador", founder of AICON ASIA). What's thin is **independent, third-party referenceable coverage** — Wikidata prefers claims backed by sources that aren't self-published. Self-owned profiles establish *identity* (good for `sameAs` and disambiguation) but are weak for *notability*. Risk of deletion as "promotional / no notable sources" is real but moderate. **What would strengthen it:** press/news features naming you; a confirmed/listed Cursor Ambassador page or directory entry; conference speaker listings (with the event's own page); a podcast/interview; an authority-file ID (VIAF, ORCID, ISNI). Even one or two of these flips it from borderline to safe.
+**Person — Aurelius Ivan Wijaya:** *Borderline today.* You have strong identity anchors (personal site, LinkedIn, GitHub, a named role "Cursor Ambassador"). What's thin is **independent, third-party referenceable coverage** — Wikidata prefers claims backed by sources that aren't self-published. Self-owned profiles establish *identity* (good for `sameAs` and disambiguation) but are weak for *notability*. Risk of deletion as "promotional / no notable sources" is real but moderate. **What would strengthen it:** press/news features naming you; a confirmed/listed Cursor Ambassador page or directory entry; conference speaker listings (with the event's own page); a podcast/interview; an authority-file ID (VIAF, ORCID, ISNI). Even one or two of these flips it from borderline to safe.
 
 **Organization — aitraining.id:** *Weaker than the person today.* A live website and service list establish existence, but a young training business with no independent coverage is the classic profile that gets flagged as promotional. **What would strengthen it:** a business registration reference, news mentions, a listing in a recognized directory, client case studies on third-party sites, or an event where the org is named. **Recommendation:** create the **person item first**, get it stable, and only create the org item once you have at least one independent reference — or accept that the org item may be challenged. The org's `founder → person` link is its best structural justification.
 
@@ -84,7 +84,7 @@ Keep descriptions under 250 characters and **non-promotional** — Wikidata desc
 | Field | English (en) | Bahasa Indonesia (id) |
 |---|---|---|
 | **Label** | Aurelius Ivan Wijaya | Aurelius Ivan Wijaya |
-| **Description** | Indonesian corporate AI trainer and consultant; Cursor Ambassador and founder of AICON ASIA, based in Jakarta. | Pelatih dan konsultan AI korporat asal Indonesia; Cursor Ambassador dan pendiri AICON ASIA, berbasis di Jakarta. |
+| **Description** | Indonesian corporate AI trainer and consultant; Cursor Ambassador, based in Jakarta. | Pelatih dan konsultan AI korporat asal Indonesia; Cursor Ambassador, berbasis di Jakarta. |
 | **Aliases** | Ivan Wijaya · Aurelius Ivan · Aurel Ivan | Ivan Wijaya · Aurelius Ivan · Aurel Ivan |
 
 ### Organization — aitraining.id
@@ -116,7 +116,7 @@ GBP is the **faster, higher-certainty** Knowledge-Graph signal — a verified pr
 - `Computer training school` *(alternative if the above isn't available)*
 
 **Business description (≤750 chars — paste as-is, 718 chars):**
-> aitraining.id delivers corporate AI training for teams across Indonesia, on-site and virtually, in Bahasa Indonesia and English. We run practical, hands-on programs that help organisations adopt AI in real workflows: AI Workflow Automation with n8n, AI-Powered Development using Cursor and prompt engineering, AI Strategy & Adoption for leaders, and OpenClaw training. Sessions are tailored to your team's tools and goals rather than generic slideware, so people leave able to apply what they learned the same week. Led by corporate AI trainer and Cursor Ambassador Aurelius Ivan Wijaya, founder of AICON ASIA. Book a session or request a custom program at https://aitraining.id.
+> aitraining.id delivers corporate AI training for teams across Indonesia, on-site and virtually, in Bahasa Indonesia and English. We run practical, hands-on programs that help organisations adopt AI in real workflows: AI Workflow Automation with n8n, AI-Powered Development using Cursor and prompt engineering, AI Strategy & Adoption for leaders, and OpenClaw training. Sessions are tailored to your team's tools and goals rather than generic slideware, so people leave able to apply what they learned the same week. Led by corporate AI trainer and Cursor Ambassador Aurelius Ivan Wijaya. Book a session or request a custom program at https://aitraining.id.
 
 **Services (map to the 4 programs — add each under Services with its own short blurb):**
 | Service name | Short description |

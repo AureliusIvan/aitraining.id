@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer and Cursor Ambassador.",
   keywords: [
     "corporate AI training Indonesia",
     "Generative AI training Indonesia",
@@ -52,14 +52,6 @@ export const metadata: Metadata = {
     title: "AI Corporate Training Indonesia — aitraining.id",
     description:
       "Hands-on corporate AI training for companies in Indonesia. Workshops on AI automation, AI-powered development, and enterprise AI strategy.",
-    images: [
-      {
-        url: "https://aurelivan.com/assets/hero.webp",
-        width: 1200,
-        height: 630,
-        alt: "Corporate AI Training Indonesia — aitraining.id by Aurelius Ivan Wijaya",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -67,7 +59,6 @@ export const metadata: Metadata = {
     description:
       "Hands-on corporate AI training for companies in Indonesia. Delivered by Aurelius Ivan Wijaya.",
     creator: "@aurelivan",
-    images: ["https://aurelivan.com/assets/hero.webp"],
   },
   robots: {
     index: true,
@@ -108,7 +99,7 @@ export default function RootLayout({
         "Speaker",
       ],
       description:
-        "Corporate AI Trainer, Cursor Ambassador, and founder of AICON ASIA. Helps Indonesian enterprises adopt Generative AI through hands-on workshops on prompt engineering, AI automation, and AI-powered development.",
+        "Corporate AI Trainer and Cursor Ambassador. Helps Indonesian enterprises adopt Generative AI through hands-on workshops on prompt engineering, AI automation, and AI-powered development.",
       sameAs: [
         "https://aurelivan.com",
         "https://www.linkedin.com/in/aurelius-ivan-wijaya",

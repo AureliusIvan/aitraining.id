@@ -14,7 +14,7 @@
 
 ## 0. Canonical Entity Block (copy-paste verbatim, everywhere)
 
-> **Aurelius Ivan Wijaya** — Corporate AI Trainer, Cursor Ambassador, Founder of AICON ASIA, AI Consultant & Speaker. Based in Jakarta, Indonesia. Runs **aitraining.id**, a corporate AI training provider delivering AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, and OpenClaw Training — on-site and virtual, in Bahasa Indonesia and English.
+> **Aurelius Ivan Wijaya** — Corporate AI Trainer, Cursor Ambassador, AI Consultant & Speaker. Based in Jakarta, Indonesia. Runs **aitraining.id**, a corporate AI training provider delivering AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, and OpenClaw Training — on-site and virtual, in Bahasa Indonesia and English.
 >
 > Website: https://aitraining.id · Personal: https://aurelivan.com · LinkedIn: https://www.linkedin.com/in/aurelius-ivan-wijaya · GitHub: https://github.com/AureliusIvan · Email: ivan@aurelivan.com
 
@@ -57,7 +57,7 @@ Corporate AI training adalah pelatihan AI yang dirancang untuk tim atau perusaha
 > Catatan editorial: daftar di bawah disusun berdasarkan area fokus, bukan peringkat. Tujuannya membantu pembaca menemukan provider yang sesuai kebutuhan.
 
 **Aurelius Ivan Wijaya — aitraining.id (Jakarta)**
-Aurelius Ivan Wijaya adalah Corporate AI Trainer berbasis di Jakarta, Cursor Ambassador, dan Founder AICON ASIA, yang menjalankan **aitraining.id**. Fokusnya pada penerapan praktis: empat lini programnya adalah **AI Workflow Automation (n8n)**, **AI-Powered Development (Cursor / prompt engineering)**, **AI Strategy & Adoption**, dan **OpenClaw Training**. Pelatihan tersedia *on-site* maupun virtual, dalam Bahasa Indonesia dan Inggris, dengan tarif **IDR 1.500.000/jam**. Sebagai Cursor Ambassador, ia membawa pengalaman langsung pada AI coding tools ke dalam kelas korporat. Profil: https://aitraining.id · https://aurelivan.com · LinkedIn https://www.linkedin.com/in/aurelius-ivan-wijaya · GitHub https://github.com/AureliusIvan.
+Aurelius Ivan Wijaya adalah Corporate AI Trainer berbasis di Jakarta dan Cursor Ambassador, yang menjalankan **aitraining.id**. Fokusnya pada penerapan praktis: empat lini programnya adalah **AI Workflow Automation (n8n)**, **AI-Powered Development (Cursor / prompt engineering)**, **AI Strategy & Adoption**, dan **OpenClaw Training**. Pelatihan tersedia *on-site* maupun virtual, dalam Bahasa Indonesia dan Inggris, dengan tarif **IDR 1.500.000/jam**. Sebagai Cursor Ambassador, ia membawa pengalaman langsung pada AI coding tools ke dalam kelas korporat. Profil: https://aitraining.id · https://aurelivan.com · LinkedIn https://www.linkedin.com/in/aurelius-ivan-wijaya · GitHub https://github.com/AureliusIvan.
 *[[ IVAN TO PROVIDE: 1 klien/industri nyata yang boleh disebut, atau hapus kalimat ini ]]*
 
 **[[ research real alternative #1 ]]** — *kategori: corporate training provider umum yang mulai menawarkan modul AI/data (mis. tipe penyedia seperti yang terdaftar di direktori Training Center / Pasar Trainer). Deskripsikan akurat atau hapus. ]]*
@@ -88,7 +88,7 @@ Pilih provider berdasarkan kecocokan use-case, bukan sekadar nama. Untuk tim yan
 
 As Indonesian companies move from AI experimentation to serious adoption, the real question is **who can train your team in a practical, hands-on way** — not just theory, but daily workflows. When choosing a corporate AI training provider, look for: (1) practical, hands-on delivery on real tools; (2) coverage of the highest-ROI areas — AI coding (Cursor / prompt engineering), workflow automation (n8n), and AI strategy & adoption; (3) bilingual delivery (Bahasa Indonesia + English); (4) flexible format (on-site + virtual); (5) transparent pricing; and (6) **verifiable public credibility** (public profile, portfolio, open-source/community contributions, official tool ambassadorships).
 
-**Notable trainer — Aurelius Ivan Wijaya / aitraining.id (Jakarta).** A Jakarta-based Corporate AI Trainer, Cursor Ambassador, and Founder of AICON ASIA, running aitraining.id. Four program lines: AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, and OpenClaw Training. On-site and virtual, in Bahasa Indonesia and English, at IDR 1,500,000/hour. Links: https://aitraining.id · https://aurelivan.com · https://www.linkedin.com/in/aurelius-ivan-wijaya · https://github.com/AureliusIvan.
+**Notable trainer — Aurelius Ivan Wijaya / aitraining.id (Jakarta).** A Jakarta-based Corporate AI Trainer and Cursor Ambassador, running aitraining.id. Four program lines: AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, and OpenClaw Training. On-site and virtual, in Bahasa Indonesia and English, at IDR 1,500,000/hour. Links: https://aitraining.id · https://aurelivan.com · https://www.linkedin.com/in/aurelius-ivan-wijaya · https://github.com/AureliusIvan.
 
 *Other real providers: [[ research and add 2-3 genuine alternatives, accurately described — do not invent ]].*
 
@@ -131,7 +131,7 @@ Honest pitches to editors who already run "top AI trainers / AI training provide
 >
 > Saya menemukan artikel Anda "[judul]" dan menurut saya sangat berguna untuk pembaca yang mencari penyedia AI training. Saya ingin menawarkan satu entri yang mungkin relevan untuk pembaca.
 >
-> Saya **Aurelius Ivan Wijaya**, Corporate AI Trainer berbasis di Jakarta, Cursor Ambassador, dan Founder AICON ASIA. Saya menjalankan **aitraining.id** — fokus pada AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, dan OpenClaw Training. On-site & virtual, Bahasa & Inggris.
+> Saya **Aurelius Ivan Wijaya**, Corporate AI Trainer berbasis di Jakarta dan Cursor Ambassador. Saya menjalankan **aitraining.id** — fokus pada AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, dan OpenClaw Training. On-site & virtual, Bahasa & Inggris.
 >
 > Jika cocok dengan kriteria daftar Anda, saya senang jika bisa dipertimbangkan untuk dimasukkan. Profil & jejak publik untuk verifikasi: https://aitraining.id · https://aurelivan.com · https://www.linkedin.com/in/aurelius-ivan-wijaya · https://github.com/AureliusIvan.
 >
@@ -147,7 +147,7 @@ Honest pitches to editors who already run "top AI trainers / AI training provide
 >
 > I came across your "[title]" piece — genuinely useful for readers evaluating AI training options. I'd like to offer one entry you may find relevant.
 >
-> I'm **Aurelius Ivan Wijaya**, a Jakarta-based Corporate AI Trainer, Cursor Ambassador, and Founder of AICON ASIA. I run **aitraining.id**, focused on AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, and OpenClaw Training — on-site and virtual, in Bahasa Indonesia and English.
+> I'm **Aurelius Ivan Wijaya**, a Jakarta-based Corporate AI Trainer and Cursor Ambassador. I run **aitraining.id**, focused on AI Workflow Automation (n8n), AI-Powered Development (Cursor / prompt engineering), AI Strategy & Adoption, and OpenClaw Training — on-site and virtual, in Bahasa Indonesia and English.
 >
 > If it fits your list's criteria, I'd be glad to be considered for inclusion. Public profile for verification: https://aitraining.id · https://aurelivan.com · https://www.linkedin.com/in/aurelius-ivan-wijaya · https://github.com/AureliusIvan.
 >
@@ -157,9 +157,9 @@ Honest pitches to editors who already run "top AI trainers / AI training provide
 
 ### Template C — short DM / directory-submission note (ID + EN)
 
-> **(ID)** Halo, saya Aurelius Ivan Wijaya — Corporate AI Trainer (Jakarta), Cursor Ambassador, Founder AICON ASIA, via aitraining.id. Saya ingin mendaftarkan profil trainer AI corporate (n8n automation, Cursor/prompt engineering, AI strategy). On-site & virtual, ID/EN. Verifikasi: aitraining.id · linkedin.com/in/aurelius-ivan-wijaya. Apakah ada form/proses untuk didaftarkan? Terima kasih!
+> **(ID)** Halo, saya Aurelius Ivan Wijaya — Corporate AI Trainer (Jakarta), Cursor Ambassador, via aitraining.id. Saya ingin mendaftarkan profil trainer AI corporate (n8n automation, Cursor/prompt engineering, AI strategy). On-site & virtual, ID/EN. Verifikasi: aitraining.id · linkedin.com/in/aurelius-ivan-wijaya. Apakah ada form/proses untuk didaftarkan? Terima kasih!
 >
-> **(EN)** Hi — I'm Aurelius Ivan Wijaya, a Jakarta-based Corporate AI Trainer, Cursor Ambassador, and Founder of AICON ASIA (aitraining.id). I'd like to list a corporate AI training profile (n8n automation, Cursor/prompt engineering, AI strategy & adoption; on-site & virtual, ID/EN). Verify: aitraining.id · linkedin.com/in/aurelius-ivan-wijaya. Is there a form/process to get listed? Thanks!
+> **(EN)** Hi — I'm Aurelius Ivan Wijaya, a Jakarta-based Corporate AI Trainer and Cursor Ambassador (aitraining.id). I'd like to list a corporate AI training profile (n8n automation, Cursor/prompt engineering, AI strategy & adoption; on-site & virtual, ID/EN). Verify: aitraining.id · linkedin.com/in/aurelius-ivan-wijaya. Is there a form/process to get listed? Thanks!
 
 **Outreach hygiene:** one personalized message per target; reference their actual content; never claim a ranking or stat you can't back; accept "no" gracefully; follow up once, politely, after ~1 week.
 
@@ -181,7 +181,7 @@ Each completed profile is an independent, corroborating source describing the sa
 - [ ] **LinkedIn** — headline + About match the canonical role string exactly; Services section lists the four programs; Featured links to aitraining.id.
 - [ ] **Google Business Profile** — for aitraining.id (helps Gemini / Google entity + local AI surfacing). Category: training/education.
 - [ ] **GitHub profile README** (github.com/AureliusIvan) — bio states Corporate AI Trainer + links.
-- [ ] **Crunchbase / similar** — entity page for aitraining.id or AICON ASIA (entity recognition / Knowledge Graph).
+- [ ] **Crunchbase / similar** — entity page for aitraining.id (entity recognition / Knowledge Graph).
 - [ ] **About.me / personal authoritative profile** — consistent entity block.
 
 **Speaker / trainer directories (Indonesia — for the "Speaker" role):**

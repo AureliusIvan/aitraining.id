@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Corporate AI Trainer Indonesia — Aurelius Ivan Wijaya",
   description:
-    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador dan founder AICON ASIA. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/about",
   },
@@ -48,7 +48,7 @@ export default function AboutPage() {
       "Speaker",
     ],
     description:
-      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador dan founder AICON ASIA — yang membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, prompt engineering, dan enterprise training programs.",
+      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador — yang membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, prompt engineering, dan enterprise training programs.",
     knowsAbout: [
       "Generative AI",
       "Prompt Engineering",
@@ -76,13 +76,6 @@ export default function AboutPage() {
   };
 
   const credentials = [
-    {
-      event: "AICON ASIA",
-      role: "Founder",
-      location: "Indonesia / Asia",
-      description:
-        "Founder AICON ASIA — inisiatif komunitas dan konferensi Generative AI untuk praktisi dan perusahaan di Asia.",
-    },
     {
       event: "Cursor",
       role: "Cursor Ambassador",
@@ -154,7 +147,7 @@ export default function AboutPage() {
     },
     {
       area: "AI Mentorship & Community Building",
-      tools: "Cursor Meetup, Build Club, AICON ASIA",
+      tools: "Cursor Meetup, Build Club",
       description:
         "Mentor komunitas AI developer terbesar di Tangerang dan corporate mentor untuk tim engineering — berkolaborasi dengan komunitas Generative AI global.",
     },
@@ -195,7 +188,7 @@ export default function AboutPage() {
                   </h1>
                   <p className="text-white/60 text-lg mb-6">
                     Corporate AI Trainer · Generative AI Consultant · Cursor
-                    Ambassador · Founder AICON ASIA · Indonesia
+                    Ambassador · Indonesia
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a
@@ -241,9 +234,7 @@ export default function AboutPage() {
                   <p className="text-white/90 text-lg leading-relaxed">
                     Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative
                     AI consultant, dan speaker terkemuka di Indonesia — juga{" "}
-                    <strong className="text-white">Cursor Ambassador</strong>{" "}
-                    dan{" "}
-                    <strong className="text-white">founder AICON ASIA</strong> —
+                    <strong className="text-white">Cursor Ambassador</strong> —
                     yang membantu perusahaan mengadopsi Generative AI melalui
                     hands-on workshops, prompt engineering, enterprise training
                     programs, dan community events.

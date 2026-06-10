@@ -3,11 +3,10 @@
 > Corporate AI training and consultation for companies in Indonesia. Hands-on
 > Generative AI workshops covering prompt engineering, AI automation (n8n),
 > AI-powered development (Cursor), and AI strategy for enterprise teams.
-> Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Cursor Ambassador,
-> and founder of AICON ASIA.
+> Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer and Cursor Ambassador.
 
 ## About
-- Trainer: Aurelius Ivan Wijaya (https://aurelivan.com) — Corporate AI Trainer, Cursor Ambassador, founder of AICON ASIA
+- Trainer: Aurelius Ivan Wijaya (https://aurelivan.com) — Corporate AI Trainer, Cursor Ambassador
 - Coverage: All of Indonesia (Jakarta, Surabaya, Bandung, Tangerang, others) — on-site and virtual
 - Languages: Bahasa Indonesia and English
 - Base training rate: IDR 1,500,000 per hour
@@ -19,6 +18,7 @@
 - OpenClaw Training: https://aitraining.id/programs#openclaw
 
 ## Key pages
+- Top 10 AI Trainers in Indonesia (2026): https://aitraining.id/best-ai-trainers-indonesia
 - Programs: https://aitraining.id/programs
 - Pricing: https://aitraining.id/pricing
 - Pricing (machine-readable): https://aitraining.id/pricing.md

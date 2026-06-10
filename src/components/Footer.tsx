@@ -113,6 +113,12 @@ export function Footer() {
               Cities
             </Link>
             <Link
+              href="/best-ai-trainers-indonesia"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              Top 10 AI Trainers
+            </Link>
+            <Link
               href="/contact"
               className="block text-white/70 hover:text-white transition-colors"
             >
@@ -151,6 +157,14 @@ export function Footer() {
               className="block text-white/70 hover:text-white transition-colors"
             >
               Articles ↗
+            </a>
+            <a
+              href="https://aiforkarir.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              Belajar AI untuk Karir ↗
             </a>
           </div>
         </div>

@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: "Siapa trainer di aitraining.id?",
-    a: "Program di aitraining.id disampaikan oleh Aurelius Ivan Wijaya — Corporate AI Trainer, Cursor Ambassador, dan founder AICON ASIA. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+    a: "Program di aitraining.id disampaikan oleh Aurelius Ivan Wijaya — Corporate AI Trainer dan Cursor Ambassador. Profil lengkap dan portofolio tersedia di aurelivan.com.",
   },
 ];
 
