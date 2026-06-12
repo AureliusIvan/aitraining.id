@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Harga Corporate AI Training — Rate & Paket",
   description:
-    "Rate corporate AI training Indonesia: mulai dari IDR 1.500.000 per jam. Paket half-day, full-day, dan multi-day intensive untuk AI automation, AI development, dan AI strategy. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer & Cursor Ambassador.",
+    "Rate corporate AI training Indonesia: mulai dari IDR 1.500.000 per jam. Paket half-day, full-day, dan multi-day intensive untuk AI automation, AI development, dan AI strategy. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
   alternates: {
     canonical: "https://aitraining.id/pricing",
   },

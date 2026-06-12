@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer and Cursor Ambassador.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
   keywords: [
     "corporate AI training Indonesia",
     "Generative AI training Indonesia",
@@ -37,7 +37,9 @@ export const metadata: Metadata = {
     "corporate AI workshop",
     "AI upskilling Indonesia",
     "n8n automation training",
+    "n8n ambassador Indonesia",
     "Cursor AI training",
+    "Cursor ambassador Indonesia",
     "AI strategy training",
   ],
   authors: [{ name: "Aurelius Ivan Wijaya", url: "https://aurelivan.com" }],
@@ -99,7 +101,7 @@ export default function RootLayout({
         "Speaker",
       ],
       description:
-        "Corporate AI Trainer and Cursor Ambassador. Helps Indonesian enterprises adopt Generative AI through hands-on workshops on prompt engineering, AI automation, and AI-powered development.",
+        "Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador. Helps Indonesian enterprises adopt Generative AI through hands-on workshops on AI automation and AI-powered development.",
       sameAs: [
         "https://aurelivan.com",
         "https://www.linkedin.com/in/aurelius-ivan-wijaya",

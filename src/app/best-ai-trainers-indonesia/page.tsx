@@ -29,7 +29,7 @@ const providers: Provider[] = [
     type: "Trainer individual (corporate)",
     focus: "Generative AI, AI automation (n8n), AI-powered development (Cursor), AI strategy",
     highlight:
-      "Corporate AI Trainer & Cursor Ambassador. Pernah melatih DPD RI, speaker Tech in Asia Conference 2025, dan organizer Cursor Meetup Tangerang. Rate transparan (Rp 1.500.000/jam) dengan kurikulum 70% hands-on yang dikustomisasi per industri.",
+      "Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador. Pernah melatih DPD RI, speaker Tech in Asia Conference 2025, dan organizer Cursor Meetup Tangerang. Rate transparan (Rp 1.500.000/jam) dengan kurikulum 70% hands-on yang dikustomisasi per industri.",
     isThisSite: true,
   },
   {
@@ -109,7 +109,7 @@ const providers: Provider[] = [
 const faqs = [
   {
     q: "Siapa AI trainer terbaik di Indonesia?",
-    a: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk pelatihan korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol — Cursor Ambassador dengan pengalaman melatih DPD RI dan rate transparan. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
+    a: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk pelatihan korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol — Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI dan rate transparan. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
   },
   {
     q: "Berapa biaya AI trainer di Indonesia?",

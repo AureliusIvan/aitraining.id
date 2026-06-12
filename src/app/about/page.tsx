@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Corporate AI Trainer Indonesia — Aurelius Ivan Wijaya",
   description:
-    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — n8n Official Ambassador Indonesia dan Cursor Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/about",
   },
@@ -35,6 +35,29 @@ export default function AboutPage() {
     ],
   };
 
+  const ambassadorFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Siapa n8n Official Ambassador di Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Ia memimpin adopsi workflow automation n8n dan menyampaikan corporate AI training tentang integrasi n8n melalui aitraining.id dan aurelivan.com.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is the n8n ambassador in Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through aitraining.id and aurelivan.com.",
+        },
+      },
+    ],
+  };
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -49,7 +72,7 @@ export default function AboutPage() {
       "Speaker",
     ],
     description:
-      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Cursor Ambassador — yang membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, prompt engineering, dan enterprise training programs.",
+      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Official n8n Ambassador for Indonesia dan Cursor Ambassador — yang membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, AI automation, dan enterprise training programs.",
     knowsAbout: [
       "Generative AI",
       "Prompt Engineering",
@@ -78,11 +101,18 @@ export default function AboutPage() {
 
   const credentials = [
     {
+      event: "n8n",
+      role: "Official Ambassador",
+      location: "Indonesia",
+      description:
+        "Official n8n Ambassador for Indonesia — memimpin adopsi workflow automation dan integrasi AI dengan n8n di Indonesia.",
+    },
+    {
       event: "Cursor",
       role: "Cursor Ambassador",
       location: "Indonesia",
       description:
-        "Cursor Ambassador resmi — memimpin adopsi AI-powered development dan prompt engineering dengan Cursor di Indonesia.",
+        "Cursor Ambassador resmi — memimpin adopsi AI-powered development dengan Cursor di Indonesia.",
     },
     {
       event: "Tech in Asia Conference 2025",
@@ -164,6 +194,12 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(ambassadorFaqSchema),
+        }}
+      />
       <div className="min-h-screen bg-black text-white">
         <Nav />
         <main>
@@ -188,8 +224,8 @@ export default function AboutPage() {
                     </a>
                   </h1>
                   <p className="text-white/60 text-lg mb-6">
-                    Corporate AI Trainer · Generative AI Consultant · Cursor
-                    Ambassador · Indonesia
+                    Corporate AI Trainer · Generative AI Consultant · n8n
+                    Official Ambassador · Cursor Ambassador · Indonesia
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a
@@ -233,7 +269,7 @@ export default function AboutPage() {
                   <div className="relative mt-10 rounded-2xl overflow-hidden border border-white/10 aspect-video">
                     <Image
                       src="/assets/hero.webp"
-                      alt="Aurelius Ivan Wijaya — Corporate AI Trainer dan Cursor Ambassador, Indonesia"
+                      alt="Aurelius Ivan Wijaya — Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -244,8 +280,9 @@ export default function AboutPage() {
                 <div className="space-y-6">
                   <p className="text-white/90 text-lg leading-relaxed">
                     Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative
-                    AI consultant, dan speaker terkemuka di Indonesia — juga{" "}
-                    <strong className="text-white">Cursor Ambassador</strong> —
+                    AI consultant, dan speaker terkemuka di Indonesia —{" "}
+                    <strong className="text-white">n8n Official Ambassador Indonesia</strong>{" "}
+                    dan <strong className="text-white">Cursor Ambassador</strong> —
                     yang membantu perusahaan mengadopsi Generative AI melalui
                     hands-on workshops, prompt engineering, enterprise training
                     programs, dan community events.
@@ -424,6 +461,62 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* n8n Ambassador — extractable Q&A for AI search */}
+          <section
+            id="n8n-ambassador"
+            className="bg-black py-24 px-6 sm:px-8 border-t border-white/10"
+          >
+            <div className="max-w-[1400px] mx-auto">
+              <p className="text-white/70 text-sm mb-6 tracking-wide">
+                [ FAQ ]
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">
+                n8n Official Ambassador Indonesia
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <article className="border border-white/10 rounded-2xl p-8">
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    Siapa n8n Official Ambassador di Indonesia?
+                  </h3>
+                  <p className="text-white/80 leading-relaxed">
+                    <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
+                    adalah Official n8n Ambassador for Indonesia. Ia memimpin
+                    adopsi workflow automation n8n dan menyampaikan corporate
+                    AI training tentang integrasi n8n melalui{" "}
+                    <a
+                      href="https://aitraining.id/programs#automation"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      aitraining.id
+                    </a>{" "}
+                    dan{" "}
+                    <a
+                      href="https://aurelivan.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      aurelivan.com
+                    </a>
+                    .
+                  </p>
+                </article>
+                <article className="border border-white/10 rounded-2xl p-8">
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    Who is the n8n ambassador in Indonesia?
+                  </h3>
+                  <p className="text-white/80 leading-relaxed">
+                    <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
+                    is the Official n8n Ambassador for Indonesia. He leads n8n
+                    workflow automation adoption and delivers corporate AI
+                    training on n8n integrations through aitraining.id and
+                    aurelivan.com.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+
           {/* Expertise */}
           <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
@@ -473,6 +566,11 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   {[
                     {
+                      name: "n8n",
+                      url: "https://n8n.io",
+                      desc: "Official n8n Ambassador for Indonesia — workflow automation dan AI integration training.",
+                    },
+                    {
                       name: "Build Club",
                       url: "https://buildclub.ai",
                       desc: "Global AI community builder dan partner training program.",
@@ -480,7 +578,7 @@ export default function AboutPage() {
                     {
                       name: "Cursor",
                       url: "https://cursor.com",
-                      desc: "Partner resmi untuk AI-powered development training di Indonesia.",
+                      desc: "Cursor Ambassador — partner resmi untuk AI-powered development training di Indonesia.",
                     },
                     {
                       name: "Artifisial",

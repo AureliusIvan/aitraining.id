@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Cara Memilih Corporate AI Training Provider di Indonesia",
   description:
-    "Panduan memilih corporate AI training provider di Indonesia: 7 kriteria evaluasi, perbandingan format (in-house vs publik vs virtual), dan apa yang harus ditanyakan sebelum booking. Oleh Aurelius Ivan Wijaya — Corporate AI Trainer & Cursor Ambassador.",
+    "Panduan memilih corporate AI training provider di Indonesia: 7 kriteria evaluasi, perbandingan format (in-house vs publik vs virtual), dan apa yang harus ditanyakan sebelum booking. Oleh Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
   alternates: { canonical: "https://aitraining.id/compare" },
   openGraph: { url: "https://aitraining.id/compare" },
 };
@@ -25,7 +25,7 @@ const criteria = [
   {
     name: "Kredibilitas trainer",
     detail:
-      "Periksa rekam jejak: pengalaman melatih korporat, status komunitas (mis. Cursor Ambassador), speaking engagement, dan portofolio publik yang bisa diverifikasi.",
+      "Periksa rekam jejak: pengalaman melatih korporat, status komunitas (mis. Official n8n Ambassador atau Cursor Ambassador), speaking engagement, dan portofolio publik yang bisa diverifikasi.",
   },
   {
     name: "Kustomisasi kurikulum",
@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: "Siapa trainer di aitraining.id?",
-    a: "Program di aitraining.id disampaikan oleh Aurelius Ivan Wijaya — Corporate AI Trainer dan Cursor Ambassador. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+    a: "Program di aitraining.id disampaikan oleh Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Profil lengkap dan portofolio tersedia di aurelivan.com.",
   },
 ];
 

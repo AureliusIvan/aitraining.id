@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     absolute: "AI Corporate Training Indonesia — aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer and Cursor Ambassador.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
   alternates: {
     canonical: "https://aitraining.id",
   },
@@ -33,7 +33,7 @@ export default function HomePage() {
         "AI Consultant",
       ],
       description:
-        "Corporate AI Trainer and Cursor Ambassador in Indonesia.",
+        "Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
       sameAs: [
         "https://aurelivan.com",
         "https://www.linkedin.com/in/aurelius-ivan-wijaya",
@@ -90,7 +90,23 @@ export default function HomePage() {
         name: "Siapa yang mendelivery corporate AI training di aitraining.id?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya — corporate AI trainer dan speaker terkemuka di Indonesia. Profil lengkap tersedia di aurelivan.com.",
+          text: "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya — Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap tersedia di aurelivan.com.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Siapa n8n Official Ambassador di Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Ia memimpin adopsi workflow automation n8n dan menyampaikan corporate AI training tentang integrasi n8n melalui aitraining.id dan aurelivan.com. Ia juga Cursor Ambassador dan pernah melatih tim DPD RI.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is the n8n ambassador in Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through aitraining.id and aurelivan.com. He is also a Cursor Ambassador and has trained teams including DPD RI.",
         },
       },
       {
@@ -210,7 +226,7 @@ function HeroSection() {
             >
               Aurelius Ivan Wijaya
             </a>{" "}
-            — Corporate AI Trainer dan Cursor Ambassador di Indonesia.
+            — Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10 animate-fade-in">
@@ -275,7 +291,7 @@ function TrainerSection() {
             <div className="relative mt-8 rounded-2xl overflow-hidden border border-white/10 aspect-video">
               <Image
                 src="/assets/hero.webp"
-                alt="Aurelius Ivan Wijaya — Corporate AI Trainer dan Cursor Ambassador, Indonesia"
+                alt="Aurelius Ivan Wijaya — Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -285,8 +301,9 @@ function TrainerSection() {
           <div className="space-y-6">
             <p className="text-white/90 text-lg leading-relaxed">
               Aurelius Ivan Wijaya adalah Corporate AI Trainer dan speaker
-              terkemuka di Indonesia, juga{" "}
-              <strong className="text-white">Cursor Ambassador</strong>. Ia
+              terkemuka di Indonesia —{" "}
+              <strong className="text-white">n8n Official Ambassador Indonesia</strong>{" "}
+              dan <strong className="text-white">Cursor Ambassador</strong>. Ia
               telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
               Indonesia), berbicara di{" "}
               <strong className="text-white">
@@ -304,6 +321,15 @@ function TrainerSection() {
                 className="underline hover:text-white transition-colors"
               >
                 Build Club
+              </a>
+              ,{" "}
+              <a
+                href="https://n8n.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white transition-colors"
+              >
+                n8n
               </a>
               ,{" "}
               <a
@@ -602,6 +628,11 @@ function DocumentationSection() {
   ];
 
   const partners = [
+    {
+      src: "/assets/clients/n8n.png",
+      alt: "n8n — Aurelius Ivan Wijaya adalah Official n8n Ambassador Indonesia",
+      name: "n8n",
+    },
     {
       src: "/assets/clients/cursor.webp",
       alt: "Cursor — Aurelius Ivan Wijaya adalah Cursor Ambassador Indonesia",
@@ -963,7 +994,17 @@ function FAQSection() {
       question:
         "Siapa yang mendelivery corporate AI training di aitraining.id?",
       answer:
-        "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya — corporate AI trainer dan speaker terkemuka di Indonesia. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+        "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya — Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+    },
+    {
+      question: "Siapa n8n Official Ambassador di Indonesia?",
+      answer:
+        "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Ia memimpin adopsi workflow automation n8n dan menyampaikan corporate AI training tentang integrasi n8n melalui aitraining.id dan aurelivan.com. Ia juga Cursor Ambassador dan pernah melatih tim DPD RI.",
+    },
+    {
+      question: "Who is the n8n ambassador in Indonesia?",
+      answer:
+        "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through aitraining.id and aurelivan.com. He is also a Cursor Ambassador and has trained teams including DPD RI.",
     },
     {
       question: "Program AI training apa yang tersedia?",

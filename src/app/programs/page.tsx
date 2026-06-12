@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Program Corporate AI Training Indonesia",
   description:
-    "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development (prompt engineering), AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer & Cursor Ambassador dari aurelivan.com.",
+    "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development, AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador dari aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/programs",
   },
@@ -212,7 +212,7 @@ export default function ProgramsPage() {
                   >
                     Aurelius Ivan Wijaya
                   </a>{" "}
-                  — Corporate AI Trainer & Cursor Ambassador di Indonesia.
+                  — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.
                 </p>
                 <p className="text-white/50 text-sm">
                   Detail lebih lanjut:{" "}
