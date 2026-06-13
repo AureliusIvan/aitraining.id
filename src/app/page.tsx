@@ -660,11 +660,6 @@ function DocumentationSection() {
       name: "Build Club",
     },
     {
-      src: "/assets/clients/artifisial.png",
-      alt: "Artifisial — partner training AI Indonesia",
-      name: "Artifisial",
-    },
-    {
       src: "/assets/clients/heygen.png",
       alt: "HeyGen — partner AI video generation",
       name: "HeyGen",
