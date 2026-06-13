@@ -707,10 +707,6 @@ function DocumentationSection() {
                 width={120}
                 height={40}
                 className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-                style={{
-                  filter:
-                    "drop-shadow(0.6px 0 0 #fff) drop-shadow(-0.6px 0 0 #fff) drop-shadow(0 0.6px 0 #fff) drop-shadow(0 -0.6px 0 #fff) drop-shadow(0 0 1px rgba(255,255,255,0.6))",
-                }}
               />
             ))}
           </div>
