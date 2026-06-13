@@ -73,6 +73,13 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: "https://aitraining.id",
+    languages: {
+      id: "https://aitraining.id",
+      en: "https://aitraining.id",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -104,8 +111,11 @@ export default function RootLayout({
         "Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador. Helps Indonesian enterprises adopt Generative AI through hands-on workshops on AI automation and AI-powered development.",
       sameAs: [
         "https://aurelivan.com",
+        "https://aitraining.id",
+        "https://aiforkarir.com",
         "https://www.linkedin.com/in/aurelius-ivan-wijaya",
         "https://github.com/AureliusIvan",
+        "https://scholar.google.com/citations?user=1ld-BRwAAAAJ",
         "https://www.superprof.co.id/corporate-trainer-berpengalaman-indonesia-mengajar-workflow-automation-powered-development-dan-strategy-untuk-tim.html",
       ],
     },
@@ -142,6 +152,27 @@ export default function RootLayout({
     sameAs: [
       "https://aurelivan.com",
       "https://aurelivan.com/corporate-training",
+      "https://www.linkedin.com/in/aurelius-ivan-wijaya",
+    ],
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://aurelivan.com/#person",
+    name: "Aurelius Ivan Wijaya",
+    url: "https://aurelivan.com",
+    jobTitle: "Corporate AI Trainer",
+    worksFor: {
+      "@type": "EducationalOrganization",
+      "@id": "https://aitraining.id/#organization",
+    },
+    sameAs: [
+      "https://aurelivan.com",
+      "https://aitraining.id",
+      "https://aiforkarir.com",
+      "https://www.linkedin.com/in/aurelius-ivan-wijaya",
+      "https://github.com/AureliusIvan",
     ],
   };
 
@@ -172,6 +203,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
           }}
         />
       </head>

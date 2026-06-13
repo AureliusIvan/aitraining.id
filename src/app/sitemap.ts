@@ -5,7 +5,7 @@ import { cities } from "@/lib/cities";
 // Stamping every URL with the build date is a false freshness signal
 // engines learn to ignore.
 const LAST_MODIFIED = {
-  home: new Date("2026-06-10"),
+  home: new Date("2026-06-12"),
   programs: new Date("2026-06-06"),
   about: new Date("2026-06-10"),
   cities: new Date("2026-06-06"),
@@ -15,6 +15,7 @@ const LAST_MODIFIED = {
   playbook: new Date("2026-06-06"),
   playbookDailyPrompt: new Date("2026-06-06"),
   bestAiTrainers: new Date("2026-06-10"),
+  pelatihanAiPerusahaan: new Date("2026-06-12"),
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -43,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/best-ai-trainers-indonesia`,
       lastModified: LAST_MODIFIED.bestAiTrainers,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pelatihan-ai-untuk-perusahaan`,
+      lastModified: LAST_MODIFIED.pelatihanAiPerusahaan,
       changeFrequency: "monthly",
       priority: 0.9,
     },

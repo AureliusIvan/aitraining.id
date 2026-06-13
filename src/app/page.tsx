@@ -157,6 +157,22 @@ export default function HomePage() {
           text: "Ya, corporate AI training tersedia dalam Bahasa Indonesia maupun Bahasa Inggris. Sebagian besar sesi untuk perusahaan Indonesia disampaikan dalam Bahasa Indonesia dengan terminologi teknis dalam bahasa Inggris.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Apa itu pelatihan AI untuk perusahaan?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Pelatihan AI untuk perusahaan adalah program hands-on yang mengajarkan karyawan memakai Generative AI, automation (n8n), dan AI agents di pekerjaan harian — dengan kurikulum dikustomisasi per industri. aitraining.id menyediakan program on-site dan virtual di seluruh Indonesia. Panduan lengkap: aitraining.id/pelatihan-ai-untuk-perusahaan.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Siapa trainer AI terbaik di Indonesia untuk korporat?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk corporate workshop hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) menonjol sebagai Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan rate transparan Rp 1.500.000/jam. Perbandingan 10 provider: aitraining.id/best-ai-trainers-indonesia.",
+        },
+      },
     ],
   };
 
@@ -648,6 +664,11 @@ function DocumentationSection() {
       alt: "Artifisial — partner training AI Indonesia",
       name: "Artifisial",
     },
+    {
+      src: "/assets/clients/heygen.png",
+      alt: "HeyGen — partner AI video generation",
+      name: "HeyGen",
+    },
   ];
 
   return (
@@ -690,7 +711,11 @@ function DocumentationSection() {
                 alt={partner.alt}
                 width={120}
                 height={40}
-                className="h-8 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+                className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                style={{
+                  filter:
+                    "drop-shadow(0.6px 0 0 #fff) drop-shadow(-0.6px 0 0 #fff) drop-shadow(0 0.6px 0 #fff) drop-shadow(0 -0.6px 0 #fff) drop-shadow(0 0 1px rgba(255,255,255,0.6))",
+                }}
               />
             ))}
           </div>
@@ -1037,6 +1062,16 @@ function FAQSection() {
       question: "Apakah training tersedia dalam Bahasa Indonesia?",
       answer:
         "Ya, corporate AI training tersedia dalam Bahasa Indonesia maupun Bahasa Inggris. Sebagian besar sesi untuk perusahaan Indonesia disampaikan dalam Bahasa Indonesia dengan terminologi teknis bahasa Inggris.",
+    },
+    {
+      question: "Apa itu pelatihan AI untuk perusahaan?",
+      answer:
+        "Pelatihan AI untuk perusahaan adalah program hands-on yang mengajarkan karyawan memakai Generative AI, automation, dan AI agents di pekerjaan harian — dengan kurikulum dikustomisasi per industri. Lihat panduan lengkap di halaman pelatihan AI untuk perusahaan.",
+    },
+    {
+      question: "Siapa trainer AI terbaik di Indonesia untuk korporat?",
+      answer:
+        "Pilihan tergantung format dan kebutuhan tim. Untuk corporate workshop hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu opsi dengan kredensial terverifikasi dan harga transparan. Lihat perbandingan 10 provider di daftar trainer AI terbaik Indonesia.",
     },
   ];
 

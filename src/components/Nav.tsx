@@ -14,7 +14,6 @@ export function Nav() {
           <ul className="hidden md:flex items-center gap-8 text-sm text-white/70">
             {[
               { name: "programs", href: "/programs" },
-              { name: "pricing", href: "/pricing" },
               { name: "about trainer", href: "/about" },
               { name: "cities", href: "/cities" },
               { name: "panduan", href: "/compare" },
