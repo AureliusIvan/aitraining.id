@@ -698,16 +698,20 @@ function DocumentationSection() {
           <p className="text-white/40 text-sm mb-6 text-center">
             Bermitra dengan
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-5">
             {partners.map((partner) => (
-              <Image
+              <div
                 key={partner.name}
-                src={partner.src}
-                alt={partner.alt}
-                width={120}
-                height={40}
-                className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-              />
+                className="flex items-center justify-center rounded-xl bg-white/90 px-6 py-4 hover:bg-white transition-colors"
+              >
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
