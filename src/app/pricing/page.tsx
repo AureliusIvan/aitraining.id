@@ -67,6 +67,19 @@ const drivers = [
   "Inklusi recording, materi, sertifikat, dan support pasca-training",
 ];
 
+const pricingFaqs = [
+  {
+    question: "Berapa biaya AI training corporate di Indonesia?",
+    answer:
+      "Corporate AI training di Indonesia melalui aitraining.id berbasis rate IDR 1.500.000 per jam. Half-day workshop (4 jam) mulai dari IDR 6.000.000; full-day (8 jam) mulai IDR 12.000.000; program 2 hari mulai IDR 24.000.000. Quote final menyesuaikan jumlah peserta, kustomisasi kurikulum, dan on-site/virtual. Konsultasi discovery 30 menit gratis.",
+  },
+  {
+    question: "How much does corporate AI training in Indonesia cost?",
+    answer:
+      "Corporate AI training in Indonesia through aitraining.id starts at IDR 1,500,000 per hour. Half-day workshops (4 hours) from IDR 6,000,000; full-day (8 hours) from IDR 12,000,000; two-day programs from IDR 24,000,000. Final quotes depend on group size, curriculum customization, and on-site vs virtual delivery. First 30-minute discovery call is free.",
+  },
+];
+
 export default function PricingPage() {
   const offerSchema = {
     "@context": "https://schema.org",
@@ -99,11 +112,25 @@ export default function PricingPage() {
     },
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: pricingFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Nav />
       <main>
@@ -128,6 +155,21 @@ export default function PricingPage() {
                 Konsultasi pertama gratis.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section className="bg-black py-12 px-6 sm:px-8 border-t border-white/10">
+          <div className="max-w-3xl mx-auto space-y-10">
+            {pricingFaqs.map((faq) => (
+              <div key={faq.question}>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  {faq.question}
+                </h2>
+                <p className="text-white/70 text-lg leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 

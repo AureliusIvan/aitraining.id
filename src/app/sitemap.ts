@@ -10,7 +10,7 @@ const LAST_MODIFIED = {
   about: new Date("2026-06-10"),
   cities: new Date("2026-06-06"),
   compare: new Date("2026-06-10"),
-  pricing: new Date("2026-06-06"),
+  pricing: new Date("2026-06-15"),
   contact: new Date("2026-06-06"),
   playbook: new Date("2026-06-06"),
   playbookDailyPrompt: new Date("2026-06-06"),
