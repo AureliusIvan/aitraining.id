@@ -80,6 +80,15 @@ export const metadata: Metadata = {
       en: "https://aitraining.id",
     },
   },
+  ...(process.env.BING_SITE_VERIFICATION
+    ? {
+        verification: {
+          other: {
+            "msvalidate.01": process.env.BING_SITE_VERIFICATION,
+          },
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({

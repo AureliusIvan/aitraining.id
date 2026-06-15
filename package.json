@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "postbuild": "node scripts/indexnow-ping.mjs",
+    "indexnow": "INDEXNOW_FORCE=1 node scripts/indexnow-ping.mjs",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"
