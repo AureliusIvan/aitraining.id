@@ -1,7 +1,7 @@
 # Pricing — aitraining.id Corporate AI Training
 
 Corporate AI training and consultation by **Aurelius Ivan Wijaya** — Corporate AI
-Trainer and Cursor Ambassador. Delivered on-site across Indonesia (Jakarta,
+Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador. Delivered on-site across Indonesia (Jakarta,
 Surabaya, Bandung, Tangerang, and other cities) or virtually.
 
 > Pricing is rate-based. The base training rate is **IDR 1,500,000 per hour**.

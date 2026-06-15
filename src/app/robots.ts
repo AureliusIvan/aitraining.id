@@ -4,12 +4,13 @@ import type { MetadataRoute } from "next";
 // (Google index + Knowledge Graph). Blocking any of these prevents citation.
 const AI_SEARCH_BOTS = [
   "Google-Extended", // Gemini + Google AI Overviews
-  "GPTBot", // ChatGPT search
-  "ChatGPT-User",
+  "OAI-SearchBot", // ChatGPT Search — surfaces & cites pages in results
+  "GPTBot", // OpenAI model training
+  "ChatGPT-User", // ChatGPT user-triggered live fetch
   "PerplexityBot",
   "ClaudeBot",
   "anthropic-ai",
-  "Bingbot", // Copilot
+  "Bingbot", // Copilot + ChatGPT Search index backend
 ] as const;
 
 export default function robots(): MetadataRoute.Robots {

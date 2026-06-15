@@ -1,7 +1,7 @@
 # aitraining.id
 
 > Corporate AI training and consultation for companies in Indonesia. Hands-on
-> Generative AI workshops covering prompt engineering, AI automation (n8n),
+> Generative AI workshops covering AI agent building, AI automation (n8n),
 > AI-powered development (Cursor), and AI strategy for enterprise teams.
 > Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n
 > Ambassador for Indonesia, and Cursor Ambassador.
@@ -15,7 +15,7 @@
 
 ## Programs
 - AI Workflow Automation (n8n) — for operations, marketing, HR, finance teams: https://aitraining.id/programs#automation
-- AI-Powered Development (Cursor, prompt engineering) — for engineering teams: https://aitraining.id/programs#development
+- AI-Powered Development (Cursor, agent building) — for engineering teams: https://aitraining.id/programs#development
 - AI Strategy & Adoption — executive session for C-suite and business leaders: https://aitraining.id/programs#strategy
 - OpenClaw Training: https://aitraining.id/programs#openclaw
 
