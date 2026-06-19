@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 export const alt =
-  "Corporate AI Training Indonesia — aitraining.id by Aurelius Ivan Wijaya";
+  "Corporate AI Training Indonesia | aitraining.id by Aurelius Ivan Wijaya";
 export const size = {
   width: 1200,
   height: 630,

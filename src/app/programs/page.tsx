@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Program Corporate AI Training Indonesia",
   description:
-    "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development, AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador dari aurelivan.com.",
+    "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development, AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador dari aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/programs",
   },
@@ -27,7 +27,7 @@ const programs = [
     outcomes: [
       "Build automated workflows dari nol menggunakan n8n",
       "Integrasikan AI ke proses bisnis harian (email, CRM, database)",
-      "Kurangi repetitive tasks hingga 60–80%",
+      "Kurangi repetitive tasks hingga 60-80%",
       "Hubungkan 200+ tools: Gmail, Slack, WhatsApp, Notion, dan lainnya",
       "Build AI-powered email responder dan document processor",
       "Monitor dan maintain automated workflows",
@@ -44,28 +44,28 @@ const programs = [
   },
   {
     id: "development",
-    tags: "[ Cursor, AI coding, prompt engineering, AI engineering ]",
+    tags: "[ Cursor, AI coding agents, agentic development, code review ]",
     title: "AI-Powered Development",
     badge: "Untuk engineering & tech teams",
     duration: "Full-day (8 jam) atau 2-day intensive",
     audience: "Software developers, engineers, tech leads",
     description:
-      "Upskill tim engineering Anda dengan Generative AI development tools terkini. Program ini berfokus pada penggunaan Cursor IDE, prompt engineering untuk coding, AI coding assistants, dan modern AI engineering practices untuk mempercepat development cycle dan meningkatkan kualitas kode. Disampaikan oleh Cursor Ambassador Indonesia.",
+      "Upskill tim engineering Anda untuk mengarahkan AI coding agents dalam membangun, mereview, dan mengirim software. Program ini fokus pada agentic development dengan Cursor: memberi agent konteks codebase, menjalankan perubahan multi-file, lalu mereview hasilnya. Disampaikan oleh Cursor Ambassador Indonesia.",
     outcomes: [
-      "Master AI-assisted coding dengan Cursor IDE",
-      "Percepat development speed 2–5x",
-      "Improve code quality dengan AI code review",
-      "Build AI features ke dalam produk existing",
-      "Implementasi AI testing dan debugging workflow",
-      "Best practices untuk AI-assisted development di tim",
+      "Mengarahkan AI coding agent di seluruh codebase dengan percaya diri",
+      "Mempercepat development cycle lewat agentic workflow",
+      "Menaikkan kualitas kode dengan AI code review",
+      "Membangun fitur AI ke produk yang sudah berjalan: API integration, RAG, agents",
+      "Menerapkan AI testing dan debugging workflow",
+      "Menstandarkan agentic development practices di seluruh tim",
     ],
     modules: [
-      "Overview AI-powered development landscape",
-      "Deep dive: Cursor IDE setup dan advanced features",
-      "Prompt engineering untuk coding tasks",
-      "AI code review dan refactoring techniques",
-      "Building AI features: API integration, RAG, agents",
-      "Team workflow dan collaboration best practices",
+      "Lanskap agentic development dan posisi Cursor di dalamnya",
+      "Cursor: setup dan fitur lanjutan untuk tim",
+      "Mengarahkan AI agent: multi-file edits dan codebase-aware builds",
+      "AI code review dan refactoring",
+      "Membangun fitur AI: API integration, RAG, agents",
+      "Team workflow dan kolaborasi",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/ai-development",
   },
@@ -79,7 +79,7 @@ const programs = [
     description:
       "Executive-level training dirancang khusus untuk business leaders yang perlu memahami AI secara strategis. Program ini membantu Anda mengidentifikasi AI opportunities terbesar, membangun AI-first culture, dan mengembangkan practical AI roadmap untuk organisasi Anda.",
     outcomes: [
-      "Develop AI adoption roadmap yang actionable untuk 6–12 bulan ke depan",
+      "Develop AI adoption roadmap yang actionable untuk 6-12 bulan ke depan",
       "Identifikasi high-impact AI use cases spesifik untuk industri Anda",
       "Bangun internal AI capabilities dan upskilling plan",
       "Pahami AI risks, governance, dan compliance",
@@ -240,7 +240,7 @@ export default function ProgramsPage() {
                   >
                     Aurelius Ivan Wijaya
                   </a>{" "}
-                  — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.
+                  , Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.
                 </p>
                 <p className="text-white/50 text-sm">
                   Detail lebih lanjut:{" "}

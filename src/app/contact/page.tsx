@@ -3,9 +3,9 @@ import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Hubungi Kami — Book Corporate AI Training",
+  title: "Hubungi Kami | Book Corporate AI Training",
   description:
-    "Book corporate AI training untuk perusahaan Anda di Indonesia. Jadwalkan konsultasi gratis dengan Aurelius Ivan Wijaya — corporate AI trainer Indonesia.",
+    "Book corporate AI training untuk perusahaan Anda di Indonesia. Jadwalkan konsultasi gratis dengan Aurelius Ivan Wijaya, corporate AI trainer Indonesia.",
   alternates: {
     canonical: "https://aitraining.id/contact",
   },
@@ -170,7 +170,7 @@ export default function ContactPage() {
                   </div>
                 ))}
                 <p className="text-white/50 text-sm pt-4">
-                  Tidak perlu menjawab semuanya sekarang — kami bisa diskusikan
+                  Tidak perlu menjawab semuanya sekarang; kami bisa diskusikan
                   di konsultasi call.
                 </p>
               </div>

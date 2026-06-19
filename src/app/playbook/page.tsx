@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "AI Playbooks — Panduan Praktis AI untuk Kerja",
+  title: "AI Playbooks | Panduan Praktis AI untuk Kerja",
   description:
     "Kumpulan playbook dan panduan praktis AI dari aitraining.id. Template prompt siap pakai, step-by-step guide, dan companion resource dari workshop & webinar Aurelius Ivan Wijaya.",
   alternates: {
@@ -21,7 +21,7 @@ const playbooks = [
     badge: "BARU",
     title: "Daily Prompt Playbook",
     description:
-      "7 prompt template siap pakai untuk kerja harian — email profesional, meeting notes, konten social media, analisis data, brainstorming, review tulisan, dan persiapan presentasi.",
+      "7 prompt template siap pakai untuk kerja harian: email profesional, meeting notes, konten social media, analisis data, brainstorming, review tulisan, dan persiapan presentasi.",
     tags: ["Email", "Social Media", "Analisis Data", "Brainstorming"],
     companion: "Webinar 'Cara Pakai AI Biar Hasilnya Nggak Sampah'",
   },

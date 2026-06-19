@@ -1,6 +1,6 @@
-# Pricing — aitraining.id Corporate AI Training
+# Pricing | aitraining.id Corporate AI Training
 
-Corporate AI training and consultation by **Aurelius Ivan Wijaya** — Corporate AI
+Corporate AI training and consultation by **Aurelius Ivan Wijaya**, Corporate AI
 Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador. Delivered on-site across Indonesia (Jakarta,
 Surabaya, Bandung, Tangerang, and other cities) or virtually.
 
@@ -13,30 +13,30 @@ Surabaya, Bandung, Tangerang, and other cities) or virtually.
 - **Training delivery: IDR 1,500,000 per hour** (≈ USD 92/hour)
 - Currency: Indonesian Rupiah (IDR)
 - Languages: Bahasa Indonesia or English
-- Coverage: All of Indonesia — on-site and virtual
+- Coverage: All of Indonesia: on-site and virtual
 
 ## Packages (derived from the hourly base rate)
 
-### Intro / Executive Session — from IDR 6,000,000
+### Intro / Executive Session: from IDR 6,000,000
 - Duration: Half-day, 4 hours
 - Audience: Single team or C-suite executive briefing
 - Format: On-site or virtual
 - Includes: Slides, hands-on lab, session recording, certificate of completion
 
-### Full-Day Workshop — from IDR 12,000,000
+### Full-Day Workshop: from IDR 12,000,000
 - Duration: Full-day, 8 hours
 - Audience: Up to ~20 participants per cohort
 - Programs: AI Workflow Automation (n8n), AI-Powered Development (Cursor),
   AI Strategy & Adoption, OpenClaw Training, Generative Engine Optimization (GEO)
 - Includes: Custom-fit curriculum, materials, recordings, certificate
 
-### Multi-Day Intensive — from IDR 24,000,000
-- Duration: 2 days (16 hours); 3–5 day programs available
+### Multi-Day Intensive: from IDR 24,000,000
+- Duration: 2 days (16 hours); 3-5 day programs available
 - Audience: Engineering teams or multi-team rollouts
 - Includes: Tailored curriculum, hands-on projects, materials, recordings,
   30-day post-training Q&A support
 
-### Custom / Enterprise — request quote
+### Custom / Enterprise: request quote
 - Multi-team rollouts, tailored curriculum, recurring enablement / advisory retainers
 - Contact: ivan@aurelivan.com
 

@@ -28,15 +28,15 @@ export async function generateMetadata({
 const programs = [
   {
     name: "AI Workflow Automation",
-    note: "n8n — operations, marketing, HR, finance",
+    note: "n8n: operations, marketing, HR, finance",
   },
   {
     name: "AI-Powered Development",
-    note: "Cursor + prompt engineering — engineering teams",
+    note: "Cursor + prompt engineering, engineering teams",
   },
   {
     name: "AI Strategy & Adoption",
-    note: "executive session — C-suite & leaders",
+    note: "executive session, C-suite & leaders",
   },
   { name: "OpenClaw Training", note: "hands-on AI agent workflows" },
 ];

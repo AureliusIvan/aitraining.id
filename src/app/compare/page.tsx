@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Cara Memilih Corporate AI Training Provider di Indonesia",
   description:
-    "Panduan memilih corporate AI training provider di Indonesia: 7 kriteria evaluasi, perbandingan format (in-house vs publik vs virtual), dan apa yang harus ditanyakan sebelum booking. Oleh Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
+    "Panduan memilih corporate AI training provider di Indonesia: 7 kriteria evaluasi, perbandingan format (in-house vs publik vs virtual), dan apa yang harus ditanyakan sebelum booking. Oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
   alternates: { canonical: "https://aitraining.id/compare" },
   openGraph: { url: "https://aitraining.id/compare" },
 };
@@ -20,7 +20,7 @@ const criteria = [
   {
     name: "Relevansi tool",
     detail:
-      "Pastikan training menggunakan tool yang benar-benar dipakai tim — n8n untuk automation, Cursor untuk development, LLM seperti ChatGPT/Claude/Gemini untuk produktivitas.",
+      "Pastikan training menggunakan tool yang benar-benar dipakai tim: n8n untuk automation, Cursor untuk development, LLM seperti ChatGPT/Claude/Gemini untuk produktivitas.",
   },
   {
     name: "Kredibilitas trainer",
@@ -30,7 +30,7 @@ const criteria = [
   {
     name: "Kustomisasi kurikulum",
     detail:
-      "Provider terbaik menyesuaikan use case dengan industri Anda — manufaktur, finance, kreatif, atau engineering — bukan satu kurikulum untuk semua.",
+      "Provider terbaik menyesuaikan use case dengan industri Anda (manufaktur, finance, kreatif, atau engineering), bukan satu kurikulum untuk semua.",
   },
   {
     name: "Format delivery",
@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     q: "Berapa biaya corporate AI training di Indonesia?",
-    a: "Biaya bervariasi tergantung format, durasi, dan jumlah peserta. aitraining.id memakai rate dasar Rp 1.500.000 per jam — half-day mulai Rp 6.000.000, full-day mulai Rp 12.000.000, dan multi-day intensive mulai Rp 24.000.000. Transparansi harga seperti ini memudahkan perbandingan antar provider.",
+    a: "Biaya bervariasi tergantung format, durasi, dan jumlah peserta. aitraining.id memakai rate dasar Rp 1.500.000 per jam: half-day mulai Rp 6.000.000, full-day mulai Rp 12.000.000, dan multi-day intensive mulai Rp 24.000.000. Transparansi harga seperti ini memudahkan perbandingan antar provider.",
   },
   {
     q: "Lebih baik in-house atau public training?",
@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: "Siapa trainer di aitraining.id?",
-    a: "Program di aitraining.id disampaikan oleh Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+    a: "Program di aitraining.id disampaikan oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Profil lengkap dan portofolio tersedia di aurelivan.com.",
   },
 ];
 
@@ -137,7 +137,7 @@ export default function ComparePage() {
                   <span className="text-white/60">Provider di Indonesia</span>
                 </h1>
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed">
-                  Panduan praktis mengevaluasi corporate AI training provider —
+                  Panduan praktis mengevaluasi corporate AI training provider:
                   7 kriteria kunci, perbandingan format delivery, dan pertanyaan
                   yang harus diajukan sebelum booking.
                 </p>

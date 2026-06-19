@@ -3,9 +3,9 @@ import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Harga Corporate AI Training — Rate & Paket",
+  title: "Harga Corporate AI Training | Rate & Paket",
   description:
-    "Rate corporate AI training Indonesia: mulai dari IDR 1.500.000 per jam. Paket half-day, full-day, dan multi-day intensive untuk AI automation, AI development, dan AI strategy. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
+    "Rate corporate AI training Indonesia: mulai dari IDR 1.500.000 per jam. Paket half-day, full-day, dan multi-day intensive untuk AI automation, AI development, dan AI strategy. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
   alternates: {
     canonical: "https://aitraining.id/pricing",
   },
@@ -46,7 +46,7 @@ const packages = [
   {
     label: "Intensive",
     title: "Multi-day Program",
-    duration: "2 hari (16 jam), 3–5 hari tersedia",
+    duration: "2 hari (16 jam), 3-5 hari tersedia",
     from: "Rp 24.000.000",
     audience: "Engineering team atau multi-team rollout",
     includes: [
@@ -84,7 +84,7 @@ export default function PricingPage() {
   const offerSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Corporate AI Training — aitraining.id",
+    name: "Corporate AI Training | aitraining.id",
     serviceType: "Corporate AI Training",
     provider: {
       "@type": "Person",
@@ -203,7 +203,7 @@ export default function PricingPage() {
                         key={j}
                         className="flex items-start gap-2 text-white/70 text-sm"
                       >
-                        <span className="text-white/30 mt-0.5">—</span>
+                        <span className="text-white/30 mt-0.5">·</span>
                         <span>{item}</span>
                       </li>
                     ))}

@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Pelatihan AI untuk Perusahaan & Karyawan di Indonesia (2026)",
   description:
-    "Panduan pelatihan AI untuk perusahaan dan karyawan di Indonesia: program hands-on, format on-site/virtual, biaya transparan, dan cara memilih provider. Disampaikan oleh Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
+    "Panduan pelatihan AI untuk perusahaan dan karyawan di Indonesia: program hands-on, format on-site/virtual, biaya transparan, dan cara memilih provider. Disampaikan oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador.",
   alternates: {
     canonical: "https://aitraining.id/pelatihan-ai-untuk-perusahaan",
     languages: {
@@ -52,7 +52,7 @@ const programs = [
 const faqs = [
   {
     q: "Apa itu pelatihan AI untuk perusahaan?",
-    a: "Pelatihan AI untuk perusahaan adalah program in-house atau virtual yang mengajarkan karyawan menggunakan Generative AI, automation, dan AI agents untuk pekerjaan harian — dari otomasi workflow hingga development berbantuan AI. Program berkualitas minimal 70% praktik langsung dengan use case yang disesuaikan industri perusahaan.",
+    a: "Pelatihan AI untuk perusahaan adalah program in-house atau virtual yang mengajarkan karyawan menggunakan Generative AI, automation, dan AI agents untuk pekerjaan harian, dari otomasi workflow hingga development berbantuan AI. Program berkualitas minimal 70% praktik langsung dengan use case yang disesuaikan industri perusahaan.",
   },
   {
     q: "Apa bedanya pelatihan AI untuk karyawan dan untuk manajemen?",
@@ -60,19 +60,19 @@ const faqs = [
   },
   {
     q: "Berapa biaya pelatihan AI untuk perusahaan di Indonesia?",
-    a: "Biaya bervariasi menurut durasi dan jumlah peserta. aitraining.id memakai rate dasar Rp 1.500.000 per jam — half-day workshop (4 jam) mulai Rp 6.000.000, full-day (8 jam) mulai Rp 12.000.000, dan program multi-day mulai Rp 24.000.000. Harga lengkap tersedia di halaman pricing dan pricing.md.",
+    a: "Biaya bervariasi menurut durasi dan jumlah peserta. aitraining.id memakai rate dasar Rp 1.500.000 per jam: half-day workshop (4 jam) mulai Rp 6.000.000, full-day (8 jam) mulai Rp 12.000.000, dan program multi-day mulai Rp 24.000.000. Harga lengkap tersedia di halaman pricing dan pricing.md.",
   },
   {
     q: "Apakah pelatihan AI bisa dilakukan on-site di kantor kami?",
-    a: "Ya. Pelatihan on-site tersedia di seluruh Indonesia — Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya. Format virtual juga tersedia untuk tim remote atau hybrid. On-site umumnya lebih efektif untuk tim 8 orang ke atas yang butuh hands-on intensif.",
+    a: "Ya. Pelatihan on-site tersedia di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya. Format virtual juga tersedia untuk tim remote atau hybrid. On-site umumnya lebih efektif untuk tim 8 orang ke atas yang butuh hands-on intensif.",
   },
   {
     q: "Siapa yang mengajar pelatihan AI korporat di aitraining.id?",
-    a: "Semua sesi didelivery oleh Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Ia pernah melatih tim DPD RI dan menjadi speaker Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    a: "Semua sesi didelivery oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Ia pernah melatih tim DPD RI dan menjadi speaker Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   },
   {
     q: "Berapa lama pelatihan AI untuk karyawan biasanya berlangsung?",
-    a: "Durasi umum: half-day intensive (4 jam), full-day workshop (8 jam), atau program multi-day (2–5 hari) untuk adopsi lebih dalam. Sebagian besar perusahaan memulai dengan satu full-day workshop, lalu sesi lanjutan setelah tim mencoba implementasi di lapangan.",
+    a: "Durasi umum: half-day intensive (4 jam), full-day workshop (8 jam), atau program multi-day (2-5 hari) untuk adopsi lebih dalam. Sebagian besar perusahaan memulai dengan satu full-day workshop, lalu sesi lanjutan setelah tim mencoba implementasi di lapangan.",
   },
 ];
 
@@ -109,7 +109,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
-    name: "Pelatihan AI untuk Perusahaan — Corporate AI Training Indonesia",
+    name: "Pelatihan AI untuk Perusahaan | Corporate AI Training Indonesia",
     description:
       "Program pelatihan AI hands-on untuk perusahaan di Indonesia: automation, AI-powered development, dan AI strategy.",
     provider: {
@@ -205,7 +205,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
                   Pelatihan AI untuk perusahaan adalah program hands-on yang
                   mengajarkan karyawan memakai Generative AI, automation, dan AI
-                  agents di pekerjaan harian — dengan kurikulum yang disesuaikan
+                  agents di pekerjaan harian, dengan kurikulum yang disesuaikan
                   industri dan role tim Anda.
                 </p>
                 <p className="text-white/50 text-sm max-w-2xl leading-relaxed">
@@ -218,7 +218,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
                   >
                     Aurelius Ivan Wijaya
                   </a>{" "}
-                  — Corporate AI Trainer, Official n8n Ambassador for Indonesia &
+                  Corporate AI Trainer, Official n8n Ambassador for Indonesia &
                   Cursor Ambassador.
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
                   headcount.
                 </p>
                 <p className="text-white/70 leading-relaxed">
-                  Pelatihan AI korporat yang efektif bukan seminar teori — tim
+                  Pelatihan AI korporat yang efektif bukan seminar teori. Tim
                   harus pulang dengan workflow yang sudah jalan: automation di
                   n8n, development berbantuan Cursor, atau strategi adopsi yang
                   disepakati manajemen.
@@ -254,7 +254,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
                 Program pelatihan AI untuk karyawan
               </h2>
               <p className="text-white/60 mb-10 max-w-2xl">
-                Empat jalur program di aitraining.id — semua 70% hands-on,
+                Empat jalur program di aitraining.id, semua 70% hands-on,
                 dikustomisasi per industri.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">

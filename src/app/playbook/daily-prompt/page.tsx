@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PlaybookClient from "./PlaybookClient";
 
 export const metadata: Metadata = {
-  title: "Daily Prompt Playbook — Panduan Praktis AI untuk Kerja Harian",
+  title: "Daily Prompt Playbook | Panduan Praktis AI untuk Kerja Harian",
   description:
     "Kumpulan 7 prompt template siap pakai untuk kerja harian: email profesional, rangkum meeting, konten social media, analisis data, brainstorming, review tulisan, dan persiapan presentasi. Companion guide dari webinar 'Cara Pakai AI Biar Hasilnya Nggak Sampah' oleh Aurelius Ivan Wijaya.",
   keywords: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     canonical: "https://aitraining.id/playbook/daily-prompt",
   },
   openGraph: {
-    title: "Daily Prompt Playbook — Panduan Praktis AI untuk Kerja Harian",
+    title: "Daily Prompt Playbook | Panduan Praktis AI untuk Kerja Harian",
     description:
       "7 prompt template siap pakai untuk email, meeting, konten social media, analisis data, brainstorming, review tulisan, dan presentasi. Tinggal copy, edit variabel, paste ke AI.",
     url: "https://aitraining.id/playbook/daily-prompt",
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         url: "https://aurelivan.com/assets/hero.webp",
         width: 1200,
         height: 630,
-        alt: "Daily Prompt Playbook — Panduan Praktis AI untuk Kerja Harian by Aurelius Ivan Wijaya",
+        alt: "Daily Prompt Playbook | Panduan Praktis AI untuk Kerja Harian by Aurelius Ivan Wijaya",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daily Prompt Playbook — Panduan Praktis AI untuk Kerja Harian",
+    title: "Daily Prompt Playbook | Panduan Praktis AI untuk Kerja Harian",
     description:
       "7 prompt template siap pakai untuk kerja harian. Tinggal copy, edit variabel, paste ke AI.",
     creator: "@aurelivan",
@@ -52,7 +52,7 @@ export default function PlaybookPage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Daily Prompt Playbook — Panduan Praktis AI untuk Kerja Harian",
+    headline: "Daily Prompt Playbook | Panduan Praktis AI untuk Kerja Harian",
     description:
       "Kumpulan 7 prompt template siap pakai untuk kerja harian. Companion guide dari webinar 'Cara Pakai AI Biar Hasilnya Nggak Sampah'.",
     url: "https://aitraining.id/playbook/daily-prompt",

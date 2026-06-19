@@ -65,7 +65,7 @@ const templates = [
     icon: "✉",
     title: "Email Profesional",
     description:
-      "Follow-up meeting, minta approval, update ke atasan — email bisnis yang langsung to the point.",
+      "Follow-up meeting, minta approval, update ke atasan: email bisnis yang langsung to the point.",
     prompt: `Kamu adalah seorang profesional di bidang [BIDANG/INDUSTRI].
 
 Bantu saya menulis email untuk [TUJUAN EMAIL: contoh: follow-up meeting, minta approval, dll].
@@ -90,7 +90,7 @@ Constraint:
     icon: "📋",
     title: "Rangkum Dokumen / Meeting Notes",
     description:
-      "Dokumen panjang, notulen meeting, artikel — jadi ringkasan terstruktur yang bisa langsung dipakai.",
+      "Dokumen panjang, notulen meeting, artikel: jadi ringkasan terstruktur yang bisa langsung dipakai.",
     prompt: `Kamu adalah seorang executive assistant yang ahli merangkum informasi.
 
 Tolong rangkum [DOKUMEN / NOTULEN MEETING / ARTIKEL] berikut ini.
@@ -167,14 +167,14 @@ Constraint:
 - Jangan asumsikan data yang tidak ada
 - Kalau data kurang lengkap, sebutkan data apa yang masih dibutuhkan
 
-[PASTE DATA DI SINI — bisa tabel, CSV, atau deskripsi]`,
+[PASTE DATA DI SINI: bisa tabel, CSV, atau deskripsi]`,
   },
   {
     id: "brainstorm",
     icon: "💡",
     title: "Brainstorming & Ideation",
     description:
-      "Stuck? Generate ide dari yang safe sampai bold — lengkap dengan kelebihan, risiko, dan effort level.",
+      "Stuck? Generate ide dari yang safe sampai bold, lengkap dengan kelebihan, risiko, dan effort level.",
     prompt: `Kamu adalah seorang creative strategist yang jago brainstorming.
 
 Bantu saya generate ide untuk [TOPIK/PROJECT].
@@ -204,7 +204,7 @@ Constraint:
     icon: "✏",
     title: "Review & Perbaiki Tulisan",
     description:
-      "Polish email, proposal, laporan, atau artikel — grammar, flow, tone, dan struktur sekaligus.",
+      "Polish email, proposal, laporan, atau artikel: grammar, flow, tone, dan struktur sekaligus.",
     prompt: `Kamu adalah seorang editor profesional.
 
 Tolong review dan perbaiki tulisan berikut ini.
@@ -217,7 +217,7 @@ Konteks:
 Yang perlu di-review:
 1. Grammar dan ejaan
 2. Kejelasan dan flow tulisan
-3. Tone — apakah sudah sesuai dengan [TONE YANG DIINGINKAN]
+3. Tone: apakah sudah sesuai dengan [TONE YANG DIINGINKAN]
 4. Struktur dan organisasi informasi
 5. Redundansi atau bagian yang bisa dipersingkat
 
@@ -237,14 +237,14 @@ Constraint:
     icon: "🎯",
     title: "Persiapan Meeting / Presentasi",
     description:
-      "Dari agenda, talking points, sampai antisipasi pertanyaan sulit — siap masuk ruangan dalam menit.",
+      "Dari agenda, talking points, sampai antisipasi pertanyaan sulit; siap masuk ruangan dalam menit.",
     prompt: `Kamu adalah seorang business consultant yang berpengalaman.
 
 Bantu saya mempersiapkan [MEETING / PRESENTASI] tentang [TOPIK].
 
 Konteks:
 - Tujuan: [APA YANG MAU DICAPAI DARI MEETING/PRESENTASI INI]
-- Audiens: [SIAPA YANG HADIR — jabatan, department, level]
+- Audiens: [SIAPA YANG HADIR: jabatan, department, level]
 - Durasi: [BERAPA MENIT/JAM]
 - Situasi: [ADA KONTEKS POLITIK KANTOR / URGENSI / HISTORY YANG PERLU DIKETAHUI?]
 
@@ -264,7 +264,7 @@ Constraint:
 const tips = [
   {
     emoji: "🔄",
-    text: "Hasil jelek? Jangan buang — kasih feedback spesifik ke AI tentang bagian mana yang kurang.",
+    text: "Hasil jelek? Jangan buang; kasih feedback spesifik ke AI tentang bagian mana yang kurang.",
   },
   {
     emoji: "✂️",
@@ -549,7 +549,7 @@ export default function PlaybookClient() {
           <div className="max-w-[1400px] mx-auto">
             <div className="max-w-3xl">
               <p className="text-white/40 text-xs mb-5 tracking-widest font-mono uppercase">
-                [ Companion Guide — Cara Pakai AI Biar Hasilnya Nggak Sampah ]
+                [ Companion Guide: Cara Pakai AI Biar Hasilnya Nggak Sampah ]
               </p>
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.9] tracking-tight mb-6">
                 <span className="text-white">Daily Prompt</span>
@@ -557,7 +557,7 @@ export default function PlaybookClient() {
                 <span className="text-amber-400">Playbook</span>
               </h1>
               <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-8">
-                Kumpulan prompt template siap pakai — tinggal copy, edit
+                Kumpulan prompt template siap pakai; tinggal copy, edit
                 variabel, paste ke AI.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -660,7 +660,7 @@ export default function PlaybookClient() {
                   </h2>
                   <p className="text-white/55">
                     5 elemen yang bikin prompt lo menghasilkan output yang jauh
-                    lebih baik. Nggak harus semua dipake — tapi makin lengkap,
+                    lebih baik. Nggak harus semua dipake, tapi makin lengkap,
                     makin bagus hasilnya.
                   </p>
                 </div>
@@ -734,7 +734,7 @@ export default function PlaybookClient() {
                     <mark className="bg-amber-400/15 text-amber-300 rounded px-1 not-italic font-mono text-sm">
                       [SEPERTI INI]
                     </mark>{" "}
-                    — ganti dengan konteks lo sebelum paste.
+                    , ganti dengan konteks lo sebelum paste.
                   </p>
 
                   {/* Search */}

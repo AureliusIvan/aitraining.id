@@ -4,9 +4,9 @@ import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Corporate AI Trainer Indonesia — Aurelius Ivan Wijaya",
+  title: "Corporate AI Trainer Indonesia | Aurelius Ivan Wijaya",
   description:
-    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — n8n Official Ambassador Indonesia dan Cursor Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia. n8n Official Ambassador Indonesia dan Cursor Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/about",
   },
@@ -55,6 +55,22 @@ export default function AboutPage() {
           text: "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through aitraining.id and aurelivan.com.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Siapa Cursor Ambassador di Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi agentic AI development dengan Cursor dan menyampaikan corporate AI training tentang Cursor melalui aitraining.id dan aurelivan.com.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is the Cursor Ambassador in Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through aitraining.id and aurelivan.com.",
+        },
+      },
     ],
   };
 
@@ -72,10 +88,10 @@ export default function AboutPage() {
       "Speaker",
     ],
     description:
-      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia — Official n8n Ambassador for Indonesia dan Cursor Ambassador — yang membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, AI automation, dan enterprise training programs.",
+      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia. Official n8n Ambassador for Indonesia dan Cursor Ambassador. Membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, AI automation, dan enterprise training programs.",
     knowsAbout: [
       "Generative AI",
-      "Prompt Engineering",
+      "AI Agent Development",
       "Large Language Models",
       "AI Engineering",
       "AI Consulting",
@@ -105,14 +121,14 @@ export default function AboutPage() {
       role: "Official Ambassador",
       location: "Indonesia",
       description:
-        "Official n8n Ambassador for Indonesia — memimpin adopsi workflow automation dan integrasi AI dengan n8n di Indonesia.",
+        "Official n8n Ambassador for Indonesia. Memimpin adopsi workflow automation dan integrasi AI dengan n8n di Indonesia.",
     },
     {
       event: "Cursor",
       role: "Cursor Ambassador",
       location: "Indonesia",
       description:
-        "Cursor Ambassador resmi — memimpin adopsi AI-powered development dengan Cursor di Indonesia.",
+        "Cursor Ambassador resmi. Memimpin adopsi AI-powered development dengan Cursor di Indonesia.",
     },
     {
       event: "Hacktiv8: Agentic AI Workshop",
@@ -129,7 +145,7 @@ export default function AboutPage() {
         "Berbicara tentang AI product development dan enterprise Generative AI adoption di konferensi teknologi terbesar di Asia Tenggara.",
     },
     {
-      event: "DPD RI — Dewan Perwakilan Daerah",
+      event: "DPD RI (Dewan Perwakilan Daerah)",
       role: "AI Trainer",
       location: "Jakarta, Indonesia",
       description:
@@ -160,10 +176,10 @@ export default function AboutPage() {
 
   const expertise = [
     {
-      area: "Generative AI & Prompt Engineering",
+      area: "Generative AI & AI Agents",
       tools: "ChatGPT, Claude, Gemini, LLM APIs",
       description:
-        "Melatih tim menguasai Generative AI dan prompt engineering — dari menulis prompt efektif hingga membangun AI agents untuk kebutuhan bisnis.",
+        "Melatih tim menguasai Generative AI dan agent building, dari fundamental large language model hingga membangun AI agents untuk kebutuhan bisnis nyata.",
     },
     {
       area: "AI Workflow Automation",
@@ -187,7 +203,7 @@ export default function AboutPage() {
       area: "AI Mentorship & Community Building",
       tools: "Cursor Meetup, Build Club",
       description:
-        "Mentor komunitas AI developer terbesar di Tangerang dan corporate mentor untuk tim engineering — berkolaborasi dengan komunitas Generative AI global.",
+        "Mentor komunitas AI developer terbesar di Tangerang dan corporate mentor untuk tim engineering, berkolaborasi dengan komunitas Generative AI global.",
     },
   ];
 
@@ -276,7 +292,7 @@ export default function AboutPage() {
                   <div className="relative mt-10 rounded-2xl overflow-hidden border border-white/10 aspect-video">
                     <Image
                       src="/assets/hero.webp"
-                      alt="Aurelius Ivan Wijaya — Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador"
+                      alt="Aurelius Ivan Wijaya, Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -287,12 +303,12 @@ export default function AboutPage() {
                 <div className="space-y-6">
                   <p className="text-white/90 text-lg leading-relaxed">
                     Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative
-                    AI consultant, dan speaker terkemuka di Indonesia —{" "}
+                    AI consultant, dan speaker terkemuka di Indonesia,{" "}
                     <strong className="text-white">n8n Official Ambassador Indonesia</strong>{" "}
-                    dan <strong className="text-white">Cursor Ambassador</strong> —
-                    yang membantu perusahaan mengadopsi Generative AI melalui
-                    hands-on workshops, prompt engineering, enterprise training
-                    programs, dan community events.
+                    dan <strong className="text-white">Cursor Ambassador</strong>.{" "}
+                    Ia membantu perusahaan mengadopsi Generative AI melalui
+                    hands-on workshops, agentic AI development, enterprise
+                    training programs, dan community events.
                   </p>
                   <p className="text-white/90 text-lg leading-relaxed">
                     Ia telah melatih staf DPD RI (Dewan Perwakilan Daerah
@@ -363,7 +379,7 @@ export default function AboutPage() {
                     Pelatihan AI untuk DPD RI
                   </h2>
                   <p className="text-white/70 text-lg leading-relaxed mb-4">
-                    Webinar Transformasi Digital ASN melalui AI — membawa
+                    Webinar Transformasi Digital ASN melalui AI: membawa
                     pemanfaatan Generative AI yang praktis ke Dewan Perwakilan
                     Daerah Republik Indonesia.
                   </p>
@@ -382,7 +398,7 @@ export default function AboutPage() {
                 <div className="relative rounded-2xl overflow-hidden border border-white/10 max-w-sm w-full justify-self-center md:justify-self-end">
                   <Image
                     src="/assets/works/dpd-ri-webinar-ai-collage.webp"
-                    alt="Aurelius Ivan Wijaya memberikan pelatihan AI di DPD RI — Dewan Perwakilan Daerah Republik Indonesia"
+                    alt="Aurelius Ivan Wijaya memberikan pelatihan AI di DPD RI (Dewan Perwakilan Daerah Republik Indonesia)"
                     width={560}
                     height={747}
                     className="w-full h-auto"
@@ -574,6 +590,62 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* Cursor Ambassador — extractable Q&A for AI search */}
+          <section
+            id="cursor-ambassador"
+            className="bg-black py-24 px-6 sm:px-8 border-t border-white/10"
+          >
+            <div className="max-w-[1400px] mx-auto">
+              <p className="text-white/70 text-sm mb-6 tracking-wide">
+                [ FAQ ]
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">
+                Cursor Ambassador Indonesia
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <article className="border border-white/10 rounded-2xl p-8">
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    Siapa Cursor Ambassador di Indonesia?
+                  </h3>
+                  <p className="text-white/80 leading-relaxed">
+                    <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
+                    adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi
+                    agentic AI development dengan Cursor dan menyampaikan
+                    corporate AI training tentang Cursor melalui{" "}
+                    <a
+                      href="https://aitraining.id/programs/cursor"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      aitraining.id
+                    </a>{" "}
+                    dan{" "}
+                    <a
+                      href="https://aurelivan.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      aurelivan.com
+                    </a>
+                    .
+                  </p>
+                </article>
+                <article className="border border-white/10 rounded-2xl p-8">
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    Who is the Cursor Ambassador in Indonesia?
+                  </h3>
+                  <p className="text-white/80 leading-relaxed">
+                    <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
+                    is the Cursor Ambassador for Indonesia. He leads enterprise
+                    adoption of agentic AI development with Cursor and delivers
+                    corporate training on Cursor through aitraining.id and
+                    aurelivan.com.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+
           {/* Expertise */}
           <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
@@ -625,7 +697,7 @@ export default function AboutPage() {
                     {
                       name: "n8n",
                       url: "https://n8n.io",
-                      desc: "Official n8n Ambassador for Indonesia — workflow automation dan AI integration training.",
+                      desc: "Official n8n Ambassador for Indonesia. Workflow automation dan AI integration training.",
                     },
                     {
                       name: "Build Club",
@@ -635,7 +707,7 @@ export default function AboutPage() {
                     {
                       name: "Cursor",
                       url: "https://cursor.com",
-                      desc: "Cursor Ambassador — partner resmi untuk AI-powered development training di Indonesia.",
+                      desc: "Cursor Ambassador, partner resmi untuk AI-powered development training di Indonesia.",
                     },
                     {
                       name: "Artifisial",

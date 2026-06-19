@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://aitraining.id"),
   title: {
-    default: "AI Corporate Training Indonesia — aitraining.id",
+    default: "AI Corporate Training Indonesia | aitraining.id",
     template: "%s | aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
   keywords: [
     "corporate AI training Indonesia",
     "Generative AI training Indonesia",
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
     url: "https://aitraining.id",
     siteName: "aitraining.id",
-    title: "AI Corporate Training Indonesia — aitraining.id",
+    title: "AI Corporate Training Indonesia | aitraining.id",
     description:
       "Hands-on corporate AI training for companies in Indonesia. Workshops on AI automation, AI-powered development, and enterprise AI strategy.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Corporate Training Indonesia — aitraining.id",
+    title: "AI Corporate Training Indonesia | aitraining.id",
     description:
       "Hands-on corporate AI training for companies in Indonesia. Delivered by Aurelius Ivan Wijaya.",
     creator: "@aurelivan",

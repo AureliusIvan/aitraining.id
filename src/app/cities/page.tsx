@@ -182,7 +182,7 @@ export default function CitiesPage() {
                   Kota Anda tidak ada di list?
                 </h2>
                 <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-                  Corporate AI training tersedia di seluruh Indonesia —
+                  Corporate AI training tersedia di seluruh Indonesia:
                   Yogyakarta, Semarang, Medan, Makassar, Bali, dan kota lainnya.
                   Hubungi kami untuk diskusi.
                 </p>

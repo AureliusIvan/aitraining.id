@@ -18,6 +18,7 @@ const LAST_MODIFIED = {
   pelatihanAiPerusahaan: new Date("2026-06-12"),
   geoTraining: new Date("2026-06-16"),
   bestGeoTrainers: new Date("2026-06-16"),
+  cursorProgram: new Date("2026-06-19"),
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -55,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/geo-training`,
       lastModified: LAST_MODIFIED.geoTraining,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/programs/cursor`,
+      lastModified: LAST_MODIFIED.cursorProgram,
       changeFrequency: "monthly",
       priority: 0.9,
     },

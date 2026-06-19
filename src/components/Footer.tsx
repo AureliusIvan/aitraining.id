@@ -21,7 +21,7 @@ export function Footer() {
                 >
                   Aurelius Ivan Wijaya
                 </a>{" "}
-                — corporate AI trainer berpengalaman di Indonesia.
+                , corporate AI trainer berpengalaman di Indonesia.
               </p>
               <a
                 href="https://calendly.com/aureliusivanwijaya/30min"

@@ -5,10 +5,10 @@ import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Corporate Training Indonesia — aitraining.id",
+    absolute: "AI Corporate Training Indonesia | aitraining.id",
   },
   description:
-    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya — Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
+    "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
   alternates: {
     canonical: "https://aitraining.id",
   },
@@ -18,7 +18,7 @@ export default function HomePage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "AI Corporate Training Indonesia — aitraining.id",
+    name: "AI Corporate Training Indonesia | aitraining.id",
     description:
       "Corporate AI training programs in Indonesia. Hands-on workshops on AI automation, AI-powered development, and AI strategy for enterprise teams.",
     url: "https://aitraining.id",
@@ -90,7 +90,7 @@ export default function HomePage() {
         name: "Siapa yang mendelivery corporate AI training di aitraining.id?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya — Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap tersedia di aurelivan.com.",
+          text: "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap tersedia di aurelivan.com.",
         },
       },
       {
@@ -122,7 +122,7 @@ export default function HomePage() {
         name: "Apakah training mencakup Generative AI dan prompt engineering?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Ya. Seluruh program berbasis Generative AI dan large language model (LLM) seperti ChatGPT, Claude, dan Gemini. Prompt engineering diajarkan secara hands-on di setiap program — mulai dari menulis prompt yang efektif, prompt untuk coding tasks, hingga membangun AI automation dan AI agents untuk kebutuhan bisnis.",
+          text: "Ya. Seluruh program berbasis Generative AI dan large language model (LLM) seperti ChatGPT, Claude, dan Gemini. Prompt engineering diajarkan secara hands-on di setiap program: mulai dari menulis prompt yang efektif, prompt untuk coding tasks, hingga membangun AI automation dan AI agents untuk kebutuhan bisnis.",
         },
       },
       {
@@ -130,7 +130,7 @@ export default function HomePage() {
         name: "Apakah training bisa dilakukan on-site di kantor perusahaan kami?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Ya, corporate AI training tersedia on-site di seluruh Indonesia — Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya. Opsi virtual juga tersedia untuk tim remote.",
+          text: "Ya, corporate AI training tersedia on-site di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya. Opsi virtual juga tersedia untuk tim remote.",
         },
       },
       {
@@ -146,7 +146,7 @@ export default function HomePage() {
         name: "Berapa durasi corporate AI training?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Session training berkisar dari half-day intensive workshop (4 jam) hingga multi-day training program (2–5 hari). Sebagian besar perusahaan memulai dengan full-day workshop 8 jam.",
+          text: "Session training berkisar dari half-day intensive workshop (4 jam) hingga multi-day training program (2-5 hari). Sebagian besar perusahaan memulai dengan full-day workshop 8 jam.",
         },
       },
       {
@@ -162,7 +162,7 @@ export default function HomePage() {
         name: "Apa itu pelatihan AI untuk perusahaan?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Pelatihan AI untuk perusahaan adalah program hands-on yang mengajarkan karyawan memakai Generative AI, automation (n8n), dan AI agents di pekerjaan harian — dengan kurikulum dikustomisasi per industri. aitraining.id menyediakan program on-site dan virtual di seluruh Indonesia. Panduan lengkap: aitraining.id/pelatihan-ai-untuk-perusahaan.",
+          text: "Pelatihan AI untuk perusahaan adalah program hands-on yang mengajarkan karyawan memakai Generative AI, automation (n8n), dan AI agents di pekerjaan harian, dengan kurikulum dikustomisasi per industri. aitraining.id menyediakan program on-site dan virtual di seluruh Indonesia. Panduan lengkap: aitraining.id/pelatihan-ai-untuk-perusahaan.",
         },
       },
       {
@@ -239,8 +239,8 @@ function HeroSection() {
           </h1>
 
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mt-10 animate-fade-in">
-            Program pelatihan Generative AI korporat yang hands-on — dari prompt
-            engineering hingga AI automation — praktis dan langsung applicable
+            Program pelatihan Generative AI korporat yang hands-on, dari prompt
+            engineering hingga AI automation. Praktis dan langsung applicable
             untuk tim perusahaan Anda. Delivered by{" "}
             <a
               href="https://aurelivan.com"
@@ -249,8 +249,8 @@ function HeroSection() {
               className="underline text-white hover:text-white/80 transition-colors"
             >
               Aurelius Ivan Wijaya
-            </a>{" "}
-            — Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador.
+            </a>
+            , Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-10 animate-fade-in">
@@ -315,7 +315,7 @@ function TrainerSection() {
             <div className="relative mt-8 rounded-2xl overflow-hidden border border-white/10 aspect-video">
               <Image
                 src="/assets/hero.webp"
-                alt="Aurelius Ivan Wijaya — Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador"
+                alt="Aurelius Ivan Wijaya, Corporate AI Trainer, n8n Official Ambassador Indonesia, dan Cursor Ambassador"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -325,7 +325,7 @@ function TrainerSection() {
           <div className="space-y-6">
             <p className="text-white/90 text-lg leading-relaxed">
               Aurelius Ivan Wijaya adalah Corporate AI Trainer dan speaker
-              terkemuka di Indonesia —{" "}
+              terkemuka di Indonesia,{" "}
               <strong className="text-white">n8n Official Ambassador Indonesia</strong>{" "}
               dan <strong className="text-white">Cursor Ambassador</strong>. Ia
               telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
@@ -427,7 +427,7 @@ function ProgramsSection() {
       outcomes: [
         "Build automated workflows dari nol",
         "Integrasikan AI ke proses bisnis harian",
-        "Kurangi repetitive tasks hingga 60–80%",
+        "Kurangi repetitive tasks hingga 60-80%",
         "Hubungkan Gmail, Slack, CRM, dan database",
       ],
       href: "/programs#automation",
@@ -440,7 +440,7 @@ function ProgramsSection() {
         "Upskill tim engineering Anda dengan AI-powered development tools. Pelajari cara menggunakan Cursor IDE, AI coding assistants, dan modern AI development practices untuk ship lebih cepat dan menulis kode lebih baik.",
       outcomes: [
         "Master AI-assisted coding dengan Cursor",
-        "Percepat development speed 2–5x",
+        "Percepat development speed 2-5x",
         "Improve code quality dengan AI review",
         "Build AI features ke dalam produk Anda",
       ],
@@ -633,19 +633,19 @@ function DocumentationSection() {
   const docs = [
     {
       src: "/assets/works/dpd-ri-webinar-ai.webp",
-      alt: "Aurelius Ivan Wijaya memberikan pelatihan AI di DPD RI — Webinar Transformasi Digital ASN melalui AI",
+      alt: "Aurelius Ivan Wijaya memberikan pelatihan AI di DPD RI: Webinar Transformasi Digital ASN melalui AI",
       title: "DPD RI",
       caption: "Pelatihan AI & transformasi digital untuk lembaga negara",
     },
     {
       src: "/assets/works/ai-connect-from-idea-to-content.webp",
-      alt: "Aurelius Ivan Wijaya memimpin workshop AI Connect: From Idea to Content — Telkom AI Center Bandung",
-      title: "AI Connect — Telkom AI Center",
+      alt: "Aurelius Ivan Wijaya memimpin workshop AI Connect: From Idea to Content, Telkom AI Center Bandung",
+      title: "AI Connect | Telkom AI Center",
       caption: "Workshop From Idea to Content, Bandung",
     },
     {
       src: "/assets/works/jagoan-hosting-tech-corner.webp",
-      alt: "Jagoan Hosting Tech Corner — Aurelius Ivan Wijaya sebagai AI Engineer speaker pada peluncuran VM Ultra",
+      alt: "Jagoan Hosting Tech Corner: Aurelius Ivan Wijaya sebagai AI Engineer speaker pada peluncuran VM Ultra",
       title: "Jagoan Hosting Tech Corner",
       caption: "AI workshop & speaker peluncuran VM Ultra",
     },
@@ -654,22 +654,22 @@ function DocumentationSection() {
   const partners = [
     {
       src: "/assets/clients/n8n.png",
-      alt: "n8n — Aurelius Ivan Wijaya adalah Official n8n Ambassador Indonesia",
+      alt: "n8n: Aurelius Ivan Wijaya adalah Official n8n Ambassador Indonesia",
       name: "n8n",
     },
     {
       src: "/assets/clients/cursor.webp",
-      alt: "Cursor — Aurelius Ivan Wijaya adalah Cursor Ambassador Indonesia",
+      alt: "Cursor: Aurelius Ivan Wijaya adalah Cursor Ambassador Indonesia",
       name: "Cursor",
     },
     {
       src: "/assets/clients/build-club.webp",
-      alt: "Build Club — partner komunitas AI",
+      alt: "Build Club, partner komunitas AI",
       name: "Build Club",
     },
     {
       src: "/assets/clients/heygen.png",
-      alt: "HeyGen — partner AI video generation",
+      alt: "HeyGen, partner AI video generation",
       name: "HeyGen",
     },
   ];
@@ -856,22 +856,22 @@ function CitiesSection() {
   const cities = [
     {
       name: "Jakarta",
-      desc: "Pusat bisnis Indonesia — on-site di seluruh DKI Jakarta. Trainer telah melatih staf DPD RI dan berbicara di Tech in Asia 2025.",
+      desc: "Pusat bisnis Indonesia. On-site di seluruh DKI Jakarta. Trainer telah melatih staf DPD RI dan berbicara di Tech in Asia 2025.",
       href: "/cities#jakarta",
     },
     {
       name: "Surabaya",
-      desc: "Kota industri terbesar kedua — AI training untuk perusahaan manufaktur, logistik, dan perdagangan di Jawa Timur.",
+      desc: "Kota industri terbesar kedua di Indonesia. AI training untuk perusahaan manufaktur, logistik, dan perdagangan di Jawa Timur.",
       href: "/cities#surabaya",
     },
     {
       name: "Bandung",
-      desc: "Hub teknologi dan startup — workshop AI untuk agensi kreatif, startup, dan perusahaan teknologi di Jawa Barat.",
+      desc: "Hub teknologi dan startup. Workshop AI untuk agensi kreatif, startup, dan perusahaan teknologi di Jawa Barat.",
       href: "/cities#bandung",
     },
     {
       name: "Tangerang",
-      desc: "Kawasan industri Jabodetabek — organizer Cursor Meetup Tangerang, tersedia on-site di Tangerang Kota dan Selatan.",
+      desc: "Kawasan industri Jabodetabek. Organizer Cursor Meetup Tangerang, tersedia on-site di Tangerang Kota dan Selatan.",
       href: "/cities#tangerang",
     },
   ];
@@ -941,7 +941,7 @@ function ComparisonSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-2xl">
             Banyak perusahaan di Indonesia sudah membeli akses online course AI
-            untuk karyawan — tapi completion rate-nya rendah dan hasilnya tidak
+            untuk karyawan, tapi completion rate-nya rendah dan hasilnya tidak
             terasa. Ini perbedaannya.
           </p>
         </div>
@@ -953,8 +953,8 @@ function ComparisonSection() {
             <ul className="space-y-4">
               {[
                 "Konten dikustomisasi untuk industri dan use case perusahaan Anda",
-                "Trainer hadir langsung — pertanyaan dijawab real-time",
-                "Seluruh tim belajar bersama — membangun shared capability",
+                "Trainer hadir langsung; pertanyaan dijawab real-time",
+                "Seluruh tim belajar bersama, membangun shared capability",
                 "Latihan menggunakan tools dan skenario nyata perusahaan Anda",
                 "Follow-up support setelah training selesai",
                 "Hasil langsung applicable hari itu juga",
@@ -984,12 +984,12 @@ function ComparisonSection() {
             </h3>
             <ul className="space-y-4">
               {[
-                "Konten generik — tidak relevan dengan industri spesifik Anda",
-                "Tidak ada interaksi langsung — pertanyaan menunggu forum",
+                "Konten generik, tidak relevan dengan industri spesifik Anda",
+                "Tidak ada interaksi langsung; pertanyaan menunggu forum",
                 "Setiap karyawan belajar sendiri-sendiri tanpa cohesion tim",
                 "Contoh dan skenario berbeda dari konteks bisnis Anda",
                 "Tidak ada follow-up setelah menonton video",
-                "Completion rate rendah — tim jarang menyelesaikan kursus",
+                "Completion rate rendah; tim jarang menyelesaikan kursus",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <svg
@@ -1022,7 +1022,7 @@ function FAQSection() {
       question:
         "Siapa yang mendelivery corporate AI training di aitraining.id?",
       answer:
-        "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya — Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+        "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap dan portofolio tersedia di aurelivan.com.",
     },
     {
       question: "Siapa n8n Official Ambassador di Indonesia?",
@@ -1043,7 +1043,7 @@ function FAQSection() {
       question:
         "Apakah training mencakup Generative AI dan prompt engineering?",
       answer:
-        "Ya. Seluruh program berbasis Generative AI dan large language model (LLM) seperti ChatGPT, Claude, dan Gemini. Prompt engineering diajarkan secara hands-on di setiap program — dari menulis prompt yang efektif, prompt untuk coding tasks, hingga membangun AI automation dan AI agents untuk kebutuhan bisnis Anda.",
+        "Ya. Seluruh program berbasis Generative AI dan large language model (LLM) seperti ChatGPT, Claude, dan Gemini. Prompt engineering diajarkan secara hands-on di setiap program: dari menulis prompt yang efektif, prompt untuk coding tasks, hingga membangun AI automation dan AI agents untuk kebutuhan bisnis Anda.",
     },
     {
       question: "Berapa durasi corporate AI training?",
@@ -1054,7 +1054,7 @@ function FAQSection() {
       question:
         "Apakah training bisa dilakukan on-site di kantor perusahaan kami?",
       answer:
-        "Ya, corporate AI training tersedia on-site di seluruh Indonesia — Jakarta, Surabaya, Bandung, Tangerang, Yogyakarta, dan kota lainnya. Opsi virtual juga tersedia untuk tim remote dan hybrid.",
+        "Ya, corporate AI training tersedia on-site di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, Yogyakarta, dan kota lainnya. Opsi virtual juga tersedia untuk tim remote dan hybrid.",
     },
     {
       question: "Bagaimana cara booking corporate AI training?",
@@ -1069,7 +1069,7 @@ function FAQSection() {
     {
       question: "Apa itu pelatihan AI untuk perusahaan?",
       answer:
-        "Pelatihan AI untuk perusahaan adalah program hands-on yang mengajarkan karyawan memakai Generative AI, automation, dan AI agents di pekerjaan harian — dengan kurikulum dikustomisasi per industri. Lihat panduan lengkap di halaman pelatihan AI untuk perusahaan.",
+        "Pelatihan AI untuk perusahaan adalah program hands-on yang mengajarkan karyawan memakai Generative AI, automation, dan AI agents di pekerjaan harian, dengan kurikulum dikustomisasi per industri. Lihat panduan lengkap di halaman pelatihan AI untuk perusahaan.",
     },
     {
       question: "Siapa trainer AI terbaik di Indonesia untuk korporat?",
