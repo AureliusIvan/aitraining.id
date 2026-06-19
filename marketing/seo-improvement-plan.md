@@ -31,7 +31,7 @@ Live checks against Brave Search (the retrieval backend Claude uses):
 - **Guardrail:** No fabricated rankings, credentials, or competitor claims. Factual descriptions only.
 
 ### 1.2 Fix LinkedIn headline
-- Still reads "Founder of AICON ASIA" — contradicts the 2026-06-06 de-branding decision. LinkedIn is the #2 asset Brave serves for trainer queries, so this stale headline is what Claude quotes. Update to current positioning (Corporate AI Trainer · Cursor Ambassador · founder of aitraining.id).
+- Still reads "Founder of AICON ASIA" — contradicts the 2026-06-06 de-branding decision. LinkedIn is the #2 asset Brave serves for trainer queries, so this stale headline is what Claude quotes. Update to current positioning (Corporate AI Trainer · Official n8n Ambassador for Indonesia · Cursor Ambassador · founder of aitraining.id).
 
 ### 1.3 Technical fixes (small, do in one PR)
 - **OG image:** `public/` has no images; add a branded `opengraph-image` (Next.js convention) so shares/SERP previews render. Also favicon/icon set if missing.

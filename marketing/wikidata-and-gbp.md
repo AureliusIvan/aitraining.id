@@ -84,7 +84,7 @@ Keep descriptions under 250 characters and **non-promotional** — Wikidata desc
 | Field | English (en) | Bahasa Indonesia (id) |
 |---|---|---|
 | **Label** | Aurelius Ivan Wijaya | Aurelius Ivan Wijaya |
-| **Description** | Indonesian corporate AI trainer and consultant; Cursor Ambassador, based in Jakarta. | Pelatih dan konsultan AI korporat asal Indonesia; Cursor Ambassador, berbasis di Jakarta. |
+| **Description** | Indonesian corporate AI trainer and consultant; Official n8n Ambassador for Indonesia and Cursor Ambassador, based in Jakarta. | Pelatih dan konsultan AI korporat asal Indonesia; Official n8n Ambassador for Indonesia dan Cursor Ambassador, berbasis di Jakarta. |
 | **Aliases** | Ivan Wijaya · Aurelius Ivan · Aurel Ivan | Ivan Wijaya · Aurelius Ivan · Aurel Ivan |
 
 ### Organization — aitraining.id
@@ -115,8 +115,8 @@ GBP is the **faster, higher-certainty** Knowledge-Graph signal — a verified pr
 - `Software training institute` *(use if listed in your region's category picker)*
 - `Computer training school` *(alternative if the above isn't available)*
 
-**Business description (≤750 chars — paste as-is, 718 chars):**
-> aitraining.id delivers corporate AI training for teams across Indonesia, on-site and virtually, in Bahasa Indonesia and English. We run practical, hands-on programs that help organisations adopt AI in real workflows: AI Workflow Automation with n8n, AI-Powered Development using Cursor and prompt engineering, AI Strategy & Adoption for leaders, and OpenClaw training. Sessions are tailored to your team's tools and goals rather than generic slideware, so people leave able to apply what they learned the same week. Led by corporate AI trainer and Cursor Ambassador Aurelius Ivan Wijaya. Book a session or request a custom program at https://aitraining.id.
+**Business description (≤750 chars — paste as-is, ~741 chars):**
+> aitraining.id delivers corporate AI training for teams across Indonesia, on-site and virtually, in Bahasa Indonesia and English. We run practical, hands-on programs that help organisations adopt AI in real workflows: AI Workflow Automation with n8n, AI-Powered Development using Cursor and prompt engineering, AI Strategy & Adoption for leaders, and OpenClaw training. Sessions are tailored to your team's tools and goals rather than generic slideware, so teams apply what they learned the same week. Led by corporate AI trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador Aurelius Ivan Wijaya. Book a session or request a custom program at https://aitraining.id.
 
 **Services (map to the 4 programs — add each under Services with its own short blurb):**
 | Service name | Short description |

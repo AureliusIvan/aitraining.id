@@ -101,6 +101,12 @@ export function Footer() {
               Programs
             </Link>
             <Link
+              href="/geo-training"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              GEO Training
+            </Link>
+            <Link
               href="/about"
               className="block text-white/70 hover:text-white transition-colors"
             >
@@ -117,6 +123,12 @@ export function Footer() {
               className="block text-white/70 hover:text-white transition-colors"
             >
               Top 10 AI Trainers
+            </Link>
+            <Link
+              href="/best-geo-trainers-indonesia"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              Best GEO Trainers
             </Link>
             <Link
               href="/contact"

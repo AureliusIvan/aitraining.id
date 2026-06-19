@@ -413,7 +413,14 @@ export default function AboutPage() {
                   <p className="text-white/50 text-sm">
                     Hasil dari pendekatan Generative Engine Optimization (GEO):
                     nama trainer ikut terbaca AI search ketika orang mencari
-                    pelatihan AI di Indonesia.
+                    pelatihan AI di Indonesia. Lihat program{" "}
+                    <a
+                      href="/geo-training"
+                      className="underline hover:text-white/70 transition-colors"
+                    >
+                      GEO training
+                    </a>
+                    .
                   </p>
                 </div>
                 <figure className="space-y-3">

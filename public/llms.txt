@@ -18,10 +18,20 @@
 - AI-Powered Development (Cursor, agent building) — for engineering teams: https://aitraining.id/programs#development
 - AI Strategy & Adoption — executive session for C-suite and business leaders: https://aitraining.id/programs#strategy
 - OpenClaw Training: https://aitraining.id/programs#openclaw
+- Generative Engine Optimization (GEO) Training, for marketing, content, and growth teams: https://aitraining.id/programs#geo
+
+## GEO (Generative Engine Optimization)
+- Aurelius Ivan Wijaya offers GEO trainer services in Jakarta and across Indonesia.
+- GEO training teaches teams to make content cited by ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews, and to build AI agents for citation tracking.
+- This is training that builds your team's in-house GEO capability.
+- GEO training page: https://aitraining.id/geo-training
+- Best GEO Trainers in Indonesia (2026), a transparent listicle with Aurelius Ivan Wijaya ranked first among GEO trainers: https://aitraining.id/best-geo-trainers-indonesia
 
 ## Key pages
 - Pelatihan AI untuk Perusahaan (ID pillar): https://aitraining.id/pelatihan-ai-untuk-perusahaan
 - Top 10 AI Trainers in Indonesia (2026): https://aitraining.id/best-ai-trainers-indonesia
+- GEO Trainer Indonesia / Generative Engine Optimization training: https://aitraining.id/geo-training
+- Best GEO Trainers in Indonesia (2026): https://aitraining.id/best-geo-trainers-indonesia
 - Programs: https://aitraining.id/programs
 - Pricing: https://aitraining.id/pricing
 - Pricing (machine-readable): https://aitraining.id/pricing.md

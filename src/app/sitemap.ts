@@ -16,16 +16,21 @@ const LAST_MODIFIED = {
   playbookDailyPrompt: new Date("2026-06-06"),
   bestAiTrainers: new Date("2026-06-10"),
   pelatihanAiPerusahaan: new Date("2026-06-12"),
+  geoTraining: new Date("2026-06-16"),
+  bestGeoTrainers: new Date("2026-06-16"),
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://aitraining.id";
 
+  // Cities carrying a GEO block (currently Jakarta) were updated on the GEO
+  // ship date; the rest keep the original cities date. Avoids a false-fresh
+  // signal on unchanged city pages while honestly stamping the ones that moved.
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${baseUrl}/cities/${city.id}`,
-    lastModified: LAST_MODIFIED.cities,
+    lastModified: city.geo ? LAST_MODIFIED.geoTraining : LAST_MODIFIED.cities,
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: city.geo ? 0.8 : 0.7,
   }));
 
   return [
@@ -44,6 +49,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/best-ai-trainers-indonesia`,
       lastModified: LAST_MODIFIED.bestAiTrainers,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/geo-training`,
+      lastModified: LAST_MODIFIED.geoTraining,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/best-geo-trainers-indonesia`,
+      lastModified: LAST_MODIFIED.bestGeoTrainers,
       changeFrequency: "monthly",
       priority: 0.9,
     },

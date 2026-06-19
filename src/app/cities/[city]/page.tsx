@@ -106,6 +106,41 @@ export default async function CityPage({
     ],
   };
 
+  // GEO (Generative Engine Optimization) schema, rendered only for cities that
+  // carry a geo block (currently Jakarta) to target "GEO trainer <city>".
+  const geoServiceSchema = city.geo
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        serviceType: "Generative Engine Optimization Training",
+        name: `GEO Training ${city.name}`,
+        description: `Pelatihan Generative Engine Optimization (GEO) untuk tim perusahaan di ${city.name}: membuat konten dikutip ChatGPT, Perplexity, dan Google AI Overviews.`,
+        provider: {
+          "@type": "Person",
+          "@id": "https://aurelivan.com/#person",
+          name: "Aurelius Ivan Wijaya",
+        },
+        areaServed: {
+          "@type": "City",
+          name: city.name,
+          containedInPlace: { "@type": "Country", name: "Indonesia" },
+        },
+        url: `https://aitraining.id/cities/${city.id}`,
+      }
+    : null;
+
+  const geoFaqSchema = city.geo
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: city.geo.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
   return (
     <>
       <script
@@ -116,6 +151,20 @@ export default async function CityPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {geoServiceSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(geoServiceSchema),
+          }}
+        />
+      )}
+      {geoFaqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(geoFaqSchema) }}
+        />
+      )}
       <div className="min-h-screen bg-black text-white">
         <Nav />
         <main>
@@ -193,6 +242,43 @@ export default async function CityPage({
               </div>
             </div>
           </section>
+
+          {city.geo && (
+            <section className="bg-black py-16 px-6 sm:px-8 border-t border-white/10">
+              <div className="max-w-[1400px] mx-auto">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8">
+                  Pelatihan GEO di {city.name}
+                </h2>
+                <div className="space-y-6 max-w-3xl">
+                  {city.geo.faqs.map((f) => (
+                    <div key={f.q} className="border-b border-white/10 pb-6">
+                      <h3 className="text-white font-semibold mb-2">{f.q}</h3>
+                      <p className="text-white/60 text-sm leading-relaxed">
+                        {f.a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-8 text-white/50 text-sm">
+                  Detail lengkap di{" "}
+                  <Link
+                    href="/geo-training"
+                    className="underline hover:text-white/80 transition-colors"
+                  >
+                    halaman GEO training
+                  </Link>{" "}
+                  dan{" "}
+                  <Link
+                    href="/best-geo-trainers-indonesia"
+                    className="underline hover:text-white/80 transition-colors"
+                  >
+                    Best GEO Trainers in Indonesia
+                  </Link>
+                  .
+                </p>
+              </div>
+            </section>
+          )}
 
           <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">

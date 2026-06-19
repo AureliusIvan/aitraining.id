@@ -123,6 +123,33 @@ const programs = [
     ],
     aurelivan: "https://aurelivan.com/corporate-training/openclaw",
   },
+  {
+    id: "geo",
+    tags: "[ GEO, generative engine optimization, AI search, citation tracking ]",
+    title: "Generative Engine Optimization (GEO)",
+    badge: "Untuk marketing, konten & growth teams",
+    duration: "Full-day (8 jam) atau 2-day intensive",
+    audience: "Marketing, content, SEO, dan growth teams",
+    description:
+      "Latih tim Anda membuat konten yang dikutip oleh mesin AI generatif seperti ChatGPT, Perplexity, Gemini, Claude, dan Google AI Overviews. Program ini mengajarkan struktur konten yang bisa diekstrak, structured data, dan cara membangun AI agent untuk memantau kutipan brand Anda di mesin AI.",
+    outcomes: [
+      "Susun konten yang dikutip ChatGPT, Perplexity, dan AI Overviews",
+      "Pasang structured data (JSON-LD), llms.txt, dan file machine-readable",
+      "Build AI agent untuk citation tracking dan share of AI voice",
+      "Audit visibilitas brand Anda di mesin AI generatif",
+      "Terapkan authority dan E-E-A-T yang menaikkan tingkat kutipan",
+      "Hindari pola yang menurunkan visibilitas seperti keyword stuffing",
+    ],
+    modules: [
+      "Dasar Generative Engine Optimization dan cara mesin AI memilih sumber",
+      "Struktur konten extractable: answer block, FAQ, tabel perbandingan",
+      "Structured data, schema JSON-LD, dan llms.txt untuk entity recognition",
+      "Building AI agent untuk citation monitoring (ChatGPT, Perplexity)",
+      "Mengukur share of AI voice dan mengaudit kutipan brand",
+      "Hands-on: optimasi satu aset konten perusahaan Anda end-to-end",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training/geo",
+  },
 ];
 
 export default function ProgramsPage() {
@@ -151,7 +178,7 @@ export default function ProgramsPage() {
     name: "Corporate AI Training Programs Indonesia",
     description:
       "Daftar program corporate AI training yang tersedia di Indonesia oleh Aurelius Ivan Wijaya.",
-    numberOfItems: 4,
+    numberOfItems: programs.length,
     itemListElement: programs.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -200,10 +227,11 @@ export default function ProgramsPage() {
                   <span className="text-white/60">Programs</span>
                 </h1>
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
-                  Empat program corporate Generative AI training — mencakup
-                  prompt engineering, AI automation, dan AI-powered development
-                  — dirancang khusus untuk kebutuhan tim dan perusahaan di
-                  Indonesia. Semua program didelivery oleh{" "}
+                  Lima program corporate Generative AI training, mencakup AI
+                  automation, AI-powered development, AI strategy, dan
+                  Generative Engine Optimization (GEO), dirancang khusus untuk
+                  kebutuhan tim dan perusahaan di Indonesia. Semua program
+                  didelivery oleh{" "}
                   <a
                     href="https://aurelivan.com"
                     target="_blank"

@@ -27,7 +27,7 @@ Surabaya, Bandung, Tangerang, and other cities) or virtually.
 - Duration: Full-day, 8 hours
 - Audience: Up to ~20 participants per cohort
 - Programs: AI Workflow Automation (n8n), AI-Powered Development (Cursor),
-  AI Strategy & Adoption, OpenClaw Training
+  AI Strategy & Adoption, OpenClaw Training, Generative Engine Optimization (GEO)
 - Includes: Custom-fit curriculum, materials, recordings, certificate
 
 ### Multi-Day Intensive — from IDR 24,000,000
