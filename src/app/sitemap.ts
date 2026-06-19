@@ -20,6 +20,7 @@ const LAST_MODIFIED = {
   bestGeoTrainers: new Date("2026-06-16"),
   cursorProgram: new Date("2026-06-19"),
   heygenProgram: new Date("2026-06-19"),
+  claudeProgram: new Date("2026-06-19"),
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -69,6 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/programs/heygen`,
       lastModified: LAST_MODIFIED.heygenProgram,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/programs/claude`,
+      lastModified: LAST_MODIFIED.claudeProgram,
       changeFrequency: "monthly",
       priority: 0.9,
     },

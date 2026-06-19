@@ -151,6 +151,33 @@ const programs = [
     aurelivan: "https://aurelivan.com/corporate-training/openclaw",
   },
   {
+    id: "claude",
+    tags: "[ Claude, Claude Code, AI agents, agentic development ]",
+    title: "Claude AI Development",
+    badge: "Untuk engineering, ops & technical teams",
+    duration: "Full-day (8 jam) atau 2-day intensive",
+    audience: "Software engineers, ops, dan technical teams",
+    description:
+      "Latih tim Anda membangun agent dan alur kerja dengan Claude dan Claude Code. Program ini mengajarkan cara mengarahkan Claude untuk menjalankan pekerjaan multi-langkah, menggunakan Claude Code di dalam codebase, dan menghubungkan Claude API ke proses bisnis. Disampaikan oleh Aurelius Ivan Wijaya, yang telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA).",
+    outcomes: [
+      "Mengarahkan Claude untuk pekerjaan multi-langkah dengan hasil yang dapat diandalkan",
+      "Menggunakan Claude Code untuk membaca, mengedit, dan mengirim perubahan di codebase",
+      "Membangun agent yang menjalankan tugas nyata dengan Claude API",
+      "Menghubungkan Claude ke alur kerja bisnis (data, dokumen, internal tools)",
+      "Menerapkan pola review dan guardrail untuk output Claude",
+      "Menstandarkan cara tim bekerja dengan Claude",
+    ],
+    modules: [
+      "Kemampuan Claude dan kapan memakainya",
+      "Claude Code: bekerja langsung di dalam codebase",
+      "Membangun agent dengan Claude API",
+      "Menghubungkan Claude ke data dan internal tools",
+      "Review, guardrail, dan kualitas output",
+      "Workflow tim dan praktik kolaborasi",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training/claude",
+  },
+  {
     id: "geo",
     tags: "[ GEO, generative engine optimization, AI search, citation tracking ]",
     title: "Generative Engine Optimization (GEO)",
@@ -254,11 +281,11 @@ export default function ProgramsPage() {
                   <span className="text-white/60">Programs</span>
                 </h1>
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
-                  Enam program corporate Generative AI training, mencakup AI
-                  automation, AI-powered development, AI video automation, AI
-                  strategy, dan Generative Engine Optimization (GEO), dirancang
-                  khusus untuk kebutuhan tim dan perusahaan di Indonesia. Semua
-                  program didelivery oleh{" "}
+                  Tujuh program corporate Generative AI training, mencakup AI
+                  automation, AI-powered development, Claude AI development, AI
+                  video automation, AI strategy, dan Generative Engine
+                  Optimization (GEO), dirancang khusus untuk kebutuhan tim dan
+                  perusahaan di Indonesia. Semua program didelivery oleh{" "}
                   <a
                     href="https://aurelivan.com"
                     target="_blank"
