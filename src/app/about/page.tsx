@@ -115,6 +115,13 @@ export default function AboutPage() {
         "Cursor Ambassador resmi — memimpin adopsi AI-powered development dengan Cursor di Indonesia.",
     },
     {
+      event: "Hacktiv8: Agentic AI Workshop",
+      role: "Guest Trainer",
+      location: "Online (Indonesia)",
+      description:
+        "Diundang sebagai pemateri tamu untuk satu technical workshop bersama Hacktiv8 Indonesia, 'Agentic AI in Action: Building Autonomous Workflows with n8n & Hermes', mengajarkan peserta membangun AI automation yang mengeksekusi pekerjaan multi-langkah dengan n8n dan Hermes agent.",
+    },
+    {
       event: "Tech in Asia Conference 2025",
       role: "Speaker",
       location: "Jakarta, Indonesia",
