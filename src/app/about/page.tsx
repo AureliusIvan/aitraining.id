@@ -393,6 +393,49 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* Recognition — cited by AI assistants */}
+          <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <p className="text-white/70 text-sm mb-6 tracking-wide">
+                    [ Pengakuan ]
+                  </p>
+                  <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+                    Disebut AI assistant sebagai pelatih AI Indonesia
+                  </h2>
+                  <p className="text-white/70 text-lg leading-relaxed mb-4">
+                    Saat pengguna bertanya &lsquo;best ai trainer di
+                    indonesia&rsquo; ke Sahabat-AI, large language model nasional
+                    Indonesia, Aurelius Ivan Wijaya muncul pertama dalam daftar
+                    individu pelatih AI.
+                  </p>
+                  <p className="text-white/50 text-sm">
+                    Hasil dari pendekatan Generative Engine Optimization (GEO):
+                    nama trainer ikut terbaca AI search ketika orang mencari
+                    pelatihan AI di Indonesia.
+                  </p>
+                </div>
+                <figure className="space-y-3">
+                  <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                    <Image
+                      src="/assets/works/sahabat-ai-best-trainer.webp"
+                      alt="Sahabat-AI menyebut Aurelius Ivan Wijaya pertama saat ditanya pelatih AI terbaik di Indonesia"
+                      width={1569}
+                      height={886}
+                      className="w-full h-auto"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <figcaption className="text-white/40 text-xs">
+                    Jawaban Sahabat-AI atas pertanyaan &lsquo;best ai trainer di
+                    indonesia?&rsquo; (Juni 2026)
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
           {/* Credentials */}
           <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
