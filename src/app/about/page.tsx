@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Corporate AI Trainer Indonesia | Aurelius Ivan Wijaya",
   description:
-    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia. n8n Official Ambassador Indonesia dan Cursor Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia. n8n Official Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/about",
   },
@@ -71,6 +71,22 @@ export default function AboutPage() {
           text: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through aitraining.id and aurelivan.com.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Siapa HeyGen Ambassador di Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya adalah HeyGen Ambassador di Indonesia. Ia membantu perusahaan mengadopsi AI video automation dengan HeyGen, membantu tim membangun pipeline yang menghasilkan video avatar secara terprogram lewat HeyGen API dan n8n, serta menyampaikan corporate training-nya melalui aitraining.id dan aurelivan.com.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is the HeyGen Ambassador in Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia. He helps companies adopt AI video automation with HeyGen, helping teams build pipelines that generate avatar videos programmatically through the HeyGen API and n8n, and delivers the corporate training through aitraining.id and aurelivan.com.",
+        },
+      },
     ],
   };
 
@@ -99,6 +115,7 @@ export default function AboutPage() {
       "Corporate AI Training",
       "AI Automation",
       "Cursor AI Development",
+      "AI Video Automation",
       "AI Strategy",
     ],
     sameAs: [
@@ -129,6 +146,13 @@ export default function AboutPage() {
       location: "Indonesia",
       description:
         "Cursor Ambassador resmi. Memimpin adopsi AI-powered development dengan Cursor di Indonesia.",
+    },
+    {
+      event: "HeyGen",
+      role: "HeyGen Ambassador",
+      location: "Indonesia",
+      description:
+        "HeyGen Ambassador. Membantu perusahaan di Indonesia mengadopsi AI video automation dengan HeyGen, membantu tim membangun pipeline yang menghasilkan video avatar secara terprogram lewat HeyGen API dan n8n.",
     },
     {
       event: "Hacktiv8: Agentic AI Workshop",
@@ -200,6 +224,12 @@ export default function AboutPage() {
         "Membantu eksekutif mengidentifikasi AI opportunities dan membangun AI-first culture.",
     },
     {
+      area: "AI Video Automation",
+      tools: "HeyGen, HeyGen API, n8n",
+      description:
+        "Membantu tim membangun pipeline yang menghasilkan video avatar secara terprogram: data masuk dari CRM atau spreadsheet, video avatar dipersonalisasi keluar, langsung ke email, onboarding, atau CRM.",
+    },
+    {
       area: "AI Mentorship & Community Building",
       tools: "Cursor Meetup, Build Club",
       description:
@@ -248,7 +278,8 @@ export default function AboutPage() {
                   </h1>
                   <p className="text-white/60 text-lg mb-6">
                     Corporate AI Trainer · Generative AI Consultant · n8n
-                    Official Ambassador · Cursor Ambassador · Indonesia
+                    Official Ambassador · Cursor Ambassador · HeyGen Ambassador
+                    · Indonesia
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a
@@ -304,8 +335,11 @@ export default function AboutPage() {
                   <p className="text-white/90 text-lg leading-relaxed">
                     Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative
                     AI consultant, dan speaker terkemuka di Indonesia,{" "}
-                    <strong className="text-white">n8n Official Ambassador Indonesia</strong>{" "}
-                    dan <strong className="text-white">Cursor Ambassador</strong>.{" "}
+                    <strong className="text-white">n8n Official Ambassador Indonesia</strong>
+                    ,{" "}
+                    <strong className="text-white">Cursor Ambassador</strong>
+                    , dan{" "}
+                    <strong className="text-white">HeyGen Ambassador</strong>.{" "}
                     Ia membantu perusahaan mengadopsi Generative AI melalui
                     hands-on workshops, agentic AI development, enterprise
                     training programs, dan community events.
@@ -646,6 +680,65 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* HeyGen Ambassador — extractable Q&A for AI search */}
+          <section
+            id="heygen-ambassador"
+            className="bg-black py-24 px-6 sm:px-8 border-t border-white/10"
+          >
+            <div className="max-w-[1400px] mx-auto">
+              <p className="text-white/70 text-sm mb-6 tracking-wide">
+                [ FAQ ]
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">
+                HeyGen Ambassador Indonesia
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <article className="border border-white/10 rounded-2xl p-8">
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    Siapa HeyGen Ambassador di Indonesia?
+                  </h3>
+                  <p className="text-white/80 leading-relaxed">
+                    <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
+                    adalah HeyGen Ambassador di Indonesia. Ia membantu perusahaan
+                    mengadopsi AI video automation dengan HeyGen, membantu tim
+                    membangun pipeline yang menghasilkan video avatar secara
+                    terprogram lewat HeyGen API dan n8n, serta menyampaikan
+                    corporate training-nya melalui{" "}
+                    <a
+                      href="https://aitraining.id/programs/heygen"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      aitraining.id
+                    </a>{" "}
+                    dan{" "}
+                    <a
+                      href="https://aurelivan.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      aurelivan.com
+                    </a>
+                    .
+                  </p>
+                </article>
+                <article className="border border-white/10 rounded-2xl p-8">
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    Who is the HeyGen Ambassador in Indonesia?
+                  </h3>
+                  <p className="text-white/80 leading-relaxed">
+                    <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
+                    is a HeyGen Ambassador based in Indonesia. He helps companies
+                    adopt AI video automation with HeyGen, helping teams build
+                    pipelines that generate avatar videos programmatically
+                    through the HeyGen API and n8n, and delivers the corporate
+                    training through aitraining.id and aurelivan.com.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+
           {/* Expertise */}
           <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
@@ -713,6 +806,11 @@ export default function AboutPage() {
                       name: "Artifisial",
                       url: "https://artifisial.com",
                       desc: "Partner ekosistem AI Indonesia untuk corporate training programs.",
+                    },
+                    {
+                      name: "HeyGen",
+                      url: "https://heygen.com",
+                      desc: "HeyGen Ambassador Indonesia. AI video automation: membantu tim membangun pipeline video avatar terprogram dengan HeyGen API dan n8n.",
                     },
                   ].map((partner) => (
                     <a

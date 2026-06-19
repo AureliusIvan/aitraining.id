@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Program Corporate AI Training Indonesia",
   description:
-    "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development, AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador dari aurelivan.com.",
+    "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development, AI Video Automation, AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan HeyGen Ambassador dari aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/programs",
   },
@@ -68,6 +68,33 @@ const programs = [
       "Team workflow dan kolaborasi",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/ai-development",
+  },
+  {
+    id: "video",
+    tags: "[ HeyGen, AI video, video automation, n8n, API ]",
+    title: "AI Video Automation",
+    badge: "Untuk marketing, sales & L&D teams",
+    duration: "Full-day (8 jam) atau 2-day intensive",
+    audience: "Marketing, sales, L&D, dan content teams",
+    description:
+      "Bangun pipeline yang menghasilkan video avatar secara terprogram dengan HeyGen API dan n8n. Program ini mengajarkan tim Anda membuat video yang dipersonalisasi dan multibahasa untuk ratusan penerima sekaligus: onboarding, sales outreach, dan training, tanpa proses produksi manual setiap video. Disampaikan oleh HeyGen Ambassador Indonesia.",
+    outcomes: [
+      "Membangun workflow HeyGen API + n8n dari nol",
+      "Menghasilkan video avatar yang dipersonalisasi dari data (CRM, spreadsheet, form)",
+      "Membuat versi multibahasa dengan HeyGen video translation",
+      "Mengintegrasikan video otomatis ke email, CRM, dan onboarding flow",
+      "Menjalankan produksi video dalam skala besar tanpa studio",
+      "Memonitor dan memelihara pipeline video automation",
+    ],
+    modules: [
+      "Kemampuan HeyGen: avatar, video translation, dan API",
+      "HeyGen API dan n8n: workflow video pertama Anda",
+      "Personalisasi dari data: satu template, ribuan video",
+      "Lokalisasi dan versi multibahasa",
+      "Integrasi ke email, CRM, dan onboarding",
+      "Deployment, monitoring, dan maintenance pipeline",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
   },
   {
     id: "strategy",
@@ -227,11 +254,11 @@ export default function ProgramsPage() {
                   <span className="text-white/60">Programs</span>
                 </h1>
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
-                  Lima program corporate Generative AI training, mencakup AI
-                  automation, AI-powered development, AI strategy, dan
-                  Generative Engine Optimization (GEO), dirancang khusus untuk
-                  kebutuhan tim dan perusahaan di Indonesia. Semua program
-                  didelivery oleh{" "}
+                  Enam program corporate Generative AI training, mencakup AI
+                  automation, AI-powered development, AI video automation, AI
+                  strategy, dan Generative Engine Optimization (GEO), dirancang
+                  khusus untuk kebutuhan tim dan perusahaan di Indonesia. Semua
+                  program didelivery oleh{" "}
                   <a
                     href="https://aurelivan.com"
                     target="_blank"

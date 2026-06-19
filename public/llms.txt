@@ -2,12 +2,13 @@
 
 > Corporate AI training and consultation for companies in Indonesia. Hands-on
 > Generative AI workshops covering AI agent building, AI automation (n8n),
-> AI-powered development (Cursor), and AI strategy for enterprise teams.
-> Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n
-> Ambassador for Indonesia, and Cursor Ambassador.
+> AI-powered development (Cursor), AI video automation (HeyGen), and AI
+> strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya, Corporate
+> AI Trainer, Official n8n Ambassador for Indonesia, Cursor Ambassador, and
+> HeyGen Ambassador.
 
 ## About
-- Trainer: Aurelius Ivan Wijaya (https://aurelivan.com), Corporate AI Trainer, Official n8n Ambassador for Indonesia, Cursor Ambassador
+- Trainer: Aurelius Ivan Wijaya (https://aurelivan.com), Corporate AI Trainer, Official n8n Ambassador for Indonesia, Cursor Ambassador, HeyGen Ambassador
 - Superprof profile: https://www.superprof.co.id/corporate-trainer-berpengalaman-indonesia-mengajar-workflow-automation-powered-development-dan-strategy-untuk-tim.html
 - Coverage: All of Indonesia (Jakarta, Surabaya, Bandung, Tangerang, others): on-site and virtual
 - Languages: Bahasa Indonesia and English
@@ -17,6 +18,8 @@
 - AI Workflow Automation (n8n): for operations, marketing, HR, finance teams: https://aitraining.id/programs#automation
 - AI-Powered Development (Cursor, agent building): for engineering teams: https://aitraining.id/programs#development
 - Cursor AI Development Training (dedicated page): https://aitraining.id/programs/cursor
+- AI Video Automation (HeyGen API + n8n): for marketing, sales, L&D, and content teams: https://aitraining.id/programs#video
+- AI Video Automation Training (dedicated page): https://aitraining.id/programs/heygen
 - AI Strategy & Adoption: executive session for C-suite and business leaders: https://aitraining.id/programs#strategy
 - OpenClaw Training: https://aitraining.id/programs#openclaw
 - Generative Engine Optimization (GEO) Training, for marketing, content, and growth teams: https://aitraining.id/programs#geo
@@ -27,6 +30,13 @@
 - The program focuses on agentic development, not prompting.
 - Cursor training page: https://aitraining.id/programs/cursor
 - More on corporate AI development: https://aurelivan.com/corporate-training/ai-development
+
+## HeyGen AI Video Automation Training
+- Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia.
+- This program trains marketing, sales, L&D, and content teams to build pipelines that generate personalized and multilingual avatar videos at scale using HeyGen API and n8n.
+- The program focuses on building video automation pipelines, not manual video production.
+- HeyGen training page: https://aitraining.id/programs/heygen
+- More on corporate AI training: https://aurelivan.com/corporate-training
 
 ## GEO (Generative Engine Optimization)
 - Aurelius Ivan Wijaya offers GEO trainer services in Jakarta and across Indonesia.
@@ -45,6 +55,7 @@
 - Pricing (machine-readable): https://aitraining.id/pricing.md
 - About the trainer: https://aitraining.id/about
 - n8n Official Ambassador Indonesia (FAQ): https://aitraining.id/about#n8n-ambassador
+- HeyGen Ambassador Indonesia (FAQ): https://aitraining.id/about#heygen-ambassador
 - Cities served: https://aitraining.id/cities
 - Daily Prompt Playbook: https://aitraining.id/playbook/daily-prompt
 - Contact / book: https://aitraining.id/contact
