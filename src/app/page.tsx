@@ -632,6 +632,12 @@ function StatsSection() {
 function DocumentationSection() {
   const docs = [
     {
+      src: "/assets/works/openclaw-agenthon-indonesia.webp",
+      alt: "OpenClaw Agenthon Indonesia: Aurelius Ivan Wijaya sebagai co-host hackathon agent-building bersama Build Club",
+      title: "OpenClaw Agenthon Indonesia",
+      caption: "Co-host hackathon agent-building, 205 peserta",
+    },
+    {
       src: "/assets/works/dpd-ri-webinar-ai.webp",
       alt: "Aurelius Ivan Wijaya memberikan pelatihan AI di DPD RI: Webinar Transformasi Digital ASN melalui AI",
       title: "DPD RI",

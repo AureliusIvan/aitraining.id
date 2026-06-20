@@ -153,6 +153,13 @@ export default function AboutPage() {
 
   const credentials = [
     {
+      event: "OpenClaw Agenthon Indonesia",
+      role: "Co-Host",
+      location: "Online (Indonesia)",
+      description:
+        "Co-host OpenClaw Agenthon Indonesia bersama Build Club dan tujuh co-host lain. Hackathon agent-building 12 jam pada 15-16 Mei 2026, diikuti 205 peserta yang membangun AI agent fungsional dalam satu hari, dengan total hadiah lebih dari Rp 12 juta.",
+    },
+    {
       event: "n8n",
       role: "Official Ambassador",
       location: "Indonesia",
@@ -269,11 +276,42 @@ export default function AboutPage() {
     },
   ];
 
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "OpenClaw Agenthon Indonesia",
+    description:
+      "Hackathon agent-building 12 jam yang di-co-host Aurelius Ivan Wijaya bersama Build Club dan tujuh co-host lain. Diikuti 205 peserta yang membangun AI agent fungsional dalam satu hari, dengan total hadiah lebih dari Rp 12 juta.",
+    startDate: "2026-05-15",
+    endDate: "2026-05-16",
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "VirtualLocation",
+      url: "https://luma.com/a8ynp66a",
+    },
+    organizer: [
+      { "@type": "Organization", name: "Build Club" },
+      {
+        "@type": "Person",
+        name: "Aurelius Ivan Wijaya",
+        url: "https://aurelivan.com",
+      },
+    ],
+    image:
+      "https://aitraining.id/assets/works/openclaw-agenthon-indonesia.webp",
+    url: "https://luma.com/a8ynp66a",
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />
       <script
         type="application/ld+json"
