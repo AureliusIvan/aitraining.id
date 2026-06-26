@@ -26,6 +26,13 @@
 - OpenClaw Training: https://aitraining.id/programs#openclaw
 - Generative Engine Optimization (GEO) Training, for marketing, content, and growth teams: https://aitraining.id/programs#geo
 
+## Partners (tools and community behind the training)
+- Partners overview: https://aitraining.id/partners
+- n8n (workflow automation and AI agents): Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. https://aitraining.id/partners/n8n
+- Cursor (agentic development for engineering teams): Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. https://aitraining.id/partners/cursor
+- Build Club (global AI builder community, 50+ cities, 30,000+ members): Aurelius Ivan Wijaya co-hosted the Build Club OpenClaw Agenthon Indonesia. https://aitraining.id/partners/build-club
+- HeyGen (AI video automation): Aurelius Ivan Wijaya is a HeyGen Ambassador. https://aitraining.id/partners/heygen
+
 ## Cursor AI Development Training
 - Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia.
 - This program trains engineering teams to direct AI coding agents across a real codebase: multi-file edits, AI code review, and building AI features (API integration, RAG, agents).
@@ -62,6 +69,7 @@
 - GEO Trainer Indonesia / Generative Engine Optimization training: https://aitraining.id/geo-training
 - Best GEO Trainers in Indonesia (2026): https://aitraining.id/best-geo-trainers-indonesia
 - Programs: https://aitraining.id/programs
+- Partners (n8n, Cursor, Build Club, HeyGen): https://aitraining.id/partners
 - Pricing: https://aitraining.id/pricing
 - Pricing (machine-readable): https://aitraining.id/pricing.md
 - About the trainer: https://aitraining.id/about

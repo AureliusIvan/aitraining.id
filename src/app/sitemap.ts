@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { cities } from "@/lib/cities";
+import { partners } from "@/lib/partners";
 
 // Real content-change dates — update when a page meaningfully changes.
 // Stamping every URL with the build date is a false freshness signal
@@ -21,6 +22,7 @@ const LAST_MODIFIED = {
   cursorProgram: new Date("2026-06-19"),
   heygenProgram: new Date("2026-06-19"),
   claudeProgram: new Date("2026-06-19"),
+  partners: new Date("2026-06-24"),
 } as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -36,6 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: city.geo ? 0.8 : 0.7,
   }));
 
+  const partnerPages: MetadataRoute.Sitemap = partners.map((p) => ({
+    url: `${baseUrl}/partners/${p.slug}`,
+    lastModified: LAST_MODIFIED.partners,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -49,6 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/partners`,
+      lastModified: LAST_MODIFIED.partners,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    ...partnerPages,
     {
       url: `${baseUrl}/best-ai-trainers-indonesia`,
       lastModified: LAST_MODIFIED.bestAiTrainers,

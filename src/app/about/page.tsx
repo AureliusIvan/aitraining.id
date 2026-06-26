@@ -433,7 +433,7 @@ export default function AboutPage() {
                     >
                       Build Club
                     </a>
-                    ,{" "}
+                    , dan{" "}
                     <a
                       href="https://cursor.com"
                       target="_blank"
@@ -441,15 +441,6 @@ export default function AboutPage() {
                       className="underline hover:text-white transition-colors"
                     >
                       Cursor
-                    </a>
-                    , dan{" "}
-                    <a
-                      href="https://artifisial.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline hover:text-white transition-colors"
-                    >
-                      Artifisial
                     </a>
                     , ia memberikan corporate AI training yang benar-benar
                     praktis dan menghasilkan perubahan nyata bagi tim
@@ -936,11 +927,6 @@ export default function AboutPage() {
                       name: "Cursor",
                       url: "https://cursor.com",
                       desc: "Cursor Ambassador, partner resmi untuk AI-powered development training di Indonesia.",
-                    },
-                    {
-                      name: "Artifisial",
-                      url: "https://artifisial.com",
-                      desc: "Partner ekosistem AI Indonesia untuk corporate training programs.",
                     },
                     {
                       name: "HeyGen",

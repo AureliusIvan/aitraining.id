@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
@@ -355,7 +356,7 @@ function TrainerSection() {
               >
                 n8n
               </a>
-              ,{" "}
+              , dan{" "}
               <a
                 href="https://cursor.com"
                 target="_blank"
@@ -363,15 +364,6 @@ function TrainerSection() {
                 className="underline hover:text-white transition-colors"
               >
                 Cursor
-              </a>
-              , dan{" "}
-              <a
-                href="https://artifisial.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-white transition-colors"
-              >
-                Artifisial
               </a>
               , ia menyampaikan corporate AI training yang benar-benar praktis
               dan dapat langsung diterapkan oleh tim perusahaan Anda.
@@ -662,21 +654,25 @@ function DocumentationSection() {
       src: "/assets/clients/n8n.png",
       alt: "n8n: Aurelius Ivan Wijaya adalah Official n8n Ambassador Indonesia",
       name: "n8n",
+      href: "/partners/n8n",
     },
     {
       src: "/assets/clients/cursor.webp",
       alt: "Cursor: Aurelius Ivan Wijaya adalah Cursor Ambassador Indonesia",
       name: "Cursor",
+      href: "/partners/cursor",
     },
     {
       src: "/assets/clients/build-club.webp",
-      alt: "Build Club, partner komunitas AI",
+      alt: "Build Club, partner komunitas AI builder",
       name: "Build Club",
+      href: "/partners/build-club",
     },
     {
       src: "/assets/clients/heygen.png",
-      alt: "HeyGen, partner AI video generation",
+      alt: "HeyGen, partner AI video automation",
       name: "HeyGen",
+      href: "/partners/heygen",
     },
   ];
 
@@ -714,8 +710,10 @@ function DocumentationSection() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5">
             {partners.map((partner) => (
-              <div
+              <Link
                 key={partner.name}
+                href={partner.href}
+                aria-label={`Baca tentang ${partner.name}`}
                 className="flex items-center justify-center rounded-xl bg-white/90 px-6 py-4 hover:bg-white transition-colors"
               >
                 <Image
@@ -725,9 +723,17 @@ function DocumentationSection() {
                   height={40}
                   className="h-8 w-auto object-contain"
                 />
-              </div>
+              </Link>
             ))}
           </div>
+          <p className="text-white/40 text-sm mt-6 text-center">
+            <Link
+              href="/partners"
+              className="underline hover:text-white/70 transition-colors"
+            >
+              Lihat semua partner
+            </Link>
+          </p>
         </div>
       </div>
     </section>
