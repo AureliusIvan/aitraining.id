@@ -178,6 +178,14 @@ export function Footer() {
             >
               Belajar AI untuk Karir ↗
             </a>
+            <a
+              href="https://kids.aitraining.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              Kelas AI untuk Anak (TK &amp; SD) ↗
+            </a>
           </div>
         </div>
 
