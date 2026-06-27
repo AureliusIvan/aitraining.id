@@ -117,6 +117,7 @@ export default function AboutPage() {
       "AI Corporate Trainer",
       "Generative AI Trainer",
       "AI Consultant",
+      "City Lead, Build Club Jakarta",
       "Speaker",
     ],
     description:
@@ -152,6 +153,41 @@ export default function AboutPage() {
   };
 
   const credentials = [
+    {
+      event: "Build Club Jakarta",
+      role: "City Lead",
+      location: "Jakarta, Indonesia",
+      description:
+        "City Lead untuk chapter Jakarta dari Build Club (BuildClub.ai), komunitas AI builder global dengan 50+ kota dan 30.000+ anggota. Memimpin kegiatan build night, panel, dan hackathon agent-building untuk komunitas AI di Jakarta.",
+    },
+    {
+      event: "What Makes AI Products Actually Sticky?",
+      role: "Panelist",
+      location: "Centennial Tower, Jakarta",
+      description:
+        "Panelist pada sesi Build Club Jakarta bersama RafiqSpace.ai dan Indonesia Cloud Community (iCCom), bagian dari Road to Indonesia Product Conference 2026. Membahas retention, trust, dan habit formation pada AI-native products di hadapan sekitar 168 peserta.",
+    },
+    {
+      event: "mem9 Setup & Build Night",
+      role: "Co-Organizer",
+      location: "GoWork Treasury Tower, Jakarta",
+      description:
+        "Co-organizer 'Give Your AI a Forever Memory: mem9 Setup & Build Night' bersama Build Club dan TiDB. 181 builder terdaftar untuk memasang mem9 persistent memory dan mengintegrasikannya ke AI agent OpenClaw, membangun langsung bersama dalam satu malam.",
+    },
+    {
+      event: "Insignia",
+      role: "Corporate AI Trainer",
+      location: "Jakarta, Indonesia",
+      description:
+        "Memberikan corporate AI training on-site untuk tim Insignia, perusahaan teknologi Indonesia. Menjalankan cohort hands-on dengan fokus agent building dan penerapan AI pada alur kerja bisnis nyata.",
+    },
+    {
+      event: "JakartaDevs #2",
+      role: "Speaker",
+      location: "Markas Indonesia, Jakarta",
+      description:
+        "Speaker pada JakartaDevs #2 di Markas Indonesia. Berbagi pelajaran praktis seputar AI dan agent building kepada komunitas developer Jakarta.",
+    },
     {
       event: "OpenClaw Agenthon Indonesia",
       role: "Co-Host",
