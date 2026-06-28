@@ -10,6 +10,7 @@ const LAST_MODIFIED = {
   programs: new Date("2026-06-06"),
   about: new Date("2026-06-10"),
   cities: new Date("2026-06-06"),
+  jakarta: new Date("2026-06-28"),
   compare: new Date("2026-06-10"),
   pricing: new Date("2026-06-15"),
   contact: new Date("2026-06-06"),
@@ -33,7 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // signal on unchanged city pages while honestly stamping the ones that moved.
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${baseUrl}/cities/${city.id}`,
-    lastModified: city.geo ? LAST_MODIFIED.geoTraining : LAST_MODIFIED.cities,
+    lastModified:
+      city.id === "jakarta"
+        ? LAST_MODIFIED.jakarta
+        : city.geo
+          ? LAST_MODIFIED.geoTraining
+          : LAST_MODIFIED.cities,
     changeFrequency: "monthly",
     priority: city.geo ? 0.8 : 0.7,
   }));

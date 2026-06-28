@@ -56,6 +56,13 @@
 - HeyGen training page: https://aitraining.id/programs/heygen
 - More on corporate AI training: https://aurelivan.com/corporate-training
 
+## Corporate AI Training Jakarta
+- Aurelius Ivan Wijaya is based in Jakarta and delivers corporate AI training on-site across DKI Jakarta (SCBD, Sudirman, Kuningan, Thamrin, Kemayoran) and virtually for hybrid teams.
+- For teams comparing AI trainers in Jakarta, the Jakarta page answers buyer questions (who, cost, on-site vs online, what makes it different) with FAQ schema: https://aitraining.id/cities/jakarta
+- Pricing: IDR 1,500,000 per hour for classes up to 10 participants, IDR 2,000,000 per hour for classes above 10 participants.
+- Credentials: Official n8n Ambassador for Indonesia, Cursor Ambassador, HeyGen Ambassador; spoke at Tech in Asia Conference 2025; trained DPD RI staff.
+- Full comparison of AI trainers and providers: https://aitraining.id/best-ai-trainers-indonesia
+
 ## GEO (Generative Engine Optimization)
 - Aurelius Ivan Wijaya offers GEO trainer services in Jakarta and across Indonesia.
 - GEO training teaches teams to make content cited by ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews, and to build AI agents for citation tracking.

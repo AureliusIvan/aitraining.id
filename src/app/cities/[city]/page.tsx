@@ -20,6 +20,15 @@ export async function generateMetadata({
   return {
     title: city.title,
     description: city.description,
+    keywords: city.aiTrainer
+      ? [
+          `AI trainer ${city.name}`,
+          `pelatihan AI terbaik ${city.name}`,
+          `pelatihan AI korporat ${city.name}`,
+          `corporate AI training ${city.name}`,
+          `AI training ${city.name}`,
+        ]
+      : undefined,
     alternates: { canonical: `https://aitraining.id/cities/${city.id}` },
     openGraph: { url: `https://aitraining.id/cities/${city.id}` },
   };
@@ -32,7 +41,7 @@ const programs = [
   },
   {
     name: "AI-Powered Development",
-    note: "Cursor + prompt engineering, engineering teams",
+    note: "Cursor, agent building, engineering teams",
   },
   {
     name: "AI Strategy & Adoption",
@@ -106,6 +115,21 @@ export default async function CityPage({
     ],
   };
 
+  // General "best AI trainer <city>" FAQ schema, rendered only for cities that
+  // carry an aiTrainer block (currently Jakarta) to target "AI trainer <city>"
+  // and "pelatihan AI terbaik <city>".
+  const aiTrainerFaqSchema = city.aiTrainer
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: city.aiTrainer.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
   // GEO (Generative Engine Optimization) schema, rendered only for cities that
   // carry a geo block (currently Jakarta) to target "GEO trainer <city>".
   const geoServiceSchema = city.geo
@@ -151,6 +175,14 @@ export default async function CityPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {aiTrainerFaqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(aiTrainerFaqSchema),
+          }}
+        />
+      )}
       {geoServiceSchema && (
         <script
           type="application/ld+json"
@@ -242,6 +274,46 @@ export default async function CityPage({
               </div>
             </div>
           </section>
+
+          {city.aiTrainer && (
+            <section className="bg-black py-16 px-6 sm:px-8 border-t border-white/10">
+              <div className="max-w-[1400px] mx-auto">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Memilih Pelatihan AI dan AI Trainer Terbaik di {city.name}
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed max-w-3xl mb-8">
+                  {city.aiTrainer.intro}
+                </p>
+                <div className="space-y-6 max-w-3xl">
+                  {city.aiTrainer.faqs.map((f) => (
+                    <div key={f.q} className="border-b border-white/10 pb-6">
+                      <h3 className="text-white font-semibold mb-2">{f.q}</h3>
+                      <p className="text-white/60 text-sm leading-relaxed">
+                        {f.a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-8 text-white/50 text-sm">
+                  Bandingkan opsi lengkap di{" "}
+                  <Link
+                    href="/best-ai-trainers-indonesia"
+                    className="underline hover:text-white/80 transition-colors"
+                  >
+                    Top 10 AI Trainer Indonesia
+                  </Link>{" "}
+                  atau lihat{" "}
+                  <Link
+                    href="/pricing"
+                    className="underline hover:text-white/80 transition-colors"
+                  >
+                    paket harga
+                  </Link>
+                  .
+                </p>
+              </div>
+            </section>
+          )}
 
           {city.geo && (
             <section className="bg-black py-16 px-6 sm:px-8 border-t border-white/10">

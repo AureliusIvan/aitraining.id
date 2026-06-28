@@ -7,6 +7,15 @@ export type City = {
   aurelivan: string;
   // Longer intro used only on the dedicated /cities/[city] page
   intro: string;
+  // Optional general "best AI trainer <city>" block. Present only for cities
+  // where we target the broad "AI trainer <city>" / "pelatihan AI terbaik
+  // <city>" intent (currently Jakarta). When set, the city page renders a
+  // corporate AI training FAQ section + an FAQPage schema. Framed as a buyer
+  // FAQ, not a self-superlative claim.
+  aiTrainer?: {
+    intro: string;
+    faqs: { q: string; a: string }[];
+  };
   // Optional GEO (Generative Engine Optimization) block. Present only for
   // cities where we target the "GEO trainer <city>" query (currently Jakarta).
   // When set, the city page renders a GEO FAQ section + a GEO Service schema.
@@ -21,7 +30,7 @@ export const cities: City[] = [
     name: "Jakarta",
     title: "Corporate AI Training Jakarta",
     description:
-      "Jakarta sebagai pusat bisnis Indonesia adalah kota dengan permintaan corporate AI training tertinggi. Trainer telah melatih staf DPD RI di Jakarta dan berbicara di Tech in Asia Conference 2025. Tersedia on-site di seluruh wilayah DKI Jakarta termasuk Sudirman, Kuningan, Thamrin, SCBD, dan Kemayoran, termasuk pelatihan Generative Engine Optimization (GEO).",
+      "Pelatihan AI korporat dan AI trainer di Jakarta untuk tim perusahaan. Disampaikan oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador, yang telah melatih staf DPD RI dan berbicara di Tech in Asia Conference 2025. Tersedia on-site di seluruh wilayah DKI Jakarta termasuk Sudirman, Kuningan, Thamrin, SCBD, dan Kemayoran, termasuk pelatihan Generative Engine Optimization (GEO).",
     intro:
       "Jakarta adalah pusat bisnis dan pemerintahan Indonesia, dan menjadi kota dengan permintaan corporate AI training tertinggi. aitraining.id menyediakan pelatihan AI on-site langsung di kantor perusahaan Anda di seluruh wilayah DKI Jakarta, dari kawasan perkantoran Sudirman, Kuningan, Thamrin, dan SCBD hingga Kemayoran dan Jakarta Utara. Program disampaikan oleh Aurelius Ivan Wijaya, Corporate AI Trainer, GEO (Generative Engine Optimization) trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador, yang telah melatih staf DPD RI dan menjadi speaker di Tech in Asia Conference 2025. Untuk tim yang ingin dikutip mesin AI, pelatihan GEO tersedia on-site di Jakarta. Detail di halaman GEO training.",
     highlights: [
@@ -32,6 +41,28 @@ export const cities: City[] = [
       "On-site di corporate office, co-working space, atau venue pilihan Anda",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/jakarta",
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Jakarta saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      faqs: [
+        {
+          q: "Siapa AI trainer terbaik di Jakarta untuk pelatihan AI korporat?",
+          a: "Pilihan terbaik bergantung pada kebutuhan tim Anda. Untuk pelatihan AI korporat hands-on di Jakarta, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu trainer individual yang fokus membangun AI agent dan automation. Kredensialnya mencakup Official n8n Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador. Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+        },
+        {
+          q: "Berapa biaya pelatihan AI korporat di Jakarta?",
+          a: "Rate dasar Rp 1.500.000 per jam untuk kelas sampai 10 peserta, dan Rp 2.000.000 per jam untuk kelas di atas 10 peserta. Total biaya bergantung pada jumlah sesi, durasi, dan mode (on-site atau virtual). Tersedia konsultasi gratis 30 menit untuk menyusun ruang lingkup dan estimasi biaya.",
+        },
+        {
+          q: "Pelatihan AI di Jakarta tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup seluruh wilayah DKI Jakarta, dari SCBD, Sudirman, Kuningan, dan Thamrin hingga Kemayoran, dengan opsi virtual untuk tim hybrid. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Apa yang membedakan pelatihan AI ini di Jakarta?",
+          a: "Setiap program fokus membangun AI agent dan automation yang langsung dipakai tim. Materi mencakup AI automation dengan n8n, AI-powered development dengan Cursor, AI video automation dengan HeyGen, dan strategi adopsi AI. Trainer telah berbicara di Tech in Asia Conference 2025 dan melatih staf DPD RI di Jakarta.",
+        },
+      ],
+    },
     geo: {
       faqs: [
         {

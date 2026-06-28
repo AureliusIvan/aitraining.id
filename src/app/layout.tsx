@@ -27,11 +27,13 @@ export const metadata: Metadata = {
     "AI Corporate Trainer Indonesia",
     "Corporate AI Trainer Indonesia",
     "Generative AI trainer Indonesia",
-    "prompt engineering training Indonesia",
+    "AI agent building training Indonesia",
     "AI consultant Indonesia",
     "AI workshop perusahaan",
     "pelatihan AI korporat",
     "enterprise AI training Jakarta",
+    "AI trainer Jakarta",
+    "pelatihan AI terbaik Jakarta",
     "AI trainer Indonesia",
     "workshop AI Indonesia",
     "corporate AI workshop",
@@ -103,7 +105,7 @@ export default function RootLayout({
     name: "aitraining.id",
     url: "https://aitraining.id",
     description:
-      "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering prompt engineering, AI automation, AI-powered development, and AI strategy for enterprise teams.",
+      "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI agent building, AI automation, AI-powered development, and AI strategy for enterprise teams.",
     founder: {
       "@type": "Person",
       "@id": "https://aurelivan.com/#person",
@@ -136,10 +138,13 @@ export default function RootLayout({
       addressLocality: "Jakarta",
       addressRegion: "DKI Jakarta",
     },
-    areaServed: {
-      "@type": "Country",
-      name: "Indonesia",
-    },
+    areaServed: [
+      { "@type": "City", name: "Jakarta" },
+      { "@type": "City", name: "Surabaya" },
+      { "@type": "City", name: "Bandung" },
+      { "@type": "City", name: "Tangerang" },
+      { "@type": "Country", name: "Indonesia" },
+    ],
     knowsAbout: [
       "Corporate AI Training",
       "Generative AI",
