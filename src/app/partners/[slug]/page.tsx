@@ -365,6 +365,19 @@ export default async function PartnerArticlePage({
                     {partner.externalName}
                   </a>
                 </p>
+                {partner.youtubeUrl ? (
+                  <p className="text-white/70">
+                    Kanal YouTube {partner.name}:{" "}
+                    <a
+                      href={partner.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-white/90 transition-colors"
+                    >
+                      {partner.youtubeName ?? partner.youtubeUrl}
+                    </a>
+                  </p>
+                ) : null}
                 <p className="text-white/70">
                   Semua partner aitraining.id:{" "}
                   <Link

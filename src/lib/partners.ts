@@ -45,6 +45,8 @@ export type Partner = {
   lede: string;
   externalName: string; // "n8n.io"
   externalUrl: string; // "https://n8n.io"
+  youtubeName?: string; // display label for a YouTube channel, e.g. "YouTube @buildclubindonesia"
+  youtubeUrl?: string; // "https://www.youtube.com/@buildclubindonesia"
   programHref?: string; // internal program/booking destination
   programLabel?: string;
   defId: { q: string; a: string }; // definition block (Bahasa), 40-60 words
@@ -287,6 +289,8 @@ export const partners: Partner[] = [
     lede: "Build Club adalah komunitas AI builder global dengan jangkauan 50+ kota dan 30.000+ anggota, dan punya chapter aktif di Jakarta. Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta sekaligus co-host OpenClaw Agenthon Indonesia, hackathon agent-building yang diorganisir Build Club.",
     externalName: "buildclub.ai",
     externalUrl: "https://buildclub.ai",
+    youtubeName: "YouTube @buildclubindonesia",
+    youtubeUrl: "https://www.youtube.com/@buildclubindonesia",
     defId: {
       q: "Apa itu Build Club Indonesia?",
       a: "Build Club adalah komunitas AI builder global dengan jangkauan 50+ kota dan 30.000+ anggota, dan punya chapter aktif di Jakarta. Komunitas ini menjalankan hackathon, build night, panel, dan program belajar bagi orang yang ingin membangun produk AI. Chapter Jakarta dipimpin oleh Aurelius Ivan Wijaya sebagai City Lead.",
@@ -401,7 +405,7 @@ export const partners: Partner[] = [
       },
       {
         q: "Di mana situs dan kanal resmi Build Club?",
-        a: "Situs resmi Build Club ada di buildclub.ai, tempat komunitas menerbitkan daftar kota, acara, dan cara bergabung. Halaman ini adalah penjelasan dari aitraining.id tentang Build Club dan keterlibatan Aurelius Ivan Wijaya sebagai City Lead Build Club Jakarta.",
+        a: "Situs resmi Build Club ada di buildclub.ai, tempat komunitas menerbitkan daftar kota, acara, dan cara bergabung. Kanal YouTube Build Club Indonesia ada di youtube.com/@buildclubindonesia. Halaman ini adalah penjelasan dari aitraining.id tentang Build Club dan keterlibatan Aurelius Ivan Wijaya sebagai City Lead Build Club Jakarta.",
       },
     ],
   },
