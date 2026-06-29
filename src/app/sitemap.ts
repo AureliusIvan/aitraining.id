@@ -22,7 +22,7 @@ const LAST_MODIFIED = {
   bestGeoTrainers: new Date("2026-06-29"),
   cursorProgram: new Date("2026-06-19"),
   heygenProgram: new Date("2026-06-19"),
-  claudeProgram: new Date("2026-06-19"),
+  claudeProgram: new Date("2026-06-29"),
   partners: new Date("2026-06-24"),
 } as const;
 

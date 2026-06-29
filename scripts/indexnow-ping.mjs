@@ -14,6 +14,7 @@ const BASE = `https://${HOST}`;
 const URLS = [
   BASE,
   `${BASE}/programs`,
+  `${BASE}/programs/claude`,
   `${BASE}/best-ai-trainers-indonesia`,
   `${BASE}/geo-training`,
   `${BASE}/best-geo-trainers-indonesia`,

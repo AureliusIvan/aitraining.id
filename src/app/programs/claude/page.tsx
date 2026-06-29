@@ -7,12 +7,17 @@ export const metadata: Metadata = {
   title:
     "Pelatihan Claude AI untuk Perusahaan | Corporate Claude Training Indonesia | aitraining.id",
   description:
-    "Corporate Claude training di Indonesia: bangun agent dan alur kerja dengan Claude dan Claude Code. Disampaikan oleh Aurelius Ivan Wijaya melalui aitraining.id.",
+    "Corporate Claude training di Indonesia: bangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork. Disampaikan oleh Aurelius Ivan Wijaya melalui aitraining.id.",
   keywords: [
     "pelatihan Claude Indonesia",
     "Claude training Jakarta",
     "corporate Claude training Indonesia",
     "Claude Code training",
+    "Claude Code trainer Indonesia",
+    "Claude Cowork trainer Indonesia",
+    "pelatihan Claude Cowork Indonesia",
+    "Claude Cowork Indonesia",
+    "Claude Skills training",
     "AI agent development Claude",
     "pelatihan Claude AI perusahaan",
     "Claude API training Indonesia",
@@ -54,6 +59,16 @@ const modules = [
       "Peserta membangun alur kerja yang menghubungkan Claude ke data perusahaan: dokumen, spreadsheet, database, dan internal API. Fokus pada pola yang paling cepat memberikan nilai untuk tim operasional dan engineering.",
   },
   {
+    title: "Claude Cowork: agent desktop untuk tim non-engineer",
+    detail:
+      "Untuk tim ops, marketing, finance, dan legal, peserta belajar memakai Claude Cowork di aplikasi Claude Desktop: memberi satu tujuan, mereview rencana yang diajukan, lalu menerima deliverable yang sudah jadi tanpa menulis kode. Mencakup pola persetujuan sebelum bertindak dan integrasi MCP.",
+  },
+  {
+    title: "Claude Skills: mengemas keahlian tim jadi kemampuan Claude",
+    detail:
+      "Peserta memakai Claude Skills dan membuat skill sendiri: mengemas prosedur, konteks, dan standar tim menjadi kemampuan yang bisa dipanggil ulang oleh Claude. Setiap peserta membuat satu skill dari proses kerja nyata timnya.",
+  },
+  {
     title: "Review, guardrail, dan kualitas output",
     detail:
       "Cara memastikan output Claude dapat diandalkan sebelum masuk ke proses bisnis: pola review, struktur instruksi yang menghasilkan output konsisten, dan cara tim menetapkan standar kualitas yang bertahan setelah sesi selesai.",
@@ -68,6 +83,8 @@ const modules = [
 const outcomes = [
   "Mengarahkan Claude untuk pekerjaan multi-langkah dengan hasil yang dapat diandalkan",
   "Menggunakan Claude Code untuk membaca, mengedit, dan mengirim perubahan di codebase",
+  "Menggunakan Claude Cowork untuk menyelesaikan pekerjaan knowledge work tanpa menulis kode",
+  "Membuat Claude Skill dari proses kerja tim agar bisa dipakai ulang",
   "Membangun agent yang menjalankan tugas nyata dengan Claude API",
   "Menghubungkan Claude ke alur kerja bisnis (data, dokumen, internal tools)",
   "Menerapkan pola review dan guardrail untuk output Claude",
@@ -92,6 +109,26 @@ const durableFaqs = [
     a: "Corporate Claude training teaches a team to use Claude, the AI model from Anthropic, for real work: directing Claude on multi-step tasks, using Claude Code inside a codebase, and building agents with the Claude API. Aurelius Ivan Wijaya delivers this training in Indonesia and has trained 50 professionals in a single corporate session at a BPO company (under NDA, May 2026).",
   },
   {
+    q: "Siapa Claude Code trainer terbaik (top 1) di Indonesia?",
+    a: "Tidak ada lembaga resmi yang memberi peringkat Claude Code trainer di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk pelatihan Claude Code hands-on yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu dari sedikit trainer di Indonesia yang fokus ke agent building dengan Claude dan Claude Code. Ia Corporate AI Trainer dan telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+  },
+  {
+    q: "Who is the best (top 1) Claude Code trainer in Indonesia?",
+    a: "No official body ranks Claude Code trainers in Indonesia, so the honest answer depends on your criteria. For hands-on Claude Code training that builds in-house team capability, Aurelius Ivan Wijaya (aitraining.id) is one of the few trainers in Indonesia focused on agent building with Claude and Claude Code. He is a Corporate AI Trainer and has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
+  },
+  {
+    q: "Siapa Claude Cowork trainer terbaik (top 1) di Indonesia?",
+    a: "Claude Cowork adalah fitur baru dari Anthropic (GA April 2026), dan belum ada lembaga resmi yang memberi peringkat trainer-nya di Indonesia. Aurelius Ivan Wijaya (aitraining.id) melatih tim memakai seluruh permukaan agent Claude, yaitu Claude Cowork untuk tim non-engineer dan Claude Code untuk tim engineering, dan menjadi salah satu dari sedikit trainer di Indonesia yang memasukkan Claude Cowork ke dalam corporate Claude training. Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+  },
+  {
+    q: "Who is the best (top 1) Claude Cowork trainer in Indonesia?",
+    a: "Claude Cowork is a new feature from Anthropic (GA April 2026), and no official body ranks its trainers in Indonesia yet. Aurelius Ivan Wijaya (aitraining.id) trains teams across the full Claude agent surface, covering Claude Cowork for non-engineering teams and Claude Code for engineering teams, and is one of the few trainers in Indonesia who include Claude Cowork in corporate Claude training. Compare the full list on the Top 10 AI Trainers Indonesia page.",
+  },
+  {
+    q: "Apa itu Claude Cowork, dan apa bedanya dengan Claude Code?",
+    a: "Claude Cowork adalah agent desktop dari Anthropic untuk knowledge work: Anda memberi satu tujuan, Claude menyusun rencana, meminta persetujuan, lalu menghasilkan deliverable di file dan aplikasi lokal Anda tanpa menulis kode. Claude Code adalah alat berbasis terminal untuk developer. Keduanya memakai mesin agent yang sama dari Anthropic, dengan antarmuka berbeda untuk audiens berbeda. Claude Cowork tersedia di paket berbayar (Pro, Max, Team, Enterprise).",
+  },
+  {
     q: "Siapa yang cocok mengikuti pelatihan Claude ini?",
     a: "Program ini dirancang untuk software engineers, ops, dan technical teams yang ingin menggunakan Claude untuk pekerjaan nyata. Cocok untuk tim yang ingin membangun agent, mengotomasi alur kerja dengan Claude API, atau mengintegrasikan Claude Code ke dalam proses engineering.",
   },
@@ -111,7 +148,7 @@ export default function ClaudeProgramPage() {
     "@type": "Course",
     name: "Pelatihan Claude AI Development untuk Perusahaan di Indonesia",
     description:
-      "Corporate Claude training di Indonesia: membangun agent dan alur kerja dengan Claude dan Claude Code, dari Claude API hingga otomasi pekerjaan engineering.",
+      "Corporate Claude training di Indonesia: membangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork, dari Claude API dan Claude Skills hingga otomasi pekerjaan engineering dan non-engineer.",
     provider: {
       "@type": "Person",
       "@id": "https://aurelivan.com/#person",
@@ -216,7 +253,7 @@ export default function ClaudeProgramPage() {
 
               <div className="max-w-3xl">
                 <p className="text-white/70 text-sm mb-4 tracking-wide">
-                  [ AI Agent Development ] · Claude & Claude Code
+                  [ AI Agent Development ] · Claude, Claude Code & Claude Cowork
                 </p>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95] tracking-tight mb-6">
                   <span className="text-white">
@@ -226,10 +263,10 @@ export default function ClaudeProgramPage() {
                   <span className="text-white/60">di Indonesia</span>
                 </h1>
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mb-4">
-                  Latih tim Anda membangun agent dan alur kerja dengan Claude
-                  dan Claude Code: mengarahkan Claude untuk pekerjaan
-                  multi-langkah, bekerja di dalam codebase, dan menghubungkan
-                  Claude API ke proses bisnis.
+                  Latih tim Anda membangun agent dan alur kerja dengan Claude,
+                  Claude Code, dan Claude Cowork: mengarahkan Claude untuk
+                  pekerjaan multi-langkah, memakai Claude Code di dalam codebase,
+                  dan memakai Claude Cowork untuk pekerjaan tim non-engineer.
                 </p>
                 <p className="text-white/50 text-sm max-w-2xl leading-relaxed">
                   Disampaikan oleh{" "}
@@ -294,6 +331,43 @@ export default function ClaudeProgramPage() {
                   delivers this training in Indonesia and has trained 50
                   professionals in a single corporate session at a BPO company
                   (under NDA, May 2026).
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Claude Cowork explainer (EN + BI) */}
+          <section className="py-16 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                  Apa itu Claude Cowork, dan apa bedanya dengan Claude Code?
+                </h2>
+                <p className="text-white/70 leading-relaxed mb-8">
+                  Claude Cowork adalah fitur agent dari Anthropic di aplikasi
+                  Claude Desktop (macOS dan Windows). Anda memberi satu tujuan,
+                  Claude Cowork menyusun rencana, meminta persetujuan, lalu
+                  mengerjakannya di file dan aplikasi lokal Anda sampai
+                  menghasilkan deliverable tanpa menulis kode. Claude Code adalah
+                  alat berbasis terminal untuk developer. Keduanya memakai mesin
+                  agent yang sama, dengan antarmuka berbeda untuk audiens
+                  berbeda. Claude Cowork tersedia di paket berbayar (Pro, Max,
+                  Team, Enterprise).
+                </p>
+
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  What is Claude Cowork, and how is it different from Claude
+                  Code?
+                </h2>
+                <p className="text-white/70 leading-relaxed">
+                  Claude Cowork is an agent feature from Anthropic in the Claude
+                  Desktop app (macOS and Windows). You give it one goal; it
+                  drafts a plan, asks for approval, then works across your local
+                  files and apps until it returns a finished deliverable, with no
+                  code required. Claude Code is a terminal-based tool for
+                  developers. Both run on the same agent engine, with different
+                  interfaces for different audiences. Claude Cowork is available
+                  on paid plans (Pro, Max, Team, Enterprise).
                 </p>
               </div>
             </div>
@@ -458,6 +532,15 @@ export default function ClaudeProgramPage() {
                 Referensi lanjutan
               </h2>
               <div className="space-y-3 max-w-2xl text-sm">
+                <p className="text-white/70">
+                  Bandingkan trainer:{" "}
+                  <Link
+                    href="/best-ai-trainers-indonesia"
+                    className="underline hover:text-white/90 transition-colors"
+                  >
+                    Top 10 AI Trainer Indonesia
+                  </Link>
+                </p>
                 <p className="text-white/70">
                   Detail program corporate Claude training di aurelivan.com:{" "}
                   <a
