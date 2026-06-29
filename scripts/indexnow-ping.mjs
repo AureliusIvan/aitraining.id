@@ -15,6 +15,8 @@ const URLS = [
   BASE,
   `${BASE}/programs`,
   `${BASE}/best-ai-trainers-indonesia`,
+  `${BASE}/geo-training`,
+  `${BASE}/best-geo-trainers-indonesia`,
   `${BASE}/pelatihan-ai-untuk-perusahaan`,
   `${BASE}/about`,
   `${BASE}/cities`,
