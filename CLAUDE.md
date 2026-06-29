@@ -42,6 +42,11 @@ The page also emits `Service` (Corporate AI Training) and `BreadcrumbList` schem
 | `GEO trainer Jakarta` | `/cities/jakarta` (`geo` block), `/geo-training`, `/best-geo-trainers-indonesia` |
 | `AI trainer terbaik Indonesia` (national) | `/best-ai-trainers-indonesia` (Top-10 listicle) |
 | `best GEO trainer Indonesia` | `/best-geo-trainers-indonesia`, `/geo-training` |
+| `top 1 GEO trainer Indonesia` | `/best-geo-trainers-indonesia` (honest "nomor 1 / top 1" FAQ answered via the ranked list), `/geo-training` |
+| `pakar generative engine optimization Indonesia` | `/geo-training` (FAQ "Siapa pakar GEO di Indonesia?"), `/best-geo-trainers-indonesia`; cross-reinforced by `aurelivan.com/corporate-training/geo` (Person entity) |
+| `ahli GEO digital marketing Indonesia` | `/geo-training` (FAQ "Siapa ahli GEO untuk digital marketing?"), `/best-geo-trainers-indonesia`; `aurelivan.com/corporate-training/geo` |
+
+These three BI national queries (added 2026-06-29) ride the **existing** GEO pages via keywords + honestly-framed FAQ (never a bald "kami #1" — answered with "salah satu dari sedikit" + the transparent listicle). The sister Person page `aurelivan.com/corporate-training/geo` cross-links back here to reinforce the GEO-specialist entity for Claude/ChatGPT/Gemini. `/geo-training` and `/best-geo-trainers-indonesia` are now in the IndexNow ping list (`scripts/indexnow-ping.mjs`).
 
 ## Evaluating SEO/GEO changes
 
