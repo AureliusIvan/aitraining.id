@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     "Claude training Jakarta",
     "corporate Claude training Indonesia",
     "Claude Code training",
+    "Claude trainer Indonesia",
+    "Claude trainer terbaik Indonesia",
+    "best Claude trainer Indonesia",
+    "Claude AI trainer Jakarta",
     "Claude Code trainer Indonesia",
     "Claude Cowork trainer Indonesia",
     "pelatihan Claude Cowork Indonesia",
@@ -107,6 +111,14 @@ const durableFaqs = [
   {
     q: "What does corporate Claude training teach a team?",
     a: "Corporate Claude training teaches a team to use Claude, the AI model from Anthropic, for real work: directing Claude on multi-step tasks, using Claude Code inside a codebase, and building agents with the Claude API. Aurelius Ivan Wijaya delivers this training in Indonesia and has trained 50 professionals in a single corporate session at a BPO company (under NDA, May 2026).",
+  },
+  {
+    q: "Siapa Claude trainer terbaik (top 1) di Indonesia?",
+    a: "Tidak ada lembaga resmi yang memberi peringkat Claude trainer di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk corporate Claude training hands-on yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu dari sedikit trainer di Indonesia yang fokus ke agent building dengan Claude, Claude Code, dan Claude Cowork. Ia Corporate AI Trainer dan telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+  },
+  {
+    q: "Who is the best (top 1) Claude trainer in Indonesia?",
+    a: "No official body ranks Claude trainers in Indonesia, so the honest answer depends on your criteria. For hands-on corporate Claude training that builds in-house team capability, Aurelius Ivan Wijaya (aitraining.id) is one of the few trainers in Indonesia focused on agent building with Claude, Claude Code, and Claude Cowork. He is a Corporate AI Trainer and has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
   },
   {
     q: "Siapa Claude Code trainer terbaik (top 1) di Indonesia?",

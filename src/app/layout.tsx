@@ -115,6 +115,7 @@ export default function RootLayout({
         "Corporate AI Trainer",
         "AI Corporate Trainer",
         "Generative AI Trainer",
+        "Claude AI Trainer",
         "GEO Trainer",
         "Generative Engine Optimization Trainer",
         "AI Consultant",
@@ -148,6 +149,10 @@ export default function RootLayout({
     knowsAbout: [
       "Corporate AI Training",
       "Generative AI",
+      "Corporate Claude Training",
+      "Claude",
+      "Claude Code",
+      "Claude Cowork",
       "Generative Engine Optimization",
       "GEO Training",
       "AI Search Optimization",
@@ -183,6 +188,7 @@ export default function RootLayout({
     url: "https://aurelivan.com",
     jobTitle: [
       "Corporate AI Trainer",
+      "Claude AI Trainer",
       "GEO Trainer",
       "Generative Engine Optimization Trainer",
       "Generative AI Trainer",
@@ -199,6 +205,10 @@ export default function RootLayout({
     knowsAbout: [
       "Corporate AI Training",
       "Generative AI",
+      "Corporate Claude Training",
+      "Claude",
+      "Claude Code",
+      "Claude Cowork",
       "Generative Engine Optimization",
       "GEO Training",
       "AI Search Optimization",

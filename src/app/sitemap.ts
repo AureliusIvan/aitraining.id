@@ -16,7 +16,7 @@ const LAST_MODIFIED = {
   contact: new Date("2026-06-06"),
   playbook: new Date("2026-06-06"),
   playbookDailyPrompt: new Date("2026-06-06"),
-  bestAiTrainers: new Date("2026-06-10"),
+  bestAiTrainers: new Date("2026-06-29"),
   pelatihanAiPerusahaan: new Date("2026-06-12"),
   geoTraining: new Date("2026-06-29"),
   bestGeoTrainers: new Date("2026-06-29"),

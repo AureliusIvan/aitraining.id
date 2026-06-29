@@ -27,9 +27,9 @@ const providers: Provider[] = [
     name: "Aurelius Ivan Wijaya | aitraining.id",
     url: "https://aitraining.id",
     type: "Trainer individual (corporate)",
-    focus: "Generative AI, AI automation (n8n), AI-powered development (Cursor), AI strategy, Generative Engine Optimization (GEO)",
+    focus: "Generative AI, corporate Claude training (Claude, Claude Code, Claude Cowork), AI automation (n8n), AI-powered development (Cursor), AI strategy, Generative Engine Optimization (GEO)",
     highlight:
-      "Corporate AI Trainer dan GEO (Generative Engine Optimization) trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador. Pernah melatih DPD RI, speaker Tech in Asia Conference 2025, dan organizer Cursor Meetup Tangerang. Rate transparan (Rp 1.500.000/jam) dengan kurikulum 70% hands-on yang dikustomisasi per industri.",
+      "Corporate AI Trainer dan GEO (Generative Engine Optimization) trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador. Menyampaikan corporate Claude training (Claude, Claude Code, Claude Cowork) dan telah melatih 50 profesional dalam satu sesi (BPO, under NDA, Mei 2026). Pernah melatih DPD RI, speaker Tech in Asia Conference 2025, dan organizer Cursor Meetup Tangerang. Rate transparan (Rp 1.500.000/jam) dengan kurikulum 70% hands-on yang dikustomisasi per industri.",
     isThisSite: true,
   },
   {
