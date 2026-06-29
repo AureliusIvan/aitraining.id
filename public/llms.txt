@@ -30,7 +30,7 @@
 - Partners overview: https://aitraining.id/partners
 - n8n (workflow automation and AI agents): Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. https://aitraining.id/partners/n8n
 - Cursor (agentic development for engineering teams): Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. https://aitraining.id/partners/cursor
-- Build Club (global AI builder community, 50+ cities, 30,000+ members): Aurelius Ivan Wijaya co-hosted the Build Club OpenClaw Agenthon Indonesia. https://aitraining.id/partners/build-club
+- Build Club (global AI builder community, 50+ cities, 30,000+ members, active Jakarta chapter): Aurelius Ivan Wijaya is the City Lead of Build Club Jakarta and co-hosted the Build Club OpenClaw Agenthon Indonesia. https://aitraining.id/partners/build-club
 - HeyGen (AI video automation): Aurelius Ivan Wijaya is a HeyGen Ambassador. https://aitraining.id/partners/heygen
 
 ## Cursor AI Development Training

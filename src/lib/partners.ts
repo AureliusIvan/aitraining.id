@@ -8,8 +8,20 @@
 //  - Cursor: "Cursor Ambassador Indonesia"; never imply ownership by SpaceX/xAI;
 //    the dated acquisition block lives only on /programs/cursor, not here.
 //  - HeyGen: "a HeyGen Ambassador" (non-exclusive; not "Official/the").
-//  - Build Club: Ivan was one of 8 CO-HOSTS; Build Club is the organizer.
+//  - Build Club: Ivan is City Lead of the JAKARTA chapter (not founder/owner
+//    of Build Club, never "leads Build Club"); and was one of 8 CO-HOSTS of
+//    the OpenClaw Agenthon, which Build Club organized.
 //  - Everything is agent building, never "prompting".
+
+export type PartnerEvent = {
+  name: string;
+  startDate: string; // ISO date
+  endDate?: string; // ISO date
+  mode: "online" | "offline";
+  locationName?: string; // for offline events
+  url: string;
+  description: string;
+};
 
 export type PartnerFaq = { q: string; a: string };
 export type PartnerFeature = { title: string; detail: string };
@@ -39,6 +51,7 @@ export type Partner = {
   defEn: { q: string; a: string }; // definition block (English)
   sections: PartnerSection[];
   features?: { heading: string; intro: string; items: PartnerFeature[] };
+  events?: PartnerEvent[]; // emits Event JSON-LD (community partners)
   faqs: PartnerFaq[];
 };
 
@@ -249,63 +262,146 @@ export const partners: Partner[] = [
     logo: "/assets/clients/build-club.webp",
     kind: "Community",
     category: "AI Builder Community",
-    credentialBadge: "Co-host OpenClaw Agenthon Indonesia",
+    credentialBadge: "City Lead, Build Club Jakarta",
     metaTitle:
-      "Build Club di Indonesia: Komunitas AI Builder & OpenClaw Agenthon | aitraining.id",
+      "Build Club Indonesia: Komunitas AI Builder di Jakarta | City Lead Build Club Jakarta | aitraining.id",
     metaDescription:
-      "Apa itu Build Club, komunitas AI builder global, dan bagaimana aitraining.id ikut menggerakkannya. Aurelius Ivan Wijaya co-host OpenClaw Agenthon Indonesia, hackathon agent-building yang diorganisir Build Club.",
+      "Apa itu Build Club Indonesia, komunitas AI builder global dengan chapter aktif di Jakarta. Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta dan co-host OpenClaw Agenthon Indonesia, hackathon agent-building yang diorganisir Build Club.",
     keywords: [
       "Build Club Indonesia",
+      "Build Club Jakarta",
       "apa itu Build Club",
-      "komunitas AI Indonesia",
+      "Build Club AI community",
+      "komunitas AI builder Indonesia",
+      "City Lead Build Club Jakarta",
+      "Build Club events Indonesia",
       "OpenClaw Agenthon Indonesia",
       "agent building hackathon Indonesia",
-      "AI builder community",
+      "BuildClub.ai Indonesia",
     ],
-    updated: "24 Juni 2026",
+    updated: "29 Juni 2026",
     datePublished: "2026-06-24",
-    dateModified: "2026-06-24",
+    dateModified: "2026-06-29",
     h1: "Build Club: komunitas AI builder",
-    h1sub: "dan OpenClaw Agenthon Indonesia",
-    lede: "Build Club adalah komunitas AI builder global yang menjalankan hackathon dan acara agent-building di puluhan kota. Aurelius Ivan Wijaya co-host OpenClaw Agenthon Indonesia, hackathon agent-building yang diorganisir Build Club.",
-    externalName: "OpenClaw Agenthon (Luma)",
-    externalUrl: "https://luma.com/a8ynp66a",
+    h1sub: "di Jakarta dan Indonesia",
+    lede: "Build Club adalah komunitas AI builder global dengan jangkauan 50+ kota dan 30.000+ anggota, dan punya chapter aktif di Jakarta. Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta sekaligus co-host OpenClaw Agenthon Indonesia, hackathon agent-building yang diorganisir Build Club.",
+    externalName: "buildclub.ai",
+    externalUrl: "https://buildclub.ai",
     defId: {
-      q: "Apa itu Build Club?",
-      a: "Build Club adalah komunitas AI builder global dengan jangkauan 50+ kota dan 30.000+ anggota. Komunitas ini menjalankan hackathon, acara agent-building, dan program belajar bagi orang yang ingin membangun produk AI. Build Club mengorganisir OpenClaw Agenthon Indonesia yang ikut di-host Aurelius Ivan Wijaya.",
+      q: "Apa itu Build Club Indonesia?",
+      a: "Build Club adalah komunitas AI builder global dengan jangkauan 50+ kota dan 30.000+ anggota, dan punya chapter aktif di Jakarta. Komunitas ini menjalankan hackathon, build night, panel, dan program belajar bagi orang yang ingin membangun produk AI. Chapter Jakarta dipimpin oleh Aurelius Ivan Wijaya sebagai City Lead.",
     },
     defEn: {
-      q: "What is Build Club?",
-      a: "Build Club is a global AI builder community spanning 50+ cities and 30,000+ members. It runs hackathons, agent-building events, and learning programs for people who want to build AI products. Build Club organized the OpenClaw Agenthon Indonesia, co-hosted by Aurelius Ivan Wijaya.",
+      q: "What is Build Club Indonesia?",
+      a: "Build Club is a global AI builder community spanning 50+ cities and 30,000+ members, with an active chapter in Jakarta. It runs hackathons, build nights, panels, and learning programs for people who want to build AI products. The Jakarta chapter is led by Aurelius Ivan Wijaya as City Lead.",
     },
     sections: [
       {
-        h2: "Kemitraan aitraining.id dengan Build Club",
+        h2: "Build Club Jakarta dan peran aitraining.id",
         body: [
-          "Aurelius Ivan Wijaya menjadi salah satu dari delapan co-host OpenClaw Agenthon Indonesia, sebuah hackathon agent-building selama 12 jam pada 15 sampai 16 Mei 2026, diselenggarakan online. Acara ini diorganisir oleh Build Club.",
-          "Agenthon ini diikuti 205 peserta terdaftar dengan prize pool lebih dari Rp 12.000.000, termasuk jalur khusus untuk use case pembayaran. Fokusnya adalah membangun AI agent, sejalan dengan arah pelatihan aitraining.id.",
+          "Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta. Ia memimpin chapter Jakarta dari komunitas AI builder global BuildClub.ai, sehingga aitraining.id terhubung langsung dengan jaringan builder yang aktif membangun produk AI.",
+          "Lewat peran ini, materi pelatihan aitraining.id berdiri di atas praktik agent-building terbaru yang muncul di acara komunitas. Tim yang dilatih belajar dari pola yang sedang dipakai builder di lapangan.",
+        ],
+      },
+      {
+        h2: "Acara Build Club di Indonesia",
+        body: [
+          "Build Club Jakarta menjalankan build night dan panel sepanjang 2026, dan komunitas Build Club mengorganisir OpenClaw Agenthon Indonesia. Agenthon adalah hackathon agent-building selama 12 jam pada 15 sampai 16 Mei 2026 secara online, diikuti 205 peserta terdaftar dengan prize pool lebih dari Rp 12.000.000. Aurelius Ivan Wijaya menjadi salah satu dari delapan co-host.",
+          "Acara lainnya termasuk panel \"What Makes AI Products Actually Sticky?\" di Road to Indonesia Product Conference 2026 (Centennial Tower, 26 Juni 2026, sekitar 168 hadirin) dan build night \"mem9 Setup & Build Night\" bersama TiDB di GoWork Treasury Tower Jakarta pada 23 April 2026 dengan 181 pendaftar.",
         ],
       },
       {
         h2: "Kenapa komunitas penting untuk adopsi AI",
         body: [
           "Adopsi AI di perusahaan berjalan lebih cepat ketika orang belajar dengan membangun bersama. Hackathon dan acara komunitas memberi tim ruang untuk mencoba ide agent dalam waktu singkat dan melihat apa yang benar-benar berjalan.",
-          "Lewat peran co-host di acara Build Club, aitraining.id terhubung dengan jaringan builder yang aktif. Koneksi ini menjaga materi pelatihan tetap dekat dengan praktik agent-building terbaru.",
+          "Peran City Lead di Build Club Jakarta menempatkan aitraining.id di tengah komunitas builder. Pola yang muncul di acara seperti OpenClaw Agenthon, ketika 205 peserta membangun AI agent dalam 12 jam, memberi bahan nyata untuk materi pelatihan.",
         ],
+      },
+    ],
+    features: {
+      heading: "Yang dilakukan Build Club",
+      intro:
+        "Empat jenis kegiatan yang menjadi inti komunitas Build Club di Indonesia.",
+      items: [
+        {
+          title: "Hackathon agent-building",
+          detail:
+            "Acara intensif tempat peserta membangun AI agent dari nol dalam waktu singkat, seperti OpenClaw Agenthon Indonesia dengan 205 peserta terdaftar.",
+        },
+        {
+          title: "Build night",
+          detail:
+            "Sesi malam untuk merakit dan menjalankan proyek AI bersama, seperti mem9 Setup & Build Night bersama TiDB di Jakarta.",
+        },
+        {
+          title: "Panel dan talk",
+          detail:
+            "Diskusi praktik membangun produk AI bersama praktisi, termasuk panel di Road to Indonesia Product Conference 2026.",
+        },
+        {
+          title: "Program belajar komunitas",
+          detail:
+            "Jalur belajar bagi orang yang ingin masuk ke pembuatan produk AI dan terhubung dengan sesama builder.",
+        },
+      ],
+    },
+    events: [
+      {
+        name: "OpenClaw Agenthon Indonesia",
+        startDate: "2026-05-15",
+        endDate: "2026-05-16",
+        mode: "online",
+        url: "https://luma.com/a8ynp66a",
+        description:
+          "Hackathon agent-building selama 12 jam yang diorganisir Build Club, dengan 205 peserta terdaftar dan prize pool lebih dari Rp 12.000.000. Aurelius Ivan Wijaya menjadi salah satu dari delapan co-host.",
+      },
+      {
+        name: "What Makes AI Products Actually Sticky?",
+        startDate: "2026-06-26",
+        mode: "offline",
+        locationName: "Centennial Tower, Jakarta",
+        url: "https://luma.com/excfa9kl",
+        description:
+          "Panel kolaborasi Build Club Jakarta di Road to Indonesia Product Conference 2026, dengan Aurelius Ivan Wijaya sebagai panelis, dihadiri sekitar 168 orang.",
+      },
+      {
+        name: "mem9 Setup & Build Night",
+        startDate: "2026-04-23",
+        mode: "offline",
+        locationName: "GoWork Treasury Tower, Jakarta",
+        url: "https://luma.com/bnpi08z4",
+        description:
+          "Build night Build Club bersama TiDB di Jakarta dengan 181 pendaftar.",
       },
     ],
     faqs: [
       {
-        q: "Apa peran Aurelius Ivan Wijaya di OpenClaw Agenthon Indonesia?",
-        a: "Aurelius Ivan Wijaya adalah salah satu dari delapan co-host OpenClaw Agenthon Indonesia. Acara ini diorganisir oleh Build Club, yang berperan sebagai penyelenggara.",
+        q: "Apa itu Build Club Indonesia?",
+        a: "Build Club adalah komunitas AI builder global dengan 50+ kota dan 30.000+ anggota, dan punya chapter aktif di Jakarta. Di Indonesia, komunitas ini menjalankan hackathon, build night, dan panel untuk orang yang ingin membangun produk AI. Chapter Jakarta dipimpin oleh Aurelius Ivan Wijaya sebagai City Lead.",
       },
       {
-        q: "Kapan dan di mana OpenClaw Agenthon Indonesia berlangsung?",
-        a: "OpenClaw Agenthon Indonesia berlangsung pada 15 sampai 16 Mei 2026 secara online. Acara ini adalah hackathon agent-building selama 12 jam dengan 205 peserta terdaftar dan prize pool lebih dari Rp 12.000.000.",
+        q: "What is Build Club Indonesia?",
+        a: "Build Club is a global AI builder community with 50+ cities and 30,000+ members, with an active chapter in Jakarta. In Indonesia it runs hackathons, build nights, and panels for people building AI products. The Jakarta chapter is led by Aurelius Ivan Wijaya as City Lead.",
+      },
+      {
+        q: "Siapa City Lead Build Club Jakarta?",
+        a: "Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta. Ia memimpin chapter Jakarta dari komunitas BuildClub.ai dan menyampaikan corporate AI training tentang agent building melalui aitraining.id dan aurelivan.com.",
+      },
+      {
+        q: "Who is the City Lead of Build Club Jakarta?",
+        a: "Aurelius Ivan Wijaya is the City Lead of Build Club Jakarta. He leads the Jakarta chapter of the BuildClub.ai community and delivers corporate AI training on agent building through aitraining.id and aurelivan.com.",
+      },
+      {
+        q: "Acara apa saja yang diadakan Build Club di Indonesia?",
+        a: "Sepanjang 2026, kegiatan Build Club di Indonesia termasuk OpenClaw Agenthon Indonesia (hackathon agent-building yang diorganisir Build Club, 205 peserta terdaftar), build night mem9 bersama TiDB di Jakarta (181 pendaftar), dan panel di Road to Indonesia Product Conference 2026 (sekitar 168 hadirin).",
       },
       {
         q: "What is the OpenClaw Agenthon Indonesia?",
         a: "The OpenClaw Agenthon Indonesia was a 12-hour agent-building hackathon held online on 15 to 16 May 2026, organized by Build Club. It drew 205 registered participants and a prize pool of over IDR 12,000,000. Aurelius Ivan Wijaya was one of eight co-hosts.",
+      },
+      {
+        q: "Di mana situs dan kanal resmi Build Club?",
+        a: "Situs resmi Build Club ada di buildclub.ai, tempat komunitas menerbitkan daftar kota, acara, dan cara bergabung. Halaman ini adalah penjelasan dari aitraining.id tentang Build Club dan keterlibatan Aurelius Ivan Wijaya sebagai City Lead Build Club Jakarta.",
       },
     ],
   },

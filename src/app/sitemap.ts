@@ -44,9 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: city.geo ? 0.8 : 0.7,
   }));
 
+  // Each partner page carries its own real content-change date so freshness
+  // signals stay honest (don't bump n8n/cursor/heygen when only one changes).
   const partnerPages: MetadataRoute.Sitemap = partners.map((p) => ({
     url: `${baseUrl}/partners/${p.slug}`,
-    lastModified: LAST_MODIFIED.partners,
+    lastModified: new Date(p.dateModified),
     changeFrequency: "monthly",
     priority: 0.8,
   }));

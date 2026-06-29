@@ -83,6 +83,34 @@ export default async function PartnerArticlePage({
     })),
   };
 
+  const eventSchemas = (partner.events ?? []).map((ev) => ({
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: ev.name,
+    startDate: ev.startDate,
+    ...(ev.endDate ? { endDate: ev.endDate } : {}),
+    eventAttendanceMode:
+      ev.mode === "online"
+        ? "https://schema.org/OnlineEventAttendanceMode"
+        : "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    description: ev.description,
+    url: ev.url,
+    location:
+      ev.mode === "online"
+        ? { "@type": "VirtualLocation", url: ev.url }
+        : {
+            "@type": "Place",
+            name: ev.locationName,
+            address: { "@type": "PostalAddress", addressLocality: "Jakarta", addressCountry: "ID" },
+          },
+    organizer: {
+      "@type": "Organization",
+      name: "Build Club",
+      url: "https://buildclub.ai",
+    },
+  }));
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -122,6 +150,13 @@ export default async function PartnerArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {eventSchemas.map((ev) => (
+        <script
+          key={ev.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ev) }}
+        />
+      ))}
       <div className="min-h-screen bg-black text-white">
         <Nav />
         <main>

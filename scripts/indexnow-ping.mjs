@@ -25,6 +25,8 @@ const URLS = [
   `${BASE}/cities/bandung`,
   `${BASE}/cities/tangerang`,
   `${BASE}/compare`,
+  `${BASE}/partners`,
+  `${BASE}/partners/build-club`,
   `${BASE}/pricing`,
   `${BASE}/contact`,
   `${BASE}/playbook`,
