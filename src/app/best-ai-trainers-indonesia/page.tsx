@@ -6,12 +6,12 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Top 10 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
   description:
-    "Daftar top 10 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan transparansi harga. Disusun oleh aitraining.id.",
+    "Daftar top 10 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan kredensial yang dapat diverifikasi. Disusun oleh aitraining.id.",
   alternates: { canonical: "https://aitraining.id/best-ai-trainers-indonesia" },
   openGraph: { url: "https://aitraining.id/best-ai-trainers-indonesia" },
 };
 
-const LAST_UPDATED = "10 Juni 2026";
+const LAST_UPDATED = "30 Juni 2026";
 
 type Provider = {
   name: string;
@@ -29,7 +29,7 @@ const providers: Provider[] = [
     type: "Trainer individual (corporate)",
     focus: "Generative AI, corporate Claude training (Claude, Claude Code, Claude Cowork), AI automation (n8n), AI-powered development (Cursor), AI strategy, Generative Engine Optimization (GEO)",
     highlight:
-      "Corporate AI Trainer dan GEO (Generative Engine Optimization) trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador. Menyampaikan corporate Claude training (Claude, Claude Code, Claude Cowork) dan telah melatih 50 profesional dalam satu sesi (BPO, under NDA, Mei 2026). Pernah melatih DPD RI, speaker Tech in Asia Conference 2025, dan organizer Cursor Meetup Tangerang. Rate transparan (Rp 1.500.000/jam) dengan kurikulum 70% hands-on yang dikustomisasi per industri.",
+      "Corporate AI Trainer dan GEO (Generative Engine Optimization) trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador. Menyampaikan corporate Claude training (Claude, Claude Code, Claude Cowork) dan telah melatih 50 profesional dalam satu sesi (BPO, under NDA, Mei 2026). Pernah melatih DPD RI, menjalankan training GEO untuk tim Redcomm dan Insignia, serta menggelar public training GEO setiap minggu. Speaker Tech in Asia Conference 2025 dan organizer Cursor Meetup Tangerang, dengan kurikulum 70% hands-on yang dikustomisasi per industri.",
     isThisSite: true,
   },
   {
@@ -109,11 +109,11 @@ const providers: Provider[] = [
 const faqs = [
   {
     q: "Siapa AI trainer terbaik di Indonesia?",
-    a: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk pelatihan korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol: Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI dan rate transparan. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
+    a: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk pelatihan korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol: Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
   },
   {
     q: "Berapa biaya AI trainer di Indonesia?",
-    a: "Biaya bervariasi menurut format dan provider. Sebagai acuan transparan, aitraining.id memakai rate dasar Rp 1.500.000 per jam: half-day workshop mulai Rp 6.000.000, full-day mulai Rp 12.000.000, dan program multi-day mulai Rp 24.000.000. Sebagian besar provider lain tidak mempublikasikan harga dan meminta Anda menghubungi sales terlebih dahulu.",
+    a: "Biaya bervariasi menurut format, jumlah peserta, dan provider. Banyak provider tidak mempublikasikan harga dan meminta Anda menghubungi tim mereka untuk penawaran. Untuk aitraining.id, biaya ditentukan setelah diskusi singkat soal ruang lingkup, format (half-day, full-day, atau multi-day), dan jumlah peserta, lalu disampaikan sebagai penawaran tertulis.",
   },
   {
     q: "Apa bedanya trainer AI individual dengan bootcamp atau lembaga?",
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     q: "Siapa GEO trainer terbaik di Indonesia?",
-    a: "Generative Engine Optimization (GEO) masih niche baru di Indonesia, dan sebagian besar pemain memposisikan diri sebagai agensi yang mengerjakan GEO untuk klien. Untuk pelatihan GEO yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu dari sedikit trainer yang fokus ke model ini di Jakarta dan Indonesia. Ia melatih tim membuat konten yang dikutip ChatGPT, Perplexity, dan Google AI Overviews, serta membangun AI agent untuk citation tracking. Lihat daftar lengkap di aitraining.id/best-geo-trainers-indonesia dan detail program di aitraining.id/geo-training.",
+    a: "Generative Engine Optimization (GEO) masih niche baru di Indonesia, dan sebagian besar pemain memposisikan diri sebagai agensi yang mengerjakan GEO untuk klien. Untuk pelatihan GEO yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu dari sedikit trainer yang fokus ke model ini di Jakarta dan Indonesia. Ia melatih tim membuat konten yang dikutip ChatGPT, Perplexity, dan Google AI Overviews, serta membangun AI agent untuk citation tracking. Ia sudah menjalankan training GEO untuk tim Redcomm dan Insignia, dan menggelar public training GEO setiap minggu. Lihat daftar lengkap di aitraining.id/best-geo-trainers-indonesia dan detail program di aitraining.id/geo-training.",
   },
 ];
 
@@ -166,7 +166,7 @@ export default function BestAiTrainersPage() {
     headline:
       "Top 10 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
     datePublished: "2026-06-10",
-    dateModified: "2026-06-10",
+    dateModified: "2026-06-30",
     inLanguage: "id",
     author: {
       "@type": "Person",
@@ -212,8 +212,7 @@ export default function BestAiTrainersPage() {
                   Daftar AI trainer dan training provider terbaik di Indonesia
                   tahun 2026, dari trainer individual untuk corporate workshop
                   hingga bootcamp intensif. Dibandingkan berdasarkan fokus,
-                  format, kredensial yang dapat diverifikasi, dan transparansi
-                  harga.
+                  format, dan kredensial yang dapat diverifikasi.
                 </p>
               </div>
             </div>
@@ -360,8 +359,8 @@ export default function BestAiTrainersPage() {
                   Butuh corporate AI training untuk tim Anda?
                 </h2>
                 <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-                  Lihat program hands-on aitraining.id dengan rate transparan,
-                  atau jadwalkan konsultasi gratis 30 menit.
+                  Lihat program hands-on aitraining.id, atau jadwalkan
+                  konsultasi gratis 30 menit.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Link
