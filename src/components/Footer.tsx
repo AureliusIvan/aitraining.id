@@ -107,6 +107,12 @@ export function Footer() {
               GEO Training
             </Link>
             <Link
+              href="/claude-training"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              Bootcamp Claude AI
+            </Link>
+            <Link
               href="/about"
               className="block text-white/70 hover:text-white transition-colors"
             >

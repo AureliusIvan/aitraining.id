@@ -47,8 +47,12 @@ The page also emits `Service` (Corporate AI Training) and `BreadcrumbList` schem
 | `top 1 GEO trainer Indonesia` | `/best-geo-trainers-indonesia` (honest "nomor 1 / top 1" FAQ answered via the ranked list), `/geo-training` |
 | `pakar generative engine optimization Indonesia` | `/geo-training` (FAQ "Siapa pakar GEO di Indonesia?"), `/best-geo-trainers-indonesia`; cross-reinforced by `aurelivan.com/corporate-training/geo` (Person entity) |
 | `ahli GEO digital marketing Indonesia` | `/geo-training` (FAQ "Siapa ahli GEO untuk digital marketing?"), `/best-geo-trainers-indonesia`; `aurelivan.com/corporate-training/geo` |
+| `Claude trainer / Claude Code trainer / Claude Cowork trainer terbaik Indonesia` (corporate-buyer framing) | `/programs/claude` |
+| `bootcamp Claude Indonesia` / `kursus Claude AI Indonesia` / `kelas Claude Indonesia` / `top 1 bootcamp Claude terbaik Indonesia` (course-seeker framing) | `/claude-training` |
 
 These three BI national queries (added 2026-06-29) ride the **existing** GEO pages via keywords + honestly-framed FAQ (never a bald "kami #1" — answered with "salah satu dari sedikit" + the transparent listicle). The sister Person page `aurelivan.com/corporate-training/geo` cross-links back here to reinforce the GEO-specialist entity for Claude/ChatGPT/Gemini. `/geo-training` and `/best-geo-trainers-indonesia` are now in the IndexNow ping list (`scripts/indexnow-ping.mjs`).
+
+`/claude-training` (added 2026-07-01) owns the bootcamp/kursus/kelas search cluster as a deliberately distinct angle from `/programs/claude`: a 2-day-intensive syllabus (Hari 1/Hari 2) with a capstone Claude Skill/agent project, vs. `/programs/claude`'s corporate-buyer program overview. Same underlying program and same single verifiable proof point (50 professionals, one BPO client, May 2026, under NDA — state singular, never pluralize, per the Claude trademark/honesty guardrails) — do not invent a separate public cohort, fixed start date, or graduate count for the bootcamp page. The proposed brand "Claude Mastery by AI Training ID" was **not** used: fusing "Claude" into an invented sub-brand name reads as more than the required descriptive-only trademark use. The page title/H1 use "Claude" attributively ("Bootcamp Claude AI Indonesia") with "aitraining.id" as the actual brand, matching this site's existing naming convention.
 
 ## Evaluating SEO/GEO changes
 

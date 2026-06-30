@@ -51,7 +51,12 @@ const STATIC_META: Record<string, Meta> = {
     priority: 0.9,
   },
   "/programs/claude": {
-    lastModified: new Date("2026-06-29"),
+    lastModified: new Date("2026-07-01"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/claude-training": {
+    lastModified: new Date("2026-07-01"),
     changeFrequency: "monthly",
     priority: 0.9,
   },

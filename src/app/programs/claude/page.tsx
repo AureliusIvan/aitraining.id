@@ -545,6 +545,15 @@ export default function ClaudeProgramPage() {
               </h2>
               <div className="space-y-3 max-w-2xl text-sm">
                 <p className="text-white/70">
+                  Cari format bootcamp 2-day intensive dengan capstone project?{" "}
+                  <Link
+                    href="/claude-training"
+                    className="underline hover:text-white/90 transition-colors"
+                  >
+                    Lihat bootcamp Claude AI Indonesia
+                  </Link>
+                </p>
+                <p className="text-white/70">
                   Bandingkan trainer:{" "}
                   <Link
                     href="/best-ai-trainers-indonesia"
