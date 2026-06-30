@@ -1,45 +1,190 @@
+import { readdirSync } from "node:fs";
+import { join } from "node:path";
 import type { MetadataRoute } from "next";
 import { cities } from "@/lib/cities";
 import { partners } from "@/lib/partners";
 
-// Real content-change dates — update when a page meaningfully changes.
-// Stamping every URL with the build date is a false freshness signal
-// engines learn to ignore.
-const LAST_MODIFIED = {
-  home: new Date("2026-06-12"),
-  programs: new Date("2026-06-06"),
-  about: new Date("2026-06-10"),
-  cities: new Date("2026-06-06"),
-  jakarta: new Date("2026-06-28"),
-  compare: new Date("2026-06-10"),
-  pricing: new Date("2026-06-15"),
-  contact: new Date("2026-06-06"),
-  playbook: new Date("2026-06-06"),
-  playbookDailyPrompt: new Date("2026-06-06"),
-  bestAiTrainers: new Date("2026-06-30"),
-  pelatihanAiPerusahaan: new Date("2026-06-12"),
-  geoTraining: new Date("2026-06-29"),
-  bestGeoTrainers: new Date("2026-06-29"),
-  cursorProgram: new Date("2026-06-19"),
-  heygenProgram: new Date("2026-06-19"),
-  claudeProgram: new Date("2026-06-29"),
-  partners: new Date("2026-06-24"),
-} as const;
+const baseUrl = "https://aitraining.id";
+const APP_DIR = join(process.cwd(), "src/app");
+
+type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
+type Meta = {
+  // Real content-change date — present only when one is known. Bump it when a
+  // page meaningfully changes; NEVER stamp the build date (engines learn to
+  // ignore false freshness). A route with no date here is still indexed; it
+  // just ships without a freshness hint, which is honest for a page whose last
+  // real edit date we don't track.
+  lastModified?: Date;
+  changeFrequency: ChangeFrequency;
+  priority: number;
+};
+
+// Pages that exist on disk but must NOT appear in the sitemap — drafts,
+// thank-you/confirmation pages, gated or canonical-elsewhere routes. Add the
+// route path exactly as it would render, e.g. "/thank-you".
+const EXCLUDE = new Set<string>([]);
+
+// Editorial overlay for STATIC routes. The filesystem (see discoverStaticRoutes)
+// is the source of truth for *which* static URLs exist, so a new page is in the
+// sitemap the moment it ships — no manual list to update. This map only supplies
+// real dates + crawl hints, keyed by route path. A discovered route missing from
+// here is still emitted (default priority, no lastModified) and logged at build.
+const STATIC_META: Record<string, Meta> = {
+  "/": {
+    lastModified: new Date("2026-06-12"),
+    changeFrequency: "weekly",
+    priority: 1,
+  },
+  "/programs": {
+    lastModified: new Date("2026-06-06"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/programs/cursor": {
+    lastModified: new Date("2026-06-19"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/programs/heygen": {
+    lastModified: new Date("2026-06-19"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/programs/claude": {
+    lastModified: new Date("2026-06-29"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/partners": {
+    lastModified: new Date("2026-06-24"),
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
+  "/best-ai-trainers-indonesia": {
+    lastModified: new Date("2026-06-30"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/best-geo-trainers-indonesia": {
+    lastModified: new Date("2026-06-29"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/geo-training": {
+    lastModified: new Date("2026-07-01"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/pelatihan-ai-untuk-perusahaan": {
+    lastModified: new Date("2026-06-12"),
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  "/about": {
+    lastModified: new Date("2026-06-10"),
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
+  "/cities": {
+    lastModified: new Date("2026-06-06"),
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
+  "/compare": {
+    lastModified: new Date("2026-06-10"),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  "/pricing": {
+    lastModified: new Date("2026-06-15"),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  "/contact": {
+    lastModified: new Date("2026-06-06"),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+  "/playbook": {
+    lastModified: new Date("2026-06-06"),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  },
+  "/playbook/daily-prompt": {
+    lastModified: new Date("2026-06-06"),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  // Crawl hints curated; lastModified intentionally omitted until a real
+  // content-change date is known (don't fabricate freshness).
+  "/kursus-ai-online-indonesia": { changeFrequency: "monthly", priority: 0.8 },
+  "/pembicara-ai-indonesia": { changeFrequency: "monthly", priority: 0.85 },
+};
+
+const DEFAULT_META: Meta = { changeFrequency: "monthly", priority: 0.6 };
+
+// Walk src/app for directories that contain a page.tsx, building the route path
+// for each. Dynamic segments (`[city]`, `[slug]`) are skipped — those routes are
+// emitted from their data sources below, not the filesystem. Route groups
+// `(group)` add no path segment; private `_folders` and `api` carry no page.
+function discoverStaticRoutes(dir: string, prefix = ""): string[] {
+  const entries = (() => {
+    try {
+      return readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return [];
+    }
+  })();
+
+  const routes: string[] = [];
+  if (entries.some((e) => e.isFile() && e.name === "page.tsx")) {
+    routes.push(prefix === "" ? "/" : prefix);
+  }
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const name = entry.name;
+    if (name.startsWith("[") || name.startsWith("_") || name === "api")
+      continue;
+    const segment =
+      name.startsWith("(") && name.endsWith(")") ? "" : `/${name}`;
+    routes.push(...discoverStaticRoutes(join(dir, name), prefix + segment));
+  }
+
+  return routes;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://aitraining.id";
+  const staticPages: MetadataRoute.Sitemap = discoverStaticRoutes(APP_DIR)
+    .filter((route) => !EXCLUDE.has(route))
+    .sort()
+    .map((route) => {
+      const meta = STATIC_META[route];
+      if (!meta) {
+        console.warn(
+          `[sitemap] ${route} has no STATIC_META entry — emitted with default priority ${DEFAULT_META.priority} and no lastModified. Add it to STATIC_META for editorial control.`,
+        );
+      }
+      const { lastModified, changeFrequency, priority } = meta ?? DEFAULT_META;
+      return {
+        url: route === "/" ? baseUrl : `${baseUrl}${route}`,
+        ...(lastModified ? { lastModified } : {}),
+        changeFrequency,
+        priority,
+      };
+    });
 
-  // Cities carrying a GEO block (currently Jakarta) were updated on the GEO
-  // ship date; the rest keep the original cities date. Avoids a false-fresh
-  // signal on unchanged city pages while honestly stamping the ones that moved.
+  // Dynamic routes the filesystem can't enumerate — driven by their data source.
+  // Cities carrying a GEO block were updated on the GEO ship date; the rest keep
+  // the original cities date. Avoids a false-fresh signal on unchanged pages.
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${baseUrl}/cities/${city.id}`,
     lastModified:
       city.id === "jakarta"
-        ? LAST_MODIFIED.jakarta
+        ? new Date("2026-06-28")
         : city.geo
-          ? LAST_MODIFIED.geoTraining
-          : LAST_MODIFIED.cities,
+          ? new Date("2026-07-01")
+          : new Date("2026-06-06"),
     changeFrequency: "monthly",
     priority: city.geo ? 0.8 : 0.7,
   }));
@@ -53,110 +198,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: LAST_MODIFIED.home,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/programs`,
-      lastModified: LAST_MODIFIED.programs,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/partners`,
-      lastModified: LAST_MODIFIED.partners,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    ...partnerPages,
-    {
-      url: `${baseUrl}/best-ai-trainers-indonesia`,
-      lastModified: LAST_MODIFIED.bestAiTrainers,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/geo-training`,
-      lastModified: LAST_MODIFIED.geoTraining,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/programs/cursor`,
-      lastModified: LAST_MODIFIED.cursorProgram,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/programs/heygen`,
-      lastModified: LAST_MODIFIED.heygenProgram,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/programs/claude`,
-      lastModified: LAST_MODIFIED.claudeProgram,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/best-geo-trainers-indonesia`,
-      lastModified: LAST_MODIFIED.bestGeoTrainers,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pelatihan-ai-untuk-perusahaan`,
-      lastModified: LAST_MODIFIED.pelatihanAiPerusahaan,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: LAST_MODIFIED.about,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/cities`,
-      lastModified: LAST_MODIFIED.cities,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    ...cityPages,
-    {
-      url: `${baseUrl}/compare`,
-      lastModified: LAST_MODIFIED.compare,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified: LAST_MODIFIED.pricing,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: LAST_MODIFIED.contact,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/playbook`,
-      lastModified: LAST_MODIFIED.playbook,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${baseUrl}/playbook/daily-prompt`,
-      lastModified: LAST_MODIFIED.playbookDailyPrompt,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+  return [...staticPages, ...cityPages, ...partnerPages];
 }
