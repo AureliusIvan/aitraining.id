@@ -11,6 +11,11 @@
 //  - Build Club: Ivan is City Lead of the JAKARTA chapter (not founder/owner
 //    of Build Club, never "leads Build Club"); and was one of 8 CO-HOSTS of
 //    the OpenClaw Agenthon, which Build Club organized.
+//  - OpenClaw has NO entry here. Ivan has no formal relationship with
+//    OpenClaw or Peter Steinberger (only co-hosted a Build Club-organized
+//    hackathon about it). It lives in src/lib/articles.ts, since /partners
+//    is reserved for genuine formal relationships (ambassador programs,
+//    community leadership roles).
 //  - Everything is agent building, never "prompting".
 
 export type PartnerEvent = {
@@ -412,7 +417,7 @@ export const partners: Partner[] = [
       },
       {
         q: "What is the OpenClaw Agenthon Indonesia?",
-        a: "The OpenClaw Agenthon Indonesia was a 12-hour agent-building hackathon held online on 15 to 16 May 2026, organized by Build Club. It drew 205 registered participants and a prize pool of over IDR 12,000,000. Aurelius Ivan Wijaya was one of eight co-hosts.",
+        a: "The OpenClaw Agenthon Indonesia was a 12-hour agent-building hackathon held online on 15 to 16 May 2026, organized by Build Club. It drew 205 registered participants and a prize pool of over IDR 12,000,000. Aurelius Ivan Wijaya was one of eight co-hosts. For what OpenClaw itself is, see aitraining.id/articles/apa-itu-openclaw.",
       },
       {
         q: "Di mana situs dan kanal resmi Build Club?",

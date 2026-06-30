@@ -1,6 +1,7 @@
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 import type { MetadataRoute } from "next";
+import { articles } from "@/lib/articles";
 import { cities } from "@/lib/cities";
 import { partners } from "@/lib/partners";
 
@@ -64,6 +65,11 @@ const STATIC_META: Record<string, Meta> = {
     lastModified: new Date("2026-06-24"),
     changeFrequency: "monthly",
     priority: 0.85,
+  },
+  "/articles": {
+    lastModified: new Date("2026-07-01"),
+    changeFrequency: "monthly",
+    priority: 0.8,
   },
   "/best-ai-trainers-indonesia": {
     lastModified: new Date("2026-06-30"),
@@ -203,5 +209,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...cityPages, ...partnerPages];
+  // Each article carries its own real content-change date, same rationale
+  // as partner pages.
+  const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${baseUrl}/articles/${a.slug}`,
+    lastModified: new Date(a.dateModified),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...cityPages, ...partnerPages, ...articlePages];
 }
