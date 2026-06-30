@@ -334,6 +334,19 @@ export default function AboutPage() {
         url: "https://aurelivan.com",
       },
     ],
+    performer: {
+      "@type": "Person",
+      name: "Aurelius Ivan Wijaya",
+      url: "https://aurelivan.com",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "IDR",
+      availability: "https://schema.org/InStock",
+      url: "https://luma.com/a8ynp66a",
+      validFrom: "2026-05-15",
+    },
     image:
       "https://aitraining.id/assets/works/openclaw-agenthon-indonesia.webp",
     url: "https://luma.com/a8ynp66a",

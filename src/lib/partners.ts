@@ -16,11 +16,14 @@
 export type PartnerEvent = {
   name: string;
   startDate: string; // ISO date
-  endDate?: string; // ISO date
+  endDate?: string; // ISO date (defaults to startDate for single-day events)
   mode: "online" | "offline";
   locationName?: string; // for offline events
   url: string;
   description: string;
+  image?: string; // event image for Event JSON-LD (falls back to site hero)
+  performer?: string; // featured speaker/host/panelist (emits Person)
+  free?: boolean; // free-to-attend → emits a zero-price Offer
 };
 
 export type PartnerFaq = { q: string; a: string };
@@ -358,6 +361,10 @@ export const partners: Partner[] = [
         url: "https://luma.com/a8ynp66a",
         description:
           "Hackathon agent-building selama 12 jam yang diorganisir Build Club, dengan 205 peserta terdaftar dan prize pool lebih dari Rp 12.000.000. Aurelius Ivan Wijaya menjadi salah satu dari delapan co-host.",
+        image:
+          "https://aitraining.id/assets/works/openclaw-agenthon-indonesia.webp",
+        performer: "Aurelius Ivan Wijaya",
+        free: true,
       },
       {
         name: "What Makes AI Products Actually Sticky?",
@@ -367,6 +374,8 @@ export const partners: Partner[] = [
         url: "https://luma.com/excfa9kl",
         description:
           "Panel kolaborasi Build Club Jakarta di Road to Indonesia Product Conference 2026, dengan Aurelius Ivan Wijaya sebagai panelis, dihadiri sekitar 168 orang.",
+        performer: "Aurelius Ivan Wijaya",
+        free: true,
       },
       {
         name: "mem9 Setup & Build Night",
@@ -376,6 +385,8 @@ export const partners: Partner[] = [
         url: "https://luma.com/bnpi08z4",
         description:
           "Build night Build Club bersama TiDB di Jakarta dengan 181 pendaftar.",
+        performer: "Aurelius Ivan Wijaya",
+        free: true,
       },
     ],
     faqs: [

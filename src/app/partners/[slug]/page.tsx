@@ -88,7 +88,7 @@ export default async function PartnerArticlePage({
     "@type": "Event",
     name: ev.name,
     startDate: ev.startDate,
-    ...(ev.endDate ? { endDate: ev.endDate } : {}),
+    endDate: ev.endDate ?? ev.startDate,
     eventAttendanceMode:
       ev.mode === "online"
         ? "https://schema.org/OnlineEventAttendanceMode"
@@ -96,6 +96,7 @@ export default async function PartnerArticlePage({
     eventStatus: "https://schema.org/EventScheduled",
     description: ev.description,
     url: ev.url,
+    image: ev.image ?? "https://aitraining.id/assets/hero.webp",
     location:
       ev.mode === "online"
         ? { "@type": "VirtualLocation", url: ev.url }
@@ -109,6 +110,27 @@ export default async function PartnerArticlePage({
       name: "Build Club",
       url: "https://buildclub.ai",
     },
+    ...(ev.performer
+      ? {
+          performer: {
+            "@type": "Person",
+            name: ev.performer,
+            url: "https://aurelivan.com",
+          },
+        }
+      : {}),
+    ...(ev.free
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "IDR",
+            availability: "https://schema.org/InStock",
+            url: ev.url,
+            validFrom: ev.startDate,
+          },
+        }
+      : {}),
   }));
 
   const breadcrumbSchema = {
