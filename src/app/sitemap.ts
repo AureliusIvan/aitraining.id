@@ -77,12 +77,12 @@ const STATIC_META: Record<string, Meta> = {
     priority: 0.9,
   },
   "/best-geo-trainers-indonesia": {
-    lastModified: new Date("2026-06-29"),
+    lastModified: new Date("2026-07-02"),
     changeFrequency: "monthly",
     priority: 0.9,
   },
   "/geo-training": {
-    lastModified: new Date("2026-07-01"),
+    lastModified: new Date("2026-07-02"),
     changeFrequency: "monthly",
     priority: 0.9,
   },

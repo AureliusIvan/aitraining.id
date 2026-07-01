@@ -192,6 +192,14 @@ export function Footer() {
             >
               Kelas AI untuk Anak (TK &amp; SD) ↗
             </a>
+            <a
+              href="https://aicon.network"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              AICON Network ↗
+            </a>
           </div>
         </div>
 

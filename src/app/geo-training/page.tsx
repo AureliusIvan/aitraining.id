@@ -23,6 +23,10 @@ export const metadata: Metadata = {
     "pakar GEO Indonesia",
     "ahli GEO Indonesia",
     "top 1 GEO trainer Indonesia",
+    "GEO specialist Indonesia",
+    "GEO specialist Jakarta",
+    "top 1 GEO specialist Indonesia",
+    "spesialis GEO Indonesia",
   ],
   alternates: {
     canonical: "https://aitraining.id/geo-training",
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = "16 Juni 2026";
+const LAST_UPDATED = "2 Juli 2026";
 
 const curriculum = [
   {
@@ -140,7 +144,7 @@ export default function GeoTrainingPage() {
     headline:
       "GEO Trainer Indonesia: Pelatihan Generative Engine Optimization",
     datePublished: "2026-06-16",
-    dateModified: "2026-06-16",
+    dateModified: "2026-07-02",
     inLanguage: "id",
     author: {
       "@type": "Person",
@@ -185,7 +189,7 @@ export default function GeoTrainingPage() {
       "@type": "Person",
       "@id": "https://aurelivan.com/#person",
       name: "Aurelius Ivan Wijaya",
-      jobTitle: ["GEO Trainer", "Corporate AI Trainer"],
+      jobTitle: ["GEO Trainer", "GEO Specialist", "Corporate AI Trainer"],
     },
     inLanguage: "id",
     availableLanguage: ["id", "en"],
@@ -240,11 +244,47 @@ export default function GeoTrainingPage() {
     ],
   };
 
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalEvent",
+    name: "Agentic GEO: Kelas Online Generative Engine Optimization",
+    description:
+      "Kelas online publik pertama aitraining.id tentang Agentic GEO: membuat brand muncul dan dikutip di ChatGPT, Perplexity, Claude, dan Gemini, dengan praktik menyusun konten dan structured data.",
+    startDate: "2026-06-30T20:00:00+07:00",
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "VirtualLocation",
+      url: "https://goakal.com/ivan/agentic-geo",
+    },
+    organizer: {
+      "@type": "EducationalOrganization",
+      "@id": "https://aitraining.id/#organization",
+    },
+    performer: {
+      "@type": "Person",
+      "@id": "https://aurelivan.com/#person",
+      name: "Aurelius Ivan Wijaya",
+    },
+    inLanguage: "id",
+    offers: {
+      "@type": "Offer",
+      price: "199000",
+      priceCurrency: "IDR",
+      url: "https://goakal.com/ivan/agentic-geo",
+      availability: "https://schema.org/InStock",
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />
       <script
         type="application/ld+json"
@@ -374,11 +414,11 @@ export default function GeoTrainingPage() {
                 <p className="text-white/70 leading-relaxed">
                   Untuk pelatihan GEO hands-on yang membangun kapabilitas tim
                   secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah
-                  salah satu dari sedikit trainer di Jakarta dan Indonesia yang
-                  fokus ke model ini. Ia Corporate AI Trainer, Official n8n
-                  Ambassador for Indonesia, dan Cursor Ambassador, pernah melatih
-                  staf DPD RI, dan menjadi speaker di Tech in Asia Conference
-                  2025.
+                  salah satu dari sedikit GEO trainer atau GEO specialist di
+                  Jakarta dan Indonesia yang fokus ke model ini. Ia Corporate AI
+                  Trainer, Official n8n Ambassador for Indonesia, dan Cursor
+                  Ambassador, pernah melatih staf DPD RI, dan menjadi speaker di
+                  Tech in Asia Conference 2025.
                 </p>
                 <p className="text-white/70 leading-relaxed">
                   Ia melatih tim Anda menguasai GEO sendiri, termasuk membangun
@@ -465,6 +505,30 @@ export default function GeoTrainingPage() {
 
           <section className="py-16 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Rekam jejak: kelas Agentic GEO publik pertama
+              </h2>
+              <div className="max-w-3xl space-y-4">
+                <p className="text-white/70 leading-relaxed">
+                  Pada 30 Juni 2026, aitraining.id menggelar kelas online Agentic
+                  GEO publik pertamanya dengan 33 peserta terdaftar. Sesi ini
+                  membahas cara membuat brand muncul dan dikutip di ChatGPT,
+                  Perplexity, Claude, dan Gemini, dengan praktik langsung
+                  menyusun konten dan structured data. Rekaman sesi tersedia bagi
+                  peserta yang berhalangan hadir secara langsung.
+                </p>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Kelas Agentic GEO 30 Juni 2026 adalah kelas GEO publik pertama
+                  dari aitraining.id, memperluas pelatihan GEO Aurelius Ivan
+                  Wijaya dari sesi korporat privat ke audiens publik di
+                  Indonesia, dengan 33 peserta terdaftar.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-16 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
                 Pertanyaan umum tentang pelatihan GEO
               </h2>
@@ -477,6 +541,33 @@ export default function GeoTrainingPage() {
                     <p className="text-white/70 leading-relaxed">{faq.a}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-16 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="max-w-3xl rounded-2xl border border-white/10 p-8 sm:p-10">
+                <p className="text-white/70 text-sm mb-3 tracking-wide">
+                  [ Untuk perorangan ]
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Mau mulai belajar GEO sendiri?
+                </h2>
+                <p className="text-white/70 leading-relaxed mb-6">
+                  Untuk individu, founder, dan marketer yang ingin memulai GEO
+                  secara mandiri, ada kelas online Agentic GEO. Sesi langsung ini
+                  membahas cara membuat brand Anda muncul dan dikutip di ChatGPT,
+                  Claude, dan Gemini, dengan harga Rp 199.000.
+                </p>
+                <a
+                  href="https://goakal.com/ivan/agentic-geo?utm_source=aitraining.id&utm_medium=referral&utm_campaign=agentic_geo&utm_content=geo_training"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full hover:bg-white/90 transition-all font-medium"
+                >
+                  Ikuti kelas Agentic GEO
+                </a>
               </div>
             </div>
           </section>

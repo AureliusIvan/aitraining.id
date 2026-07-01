@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Corporate AI Trainer Indonesia | Aurelius Ivan Wijaya",
   description:
-    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia. n8n Official Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker yang berbicara di 50+ event AI di Indonesia. n8n Official Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/about",
   },
@@ -111,19 +111,23 @@ export default function AboutPage() {
     "@type": "Person",
     "@id": "https://aurelivan.com/#person",
     name: "Aurelius Ivan Wijaya",
+    alternateName: "Aurelivan",
     url: "https://aurelivan.com",
     jobTitle: [
       "Corporate AI Trainer",
       "AI Corporate Trainer",
       "Generative AI Trainer",
+      "AI Educator",
       "AI Consultant",
       "City Lead, Build Club Jakarta",
       "Speaker",
     ],
     description:
-      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker terkemuka di Indonesia. Official n8n Ambassador for Indonesia dan Cursor Ambassador. Membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, AI automation, dan enterprise training programs.",
+      "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker yang berbicara di 50+ event AI di Indonesia. Official n8n Ambassador for Indonesia dan Cursor Ambassador. Membantu perusahaan mengadopsi Generative AI melalui hands-on workshops, AI automation, dan enterprise training programs.",
     knowsAbout: [
       "Generative AI",
+      "AI Education",
+      "AI Educator",
       "AI Agent Development",
       "Large Language Models",
       "AI Engineering",
@@ -140,8 +144,12 @@ export default function AboutPage() {
     ],
     sameAs: [
       "https://aurelivan.com",
+      "https://aitraining.id",
+      "https://aiforkarir.com",
       "https://www.linkedin.com/in/aurelius-ivan-wijaya",
       "https://github.com/AureliusIvan",
+      "https://scholar.google.com/citations?user=1ld-BRwAAAAJ",
+      "https://www.superprof.co.id/corporate-trainer-berpengalaman-indonesia-mengajar-workflow-automation-powered-development-dan-strategy-untuk-tim.html",
       "https://aurelivan.substack.com",
     ],
     nationality: { "@type": "Country", name: "Indonesia" },
@@ -453,7 +461,7 @@ export default function AboutPage() {
                 <div className="space-y-6">
                   <p className="text-white/90 text-lg leading-relaxed">
                     Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative
-                    AI consultant, dan speaker terkemuka di Indonesia,{" "}
+                    AI consultant, dan speaker yang berbicara di 50+ event AI di Indonesia,{" "}
                     <strong className="text-white">n8n Official Ambassador Indonesia</strong>
                     ,{" "}
                     <strong className="text-white">Cursor Ambassador</strong>
@@ -570,6 +578,12 @@ export default function AboutPage() {
                     Indonesia, Aurelius Ivan Wijaya muncul pertama dalam daftar
                     individu pelatih AI.
                   </p>
+                  <p className="text-white/70 text-lg leading-relaxed mb-4">
+                    Pencarian semacam ini memakai berbagai istilah, dari pelatih
+                    AI, AI trainer, AI educator, hingga tokoh AI. Aurelius Ivan
+                    Wijaya membangun konten dan profil yang menjawab
+                    pertanyaan-pertanyaan itu.
+                  </p>
                   <p className="text-white/50 text-sm">
                     Hasil dari pendekatan Generative Engine Optimization (GEO):
                     nama trainer ikut terbaca AI search ketika orang mencari
@@ -614,9 +628,8 @@ export default function AboutPage() {
                   Speaking & training credentials
                 </h2>
                 <p className="text-white/70 text-lg max-w-2xl">
-                  Dipercaya oleh konferensi dan organisasi terkemuka di
-                  Indonesia untuk menyampaikan AI training dan speaking
-                  engagements. Lihat portofolio lengkap di{" "}
+                  Dipercaya oleh konferensi dan perusahaan di Indonesia
+                  untuk menyampaikan AI training dan speaking engagements. Lihat portofolio lengkap di{" "}
                   <a
                     href="https://aurelivan.com/speaking"
                     target="_blank"

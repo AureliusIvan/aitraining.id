@@ -72,7 +72,7 @@ Build the topical cluster so query fan-out retrieves us for adjacent phrasings:
 | 2 | "Pelatihan AI untuk Karyawan / Perusahaan" (ID-language pillar) | pelatihan AI korporat, training AI perusahaan |
 | 3 | Case studies w/ outcomes & client names (permission) | proof + citable statistics |
 | 4 | "AI training cost in Indonesia" guide | harga pelatihan AI, AI training cost — pairs with /pricing.md |
-| 5 | Per-program deep pages (n8n, Cursor, OpenClaw) | tool-specific training queries |
+| 5 | Per-program deep pages (n8n, Cursor, OpenClaw) | tool-specific training queries — OpenClaw's *definitional* query solved 2026-07-01 via `/articles/apa-itu-openclaw` (not a `/programs` page — see `CLAUDE.md` "Articles vs Partners"); a commercial `/programs/openclaw` deep page is still open |
 | 6 | Expand /playbook (worked well — keep shipping) | prompt engineering how-tos |
 
 Content rules (per Princeton GEO findings): cite sources, include dated statistics, expert attribution (Ivan's credentials on every page), 40–60-word direct-answer blocks under query-phrased H2s, visible "Last updated" dates. Bahasa Indonesia content is underserved — competitors ranking for ID queries are mostly institutions; an individual expert voice in ID is an open lane.

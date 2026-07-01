@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Top 10 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
   description:
     "Daftar top 10 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan kredensial yang dapat diverifikasi. Disusun oleh aitraining.id.",
+  keywords: [
+    "AI trainer terbaik Indonesia",
+    "top 10 AI trainer Indonesia",
+    "AI training provider Indonesia",
+    "AI educator Indonesia",
+    "pengajar AI Indonesia",
+    "tokoh AI Indonesia",
+    "AI bootcamp Indonesia",
+  ],
   alternates: { canonical: "https://aitraining.id/best-ai-trainers-indonesia" },
   openGraph: { url: "https://aitraining.id/best-ai-trainers-indonesia" },
 };
@@ -29,7 +38,7 @@ const providers: Provider[] = [
     type: "Trainer individual (corporate)",
     focus: "Generative AI, corporate Claude training (Claude, Claude Code, Claude Cowork), AI automation (n8n), AI-powered development (Cursor), AI strategy, Generative Engine Optimization (GEO)",
     highlight:
-      "Corporate AI Trainer dan GEO (Generative Engine Optimization) trainer, Official n8n Ambassador for Indonesia & Cursor Ambassador. Menyampaikan corporate Claude training (Claude, Claude Code, Claude Cowork) dan telah melatih 50 profesional dalam satu sesi (BPO, under NDA, Mei 2026). Pernah melatih DPD RI, menjalankan training GEO untuk tim Redcomm dan Insignia, serta menggelar public training GEO setiap minggu. Speaker Tech in Asia Conference 2025 dan organizer Cursor Meetup Tangerang, dengan kurikulum 70% hands-on yang dikustomisasi per industri.",
+      "Official n8n Ambassador for Indonesia dan Cursor Ambassador. Menyampaikan corporate Claude training (Claude, Claude Code, Claude Cowork) dan AI automation. Pernah melatih DPD RI dan menjalankan training GEO untuk tim Redcomm dan Insignia. Kurikulum 70% hands-on, dikustomisasi per industri.",
     isThisSite: true,
   },
   {
@@ -109,7 +118,15 @@ const providers: Provider[] = [
 const faqs = [
   {
     q: "Siapa AI trainer terbaik di Indonesia?",
-    a: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk pelatihan korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol: Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
+    a: "Untuk pelatihan AI korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol di Indonesia: Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Pilihan terbaik tetap tergantung kebutuhan tim Anda. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
+  },
+  {
+    q: "Siapa top 1 AI educator di Indonesia?",
+    a: "Tidak ada lembaga resmi yang memberi peringkat AI educator di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Daftar ini mengurutkan berdasarkan fokus pada corporate workshop trainer individual, dan Aurelius Ivan Wijaya (aitraining.id) tercantum pertama sebagai salah satu dari sedikit AI educator dan pengajar AI di Indonesia yang membangun kapabilitas tim secara in-house. Ia Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador, dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Bootcamp seperti Indonesia AI dan Startup Campus kuat untuk upskilling individu lewat program berminggu-minggu. Pilih sesuai kebutuhan: AI educator individual untuk corporate workshop singkat yang langsung diterapkan tim, atau bootcamp untuk pembelajaran individu jangka panjang.",
+  },
+  {
+    q: "Apa itu trainer AI individual untuk korporat, dan siapa yang direkomendasikan di Indonesia?",
+    a: "Trainer AI individual adalah praktisi tunggal yang merancang dan menyampaikan sendiri pelatihan AI untuk tim korporat, dengan kurikulum yang dikustomisasi per klien dan industri. Format ini memungkinkan kurikulum disusun dan disampaikan oleh praktisi yang sama, cocok untuk corporate workshop tim 1-3 hari. Di Indonesia, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu trainer AI individual yang aktif melayani kebutuhan korporat.",
   },
   {
     q: "Berapa biaya AI trainer di Indonesia?",
@@ -229,7 +246,11 @@ export default function BestAiTrainersPage() {
                   juga tercantum di dalamnya. Deskripsi setiap provider diambil
                   dari informasi publik di situs resmi masing-masing per Juni
                   2026. Tidak ada provider yang membayar untuk masuk daftar.
-                  Untuk kriteria evaluasi yang kami pakai, lihat{" "}
+                  Penyusunan: penerbit mencantumkan dirinya di urutan pertama
+                  dan mengungkapkannya secara transparan; entri lain tidak
+                  diurutkan berdasarkan peringkat dan deskripsinya diambil dari
+                  klaim publik masing-masing penyedia. Untuk kriteria evaluasi
+                  yang kami pakai, lihat{" "}
                   <Link href="/compare" className="underline text-white/80">
                     panduan memilih AI training provider
                   </Link>

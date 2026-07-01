@@ -47,7 +47,7 @@ Theme × modifier grid. ✅ covered (dedicated page) · ⚠️ thin (mentioned b
 - ❌ pelatihan AI agent / pelatihan membangun AI agent (BI) — missing entirely
 - ❌ build AI agents workshop / agentic AI training — missing
 - ❌ AI agent for business Indonesia — missing
-- ⚠️ OpenClaw training — listed on `/programs`, no standalone deep page
+- ✅ DONE 2026-07-01: `apa itu OpenClaw` definitional gap closed via `/articles/apa-itu-openclaw` (not a `/programs/openclaw` deep page as originally suggested below — see "Articles vs Partners" in `CLAUDE.md` for why). `OpenClaw training Indonesia` (commercial intent) still rides `/programs#openclaw` only.
 - ❌ n8n agent training / multi-agent workshop — missing (n8n only appears as a tag)
 
 ### Theme C — AI automation
@@ -102,7 +102,7 @@ P1 = high commercial intent + zero/near-zero coverage. Sorted P1 first.
 | Cursor AI development training Indonesia | commercial | thin | New `/programs/cursor` page (leverages Cursor ambassador claim) | P1 |
 | AI training [Bali/Medan/Semarang/Yogyakarta/Makassar] | commercial | missing | Add city entries to `cities.ts` (template already exists, near-zero cost) | P1 |
 | in-house / on-site AI training Indonesia | commercial | thin | Dedicated `/in-house-ai-training` or strong section + FAQ block | P2 |
-| OpenClaw training Indonesia | commercial | thin | Standalone `/programs/openclaw` deep page | P2 |
+| OpenClaw training Indonesia | commercial | thin | Standalone `/programs/openclaw` deep page — superseded; the definitional query was instead solved by `/articles/apa-itu-openclaw` (2026-07-01). Commercial intent still only has `/programs#openclaw`. | P2 |
 | AI strategy / AI adoption workshop for enterprise | commercial | thin | `/programs/ai-strategy` page | P2 |
 | AI for business leaders / executive AI workshop | commercial | missing | New audience page (C-level / managers) | P2 |
 | AI training cost Indonesia (EN) | commercial | thin | EN-language variant / section on `/pricing` + FAQ schema | P2 |
@@ -141,6 +141,6 @@ Pattern to apply on each: query-phrased H2, 40–60-word factual answer, Ivan's 
 5. **AI automation page** — promote the `/programs` automation block to `/programs/ai-automation` with a query-phrased H2 and FAQ.
 6. **EN pricing block + FAQ schema** — add an English "How much does corporate AI training cost in Indonesia?" answer block and FAQPage schema to `/pricing`.
 7. **Purge "prompting" keywords** — remove "prompt engineering training Indonesia" from `layout.tsx` and the "AI prompting / cara bikin prompt" terms from `/playbook/daily-prompt`; replace with agent-building / automation phrasing.
-8. **OpenClaw standalone page** — `/programs/openclaw` deep page; the program is listed but undiscoverable by tool-specific search.
+8. **OpenClaw standalone page** — ✅ DONE 2026-07-01, but as `/articles/apa-itu-openclaw` rather than `/programs/openclaw`: OpenClaw is an independent project with no formal Ivan affiliation (unlike n8n/Cursor/HeyGen's ambassador programs), so it got the new `/articles` content type instead of `/partners`. A `/programs/openclaw` commercial deep page (parallel to `/programs/cursor`) is still open if it becomes worth the investment.
 9. **In-house vs public answer block** — inside `/compare`, lift the format comparison into its own query-phrased H2 answer block to win that question in AI answers.
 10. **Ambassador entity sections on `/about`** — add headed "Official n8n Ambassador for Indonesia" and "Cursor Ambassador" sections so the entity claims live in body content, not just metadata, reinforcing E-E-A-T for the trainer queries.

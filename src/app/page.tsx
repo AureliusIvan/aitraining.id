@@ -78,6 +78,22 @@ export default function HomePage() {
             url: "https://aitraining.id/programs#openclaw",
           },
         },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "GEO / AI Search Optimization Training",
+            url: "https://aitraining.id/geo-training",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "AI Video Automation Training (HeyGen)",
+            url: "https://aitraining.id/programs#ai-video",
+          },
+        },
       ],
     },
   };
@@ -91,7 +107,7 @@ export default function HomePage() {
         name: "Siapa yang mendelivery corporate AI training di aitraining.id?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap tersedia di aurelivan.com.",
+          text: "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan Corporate AI Trainer berbasis di Jakarta. Profil lengkap dan portofolio tersedia di aurelivan.com.",
         },
       },
       {
@@ -115,7 +131,7 @@ export default function HomePage() {
         name: "Program AI training apa yang tersedia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Tersedia tiga program utama: AI Workflow Automation (menggunakan n8n), AI-Powered Development (menggunakan Cursor), dan AI Strategy & Adoption untuk level eksekutif. Semua program 70% hands-on practice.",
+          text: "Tersedia lima program utama: AI Workflow Automation (n8n), AI-Powered Development (Cursor), AI Strategy & Adoption untuk level eksekutif, OpenClaw Training untuk deploying open-source AI assistants, dan Generative Engine Optimization (GEO). Semua program 70% hands-on practice.",
         },
       },
       {
@@ -131,7 +147,7 @@ export default function HomePage() {
         name: "Apakah training bisa dilakukan on-site di kantor perusahaan kami?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Ya, corporate AI training tersedia on-site di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya. Opsi virtual juga tersedia untuk tim remote.",
+          text: "Ya, corporate AI training tersedia on-site di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, Yogyakarta, dan kota lainnya. Opsi virtual juga tersedia untuk tim remote dan hybrid.",
         },
       },
       {
@@ -147,7 +163,7 @@ export default function HomePage() {
         name: "Berapa durasi corporate AI training?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Session training berkisar dari half-day intensive workshop (4 jam) hingga multi-day training program (2-5 hari). Sebagian besar perusahaan memulai dengan full-day workshop 8 jam.",
+          text: "Session training berkisar dari half-day intensive workshop (4 jam) hingga multi-day training program. Durasi bergantung pada kedalaman materi dan tingkat AI familiarity tim Anda. Sebagian besar perusahaan memulai dengan full-day workshop.",
         },
       },
       {
@@ -240,9 +256,9 @@ function HeroSection() {
           </h1>
 
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed mt-10 animate-fade-in">
-            Program pelatihan Generative AI korporat yang hands-on, dari prompt
-            engineering hingga AI automation. Praktis dan langsung applicable
-            untuk tim perusahaan Anda. Delivered by{" "}
+            Program pelatihan Generative AI korporat yang hands-on, dari AI
+            automation hingga membangun AI agents. Praktis dan langsung
+            applicable untuk tim perusahaan Anda. Delivered by{" "}
             <a
               href="https://aurelivan.com"
               target="_blank"
@@ -326,7 +342,7 @@ function TrainerSection() {
           <div className="space-y-6">
             <p className="text-white/90 text-lg leading-relaxed">
               Aurelius Ivan Wijaya adalah Corporate AI Trainer dan speaker
-              terkemuka di Indonesia,{" "}
+              berbasis di Jakarta,{" "}
               <strong className="text-white">n8n Official Ambassador Indonesia</strong>{" "}
               dan <strong className="text-white">Cursor Ambassador</strong>. Ia
               telah melatih staf DPD RI (Dewan Perwakilan Daerah Republik
@@ -419,7 +435,7 @@ function ProgramsSection() {
       outcomes: [
         "Build automated workflows dari nol",
         "Integrasikan AI ke proses bisnis harian",
-        "Kurangi repetitive tasks hingga 60-80%",
+        "Kurangi pekerjaan repetitif secara signifikan",
         "Hubungkan Gmail, Slack, CRM, dan database",
       ],
       href: "/programs#automation",
@@ -432,7 +448,7 @@ function ProgramsSection() {
         "Upskill tim engineering Anda dengan AI-powered development tools. Pelajari cara menggunakan Cursor IDE, AI coding assistants, dan modern AI development practices untuk ship lebih cepat dan menulis kode lebih baik.",
       outcomes: [
         "Master AI-assisted coding dengan Cursor",
-        "Percepat development speed 2-5x",
+        "Percepat siklus development",
         "Improve code quality dengan AI review",
         "Build AI features ke dalam produk Anda",
       ],
@@ -583,7 +599,7 @@ function ProgramsSection() {
 
 function StatsSection() {
   const stats = [
-    { value: "5+", label: "Speaking events" },
+    { value: "50+", label: "Speaking events" },
     { value: "70%", label: "Hands-on practice" },
     { value: "4", label: "Training programs" },
     { value: "ID", label: "Nationwide coverage" },
@@ -1034,7 +1050,7 @@ function FAQSection() {
       question:
         "Siapa yang mendelivery corporate AI training di aitraining.id?",
       answer:
-        "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan corporate AI trainer terkemuka di Indonesia. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+        "Semua program corporate AI training di aitraining.id didelivery oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan Corporate AI Trainer berbasis di Jakarta. Profil lengkap dan portofolio tersedia di aurelivan.com.",
     },
     {
       question: "Siapa n8n Official Ambassador di Indonesia?",

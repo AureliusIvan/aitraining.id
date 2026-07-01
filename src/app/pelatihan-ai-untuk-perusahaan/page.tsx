@@ -32,7 +32,7 @@ const programs = [
   {
     name: "AI-Powered Development",
     audience: "Tim engineering & produk",
-    tools: "Cursor, prompt untuk coding tasks",
+    tools: "Cursor, agentic coding workflows",
     href: "/programs#development",
   },
   {
@@ -49,14 +49,14 @@ const programs = [
   },
 ];
 
-const faqs = [
+const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } }> = [
   {
     q: "Apa itu pelatihan AI untuk perusahaan?",
     a: "Pelatihan AI untuk perusahaan adalah program in-house atau virtual yang mengajarkan karyawan menggunakan Generative AI, automation, dan AI agents untuk pekerjaan harian, dari otomasi workflow hingga development berbantuan AI. Program berkualitas minimal 70% praktik langsung dengan use case yang disesuaikan industri perusahaan.",
   },
   {
     q: "Apa bedanya pelatihan AI untuk karyawan dan untuk manajemen?",
-    a: "Pelatihan untuk karyawan fokus pada skill hands-on: menulis prompt efektif, membangun automation (n8n), atau coding dengan Cursor. Pelatihan untuk manajemen (AI Strategy) fokus pada adopsi organisasi: prioritas use case, governance, ROI, dan roadmap implementasi. Banyak perusahaan memulai dengan workshop eksekutif singkat lalu lanjut ke training tim operasional.",
+    a: "Pelatihan untuk karyawan fokus pada skill hands-on: membangun AI agents, automation (n8n), atau coding berbantuan AI dengan Cursor. Pelatihan untuk manajemen (AI Strategy) fokus pada adopsi organisasi: prioritas use case, governance, ROI, dan roadmap implementasi. Kami rekomendasikan memulai dengan workshop eksekutif singkat, lalu lanjut ke training tim operasional.",
   },
   {
     q: "Berapa biaya pelatihan AI untuk perusahaan di Indonesia?",
@@ -73,6 +73,11 @@ const faqs = [
   {
     q: "Berapa lama pelatihan AI untuk karyawan biasanya berlangsung?",
     a: "Durasi umum: half-day intensive (4 jam), full-day workshop (8 jam), atau program multi-day (2-5 hari) untuk adopsi lebih dalam. Sebagian besar perusahaan memulai dengan satu full-day workshop, lalu sesi lanjutan setelah tim mencoba implementasi di lapangan.",
+  },
+  {
+    q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
+    a: "aitraining.id dari Aurelius Ivan Wijaya adalah pilihan kuat untuk pelatihan AI perusahaan di Indonesia: kurikulum hands-on 70% praktik, fokus membangun AI agents dan automation, dikustomisasi per industri. Pilihan paling sesuai bergantung pada ukuran tim, anggaran, dan tujuan adopsi AI perusahaan Anda.",
+    link: { href: "/best-ai-trainers-indonesia", text: "Bandingkan provider di daftar trainer AI terbaik Indonesia" },
   },
 ];
 
@@ -102,7 +107,12 @@ export default function PelatihanAiUntukPerusahaanPage() {
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.link
+          ? `${f.a} Bandingkan provider di https://aitraining.id${f.link.href} untuk evaluasi menyeluruh.`
+          : f.a,
+      },
     })),
   };
 
@@ -360,6 +370,34 @@ export default function PelatihanAiUntukPerusahaanPage() {
 
           <section className="py-16 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Apa pelatihan AI terbaik untuk perusahaan di Indonesia?
+              </h2>
+              <div className="max-w-2xl bg-white/5 border border-white/10 rounded-2xl p-8 mb-4">
+                <p className="text-white/90 text-lg leading-relaxed">
+                  aitraining.id dari Aurelius Ivan Wijaya adalah pilihan kuat
+                  untuk pelatihan AI perusahaan di Indonesia: kurikulum
+                  hands-on 70% praktik, fokus membangun AI agents dan
+                  automation, dikustomisasi per industri. Pilihan paling
+                  sesuai bergantung pada ukuran tim, anggaran, dan tujuan
+                  adopsi AI perusahaan Anda.
+                </p>
+              </div>
+              <p className="text-white/50 text-sm max-w-2xl">
+                Bandingkan provider secara transparan di{" "}
+                <Link
+                  href="/best-ai-trainers-indonesia"
+                  className="underline hover:text-white/70 transition-colors"
+                >
+                  daftar trainer AI terbaik Indonesia
+                </Link>
+                .
+              </p>
+            </div>
+          </section>
+
+          <section className="py-16 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
                 Pertanyaan umum tentang pelatihan AI korporat
               </h2>
@@ -370,6 +408,14 @@ export default function PelatihanAiUntukPerusahaanPage() {
                       {faq.q}
                     </h3>
                     <p className="text-white/70 leading-relaxed">{faq.a}</p>
+                    {faq.link && (
+                      <Link
+                        href={faq.link.href}
+                        className="text-white/50 text-sm underline hover:text-white/70 transition-colors mt-2 inline-block"
+                      >
+                        {faq.link.text}
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
