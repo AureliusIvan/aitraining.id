@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 import { partners } from "@/lib/partners";
+import { trustedBy, buildTrustedBySchema } from "@/lib/trusted-by";
 
 export const metadata: Metadata = {
   title:
@@ -53,6 +54,8 @@ export default function PartnersPage() {
     })),
   };
 
+  const trustedBySchema = buildTrustedBySchema();
+
   return (
     <>
       <script
@@ -62,6 +65,10 @@ export default function PartnersPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(trustedBySchema) }}
       />
       <div className="min-h-screen bg-black text-white">
         <Nav />
@@ -140,6 +147,58 @@ export default function PartnersPage() {
                   </Link>
                 ))}
               </div>
+            </div>
+          </section>
+
+          <section className="py-16 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <p className="text-white/70 text-sm mb-6 tracking-wide">
+                [ Trusted By ]
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+                Dipercaya oleh organisasi & partner di Indonesia
+              </h2>
+              <p className="sr-only">
+                Organisasi yang telah dilatih, diajak kerja sama, atau
+                menghadirkan Aurelius Ivan Wijaya sebagai speaker.
+              </p>
+              <ul className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-5">
+                {trustedBy.map((item) => {
+                  const isInternal = item.href.startsWith("/");
+                  const logo = (
+                    <div className="flex items-center justify-center h-14 w-full rounded-xl bg-white/90 px-4 py-3">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        width={120}
+                        height={40}
+                        className="h-8 w-auto object-contain"
+                      />
+                    </div>
+                  );
+                  return (
+                    <li key={item.name}>
+                      {isInternal ? (
+                        <Link
+                          href={item.href}
+                          className="group flex items-center justify-center border border-white/10 rounded-2xl p-3 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
+                        >
+                          {logo}
+                        </Link>
+                      ) : (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-center border border-white/10 rounded-2xl p-3 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
+                        >
+                          {logo}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </section>
 
