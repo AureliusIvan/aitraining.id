@@ -201,11 +201,68 @@ export default function HomePage() {
     ],
   };
 
+  const trustedBySchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Organisasi yang telah dilatih, diajak kerja sama, atau menghadirkan Aurelius Ivan Wijaya sebagai speaker",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "GovernmentOrganization",
+          name: "DPD RI",
+          url: "https://www.dpd.go.id",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "Organization",
+          name: "PT Bayer Indonesia",
+          url: "https://www.bayer.co.id",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@type": "Organization",
+          name: "Hacktiv8",
+          url: "https://hacktiv8.com",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        item: {
+          "@type": "Organization",
+          name: "Telkom AI Center",
+          url: "https://www.telkom.co.id",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        item: {
+          "@type": "Organization",
+          name: "Jagoan Hosting",
+          url: "https://www.jagoanhosting.com",
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(trustedBySchema) }}
       />
       <script
         type="application/ld+json"
@@ -216,6 +273,7 @@ export default function HomePage() {
         <main>
           <HeroSection />
           <TrainerSection />
+          <TrustedBySection />
           <ProgramsSection />
           <StatsSection />
           <DocumentationSection />
@@ -419,6 +477,148 @@ function TrainerSection() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function TrustedBySection() {
+  const trusted = [
+    {
+      src: "/assets/clients/n8n.png",
+      alt: "n8n: Aurelius Ivan Wijaya adalah Official n8n Ambassador Indonesia",
+      name: "n8n",
+      caption: "Official n8n Ambassador Indonesia",
+      href: "/partners/n8n",
+    },
+    {
+      src: "/assets/clients/cursor.webp",
+      alt: "Cursor: Aurelius Ivan Wijaya adalah Cursor Ambassador Indonesia",
+      name: "Cursor",
+      caption: "Cursor Ambassador Indonesia",
+      href: "/partners/cursor",
+    },
+    {
+      src: "/assets/clients/build-club.webp",
+      alt: "Build Club, partner komunitas AI builder",
+      name: "Build Club",
+      caption: "Partner komunitas AI builder",
+      href: "/partners/build-club",
+    },
+    {
+      src: "/assets/clients/heygen.png",
+      alt: "HeyGen, partner AI video automation",
+      name: "HeyGen",
+      caption: "Partner AI video automation",
+      href: "/partners/heygen",
+    },
+    {
+      src: "/assets/clients/dpd-ri.svg",
+      alt: "DPD RI: Aurelius Ivan Wijaya melatih staf DPD RI dalam transformasi digital",
+      name: "DPD RI",
+      caption: "Pelatihan AI & transformasi digital untuk lembaga negara",
+      href: "https://www.dpd.go.id",
+    },
+    {
+      src: "/assets/clients/bayer.svg",
+      alt: "PT Bayer Indonesia: corporate AI training oleh Aurelius Ivan Wijaya",
+      name: "PT Bayer Indonesia",
+      caption: "Corporate AI training, akhir 2025",
+      href: "https://www.bayer.co.id",
+    },
+    {
+      src: "/assets/clients/hacktiv8.svg",
+      alt: "Hacktiv8: workshop Agentic AI with n8n & Hermes oleh Aurelius Ivan Wijaya",
+      name: "Hacktiv8",
+      caption: "Workshop publik: Agentic AI with n8n & Hermes, Juni 2026",
+      href: "https://hacktiv8.com",
+    },
+    {
+      src: "/assets/clients/telkom.png",
+      alt: "Telkom AI Center: workshop AI Connect oleh Aurelius Ivan Wijaya di Bandung",
+      name: "Telkom AI Center",
+      caption: "Workshop From Idea to Content, Bandung",
+      href: "https://www.telkom.co.id",
+    },
+    {
+      src: "/assets/clients/jagoan-hosting.png",
+      alt: "Jagoan Hosting: Aurelius Ivan Wijaya sebagai speaker peluncuran VM Ultra",
+      name: "Jagoan Hosting",
+      caption: "AI workshop & speaker peluncuran VM Ultra",
+      href: "https://www.jagoanhosting.com",
+    },
+  ];
+
+  return (
+    <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
+      <div className="max-w-[1400px] mx-auto">
+        <p className="text-white/70 text-sm mb-6 tracking-wide">
+          [ Trusted By ]
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+          Dipercaya oleh organisasi & partner di Indonesia
+        </h2>
+        <p className="text-white/60 text-sm max-w-2xl mb-12">
+          Organisasi yang telah dilatih, diajak kerja sama, atau menghadirkan
+          Aurelius Ivan Wijaya sebagai speaker.
+        </p>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+          {trusted.map((item) => {
+            const isInternal = item.href.startsWith("/");
+            const logo = (
+              <div className="flex items-center justify-center h-14 w-full rounded-xl bg-white/90 px-4 py-3">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
+            );
+            const label = (
+              <div>
+                <p className="text-white font-medium text-sm">{item.name}</p>
+                <p className="text-white/50 text-xs mt-1 leading-snug">
+                  {item.caption}
+                </p>
+              </div>
+            );
+            return (
+              <li key={item.name}>
+                {isInternal ? (
+                  <Link
+                    href={item.href}
+                    aria-label={`Baca tentang ${item.name}`}
+                    className="group flex flex-col items-center text-center gap-3 border border-white/10 rounded-2xl p-5 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
+                  >
+                    {logo}
+                    {label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Kunjungi ${item.name}`}
+                    className="group flex flex-col items-center text-center gap-3 border border-white/10 rounded-2xl p-5 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
+                  >
+                    {logo}
+                    {label}
+                  </a>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        <p className="text-white/40 text-sm mt-10 text-center">
+          <Link
+            href="/partners"
+            className="underline hover:text-white/70 transition-colors"
+          >
+            Lihat semua partner
+          </Link>
+        </p>
       </div>
     </section>
   );
@@ -665,33 +865,6 @@ function DocumentationSection() {
     },
   ];
 
-  const partners = [
-    {
-      src: "/assets/clients/n8n.png",
-      alt: "n8n: Aurelius Ivan Wijaya adalah Official n8n Ambassador Indonesia",
-      name: "n8n",
-      href: "/partners/n8n",
-    },
-    {
-      src: "/assets/clients/cursor.webp",
-      alt: "Cursor: Aurelius Ivan Wijaya adalah Cursor Ambassador Indonesia",
-      name: "Cursor",
-      href: "/partners/cursor",
-    },
-    {
-      src: "/assets/clients/build-club.webp",
-      alt: "Build Club, partner komunitas AI builder",
-      name: "Build Club",
-      href: "/partners/build-club",
-    },
-    {
-      src: "/assets/clients/heygen.png",
-      alt: "HeyGen, partner AI video automation",
-      name: "HeyGen",
-      href: "/partners/heygen",
-    },
-  ];
-
   return (
     <section className="bg-black py-24 px-6 sm:px-8 border-t border-white/10">
       <div className="max-w-[1400px] mx-auto">
@@ -719,37 +892,6 @@ function DocumentationSection() {
               </figcaption>
             </figure>
           ))}
-        </div>
-        <div className="mt-16 pt-10 border-t border-white/10">
-          <p className="text-white/40 text-sm mb-6 text-center">
-            Bermitra dengan
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-5">
-            {partners.map((partner) => (
-              <Link
-                key={partner.name}
-                href={partner.href}
-                aria-label={`Baca tentang ${partner.name}`}
-                className="flex items-center justify-center rounded-xl bg-white/90 px-6 py-4 hover:bg-white transition-colors"
-              >
-                <Image
-                  src={partner.src}
-                  alt={partner.alt}
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto object-contain"
-                />
-              </Link>
-            ))}
-          </div>
-          <p className="text-white/40 text-sm mt-6 text-center">
-            <Link
-              href="/partners"
-              className="underline hover:text-white/70 transition-colors"
-            >
-              Lihat semua partner
-            </Link>
-          </p>
         </div>
       </div>
     </section>
