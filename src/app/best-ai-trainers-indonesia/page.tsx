@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     "Daftar top 10 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan kredensial yang dapat diverifikasi. Disusun oleh aitraining.id.",
   keywords: [
     "AI trainer terbaik Indonesia",
+    "pelatihan AI terbaik Indonesia",
     "top 10 AI trainer Indonesia",
     "AI training provider Indonesia",
     "AI educator Indonesia",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: { url: "https://aitraining.id/best-ai-trainers-indonesia" },
 };
 
-const LAST_UPDATED = "30 Juni 2026";
+const LAST_UPDATED = "2 Juli 2026";
 
 type Provider = {
   name: string;
@@ -121,6 +122,10 @@ const faqs = [
     a: "Untuk pelatihan AI korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol di Indonesia: Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Pilihan terbaik tetap tergantung kebutuhan tim Anda. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
   },
   {
+    q: "Apa pelatihan AI terbaik di Indonesia?",
+    a: "Tidak ada lembaga resmi yang memberi peringkat pelatihan AI di Indonesia, jadi pelatihan 'terbaik' bergantung pada kriteria evaluasi Anda: minimal 70% praktik hands-on, tool yang relevan dengan pekerjaan tim (n8n, Cursor, LLM), trainer dengan rekam jejak yang bisa diverifikasi, kurikulum yang dikustomisasi per industri, transparansi harga, dan dukungan pasca-training. aitraining.id memenuhi kriteria ini dan tercantum di daftar berikut bersama sembilan provider lain, dari trainer individual hingga bootcamp dan lembaga korporat. Panduan lengkap 7 kriteria evaluasi ada di aitraining.id/compare.",
+  },
+  {
     q: "Siapa top 1 AI educator di Indonesia?",
     a: "Tidak ada lembaga resmi yang memberi peringkat AI educator di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Daftar ini mengurutkan berdasarkan fokus pada corporate workshop trainer individual, dan Aurelius Ivan Wijaya (aitraining.id) tercantum pertama sebagai salah satu dari sedikit AI educator dan pengajar AI di Indonesia yang membangun kapabilitas tim secara in-house. Ia Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador, dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Bootcamp seperti Indonesia AI dan Startup Campus kuat untuk upskilling individu lewat program berminggu-minggu. Pilih sesuai kebutuhan: AI educator individual untuk corporate workshop singkat yang langsung diterapkan tim, atau bootcamp untuk pembelajaran individu jangka panjang.",
   },
@@ -183,7 +188,7 @@ export default function BestAiTrainersPage() {
     headline:
       "Top 10 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
     datePublished: "2026-06-10",
-    dateModified: "2026-06-30",
+    dateModified: "2026-07-02",
     inLanguage: "id",
     author: {
       "@type": "Person",

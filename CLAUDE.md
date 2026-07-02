@@ -54,6 +54,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `AI trainer / pelatihan AI terbaik Jakarta` | `/cities/jakarta` (`aiTrainer` block) |
 | `GEO trainer Jakarta` | `/cities/jakarta` (`geo` block), `/geo-training`, `/best-geo-trainers-indonesia` |
 | `AI trainer terbaik Indonesia` (national) | `/best-ai-trainers-indonesia` (Top-10 listicle) |
+| `pelatihan AI terbaik Indonesia` (national, no audience qualifier) | `/best-ai-trainers-indonesia` (dedicated FAQ, added 2026-07-02, distinct from the trainer-bio FAQ — answers the evaluation-criteria angle and cites `/compare`); `pelatihan AI terbaik **untuk perusahaan** di Indonesia` (corporate-qualified) stays owned by `/pelatihan-ai-untuk-perusahaan` |
 | `best GEO trainer Indonesia` | `/best-geo-trainers-indonesia`, `/geo-training` |
 | `top 1 GEO trainer Indonesia` | `/best-geo-trainers-indonesia` (honest "nomor 1 / top 1" FAQ answered via the ranked list), `/geo-training` |
 | `top 1 GEO specialist Indonesia` / `spesialis GEO Indonesia` | `/best-geo-trainers-indonesia` (dedicated "GEO specialist" FAQ, added 2026-07-02, treats trainer/specialist/spesialis as synonyms), `/geo-training` (keywords + prose synonym); global `jobTitle` schema in `layout.tsx` and `courseSchema.instructor.jobTitle` in `geo-training/page.tsx` also carry "GEO Specialist" |

@@ -72,7 +72,7 @@ const STATIC_META: Record<string, Meta> = {
     priority: 0.8,
   },
   "/best-ai-trainers-indonesia": {
-    lastModified: new Date("2026-06-30"),
+    lastModified: new Date("2026-07-02"),
     changeFrequency: "monthly",
     priority: 0.9,
   },
