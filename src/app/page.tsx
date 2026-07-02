@@ -346,6 +346,36 @@ export default function HomePage() {
           description: "Speaker di Tech in Asia Conference 2025",
         },
       },
+      {
+        "@type": "ListItem",
+        position: 15,
+        item: {
+          "@type": "CollegeOrUniversity",
+          name: "Universitas AMIKOM Yogyakarta",
+          url: "https://home.amikom.ac.id",
+          description: "Undangan Seminar Nasional 'Human in the AI Era'",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 16,
+        item: {
+          "@type": "CollegeOrUniversity",
+          name: "Universitas Muhammadiyah Tangerang",
+          url: "https://umt.ac.id",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 17,
+        item: {
+          "@type": "CollegeOrUniversity",
+          name: "Telkom University",
+          url: "https://telkomuniversity.ac.id",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
     ],
   };
 
@@ -630,7 +660,7 @@ function TrustedBySection() {
     },
     {
       src: "/assets/clients/telkom.png",
-      alt: "Telkom AI Center: workshop AI Connect oleh Aurelius Ivan Wijaya di Bandung",
+      alt: "Telkom AI Center: workshop AI Connect: From Idea to Content oleh Aurelius Ivan Wijaya di Bandung",
       name: "Telkom AI Center",
       caption: "Workshop From Idea to Content, Bandung",
       href: "https://www.telkom.co.id",
@@ -704,6 +734,27 @@ function TrustedBySection() {
       name: "Tech in Asia",
       caption: "Speaker di Tech in Asia Conference 2025",
       href: "https://www.techinasia.com",
+    },
+    {
+      src: "/assets/clients/amikom.png",
+      alt: "Universitas AMIKOM Yogyakarta mengundang Aurelius Ivan Wijaya untuk Seminar Nasional 'Human in the AI Era'",
+      name: "Universitas AMIKOM Yogyakarta",
+      caption: "Undangan Seminar Nasional 'Human in the AI Era'",
+      href: "https://home.amikom.ac.id",
+    },
+    {
+      src: "/assets/clients/umt.png",
+      alt: "Universitas Muhammadiyah Tangerang, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "Universitas Muhammadiyah Tangerang",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://umt.ac.id",
+    },
+    {
+      src: "/assets/clients/telkom-university.png",
+      alt: "Telkom University, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "Telkom University",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://telkomuniversity.ac.id",
     },
   ];
 
