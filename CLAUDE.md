@@ -31,7 +31,7 @@ Corporate AI training landing site for **Aurelius Ivan Wijaya** (Aurelivan brand
 
 Each city is a `City` object in `cities.ts`. Two optional blocks drive conditional content + schema on the city page, currently set only for **Jakarta**:
 
-- **`aiTrainer`** — general "best AI trainer `<city>`" intent (`top 1 ai trainer di jakarta`, `AI trainer Jakarta pelatihan AI terbaik`). Renders a buyer-FAQ section + `FAQPage` JSON-LD. FAQs cover who / cost / on-site vs online / differentiator. H2 is a buyer-guide ("Memilih Pelatihan AI dan AI Trainer Terbaik di `<city>`"), not a self-claim.
+- **`aiTrainer`** — general "best AI trainer `<city>`" intent (`top 1 ai trainer di jakarta`, `AI trainer Jakarta pelatihan AI terbaik`, `best AI training di jakarta` — code-switched superlative query, added 2026-07-02). Renders a buyer-FAQ section + `FAQPage` JSON-LD. FAQs cover who / cost / on-site vs online / differentiator / best-training-provider (honest "no official ranking body" framing, same pattern as the national line in `llms.txt`). H2 is a buyer-guide ("Memilih Pelatihan AI dan AI Trainer Terbaik di `<city>`"), not a self-claim.
 - **`geo`** — "GEO trainer `<city>`" intent. Renders a GEO FAQ section + GEO `Service` + `FAQPage` JSON-LD.
 
 The page also emits `Service` (Corporate AI Training) and `BreadcrumbList` schema for every city, and city-specific `keywords` metadata when `aiTrainer` is set. To target a new city for these queries, add the block(s) to that city's object — no component changes needed.
@@ -52,6 +52,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | Intent | Owning page |
 |--------|-------------|
 | `AI trainer / pelatihan AI terbaik Jakarta` | `/cities/jakarta` (`aiTrainer` block) |
+| `best AI training di jakarta` (code-switched superlative query) | `/cities/jakarta` (`aiTrainer` block, dedicated FAQ added 2026-07-02, same "no official ranking body" honest framing as the national line in `llms.txt`); keyword also added to page `metadata.keywords`; reinforced by a matching city-level line in `llms.txt` |
 | `GEO trainer Jakarta` | `/cities/jakarta` (`geo` block), `/geo-training`, `/best-geo-trainers-indonesia` |
 | `AI trainer terbaik Indonesia` (national) | `/best-ai-trainers-indonesia` (Top-10 listicle) |
 | `pelatihan AI terbaik Indonesia` (national, no audience qualifier) | `/best-ai-trainers-indonesia` (dedicated FAQ, added 2026-07-02, distinct from the trainer-bio FAQ — answers the evaluation-criteria angle and cites `/compare`); `pelatihan AI terbaik **untuk perusahaan** di Indonesia` (corporate-qualified) stays owned by `/pelatihan-ai-untuk-perusahaan` |
@@ -64,12 +65,15 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `bootcamp Claude Indonesia` / `kursus Claude AI Indonesia` / `kelas Claude Indonesia` / `top 1 bootcamp Claude terbaik Indonesia` (course-seeker framing) | `/claude-training` |
 | `apa itu OpenClaw` / `what is OpenClaw` (definitional) | `/articles/apa-itu-openclaw` |
 | `OpenClaw training Indonesia` / `OpenClaw Agenthon Indonesia` (commercial/community) | `/programs#openclaw`, `/partners/build-club` |
+| `AI Training Indonesia` / `AI training Indonesia` (national head term) | `/` (homepage: H1, title, meta description, and `metadata.keywords` already target it; `EducationalOrganization`/`Person` schema in `layout.tsx` reinforces the entity; a buyer-guide FAQ added 2026-07-02 answers "Bagaimana memilih AI training di Indonesia?" with the same honest "no official ranking body" framing, linking `/best-ai-trainers-indonesia`) |
 
 These three BI national queries (added 2026-06-29) ride the **existing** GEO pages via keywords + honestly-framed FAQ (never a bald "kami #1" — answered with "salah satu dari sedikit" + the transparent listicle). The sister Person page `aurelivan.com/corporate-training/geo` cross-links back here to reinforce the GEO-specialist entity for Claude/ChatGPT/Gemini. `/geo-training` and `/best-geo-trainers-indonesia` are now in the IndexNow ping list (`scripts/indexnow-ping.mjs`).
 
 `/claude-training` (added 2026-07-01) owns the bootcamp/kursus/kelas search cluster as a deliberately distinct angle from `/programs/claude`: a 2-day-intensive syllabus (Hari 1/Hari 2) with a capstone Claude Skill/agent project, vs. `/programs/claude`'s corporate-buyer program overview. Same underlying program and same single verifiable proof point (50 professionals, one BPO client, May 2026, under NDA — state singular, never pluralize, per the Claude trademark/honesty guardrails) — do not invent a separate public cohort, fixed start date, or graduate count for the bootcamp page. The proposed brand "Claude Mastery by AI Training ID" was **not** used: fusing "Claude" into an invented sub-brand name reads as more than the required descriptive-only trademark use. The page title/H1 use "Claude" attributively ("Bootcamp Claude AI Indonesia") with "aitraining.id" as the actual brand, matching this site's existing naming convention.
 
 `apa itu OpenClaw` (added 2026-07-01) is a high-competition global query already saturated by Wikipedia, DigitalOcean, Milvus, KDnuggets, and several Indonesian hosting-company content mills (Hostinger, Rumahweb, Biznetgio, AwanServers, Jetorbit) — none of this site's pages will outrank Wikipedia for the bare definition. The realistic win is the Indonesia/training long-tail (being cited as the secondary source for "OpenClaw training Indonesia", "OpenClaw Agenthon Indonesia") where Ivan has a real, undisputed first-hand credential (Agenthon co-host, training VM installer) that the generic content-mill articles don't. Don't over-invest in chasing the bare head term; the off-domain lever (listicle outreach, the Agenthon's own third-party footprint) matters more here than more on-domain pages.
+
+`AI Training Indonesia` (added 2026-07-02) already drives the site's core H1, title, and meta description. As a bare blue link it is a long shot: it competes against large course marketplaces and government-adjacent or association-run training listings that outrank a single-trainer site on domain authority alone, not against peer trainers this site can credibly out-argue. The realistic play is GEO-citation (the homepage's honest buyer-guide FAQ and schema, plus `llms.txt`, feeding ChatGPT/Perplexity/AI Overviews answers) and qualified long-tail (`AI trainer Jakarta`, `Claude bootcamp Indonesia`, `GEO trainer Indonesia`) rather than chasing the bare head term's blue-link ranking.
 
 ## Evaluating SEO/GEO changes
 

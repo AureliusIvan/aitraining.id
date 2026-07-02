@@ -27,6 +27,7 @@ export async function generateMetadata({
           `pelatihan AI korporat ${city.name}`,
           `corporate AI training ${city.name}`,
           `AI training ${city.name}`,
+          `best AI training ${city.name}`,
         ]
       : undefined,
     alternates: { canonical: `https://aitraining.id/cities/${city.id}` },

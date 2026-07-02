@@ -185,10 +185,18 @@ export default function HomePage() {
       },
       {
         "@type": "Question",
+        name: "Bagaimana memilih AI training di Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia, jadi pilihan terbaik bergantung pada kriteria evaluasi Anda: rasio praktik hands-on, relevansi tool dengan pekerjaan tim, kredibilitas trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. aitraining.id menjalankan kurikulum 70% hands-on dan memenuhi kriteria ini. Bandingkan dengan 9 provider lain di aitraining.id/best-ai-trainers-indonesia.",
+        },
+      },
+      {
+        "@type": "Question",
         name: "Siapa trainer AI terbaik di Indonesia untuk korporat?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk corporate workshop hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) menonjol sebagai Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan rate transparan Rp 1.500.000/jam. Perbandingan 10 provider: aitraining.id/best-ai-trainers-indonesia.",
+          text: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk corporate workshop hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu opsi dengan kredensial terverifikasi (Official n8n Ambassador for Indonesia, Cursor Ambassador) dan rate transparan Rp 1.500.000/jam. Perbandingan 10 provider: aitraining.id/best-ai-trainers-indonesia.",
         },
       },
       {
@@ -775,9 +783,9 @@ function DocumentationSection() {
 function WhySection() {
   const reasons = [
     {
-      title: "Hands-on, bukan teori",
+      title: "Hands-on, praktik langsung",
       description:
-        "Setiap workshop dibangun di atas latihan nyata yang langsung bisa diterapkan tim Anda. Bukan ceramah teori belaka.",
+        "Setiap workshop dibangun di atas latihan nyata yang langsung bisa diterapkan tim Anda.",
     },
     {
       title: "Dikustomisasi untuk perusahaan Anda",
@@ -1114,6 +1122,11 @@ function FAQSection() {
       question: "Apa itu pelatihan AI untuk perusahaan?",
       answer:
         "Pelatihan AI untuk perusahaan adalah program hands-on yang mengajarkan karyawan memakai Generative AI, automation, dan AI agents di pekerjaan harian, dengan kurikulum dikustomisasi per industri. Lihat panduan lengkap di halaman pelatihan AI untuk perusahaan.",
+    },
+    {
+      question: "Bagaimana memilih AI training di Indonesia?",
+      answer:
+        "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia, jadi pilihan terbaik bergantung pada kriteria evaluasi Anda: rasio praktik hands-on, relevansi tool dengan pekerjaan tim, kredibilitas trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. aitraining.id menjalankan kurikulum 70% hands-on dan memenuhi kriteria ini. Bandingkan dengan 9 provider lain di daftar trainer AI terbaik Indonesia.",
     },
     {
       question: "Siapa trainer AI terbaik di Indonesia untuk korporat?",

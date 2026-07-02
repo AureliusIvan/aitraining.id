@@ -61,6 +61,10 @@ export const cities: City[] = [
           q: "Apa yang membedakan pelatihan AI ini di Jakarta?",
           a: "Setiap program fokus membangun AI agent dan automation yang langsung dipakai tim. Materi mencakup AI automation dengan n8n, AI-powered development dengan Cursor, AI video automation dengan HeyGen, dan strategi adopsi AI. Trainer telah berbicara di Tech in Asia Conference 2025 dan melatih staf DPD RI di Jakarta.",
         },
+        {
+          q: "Siapa penyedia best AI training (pelatihan AI terbaik) di Jakarta?",
+          a: "Tidak ada lembaga resmi yang memberi peringkat penyedia AI training di Jakarta. Kriteria evaluasi yang berguna: rasio hands-on, relevansi tool yang diajarkan, rekam jejak trainer yang dapat diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. aitraining.id menjalankan kurikulum 70% hands-on on-site di seluruh DKI Jakarta dan memenuhi kriteria ini. Bandingkan dengan 9 provider lain di halaman Top 10 AI Trainer Indonesia.",
+        },
       ],
     },
     geo: {
