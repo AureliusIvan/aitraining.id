@@ -213,6 +213,7 @@ export default function HomePage() {
           "@type": "GovernmentOrganization",
           name: "DPD RI",
           url: "https://www.dpd.go.id",
+          description: "Pelatihan AI & transformasi digital untuk lembaga negara",
         },
       },
       {
@@ -221,7 +222,8 @@ export default function HomePage() {
         item: {
           "@type": "Organization",
           name: "PT Bayer Indonesia",
-          url: "https://www.bayer.co.id",
+          url: "https://www.bayer.com",
+          description: "Corporate AI training, akhir 2025",
         },
       },
       {
@@ -231,6 +233,7 @@ export default function HomePage() {
           "@type": "Organization",
           name: "Hacktiv8",
           url: "https://hacktiv8.com",
+          description: "Workshop publik: Agentic AI with n8n & Hermes, Juni 2026",
         },
       },
       {
@@ -240,6 +243,7 @@ export default function HomePage() {
           "@type": "Organization",
           name: "Telkom AI Center",
           url: "https://www.telkom.co.id",
+          description: "Workshop From Idea to Content, Bandung",
         },
       },
       {
@@ -249,6 +253,97 @@ export default function HomePage() {
           "@type": "Organization",
           name: "Jagoan Hosting",
           url: "https://www.jagoanhosting.com",
+          description: "AI workshop & speaker peluncuran VM Ultra",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        item: {
+          "@type": "Organization",
+          name: "Insignia",
+          url: "https://insignia.co.id",
+          description: "Corporate AI training, agent building cohort",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 7,
+        item: {
+          "@type": "Organization",
+          name: "Domainesia",
+          url: "https://www.domainesia.com",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 8,
+        item: {
+          "@type": "Organization",
+          name: "Cakap",
+          url: "https://cakap.com",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 9,
+        item: {
+          "@type": "Organization",
+          name: "Ekipa",
+          url: "https://ekipa.co",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 10,
+        item: {
+          "@type": "Organization",
+          name: "MSIG Indonesia",
+          url: "https://www.msig.co.id/id",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 11,
+        item: {
+          "@type": "Organization",
+          name: "Sagara Technology",
+          url: "https://sagaratechnology.com/en",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 12,
+        item: {
+          "@type": "Organization",
+          name: "DPO&Co",
+          url: "https://dpoandco.com",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 13,
+        item: {
+          "@type": "Organization",
+          name: "Indonesia Product Conference",
+          url: "https://indonesiaproductconference.id",
+          description: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 14,
+        item: {
+          "@type": "Organization",
+          name: "Tech in Asia",
+          url: "https://www.techinasia.com",
+          description: "Speaker di Tech in Asia Conference 2025",
         },
       },
     ],
@@ -513,7 +608,7 @@ function TrustedBySection() {
       href: "/partners/heygen",
     },
     {
-      src: "/assets/clients/dpd-ri.svg",
+      src: "/assets/clients/dpd-ri.png",
       alt: "DPD RI: Aurelius Ivan Wijaya melatih staf DPD RI dalam transformasi digital",
       name: "DPD RI",
       caption: "Pelatihan AI & transformasi digital untuk lembaga negara",
@@ -524,7 +619,7 @@ function TrustedBySection() {
       alt: "PT Bayer Indonesia: corporate AI training oleh Aurelius Ivan Wijaya",
       name: "PT Bayer Indonesia",
       caption: "Corporate AI training, akhir 2025",
-      href: "https://www.bayer.co.id",
+      href: "https://www.bayer.com",
     },
     {
       src: "/assets/clients/hacktiv8.svg",
@@ -547,6 +642,69 @@ function TrustedBySection() {
       caption: "AI workshop & speaker peluncuran VM Ultra",
       href: "https://www.jagoanhosting.com",
     },
+    {
+      src: "/assets/clients/insignia.png",
+      alt: "Insignia: corporate AI training, agent building cohort, oleh Aurelius Ivan Wijaya",
+      name: "Insignia",
+      caption: "Corporate AI training, agent building cohort",
+      href: "https://insignia.co.id",
+    },
+    {
+      src: "/assets/clients/domainesia.png",
+      alt: "Domainesia, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "Domainesia",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://www.domainesia.com",
+    },
+    {
+      src: "/assets/clients/cakap.svg",
+      alt: "Cakap, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "Cakap",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://cakap.com",
+    },
+    {
+      src: "/assets/clients/ekipa.svg",
+      alt: "Ekipa, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "Ekipa",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://ekipa.co",
+    },
+    {
+      src: "/assets/clients/msig.svg",
+      alt: "MSIG Indonesia, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "MSIG Indonesia",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://www.msig.co.id/id",
+    },
+    {
+      src: "/assets/clients/sagara-technology.png",
+      alt: "Sagara Technology, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "Sagara Technology",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://sagaratechnology.com/en",
+    },
+    {
+      src: "/assets/clients/dpoandco.jpeg",
+      alt: "DPO&Co, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "DPO&Co",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://dpoandco.com",
+    },
+    {
+      src: "/assets/clients/indonesia-product-conference.webp",
+      alt: "Indonesia Product Conference, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      name: "Indonesia Product Conference",
+      caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+      href: "https://indonesiaproductconference.id",
+    },
+    {
+      src: "/assets/clients/tech-in-asia.png",
+      alt: "Tech in Asia: Aurelius Ivan Wijaya sebagai speaker di Tech in Asia Conference 2025",
+      name: "Tech in Asia",
+      caption: "Speaker di Tech in Asia Conference 2025",
+      href: "https://www.techinasia.com",
+    },
   ];
 
   return (
@@ -558,11 +716,11 @@ function TrustedBySection() {
         <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
           Dipercaya oleh organisasi & partner di Indonesia
         </h2>
-        <p className="text-white/60 text-sm max-w-2xl mb-12">
+        <p className="sr-only">
           Organisasi yang telah dilatih, diajak kerja sama, atau menghadirkan
           Aurelius Ivan Wijaya sebagai speaker.
         </p>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <ul className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-5">
           {trusted.map((item) => {
             const isInternal = item.href.startsWith("/");
             const logo = (
@@ -576,35 +734,23 @@ function TrustedBySection() {
                 />
               </div>
             );
-            const label = (
-              <div>
-                <p className="text-white font-medium text-sm">{item.name}</p>
-                <p className="text-white/50 text-xs mt-1 leading-snug">
-                  {item.caption}
-                </p>
-              </div>
-            );
             return (
               <li key={item.name}>
                 {isInternal ? (
                   <Link
                     href={item.href}
-                    aria-label={`Baca tentang ${item.name}`}
-                    className="group flex flex-col items-center text-center gap-3 border border-white/10 rounded-2xl p-5 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
+                    className="group flex items-center justify-center border border-white/10 rounded-2xl p-3 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
                   >
                     {logo}
-                    {label}
                   </Link>
                 ) : (
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Kunjungi ${item.name}`}
-                    className="group flex flex-col items-center text-center gap-3 border border-white/10 rounded-2xl p-5 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
+                    className="group flex items-center justify-center border border-white/10 rounded-2xl p-3 h-full hover:border-white/20 hover:bg-white/[0.02] transition-all"
                   >
                     {logo}
-                    {label}
                   </a>
                 )}
               </li>
