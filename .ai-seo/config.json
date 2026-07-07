@@ -1,0 +1,10 @@
+{
+  "cadenceSeconds": 900,
+  "minDeployGapSeconds": 600,
+  "discoveryEveryTicks": 10,
+  "maxEmptyDiscoveryStops": 3,
+  "honestyGuardrails": true,
+  "lastDeployTs": null,
+  "ticksSinceDiscovery": 0,
+  "consecutiveEmptyDiscovery": 0
+}

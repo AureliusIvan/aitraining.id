@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://aitraining.id"),
   title: {
-    default: "AI Corporate Training Indonesia | aitraining.id",
-    template: "%s | aitraining.id",
+    default: "AI Training Indonesia",
+    template: "%s | AI Training Indonesia",
   },
   description:
     "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     "AI consultant Indonesia",
     "AI workshop perusahaan",
     "pelatihan AI korporat",
+    "kenapa perlu AI training",
     "enterprise AI training Jakarta",
     "AI trainer Jakarta",
     "pelatihan AI terbaik Jakarta",
@@ -52,20 +53,20 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Aurelius Ivan Wijaya", url: "https://aurelivan.com" }],
   creator: "Aurelius Ivan Wijaya",
-  publisher: "aitraining.id",
+  publisher: "AI Training Indonesia",
   openGraph: {
     type: "website",
     locale: "id_ID",
     alternateLocale: "en_US",
     url: "https://aitraining.id",
-    siteName: "aitraining.id",
-    title: "AI Corporate Training Indonesia | aitraining.id",
+    siteName: "AI Training Indonesia",
+    title: "AI Training Indonesia",
     description:
       "Hands-on corporate AI training for companies in Indonesia. Workshops on AI automation, AI-powered development, and enterprise AI strategy.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Corporate Training Indonesia | aitraining.id",
+    title: "AI Training Indonesia",
     description:
       "Hands-on corporate AI training for companies in Indonesia. Delivered by Aurelius Ivan Wijaya.",
     creator: "@aurelivan",
@@ -108,7 +109,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "@id": "https://aitraining.id/#organization",
-    name: "aitraining.id",
+    name: "AI Training Indonesia",
     url: "https://aitraining.id",
     description:
       "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI agent building, AI automation, AI-powered development, and AI strategy for enterprise teams.",
@@ -262,7 +263,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://aitraining.id/#website",
-    name: "aitraining.id",
+    name: "AI Training Indonesia",
     url: "https://aitraining.id",
     description:
       "Corporate AI training programs in Indonesia by Aurelius Ivan Wijaya.",
