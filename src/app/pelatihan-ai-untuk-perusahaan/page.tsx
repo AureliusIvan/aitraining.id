@@ -25,6 +25,9 @@ const LAST_UPDATED = "7 Juli 2026";
 const mengapaPerusahaanButuhPelatihanAi =
   "Generative AI mengubah skill yang dibutuhkan karyawan di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025-2030. Pelatihan hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks perusahaan, agar adopsi merata di seluruh organisasi.";
 
+const manfaatAiTrainingUntukKaryawan =
+  "Manfaat AI training untuk karyawan meliputi skill praktis memakai Generative AI sesuai role: automation untuk operasional, development berbantuan AI untuk engineering, atau framework adopsi untuk manajemen. Kurikulum 70% hands-on membuat karyawan mencoba workflow di sesi dengan use case perusahaan, sehingga tim memiliki kemampuan dan istilah bersama saat menerapkan AI di proyek internal.";
+
 const programs = [
   {
     name: "AI Workflow Automation",
@@ -56,6 +59,10 @@ const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } 
   {
     q: "Mengapa perusahaan butuh pelatihan AI?",
     a: mengapaPerusahaanButuhPelatihanAi,
+  },
+  {
+    q: "Apa manfaat AI training untuk karyawan?",
+    a: manfaatAiTrainingUntukKaryawan,
   },
   {
     q: "Apa itu pelatihan AI untuk perusahaan?",
@@ -272,6 +279,20 @@ export default function PelatihanAiUntukPerusahaanPage() {
                   disepakati manajemen.
                 </p>
               </div>
+            </div>
+          </section>
+
+          <section
+            id="manfaat-ai-training-untuk-karyawan"
+            className="py-16 px-6 sm:px-8 border-t border-white/10"
+          >
+            <div className="max-w-[1400px] mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Manfaat AI training untuk karyawan
+              </h2>
+              <p className="text-white/70 leading-relaxed max-w-3xl">
+                {manfaatAiTrainingUntukKaryawan}
+              </p>
             </div>
           </section>
 
