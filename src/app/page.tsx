@@ -25,6 +25,9 @@ const kapanPerusahaanPerluAiTrainingAnswer =
 const apaItuCorporateAiTrainingAnswer =
   "Corporate AI training adalah program pelatihan in-house atau virtual yang mengajarkan karyawan perusahaan memakai Generative AI, automation workflow (n8n), development berbantuan AI (Cursor), dan AI agents di pekerjaan harian. AI Training Indonesia menyampaikan program corporate AI training hands-on di seluruh Indonesia dengan kurikulum 70% praktik.";
 
+const workshopAiPerusahaanIndonesiaAnswer =
+  "Workshop AI perusahaan di Indonesia adalah sesi pelatihan intensif (half-day hingga multi-day) yang mengajarkan tim memakai Generative AI secara praktis: automation workflow di n8n, development berbantuan AI dengan Cursor, atau roadmap adopsi AI untuk manajemen. AI Training Indonesia menyelenggarakan workshop on-site di Jakarta, Surabaya, Bandung, Tangerang, dan virtual untuk tim di seluruh Indonesia.";
+
 export default function HomePage() {
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -182,6 +185,14 @@ export default function HomePage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: "Ya, corporate AI training tersedia dalam Bahasa Indonesia maupun Bahasa Inggris. Sebagian besar sesi untuk perusahaan Indonesia disampaikan dalam Bahasa Indonesia dengan terminologi teknis dalam bahasa Inggris.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apa itu workshop AI perusahaan di Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: workshopAiPerusahaanIndonesiaAnswer,
         },
       },
       {
@@ -899,6 +910,17 @@ function WhySection() {
             {apaItuCorporateAiTrainingAnswer}
           </p>
         </div>
+        <div
+          id="workshop-ai-perusahaan-indonesia"
+          className="mb-16 max-w-3xl border border-white/10 rounded-2xl p-8"
+        >
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Workshop AI perusahaan di Indonesia
+          </h3>
+          <p className="text-white/70 leading-relaxed">
+            {workshopAiPerusahaanIndonesiaAnswer}
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <p className="text-white/70 text-sm mb-6 tracking-wide">
@@ -1208,6 +1230,10 @@ function FAQSection() {
       question: "Apakah training tersedia dalam Bahasa Indonesia?",
       answer:
         "Ya, corporate AI training tersedia dalam Bahasa Indonesia maupun Bahasa Inggris. Sebagian besar sesi untuk perusahaan Indonesia disampaikan dalam Bahasa Indonesia dengan terminologi teknis bahasa Inggris.",
+    },
+    {
+      question: "Apa itu workshop AI perusahaan di Indonesia?",
+      answer: workshopAiPerusahaanIndonesiaAnswer,
     },
     {
       question: "Apa itu corporate AI training?",
