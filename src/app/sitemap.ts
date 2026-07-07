@@ -192,7 +192,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/cities/${city.id}`,
     lastModified:
       city.id === "jakarta"
-        ? new Date("2026-07-02")
+        ? new Date("2026-07-07")
         : city.geo
           ? new Date("2026-07-01")
           : new Date("2026-06-06"),

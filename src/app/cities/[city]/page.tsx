@@ -25,6 +25,7 @@ export async function generateMetadata({
           `AI trainer ${city.name}`,
           `pelatihan AI terbaik ${city.name}`,
           `pelatihan AI korporat ${city.name}`,
+          `pelatihan AI ${city.name} untuk perusahaan`,
           `corporate AI training ${city.name}`,
           `AI training ${city.name}`,
           `best AI training ${city.name}`,
@@ -123,11 +124,25 @@ export default async function CityPage({
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: city.aiTrainer.faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
+        mainEntity: [
+          ...(city.aiTrainer.defBlock
+            ? [
+                {
+                  "@type": "Question",
+                  name: city.aiTrainer.defBlock.q,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: city.aiTrainer.defBlock.a,
+                  },
+                },
+              ]
+            : []),
+          ...city.aiTrainer.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        ],
       }
     : null;
 
@@ -279,6 +294,19 @@ export default async function CityPage({
           {city.aiTrainer && (
             <section className="bg-black py-16 px-6 sm:px-8 border-t border-white/10">
               <div className="max-w-[1400px] mx-auto">
+                {city.aiTrainer.defBlock && (
+                  <div
+                    id={city.aiTrainer.defBlock.id}
+                    className="max-w-3xl mb-10 border border-white/10 rounded-2xl p-8"
+                  >
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                      {city.aiTrainer.defBlock.q}
+                    </h2>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      {city.aiTrainer.defBlock.a}
+                    </p>
+                  </div>
+                )}
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                   Memilih Pelatihan AI dan AI Trainer Terbaik di {city.name}
                 </h2>
