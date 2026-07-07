@@ -37,7 +37,7 @@ const STATIC_META: Record<string, Meta> = {
     priority: 1,
   },
   "/programs": {
-    lastModified: new Date("2026-06-06"),
+    lastModified: new Date("2026-07-07"),
     changeFrequency: "monthly",
     priority: 0.9,
   },

@@ -206,6 +206,9 @@ const programs = [
   },
 ];
 
+const apaItuWorkshopAiAutomation =
+  "Workshop AI automation adalah sesi pelatihan hands-on yang mengajarkan tim membangun workflow otomatis dengan n8n: menghubungkan email, CRM, database, dan Generative AI ke satu alur kerja tanpa coding berat. AI Training Indonesia menyelenggarakan workshop ini sebagai program AI Workflow Automation (half-day atau full-day) untuk tim operations, marketing, HR, dan finance di Indonesia.";
+
 export default function ProgramsPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -256,6 +259,21 @@ export default function ProgramsPage() {
     })),
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Apa itu workshop AI automation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuWorkshopAiAutomation,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -265,6 +283,10 @@ export default function ProgramsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="min-h-screen bg-black text-white">
         <Nav />
@@ -306,6 +328,22 @@ export default function ProgramsPage() {
                   >
                     aurelivan.com/corporate-training
                   </a>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-black py-12 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div
+                id="apa-itu-workshop-ai-automation"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa itu workshop AI automation?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {apaItuWorkshopAiAutomation}
                 </p>
               </div>
             </div>
