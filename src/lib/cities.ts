@@ -175,6 +175,25 @@ export const cities: City[] = [
       "Quick on-site access dari Jakarta tanpa biaya transport tambahan",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/tangerang",
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Tangerang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-tangerang-untuk-perusahaan",
+        q: "Pelatihan AI Tangerang untuk perusahaan",
+        a: "Pelatihan AI Tangerang untuk perusahaan adalah program corporate training on-site atau virtual di Jabodetabek yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks industri dan bisnis Tangerang. AI Training Indonesia menyelenggarakannya di Tangerang Kota, BSD, Serpong, Alam Sutera, dan kawasan industri Jababeka dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          q: "Pelatihan AI di Tangerang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup Tangerang Kota dan Tangerang Selatan (BSD, Serpong, Alam Sutera), dengan opsi virtual untuk tim hybrid. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Apa keunggulan pelatihan AI di Tangerang dari AI Training Indonesia?",
+          a: "Trainer Aurelius Ivan Wijaya adalah organizer Cursor Meetup Tangerang dan familiar dengan ekosistem AI developer lokal. Program mencakup AI automation dengan n8n, AI-powered development dengan Cursor, dan AI agents, dengan akses on-site cepat dari Jakarta tanpa biaya transport tambahan.",
+        },
+      ],
+    },
   },
 ];
 
