@@ -26,6 +26,7 @@
 - AI Video Automation (HeyGen API + n8n): for marketing, sales, L&D, and content teams: https://aitraining.id/programs#video
 - AI Video Automation Training (dedicated page): https://aitraining.id/programs/heygen
 - AI Strategy & Adoption: executive session for C-suite and business leaders: https://aitraining.id/programs#strategy
+- "Apa itu AI Strategy Training?": executive half-day program for leaders on AI opportunity mapping, adoption roadmap, culture, and governance; anchor https://aitraining.id/programs#apa-itu-ai-strategy-training
 - OpenClaw Training: https://aitraining.id/programs#openclaw
 - "Apa itu OpenClaw Training?": corporate program teaching IT teams to build and deploy self-hosted open-source AI assistants with OpenClaw (data control, RAG, Docker/cloud/on-premise); anchor https://aitraining.id/programs#apa-itu-openclaw-training
 - Generative Engine Optimization (GEO) Training, for marketing, content, and growth teams: https://aitraining.id/programs#geo
