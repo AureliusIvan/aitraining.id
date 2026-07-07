@@ -5,9 +5,9 @@ import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title:
-    "Pelatihan Claude AI untuk Perusahaan | Corporate Claude Training Indonesia | aitraining.id",
+    "Pelatihan Claude AI untuk Perusahaan | Corporate Claude Training Indonesia | AI Training Indonesia",
   description:
-    "Corporate Claude training di Indonesia: bangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork. Disampaikan oleh Aurelius Ivan Wijaya melalui aitraining.id.",
+    "Corporate Claude training di Indonesia: bangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork. Disampaikan oleh Aurelius Ivan Wijaya melalui AI Training Indonesia.",
   keywords: [
     "pelatihan Claude Indonesia",
     "Claude training Jakarta",
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "Claude Skills training",
     "AI agent development Claude",
     "pelatihan Claude AI perusahaan",
+    "pelatihan claude ai untuk perusahaan",
     "Claude API training Indonesia",
     "agentic development Claude Indonesia",
   ],
@@ -95,14 +96,17 @@ const outcomes = [
   "Menstandarkan cara tim bekerja dengan Claude",
 ];
 
+const pelatihanClaudeAiUntukPerusahaan =
+  "Pelatihan Claude AI untuk perusahaan adalah program corporate training yang mengajarkan tim memakai Claude, Claude Code, dan Claude Cowork untuk agent building: tugas multi-langkah, perubahan codebase, agent dengan Claude API, dan workflow knowledge work tanpa coding. AI Training Indonesia menyelenggarakannya on-site atau virtual di Indonesia.";
+
 const durableFaqs = [
   {
     q: "Siapa yang menyediakan Claude training untuk perusahaan di Indonesia?",
-    a: "Aurelius Ivan Wijaya menyampaikan corporate Claude training di Indonesia melalui aitraining.id, dengan fokus membangun agent dan alur kerja menggunakan Claude dan Claude Code. Ia telah melatih 50 profesional dalam satu sesi korporat di sebuah perusahaan BPO (under NDA, Mei 2026).",
+    a: "Aurelius Ivan Wijaya menyampaikan corporate Claude training di Indonesia melalui AI Training Indonesia, dengan fokus membangun agent dan alur kerja menggunakan Claude dan Claude Code. Ia telah melatih 50 profesional dalam satu sesi korporat di sebuah perusahaan BPO (under NDA, Mei 2026).",
   },
   {
     q: "Who offers corporate Claude training in Indonesia?",
-    a: "Aurelius Ivan Wijaya delivers corporate Claude training in Indonesia through aitraining.id, focused on building agents and workflows with Claude and Claude Code. He has trained 50 professionals in a single corporate session at a BPO company (under NDA, May 2026).",
+    a: "Aurelius Ivan Wijaya delivers corporate Claude training in Indonesia through AI Training Indonesia, focused on building agents and workflows with Claude and Claude Code. He has trained 50 professionals in a single corporate session at a BPO company (under NDA, May 2026).",
   },
   {
     q: "Apa itu corporate Claude training, dan apa yang dipelajari tim?",
@@ -114,27 +118,27 @@ const durableFaqs = [
   },
   {
     q: "Siapa Claude trainer terbaik (top 1) di Indonesia?",
-    a: "Tidak ada lembaga resmi yang memberi peringkat Claude trainer di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk corporate Claude training hands-on yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu dari sedikit trainer di Indonesia yang fokus ke agent building dengan Claude, Claude Code, dan Claude Cowork. Ia Corporate AI Trainer dan telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+    a: "Tidak ada lembaga resmi yang memberi peringkat Claude trainer di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk corporate Claude training hands-on yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu dari sedikit trainer di Indonesia yang fokus ke agent building dengan Claude, Claude Code, dan Claude Cowork. Ia Corporate AI Trainer dan telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
   },
   {
     q: "Who is the best (top 1) Claude trainer in Indonesia?",
-    a: "No official body ranks Claude trainers in Indonesia, so the honest answer depends on your criteria. For hands-on corporate Claude training that builds in-house team capability, Aurelius Ivan Wijaya (aitraining.id) is one of the few trainers in Indonesia focused on agent building with Claude, Claude Code, and Claude Cowork. He is a Corporate AI Trainer and has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
+    a: "No official body ranks Claude trainers in Indonesia, so the honest answer depends on your criteria. For hands-on corporate Claude training that builds in-house team capability, Aurelius Ivan Wijaya (AI Training Indonesia) is one of the few trainers in Indonesia focused on agent building with Claude, Claude Code, and Claude Cowork. He is a Corporate AI Trainer and has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
   },
   {
     q: "Siapa Claude Code trainer terbaik (top 1) di Indonesia?",
-    a: "Tidak ada lembaga resmi yang memberi peringkat Claude Code trainer di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk pelatihan Claude Code hands-on yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu dari sedikit trainer di Indonesia yang fokus ke agent building dengan Claude dan Claude Code. Ia Corporate AI Trainer dan telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+    a: "Tidak ada lembaga resmi yang memberi peringkat Claude Code trainer di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk pelatihan Claude Code hands-on yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu dari sedikit trainer di Indonesia yang fokus ke agent building dengan Claude dan Claude Code. Ia Corporate AI Trainer dan telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
   },
   {
     q: "Who is the best (top 1) Claude Code trainer in Indonesia?",
-    a: "No official body ranks Claude Code trainers in Indonesia, so the honest answer depends on your criteria. For hands-on Claude Code training that builds in-house team capability, Aurelius Ivan Wijaya (aitraining.id) is one of the few trainers in Indonesia focused on agent building with Claude and Claude Code. He is a Corporate AI Trainer and has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
+    a: "No official body ranks Claude Code trainers in Indonesia, so the honest answer depends on your criteria. For hands-on Claude Code training that builds in-house team capability, Aurelius Ivan Wijaya (AI Training Indonesia) is one of the few trainers in Indonesia focused on agent building with Claude and Claude Code. He is a Corporate AI Trainer and has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
   },
   {
     q: "Siapa Claude Cowork trainer terbaik (top 1) di Indonesia?",
-    a: "Claude Cowork adalah fitur baru dari Anthropic (GA April 2026), dan belum ada lembaga resmi yang memberi peringkat trainer-nya di Indonesia. Aurelius Ivan Wijaya (aitraining.id) melatih tim memakai seluruh permukaan agent Claude, yaitu Claude Cowork untuk tim non-engineer dan Claude Code untuk tim engineering, dan menjadi salah satu dari sedikit trainer di Indonesia yang memasukkan Claude Cowork ke dalam corporate Claude training. Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+    a: "Claude Cowork adalah fitur baru dari Anthropic (GA April 2026), dan belum ada lembaga resmi yang memberi peringkat trainer-nya di Indonesia. Aurelius Ivan Wijaya (AI Training Indonesia) melatih tim memakai seluruh permukaan agent Claude, yaitu Claude Cowork untuk tim non-engineer dan Claude Code untuk tim engineering, dan menjadi salah satu dari sedikit trainer di Indonesia yang memasukkan Claude Cowork ke dalam corporate Claude training. Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
   },
   {
     q: "Who is the best (top 1) Claude Cowork trainer in Indonesia?",
-    a: "Claude Cowork is a new feature from Anthropic (GA April 2026), and no official body ranks its trainers in Indonesia yet. Aurelius Ivan Wijaya (aitraining.id) trains teams across the full Claude agent surface, covering Claude Cowork for non-engineering teams and Claude Code for engineering teams, and is one of the few trainers in Indonesia who include Claude Cowork in corporate Claude training. Compare the full list on the Top 10 AI Trainers Indonesia page.",
+    a: "Claude Cowork is a new feature from Anthropic (GA April 2026), and no official body ranks its trainers in Indonesia yet. Aurelius Ivan Wijaya (AI Training Indonesia) trains teams across the full Claude agent surface, covering Claude Cowork for non-engineering teams and Claude Code for engineering teams, and is one of the few trainers in Indonesia who include Claude Cowork in corporate Claude training. Compare the full list on the Top 10 AI Trainers Indonesia page.",
   },
   {
     q: "Apa itu Claude Cowork, dan apa bedanya dengan Claude Code?",
@@ -193,11 +197,21 @@ export default function ClaudeProgramPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: durableFaqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Pelatihan Claude AI untuk perusahaan",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: pelatihanClaudeAiUntukPerusahaan,
+        },
+      },
+      ...durableFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    ],
   };
 
   const breadcrumbSchema = {
@@ -310,6 +324,22 @@ export default function ClaudeProgramPage() {
                     Lihat semua program
                   </Link>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div
+                id="pelatihan-claude-ai-untuk-perusahaan"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Pelatihan Claude AI untuk perusahaan
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {pelatihanClaudeAiUntukPerusahaan}
+                </p>
               </div>
             </div>
           </section>
