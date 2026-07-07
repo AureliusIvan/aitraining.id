@@ -209,6 +209,9 @@ const programs = [
 const apaItuWorkshopAiAutomation =
   "Workshop AI automation adalah sesi pelatihan hands-on yang mengajarkan tim membangun workflow otomatis dengan n8n: menghubungkan email, CRM, database, dan Generative AI ke satu alur kerja tanpa coding berat. AI Training Indonesia menyelenggarakan workshop ini sebagai program AI Workflow Automation (half-day atau full-day) untuk tim operations, marketing, HR, dan finance di Indonesia.";
 
+const apaItuPelatihanN8nUntukPerusahaan =
+  "Pelatihan n8n untuk perusahaan adalah program corporate training yang mengajarkan tim membangun workflow automation dengan platform n8n: menghubungkan email, CRM, spreadsheet, database, dan Generative AI tanpa coding berat. AI Training Indonesia menyelenggarakannya sebagai program AI Workflow Automation (half-day atau full-day) untuk tim operations, marketing, HR, dan finance di seluruh Indonesia.";
+
 export default function ProgramsPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -269,6 +272,14 @@ export default function ProgramsPage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: apaItuWorkshopAiAutomation,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apa itu pelatihan n8n untuk perusahaan?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuPelatihanN8nUntukPerusahaan,
         },
       },
     ],
@@ -334,7 +345,7 @@ export default function ProgramsPage() {
           </section>
 
           <section className="bg-black py-12 px-6 sm:px-8 border-t border-white/10">
-            <div className="max-w-[1400px] mx-auto">
+            <div className="max-w-[1400px] mx-auto space-y-8">
               <div
                 id="apa-itu-workshop-ai-automation"
                 className="max-w-3xl border border-white/10 rounded-2xl p-8"
@@ -344,6 +355,17 @@ export default function ProgramsPage() {
                 </h2>
                 <p className="text-white/70 text-sm leading-relaxed">
                   {apaItuWorkshopAiAutomation}
+                </p>
+              </div>
+              <div
+                id="apa-itu-pelatihan-n8n-untuk-perusahaan"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa itu pelatihan n8n untuk perusahaan?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {apaItuPelatihanN8nUntukPerusahaan}
                 </p>
               </div>
             </div>
