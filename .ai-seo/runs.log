@@ -10,3 +10,4 @@
 2026-07-07T20:13+07:00	action=idle	pending=0	ticksSinceDiscovery=9	discovery_in=1
 2026-07-07T20:28+07:00	action=discovery+deploy	added=5	query="apa itu corporate ai training"	commit=ffff877	pending=4
 2026-07-07T20:43+07:00	action=improve-deploy	query="workshop ai perusahaan indonesia"	page=/	outcome=done	commit=a9745e0
+2026-07-07T20:58+07:00	action=improve-deploy	query="pelatihan generative ai untuk perusahaan"	page=/pelatihan-ai-untuk-perusahaan	outcome=done	commit=e6fe500
