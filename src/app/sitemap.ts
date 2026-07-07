@@ -191,7 +191,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${baseUrl}/cities/${city.id}`,
     lastModified:
-      city.id === "jakarta"
+      city.id === "jakarta" || city.id === "surabaya"
         ? new Date("2026-07-07")
         : city.geo
           ? new Date("2026-07-01")
