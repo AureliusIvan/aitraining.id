@@ -4,7 +4,7 @@
   "discoveryEveryTicks": 10,
   "maxEmptyDiscoveryStops": 3,
   "honestyGuardrails": true,
-  "lastDeployTs": null,
+  "lastDeployTs": "2026-07-07T17:58:00+07:00",
   "ticksSinceDiscovery": 0,
   "consecutiveEmptyDiscovery": 0
 }
