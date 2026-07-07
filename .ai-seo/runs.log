@@ -1,2 +1,3 @@
 2026-07-07T17:58+07:00	action=improve-deploy	query="kenapa perlu ai training"	page=/	outcome=done	commit=bc86970	notes=answer-block+#kenapa-perlu-ai-training+FAQPage+llms.txt
 2026-07-07T18:13+07:00	action=improve-deploy	query="mengapa perusahaan butuh pelatihan ai"	page=/pelatihan-ai-untuk-perusahaan	outcome=done	commit=02daecb	notes=#mengapa-perusahaan-butuh-pelatihan-ai+FAQPage+WEF-fix
+2026-07-07T18:28+07:00	action=improve-deploy	query="alasan perusahaan training ai"	page=/	outcome=done	commit=d01470e	notes=#alasan-perusahaan-training-ai+FAQPage
