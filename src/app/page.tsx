@@ -180,7 +180,7 @@ export default function HomePage() {
         name: "Kenapa perlu AI training?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Generative AI mengubah cara kerja di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025–2030. Program hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks bisnis yang sama, agar tim bisa menerapkan alat tersebut di pekerjaan sehari-hari.",
+          text: "Generative AI mengubah cara kerja di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025-2030. Program hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks bisnis yang sama, agar tim bisa menerapkan alat tersebut di pekerjaan sehari-hari.",
         },
       },
       {
@@ -826,7 +826,7 @@ function WhySection() {
           <p className="text-white/70 leading-relaxed">
             Generative AI mengubah cara kerja di banyak fungsi bisnis. Menurut
             Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill
-            inti pekerja diperkirakan berubah pada periode 2025–2030. Program
+            inti pekerja diperkirakan berubah pada periode 2025-2030. Program
             hands-on membantu tim memakai automation (n8n), development
             berbantuan AI (Cursor), dan AI agents dalam konteks bisnis yang
             sama, agar tim bisa menerapkan alat tersebut di pekerjaan
@@ -1146,7 +1146,7 @@ function FAQSection() {
     {
       question: "Kenapa perlu AI training?",
       answer:
-        "Generative AI mengubah cara kerja di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025–2030. Program hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks bisnis yang sama, agar tim bisa menerapkan alat tersebut di pekerjaan sehari-hari.",
+        "Generative AI mengubah cara kerja di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025-2030. Program hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks bisnis yang sama, agar tim bisa menerapkan alat tersebut di pekerjaan sehari-hari.",
     },
     {
       question: "Apa itu pelatihan AI untuk perusahaan?",
