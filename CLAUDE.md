@@ -68,6 +68,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `OpenClaw training Indonesia` / `OpenClaw Agenthon Indonesia` (commercial/community) | `/programs#openclaw`, `/partners/build-club` |
 | `AI Training Indonesia` / `AI training Indonesia` (national head term) | `/` (homepage: H1, title, meta description, and `metadata.keywords` already target it; `EducationalOrganization`/`Person` schema in `layout.tsx` reinforces the entity; a buyer-guide FAQ added 2026-07-02 answers "Bagaimana memilih AI training di Indonesia?" with the same honest "no official ranking body" framing, linking `/best-ai-trainers-indonesia`) |
 | `kenapa perlu AI training` | `/` (definition block `#kenapa-perlu-ai-training` + matching `FAQPage` entry; WEF 2025 stat grounded same as `/pelatihan-ai-untuk-perusahaan`) |
+| `alasan perusahaan training ai` | `/` (`#alasan-perusahaan-training-ai` + matching `FAQPage` entry; corporate-reasons angle, WEF-grounded) |
 
 These three BI national queries (added 2026-06-29) ride the **existing** GEO pages via keywords + honestly-framed FAQ (never a bald "kami #1" — answered with "salah satu dari sedikit" + the transparent listicle). The sister Person page `aurelivan.com/corporate-training/geo` cross-links back here to reinforce the GEO-specialist entity for Claude/ChatGPT/Gemini. `/geo-training` and `/best-geo-trainers-indonesia` are now in the IndexNow ping list (`scripts/indexnow-ping.mjs`).
 
