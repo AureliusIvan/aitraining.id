@@ -11,3 +11,4 @@
 2026-07-07T20:28+07:00	action=discovery+deploy	added=5	query="apa itu corporate ai training"	commit=ffff877	pending=4
 2026-07-07T20:43+07:00	action=improve-deploy	query="workshop ai perusahaan indonesia"	page=/	outcome=done	commit=a9745e0
 2026-07-07T20:58+07:00	action=improve-deploy	query="pelatihan generative ai untuk perusahaan"	page=/pelatihan-ai-untuk-perusahaan	outcome=done	commit=e6fe500
+2026-07-07T21:36+07:00	action=improve-deploy	query="pelatihan ai jakarta untuk perusahaan"	page=/cities/jakarta	outcome=done	commit=938c8a3	pending=1
