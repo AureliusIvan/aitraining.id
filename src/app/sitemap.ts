@@ -47,7 +47,7 @@ const STATIC_META: Record<string, Meta> = {
     priority: 0.9,
   },
   "/programs/heygen": {
-    lastModified: new Date("2026-06-19"),
+    lastModified: new Date("2026-07-08"),
     changeFrequency: "monthly",
     priority: 0.9,
   },

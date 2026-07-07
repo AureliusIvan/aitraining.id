@@ -75,6 +75,7 @@
 - This program trains marketing, sales, L&D, and content teams to build pipelines that generate personalized and multilingual avatar videos at scale using HeyGen API and n8n.
 - The program focuses on building video automation pipelines.
 - HeyGen training page: https://aitraining.id/programs/heygen
+- "Pelatihan HeyGen untuk perusahaan" (corporate HeyGen training): on-site or virtual program teaching teams to build HeyGen API + n8n video automation pipelines; anchor https://aitraining.id/programs/heygen#pelatihan-heygen-untuk-perusahaan
 - More on corporate AI training: https://aurelivan.com/corporate-training
 
 ## Corporate AI Training Jakarta

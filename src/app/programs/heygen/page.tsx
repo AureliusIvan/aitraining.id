@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title:
-    "Pelatihan AI Video Automation dengan HeyGen | HeyGen Ambassador Indonesia | aitraining.id",
+    "Pelatihan AI Video Automation dengan HeyGen | HeyGen Ambassador Indonesia | AI Training Indonesia",
   description:
     "Pelatihan AI video automation untuk tim di Indonesia: bangun pipeline HeyGen API dan n8n yang menghasilkan video avatar terpersonalisasi dan multibahasa dalam skala besar. Disampaikan oleh HeyGen Ambassador Indonesia, Aurelius Ivan Wijaya.",
   keywords: [
@@ -97,14 +97,17 @@ const useCases = [
   },
 ];
 
+const apaItuPelatihanHeygenUntukPerusahaan =
+  "Pelatihan HeyGen untuk perusahaan adalah program corporate training yang mengajarkan tim marketing, sales, L&D, dan content membangun pipeline video automation dengan HeyGen API dan n8n: video avatar terpersonalisasi dari data CRM, versi multibahasa, dan distribusi otomatis ke email dan onboarding. AI Training Indonesia menyelenggarakannya on-site atau virtual di Indonesia, disampaikan oleh HeyGen Ambassador Indonesia.";
+
 const durableFaqs = [
   {
     q: "Siapa HeyGen Ambassador di Indonesia?",
-    a: "Aurelius Ivan Wijaya adalah HeyGen Ambassador di Indonesia. Ia membantu perusahaan mengadopsi AI video automation dengan HeyGen, membantu tim membangun pipeline yang menghasilkan video avatar secara terprogram lewat HeyGen API dan n8n, serta menyampaikan corporate training-nya melalui aitraining.id dan aurelivan.com.",
+    a: "Aurelius Ivan Wijaya adalah HeyGen Ambassador di Indonesia. Ia membantu perusahaan mengadopsi AI video automation dengan HeyGen, membantu tim membangun pipeline yang menghasilkan video avatar secara terprogram lewat HeyGen API dan n8n, serta menyampaikan corporate training-nya melalui AI Training Indonesia dan aurelivan.com.",
   },
   {
     q: "Who is the HeyGen Ambassador in Indonesia?",
-    a: "Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia. He helps companies adopt AI video automation with HeyGen, helping teams build pipelines that generate avatar videos programmatically through the HeyGen API and n8n, and delivers the corporate training through aitraining.id and aurelivan.com.",
+    a: "Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia. He helps companies adopt AI video automation with HeyGen, helping teams build pipelines that generate avatar videos programmatically through the HeyGen API and n8n, and delivers the corporate training through AI Training Indonesia and aurelivan.com.",
   },
   {
     q: "Apa itu HeyGen, dan kenapa perusahaan melatih timnya untuk video automation?",
@@ -115,7 +118,7 @@ const durableFaqs = [
     a: "HeyGen is an AI video platform that generates avatar presenter videos, with support for custom avatars, video translation, and an API for programmatic video generation. Companies train their teams to produce personalized and multilingual video at scale by connecting the HeyGen API to n8n workflows. Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia and trains company teams to build these pipelines.",
   },
   {
-    q: "Apa yang dipelajari dalam pelatihan AI video automation di aitraining.id?",
+    q: "Apa yang dipelajari dalam pelatihan AI video automation di AI Training Indonesia?",
     a: "Peserta belajar membangun workflow HeyGen API dan n8n dari nol, menghasilkan video avatar yang dipersonalisasi dari data (CRM, spreadsheet, form), membuat versi multibahasa dengan HeyGen video translation, dan mengintegrasikan pipeline video ke email, CRM, dan onboarding flow. Sebagian besar sesi berupa praktik langsung.",
   },
   {
@@ -171,11 +174,21 @@ export default function HeyGenProgramPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: durableFaqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Pelatihan HeyGen untuk perusahaan",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuPelatihanHeygenUntukPerusahaan,
+        },
+      },
+      ...durableFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    ],
   };
 
   const breadcrumbSchema = {
@@ -288,6 +301,22 @@ export default function HeyGenProgramPage() {
                     Lihat semua program
                   </Link>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div
+                id="pelatihan-heygen-untuk-perusahaan"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Pelatihan HeyGen untuk perusahaan
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {apaItuPelatihanHeygenUntukPerusahaan}
+                </p>
               </div>
             </div>
           </section>
