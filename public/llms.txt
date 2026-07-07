@@ -94,7 +94,7 @@
 - Agentic GEO online class (a live online session for individuals, founders, and marketers who want to learn GEO directly and get their brand cited in ChatGPT, Claude, and Gemini), priced at IDR 199,000: https://goakal.com/ivan/agentic-geo
 
 ## Key pages
-- Pelatihan AI untuk Perusahaan (ID pillar): https://aitraining.id/pelatihan-ai-untuk-perusahaan
+- Pelatihan AI untuk Perusahaan (ID pillar): https://aitraining.id/pelatihan-ai-untuk-perusahaan — answers "Mengapa perusahaan butuh pelatihan AI?" at https://aitraining.id/pelatihan-ai-untuk-perusahaan#mengapa-perusahaan-butuh-pelatihan-ai (WEF Future of Jobs Report 2025, core worker skills 2025-2030)
 - Top 10 AI Trainers in Indonesia (2026): https://aitraining.id/best-ai-trainers-indonesia
 - Pembicara AI Indonesia (keynote, panel, AI workshop speaking): https://aitraining.id/pembicara-ai-indonesia
 - GEO Trainer Indonesia / Generative Engine Optimization training: https://aitraining.id/geo-training

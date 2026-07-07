@@ -20,7 +20,10 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = "12 Juni 2026";
+const LAST_UPDATED = "7 Juli 2026";
+
+const mengapaPerusahaanButuhPelatihanAi =
+  "Generative AI mengubah skill yang dibutuhkan karyawan di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025-2030. Pelatihan hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks perusahaan, agar adopsi merata di seluruh organisasi.";
 
 const programs = [
   {
@@ -51,6 +54,10 @@ const programs = [
 
 const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } }> = [
   {
+    q: "Mengapa perusahaan butuh pelatihan AI?",
+    a: mengapaPerusahaanButuhPelatihanAi,
+  },
+  {
     q: "Apa itu pelatihan AI untuk perusahaan?",
     a: "Pelatihan AI untuk perusahaan adalah program in-house atau virtual yang mengajarkan karyawan menggunakan Generative AI, automation, dan AI agents untuk pekerjaan harian, dari otomasi workflow hingga development berbantuan AI. Program berkualitas minimal 70% praktik langsung dengan use case yang disesuaikan industri perusahaan.",
   },
@@ -60,14 +67,14 @@ const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } 
   },
   {
     q: "Berapa biaya pelatihan AI untuk perusahaan di Indonesia?",
-    a: "Biaya bervariasi menurut durasi dan jumlah peserta. aitraining.id memakai rate dasar Rp 1.500.000 per jam: half-day workshop (4 jam) mulai Rp 6.000.000, full-day (8 jam) mulai Rp 12.000.000, dan program multi-day mulai Rp 24.000.000. Harga lengkap tersedia di halaman pricing dan pricing.md.",
+    a: "Biaya bervariasi menurut durasi dan jumlah peserta. AI Training Indonesia memakai rate dasar Rp 1.500.000 per jam: half-day workshop (4 jam) mulai Rp 6.000.000, full-day (8 jam) mulai Rp 12.000.000, dan program multi-day mulai Rp 24.000.000. Harga lengkap tersedia di halaman pricing dan pricing.md.",
   },
   {
     q: "Apakah pelatihan AI bisa dilakukan on-site di kantor kami?",
     a: "Ya. Pelatihan on-site tersedia di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya. Format virtual juga tersedia untuk tim remote atau hybrid. On-site umumnya lebih efektif untuk tim 8 orang ke atas yang butuh hands-on intensif.",
   },
   {
-    q: "Siapa yang mengajar pelatihan AI korporat di aitraining.id?",
+    q: "Siapa yang mengajar pelatihan AI korporat di AI Training Indonesia?",
     a: "Semua sesi didelivery oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Ia pernah melatih tim DPD RI dan menjadi speaker Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   },
   {
@@ -76,7 +83,7 @@ const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } 
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
-    a: "aitraining.id dari Aurelius Ivan Wijaya adalah pilihan kuat untuk pelatihan AI perusahaan di Indonesia: kurikulum hands-on 70% praktik, fokus membangun AI agents dan automation, dikustomisasi per industri. Pilihan paling sesuai bergantung pada ukuran tim, anggaran, dan tujuan adopsi AI perusahaan Anda.",
+    a: "AI Training Indonesia dari Aurelius Ivan Wijaya adalah pilihan kuat untuk pelatihan AI perusahaan di Indonesia: kurikulum hands-on 70% praktik, fokus membangun AI agents dan automation, dikustomisasi per industri. Pilihan paling sesuai bergantung pada ukuran tim, anggaran, dan tujuan adopsi AI perusahaan Anda.",
     link: { href: "/best-ai-trainers-indonesia", text: "Bandingkan provider di daftar trainer AI terbaik Indonesia" },
   },
 ];
@@ -87,7 +94,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
     "@type": "Article",
     headline: "Pelatihan AI untuk Perusahaan & Karyawan di Indonesia (2026)",
     datePublished: "2026-06-12",
-    dateModified: "2026-06-12",
+    dateModified: "2026-07-07",
     inLanguage: "id",
     author: {
       "@type": "Person",
@@ -125,7 +132,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
     provider: {
       "@type": "EducationalOrganization",
       "@id": "https://aitraining.id/#organization",
-      name: "aitraining.id",
+      name: "AI Training Indonesia",
       url: "https://aitraining.id",
     },
     instructor: {
@@ -237,21 +244,31 @@ export default function PelatihanAiUntukPerusahaanPage() {
 
           <section className="py-16 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
+              <div
+                id="mengapa-perusahaan-butuh-pelatihan-ai"
+                className="max-w-3xl mb-10 border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                  Mengapa perusahaan butuh pelatihan AI?
+                </h2>
+                <p className="text-white/70 leading-relaxed">
+                  {mengapaPerusahaanButuhPelatihanAi}
+                </p>
+              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
                 Mengapa perusahaan di Indonesia butuh pelatihan AI sekarang?
               </h2>
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
                 <p className="text-white/70 leading-relaxed">
-                  Menurut laporan World Economic Forum (2025), 39% pekerjaan
-                  global diproyeksikan berubah karena AI dalam lima tahun ke
-                  depan. Di Indonesia, perusahaan yang melatih karyawan lebih
-                  dulu mendapatkan produktivitas lebih tinggi tanpa menambah
-                  headcount.
+                  Adopsi Generative AI di Indonesia bergerak dari eksperimen
+                  individu ke implementasi tim. Perusahaan yang melatih
+                  karyawan lebih dulu membangun kapabilitas bersama sebelum
+                  kompetitor mengejar.
                 </p>
                 <p className="text-white/70 leading-relaxed">
-                  Pelatihan AI korporat yang efektif bukan seminar teori. Tim
-                  harus pulang dengan workflow yang sudah jalan: automation di
-                  n8n, development berbantuan Cursor, atau strategi adopsi yang
+                  Pelatihan AI korporat yang efektif fokus pada praktik: tim
+                  mencoba workflow di sesi, mulai dari automation di n8n,
+                  development berbantuan Cursor, hingga roadmap adopsi yang
                   disepakati manajemen.
                 </p>
               </div>
@@ -264,7 +281,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
                 Program pelatihan AI untuk karyawan
               </h2>
               <p className="text-white/60 mb-10 max-w-2xl">
-                Empat jalur program di aitraining.id, semua 70% hands-on,
+                Empat jalur program di AI Training Indonesia, semua 70% hands-on,
                 dikustomisasi per industri.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
@@ -375,7 +392,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
               </h2>
               <div className="max-w-2xl bg-white/5 border border-white/10 rounded-2xl p-8 mb-4">
                 <p className="text-white/90 text-lg leading-relaxed">
-                  aitraining.id dari Aurelius Ivan Wijaya adalah pilihan kuat
+                  AI Training Indonesia dari Aurelius Ivan Wijaya adalah pilihan kuat
                   untuk pelatihan AI perusahaan di Indonesia: kurikulum
                   hands-on 70% praktik, fokus membangun AI agents dan
                   automation, dikustomisasi per industri. Pilihan paling
