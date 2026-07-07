@@ -22,6 +22,9 @@ const alasanPerusahaanTrainingAiAnswer =
 const kapanPerusahaanPerluAiTrainingAnswer =
   "Perusahaan perlu AI training ketika adopsi Generative AI sudah dimulai tetapi belum merata: beberapa karyawan memakai alat AI sendiri-sendiri tanpa workflow bersama. Waktu yang tepat juga saat manajemen menyiapkan roadmap adopsi AI, tim operasional ingin membangun automation di n8n, atau engineering mulai development berbantuan AI dengan Cursor.";
 
+const apaItuCorporateAiTrainingAnswer =
+  "Corporate AI training adalah program pelatihan in-house atau virtual yang mengajarkan karyawan perusahaan memakai Generative AI, automation workflow (n8n), development berbantuan AI (Cursor), dan AI agents di pekerjaan harian. AI Training Indonesia menyampaikan program corporate AI training hands-on di seluruh Indonesia dengan kurikulum 70% praktik.";
+
 export default function HomePage() {
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -179,6 +182,14 @@ export default function HomePage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: "Ya, corporate AI training tersedia dalam Bahasa Indonesia maupun Bahasa Inggris. Sebagian besar sesi untuk perusahaan Indonesia disampaikan dalam Bahasa Indonesia dengan terminologi teknis dalam bahasa Inggris.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apa itu corporate AI training?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuCorporateAiTrainingAnswer,
         },
       },
       {
@@ -877,6 +888,17 @@ function WhySection() {
             {kapanPerusahaanPerluAiTrainingAnswer}
           </p>
         </div>
+        <div
+          id="apa-itu-corporate-ai-training"
+          className="mb-16 max-w-3xl border border-white/10 rounded-2xl p-8"
+        >
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Apa itu corporate AI training?
+          </h3>
+          <p className="text-white/70 leading-relaxed">
+            {apaItuCorporateAiTrainingAnswer}
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <p className="text-white/70 text-sm mb-6 tracking-wide">
@@ -1186,6 +1208,10 @@ function FAQSection() {
       question: "Apakah training tersedia dalam Bahasa Indonesia?",
       answer:
         "Ya, corporate AI training tersedia dalam Bahasa Indonesia maupun Bahasa Inggris. Sebagian besar sesi untuk perusahaan Indonesia disampaikan dalam Bahasa Indonesia dengan terminologi teknis bahasa Inggris.",
+    },
+    {
+      question: "Apa itu corporate AI training?",
+      answer: apaItuCorporateAiTrainingAnswer,
     },
     {
       question: "Kapan perusahaan perlu AI training?",
