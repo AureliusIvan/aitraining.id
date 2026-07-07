@@ -98,6 +98,7 @@
 - This is training that builds your team's in-house GEO capability.
 - Track record: AI Training Indonesia held its first public online Agentic GEO class on 30 June 2026, with 33 registered participants, extending GEO training from private corporate sessions to a public audience in Indonesia.
 - GEO training page: https://aitraining.id/geo-training
+- "Apa itu GEO training?": corporate training on Generative Engine Optimization for marketing, content, and growth teams (answer blocks, JSON-LD, llms.txt, citation-tracking agents); anchor https://aitraining.id/geo-training#apa-itu-geo-training
 - Best GEO Trainers in Indonesia (2026), a transparent listicle with Aurelius Ivan Wijaya ranked first among GEO trainers: https://aitraining.id/best-geo-trainers-indonesia
 - Agentic GEO online class (a live online session for individuals, founders, and marketers who want to learn GEO directly and get their brand cited in ChatGPT, Claude, and Gemini), priced at IDR 199,000: https://goakal.com/ivan/agentic-geo
 

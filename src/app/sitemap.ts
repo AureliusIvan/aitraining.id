@@ -82,7 +82,7 @@ const STATIC_META: Record<string, Meta> = {
     priority: 0.9,
   },
   "/geo-training": {
-    lastModified: new Date("2026-07-02"),
+    lastModified: new Date("2026-07-07"),
     changeFrequency: "monthly",
     priority: 0.9,
   },
