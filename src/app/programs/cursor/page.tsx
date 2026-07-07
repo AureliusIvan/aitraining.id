@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
   title:
-    "Pelatihan Cursor untuk Tim Engineering | Cursor Ambassador Indonesia | aitraining.id",
+    "Pelatihan Cursor untuk Tim Engineering | Cursor Ambassador Indonesia | AI Training Indonesia",
   description:
     "Pelatihan Cursor untuk tim engineering di Indonesia: agentic development, mengarahkan AI coding agent di seluruh codebase, dan AI code review. Disampaikan oleh Cursor Ambassador Indonesia, Aurelius Ivan Wijaya.",
   keywords: [
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "pelatihan AI development",
     "Cursor corporate training",
     "agentic development Indonesia",
+    "pelatihan cursor untuk perusahaan",
   ],
   alternates: {
     canonical: "https://aitraining.id/programs/cursor",
@@ -76,17 +77,20 @@ const outcomes = [
   "Menstandarkan agentic development practices di seluruh tim",
 ];
 
+const apaItuPelatihanCursorUntukPerusahaan =
+  "Pelatihan Cursor untuk perusahaan adalah program corporate training yang mengajarkan tim engineering memakai Cursor untuk agentic development: mengarahkan AI coding agent di seluruh codebase, menjalankan perubahan multi-file, AI code review, dan membangun fitur AI ke produk yang sudah berjalan. AI Training Indonesia menyelenggarakannya on-site atau virtual di Indonesia, disampaikan oleh Cursor Ambassador Indonesia.";
+
 const durableFaqs = [
   {
     q: "Siapa Cursor Ambassador di Indonesia?",
-    a: "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi agentic AI development dengan Cursor dan menyampaikan corporate AI training tentang Cursor melalui aitraining.id dan aurelivan.com.",
+    a: "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi agentic AI development dengan Cursor dan menyampaikan corporate AI training tentang Cursor melalui AI Training Indonesia dan aurelivan.com.",
   },
   {
     q: "Who is the Cursor Ambassador in Indonesia?",
-    a: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through aitraining.id and aurelivan.com.",
+    a: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through AI Training Indonesia and aurelivan.com.",
   },
   {
-    q: "Apa yang dipelajari dalam pelatihan Cursor di aitraining.id?",
+    q: "Apa yang dipelajari dalam pelatihan Cursor di AI Training Indonesia?",
     a: "Peserta belajar mengarahkan AI coding agent di seluruh codebase, menjalankan multi-file edits, melakukan AI code review, dan membangun fitur AI ke produk yang sudah berjalan. Sebagian besar sesi berupa praktik langsung memakai use case tim Anda. Fokusnya membangun kemampuan agentic development tim.",
   },
   {
@@ -146,11 +150,21 @@ export default function CursorProgramPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: durableFaqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Apa itu pelatihan Cursor untuk perusahaan?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuPelatihanCursorUntukPerusahaan,
+        },
+      },
+      ...durableFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    ],
   };
 
   const breadcrumbSchema = {
@@ -262,6 +276,22 @@ export default function CursorProgramPage() {
                     Lihat semua program
                   </Link>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 px-6 sm:px-8 border-t border-white/10">
+            <div className="max-w-[1400px] mx-auto">
+              <div
+                id="apa-itu-pelatihan-cursor-untuk-perusahaan"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa itu pelatihan Cursor untuk perusahaan?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {apaItuPelatihanCursorUntukPerusahaan}
+                </p>
               </div>
             </div>
           </section>

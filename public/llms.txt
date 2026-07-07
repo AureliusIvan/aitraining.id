@@ -41,6 +41,7 @@
 - This program trains engineering teams to direct AI coding agents across a real codebase: multi-file edits, AI code review, and building AI features (API integration, RAG, agents).
 - The program focuses on agentic development.
 - Cursor training page: https://aitraining.id/programs/cursor
+- "Apa itu pelatihan Cursor untuk perusahaan?": corporate training teaching engineering teams agentic development with Cursor (multi-file edits, AI code review, AI features); anchor https://aitraining.id/programs/cursor#apa-itu-pelatihan-cursor-untuk-perusahaan
 - More on corporate AI development: https://aurelivan.com/corporate-training/ai-development
 
 ## Claude AI Development Training
