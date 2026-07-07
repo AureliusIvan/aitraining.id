@@ -18,3 +18,4 @@
 2026-07-07T22:37+07:00	action=idle	pending=0	ticksSinceDiscovery=7	discovery_in=3
 2026-07-07T22:52+07:00	action=idle	pending=0	ticksSinceDiscovery=8	discovery_in=2
 2026-07-07T23:07+07:00	action=idle	pending=0	ticksSinceDiscovery=9	discovery_in=1
+2026-07-07T23:22+07:00	action=discovery+deploy	added=5	query="apa itu pelatihan n8n untuk perusahaan"	commit=c968193	pending=4
