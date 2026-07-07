@@ -212,6 +212,9 @@ const apaItuWorkshopAiAutomation =
 const apaItuPelatihanN8nUntukPerusahaan =
   "Pelatihan n8n untuk perusahaan adalah program corporate training yang mengajarkan tim membangun workflow automation dengan platform n8n: menghubungkan email, CRM, spreadsheet, database, dan Generative AI tanpa coding berat. AI Training Indonesia menyelenggarakannya sebagai program AI Workflow Automation (half-day atau full-day) untuk tim operations, marketing, HR, dan finance di seluruh Indonesia.";
 
+const apaItuOpenclawTraining =
+  "OpenClaw Training adalah program corporate training yang mengajarkan tim IT membangun dan menerapkan asisten AI open-source dengan OpenClaw: kontrol data penuh, penyesuaian perilaku AI, knowledge base RAG, dan deployment self-hosted (Docker, cloud, on-premise). AI Training Indonesia menyelenggarakannya sebagai program full-day atau 2-day untuk tim IT, DevOps, dan technical leads di Indonesia.";
+
 export default function ProgramsPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -280,6 +283,14 @@ export default function ProgramsPage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: apaItuPelatihanN8nUntukPerusahaan,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apa itu OpenClaw Training?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuOpenclawTraining,
         },
       },
     ],
@@ -366,6 +377,17 @@ export default function ProgramsPage() {
                 </h2>
                 <p className="text-white/70 text-sm leading-relaxed">
                   {apaItuPelatihanN8nUntukPerusahaan}
+                </p>
+              </div>
+              <div
+                id="apa-itu-openclaw-training"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa itu OpenClaw Training?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {apaItuOpenclawTraining}
                 </p>
               </div>
             </div>
