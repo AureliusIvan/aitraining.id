@@ -37,3 +37,5 @@
 2026-07-08T03:22+07:00	action=idle	pending=0	ticksSinceDiscovery=6	discovery_in=4
 2026-07-08T03:37+07:00	action=idle	pending=0	ticksSinceDiscovery=7	discovery_in=3
 2026-07-08T03:52+07:00	action=idle	pending=0	ticksSinceDiscovery=8	discovery_in=2
+2026-07-08T11:37+07:00	action=idle	pending=0	ticksSinceDiscovery=9	discovery_in=1	note=hourly-cron-resumed-after-8h-gap
+2026-07-08T12:07+07:00	action=blocked	pending=0	ticksSinceDiscovery=9	reason=29-file-provider-vs-trainer-audit-parked-uncommitted;normal-improve/discovery-cycle-unsafe-until-resolved;deploy-reserved-for-ivan
