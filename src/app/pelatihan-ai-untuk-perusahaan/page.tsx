@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk e-commerce Indonesia",
     "pelatihan AI untuk properti Indonesia",
     "pelatihan AI untuk media Indonesia",
+    "pelatihan AI untuk pemerintah Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -191,6 +192,9 @@ const pelatihanAiUntukProperti =
 
 const pelatihanAiUntukMedia =
   "Pelatihan AI untuk media di Indonesia adalah program corporate yang mengajarkan tim redaksi, produksi, dan digital media memakai Generative AI dan automation (n8n) untuk draft outline, ringkasan riset, FAQ audiens, konten sosial, dan workflow admin berulang, dengan penekanan pada review manusia sebelum publikasi dan kebijakan editorial. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses media perusahaan.";
+
+const pelatihanAiUntukPemerintah =
+  "Pelatihan AI untuk pemerintah di Indonesia adalah program corporate yang mengajarkan ASN dan staf instansi memakai Generative AI dan automation (n8n) untuk draft surat/nota dinas, ringkasan kebijakan, FAQ layanan publik, dan workflow admin berulang, dengan penekanan pada review manusia, kerahasiaan data, dan kepatuhan tata kelola. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses dan kebijakan instansi.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -509,6 +513,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk media di Indonesia?",
     a: pelatihanAiUntukMedia,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk media" },
+  },
+  {
+    id: "pelatihan-ai-untuk-pemerintah-indonesia",
+    q: "Apa itu pelatihan AI untuk pemerintah di Indonesia?",
+    a: pelatihanAiUntukPemerintah,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk pemerintah" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
