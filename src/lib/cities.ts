@@ -776,6 +776,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "bogor",
+    name: "Bogor",
+    title: "Corporate AI Training Bogor",
+    description:
+      "Bogor adalah pusat bisnis dan jasa di Jawa Barat yang dekat dengan Jakarta. Corporate AI training di Bogor tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Bogor adalah pusat bisnis, pemerintahan daerah, dan jasa di Jawa Barat dengan akses cepat ke Jabodetabek. Corporate AI training di Bogor dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Bogor (Pajajaran, Baranangsiang, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk jasa, pemerintahan daerah, manufaktur ringan, dan perusahaan Jabodetabek",
+      "Tersedia on-site di kawasan bisnis Bogor dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional kantor regional",
+      "Virtual session tersedia untuk tim di luar Bogor",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Bogor",
+      "pelatihan AI Bogor untuk perusahaan",
+      "AI training Bogor",
+      "pelatihan AI Bogor",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Bogor saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-bogor-untuk-perusahaan",
+        q: "Pelatihan AI Bogor untuk perusahaan",
+        a: "Pelatihan AI Bogor untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks jasa dan bisnis regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Bogor dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-bogor",
+          q: "What is corporate AI training in Bogor?",
+          a: "Corporate AI training in Bogor is an on-site or virtual program for company teams in West Java near Jabodetabek: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Bogor business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Bogor tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Bogor dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Bogor?",
+          a: "Program cocok untuk jasa, pemerintahan daerah, manufaktur ringan, dan perusahaan Jabodetabek yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
