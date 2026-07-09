@@ -195,6 +195,12 @@ export const cities: City[] = [
       "Workshop bisa dikombinasikan dengan company retreat",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/bandung",
+    keywords: [
+      "AI training terbaik di Bandung",
+      "ai training terbaik Bandung",
+      "pelatihan AI terbaik Bandung",
+      "corporate AI training Bandung",
+    ],
     aiTrainer: {
       intro:
         "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Bandung saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
@@ -204,6 +210,11 @@ export const cities: City[] = [
         a: "Pelatihan AI Bandung untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks startup, agensi kreatif, dan tech company. AI Training Indonesia menyelenggarakannya di Dago, kawasan startup, dan seluruh Bandung dengan kurikulum 70% hands-on.",
       },
       faqs: [
+        {
+          id: "ai-training-terbaik-di-bandung",
+          q: "Apa AI training terbaik di Bandung?",
+          a: "Tidak ada lembaga resmi yang memberi peringkat AI training di Bandung. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik on-site di Dago dan kawasan startup Bandung), relevansi tool dengan konteks startup dan industri kreatif Jawa Barat, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan di aitraining.id/best-ai-trainers-indonesia.",
+        },
         {
           q: "Pelatihan AI di Bandung tersedia on-site atau online?",
           a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan Dago, area startup, dan sekitarnya, dengan opsi virtual untuk tim hybrid. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
