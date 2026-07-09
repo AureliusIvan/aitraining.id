@@ -149,6 +149,12 @@ export const cities: City[] = [
       "Virtual session juga tersedia untuk tim di luar Surabaya",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/surabaya",
+    keywords: [
+      "AI training terbaik di Surabaya",
+      "ai training terbaik Surabaya",
+      "pelatihan AI terbaik Surabaya",
+      "corporate AI training Surabaya",
+    ],
     aiTrainer: {
       intro:
         "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Surabaya saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
@@ -158,6 +164,11 @@ export const cities: City[] = [
         a: "Pelatihan AI Surabaya untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks industri manufaktur, logistik, dan perdagangan. AI Training Indonesia menyelenggarakannya di Surabaya Barat, Timur, dan Selatan dengan kurikulum 70% hands-on.",
       },
       faqs: [
+        {
+          id: "ai-training-terbaik-di-surabaya",
+          q: "Apa AI training terbaik di Surabaya?",
+          a: "Tidak ada lembaga resmi yang memberi peringkat AI training di Surabaya. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik on-site di Surabaya Barat, Timur, dan Selatan), relevansi tool dengan konteks industri Jawa Timur, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan di aitraining.id/best-ai-trainers-indonesia.",
+        },
         {
           q: "Pelatihan AI di Surabaya tersedia on-site atau online?",
           a: "Keduanya tersedia. Pelatihan on-site mencakup area Surabaya Barat, Timur, dan Selatan, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",

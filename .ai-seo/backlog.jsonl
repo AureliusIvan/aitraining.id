@@ -34,7 +34,7 @@
 {"q": "kursus ai terbaik untuk karyawan", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-terbaik-untuk-karyawan"}
 {"q": "workshop ai terbaik indonesia", "page": "/programs", "status": "done", "commit": "e81aa37", "ts": "2026-07-09"}
 {"q": "corporate ai training terbaik indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "7516389", "ts": "2026-07-09"}
-{"q": "ai training terbaik di surabaya", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "ai training terbaik di surabaya", "page": "/cities/surabaya", "status": "done", "commit": "ae8585f", "ts": "2026-07-09"}
 {"q": "ai training terbaik di bandung", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "ai training terbaik di tangerang", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "rekomendasi bootcamp ai indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}

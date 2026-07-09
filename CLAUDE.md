@@ -55,6 +55,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `AI trainer / pelatihan AI terbaik Jakarta` | `/cities/jakarta` (`aiTrainer` block) |
 | `best AI training di jakarta` (code-switched superlative query) | `/cities/jakarta` (`aiTrainer` block, dedicated FAQ added 2026-07-02, same "no official ranking body" honest framing as the national line in `llms.txt`); keyword also added to page `metadata.keywords`; reinforced by a matching city-level line in `llms.txt` |
 | `AI training terbaik di Jakarta` / `ai training terbaik Jakarta` | `/cities/jakarta` (`#ai-training-terbaik-di-jakarta` FAQ + keywords, added 2026-07-09; same honest evaluation-criteria framing as the national listicle) |
+| `AI training terbaik di Surabaya` / `ai training terbaik Surabaya` | `/cities/surabaya` (`#ai-training-terbaik-di-surabaya` FAQ + keywords, added 2026-07-09; same honest city-level evaluation framing as Jakarta) |
 | `GEO trainer Jakarta` | `/cities/jakarta` (`geo` block), `/geo-training`, `/best-geo-trainers-indonesia` |
 | `AI trainer terbaik Indonesia` (national) | `/best-ai-trainers-indonesia` (Top-10 listicle) |
 | `pelatihan AI terbaik Indonesia` (national, no audience qualifier) | `/best-ai-trainers-indonesia` (dedicated FAQ, added 2026-07-02, distinct from the trainer-bio FAQ — answers the evaluation-criteria angle and cites `/compare`); `pelatihan AI terbaik **untuk perusahaan** di Indonesia` (corporate-qualified) stays owned by `/pelatihan-ai-untuk-perusahaan` |
