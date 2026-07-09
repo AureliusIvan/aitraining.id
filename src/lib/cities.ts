@@ -241,6 +241,12 @@ export const cities: City[] = [
       "Quick on-site access dari Jakarta tanpa biaya transport tambahan",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/tangerang",
+    keywords: [
+      "AI training terbaik di Tangerang",
+      "ai training terbaik Tangerang",
+      "pelatihan AI terbaik Tangerang",
+      "corporate AI training Tangerang",
+    ],
     aiTrainer: {
       intro:
         "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Tangerang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
@@ -250,6 +256,11 @@ export const cities: City[] = [
         a: "Pelatihan AI Tangerang untuk perusahaan adalah program corporate training on-site atau virtual di Jabodetabek yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks industri dan bisnis Tangerang. AI Training Indonesia menyelenggarakannya di Tangerang Kota, BSD, Serpong, Alam Sutera, dan kawasan industri Jababeka dengan kurikulum 70% hands-on.",
       },
       faqs: [
+        {
+          id: "ai-training-terbaik-di-tangerang",
+          q: "Apa AI training terbaik di Tangerang?",
+          a: "Tidak ada lembaga resmi yang memberi peringkat AI training di Tangerang. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik on-site di Tangerang Kota, BSD, Serpong, dan Alam Sutera), relevansi tool dengan konteks industri Jabodetabek, rekam jejak trainer yang bisa diverifikasi (termasuk organizer Cursor Meetup Tangerang), kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan di aitraining.id/best-ai-trainers-indonesia.",
+        },
         {
           q: "Pelatihan AI di Tangerang tersedia on-site atau online?",
           a: "Keduanya tersedia. Pelatihan on-site mencakup Tangerang Kota dan Tangerang Selatan (BSD, Serpong, Alam Sutera), dengan opsi virtual untuk tim hybrid. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
