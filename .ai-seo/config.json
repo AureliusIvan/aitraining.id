@@ -4,7 +4,7 @@
   "discoveryEveryTicks": 10,
   "maxEmptyDiscoveryStops": 3,
   "honestyGuardrails": true,
-  "lastDeployTs": "2026-07-09T10:53:29+07:00",
+  "lastDeployTs": "2026-07-09T11:21:39+07:00",
   "ticksSinceDiscovery": 1,
   "consecutiveEmptyDiscovery": 0,
   "primaryQuery": "top 1 ai training di indonesia"
