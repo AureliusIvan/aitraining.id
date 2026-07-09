@@ -1102,6 +1102,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "cirebon",
+    name: "Cirebon",
+    title: "Corporate AI Training Cirebon",
+    description:
+      "Cirebon adalah pusat perdagangan, pelabuhan, dan jasa di pesisir utara Jawa Barat. Corporate AI training di Cirebon tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Cirebon adalah pusat perdagangan, pelabuhan, dan jasa di pesisir utara Jawa Barat dengan akses ke koridor Pantura. Corporate AI training di Cirebon dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Cirebon (Yos Sudarso, pelabuhan, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, pelabuhan, manufaktur ringan, dan jasa Jawa Barat",
+      "Tersedia on-site di kawasan bisnis Cirebon dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Cirebon",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Cirebon",
+      "pelatihan AI Cirebon untuk perusahaan",
+      "AI training Cirebon",
+      "pelatihan AI Cirebon",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Cirebon saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-cirebon-untuk-perusahaan",
+        q: "Pelatihan AI Cirebon untuk perusahaan",
+        a: "Pelatihan AI Cirebon untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan dan pelabuhan. AI Training Indonesia menyelenggarakannya di kawasan bisnis Cirebon dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-cirebon",
+          q: "What is corporate AI training in Cirebon?",
+          a: "Corporate AI training in Cirebon is an on-site or virtual program for company teams on the north coast of West Java: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Cirebon business and port districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Cirebon tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Cirebon dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Cirebon?",
+          a: "Program cocok untuk perdagangan, pelabuhan, manufaktur ringan, dan jasa di Jawa Barat yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
