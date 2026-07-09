@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "AI training untuk marketing Indonesia",
     "pelatihan AI untuk HR Indonesia",
     "pelatihan AI untuk engineering Indonesia",
+    "in-house AI training Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -59,6 +60,9 @@ const pelatihanAiUntukHr =
 
 const pelatihanAiUntukEngineering =
   "Pelatihan AI untuk engineering di Indonesia adalah program corporate yang mengajarkan tim engineering dan produk memakai AI-powered development (Cursor), agentic coding workflows, dan Claude Code di codebase nyata: review PR, scaffolding, test, dan dokumentasi dengan guardrail review manusia. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke stack dan repo perusahaan.";
+
+const inHouseAiTrainingIndonesia =
+  "In-house AI training in Indonesia is a private corporate program delivered for one company's team, on-site at the office or as a closed virtual cohort, with curriculum customized to internal tools and workflows. AI Training Indonesia runs in-house sessions at 70% hands-on for automation (n8n), AI-powered development (Cursor), and AI agents, with a free 30-minute discovery call before scoping.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -153,6 +157,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk engineering di Indonesia?",
     a: pelatihanAiUntukEngineering,
     link: { href: "/programs#development", text: "Lihat program AI-Powered Development" },
+  },
+  {
+    id: "in-house-ai-training-indonesia",
+    q: "What is in-house AI training in Indonesia?",
+    a: inHouseAiTrainingIndonesia,
+    link: { href: "/contact", text: "Book a free discovery call" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",

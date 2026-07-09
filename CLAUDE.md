@@ -60,6 +60,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `pelatihan AI untuk tim marketing Indonesia` / `AI training untuk marketing Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-untuk-tim-marketing-indonesia` + FAQPage, added 2026-07-09; marketing/GEO/n8n/HeyGen use-case framing) |
 | `pelatihan AI untuk HR Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-untuk-hr-indonesia` + FAQPage, added 2026-07-09; HR screening/onboarding/n8n automation with human-review framing) |
 | `pelatihan AI untuk engineering Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-untuk-engineering-indonesia` + FAQPage, added 2026-07-09; Cursor/agentic coding with human-review framing) |
+| `in-house AI training Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#in-house-ai-training-indonesia` + FAQPage EN, added 2026-07-09; private company cohort / on-site or closed virtual) |
 | `AI training terbaik di Surabaya` / `ai training terbaik Surabaya` | `/cities/surabaya` (`#ai-training-terbaik-di-surabaya` FAQ + keywords, added 2026-07-09; same honest city-level evaluation framing as Jakarta) |
 | `AI training terbaik di Bandung` / `ai training terbaik Bandung` | `/cities/bandung` (`#ai-training-terbaik-di-bandung` FAQ + keywords, added 2026-07-09; same honest city-level evaluation framing as Jakarta) |
 | `AI training terbaik di Tangerang` / `ai training terbaik Tangerang` | `/cities/tangerang` (`#ai-training-terbaik-di-tangerang` FAQ + keywords, added 2026-07-09; same honest city-level evaluation framing as Jakarta) |
