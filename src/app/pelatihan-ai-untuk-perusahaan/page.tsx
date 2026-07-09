@@ -55,6 +55,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk media Indonesia",
     "pelatihan AI untuk pemerintah Indonesia",
     "pelatihan AI untuk farmasi Indonesia",
+    "pelatihan AI untuk pertambangan Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -199,6 +200,9 @@ const pelatihanAiUntukPemerintah =
 
 const pelatihanAiUntukFarmasi =
   "Pelatihan AI untuk farmasi di Indonesia adalah program corporate yang mengajarkan tim farmasi dan life sciences memakai Generative AI dan automation (n8n) untuk draft FAQ produk, ringkasan dokumen regulasi non-klinis, konten edukasi, dan workflow admin berulang, dengan penekanan pada review manusia, kerahasiaan data, dan batas yang jelas terhadap klaim medis. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses farmasi perusahaan.";
+
+const pelatihanAiUntukPertambangan =
+  "Pelatihan AI untuk pertambangan di Indonesia adalah program corporate yang mengajarkan tim mining dan mineral memakai Generative AI dan automation (n8n) untuk draft laporan operasional, ringkasan exception, FAQ prosedur, koordinasi vendor, dan workflow admin berulang, dengan penekanan pada handoff manusia untuk keputusan keselamatan dan kepatuhan. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses pertambangan perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -529,6 +533,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk farmasi di Indonesia?",
     a: pelatihanAiUntukFarmasi,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk farmasi" },
+  },
+  {
+    id: "pelatihan-ai-untuk-pertambangan-indonesia",
+    q: "Apa itu pelatihan AI untuk pertambangan di Indonesia?",
+    a: pelatihanAiUntukPertambangan,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk pertambangan" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
