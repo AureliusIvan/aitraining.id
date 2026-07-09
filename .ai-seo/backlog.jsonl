@@ -112,7 +112,7 @@
 {"q": "pelatihan ai untuk agribisnis indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "e256f25", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-agribisnis-indonesia"}
 {"q": "pelatihan ai untuk fintech indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "ab6deca", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-fintech-indonesia"}
 {"q": "pelatihan ai untuk ngo indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "377029e", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-ngo-indonesia"}
-{"q": "pelatihan ai onsite bali", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "pelatihan ai onsite bali", "page": "/cities/bali", "status": "done", "commit": "5183bad", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-bali"}
 {"q": "pelatihan ai onsite yogyakarta", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai onsite semarang", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "corporate ai training depok", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}

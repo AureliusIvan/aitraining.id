@@ -368,6 +368,8 @@ export const cities: City[] = [
       "pelatihan AI Bali",
       "corporate AI training Bali",
       "AI training Bali",
+      "pelatihan AI onsite Bali",
+      "pelatihan AI on-site Bali",
     ],
     aiTrainer: {
       intro:
@@ -382,6 +384,11 @@ export const cities: City[] = [
           id: "pelatihan-ai-bali-untuk-perusahaan-faq",
           q: "Apa itu pelatihan AI Bali untuk perusahaan?",
           a: "Pelatihan AI Bali untuk perusahaan adalah program corporate on-site atau virtual untuk tim di Bali: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di Denpasar, Badung (Kuta, Seminyak, Nusa Dua), dan sekitarnya; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-bali",
+          q: "Apa itu pelatihan AI onsite di Bali?",
+          a: "Pelatihan AI onsite di Bali adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di Denpasar, Badung (Kuta, Seminyak, Nusa Dua), dan sekitarnya. AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks hospitality dan pariwisata, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Bali tersedia on-site atau online?",
