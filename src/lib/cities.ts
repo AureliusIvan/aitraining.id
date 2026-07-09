@@ -281,6 +281,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "yogyakarta",
+    name: "Yogyakarta",
+    title: "Corporate AI Training Yogyakarta",
+    description:
+      "Yogyakarta adalah hub pendidikan dan industri kreatif di Jawa Tengah/DIY dengan banyak universitas, startup, dan perusahaan yang siap mengadopsi AI. Corporate AI training di Yogyakarta tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Yogyakarta adalah pusat pendidikan dan industri kreatif di DIY, dengan ekosistem kampus, startup, dan perusahaan jasa yang aktif. Corporate AI training di Yogyakarta dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan Sleman, Kota Yogyakarta, dan sekitarnya, serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perusahaan jasa, edukasi, startup, dan industri kreatif DIY",
+      "Tersedia on-site di Sleman, Kota Yogyakarta, dan sekitarnya",
+      "Program dapat dikustomisasi untuk konteks pendidikan dan kreatif lokal",
+      "Virtual session tersedia untuk tim di luar Yogyakarta",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "AI training Yogyakarta",
+      "ai training yogyakarta",
+      "pelatihan AI Yogyakarta",
+      "corporate AI training Yogyakarta",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Yogyakarta saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-yogyakarta-untuk-perusahaan",
+        q: "Pelatihan AI Yogyakarta untuk perusahaan",
+        a: "Pelatihan AI Yogyakarta untuk perusahaan adalah program corporate training on-site atau virtual di DIY yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks pendidikan, jasa, dan industri kreatif. AI Training Indonesia menyelenggarakannya di Sleman, Kota Yogyakarta, dan sekitarnya dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "ai-training-yogyakarta",
+          q: "Apa itu AI training di Yogyakarta?",
+          a: "AI training di Yogyakarta adalah program corporate on-site atau virtual untuk tim perusahaan di DIY: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di Sleman, Kota Yogyakarta, dan sekitarnya; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Yogyakarta tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup Sleman, Kota Yogyakarta, dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Yogyakarta?",
+          a: "Program cocok untuk perusahaan jasa, edukasi, startup, dan industri kreatif di DIY yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
