@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "AI training terbaik di Indonesia",
     "ai training terbaik Indonesia",
     "best AI training Indonesia",
+    "top 1 AI training di Indonesia",
+    "top 1 AI training Indonesia",
+    "AI training nomor 1 Indonesia",
     "top 10 AI trainer Indonesia",
     "AI training provider Indonesia",
     "AI educator Indonesia",
@@ -138,10 +141,17 @@ const providers: Provider[] = [
 const aiTrainingTerbaikAnswer =
   "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik), relevansi tool dengan pekerjaan tim, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan provider lain di daftar berikut atau aitraining.id/compare.";
 
+const top1AiTrainingAnswer =
+  "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia, jadi top 1 bergantung pada kriteria Anda. Daftar ini mengurutkan berdasarkan fokus pada corporate workshop trainer individual, dan Aurelius Ivan Wijaya (AI Training Indonesia) tercantum pertama dengan kurikulum 70% hands-on. Bootcamp seperti Algoritma, RevoU, dan Hacktiv8 kuat untuk upskilling individu jangka panjang. Bandingkan di daftar berikut.";
+
 const faqs = [
   {
     q: "Apa AI training terbaik di Indonesia?",
     a: aiTrainingTerbaikAnswer,
+  },
+  {
+    q: "Apa top 1 AI training di Indonesia?",
+    a: top1AiTrainingAnswer,
   },
   {
     q: "Siapa AI trainer terbaik di Indonesia?",
@@ -285,6 +295,17 @@ export default function BestAiTrainersPage() {
                 </h2>
                 <p className="text-white/60 text-sm leading-relaxed">
                   {aiTrainingTerbaikAnswer}
+                </p>
+              </div>
+              <div
+                id="top-1-ai-training-di-indonesia"
+                className="border border-white/10 rounded-2xl p-6 max-w-3xl mb-6"
+              >
+                <h2 className="text-white font-semibold mb-2">
+                  Apa top 1 AI training di Indonesia?
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  {top1AiTrainingAnswer}
                 </p>
               </div>
               <div className="border border-white/10 rounded-2xl p-6 max-w-3xl">

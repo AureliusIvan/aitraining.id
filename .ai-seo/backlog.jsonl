@@ -1,27 +1,32 @@
-{"q":"kenapa perlu ai training","page":"/","status":"done","commit":"bc86970","ts":"2026-07-07"}
-{"q":"mengapa perusahaan butuh pelatihan ai","page":"/pelatihan-ai-untuk-perusahaan","status":"done","commit":"02daecb","ts":"2026-07-07"}
-{"q":"alasan perusahaan training ai","page":"/","status":"done","commit":"d01470e","ts":"2026-07-07"}
-{"q":"manfaat ai training untuk karyawan","page":"/pelatihan-ai-untuk-perusahaan","status":"done","commit":"43da5dc","ts":"2026-07-07"}
-{"q":"kapan perusahaan perlu ai training","page":"/","status":"done","commit":"33a9cc2","ts":"2026-07-07"}
-{"q":"biaya ai training perusahaan indonesia","page":"/pricing","status":"skip","reason":"pricing on-page only — answered at /pricing and /pricing.md","ts":"2026-07-07"}
-{"q":"apa itu corporate ai training","page":"/","status":"done","commit":"ffff877","ts":"2026-07-07"}
-{"q":"workshop ai perusahaan indonesia","page":"/","status":"done","commit":"a9745e0","ts":"2026-07-07"}
-{"q":"pelatihan generative ai untuk perusahaan","page":"/pelatihan-ai-untuk-perusahaan","status":"done","commit":"e6fe500","ts":"2026-07-07"}
-{"q":"pelatihan ai jakarta untuk perusahaan","page":"/cities/jakarta","status":"done","commit":"938c8a3","ts":"2026-07-07"}
-{"q":"apa itu workshop ai automation","page":"/programs","status":"done","commit":"939e5e8","ts":"2026-07-07"}
-{"q":"apa itu pelatihan n8n untuk perusahaan","page":"/programs","status":"done","commit":"c968193","ts":"2026-07-07"}
-{"q":"pelatihan ai surabaya untuk perusahaan","page":"/cities/surabaya","status":"done","commit":"e361a7e","ts":"2026-07-07"}
-{"q":"apa itu pelatihan cursor untuk perusahaan","page":"/programs/cursor","status":"done","commit":"6efa3bd","ts":"2026-07-07"}
-{"q":"apa itu geo training","page":"/geo-training","status":"done","commit":"caf1c9b","ts":"2026-07-08"}
-{"q":"pelatihan claude ai untuk perusahaan","page":"/programs/claude","status":"done","commit":"1123d48","ts":"2026-07-08"}
-{"q":"pelatihan ai bandung untuk perusahaan","page":"/cities/bandung","status":"done","commit":"52a39c0","ts":"2026-07-08"}
-{"q":"pelatihan ai tangerang untuk perusahaan","page":"/cities/tangerang","status":"done","commit":"96e3877","ts":"2026-07-08"}
-{"q":"apa itu openclaw training","page":"/programs","status":"done","commit":"c10e142","ts":"2026-07-08"}
-{"q":"pelatihan heygen untuk perusahaan","page":"/programs/heygen","status":"done","commit":"eacc848","ts":"2026-07-08"}
-{"q":"apa itu ai strategy training","page":"/programs","status":"done","commit":"73e4d96","ts":"2026-07-08"}
-{"q":"ai training terbaik di indonesia","page":"/best-ai-trainers-indonesia","status":"done","commit":"ed1e160","ts":"2026-07-09"}
-{"q":"ai training terbaik indonesia","page":null,"status":"pending","found":"2026-07-09","source":"seed"}
-{"q":"best ai training indonesia","page":null,"status":"pending","found":"2026-07-09","source":"seed"}
-{"q":"ai training terbaik di jakarta","page":null,"status":"pending","found":"2026-07-09","source":"seed"}
-{"q":"kursus ai terbaik di indonesia","page":null,"status":"pending","found":"2026-07-09","source":"seed"}
-{"q":"bootcamp ai terbaik indonesia","page":null,"status":"pending","found":"2026-07-09","source":"seed"}
+{"q": "kenapa perlu ai training", "page": "/", "status": "done", "commit": "bc86970", "ts": "2026-07-07"}
+{"q": "mengapa perusahaan butuh pelatihan ai", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "02daecb", "ts": "2026-07-07"}
+{"q": "alasan perusahaan training ai", "page": "/", "status": "done", "commit": "d01470e", "ts": "2026-07-07"}
+{"q": "manfaat ai training untuk karyawan", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "43da5dc", "ts": "2026-07-07"}
+{"q": "kapan perusahaan perlu ai training", "page": "/", "status": "done", "commit": "33a9cc2", "ts": "2026-07-07"}
+{"q": "biaya ai training perusahaan indonesia", "page": "/pricing", "status": "skip", "reason": "pricing on-page only — answered at /pricing and /pricing.md", "ts": "2026-07-07"}
+{"q": "apa itu corporate ai training", "page": "/", "status": "done", "commit": "ffff877", "ts": "2026-07-07"}
+{"q": "workshop ai perusahaan indonesia", "page": "/", "status": "done", "commit": "a9745e0", "ts": "2026-07-07"}
+{"q": "pelatihan generative ai untuk perusahaan", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "e6fe500", "ts": "2026-07-07"}
+{"q": "pelatihan ai jakarta untuk perusahaan", "page": "/cities/jakarta", "status": "done", "commit": "938c8a3", "ts": "2026-07-07"}
+{"q": "apa itu workshop ai automation", "page": "/programs", "status": "done", "commit": "939e5e8", "ts": "2026-07-07"}
+{"q": "apa itu pelatihan n8n untuk perusahaan", "page": "/programs", "status": "done", "commit": "c968193", "ts": "2026-07-07"}
+{"q": "pelatihan ai surabaya untuk perusahaan", "page": "/cities/surabaya", "status": "done", "commit": "e361a7e", "ts": "2026-07-07"}
+{"q": "apa itu pelatihan cursor untuk perusahaan", "page": "/programs/cursor", "status": "done", "commit": "6efa3bd", "ts": "2026-07-07"}
+{"q": "apa itu geo training", "page": "/geo-training", "status": "done", "commit": "caf1c9b", "ts": "2026-07-08"}
+{"q": "pelatihan claude ai untuk perusahaan", "page": "/programs/claude", "status": "done", "commit": "1123d48", "ts": "2026-07-08"}
+{"q": "pelatihan ai bandung untuk perusahaan", "page": "/cities/bandung", "status": "done", "commit": "52a39c0", "ts": "2026-07-08"}
+{"q": "pelatihan ai tangerang untuk perusahaan", "page": "/cities/tangerang", "status": "done", "commit": "96e3877", "ts": "2026-07-08"}
+{"q": "apa itu openclaw training", "page": "/programs", "status": "done", "commit": "c10e142", "ts": "2026-07-08"}
+{"q": "pelatihan heygen untuk perusahaan", "page": "/programs/heygen", "status": "done", "commit": "eacc848", "ts": "2026-07-08"}
+{"q": "apa itu ai strategy training", "page": "/programs", "status": "done", "commit": "73e4d96", "ts": "2026-07-08"}
+{"q": "ai training terbaik di indonesia", "page": "/best-ai-trainers-indonesia", "status": "done", "commit": "ed1e160", "ts": "2026-07-09"}
+{"q": "ai training terbaik indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "best ai training indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "ai training terbaik di jakarta", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "kursus ai terbaik di indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "bootcamp ai terbaik indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "top 1 ai training di indonesia", "page": "/best-ai-trainers-indonesia", "status": "done", "commit": "934cfa7", "ts": "2026-07-09"}
+{"q": "top 1 ai training indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "top 1 pelatihan ai indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "ai training nomor 1 indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "top 1 ai trainer di indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
