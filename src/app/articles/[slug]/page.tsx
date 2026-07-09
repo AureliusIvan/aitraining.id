@@ -245,7 +245,7 @@ export default async function ArticlePage({
                   </p>
                 ) : null}
                 <p className="text-white/70">
-                  Semua artikel aitraining.id:{" "}
+                  Semua artikel AI Training Indonesia:{" "}
                   <Link href="/articles" className="underline hover:text-white/90 transition-colors">
                     aitraining.id/articles
                   </Link>

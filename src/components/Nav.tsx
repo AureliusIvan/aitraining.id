@@ -6,9 +6,9 @@ export function Nav() {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-base font-medium text-white/90 hover:text-white transition-colors"
+          className="text-sm sm:text-base font-medium text-white/90 hover:text-white transition-colors whitespace-nowrap"
         >
-          aitraining.id
+          AI Training Indonesia
         </Link>
         <div className="flex items-center gap-8">
           <ul className="hidden md:flex items-center gap-8 text-sm text-white/70">

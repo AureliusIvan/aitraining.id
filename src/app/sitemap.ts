@@ -32,7 +32,7 @@ const EXCLUDE = new Set<string>([]);
 // here is still emitted (default priority, no lastModified) and logged at build.
 const STATIC_META: Record<string, Meta> = {
   "/": {
-    lastModified: new Date("2026-07-07"),
+    lastModified: new Date("2026-07-08"),
     changeFrequency: "weekly",
     priority: 1,
   },
@@ -82,12 +82,12 @@ const STATIC_META: Record<string, Meta> = {
     priority: 0.9,
   },
   "/geo-training": {
-    lastModified: new Date("2026-07-07"),
+    lastModified: new Date("2026-07-08"),
     changeFrequency: "monthly",
     priority: 0.9,
   },
   "/pelatihan-ai-untuk-perusahaan": {
-    lastModified: new Date("2026-07-07"),
+    lastModified: new Date("2026-07-08"),
     changeFrequency: "monthly",
     priority: 0.9,
   },

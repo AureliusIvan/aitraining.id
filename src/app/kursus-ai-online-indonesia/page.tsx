@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Berapa biaya kursus AI online di Indonesia?",
-    a: "Biaya sangat bervariasi. Kursus gratis tersedia di YouTube dan Coursera (dengan opsi audit gratis). Kursus berbayar untuk individu mulai dari Rp 100.000 hingga sekitar Rp 1.000.000. Kelas Agentic GEO di goakal.com/ivan/agentic-geo tersedia seharga Rp 199.000. Untuk pelatihan corporate in-house, aitraining.id menggunakan rate Rp 1.500.000 per jam dengan konsultasi awal 30 menit gratis.",
+    a: "Biaya sangat bervariasi. Kursus gratis tersedia di YouTube dan Coursera (dengan opsi audit gratis). Kursus berbayar untuk individu mulai dari Rp 100.000 hingga sekitar Rp 1.000.000. Kelas Agentic GEO di goakal.com/ivan/agentic-geo tersedia seharga Rp 199.000. Untuk pelatihan corporate in-house, AI Training Indonesia menggunakan rate Rp 1.500.000 per jam dengan konsultasi awal 30 menit gratis.",
   },
   {
     q: "Kursus AI online apa yang tersedia di Indonesia?",
@@ -266,7 +266,7 @@ export default function KursusAiOnlineIndonesiaPage() {
                 Pelatihan AI untuk tim perusahaan
               </h2>
               <p className="text-white/60 mb-8 max-w-2xl leading-relaxed">
-                Untuk tim yang butuh implementasi langsung, aitraining.id
+                Untuk tim yang butuh implementasi langsung, AI Training Indonesia
                 menawarkan program in-house corporate training dengan kurikulum
                 yang disesuaikan industri dan role tim Anda. Seluruh sesi
                 didelivery oleh Aurelius Ivan Wijaya dengan minimal 70% porsi

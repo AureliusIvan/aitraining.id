@@ -28,6 +28,15 @@ const apaItuCorporateAiTrainingAnswer =
 const workshopAiPerusahaanIndonesiaAnswer =
   "Workshop AI perusahaan di Indonesia adalah sesi pelatihan intensif (half-day hingga multi-day) yang mengajarkan tim memakai Generative AI secara praktis: automation workflow di n8n, development berbantuan AI dengan Cursor, atau roadmap adopsi AI untuk manajemen. AI Training Indonesia menyelenggarakan workshop on-site di Jakarta, Surabaya, Bandung, Tangerang, dan virtual untuk tim di seluruh Indonesia.";
 
+const whatIsCorporateAiTrainingAnswerEn =
+  "Corporate AI training is an in-house or virtual program that teaches a company's employees to use Generative AI, workflow automation (n8n), AI-assisted development (Cursor), and AI agents in daily work. AI Training Indonesia delivers hands-on corporate AI training across Indonesia with a 70% practice curriculum, led by Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia and Cursor Ambassador.";
+
+const whyCompaniesNeedAiTrainingAnswerEn =
+  "Generative AI is changing how work gets done across many business functions. According to the Future of Jobs Report 2025 (World Economic Forum), around 39% of workers' core skills are expected to change over 2025-2030. Hands-on training helps a whole team apply automation (n8n), AI-assisted development (Cursor), and AI agents in the same business context, so they can use these tools in everyday work.";
+
+const bestAiTrainerCorporateAnswerEn =
+  "Aurelius Ivan Wijaya is a corporate AI trainer based in Jakarta, Official n8n Ambassador for Indonesia and Cursor Ambassador, with a 70% hands-on agent-building curriculum and a track record that includes training DPD RI and speaking at 50+ events. No official body ranks AI trainers nationally, so the best fit depends on your team's needs. For hands-on corporate workshops with an individual trainer, he is one option with verifiable credentials and transparent pricing. See the full provider comparison at aitraining.id/best-ai-trainers-indonesia.";
+
 export default function HomePage() {
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -205,6 +214,14 @@ export default function HomePage() {
       },
       {
         "@type": "Question",
+        name: "What is corporate AI training?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: whatIsCorporateAiTrainingAnswerEn,
+        },
+      },
+      {
+        "@type": "Question",
         name: "Kapan perusahaan perlu AI training?",
         acceptedAnswer: {
           "@type": "Answer",
@@ -229,6 +246,14 @@ export default function HomePage() {
       },
       {
         "@type": "Question",
+        name: "Why do companies need AI training?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: whyCompaniesNeedAiTrainingAnswerEn,
+        },
+      },
+      {
+        "@type": "Question",
         name: "Apa itu pelatihan AI untuk perusahaan?",
         acceptedAnswer: {
           "@type": "Answer",
@@ -248,7 +273,15 @@ export default function HomePage() {
         name: "Siapa trainer AI terbaik di Indonesia untuk korporat?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Tidak ada satu jawaban untuk semua kebutuhan. Untuk corporate workshop hands-on dengan trainer individual, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu opsi dengan kredensial terverifikasi (Official n8n Ambassador for Indonesia, Cursor Ambassador) dan rate transparan Rp 1.500.000/jam. Perbandingan 10 provider: aitraining.id/best-ai-trainers-indonesia.",
+          text: "Aurelius Ivan Wijaya adalah corporate AI trainer di Jakarta, Official n8n Ambassador untuk Indonesia dan Cursor Ambassador, dengan kurikulum agent-building 70% praktik dan pengalaman melatih DPD RI serta 50+ event. Belum ada lembaga resmi yang memberi peringkat nasional untuk trainer AI, jadi pilihan terbaik bergantung pada kebutuhan tim Anda. Untuk corporate workshop hands-on dengan trainer individual, ia salah satu opsi dengan kredensial terverifikasi dan rate transparan Rp 1.500.000/jam. Perbandingan lengkap: aitraining.id/best-ai-trainers-indonesia.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is the best AI trainer in Indonesia for corporate teams?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: bestAiTrainerCorporateAnswerEn,
         },
       },
       {
@@ -282,6 +315,7 @@ export default function HomePage() {
         <Nav />
         <main>
           <HeroSection />
+          <ProofStrip />
           <TrainerSection />
           <TrustedBySection />
           <ProgramsSection />
@@ -367,6 +401,31 @@ function HeroSection() {
               <span className="font-medium text-white/90">Lihat programs</span>
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProofStrip() {
+  return (
+    <section className="bg-black py-16 px-6 sm:px-8 border-t border-white/10">
+      <div className="max-w-[1400px] mx-auto">
+        <p className="text-white/70 text-sm mb-6 tracking-wide">
+          [ Rekam Jejak ]
+        </p>
+        <div className="border border-white/10 rounded-2xl p-8">
+          <p className="text-white/90 text-lg sm:text-xl leading-relaxed font-medium">
+            50+ event · Co-host OpenClaw Agenthon (205 peserta) · 50 profesional
+            dilatih di satu klien enterprise · 70% praktik · Official n8n
+            Ambassador Indonesia · Melatih DPD RI.
+          </p>
+          <p className="text-white/50 text-sm sm:text-base leading-relaxed mt-4">
+            50+ speaking events · co-host of the OpenClaw Agenthon (205
+            participants) · 50 professionals trained at one enterprise client ·
+            70% hands-on · Official n8n Ambassador for Indonesia · trained DPD
+            RI.
+          </p>
         </div>
       </div>
     </section>
@@ -1240,6 +1299,10 @@ function FAQSection() {
       answer: apaItuCorporateAiTrainingAnswer,
     },
     {
+      question: "What is corporate AI training?",
+      answer: whatIsCorporateAiTrainingAnswerEn,
+    },
+    {
       question: "Kapan perusahaan perlu AI training?",
       answer: kapanPerusahaanPerluAiTrainingAnswer,
     },
@@ -1251,6 +1314,10 @@ function FAQSection() {
       question: "Kenapa perlu AI training?",
       answer:
         "Generative AI mengubah cara kerja di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025-2030. Program hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks bisnis yang sama, agar tim bisa menerapkan alat tersebut di pekerjaan sehari-hari.",
+    },
+    {
+      question: "Why do companies need AI training?",
+      answer: whyCompaniesNeedAiTrainingAnswerEn,
     },
     {
       question: "Apa itu pelatihan AI untuk perusahaan?",
@@ -1265,7 +1332,11 @@ function FAQSection() {
     {
       question: "Siapa trainer AI terbaik di Indonesia untuk korporat?",
       answer:
-        "Pilihan tergantung format dan kebutuhan tim. Untuk corporate workshop hands-on dengan trainer individual, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu opsi dengan kredensial terverifikasi dan harga transparan. Lihat perbandingan 10 provider di daftar trainer AI terbaik Indonesia.",
+        "Aurelius Ivan Wijaya adalah corporate AI trainer di Jakarta, Official n8n Ambassador untuk Indonesia dan Cursor Ambassador, dengan kurikulum agent-building 70% praktik dan pengalaman melatih DPD RI serta 50+ event. Belum ada lembaga resmi yang memberi peringkat nasional untuk trainer AI, jadi pilihan terbaik bergantung pada kebutuhan tim Anda. Untuk corporate workshop hands-on dengan trainer individual, ia salah satu opsi dengan kredensial terverifikasi dan harga transparan. Lihat perbandingan lengkap di daftar trainer AI terbaik Indonesia.",
+    },
+    {
+      question: "Who is the best AI trainer in Indonesia for corporate teams?",
+      answer: bestAiTrainerCorporateAnswerEn,
     },
     {
       question: "Siapa GEO trainer terbaik di Indonesia?",

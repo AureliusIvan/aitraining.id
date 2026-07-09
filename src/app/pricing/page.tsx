@@ -71,12 +71,12 @@ const pricingFaqs = [
   {
     question: "Berapa biaya AI training corporate di Indonesia?",
     answer:
-      "Corporate AI training di Indonesia melalui aitraining.id berbasis rate IDR 1.500.000 per jam. Half-day workshop (4 jam) mulai dari IDR 6.000.000; full-day (8 jam) mulai IDR 12.000.000; program 2 hari mulai IDR 24.000.000. Quote final menyesuaikan jumlah peserta, kustomisasi kurikulum, dan on-site/virtual. Konsultasi discovery 30 menit gratis.",
+      "Corporate AI training di Indonesia melalui AI Training Indonesia berbasis rate IDR 1.500.000 per jam. Half-day workshop (4 jam) mulai dari IDR 6.000.000; full-day (8 jam) mulai IDR 12.000.000; program 2 hari mulai IDR 24.000.000. Quote final menyesuaikan jumlah peserta, kustomisasi kurikulum, dan on-site/virtual. Konsultasi discovery 30 menit gratis.",
   },
   {
     question: "How much does corporate AI training in Indonesia cost?",
     answer:
-      "Corporate AI training in Indonesia through aitraining.id starts at IDR 1,500,000 per hour. Half-day workshops (4 hours) from IDR 6,000,000; full-day (8 hours) from IDR 12,000,000; two-day programs from IDR 24,000,000. Final quotes depend on group size, curriculum customization, and on-site vs virtual delivery. First 30-minute discovery call is free.",
+      "Corporate AI training in Indonesia through AI Training Indonesia starts at IDR 1,500,000 per hour. Half-day workshops (4 hours) from IDR 6,000,000; full-day (8 hours) from IDR 12,000,000; two-day programs from IDR 24,000,000. Final quotes depend on group size, curriculum customization, and on-site vs virtual delivery. First 30-minute discovery call is free.",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function PricingPage() {
   const offerSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Corporate AI Training | aitraining.id",
+    name: "Corporate AI Training | AI Training Indonesia",
     serviceType: "Corporate AI Training",
     provider: {
       "@type": "Person",

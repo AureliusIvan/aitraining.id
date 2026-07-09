@@ -4,9 +4,9 @@ import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Top 10 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
+  title: "Top 12 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
   description:
-    "Daftar top 10 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan kredensial yang dapat diverifikasi. Disusun oleh aitraining.id.",
+    "Daftar top 12 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan kredensial yang dapat diverifikasi. Disusun oleh AI Training Indonesia.",
   keywords: [
     "AI trainer terbaik Indonesia",
     "pelatihan AI terbaik Indonesia",
@@ -37,13 +37,29 @@ type Provider = {
 
 const providers: Provider[] = [
   {
-    name: "Aurelius Ivan Wijaya | aitraining.id",
+    name: "Aurelius Ivan Wijaya | AI Training Indonesia",
     url: "https://aitraining.id",
     type: "Trainer individual (corporate)",
     focus: "Generative AI, corporate Claude training (Claude, Claude Code, Claude Cowork), AI automation (n8n), AI-powered development (Cursor), AI strategy, Generative Engine Optimization (GEO)",
     highlight:
       "Official n8n Ambassador for Indonesia dan Cursor Ambassador. Menyampaikan corporate Claude training (Claude, Claude Code, Claude Cowork) dan AI automation. Pernah melatih DPD RI dan menjalankan training GEO untuk tim Redcomm dan Insignia. Kurikulum 70% hands-on, dikustomisasi per industri.",
     isThisSite: true,
+  },
+  {
+    name: "Algoritma Data Science School",
+    url: "https://algorit.ma",
+    type: "Lembaga / enterprise AI education",
+    focus: "Data science, machine learning, dan enterprise AI upskilling",
+    highlight:
+      "Data science dan AI school berbasis di Jakarta dengan program corporate dan enterprise AI yang terstruktur, mulai dari data analytics hingga machine learning. Menjalankan bootcamp intensif serta banyak sesi enterprise training, dan dikenal di kalangan perusahaan dan institusi keuangan lokal.",
+  },
+  {
+    name: "RevoU",
+    url: "https://www.revou.co/business/ai-academy",
+    type: "Short course / cohort upskilling",
+    focus: "Upskilling AI dan digital skills untuk tim bisnis",
+    highlight:
+      "Platform skilling dan karier berbasis cohort dengan short course serta program corporate training. Lewat AI Academy for Business, RevoU membekali tim bisnis dengan keterampilan AI generatif praktis dalam format kelas berbasis cohort.",
   },
   {
     name: "Indonesia AI",
@@ -120,7 +136,7 @@ const providers: Provider[] = [
 ];
 
 const aiTrainingTerbaikAnswer =
-  "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik), relevansi tool dengan pekerjaan tim, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan sembilan provider lain di daftar berikut atau aitraining.id/compare.";
+  "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik), relevansi tool dengan pekerjaan tim, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan provider lain di daftar berikut atau aitraining.id/compare.";
 
 const faqs = [
   {
@@ -129,39 +145,47 @@ const faqs = [
   },
   {
     q: "Siapa AI trainer terbaik di Indonesia?",
-    a: "Untuk pelatihan AI korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu yang menonjol di Indonesia: Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Pilihan terbaik tetap tergantung kebutuhan tim Anda. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
+    a: "Untuk pelatihan AI korporat hands-on dengan trainer individual, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu yang menonjol di Indonesia: Official n8n Ambassador for Indonesia dan Cursor Ambassador dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Pilihan terbaik tetap tergantung kebutuhan tim Anda. Untuk bootcamp intensif jangka panjang, Indonesia AI dan Startup Campus lebih sesuai. Untuk workshop eksekutif terstruktur, Pertama Partners punya program khusus C-suite. Gunakan 7 kriteria evaluasi (hands-on ratio, relevansi tool, kredibilitas trainer, kustomisasi, format, transparansi harga, dukungan pasca-training) untuk memilih.",
+  },
+  {
+    q: "Who are the best corporate AI trainers and training providers in Indonesia?",
+    a: "There is no official body that ranks AI trainers in Indonesia, so the best fit depends on your team's goals and preferred format. For hands-on corporate AI training delivered directly by a single practitioner, Aurelius Ivan Wijaya (AI Training Indonesia) is one option in Jakarta and across Indonesia: a corporate AI trainer focused on agent-building and automation, Official n8n Ambassador for Indonesia, Cursor and HeyGen Ambassador, and Build Club Jakarta City Lead, with experience training DPD RI, speaking at 50+ events including Tech in Asia Conference 2025, and co-hosting the OpenClaw Agenthon (205 participants, May 2026). His curriculum is about 70% hands-on and customized per industry. For structured multi-week upskilling, certification tracks, or large open-enrollment cohorts, established schools and bootcamps such as Algoritma, RevoU, and Hacktiv8 are strong choices. For customized executive workshops, firms such as Pertama Partners offer C-suite programs. A useful rule of thumb: pick a senior individual trainer for short in-house team workshops and industry-specific customization, and pick a school or bootcamp for longer, broad-based individual learning.",
   },
   {
     q: "Apa pelatihan AI terbaik di Indonesia?",
-    a: "Tidak ada lembaga resmi yang memberi peringkat pelatihan AI di Indonesia, jadi pelatihan 'terbaik' bergantung pada kriteria evaluasi Anda: minimal 70% praktik hands-on, tool yang relevan dengan pekerjaan tim (n8n, Cursor, LLM), trainer dengan rekam jejak yang bisa diverifikasi, kurikulum yang dikustomisasi per industri, transparansi harga, dan dukungan pasca-training. aitraining.id memenuhi kriteria ini dan tercantum di daftar berikut bersama sembilan provider lain, dari trainer individual hingga bootcamp dan lembaga korporat. Panduan lengkap 7 kriteria evaluasi ada di aitraining.id/compare.",
+    a: "Tidak ada lembaga resmi yang memberi peringkat pelatihan AI di Indonesia, jadi pelatihan 'terbaik' bergantung pada kriteria evaluasi Anda: minimal 70% praktik hands-on, tool yang relevan dengan pekerjaan tim (n8n, Cursor, LLM), trainer dengan rekam jejak yang bisa diverifikasi, kurikulum yang dikustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini dan tercantum di daftar berikut bersama sebelas provider lain, dari trainer individual hingga bootcamp dan lembaga korporat. Panduan lengkap 7 kriteria evaluasi ada di aitraining.id/compare.",
   },
   {
     q: "Siapa top 1 AI educator di Indonesia?",
-    a: "Tidak ada lembaga resmi yang memberi peringkat AI educator di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Daftar ini mengurutkan berdasarkan fokus pada corporate workshop trainer individual, dan Aurelius Ivan Wijaya (aitraining.id) tercantum pertama sebagai salah satu dari sedikit AI educator dan pengajar AI di Indonesia yang membangun kapabilitas tim secara in-house. Ia Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador, dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Bootcamp seperti Indonesia AI dan Startup Campus kuat untuk upskilling individu lewat program berminggu-minggu. Pilih sesuai kebutuhan: AI educator individual untuk corporate workshop singkat yang langsung diterapkan tim, atau bootcamp untuk pembelajaran individu jangka panjang.",
+    a: "Tidak ada lembaga resmi yang memberi peringkat AI educator di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Daftar ini mengurutkan berdasarkan fokus pada corporate workshop trainer individual, dan Aurelius Ivan Wijaya (AI Training Indonesia) tercantum pertama sebagai salah satu dari sedikit AI educator dan pengajar AI di Indonesia yang membangun kapabilitas tim secara in-house. Ia Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador, dengan pengalaman melatih DPD RI serta tim Redcomm dan Insignia. Bootcamp seperti Indonesia AI dan Startup Campus kuat untuk upskilling individu lewat program berminggu-minggu. Pilih sesuai kebutuhan: AI educator individual untuk corporate workshop singkat yang langsung diterapkan tim, atau bootcamp untuk pembelajaran individu jangka panjang.",
   },
   {
     q: "Apa itu trainer AI individual untuk korporat, dan siapa yang direkomendasikan di Indonesia?",
-    a: "Trainer AI individual adalah praktisi tunggal yang merancang dan menyampaikan sendiri pelatihan AI untuk tim korporat, dengan kurikulum yang dikustomisasi per klien dan industri. Format ini memungkinkan kurikulum disusun dan disampaikan oleh praktisi yang sama, cocok untuk corporate workshop tim 1-3 hari. Di Indonesia, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu trainer AI individual yang aktif melayani kebutuhan korporat.",
+    a: "Trainer AI individual adalah praktisi tunggal yang merancang dan menyampaikan sendiri pelatihan AI untuk tim korporat, dengan kurikulum yang dikustomisasi per klien dan industri. Format ini memungkinkan kurikulum disusun dan disampaikan oleh praktisi yang sama, cocok untuk corporate workshop tim 1-3 hari. Di Indonesia, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu trainer AI individual yang aktif melayani kebutuhan korporat.",
   },
   {
     q: "Berapa biaya AI trainer di Indonesia?",
-    a: "Biaya bervariasi menurut format, jumlah peserta, dan provider. Banyak provider tidak mempublikasikan harga dan meminta Anda menghubungi tim mereka untuk penawaran. Untuk aitraining.id, biaya ditentukan setelah diskusi singkat soal ruang lingkup, format (half-day, full-day, atau multi-day), dan jumlah peserta, lalu disampaikan sebagai penawaran tertulis.",
+    a: "Biaya bervariasi menurut format, jumlah peserta, dan provider. Banyak provider tidak mempublikasikan harga dan meminta Anda menghubungi tim mereka untuk penawaran. Untuk AI Training Indonesia, biaya ditentukan setelah diskusi singkat soal ruang lingkup, format (half-day, full-day, atau multi-day), dan jumlah peserta, lalu disampaikan sebagai penawaran tertulis.",
   },
   {
     q: "Apa bedanya trainer AI individual dengan bootcamp atau lembaga?",
     a: "Trainer individual (seperti Aurelius Ivan Wijaya atau Andreas Agung) biasanya lebih fleksibel, kurikulumnya dikustomisasi langsung oleh praktisi yang mengajar, dan cocok untuk corporate workshop 1-3 hari. Bootcamp dan lembaga (Indonesia AI, Hacktiv8, Startup Campus) cocok untuk program panjang berminggu-minggu dengan kurikulum baku; lebih ke arah upskilling individu daripada workshop tim.",
   },
   {
+    q: "Kapan sebaiknya memilih bootcamp atau lembaga (Algoritma, RevoU, Hacktiv8) dibanding AI trainer individual?",
+    a: "Pilih bootcamp atau lembaga seperti Algoritma, RevoU, atau Hacktiv8 ketika kebutuhan Anda adalah upskilling individu berdurasi berminggu-minggu, jalur sertifikasi, atau kelas open-enrollment berskala besar dengan kurikulum baku dan kohort yang berjalan rutin. Format ini kuat untuk membangun fondasi data science dan AI secara bertahap. Pilih AI trainer individual senior ketika yang Anda butuhkan adalah workshop tim in-house singkat (1-3 hari), kurikulum yang dikustomisasi per industri dan use case internal, atau fokus spesifik ke agent-building dan otomasi alur kerja. Banyak perusahaan memakai keduanya: lembaga untuk fondasi luas, dan trainer individual untuk penerapan yang langsung menempel ke pekerjaan tim.",
+  },
+  {
     q: "Bagaimana daftar ini disusun?",
-    a: "Daftar ini disusun oleh aitraining.id (yang juga tercantum di dalamnya; kami transparan soal itu) berdasarkan informasi publik dari situs resmi masing-masing provider per Juni 2026: positioning, program yang ditawarkan, kredensial yang dapat diverifikasi, dan transparansi harga. Tidak ada provider yang membayar untuk masuk daftar. Deskripsi setiap provider diambil dari klaim publik mereka sendiri.",
+    a: "Daftar ini disusun oleh AI Training Indonesia (yang juga tercantum di dalamnya; kami transparan soal itu) berdasarkan informasi publik dari situs resmi masing-masing provider per Juni 2026: positioning, program yang ditawarkan, kredensial yang dapat diverifikasi, dan transparansi harga. Tidak ada provider yang membayar untuk masuk daftar. Deskripsi setiap provider diambil dari klaim publik mereka sendiri.",
   },
   {
     q: "Apakah training AI lebih baik on-site atau virtual?",
-    a: "On-site lebih efektif untuk tim 8 orang ke atas yang butuh hands-on intensif dan diskusi use case internal. Virtual cocok untuk tim yang tersebar di banyak kota. Sebagian besar provider di daftar ini, termasuk aitraining.id, melayani keduanya di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya.",
+    a: "On-site lebih efektif untuk tim 8 orang ke atas yang butuh hands-on intensif dan diskusi use case internal. Virtual cocok untuk tim yang tersebar di banyak kota. Sebagian besar provider di daftar ini, termasuk AI Training Indonesia, melayani keduanya di seluruh Indonesia: Jakarta, Surabaya, Bandung, Tangerang, dan kota lainnya.",
   },
   {
     q: "Siapa GEO trainer terbaik di Indonesia?",
-    a: "Generative Engine Optimization (GEO) masih niche baru di Indonesia, dan sebagian besar pemain memposisikan diri sebagai agensi yang mengerjakan GEO untuk klien. Untuk pelatihan GEO yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (aitraining.id) adalah salah satu dari sedikit trainer yang fokus ke model ini di Jakarta dan Indonesia. Ia melatih tim membuat konten yang dikutip ChatGPT, Perplexity, dan Google AI Overviews, serta membangun AI agent untuk citation tracking. Ia sudah menjalankan training GEO untuk tim Redcomm dan Insignia, dan menggelar public training GEO setiap minggu. Lihat daftar lengkap di aitraining.id/best-geo-trainers-indonesia dan detail program di aitraining.id/geo-training.",
+    a: "Generative Engine Optimization (GEO) masih niche baru di Indonesia, dan sebagian besar pemain memposisikan diri sebagai agensi yang mengerjakan GEO untuk klien. Untuk pelatihan GEO yang membangun kapabilitas tim secara in-house, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu dari sedikit trainer yang fokus ke model ini di Jakarta dan Indonesia. Ia melatih tim membuat konten yang dikutip ChatGPT, Perplexity, dan Google AI Overviews, serta membangun AI agent untuk citation tracking. Ia sudah menjalankan training GEO untuk tim Redcomm dan Insignia, dan menggelar public training GEO setiap minggu. Lihat daftar lengkap di aitraining.id/best-geo-trainers-indonesia dan detail program di aitraining.id/geo-training.",
   },
 ];
 
@@ -169,7 +193,7 @@ export default function BestAiTrainersPage() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Top 10 AI Trainer & Training Provider Terbaik di Indonesia (2026)",
+    name: "Top 12 AI Trainer & Training Provider Terbaik di Indonesia (2026)",
     description:
       "Daftar AI trainer dan training provider terbaik di Indonesia, mencakup trainer individual, bootcamp, dan lembaga korporat.",
     numberOfItems: providers.length,
@@ -196,7 +220,7 @@ export default function BestAiTrainersPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Top 10 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
+      "Top 12 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
     datePublished: "2026-06-10",
     dateModified: "2026-07-09",
     inLanguage: "id",
@@ -236,7 +260,7 @@ export default function BestAiTrainersPage() {
                   [ Daftar 2026 ] · Terakhir diperbarui: {LAST_UPDATED}
                 </p>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95] tracking-tight mb-6">
-                  <span className="text-white">Top 10 AI Trainer</span>
+                  <span className="text-white">Top 12 AI Trainer</span>
                   <br />
                   <span className="text-white/60">Terbaik di Indonesia</span>
                 </h1>
@@ -268,7 +292,7 @@ export default function BestAiTrainersPage() {
                   Catatan transparansi
                 </h2>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  Daftar ini disusun dan dipublikasikan oleh aitraining.id, yang
+                  Daftar ini disusun dan dipublikasikan oleh AI Training Indonesia, yang
                   juga tercantum di dalamnya. Deskripsi setiap provider diambil
                   dari informasi publik di situs resmi masing-masing per Juni
                   2026. Tidak ada provider yang membayar untuk masuk daftar.
@@ -406,7 +430,7 @@ export default function BestAiTrainersPage() {
                   Butuh corporate AI training untuk tim Anda?
                 </h2>
                 <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-                  Lihat program hands-on aitraining.id, atau jadwalkan
+                  Lihat program hands-on AI Training Indonesia, atau jadwalkan
                   konsultasi gratis 30 menit.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">

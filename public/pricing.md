@@ -1,4 +1,4 @@
-# Pricing | aitraining.id Corporate AI Training
+# Pricing | AI Training Indonesia
 
 Corporate AI training and consultation by **Aurelius Ivan Wijaya**, Corporate AI
 Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador. Delivered on-site across Indonesia (Jakarta,
@@ -10,7 +10,8 @@ Surabaya, Bandung, Tangerang, and other cities) or virtually.
 > and number of sessions. First consultation (30-minute discovery call) is free.
 
 ## Base rate
-- **Training delivery: IDR 1,500,000 per hour** (≈ USD 92/hour)
+- **Training delivery: IDR 1,500,000 per hour** for classes up to 10 participants (≈ USD 92/hour)
+- **IDR 2,000,000 per hour** for classes above 10 participants (≈ USD 123/hour)
 - Currency: Indonesian Rupiah (IDR)
 - Languages: Bahasa Indonesia or English
 - Coverage: All of Indonesia: on-site and virtual
@@ -53,4 +54,4 @@ Surabaya, Bandung, Tangerang, and other cities) or virtually.
 - Email: ivan@aurelivan.com
 - Details: https://aitraining.id/contact
 
-_Last updated: 2026-06-05_
+_Last updated: 2026-07-08_

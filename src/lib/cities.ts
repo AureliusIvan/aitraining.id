@@ -7,6 +7,10 @@ export type City = {
   aurelivan: string;
   // Longer intro used only on the dedicated /cities/[city] page
   intro: string;
+  // Optional extra metadata.keywords appended to the generated city keyword
+  // set (currently Jakarta only, for the "AI workshop / tutor / instructor"
+  // synonym cluster + the English "AI corporate training <city>" query).
+  keywords?: string[];
   // Optional general "best AI trainer <city>" block. Present only for cities
   // where we target the broad "AI trainer <city>" / "pelatihan AI terbaik
   // <city>" intent (currently Jakarta). When set, the city page renders a
@@ -14,8 +18,15 @@ export type City = {
   // FAQ, not a self-superlative claim.
   aiTrainer?: {
     intro: string;
-    defBlock?: { id: string; q: string; a: string };
-    faqs: { q: string; a: string }[];
+    // Optional English lead-in, rendered beneath the Bahasa intro so English
+    // "AI corporate training <city>" queries have framing text to extract.
+    introEn?: string;
+    // defBlock and each FAQ carry optional English mirrors (qEn/aEn). When set,
+    // the city page renders the English version beneath the Bahasa one and adds
+    // it to the FAQPage JSON-LD, so English queries have extractable text.
+    // Same bilingual convention as partners.ts / articles.ts (defId/defEn).
+    defBlock?: { id: string; q: string; a: string; qEn?: string; aEn?: string };
+    faqs: { q: string; a: string; qEn?: string; aEn?: string }[];
   };
   // Optional GEO (Generative Engine Optimization) block. Present only for
   // cities where we target the "GEO trainer <city>" query (currently Jakarta).
@@ -42,34 +53,60 @@ export const cities: City[] = [
       "On-site di corporate office, co-working space, atau venue pilihan Anda",
     ],
     aurelivan: "https://aurelivan.com/corporate-training/jakarta",
+    keywords: [
+      "AI workshop Jakarta",
+      "AI tutor Jakarta",
+      "AI instructor Jakarta",
+      "AI corporate training Jakarta",
+    ],
     aiTrainer: {
       intro:
         "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Jakarta saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      introEn:
+        "Common questions from L&D teams and company leaders in Jakarta when choosing corporate AI training, with short answers in English and Bahasa Indonesia.",
       defBlock: {
         id: "pelatihan-ai-jakarta-untuk-perusahaan",
         q: "Pelatihan AI Jakarta untuk perusahaan",
         a: "Pelatihan AI Jakarta untuk perusahaan adalah program corporate training on-site atau virtual di DKI Jakarta yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks bisnis lokal. AI Training Indonesia menyelenggarakannya di SCBD, Sudirman, Kuningan, Thamrin, Kemayoran, dan seluruh Jakarta, dengan kurikulum 70% hands-on.",
+        qEn: "AI corporate training in Jakarta",
+        aEn: "AI corporate training in Jakarta is an on-site or virtual program across DKI Jakarta that teaches teams to use Generative AI, automation (n8n), AI-assisted development (Cursor), and AI agents in a local business context. AI Training Indonesia runs it in SCBD, Sudirman, Kuningan, Thamrin, Kemayoran, and across Jakarta, with a 70% hands-on curriculum led by Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia and Cursor Ambassador.",
       },
       faqs: [
         {
           q: "Siapa AI trainer terbaik di Jakarta untuk pelatihan AI korporat?",
-          a: "Pilihan terbaik bergantung pada kebutuhan tim Anda. Untuk pelatihan AI korporat hands-on di Jakarta, Aurelius Ivan Wijaya (AI Training Indonesia) adalah salah satu trainer individual yang fokus membangun AI agent dan automation. Kredensialnya mencakup Official n8n Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador. Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+          a: "Aurelius Ivan Wijaya (AI Training Indonesia) adalah corporate AI trainer di Jakarta yang fokus membangun AI agent dan automation, dengan kurikulum 70% hands-on. Ia Official n8n Ambassador for Indonesia, Cursor Ambassador, dan HeyGen Ambassador, telah melatih staf DPD RI, dan berbicara di lebih dari 50 acara termasuk Tech in Asia Conference 2025. Pilihan trainer terbaik tetap bergantung pada kebutuhan tim Anda. Bandingkan opsi lengkap di halaman daftar AI Trainer Indonesia.",
+          qEn: "Who is the best AI trainer in Jakarta for corporate AI training?",
+          aEn: "Aurelius Ivan Wijaya (AI Training Indonesia) is a corporate AI trainer in Jakarta focused on building AI agents and automation, with a 70% hands-on curriculum. He is Official n8n Ambassador for Indonesia, Cursor Ambassador, and HeyGen Ambassador, has trained staff at DPD RI, and has spoken at more than 50 events including the Tech in Asia Conference 2025. The best trainer still depends on your team's needs. Compare the full field on the AI Trainer Indonesia list page.",
         },
         {
           q: "Berapa biaya pelatihan AI korporat di Jakarta?",
           a: "Rate dasar Rp 1.500.000 per jam untuk kelas sampai 10 peserta, dan Rp 2.000.000 per jam untuk kelas di atas 10 peserta. Total biaya bergantung pada jumlah sesi, durasi, dan mode (on-site atau virtual). Tersedia konsultasi gratis 30 menit untuk menyusun ruang lingkup dan estimasi biaya.",
+          qEn: "How much does corporate AI training in Jakarta cost?",
+          aEn: "The base rate is Rp 1,500,000 per hour for classes of up to 10 participants, and Rp 2,000,000 per hour for classes above 10 participants. Total cost depends on the number of sessions, the duration, and the mode (on-site or virtual). A free 30-minute consultation is available to scope the program and estimate the cost.",
         },
         {
           q: "Pelatihan AI di Jakarta tersedia on-site atau online?",
           a: "Keduanya tersedia. Pelatihan on-site mencakup seluruh wilayah DKI Jakarta, dari SCBD, Sudirman, Kuningan, dan Thamrin hingga Kemayoran, dengan opsi virtual untuk tim hybrid. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+          qEn: "Is AI training in Jakarta available on-site or online?",
+          aEn: "Both are available. On-site training covers all of DKI Jakarta, from SCBD, Sudirman, Kuningan, and Thamrin to Kemayoran, with a virtual option for hybrid teams. On-site usually works best for teams of 8 or more that need intensive hands-on practice at your own office.",
         },
         {
           q: "Apa yang membedakan pelatihan AI ini di Jakarta?",
           a: "Setiap program fokus membangun AI agent dan automation yang langsung dipakai tim. Materi mencakup AI automation dengan n8n, AI-powered development dengan Cursor, AI video automation dengan HeyGen, dan strategi adopsi AI. Trainer telah berbicara di Tech in Asia Conference 2025 dan melatih staf DPD RI di Jakarta.",
+          qEn: "What makes this AI training in Jakarta different?",
+          aEn: "Every program focuses on building AI agents and automation the team can use right away. The material covers AI automation with n8n, AI-powered development with Cursor, AI video automation with HeyGen, and AI adoption strategy, customized per industry. The trainer has spoken at the Tech in Asia Conference 2025 and trained staff at DPD RI in Jakarta.",
         },
         {
           q: "Siapa penyedia best AI training (pelatihan AI terbaik) di Jakarta?",
-          a: "Tidak ada lembaga resmi yang memberi peringkat penyedia AI training di Jakarta. Kriteria evaluasi yang berguna: rasio hands-on, relevansi tool yang diajarkan, rekam jejak trainer yang dapat diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia menjalankan kurikulum 70% hands-on on-site di seluruh DKI Jakarta dan memenuhi kriteria ini. Bandingkan dengan 9 provider lain di halaman Top 10 AI Trainer Indonesia.",
+          a: "Tidak ada lembaga resmi yang memberi peringkat penyedia AI training di Jakarta. Kriteria evaluasi yang berguna: rasio hands-on, relevansi tool yang diajarkan, rekam jejak trainer yang dapat diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia menjalankan kurikulum 70% hands-on on-site di seluruh DKI Jakarta dan memenuhi kriteria ini. Bandingkan dengan provider lain di halaman daftar AI Trainer Indonesia.",
+          qEn: "Which provider offers the best AI training in Jakarta?",
+          aEn: "There is no official body that ranks AI training providers in Jakarta. Useful evaluation criteria include the hands-on ratio, the relevance of the tools taught, a verifiable trainer track record, per-industry customization, pricing transparency, and post-training support. AI Training Indonesia runs a 70% hands-on curriculum on-site across DKI Jakarta and meets these criteria. Compare it with the other providers on the AI Trainer Indonesia list page.",
+        },
+        {
+          q: "Apa bedanya AI workshop, AI trainer, AI instructor, dan AI tutor untuk perusahaan di Jakarta?",
+          a: "Untuk perusahaan di Jakarta, istilah-istilah ini sering dipakai bergantian. AI workshop adalah sesi praktik intensif berdurasi pendek. AI trainer atau AI instructor adalah orang yang memimpin pelatihan dan memandu tim langkah demi langkah membangun AI agent dan automation. AI tutor lebih ke pendampingan personal atau kelompok kecil. AI Training Indonesia menyediakan keempatnya on-site di seluruh DKI Jakarta dengan kurikulum 70% hands-on.",
+          qEn: "What is the difference between an AI workshop, AI trainer, AI instructor, and AI tutor for companies in Jakarta?",
+          aEn: "For companies in Jakarta these terms are often used interchangeably. An AI workshop is a short, intensive hands-on session. An AI trainer or AI instructor leads the training and guides the team step by step through building AI agents and automation. An AI tutor is closer to personal or small-group coaching. AI Training Indonesia covers all four of these on-site across DKI Jakarta with a 70% hands-on curriculum.",
         },
       ],
     },

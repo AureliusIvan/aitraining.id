@@ -902,7 +902,7 @@ export default function PlaybookClient() {
                     href="https://aitraining.id"
                     className="underline hover:text-white/55 transition-colors"
                   >
-                    aitraining.id
+                    AI Training Indonesia
                   </a>
                 </p>
               </section>

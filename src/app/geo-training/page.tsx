@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = "2 Juli 2026";
+const LAST_UPDATED = "8 Juli 2026";
 
 const curriculum = [
   {
@@ -148,7 +148,7 @@ export default function GeoTrainingPage() {
     headline:
       "GEO Trainer Indonesia: Pelatihan Generative Engine Optimization",
     datePublished: "2026-06-16",
-    dateModified: "2026-07-02",
+    dateModified: "2026-07-08",
     inLanguage: "id",
     author: {
       "@type": "Person",
@@ -265,7 +265,12 @@ export default function GeoTrainingPage() {
     description:
       "Kelas online publik pertama AI Training Indonesia tentang Agentic GEO: membuat brand muncul dan dikutip di ChatGPT, Perplexity, Claude, dan Gemini, dengan praktik menyusun konten dan structured data.",
     startDate: "2026-06-30T20:00:00+07:00",
+    endDate: "2026-06-30T20:00:00+07:00",
     eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    // This one-day class was held on 30 June 2026 and has concluded. Keep
+    // eventStatus as EventScheduled (schema.org has no "completed" status; the
+    // session ran as scheduled), but the past endDate plus no InStock offer
+    // signals a finished event rather than an upcoming ticketed one.
     eventStatus: "https://schema.org/EventScheduled",
     location: {
       "@type": "VirtualLocation",
@@ -281,13 +286,6 @@ export default function GeoTrainingPage() {
       name: "Aurelius Ivan Wijaya",
     },
     inLanguage: "id",
-    offers: {
-      "@type": "Offer",
-      price: "199000",
-      priceCurrency: "IDR",
-      url: "https://goakal.com/ivan/agentic-geo",
-      availability: "https://schema.org/InStock",
-    },
   };
 
   return (

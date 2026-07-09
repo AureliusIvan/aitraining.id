@@ -86,11 +86,11 @@ export const trustedBy: TrustedByItem[] = [
     href: "https://hacktiv8.com",
   },
   {
-    src: "/assets/clients/telkom.png",
-    alt: "Telkom AI Center: workshop AI Connect: From Idea to Content oleh Aurelius Ivan Wijaya di Bandung",
-    name: "Telkom AI Center",
+    src: "/assets/clients/telkom-ai-connect.png",
+    alt: "Telkom AI Connect: workshop AI Connect: From Idea to Content oleh Aurelius Ivan Wijaya di Bandung",
+    name: "Telkom AI Connect",
     caption: "Workshop From Idea to Content, Bandung",
-    href: "https://www.telkom.co.id",
+    href: "https://room.ai-connect.id/explore",
   },
   {
     src: "/assets/clients/jagoan-hosting.png",

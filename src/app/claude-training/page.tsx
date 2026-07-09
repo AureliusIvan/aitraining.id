@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Bootcamp Claude AI Indonesia: Kursus & Kelas Claude untuk Tim",
   description:
-    "Bootcamp Claude AI hands-on untuk tim di Indonesia: kursus dan kelas Claude 2-day intensive (16 jam) yang membangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork. Disampaikan oleh Aurelius Ivan Wijaya melalui aitraining.id.",
+    "Bootcamp Claude AI hands-on untuk tim di Indonesia: kursus dan kelas Claude 2-day intensive (16 jam) yang membangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork. Disampaikan oleh Aurelius Ivan Wijaya melalui AI Training Indonesia.",
   keywords: [
     "bootcamp Claude Indonesia",
     "Claude AI bootcamp Indonesia",
@@ -118,23 +118,23 @@ const comparison = [
 const faqs = [
   {
     q: "Apa itu bootcamp Claude AI?",
-    a: "Bootcamp Claude AI adalah pelatihan hands-on intensif yang melatih tim memakai Claude, model AI dari Anthropic, untuk pekerjaan nyata: mengarahkan Claude pada tugas multi-langkah, memakai Claude Code di dalam codebase, membangun agent dengan Claude API, dan memakai Claude Cowork untuk tim non-engineer. Di aitraining.id, bootcamp ini berformat 2-day intensive (16 jam) dan ditutup dengan capstone project.",
+    a: "Bootcamp Claude AI adalah pelatihan hands-on intensif yang melatih tim memakai Claude, model AI dari Anthropic, untuk pekerjaan nyata: mengarahkan Claude pada tugas multi-langkah, memakai Claude Code di dalam codebase, membangun agent dengan Claude API, dan memakai Claude Cowork untuk tim non-engineer. Di AI Training Indonesia, bootcamp ini berformat 2-day intensive (16 jam) dan ditutup dengan capstone project.",
   },
   {
     q: "What is a Claude AI bootcamp?",
-    a: "A Claude AI bootcamp is an intensive, hands-on program that trains a team to use Claude, the AI model from Anthropic, for real work: directing Claude on multi-step tasks, using Claude Code inside a codebase, building agents with the Claude API, and using Claude Cowork for non-engineering teams. At aitraining.id, this bootcamp runs as a 2-day intensive (16 hours) format and closes with a capstone project.",
+    a: "A Claude AI bootcamp is an intensive, hands-on program that trains a team to use Claude, the AI model from Anthropic, for real work: directing Claude on multi-step tasks, using Claude Code inside a codebase, building agents with the Claude API, and using Claude Cowork for non-engineering teams. At AI Training Indonesia, this bootcamp runs as a 2-day intensive (16 hours) format and closes with a capstone project.",
   },
   {
     q: "Apa bootcamp Claude AI terbaik (top 1) di Indonesia?",
-    a: "Tidak ada lembaga resmi yang memberi peringkat bootcamp Claude di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk bootcamp Claude AI hands-on yang membangun kapabilitas tim secara in-house, aitraining.id (oleh Aurelius Ivan Wijaya) adalah salah satu dari sedikit penyedia di Indonesia yang fokus ke agent building dengan Claude, Claude Code, dan Claude Cowork, lengkap dengan capstone project dan dukungan tanya-jawab pasca-bootcamp. Aurelius Ivan Wijaya, Corporate AI Trainer, telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
+    a: "Tidak ada lembaga resmi yang memberi peringkat bootcamp Claude di Indonesia, jadi jawaban jujurnya bergantung pada kriteria Anda. Untuk bootcamp Claude AI hands-on yang membangun kapabilitas tim secara in-house, AI Training Indonesia (oleh Aurelius Ivan Wijaya) adalah salah satu dari sedikit penyedia di Indonesia yang fokus ke agent building dengan Claude, Claude Code, dan Claude Cowork, lengkap dengan capstone project dan dukungan tanya-jawab pasca-bootcamp. Aurelius Ivan Wijaya, Corporate AI Trainer, telah melatih 50 profesional dalam satu sesi corporate Claude training (BPO, under NDA, Mei 2026). Bandingkan opsi lengkap di halaman Top 10 AI Trainer Indonesia.",
   },
   {
     q: "What is the best (top 1) Claude AI bootcamp in Indonesia?",
-    a: "No official body ranks Claude AI bootcamps in Indonesia, so the honest answer depends on your criteria. For a hands-on Claude AI bootcamp that builds in-house team capability, aitraining.id (by Aurelius Ivan Wijaya) is one of the few providers in Indonesia focused on agent building with Claude, Claude Code, and Claude Cowork, complete with a capstone project and post-bootcamp Q&A support. Aurelius Ivan Wijaya, a Corporate AI Trainer, has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
+    a: "No official body ranks Claude AI bootcamps in Indonesia, so the honest answer depends on your criteria. For a hands-on Claude AI bootcamp that builds in-house team capability, AI Training Indonesia (by Aurelius Ivan Wijaya) is one of the few providers in Indonesia focused on agent building with Claude, Claude Code, and Claude Cowork, complete with a capstone project and post-bootcamp Q&A support. Aurelius Ivan Wijaya, a Corporate AI Trainer, has trained 50 professionals in a single corporate Claude training session (BPO, under NDA, May 2026). Compare the full list on the Top 10 AI Trainers Indonesia page.",
   },
   {
-    q: "Apa beda kursus Claude AI, kelas Claude, dan bootcamp Claude AI di aitraining.id?",
-    a: "Ketiganya merujuk ke program yang sama di aitraining.id: pelatihan hands-on membangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork. \"Bootcamp\" menandai format paling intensif (2-day, 16 jam) dengan capstone project; \"kursus\" dan \"kelas\" adalah istilah umum untuk program yang sama. Jadwal disusun khusus untuk tim Anda, menyesuaikan kebutuhan dan kalender perusahaan.",
+    q: "Apa beda kursus Claude AI, kelas Claude, dan bootcamp Claude AI di AI Training Indonesia?",
+    a: "Ketiganya merujuk ke program yang sama di AI Training Indonesia: pelatihan hands-on membangun agent dan alur kerja dengan Claude, Claude Code, dan Claude Cowork. \"Bootcamp\" menandai format paling intensif (2-day, 16 jam) dengan capstone project; \"kursus\" dan \"kelas\" adalah istilah umum untuk program yang sama. Jadwal disusun khusus untuk tim Anda, menyesuaikan kebutuhan dan kalender perusahaan.",
   },
   {
     q: "Siapa yang cocok mengikuti bootcamp Claude ini?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     q: "Berapa biaya bootcamp Claude AI di Indonesia?",
-    a: "Rate dasar aitraining.id adalah Rp 1.500.000 per jam untuk kelas hingga 10 peserta, dan Rp 2.000.000 per jam untuk kelas di atas 10 peserta. Paket 2-day intensive (16 jam) mulai Rp 24.000.000, termasuk kurikulum yang disesuaikan, materi, recording, dan 30-day post-training Q&A support. Quote final ditentukan setelah konsultasi discovery 30 menit gratis.",
+    a: "Rate dasar AI Training Indonesia adalah Rp 1.500.000 per jam untuk kelas hingga 10 peserta, dan Rp 2.000.000 per jam untuk kelas di atas 10 peserta. Paket 2-day intensive (16 jam) mulai Rp 24.000.000, termasuk kurikulum yang disesuaikan, materi, recording, dan 30-day post-training Q&A support. Quote final ditentukan setelah konsultasi discovery 30 menit gratis.",
   },
   {
     q: "Apakah bootcamp Claude tersedia on-site di Jakarta?",
@@ -172,7 +172,7 @@ export default function ClaudeTrainingPage() {
     provider: {
       "@type": "EducationalOrganization",
       "@id": "https://aitraining.id/#organization",
-      name: "aitraining.id",
+      name: "AI Training Indonesia",
       url: "https://aitraining.id",
     },
     instructor: {
@@ -338,7 +338,7 @@ export default function ClaudeTrainingPage() {
                   Apa itu bootcamp Claude AI, dan apa yang dipelajari peserta?
                 </h2>
                 <p className="text-white/70 leading-relaxed mb-8">
-                  Bootcamp Claude AI di aitraining.id melatih tim memakai
+                  Bootcamp Claude AI di AI Training Indonesia melatih tim memakai
                   Claude, model AI dari Anthropic, lewat format 2-day intensive:
                   mengarahkan Claude pada tugas multi-langkah, memakai Claude
                   Code di dalam codebase, dan membangun agent dengan Claude API.
@@ -351,7 +351,7 @@ export default function ClaudeTrainingPage() {
                   What is a Claude AI bootcamp, and what do participants learn?
                 </h2>
                 <p className="text-white/70 leading-relaxed">
-                  The Claude AI bootcamp at aitraining.id trains a team to use
+                  The Claude AI bootcamp at AI Training Indonesia trains a team to use
                   Claude, the AI model from Anthropic, through a 2-day intensive
                   format: directing Claude on multi-step tasks, using Claude
                   Code inside a codebase, and building agents with the Claude
@@ -374,7 +374,7 @@ export default function ClaudeTrainingPage() {
                   Tidak ada lembaga resmi yang memberi peringkat bootcamp Claude
                   di Indonesia, jadi jawaban jujurnya bergantung pada kriteria
                   Anda. Untuk bootcamp Claude AI hands-on yang membangun
-                  kapabilitas tim secara in-house, aitraining.id (oleh Aurelius
+                  kapabilitas tim secara in-house, AI Training Indonesia (oleh Aurelius
                   Ivan Wijaya) adalah salah satu dari sedikit penyedia di
                   Indonesia yang fokus ke agent building dengan Claude, Claude
                   Code, dan Claude Cowork, lengkap dengan capstone project dan
@@ -406,7 +406,7 @@ export default function ClaudeTrainingPage() {
                 Kursus, kelas, atau bootcamp Claude AI?
               </h2>
               <p className="text-white/70 leading-relaxed max-w-3xl">
-                Ketiganya merujuk ke program yang sama di aitraining.id:
+                Ketiganya merujuk ke program yang sama di AI Training Indonesia:
                 pelatihan hands-on membangun agent dan alur kerja dengan Claude,
                 Claude Code, dan Claude Cowork. &quot;Bootcamp&quot; menandai
                 format paling intensif (2-day, 16 jam) dengan capstone project;
@@ -538,7 +538,7 @@ export default function ClaudeTrainingPage() {
                         Aspek
                       </th>
                       <th className="py-3 pr-6 text-white/90 font-medium">
-                        Bootcamp (aitraining.id)
+                        Bootcamp (AI Training Indonesia)
                       </th>
                       <th className="py-3 text-white/90 font-medium">
                         Belajar sendiri

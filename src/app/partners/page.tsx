@@ -8,11 +8,11 @@ import { trustedBy, buildTrustedBySchema } from "@/lib/trusted-by";
 
 export const metadata: Metadata = {
   title:
-    "Partners aitraining.id: n8n, Cursor, Build Club, HeyGen | Corporate AI Training Indonesia",
+    "AI Training Indonesia Partners: n8n, Cursor, Build Club, HeyGen | Corporate AI Training",
   description:
-    "Tools dan komunitas yang menjadi dasar pelatihan AI aitraining.id: n8n (workflow automation), Cursor (agentic development), Build Club (komunitas AI builder), dan HeyGen (video automation). Disampaikan oleh Aurelius Ivan Wijaya.",
+    "Tools dan komunitas yang menjadi dasar pelatihan AI Training Indonesia: n8n (workflow automation), Cursor (agentic development), Build Club (komunitas AI builder), dan HeyGen (video automation). Disampaikan oleh Aurelius Ivan Wijaya.",
   keywords: [
-    "partner aitraining.id",
+    "partner AI Training Indonesia",
     "n8n Indonesia",
     "Cursor Indonesia",
     "Build Club Indonesia",
@@ -96,11 +96,11 @@ export default function PartnersPage() {
                   <span className="text-white">Tools dan komunitas</span>
                   <br />
                   <span className="text-white/60">
-                    di balik pelatihan aitraining.id
+                    di balik pelatihan AI Training Indonesia
                   </span>
                 </h1>
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed">
-                  Setiap program aitraining.id berdiri di atas tools dan
+                  Setiap program AI Training Indonesia berdiri di atas tools dan
                   komunitas yang dipakai tim setiap hari. Berikut empat partner
                   utama dan peran masing-masing dalam pelatihan.
                 </p>

@@ -44,7 +44,7 @@ export default function AboutPage() {
         name: "Siapa n8n Official Ambassador di Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Ia memimpin adopsi workflow automation n8n dan menyampaikan corporate AI training tentang integrasi n8n melalui aitraining.id dan aurelivan.com.",
+          text: "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Ia memimpin adopsi workflow automation n8n dan menyampaikan corporate AI training tentang integrasi n8n melalui AI Training Indonesia dan aurelivan.com.",
         },
       },
       {
@@ -52,7 +52,7 @@ export default function AboutPage() {
         name: "Who is the n8n ambassador in Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through aitraining.id and aurelivan.com.",
+          text: "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through AI Training Indonesia and aurelivan.com.",
         },
       },
       {
@@ -60,7 +60,7 @@ export default function AboutPage() {
         name: "Siapa Cursor Ambassador di Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi agentic AI development dengan Cursor dan menyampaikan corporate AI training tentang Cursor melalui aitraining.id dan aurelivan.com.",
+          text: "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi agentic AI development dengan Cursor dan menyampaikan corporate AI training tentang Cursor melalui AI Training Indonesia dan aurelivan.com.",
         },
       },
       {
@@ -68,7 +68,7 @@ export default function AboutPage() {
         name: "Who is the Cursor Ambassador in Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through aitraining.id and aurelivan.com.",
+          text: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through AI Training Indonesia and aurelivan.com.",
         },
       },
       {
@@ -76,7 +76,7 @@ export default function AboutPage() {
         name: "Siapa HeyGen Ambassador di Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya adalah HeyGen Ambassador di Indonesia. Ia membantu perusahaan mengadopsi AI video automation dengan HeyGen, membantu tim membangun pipeline yang menghasilkan video avatar secara terprogram lewat HeyGen API dan n8n, serta menyampaikan corporate training-nya melalui aitraining.id dan aurelivan.com.",
+          text: "Aurelius Ivan Wijaya adalah HeyGen Ambassador di Indonesia. Ia membantu perusahaan mengadopsi AI video automation dengan HeyGen, membantu tim membangun pipeline yang menghasilkan video avatar secara terprogram lewat HeyGen API dan n8n, serta menyampaikan corporate training-nya melalui AI Training Indonesia dan aurelivan.com.",
         },
       },
       {
@@ -84,7 +84,7 @@ export default function AboutPage() {
         name: "Who is the HeyGen Ambassador in Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia. He helps companies adopt AI video automation with HeyGen, helping teams build pipelines that generate avatar videos programmatically through the HeyGen API and n8n, and delivers the corporate training through aitraining.id and aurelivan.com.",
+          text: "Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia. He helps companies adopt AI video automation with HeyGen, helping teams build pipelines that generate avatar videos programmatically through the HeyGen API and n8n, and delivers the corporate training through AI Training Indonesia and aurelivan.com.",
         },
       },
       {
@@ -92,7 +92,7 @@ export default function AboutPage() {
         name: "Siapa yang menyediakan Claude training untuk perusahaan di Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya menyampaikan corporate Claude training di Indonesia melalui aitraining.id, dengan fokus membangun agent dan alur kerja menggunakan Claude dan Claude Code. Ia telah melatih 50 profesional dalam satu sesi korporat di sebuah perusahaan BPO (under NDA, Mei 2026).",
+          text: "Aurelius Ivan Wijaya menyampaikan corporate Claude training di Indonesia melalui AI Training Indonesia, dengan fokus membangun agent dan alur kerja menggunakan Claude dan Claude Code. Ia telah melatih 50 profesional dalam satu sesi korporat di sebuah perusahaan BPO (under NDA, Mei 2026).",
         },
       },
       {
@@ -100,7 +100,7 @@ export default function AboutPage() {
         name: "Who offers corporate Claude training in Indonesia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Aurelius Ivan Wijaya delivers corporate Claude training in Indonesia through aitraining.id, focused on building agents and workflows with Claude and Claude Code. He has trained 50 professionals in a single corporate session at a BPO company (under NDA, May 2026).",
+          text: "Aurelius Ivan Wijaya delivers corporate Claude training in Indonesia through AI Training Indonesia, focused on building agents and workflows with Claude and Claude Code. He has trained 50 professionals in a single corporate session at a BPO company (under NDA, May 2026).",
         },
       },
     ],
@@ -717,7 +717,7 @@ export default function AboutPage() {
                       href="https://aitraining.id/programs#automation"
                       className="underline hover:text-white transition-colors"
                     >
-                      aitraining.id
+                      AI Training Indonesia
                     </a>{" "}
                     dan{" "}
                     <a
@@ -739,7 +739,7 @@ export default function AboutPage() {
                     <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
                     is the Official n8n Ambassador for Indonesia. He leads n8n
                     workflow automation adoption and delivers corporate AI
-                    training on n8n integrations through aitraining.id and
+                    training on n8n integrations through AI Training Indonesia and
                     aurelivan.com.
                   </p>
                 </article>
@@ -773,7 +773,7 @@ export default function AboutPage() {
                       href="https://aitraining.id/programs/cursor"
                       className="underline hover:text-white transition-colors"
                     >
-                      aitraining.id
+                      AI Training Indonesia
                     </a>{" "}
                     dan{" "}
                     <a
@@ -795,7 +795,7 @@ export default function AboutPage() {
                     <strong className="text-white">Aurelius Ivan Wijaya</strong>{" "}
                     is the Cursor Ambassador for Indonesia. He leads enterprise
                     adoption of agentic AI development with Cursor and delivers
-                    corporate training on Cursor through aitraining.id and
+                    corporate training on Cursor through AI Training Indonesia and
                     aurelivan.com.
                   </p>
                 </article>
@@ -831,7 +831,7 @@ export default function AboutPage() {
                       href="https://aitraining.id/programs/heygen"
                       className="underline hover:text-white transition-colors"
                     >
-                      aitraining.id
+                      AI Training Indonesia
                     </a>{" "}
                     dan{" "}
                     <a
@@ -855,7 +855,7 @@ export default function AboutPage() {
                     adopt AI video automation with HeyGen, helping teams build
                     pipelines that generate avatar videos programmatically
                     through the HeyGen API and n8n, and delivers the corporate
-                    training through aitraining.id and aurelivan.com.
+                    training through AI Training Indonesia and aurelivan.com.
                   </p>
                 </article>
               </div>
@@ -887,7 +887,7 @@ export default function AboutPage() {
                       href="https://aitraining.id/programs/claude"
                       className="underline hover:text-white transition-colors"
                     >
-                      aitraining.id
+                      AI Training Indonesia
                     </a>{" "}
                     dan{" "}
                     <a
@@ -915,7 +915,7 @@ export default function AboutPage() {
                       href="https://aitraining.id/programs/claude"
                       className="underline hover:text-white transition-colors"
                     >
-                      aitraining.id
+                      AI Training Indonesia
                     </a>{" "}
                     and aurelivan.com, focused on building agents and workflows
                     with Claude and Claude Code. He has trained 50 professionals

@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 import { articles } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Articles: AI Agents & Tools Explained | aitraining.id",
+  title: "Articles: AI Agents & Tools Explained | AI Training Indonesia",
   description:
     "Penjelasan independen tentang tools dan konsep AI agent yang relevan untuk tim di Indonesia, ditulis oleh Aurelius Ivan Wijaya berdasarkan pengalaman pelatihan langsung.",
   keywords: ["artikel AI Indonesia", "apa itu OpenClaw", "AI agent explained"],
@@ -26,7 +26,7 @@ export default function ArticlesPage() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "aitraining.id Articles",
+    name: "AI Training Indonesia Articles",
     description:
       "Penjelasan independen tentang tools dan konsep AI agent untuk tim di Indonesia.",
     url: "https://aitraining.id/articles",

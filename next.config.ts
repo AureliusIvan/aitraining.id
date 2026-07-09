@@ -2,10 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
-  // NOTE: www → non-www redirect belongs in Vercel domain settings (not here),
-  // because Vercel handles it at the CDN edge before Next.js runs.
-  // Current Vercel config: aitraining.id → 307 → www.aitraining.id (WRONG)
-  // Required Vercel config: www.aitraining.id → 301 → aitraining.id (to match canonicals)
+  // NOTE: the www redirect is handled at the Vercel CDN edge (in the project's
+  // domain settings), before Next.js runs, so this file intentionally carries
+  // no redirect logic.
+  // Current live behavior: www.aitraining.id → 308 → aitraining.id (apex),
+  // which matches the site canonicals (all canonical URLs use the bare apex).
 };
 
 export default nextConfig;

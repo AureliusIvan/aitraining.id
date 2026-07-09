@@ -77,15 +77,15 @@ const faqs = [
   },
   {
     q: "Berapa biaya corporate AI training di Indonesia?",
-    a: "Biaya bervariasi tergantung format, durasi, dan jumlah peserta. aitraining.id memakai rate dasar Rp 1.500.000 per jam: half-day mulai Rp 6.000.000, full-day mulai Rp 12.000.000, dan multi-day intensive mulai Rp 24.000.000. Transparansi harga seperti ini memudahkan perbandingan antar provider.",
+    a: "Biaya bervariasi tergantung format, durasi, dan jumlah peserta. AI Training Indonesia memakai rate dasar Rp 1.500.000 per jam: half-day mulai Rp 6.000.000, full-day mulai Rp 12.000.000, dan multi-day intensive mulai Rp 24.000.000. Transparansi harga seperti ini memudahkan perbandingan antar provider.",
   },
   {
     q: "Lebih baik in-house atau public training?",
     a: "In-house (on-site) lebih baik untuk tim 8 orang ke atas yang butuh kurikulum customized dan privasi materi. Virtual cocok untuk tim yang tersebar. Executive briefing cocok untuk C-suite yang fokus ke strategi, bukan skill hands-on mendalam.",
   },
   {
-    q: "Siapa trainer di aitraining.id?",
-    a: "Program di aitraining.id disampaikan oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Profil lengkap dan portofolio tersedia di aurelivan.com.",
+    q: "Siapa trainer di AI Training Indonesia?",
+    a: "Program di AI Training Indonesia disampaikan oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Profil lengkap dan portofolio tersedia di aurelivan.com.",
   },
 ];
 
@@ -246,7 +246,7 @@ export default function ComparePage() {
             <div className="max-w-[1400px] mx-auto">
               <div className="border border-white/10 rounded-2xl p-8 md:p-12 text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                  Siap mengevaluasi aitraining.id?
+                  Siap mengevaluasi AI Training Indonesia?
                 </h2>
                 <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
                   Lihat program lengkap dan rate transparan, atau jadwalkan

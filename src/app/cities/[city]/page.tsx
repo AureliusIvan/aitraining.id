@@ -29,8 +29,9 @@ export async function generateMetadata({
           `corporate AI training ${city.name}`,
           `AI training ${city.name}`,
           `best AI training ${city.name}`,
+          ...(city.keywords ?? []),
         ]
-      : undefined,
+      : city.keywords,
     alternates: { canonical: `https://aitraining.id/cities/${city.id}` },
     openGraph: { url: `https://aitraining.id/cities/${city.id}` },
   };
@@ -137,11 +138,34 @@ export default async function CityPage({
                 },
               ]
             : []),
-          ...city.aiTrainer.faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
+          ...(city.aiTrainer.defBlock?.qEn && city.aiTrainer.defBlock?.aEn
+            ? [
+                {
+                  "@type": "Question",
+                  name: city.aiTrainer.defBlock.qEn,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: city.aiTrainer.defBlock.aEn,
+                  },
+                },
+              ]
+            : []),
+          ...city.aiTrainer.faqs.flatMap((f) => [
+            {
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            },
+            ...(f.qEn && f.aEn
+              ? [
+                  {
+                    "@type": "Question",
+                    name: f.qEn,
+                    acceptedAnswer: { "@type": "Answer", text: f.aEn },
+                  },
+                ]
+              : []),
+          ]),
         ],
       }
     : null;
@@ -305,14 +329,34 @@ export default async function CityPage({
                     <p className="text-white/70 text-sm leading-relaxed">
                       {city.aiTrainer.defBlock.a}
                     </p>
+                    {city.aiTrainer.defBlock.qEn &&
+                      city.aiTrainer.defBlock.aEn && (
+                        <>
+                          <h2 className="text-xl sm:text-2xl font-bold text-white mt-6 mb-3">
+                            {city.aiTrainer.defBlock.qEn}
+                          </h2>
+                          <p className="text-white/70 text-sm leading-relaxed">
+                            {city.aiTrainer.defBlock.aEn}
+                          </p>
+                        </>
+                      )}
                   </div>
                 )}
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                   Memilih Pelatihan AI dan AI Trainer Terbaik di {city.name}
                 </h2>
-                <p className="text-white/60 text-sm leading-relaxed max-w-3xl mb-8">
+                <p
+                  className={`text-white/60 text-sm leading-relaxed max-w-3xl ${
+                    city.aiTrainer.introEn ? "mb-2" : "mb-8"
+                  }`}
+                >
                   {city.aiTrainer.intro}
                 </p>
+                {city.aiTrainer.introEn && (
+                  <p className="text-white/50 text-sm leading-relaxed max-w-3xl mb-8">
+                    {city.aiTrainer.introEn}
+                  </p>
+                )}
                 <div className="space-y-6 max-w-3xl">
                   {city.aiTrainer.faqs.map((f) => (
                     <div key={f.q} className="border-b border-white/10 pb-6">
@@ -320,6 +364,16 @@ export default async function CityPage({
                       <p className="text-white/60 text-sm leading-relaxed">
                         {f.a}
                       </p>
+                      {f.qEn && f.aEn && (
+                        <>
+                          <h3 className="text-white/90 font-semibold mt-4 mb-2">
+                            {f.qEn}
+                          </h3>
+                          <p className="text-white/60 text-sm leading-relaxed">
+                            {f.aEn}
+                          </p>
+                        </>
+                      )}
                     </div>
                   ))}
                 </div>

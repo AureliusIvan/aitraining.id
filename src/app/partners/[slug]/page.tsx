@@ -401,7 +401,7 @@ export default async function PartnerArticlePage({
                   </p>
                 ) : null}
                 <p className="text-white/70">
-                  Semua partner aitraining.id:{" "}
+                  Semua partner AI Training Indonesia:{" "}
                   <Link
                     href="/partners"
                     className="underline hover:text-white/90 transition-colors"

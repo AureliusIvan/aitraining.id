@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = "7 Juli 2026";
+const LAST_UPDATED = "8 Juli 2026";
 
 const mengapaPerusahaanButuhPelatihanAi =
   "Generative AI mengubah skill yang dibutuhkan karyawan di banyak fungsi bisnis. Menurut Future of Jobs Report 2025 (World Economic Forum), sekitar 39% skill inti pekerja diperkirakan berubah pada periode 2025-2030. Pelatihan hands-on membantu tim memakai automation (n8n), development berbantuan AI (Cursor), dan AI agents dalam konteks perusahaan, agar adopsi merata di seluruh organisasi.";
@@ -30,6 +30,34 @@ const manfaatAiTrainingUntukKaryawan =
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
+
+const rekamJejakEnterprise =
+  "Program di sini dibawakan langsung oleh Aurelius Ivan Wijaya, satu trainer senior yang telah membawakan pelatihan AI perusahaan hingga skala enterprise. Ia Corporate AI Trainer dan Official n8n Ambassador for Indonesia, dan sudah berbicara serta mengajar di lebih dari 50 acara, termasuk sebagai speaker Tech in Asia Conference 2025. Ia melatih tim di DPD RI dan Insignia untuk program agent-building dan AI korporat, lalu menjadi co-host OpenClaw Agenthon Indonesia bersama Build Club dengan 205 peserta pada Mei 2026. Pada satu klien enterprise di Mei 2026, ia melatih satu kohort berisi 50 profesional di bawah NDA. Setiap program berjalan 70% praktik langsung, dikustomisasi per industri, dengan fokus membangun AI agents dan automation.";
+
+const rekamJejakEnterpriseEn =
+  "corporate AI training here is delivered directly by Aurelius Ivan Wijaya, a senior individual trainer who has delivered enterprise-scale training and Official n8n Ambassador for Indonesia, who has taught at 50+ events, trained teams at DPD RI and Insignia, co-hosted OpenClaw Agenthon Indonesia (205 participants, May 2026) with Build Club, and led a 50-professional cohort at an enterprise client under NDA, with every program 70% hands-on and customized per industry.";
+
+const enterpriseProof = [
+  {
+    value: "50+",
+    label:
+      "acara tempat Ivan berbicara dan mengajar, termasuk speaker Tech in Asia Conference 2025",
+  },
+  {
+    value: "205",
+    label:
+      "peserta OpenClaw Agenthon Indonesia yang ia co-host bersama Build Club (Mei 2026)",
+  },
+  {
+    value: "50",
+    label:
+      "profesional dilatih dalam satu kohort di klien enterprise di bawah NDA (Mei 2026)",
+  },
+  {
+    value: "70%",
+    label: "porsi praktik langsung di setiap program, dikustomisasi per industri",
+  },
+];
 
 const programs = [
   {
@@ -92,6 +120,10 @@ const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } 
     a: "Semua sesi didelivery oleh Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, dan Cursor Ambassador. Ia pernah melatih tim DPD RI dan menjadi speaker Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   },
   {
+    q: "Apa bukti pengalaman AI Training Indonesia melatih AI korporat di skala enterprise?",
+    a: rekamJejakEnterprise,
+  },
+  {
     q: "Berapa lama pelatihan AI untuk karyawan biasanya berlangsung?",
     a: "Durasi umum: half-day intensive (4 jam), full-day workshop (8 jam), atau program multi-day (2-5 hari) untuk adopsi lebih dalam. Sebagian besar perusahaan memulai dengan satu full-day workshop, lalu sesi lanjutan setelah tim mencoba implementasi di lapangan.",
   },
@@ -108,7 +140,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
     "@type": "Article",
     headline: "Pelatihan AI untuk Perusahaan & Karyawan di Indonesia (2026)",
     datePublished: "2026-06-12",
-    dateModified: "2026-07-07",
+    dateModified: "2026-07-08",
     inLanguage: "id",
     author: {
       "@type": "Person",
@@ -313,6 +345,38 @@ export default function PelatihanAiUntukPerusahaanPage() {
               </h2>
               <p className="text-white/70 leading-relaxed max-w-3xl">
                 {pelatihanGenerativeAiUntukPerusahaan}
+              </p>
+            </div>
+          </section>
+
+          <section
+            id="rekam-jejak-enterprise"
+            className="py-16 px-6 sm:px-8 border-t border-white/10"
+          >
+            <div className="max-w-[1400px] mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Rekam jejak melatih AI korporat di skala enterprise
+              </h2>
+              <p className="text-white/70 leading-relaxed max-w-3xl mb-10">
+                {rekamJejakEnterprise}
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mb-8">
+                {enterpriseProof.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="border border-white/10 rounded-2xl p-6"
+                  >
+                    <p className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                      {stat.value}
+                    </p>
+                    <p className="text-white/60 text-sm leading-relaxed">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-white/50 text-sm max-w-3xl leading-relaxed">
+                In English: {rekamJejakEnterpriseEn}
               </p>
             </div>
           </section>

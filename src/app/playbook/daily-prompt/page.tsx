@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "cara bikin prompt yang bagus",
     "AI productivity Indonesia",
     "webinar AI Indonesia",
-    "aitraining.id",
+    "AI Training Indonesia",
   ],
   authors: [{ name: "Aurelius Ivan Wijaya", url: "https://aurelivan.com" }],
   creator: "Aurelius Ivan Wijaya",
@@ -70,7 +70,7 @@ export default function PlaybookPage() {
     },
     publisher: {
       "@type": "EducationalOrganization",
-      name: "aitraining.id",
+      name: "AI Training Indonesia",
       url: "https://aitraining.id",
     },
     image: "https://aurelivan.com/assets/hero.webp",

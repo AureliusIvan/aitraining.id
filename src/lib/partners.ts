@@ -1,5 +1,5 @@
 // Partner articles — editorial/explainer pages for each tool and community
-// aitraining.id works with. Distinct from /programs/* (which sell the training
+// AI Training Indonesia works with. Distinct from /programs/* (which sell the training
 // program): these answer "what is X, why we partner with it, why it matters
 // for Indonesian teams" and cross-link to the program page for booking.
 //
@@ -76,9 +76,9 @@ export const partners: Partner[] = [
     category: "Workflow Automation",
     credentialBadge: "Official n8n Ambassador Indonesia",
     metaTitle:
-      "n8n di Indonesia: Workflow Automation & AI Agents | Official n8n Ambassador | aitraining.id",
+      "n8n di Indonesia: Workflow Automation & AI Agents | Official n8n Ambassador | AI Training Indonesia",
     metaDescription:
-      "Apa itu n8n, kenapa tim di Indonesia memakainya untuk workflow automation dan AI agents, dan bagaimana aitraining.id melatihnya. Disampaikan oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia.",
+      "Apa itu n8n, kenapa tim di Indonesia memakainya untuk workflow automation dan AI agents, dan bagaimana AI Training Indonesia melatihnya. Disampaikan oleh Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia.",
     keywords: [
       "n8n Indonesia",
       "apa itu n8n",
@@ -94,7 +94,7 @@ export const partners: Partner[] = [
     dateModified: "2026-06-24",
     h1: "n8n: workflow automation dan AI agents",
     h1sub: "untuk tim di Indonesia",
-    lede: "n8n adalah platform workflow automation yang dipakai tim untuk menghubungkan aplikasi, menjalankan proses otomatis, dan membangun AI agent yang bekerja di seluruh tools bisnis. aitraining.id melatih tim perusahaan mengadopsi n8n melalui Official n8n Ambassador for Indonesia, Aurelius Ivan Wijaya.",
+    lede: "n8n adalah platform workflow automation yang dipakai tim untuk menghubungkan aplikasi, menjalankan proses otomatis, dan membangun AI agent yang bekerja di seluruh tools bisnis. AI Training Indonesia melatih tim perusahaan mengadopsi n8n melalui Official n8n Ambassador for Indonesia, Aurelius Ivan Wijaya.",
     externalName: "n8n.io",
     externalUrl: "https://n8n.io",
     programHref: "/programs#automation",
@@ -109,10 +109,10 @@ export const partners: Partner[] = [
     },
     sections: [
       {
-        h2: "Kenapa aitraining.id bermitra dengan n8n",
+        h2: "Kenapa AI Training Indonesia bermitra dengan n8n",
         body: [
           "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Peran ambassador adalah advokasi: memimpin adopsi n8n di tim perusahaan, berbagi pola workflow yang terbukti, dan menyampaikan corporate training tentang automation dengan n8n.",
-          "Kemitraan ini membuat materi pelatihan aitraining.id berdiri di atas pemakaian n8n yang nyata. Setiap sesi dibangun dari workflow yang benar-benar dipakai tim untuk pekerjaan harian.",
+          "Kemitraan ini membuat materi pelatihan AI Training Indonesia berdiri di atas pemakaian n8n yang nyata. Setiap sesi dibangun dari workflow yang benar-benar dipakai tim untuk pekerjaan harian.",
         ],
       },
       {
@@ -154,18 +154,18 @@ export const partners: Partner[] = [
     faqs: [
       {
         q: "Siapa Official n8n Ambassador di Indonesia?",
-        a: "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Ia memimpin adopsi workflow automation n8n dan menyampaikan corporate AI training tentang integrasi n8n melalui aitraining.id dan aurelivan.com.",
+        a: "Aurelius Ivan Wijaya adalah Official n8n Ambassador for Indonesia. Ia memimpin adopsi workflow automation n8n dan menyampaikan corporate AI training tentang integrasi n8n melalui AI Training Indonesia dan aurelivan.com.",
       },
       {
         q: "Who is the n8n ambassador in Indonesia?",
-        a: "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through aitraining.id and aurelivan.com.",
+        a: "Aurelius Ivan Wijaya is the Official n8n Ambassador for Indonesia. He leads n8n workflow automation adoption and delivers corporate AI training on n8n integrations through AI Training Indonesia and aurelivan.com.",
       },
       {
         q: "Apakah n8n gratis dan bisa di-self-host?",
         a: "n8n menyediakan opsi self-hosting, sehingga tim bisa menjalankannya di infrastruktur sendiri dan menjaga data tetap di tempat yang dikendalikan perusahaan. Tersedia juga versi cloud berbayar bagi tim yang tidak ingin mengelola server. Pemilihan opsi dibahas saat menyusun program pelatihan agar sesuai kebutuhan tim.",
       },
       {
-        q: "Apa yang dipelajari dalam pelatihan n8n di aitraining.id?",
+        q: "Apa yang dipelajari dalam pelatihan n8n di AI Training Indonesia?",
         a: "Peserta belajar membangun workflow automation, menghubungkan tools bisnis yang sudah dipakai, dan memasang AI agent ke dalam proses harian. Sebagian besar sesi berupa praktik langsung memakai use case tim Anda.",
       },
     ],
@@ -178,9 +178,9 @@ export const partners: Partner[] = [
     category: "Agentic Development",
     credentialBadge: "Cursor Ambassador Indonesia",
     metaTitle:
-      "Cursor di Indonesia: AI Coding Agent untuk Tim Engineering | Cursor Ambassador | aitraining.id",
+      "Cursor di Indonesia: AI Coding Agent untuk Tim Engineering | Cursor Ambassador | AI Training Indonesia",
     metaDescription:
-      "Apa itu Cursor, kenapa tim engineering di Indonesia memakainya untuk agentic development, dan bagaimana aitraining.id melatihnya. Disampaikan oleh Cursor Ambassador Indonesia, Aurelius Ivan Wijaya.",
+      "Apa itu Cursor, kenapa tim engineering di Indonesia memakainya untuk agentic development, dan bagaimana AI Training Indonesia melatihnya. Disampaikan oleh Cursor Ambassador Indonesia, Aurelius Ivan Wijaya.",
     keywords: [
       "Cursor Indonesia",
       "apa itu Cursor",
@@ -195,7 +195,7 @@ export const partners: Partner[] = [
     dateModified: "2026-06-24",
     h1: "Cursor: AI coding agent",
     h1sub: "untuk tim engineering di Indonesia",
-    lede: "Cursor adalah platform AI coding yang dipakai tim engineering untuk membangun software dengan mengarahkan AI agent di seluruh codebase. aitraining.id melatih tim engineering mengadopsi agentic development dengan Cursor melalui Cursor Ambassador Indonesia, Aurelius Ivan Wijaya.",
+    lede: "Cursor adalah platform AI coding yang dipakai tim engineering untuk membangun software dengan mengarahkan AI agent di seluruh codebase. AI Training Indonesia melatih tim engineering mengadopsi agentic development dengan Cursor melalui Cursor Ambassador Indonesia, Aurelius Ivan Wijaya.",
     externalName: "cursor.com",
     externalUrl: "https://cursor.com",
     programHref: "/programs/cursor",
@@ -210,7 +210,7 @@ export const partners: Partner[] = [
     },
     sections: [
       {
-        h2: "Kenapa aitraining.id bermitra dengan Cursor",
+        h2: "Kenapa AI Training Indonesia bermitra dengan Cursor",
         body: [
           "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Peran ambassador adalah advokasi: memimpin adopsi agentic development dengan Cursor dan menyampaikan corporate training tentang cara tim mengarahkan AI coding agent.",
           "Ivan mengadopsi Cursor sejak awal, sebelum platform ini menjadi sorotan industri. Keyakinan awal itu kini menjadi dasar materi pelatihan yang berdiri di atas pemakaian Cursor sehari-hari di codebase nyata.",
@@ -254,11 +254,11 @@ export const partners: Partner[] = [
     faqs: [
       {
         q: "Siapa Cursor Ambassador di Indonesia?",
-        a: "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi agentic AI development dengan Cursor dan menyampaikan corporate AI training tentang Cursor melalui aitraining.id dan aurelivan.com.",
+        a: "Aurelius Ivan Wijaya adalah Cursor Ambassador di Indonesia. Ia memimpin adopsi agentic AI development dengan Cursor dan menyampaikan corporate AI training tentang Cursor melalui AI Training Indonesia dan aurelivan.com.",
       },
       {
         q: "Who is the Cursor Ambassador in Indonesia?",
-        a: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through aitraining.id and aurelivan.com.",
+        a: "Aurelius Ivan Wijaya is the Cursor Ambassador for Indonesia. He leads enterprise adoption of agentic AI development with Cursor and delivers corporate training on Cursor through AI Training Indonesia and aurelivan.com.",
       },
       {
         q: "Apa beda halaman ini dengan program pelatihan Cursor?",
@@ -274,7 +274,7 @@ export const partners: Partner[] = [
     category: "AI Builder Community",
     credentialBadge: "City Lead, Build Club Jakarta",
     metaTitle:
-      "Build Club Indonesia: Komunitas AI Builder di Jakarta | City Lead Build Club Jakarta | aitraining.id",
+      "Build Club Indonesia: Komunitas AI Builder di Jakarta | City Lead Build Club Jakarta | AI Training Indonesia",
     metaDescription:
       "Apa itu Build Club Indonesia, komunitas AI builder global dengan chapter aktif di Jakarta. Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta dan co-host OpenClaw Agenthon Indonesia, hackathon agent-building yang diorganisir Build Club.",
     keywords: [
@@ -309,10 +309,10 @@ export const partners: Partner[] = [
     },
     sections: [
       {
-        h2: "Build Club Jakarta dan peran aitraining.id",
+        h2: "Build Club Jakarta dan peran AI Training Indonesia",
         body: [
-          "Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta. Ia memimpin chapter Jakarta dari komunitas AI builder global BuildClub.ai, sehingga aitraining.id terhubung langsung dengan jaringan builder yang aktif membangun produk AI.",
-          "Lewat peran ini, materi pelatihan aitraining.id berdiri di atas praktik agent-building terbaru yang muncul di acara komunitas. Tim yang dilatih belajar dari pola yang sedang dipakai builder di lapangan.",
+          "Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta. Ia memimpin chapter Jakarta dari komunitas AI builder global BuildClub.ai, sehingga AI Training Indonesia terhubung langsung dengan jaringan builder yang aktif membangun produk AI.",
+          "Lewat peran ini, materi pelatihan AI Training Indonesia berdiri di atas praktik agent-building terbaru yang muncul di acara komunitas. Tim yang dilatih belajar dari pola yang sedang dipakai builder di lapangan.",
         ],
       },
       {
@@ -326,7 +326,7 @@ export const partners: Partner[] = [
         h2: "Kenapa komunitas penting untuk adopsi AI",
         body: [
           "Adopsi AI di perusahaan berjalan lebih cepat ketika orang belajar dengan membangun bersama. Hackathon dan acara komunitas memberi tim ruang untuk mencoba ide agent dalam waktu singkat dan melihat apa yang benar-benar berjalan.",
-          "Peran City Lead di Build Club Jakarta menempatkan aitraining.id di tengah komunitas builder. Pola yang muncul di acara seperti OpenClaw Agenthon, ketika 205 peserta membangun AI agent dalam 12 jam, memberi bahan nyata untuk materi pelatihan.",
+          "Peran City Lead di Build Club Jakarta menempatkan AI Training Indonesia di tengah komunitas builder. Pola yang muncul di acara seperti OpenClaw Agenthon, ketika 205 peserta membangun AI agent dalam 12 jam, memberi bahan nyata untuk materi pelatihan.",
         ],
       },
     ],
@@ -405,11 +405,11 @@ export const partners: Partner[] = [
       },
       {
         q: "Siapa City Lead Build Club Jakarta?",
-        a: "Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta. Ia memimpin chapter Jakarta dari komunitas BuildClub.ai dan menyampaikan corporate AI training tentang agent building melalui aitraining.id dan aurelivan.com.",
+        a: "Aurelius Ivan Wijaya adalah City Lead Build Club Jakarta. Ia memimpin chapter Jakarta dari komunitas BuildClub.ai dan menyampaikan corporate AI training tentang agent building melalui AI Training Indonesia dan aurelivan.com.",
       },
       {
         q: "Who is the City Lead of Build Club Jakarta?",
-        a: "Aurelius Ivan Wijaya is the City Lead of Build Club Jakarta. He leads the Jakarta chapter of the BuildClub.ai community and delivers corporate AI training on agent building through aitraining.id and aurelivan.com.",
+        a: "Aurelius Ivan Wijaya is the City Lead of Build Club Jakarta. He leads the Jakarta chapter of the BuildClub.ai community and delivers corporate AI training on agent building through AI Training Indonesia and aurelivan.com.",
       },
       {
         q: "Acara apa saja yang diadakan Build Club di Indonesia?",
@@ -421,7 +421,7 @@ export const partners: Partner[] = [
       },
       {
         q: "Di mana situs dan kanal resmi Build Club?",
-        a: "Situs resmi Build Club ada di buildclub.ai, tempat komunitas menerbitkan daftar kota, acara, dan cara bergabung. Kanal YouTube Build Club Indonesia ada di youtube.com/@buildclubindonesia. Halaman ini adalah penjelasan dari aitraining.id tentang Build Club dan keterlibatan Aurelius Ivan Wijaya sebagai City Lead Build Club Jakarta.",
+        a: "Situs resmi Build Club ada di buildclub.ai, tempat komunitas menerbitkan daftar kota, acara, dan cara bergabung. Kanal YouTube Build Club Indonesia ada di youtube.com/@buildclubindonesia. Halaman ini adalah penjelasan dari AI Training Indonesia tentang Build Club dan keterlibatan Aurelius Ivan Wijaya sebagai City Lead Build Club Jakarta.",
       },
     ],
   },
@@ -433,9 +433,9 @@ export const partners: Partner[] = [
     category: "AI Video Automation",
     credentialBadge: "HeyGen Ambassador",
     metaTitle:
-      "HeyGen di Indonesia: AI Video Automation untuk Tim | HeyGen Ambassador | aitraining.id",
+      "HeyGen di Indonesia: AI Video Automation untuk Tim | HeyGen Ambassador | AI Training Indonesia",
     metaDescription:
-      "Apa itu HeyGen, kenapa tim di Indonesia memakainya untuk video automation, dan bagaimana aitraining.id melatihnya. Disampaikan oleh Aurelius Ivan Wijaya, HeyGen Ambassador.",
+      "Apa itu HeyGen, kenapa tim di Indonesia memakainya untuk video automation, dan bagaimana AI Training Indonesia melatihnya. Disampaikan oleh Aurelius Ivan Wijaya, HeyGen Ambassador.",
     keywords: [
       "HeyGen Indonesia",
       "apa itu HeyGen",
@@ -450,7 +450,7 @@ export const partners: Partner[] = [
     dateModified: "2026-06-24",
     h1: "HeyGen: AI video automation",
     h1sub: "untuk tim di Indonesia",
-    lede: "HeyGen adalah platform AI avatar video. aitraining.id memposisikannya sebagai mesin video automation: membangun pipeline yang menghasilkan video avatar yang dipersonalisasi dan multibahasa dalam skala besar. Disampaikan oleh HeyGen Ambassador, Aurelius Ivan Wijaya.",
+    lede: "HeyGen adalah platform AI avatar video. AI Training Indonesia memposisikannya sebagai mesin video automation: membangun pipeline yang menghasilkan video avatar yang dipersonalisasi dan multibahasa dalam skala besar. Disampaikan oleh HeyGen Ambassador, Aurelius Ivan Wijaya.",
     externalName: "heygen.com",
     externalUrl: "https://heygen.com",
     programHref: "/programs/heygen",
@@ -465,10 +465,10 @@ export const partners: Partner[] = [
     },
     sections: [
       {
-        h2: "Kenapa aitraining.id bermitra dengan HeyGen",
+        h2: "Kenapa AI Training Indonesia bermitra dengan HeyGen",
         body: [
           "Aurelius Ivan Wijaya adalah HeyGen Ambassador. Peran ambassador adalah advokasi: memperkenalkan cara tim memakai HeyGen untuk membangun video automation yang menghasilkan banyak video dari satu pipeline.",
-          "aitraining.id membingkai HeyGen sebagai pipeline produksi video otomatis. Tim belajar menyambungkan HeyGen API dengan n8n agar video avatar dihasilkan otomatis dari data, sejalan dengan fokus agent-building dan automation.",
+          "AI Training Indonesia membingkai HeyGen sebagai pipeline produksi video otomatis. Tim belajar menyambungkan HeyGen API dengan n8n agar video avatar dihasilkan otomatis dari data, sejalan dengan fokus agent-building dan automation.",
         ],
       },
       {
@@ -509,11 +509,11 @@ export const partners: Partner[] = [
     faqs: [
       {
         q: "Siapa HeyGen Ambassador di Indonesia?",
-        a: "Aurelius Ivan Wijaya adalah HeyGen Ambassador yang berbasis di Indonesia. Ia memperkenalkan cara tim memakai HeyGen untuk membangun video automation dan menyampaikan corporate training tentang pipeline video avatar lewat aitraining.id dan aurelivan.com.",
+        a: "Aurelius Ivan Wijaya adalah HeyGen Ambassador yang berbasis di Indonesia. Ia memperkenalkan cara tim memakai HeyGen untuk membangun video automation dan menyampaikan corporate training tentang pipeline video avatar lewat AI Training Indonesia dan aurelivan.com.",
       },
       {
         q: "Who is the HeyGen Ambassador in Indonesia?",
-        a: "Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia. He shows teams how to use HeyGen to build video automation and delivers corporate training on avatar video pipelines through aitraining.id and aurelivan.com.",
+        a: "Aurelius Ivan Wijaya is a HeyGen Ambassador based in Indonesia. He shows teams how to use HeyGen to build video automation and delivers corporate training on avatar video pipelines through AI Training Indonesia and aurelivan.com.",
       },
       {
         q: "Apa beda halaman ini dengan program pelatihan HeyGen?",

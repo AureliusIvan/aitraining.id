@@ -2,8 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt =
-  "Corporate AI Training Indonesia | aitraining.id by Aurelius Ivan Wijaya";
+export const alt = "AI Training Indonesia by Aurelius Ivan Wijaya";
 export const size = {
   width: 1200,
   height: 630,
@@ -36,14 +35,16 @@ export default async function Image() {
         >
           <h1
             style={{
-              fontSize: "88px",
+              fontSize: "72px",
               fontWeight: "bold",
               color: "white",
               margin: "0 0 32px 0",
-              letterSpacing: "-0.05em",
+              letterSpacing: "-0.03em",
+              maxWidth: "1000px",
+              lineHeight: 1.1,
             }}
           >
-            aitraining.id
+            AI Training Indonesia
           </h1>
           <p
             style={{
@@ -54,7 +55,7 @@ export default async function Image() {
               lineHeight: 1.4,
             }}
           >
-            Corporate AI Training Indonesia
+            Corporate AI Training by Aurelius Ivan Wijaya
           </p>
           <p
             style={{

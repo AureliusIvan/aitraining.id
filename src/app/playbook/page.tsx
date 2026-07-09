@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "AI Playbooks | Panduan Praktis AI untuk Kerja",
   description:
-    "Kumpulan playbook dan panduan praktis AI dari aitraining.id. Template prompt siap pakai, step-by-step guide, dan companion resource dari workshop & webinar Aurelius Ivan Wijaya.",
+    "Kumpulan playbook dan panduan praktis AI dari AI Training Indonesia. Template prompt siap pakai, step-by-step guide, dan companion resource dari workshop & webinar Aurelius Ivan Wijaya.",
   alternates: {
     canonical: "https://aitraining.id/playbook",
   },

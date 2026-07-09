@@ -1,7 +1,7 @@
-// Articles: editorial/explainer content for aitraining.id, distinct from
-// /partners/* (which covers tools and communities aitraining.id has a formal
+// Articles: editorial/explainer content for AI Training Indonesia, distinct from
+// /partners/* (which covers tools and communities AI Training Indonesia has a formal
 // relationship with: ambassador programs, community leadership roles).
-// Articles cover topics aitraining.id has genuine hands-on expertise in but
+// Articles cover topics AI Training Indonesia has genuine hands-on expertise in but
 // no formal affiliation with the underlying project/company. First case:
 // OpenClaw. Aurelius Ivan Wijaya co-hosted the OpenClaw Agenthon Indonesia
 // (organized by Build Club) and built the OpenClaw training VM installer,
@@ -46,7 +46,7 @@ export const articles: Article[] = [
     slug: "apa-itu-openclaw",
     category: "AI Agents Explained",
     metaTitle:
-      "Apa itu OpenClaw? AI Agent Open-Source yang Dikendalikan lewat WhatsApp | aitraining.id",
+      "Apa itu OpenClaw? AI Agent Open-Source yang Dikendalikan lewat WhatsApp | AI Training Indonesia",
     metaDescription:
       "Apa itu OpenClaw: AI agent open-source dan gratis yang berjalan di perangkat atau server sendiri dan dikendalikan lewat WhatsApp atau Telegram. Dijelaskan oleh Aurelius Ivan Wijaya, co-host OpenClaw Agenthon Indonesia dan pembuat installer training OpenClaw.",
     keywords: [
@@ -83,10 +83,10 @@ export const articles: Article[] = [
     },
     sections: [
       {
-        h2: "Kenapa aitraining.id menulis tentang OpenClaw",
+        h2: "Kenapa AI Training Indonesia menulis tentang OpenClaw",
         body: [
           "Aurelius Ivan Wijaya adalah salah satu dari delapan co-host OpenClaw Agenthon Indonesia, hackathon agent-building 12 jam yang diorganisir Build Club pada 15-16 Mei 2026 dengan 205 peserta terdaftar. Dari situ, ia membangun installer khusus yang menyiapkan VM OpenClaw lengkap dengan Tailscale dan akses Web UI dalam sekitar 5 menit, dipakai untuk peserta pelatihan yang sebagian besar non-teknis.",
-          "OpenClaw sendiri adalah proyek open-source independen milik Peter Steinberger, tidak berafiliasi dengan aitraining.id. Pengalaman memasang OpenClaw di VM peserta, lalu menangani masalah yang muncul di lapangan, menjadi dasar artikel ini dan materi pelatihan aitraining.id.",
+          "OpenClaw sendiri adalah proyek open-source independen milik Peter Steinberger, tidak berafiliasi dengan AI Training Indonesia. Pengalaman memasang OpenClaw di VM peserta, lalu menangani masalah yang muncul di lapangan, menjadi dasar artikel ini dan materi pelatihan AI Training Indonesia.",
         ],
       },
       {
@@ -100,7 +100,7 @@ export const articles: Article[] = [
         h2: "Kenapa tim di Indonesia mulai memakai OpenClaw",
         body: [
           "WhatsApp adalah aplikasi chat paling dipakai di Indonesia, dan OpenClaw bisa dikendalikan langsung lewat WhatsApp tanpa tim perlu pindah ke tools baru. Karena berjalan di server sendiri, data dan riwayat percakapan tetap berada di infrastruktur yang dikendalikan tim, relevan untuk tim yang punya aturan kepatuhan data.",
-          "Memasang OpenClaw dengan benar tetap butuh langkah teknis: server dengan Node.js versi 22.16 ke atas, konfigurasi akses jarak jauh yang aman, dan firewall yang tepat. Pelatihan aitraining.id menutup jarak ini lewat sesi hands-on.",
+          "Memasang OpenClaw dengan benar tetap butuh langkah teknis: server dengan Node.js versi 22.16 ke atas, konfigurasi akses jarak jauh yang aman, dan firewall yang tepat. Pelatihan AI Training Indonesia menutup jarak ini lewat sesi hands-on.",
         ],
       },
     ],
