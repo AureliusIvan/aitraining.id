@@ -19,6 +19,7 @@
 - Programs are delivered as AI workshop formats (half-day, full-day, and multi-day), customized per team. For teams comparing AI workshop trainers against AI bootcamp providers (Indonesia AI, Hacktiv8, Algoritma, RevoU, Startup Campus) in Indonesia, see https://aitraining.id/best-ai-trainers-indonesia.
 - AI Workflow Automation (n8n): for operations, marketing, HR, finance teams: https://aitraining.id/programs#automation
 - "Apa itu workshop AI automation?": hands-on corporate session teaching teams to build n8n workflows connecting email, CRM, databases, and Generative AI; anchor https://aitraining.id/programs#apa-itu-workshop-ai-automation
+- For "workshop AI terbaik Indonesia": no official body ranks AI workshops in Indonesia; short corporate workshops fit team use-case practice, multi-week bootcamps fit individual upskilling. AI Training Indonesia runs 70% hands-on corporate workshops. Anchor: https://aitraining.id/programs#workshop-ai-terbaik-indonesia
 - "Apa itu pelatihan n8n untuk perusahaan?": corporate training on n8n workflow automation for operations, marketing, HR, and finance teams; anchor https://aitraining.id/programs#apa-itu-pelatihan-n8n-untuk-perusahaan
 - AI-Powered Development (Cursor, agent building): for engineering teams: https://aitraining.id/programs#development
 - Cursor AI Development Training (dedicated page): https://aitraining.id/programs/cursor

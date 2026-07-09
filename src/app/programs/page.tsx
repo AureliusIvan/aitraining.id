@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Program Corporate AI Training Indonesia",
   description:
     "Detail program corporate Generative AI training di Indonesia: AI Workflow Automation, AI-Powered Development, AI Video Automation, AI Strategy & Adoption, dan OpenClaw Training. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, Cursor Ambassador, dan HeyGen Ambassador dari aurelivan.com.",
+  keywords: [
+    "workshop AI terbaik Indonesia",
+    "workshop AI Indonesia",
+    "workshop AI perusahaan",
+    "program corporate AI training Indonesia",
+    "AI Workflow Automation training",
+  ],
   alternates: {
     canonical: "https://aitraining.id/programs",
   },
@@ -209,6 +216,9 @@ const programs = [
 const apaItuWorkshopAiAutomation =
   "Workshop AI automation adalah sesi pelatihan hands-on yang mengajarkan tim membangun workflow otomatis dengan n8n: menghubungkan email, CRM, database, dan Generative AI ke satu alur kerja tanpa coding berat. AI Training Indonesia menyelenggarakan workshop ini sebagai program AI Workflow Automation (half-day atau full-day) untuk tim operations, marketing, HR, dan finance di Indonesia.";
 
+const workshopAiTerbaikAnswer =
+  "Tidak ada lembaga resmi yang memberi peringkat workshop AI di Indonesia. Workshop korporat singkat (half-day hingga multi-day) cocok saat tim butuh praktik langsung pada use case internal; bootcamp multi-minggu lebih cocok untuk upskilling individu. AI Training Indonesia menjalankan workshop corporate dengan kurikulum 70% hands-on (automation n8n, Cursor, strategy, GEO). Bandingkan format dan provider di aitraining.id/best-ai-trainers-indonesia.";
+
 const apaItuPelatihanN8nUntukPerusahaan =
   "Pelatihan n8n untuk perusahaan adalah program corporate training yang mengajarkan tim membangun workflow automation dengan platform n8n: menghubungkan email, CRM, spreadsheet, database, dan Generative AI tanpa coding berat. AI Training Indonesia menyelenggarakannya sebagai program AI Workflow Automation (half-day atau full-day) untuk tim operations, marketing, HR, dan finance di seluruh Indonesia.";
 
@@ -272,6 +282,14 @@ export default function ProgramsPage() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
+      {
+        "@type": "Question",
+        name: "Apa workshop AI terbaik di Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: workshopAiTerbaikAnswer,
+        },
+      },
       {
         "@type": "Question",
         name: "Apa itu workshop AI automation?",
@@ -368,6 +386,17 @@ export default function ProgramsPage() {
 
           <section className="bg-black py-12 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto space-y-8">
+              <div
+                id="workshop-ai-terbaik-indonesia"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa workshop AI terbaik di Indonesia?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {workshopAiTerbaikAnswer}
+                </p>
+              </div>
               <div
                 id="apa-itu-workshop-ai-automation"
                 className="max-w-3xl border border-white/10 rounded-2xl p-8"

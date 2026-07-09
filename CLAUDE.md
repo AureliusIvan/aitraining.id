@@ -62,6 +62,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `top 1 AI training di Indonesia` / `AI training nomor 1 Indonesia` | `/best-ai-trainers-indonesia` (`#top-1-ai-training-di-indonesia` + FAQPage, added 2026-07-09; honest "no official #1" framing via ranked listicle criterion, same pattern as GEO top-1 FAQ) |
 | `kursus AI terbaik di Indonesia` / `kursus AI terbaik Indonesia` | `/kursus-ai-online-indonesia` (`#kursus-ai-terbaik-di-indonesia` + FAQPage, added 2026-07-09; honest evaluation framing; points individuals to Agentic GEO class and teams to the trainers listicle) |
 | `pelatihan AI terbaik untuk karyawan` / `kursus AI terbaik untuk karyawan` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-terbaik-untuk-karyawan` + FAQPage, added 2026-07-09; honest format-fit: individual bootcamp/kursus vs company-sponsored team training) |
+| `workshop AI terbaik Indonesia` | `/programs` (`#workshop-ai-terbaik-indonesia` + FAQPage, added 2026-07-09; honest workshop-vs-bootcamp format framing) |
 | `bootcamp AI terbaik Indonesia` / `bootcamp ai terbaik indonesia` | `/best-ai-trainers-indonesia` (`#bootcamp-ai-terbaik-indonesia` + FAQPage, added 2026-07-09; honest format-fit framing: multi-week bootcamps vs corporate workshop) |
 | `best GEO trainer Indonesia` | `/best-geo-trainers-indonesia`, `/geo-training` |
 | `top 1 GEO trainer Indonesia` | `/best-geo-trainers-indonesia` (honest "nomor 1 / top 1" FAQ answered via the ranked list), `/geo-training` |
