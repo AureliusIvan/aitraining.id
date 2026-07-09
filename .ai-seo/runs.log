@@ -50,3 +50,4 @@
 2026-07-09T08:30:12+07:00	action=improve-hold-deploy	query="kursus ai terbaik di indonesia"	page=/kursus-ai-online-indonesia	outcome=committed	commit=a62752a	notes=#kursus-ai-terbaik-di-indonesia+FAQPage+keywords+llms.txt
 2026-07-09T08:39:49+07:00	action=deploy	query="kursus ai terbaik di indonesia"	commit=5273982	notes=pushed-kursus-aeo
 2026-07-09T08:40:48+07:00	action=improve-hold-deploy	query="bootcamp ai terbaik indonesia"	page=/best-ai-trainers-indonesia	outcome=committed	commit=b422496	notes=#bootcamp-ai-terbaik-indonesia+FAQPage+keywords+llms.txt;closed-4-top1-near-dups
+2026-07-09T08:50:28+07:00	action=deploy	query="bootcamp ai terbaik indonesia"	commit=788efb1	notes=pushed-bootcamp-aeo
