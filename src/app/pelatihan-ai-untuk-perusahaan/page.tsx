@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk supply chain Indonesia",
     "pelatihan AI untuk logistics Indonesia",
     "AI training untuk product manager Indonesia",
+    "pelatihan AI untuk c-suite Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -107,6 +108,9 @@ const pelatihanAiUntukSupplyChain =
 
 const aiTrainingUntukProductManager =
   "AI training for product managers in Indonesia is a corporate program that teaches PMs to use Generative AI and light automation (n8n) for research synthesis, PRD drafts, user-feedback summaries, roadmap notes, and handoffs to engineering, with human review before stakeholder decisions. AI Training Indonesia delivers it on-site or virtually at 70% hands-on, customized to the company's product process.";
+
+const pelatihanAiUntukCSuite =
+  "Pelatihan AI untuk c-suite di Indonesia adalah program corporate untuk direksi dan eksekutif yang fokus pada adopsi organisasi: prioritas use case, governance, risiko data, ROI, dan roadmap implementasi AI agents serta automation di perusahaan. AI Training Indonesia menyelenggarakan sesi eksekutif on-site atau virtual, biasanya sebagai pembuka sebelum workshop hands-on untuk tim operasional.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -299,6 +303,12 @@ const faqs: Array<{
     q: "What is AI training for product managers in Indonesia?",
     a: aiTrainingUntukProductManager,
     link: { href: "/programs#development", text: "See AI-Powered Development for product and engineering teams" },
+  },
+  {
+    id: "pelatihan-ai-untuk-c-suite-indonesia",
+    q: "Apa itu pelatihan AI untuk c-suite di Indonesia?",
+    a: pelatihanAiUntukCSuite,
+    link: { href: "/programs#strategy", text: "Lihat program AI Strategy & Adoption" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
