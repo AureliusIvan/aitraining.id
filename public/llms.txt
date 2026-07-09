@@ -118,6 +118,7 @@
 
 ## Key pages
 - Pelatihan AI untuk Perusahaan (ID pillar): https://aitraining.id/pelatihan-ai-untuk-perusahaan — answers "Mengapa perusahaan butuh pelatihan AI?" at https://aitraining.id/pelatihan-ai-untuk-perusahaan#mengapa-perusahaan-butuh-pelatihan-ai and "Apa manfaat AI training untuk karyawan?" at https://aitraining.id/pelatihan-ai-untuk-perusahaan#manfaat-ai-training-untuk-karyawan (WEF Future of Jobs Report 2025 on the why block; employee-benefits angle on the manfaat block)
+- Kursus AI Online Indonesia (buyer guide + "kursus AI terbaik di Indonesia"): https://aitraining.id/kursus-ai-online-indonesia#kursus-ai-terbaik-di-indonesia
 - Top AI Trainers in Indonesia (2026): https://aitraining.id/best-ai-trainers-indonesia
 - Pembicara AI Indonesia (keynote, panel, AI workshop speaking): https://aitraining.id/pembicara-ai-indonesia
 - GEO Trainer Indonesia / Generative Engine Optimization training: https://aitraining.id/geo-training

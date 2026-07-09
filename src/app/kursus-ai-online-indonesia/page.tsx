@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   keywords: [
     "kursus AI online Indonesia",
     "kursus AI online terbaik Indonesia",
+    "kursus AI terbaik di Indonesia",
+    "kursus AI terbaik Indonesia",
     "belajar AI online Indonesia",
     "kursus artificial intelligence online",
     "kursus kecerdasan buatan online",
@@ -28,7 +30,10 @@ export const metadata: Metadata = {
   },
 };
 
-const LAST_UPDATED = "30 Juni 2026";
+const LAST_UPDATED = "9 Juli 2026";
+
+const kursusAiTerbaikAnswer =
+  "Tidak ada lembaga resmi yang memberi peringkat kursus AI di Indonesia. Evaluasi berdasarkan rasio praktik, relevansi tool dengan pekerjaan, rekam jejak instruktur yang bisa diverifikasi, dan dukungan pasca-belajar. Untuk individu, kelas Agentic GEO di goakal.com/ivan/agentic-geo adalah opsi agentic AI berbahasa Indonesia. Untuk tim perusahaan, bandingkan provider di aitraining.id/best-ai-trainers-indonesia.";
 
 const comparison = [
   {
@@ -60,6 +65,10 @@ const comparison = [
 
 const faqs = [
   {
+    q: "Apa kursus AI terbaik di Indonesia?",
+    a: kursusAiTerbaikAnswer,
+  },
+  {
     q: "Apakah kursus AI online efektif untuk perusahaan?",
     a: "Kursus AI online efektif untuk karyawan yang belajar mandiri dengan motivasi tinggi. Untuk tim perusahaan yang ingin menerapkan AI ke pekerjaan nyata, tingkat penyelesaian kursus MOOC rata-rata 5-15% dan materi umumnya generik. In-house training dengan kurikulum yang disesuaikan cenderung menghasilkan implementasi lebih cepat karena peserta langsung berlatih dengan use case perusahaan.",
   },
@@ -87,7 +96,7 @@ export default function KursusAiOnlineIndonesiaPage() {
     "@type": "Article",
     headline: "Kursus AI Online Indonesia: Panduan & Perbandingan 2026",
     datePublished: "2026-06-30",
-    dateModified: "2026-06-30",
+    dateModified: "2026-07-09",
     inLanguage: "id",
     author: {
       "@type": "Person",
@@ -186,6 +195,17 @@ export default function KursusAiOnlineIndonesiaPage() {
 
           <section className="py-16 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
+              <div
+                id="kursus-ai-terbaik-di-indonesia"
+                className="max-w-3xl mb-12 border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa kursus AI terbaik di Indonesia?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {kursusAiTerbaikAnswer}
+                </p>
+              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Perbandingan: kursus AI online vs in-house training
               </h2>

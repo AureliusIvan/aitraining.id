@@ -46,3 +46,5 @@
 2026-07-09T08:08:55+07:00	action=improve-hold-deploy	query="best ai training indonesia"	page=/best-ai-trainers-indonesia	outcome=committed	commit=b3e6ec1	notes=#best-ai-training-indonesia+FAQPage-EN;also-closed-ai-training-terbaik-indonesia-seed
 2026-07-09T08:18:39+07:00	action=deploy	query="best ai training indonesia"	commit=bb21aba	notes=pushed-EN-FAQ
 2026-07-09T08:19:47+07:00	action=improve-hold-deploy	query="ai training terbaik di jakarta"	page=/cities/jakarta	outcome=committed	commit=42a5697	notes=#ai-training-terbaik-di-jakarta+FAQPage+keywords+llms.txt
+2026-07-09T08:29:12+07:00	action=deploy	query="ai training terbaik di jakarta"	commit=089763d	notes=pushed-jakarta-aeo
+2026-07-09T08:30:12+07:00	action=improve-hold-deploy	query="kursus ai terbaik di indonesia"	page=/kursus-ai-online-indonesia	outcome=committed	commit=a62752a	notes=#kursus-ai-terbaik-di-indonesia+FAQPage+keywords+llms.txt

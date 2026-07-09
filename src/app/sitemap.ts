@@ -128,7 +128,11 @@ const STATIC_META: Record<string, Meta> = {
   },
   // Crawl hints curated; lastModified intentionally omitted until a real
   // content-change date is known (don't fabricate freshness).
-  "/kursus-ai-online-indonesia": { changeFrequency: "monthly", priority: 0.8 },
+  "/kursus-ai-online-indonesia": {
+    lastModified: new Date("2026-07-09"),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
   "/pembicara-ai-indonesia": { changeFrequency: "monthly", priority: 0.85 },
 };
 
