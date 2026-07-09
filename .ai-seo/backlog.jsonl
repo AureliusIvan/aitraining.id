@@ -116,6 +116,6 @@
 {"q": "pelatihan ai onsite yogyakarta", "page": "/cities/yogyakarta", "status": "done", "commit": "8b0e623", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-yogyakarta"}
 {"q": "pelatihan ai onsite semarang", "page": "/cities/semarang", "status": "done", "commit": "3c392c1", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-semarang"}
 {"q": "corporate ai training depok", "page": "/cities/depok", "status": "done", "commit": "9a63a4b", "ts": "2026-07-10", "notes": "/#corporate-ai-training-depok"}
-{"q": "corporate ai training solo", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "corporate ai training solo", "page": "/cities/solo", "status": "done", "commit": "3be380c", "ts": "2026-07-10", "notes": "/#corporate-ai-training-solo"}
 {"q": "corporate ai training pontianak", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "corporate ai training pekanbaru", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}

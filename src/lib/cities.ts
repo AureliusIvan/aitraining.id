@@ -935,6 +935,53 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "solo",
+    name: "Solo",
+    title: "Corporate AI Training Solo",
+    description:
+      "Solo (Surakarta) adalah pusat industri kreatif, manufaktur, dan jasa di Jawa Tengah. Corporate AI training di Solo tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Solo (Surakarta) adalah pusat industri kreatif, manufaktur, dan jasa di Jawa Tengah dengan ekosistem bisnis regional yang aktif. Corporate AI training di Solo dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Solo (Slamet Riyadi, Solo Baru, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk manufaktur, industri kreatif, perdagangan, dan jasa Jawa Tengah",
+      "Tersedia on-site di kawasan bisnis Solo dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Solo",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Solo",
+      "pelatihan AI Solo untuk perusahaan",
+      "AI training Solo",
+      "pelatihan AI Solo",
+      "corporate AI training Surakarta",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Solo saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-solo-untuk-perusahaan",
+        q: "Pelatihan AI Solo untuk perusahaan",
+        a: "Pelatihan AI Solo untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Tengah yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks manufaktur dan industri kreatif. AI Training Indonesia menyelenggarakannya di kawasan bisnis Solo dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-solo",
+          q: "What is corporate AI training in Solo?",
+          a: "Corporate AI training in Solo (Surakarta) is an on-site or virtual program for company teams in Central Java: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Solo business districts (Slamet Riyadi, Solo Baru, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Solo tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Solo dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Solo?",
+          a: "Program cocok untuk manufaktur, industri kreatif, perdagangan, dan jasa di Jawa Tengah yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
