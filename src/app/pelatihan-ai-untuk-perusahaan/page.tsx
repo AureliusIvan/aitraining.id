@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     "pelatihan AI terbaik untuk karyawan",
     "kursus AI terbaik untuk karyawan",
     "manfaat AI training untuk karyawan",
+    "pelatihan AI untuk tim marketing Indonesia",
+    "AI training untuk marketing Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -46,6 +48,9 @@ const pelatihanAiTerbaikUntukPerusahaan =
 
 const corporateAiTrainingTerbaikAnswer =
   "There is no official body that ranks corporate AI training in Indonesia. Evaluate by hands-on ratio, tool relevance to the team's work, a verifiable trainer track record, per-industry customization, and post-training support. AI Training Indonesia meets these criteria with a 70% hands-on corporate workshop curriculum led by Aurelius Ivan Wijaya. Compare providers at aitraining.id/best-ai-trainers-indonesia.";
+
+const pelatihanAiUntukTimMarketing =
+  "Pelatihan AI untuk tim marketing di Indonesia adalah program corporate yang mengajarkan marketing, konten, dan growth memakai Generative AI untuk riset, draft konten, automation kampanye (n8n), video avatar (HeyGen), dan GEO agar brand dikutip mesin AI. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke stack dan funnel marketing perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -105,7 +110,12 @@ const programs = [
   },
 ];
 
-const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } }> = [
+const faqs: Array<{
+  id?: string;
+  q: string;
+  a: string;
+  link?: { href: string; text: string };
+}> = [
   {
     q: "Mengapa perusahaan butuh pelatihan AI?",
     a: mengapaPerusahaanButuhPelatihanAi,
@@ -117,6 +127,12 @@ const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } 
   {
     q: "Apa pelatihan AI terbaik untuk karyawan?",
     a: pelatihanAiTerbaikUntukKaryawan,
+  },
+  {
+    id: "pelatihan-ai-untuk-tim-marketing-indonesia",
+    q: "Apa itu pelatihan AI untuk tim marketing di Indonesia?",
+    a: pelatihanAiUntukTimMarketing,
+    link: { href: "/programs#geo", text: "Lihat program GEO dan video automation untuk marketing" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",
@@ -574,7 +590,7 @@ export default function PelatihanAiUntukPerusahaanPage() {
               </h2>
               <div className="space-y-8 max-w-3xl">
                 {faqs.map((faq) => (
-                  <div key={faq.q}>
+                  <div key={faq.q} id={faq.id}>
                     <h3 className="text-lg font-semibold text-white mb-2">
                       {faq.q}
                     </h3>

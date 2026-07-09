@@ -42,8 +42,8 @@
 {"q": "pelatihan ai onsite jakarta", "page": "/cities/jakarta", "status": "done", "commit": "5fe196f", "ts": "2026-07-09"}
 {"q": "biaya pelatihan ai perusahaan indonesia", "page": "/pricing", "status": "done", "commit": "0f5284c", "ts": "2026-07-09"}
 {"q": "biaya ai training corporate indonesia", "page": "/pricing", "status": "done", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #biaya-pelatihan-ai-perusahaan-indonesia"}
-{"q": "pelatihan ai untuk tim marketing indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
-{"q": "ai training untuk marketing indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "pelatihan ai untuk tim marketing indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "9b8d222", "ts": "2026-07-09"}
+{"q": "ai training untuk marketing indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-untuk-tim-marketing-indonesia"}
 {"q": "pelatihan ai untuk hr indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai untuk engineering indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "in-house ai training indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
