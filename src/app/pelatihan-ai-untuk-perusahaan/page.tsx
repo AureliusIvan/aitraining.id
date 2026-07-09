@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     "pelatihan AI untuk engineering Indonesia",
     "in-house AI training Indonesia",
     "pelatihan AI virtual Indonesia",
+    "pelatihan AI untuk finance Indonesia",
+    "AI training untuk finance Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -67,6 +69,9 @@ const inHouseAiTrainingIndonesia =
 
 const pelatihanAiVirtualIndonesia =
   "Pelatihan AI virtual di Indonesia adalah program corporate live online untuk satu perusahaan atau kohort tertutup, dengan lab hands-on, breakout, dan materi yang sama dengan sesi on-site. AI Training Indonesia menyelenggarakan format virtual 70% praktik untuk automation (n8n), AI-powered development (Cursor), dan AI agents, cocok untuk tim remote/hybrid di seluruh Indonesia.";
+
+const pelatihanAiUntukFinance =
+  "Pelatihan AI untuk finance di Indonesia adalah program corporate yang mengajarkan tim finance memakai Generative AI dan automation (n8n) untuk draft laporan, rekonsiliasi awal, FAQ kebijakan, dan workflow admin berulang, dengan penekanan pada review manusia, akurasi angka, dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses finance perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -173,6 +178,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI virtual di Indonesia?",
     a: pelatihanAiVirtualIndonesia,
     link: { href: "/contact", text: "Diskusikan format virtual untuk tim Anda" },
+  },
+  {
+    id: "pelatihan-ai-untuk-finance-indonesia",
+    q: "Apa itu pelatihan AI untuk finance di Indonesia?",
+    a: pelatihanAiUntukFinance,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk finance" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",
