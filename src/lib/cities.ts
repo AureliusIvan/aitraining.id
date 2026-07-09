@@ -822,6 +822,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "bekasi",
+    name: "Bekasi",
+    title: "Corporate AI Training Bekasi",
+    description:
+      "Bekasi adalah kawasan industri dan bisnis utama di Jabodetabek. Corporate AI training di Bekasi tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Bekasi adalah kawasan industri, logistik, dan bisnis utama di Jabodetabek dengan banyak pabrik dan kantor regional. Corporate AI training di Bekasi dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Bekasi (Summarecon, Cikarang, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk manufaktur, logistik, jasa, dan perusahaan industri Jabodetabek",
+      "Tersedia on-site di kawasan bisnis Bekasi, Cikarang, dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Bekasi",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Bekasi",
+      "pelatihan AI Bekasi untuk perusahaan",
+      "AI training Bekasi",
+      "pelatihan AI Bekasi",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Bekasi saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-bekasi-untuk-perusahaan",
+        q: "Pelatihan AI Bekasi untuk perusahaan",
+        a: "Pelatihan AI Bekasi untuk perusahaan adalah program corporate training on-site atau virtual di Jabodetabek yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks manufaktur dan industri. AI Training Indonesia menyelenggarakannya di kawasan bisnis Bekasi dan Cikarang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-bekasi",
+          q: "What is corporate AI training in Bekasi?",
+          a: "Corporate AI training in Bekasi is an on-site or virtual program for company teams in Jabodetabek industrial zones: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Bekasi and Cikarang business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Bekasi tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Bekasi, Cikarang, dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Bekasi?",
+          a: "Program cocok untuk manufaktur, logistik, jasa, dan perusahaan industri Jabodetabek yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {

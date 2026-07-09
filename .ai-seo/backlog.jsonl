@@ -106,4 +106,4 @@
 {"q": "pelatihan ai onsite makassar", "page": "/cities/makassar", "status": "done", "commit": "04fbc86", "ts": "2026-07-09", "notes": "/#pelatihan-ai-onsite-makassar"}
 {"q": "pelatihan ai onsite tangerang", "page": "/cities/tangerang", "status": "done", "commit": "c5f612f", "ts": "2026-07-09", "notes": "/#pelatihan-ai-onsite-tangerang"}
 {"q": "corporate ai training bogor", "page": "/cities/bogor", "status": "done", "commit": "66f7007", "ts": "2026-07-09", "notes": "/#corporate-ai-training-bogor"}
-{"q": "corporate ai training bekasi", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "corporate ai training bekasi", "page": "/cities/bekasi", "status": "done", "commit": "c33f8ea", "ts": "2026-07-09", "notes": "/#corporate-ai-training-bekasi"}
