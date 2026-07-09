@@ -506,6 +506,8 @@ export const cities: City[] = [
       "pelatihan AI Makassar untuk perusahaan",
       "AI training Makassar",
       "pelatihan AI Makassar",
+      "pelatihan AI onsite Makassar",
+      "pelatihan AI on-site Makassar",
     ],
     aiTrainer: {
       intro:
@@ -520,6 +522,11 @@ export const cities: City[] = [
           id: "corporate-ai-training-makassar",
           q: "What is corporate AI training in Makassar?",
           a: "Corporate AI training in Makassar is an on-site or virtual program for company teams in South Sulawesi: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Makassar business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-makassar",
+          q: "Apa itu pelatihan AI onsite di Makassar?",
+          a: "Pelatihan AI onsite di Makassar adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di kawasan bisnis Makassar (Panakkukang, Losari, dan sekitarnya). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks perdagangan dan jasa Sulawesi Selatan, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Makassar tersedia on-site atau online?",
