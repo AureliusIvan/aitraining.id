@@ -564,6 +564,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "balikpapan",
+    name: "Balikpapan",
+    title: "Corporate AI Training Balikpapan",
+    description:
+      "Balikpapan adalah pusat energi dan industri di Kalimantan Timur. Corporate AI training di Balikpapan tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Balikpapan adalah pusat energi, pelabuhan, dan jasa industri di Kalimantan Timur. Corporate AI training di Balikpapan dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Balikpapan (Klandasan, Sepinggan, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk energi, pelabuhan, jasa industri, dan perusahaan regional Kalimantan Timur",
+      "Tersedia on-site di kawasan bisnis Balikpapan dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Balikpapan",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Balikpapan",
+      "pelatihan AI Balikpapan untuk perusahaan",
+      "AI training Balikpapan",
+      "pelatihan AI Balikpapan",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Balikpapan saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-balikpapan-untuk-perusahaan",
+        q: "Pelatihan AI Balikpapan untuk perusahaan",
+        a: "Pelatihan AI Balikpapan untuk perusahaan adalah program corporate training on-site atau virtual di Kalimantan Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks energi dan jasa industri. AI Training Indonesia menyelenggarakannya di kawasan bisnis Balikpapan dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-balikpapan",
+          q: "What is corporate AI training in Balikpapan?",
+          a: "Corporate AI training in Balikpapan is an on-site or virtual program for company teams in East Kalimantan: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Balikpapan business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Balikpapan tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Balikpapan dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Balikpapan?",
+          a: "Program cocok untuk energi, pelabuhan, jasa industri, dan perusahaan regional Kalimantan Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {

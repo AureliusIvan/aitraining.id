@@ -204,7 +204,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       city.id === "medan" ||
       city.id === "semarang" ||
       city.id === "makassar" ||
-      city.id === "palembang"
+      city.id === "palembang" ||
+      city.id === "balikpapan"
         ? new Date("2026-07-09")
         : city.geo
           ? new Date("2026-07-01")
