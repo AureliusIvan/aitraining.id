@@ -101,6 +101,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `AI training Yogyakarta` / `ai training yogyakarta` | `/cities/yogyakarta` (`#ai-training-yogyakarta` FAQ + keywords + city page, added 2026-07-09; DIY on-site/virtual coverage) |
 | `pelatihan AI Bali untuk perusahaan` | `/cities/bali` (`#pelatihan-ai-bali-untuk-perusahaan` def + `#pelatihan-ai-bali-untuk-perusahaan-faq`, added 2026-07-09; hospitality/tourism on-site/virtual) |
 | `AI training Medan` / `pelatihan AI Medan untuk perusahaan` | `/cities/medan` (`#ai-training-medan` FAQ + `#pelatihan-ai-medan-untuk-perusahaan` def, added 2026-07-09; North Sumatra on-site/virtual) |
+| `pelatihan AI onsite Medan` / `pelatihan AI on-site Medan` | `/cities/medan` (`#pelatihan-ai-onsite-medan` FAQ + keywords, added 2026-07-09; office/venue delivery in Polonia/Gatot Subroto business districts) |
 | `pelatihan AI Semarang untuk perusahaan` | `/cities/semarang` (`#pelatihan-ai-semarang-untuk-perusahaan` def + FAQ, added 2026-07-09; Central Java manufacturing/logistics on-site/virtual) |
 | `corporate AI training Makassar` / `pelatihan AI Makassar untuk perusahaan` | `/cities/makassar` (`#corporate-ai-training-makassar` FAQ EN + `#pelatihan-ai-makassar-untuk-perusahaan` def, added 2026-07-09; South Sulawesi on-site/virtual) |
 | `corporate AI training Palembang` / `pelatihan AI Palembang untuk perusahaan` | `/cities/palembang` (`#corporate-ai-training-palembang` FAQ EN + `#pelatihan-ai-palembang-untuk-perusahaan` def, added 2026-07-09; South Sumatra on-site/virtual) |

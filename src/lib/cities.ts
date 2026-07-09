@@ -407,6 +407,8 @@ export const cities: City[] = [
       "ai training medan",
       "pelatihan AI Medan untuk perusahaan",
       "corporate AI training Medan",
+      "pelatihan AI onsite Medan",
+      "pelatihan AI on-site Medan",
     ],
     aiTrainer: {
       intro:
@@ -421,6 +423,11 @@ export const cities: City[] = [
           id: "ai-training-medan",
           q: "Apa itu AI training di Medan?",
           a: "AI training di Medan adalah program corporate on-site atau virtual untuk tim perusahaan di Sumatera Utara: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di kawasan bisnis Medan; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-medan",
+          q: "Apa itu pelatihan AI onsite di Medan?",
+          a: "Pelatihan AI onsite di Medan adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di kawasan bisnis Medan (Polonia, Gatot Subroto, dan sekitarnya). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks perdagangan dan jasa Sumatera Utara, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Medan tersedia on-site atau online?",
