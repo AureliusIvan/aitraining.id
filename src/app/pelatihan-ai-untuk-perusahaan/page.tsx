@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk logistics Indonesia",
     "AI training untuk product manager Indonesia",
     "AI training untuk project manager Indonesia",
+    "pelatihan AI untuk business analyst Indonesia",
     "pelatihan AI untuk c-suite Indonesia",
     "pelatihan AI untuk accounting Indonesia",
     "pelatihan AI untuk manufaktur Indonesia",
@@ -116,6 +117,9 @@ const aiTrainingUntukProductManager =
 
 const aiTrainingUntukProjectManager =
   "AI training for project managers in Indonesia is a corporate program that teaches PMs to use Generative AI and light automation (n8n) for status reports, risk logs, meeting notes, stakeholder updates, and schedule summaries, with human review before client or sponsor decisions. AI Training Indonesia delivers it on-site or virtually at 70% hands-on, customized to the company's project delivery process.";
+
+const pelatihanAiUntukBusinessAnalyst =
+  "Pelatihan AI untuk business analyst di Indonesia adalah program corporate yang mengajarkan BA memakai Generative AI dan automation ringan (n8n) untuk ringkasan requirement, draft user story, analisis gap awal, notulen workshop, dan dokumentasi proses, dengan penekanan pada review manusia sebelum keputusan stakeholder. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses analisis bisnis perusahaan.";
 
 const pelatihanAiUntukCSuite =
   "Pelatihan AI untuk c-suite di Indonesia adalah program corporate untuk direksi dan eksekutif yang fokus pada adopsi organisasi: prioritas use case, governance, risiko data, ROI, dan roadmap implementasi AI agents serta automation di perusahaan. AI Training Indonesia menyelenggarakan sesi eksekutif on-site atau virtual, biasanya sebagai pembuka sebelum workshop hands-on untuk tim operasional.";
@@ -329,6 +333,12 @@ const faqs: Array<{
     q: "What is AI training for project managers in Indonesia?",
     a: aiTrainingUntukProjectManager,
     link: { href: "/programs#automation", text: "See AI Workflow Automation for project delivery teams" },
+  },
+  {
+    id: "pelatihan-ai-untuk-business-analyst-indonesia",
+    q: "Apa itu pelatihan AI untuk business analyst di Indonesia?",
+    a: pelatihanAiUntukBusinessAnalyst,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk business analyst" },
   },
   {
     id: "pelatihan-ai-untuk-c-suite-indonesia",
