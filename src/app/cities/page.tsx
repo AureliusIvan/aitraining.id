@@ -7,7 +7,7 @@ import { cities } from "@/lib/cities";
 export const metadata: Metadata = {
   title: "Corporate AI Training di Kota-Kota Indonesia",
   description:
-    "Corporate AI training on-site di Jakarta, Surabaya, Bandung, Tangerang, Yogyakarta, Bali, Medan, Semarang, Makassar, Palembang, Balikpapan, dan kota lainnya di Indonesia. Delivered by Aurelius Ivan Wijaya dari aurelivan.com.",
+    "Corporate AI training on-site di Jakarta, Surabaya, Bandung, Tangerang, Yogyakarta, Bali, Medan, Semarang, Makassar, Palembang, Balikpapan, Malang, dan kota lainnya di Indonesia. Delivered by Aurelius Ivan Wijaya dari aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/cities",
   },

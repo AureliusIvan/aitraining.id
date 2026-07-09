@@ -610,6 +610,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "malang",
+    name: "Malang",
+    title: "Corporate AI Training Malang",
+    description:
+      "Malang adalah pusat pendidikan dan industri kreatif di Jawa Timur. Corporate AI training di Malang tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Malang adalah pusat pendidikan, jasa, dan industri kreatif di Jawa Timur. Corporate AI training di Malang dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Malang (Klojen, Lowokwaru, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk pendidikan, jasa, industri kreatif, dan perusahaan regional Jawa Timur",
+      "Tersedia on-site di kawasan bisnis Malang dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Malang",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "pelatihan AI Malang untuk perusahaan",
+      "AI training Malang",
+      "corporate AI training Malang",
+      "pelatihan AI Malang",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Malang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-malang-untuk-perusahaan",
+        q: "Pelatihan AI Malang untuk perusahaan",
+        a: "Pelatihan AI Malang untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks pendidikan, jasa, dan industri kreatif. AI Training Indonesia menyelenggarakannya di kawasan bisnis Malang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "ai-training-malang",
+          q: "Apa itu AI training di Malang?",
+          a: "AI training di Malang adalah program corporate on-site atau virtual untuk tim perusahaan di Jawa Timur: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di kawasan bisnis Malang; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Malang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Malang dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Malang?",
+          a: "Program cocok untuk pendidikan, jasa, industri kreatif, dan perusahaan regional Jawa Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
