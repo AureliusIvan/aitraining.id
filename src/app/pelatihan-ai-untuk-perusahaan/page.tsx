@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     "pelatihan AI virtual Indonesia",
     "pelatihan AI untuk finance Indonesia",
     "AI training untuk finance Indonesia",
+    "pelatihan AI untuk sales Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -72,6 +73,9 @@ const pelatihanAiVirtualIndonesia =
 
 const pelatihanAiUntukFinance =
   "Pelatihan AI untuk finance di Indonesia adalah program corporate yang mengajarkan tim finance memakai Generative AI dan automation (n8n) untuk draft laporan, rekonsiliasi awal, FAQ kebijakan, dan workflow admin berulang, dengan penekanan pada review manusia, akurasi angka, dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses finance perusahaan.";
+
+const pelatihanAiUntukSales =
+  "Pelatihan AI untuk sales di Indonesia adalah program corporate yang mengajarkan tim sales memakai Generative AI dan automation (n8n) untuk riset prospek, draft outreach, follow-up, ringkasan call, dan video avatar (HeyGen) dari data CRM, dengan penekanan pada review manusia sebelum kirim ke klien. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke funnel sales perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -184,6 +188,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk finance di Indonesia?",
     a: pelatihanAiUntukFinance,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk finance" },
+  },
+  {
+    id: "pelatihan-ai-untuk-sales-indonesia",
+    q: "Apa itu pelatihan AI untuk sales di Indonesia?",
+    a: pelatihanAiUntukSales,
+    link: { href: "/programs#video", text: "Lihat program AI Video Automation untuk sales" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",
