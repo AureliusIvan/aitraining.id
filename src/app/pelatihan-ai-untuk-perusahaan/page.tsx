@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk finance Indonesia",
     "AI training untuk finance Indonesia",
     "pelatihan AI untuk sales Indonesia",
+    "pelatihan AI untuk legal Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -76,6 +77,9 @@ const pelatihanAiUntukFinance =
 
 const pelatihanAiUntukSales =
   "Pelatihan AI untuk sales di Indonesia adalah program corporate yang mengajarkan tim sales memakai Generative AI dan automation (n8n) untuk riset prospek, draft outreach, follow-up, ringkasan call, dan video avatar (HeyGen) dari data CRM, dengan penekanan pada review manusia sebelum kirim ke klien. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke funnel sales perusahaan.";
+
+const pelatihanAiUntukLegal =
+  "Pelatihan AI untuk legal di Indonesia adalah program corporate yang mengajarkan tim legal memakai Generative AI untuk riset awal, ringkasan dokumen, draft klausul, dan checklist review, dengan penekanan bahwa keluaran AI wajib diverifikasi counsel dan tidak menggantikan nasihat hukum. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke workflow legal perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -194,6 +198,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk sales di Indonesia?",
     a: pelatihanAiUntukSales,
     link: { href: "/programs#video", text: "Lihat program AI Video Automation untuk sales" },
+  },
+  {
+    id: "pelatihan-ai-untuk-legal-indonesia",
+    q: "Apa itu pelatihan AI untuk legal di Indonesia?",
+    a: pelatihanAiUntukLegal,
+    link: { href: "/contact", text: "Diskusikan use case legal untuk tim Anda" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",
