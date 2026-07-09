@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "kursus AI online terbaik Indonesia",
     "kursus AI terbaik di Indonesia",
     "kursus AI terbaik Indonesia",
+    "kelas AI terbaik Indonesia",
+    "kelas ai terbaik indonesia",
     "belajar AI online Indonesia",
     "kursus artificial intelligence online",
     "kursus kecerdasan buatan online",
@@ -34,6 +36,9 @@ const LAST_UPDATED = "9 Juli 2026";
 
 const kursusAiTerbaikAnswer =
   "Tidak ada lembaga resmi yang memberi peringkat kursus AI di Indonesia. Evaluasi berdasarkan rasio praktik, relevansi tool dengan pekerjaan, rekam jejak instruktur yang bisa diverifikasi, dan dukungan pasca-belajar. Untuk individu, kelas Agentic GEO di goakal.com/ivan/agentic-geo adalah opsi agentic AI berbahasa Indonesia. Untuk tim perusahaan, bandingkan provider di aitraining.id/best-ai-trainers-indonesia.";
+
+const kelasAiTerbaikAnswer =
+  "Tidak ada lembaga resmi yang memberi peringkat kelas AI di Indonesia. Untuk individu, evaluasi berdasarkan praktik, relevansi tool, dan dukungan pasca-belajar: kelas Agentic GEO di goakal.com/ivan/agentic-geo adalah opsi agentic AI berbahasa Indonesia. Untuk kelas/bootcamp multi-minggu, bandingkan Algoritma, RevoU, dan Hacktiv8. Untuk kelas korporat singkat dengan kurikulum dikustomisasi, lihat aitraining.id/best-ai-trainers-indonesia.";
 
 const comparison = [
   {
@@ -67,6 +72,10 @@ const faqs = [
   {
     q: "Apa kursus AI terbaik di Indonesia?",
     a: kursusAiTerbaikAnswer,
+  },
+  {
+    q: "Apa kelas AI terbaik di Indonesia?",
+    a: kelasAiTerbaikAnswer,
   },
   {
     q: "Apakah kursus AI online efektif untuk perusahaan?",
@@ -197,13 +206,24 @@ export default function KursusAiOnlineIndonesiaPage() {
             <div className="max-w-[1400px] mx-auto">
               <div
                 id="kursus-ai-terbaik-di-indonesia"
-                className="max-w-3xl mb-12 border border-white/10 rounded-2xl p-8"
+                className="max-w-3xl mb-6 border border-white/10 rounded-2xl p-8"
               >
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                   Apa kursus AI terbaik di Indonesia?
                 </h2>
                 <p className="text-white/70 text-sm leading-relaxed">
                   {kursusAiTerbaikAnswer}
+                </p>
+              </div>
+              <div
+                id="kelas-ai-terbaik-indonesia"
+                className="max-w-3xl mb-12 border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa kelas AI terbaik di Indonesia?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {kelasAiTerbaikAnswer}
                 </p>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
