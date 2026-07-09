@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "AI training untuk product manager Indonesia",
     "pelatihan AI untuk c-suite Indonesia",
     "pelatihan AI untuk accounting Indonesia",
+    "pelatihan AI untuk manufaktur Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -115,6 +116,9 @@ const pelatihanAiUntukCSuite =
 
 const pelatihanAiUntukAccounting =
   "Pelatihan AI untuk accounting di Indonesia adalah program corporate yang mengajarkan tim accounting memakai Generative AI dan automation (n8n) untuk draft jurnal awal, rekonsiliasi, ringkasan invoice, FAQ kebijakan, dan workflow admin berulang, dengan penekanan pada review manusia, akurasi angka, dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses accounting perusahaan.";
+
+const pelatihanAiUntukManufaktur =
+  "Pelatihan AI untuk manufaktur di Indonesia adalah program corporate yang mengajarkan tim pabrik dan operasional memakai Generative AI dan automation (n8n) untuk SOP produksi, laporan shift, ringkasan exception, koordinasi vendor, dan workflow admin berulang, dengan penekanan pada handoff manusia untuk keputusan keselamatan dan kualitas. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses manufaktur perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -319,6 +323,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk accounting di Indonesia?",
     a: pelatihanAiUntukAccounting,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk accounting" },
+  },
+  {
+    id: "pelatihan-ai-untuk-manufaktur-indonesia",
+    q: "Apa itu pelatihan AI untuk manufaktur di Indonesia?",
+    a: pelatihanAiUntukManufaktur,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk manufaktur" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
