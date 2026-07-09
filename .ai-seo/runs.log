@@ -101,3 +101,4 @@
 2026-07-09T14:02:54+07:00	action=improve-deploy	query="pelatihan ai untuk operations indonesia"	page=/pelatihan-ai-untuk-perusahaan	outcome=committed	commit=4a98dd5	notes=#pelatihan-ai-untuk-operations-indonesia+FAQPage
 2026-07-09T14:02:57+07:00	action=deploy	query="pelatihan ai untuk operations indonesia"	commit=bf7f07b	notes=pushed-operations-aeo
 2026-07-09T14:14:06+07:00	action=improve-deploy	query="berapa lama pelatihan ai perusahaan indonesia"	page=/pelatihan-ai-untuk-perusahaan	outcome=committed	commit=8e1e068	notes=#berapa-lama-pelatihan-ai-perusahaan-indonesia+FAQPage;closed-durasi-near-dup
+2026-07-09T14:14:10+07:00	action=deploy	query="berapa lama pelatihan ai perusahaan indonesia"	commit=173da56	notes=pushed-duration-aeo
