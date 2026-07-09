@@ -42,6 +42,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk retail Indonesia",
     "pelatihan AI untuk hospitality Indonesia",
     "pelatihan AI untuk asuransi Indonesia",
+    "pelatihan AI untuk konstruksi Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -147,6 +148,9 @@ const pelatihanAiUntukHospitality =
 
 const pelatihanAiUntukAsuransi =
   "Pelatihan AI untuk asuransi di Indonesia adalah program corporate yang mengajarkan tim asuransi memakai Generative AI dan automation (n8n) untuk draft FAQ polis, ringkasan klaim awal, balasan nasabah, dan workflow admin berulang, dengan penekanan pada review manusia, kerahasiaan data nasabah, dan kepatuhan kebijakan internal. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses asuransi perusahaan.";
+
+const pelatihanAiUntukKonstruksi =
+  "Pelatihan AI untuk konstruksi di Indonesia adalah program corporate yang mengajarkan tim proyek dan operasional memakai Generative AI dan automation (n8n) untuk draft laporan harian, ringkasan RFI, checklist keselamatan, koordinasi vendor, dan workflow admin berulang, dengan penekanan pada handoff manusia untuk keputusan keselamatan dan kualitas. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses konstruksi perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -399,6 +403,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk asuransi di Indonesia?",
     a: pelatihanAiUntukAsuransi,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk asuransi" },
+  },
+  {
+    id: "pelatihan-ai-untuk-konstruksi-indonesia",
+    q: "Apa itu pelatihan AI untuk konstruksi di Indonesia?",
+    a: pelatihanAiUntukKonstruksi,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk konstruksi" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
