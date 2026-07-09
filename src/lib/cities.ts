@@ -1028,6 +1028,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "pekanbaru",
+    name: "Pekanbaru",
+    title: "Corporate AI Training Pekanbaru",
+    description:
+      "Pekanbaru adalah pusat energi, perdagangan, dan jasa di Riau. Corporate AI training di Pekanbaru tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Pekanbaru adalah ibu kota Riau dan pusat energi, perdagangan, dan jasa di Sumatera. Corporate AI training di Pekanbaru dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Pekanbaru (Sudirman, Tuanku Tambusai, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk energi, perdagangan, jasa, dan perusahaan regional Riau",
+      "Tersedia on-site di kawasan bisnis Pekanbaru dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Pekanbaru",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Pekanbaru",
+      "pelatihan AI Pekanbaru untuk perusahaan",
+      "AI training Pekanbaru",
+      "pelatihan AI Pekanbaru",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Pekanbaru saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-pekanbaru-untuk-perusahaan",
+        q: "Pelatihan AI Pekanbaru untuk perusahaan",
+        a: "Pelatihan AI Pekanbaru untuk perusahaan adalah program corporate training on-site atau virtual di Riau yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks energi, perdagangan, dan jasa. AI Training Indonesia menyelenggarakannya di kawasan bisnis Pekanbaru dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-pekanbaru",
+          q: "What is corporate AI training in Pekanbaru?",
+          a: "Corporate AI training in Pekanbaru is an on-site or virtual program for company teams in Riau: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Pekanbaru business districts (Sudirman, Tuanku Tambusai, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Pekanbaru tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Pekanbaru dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Pekanbaru?",
+          a: "Program cocok untuk energi, perdagangan, jasa, dan perusahaan regional Riau yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {

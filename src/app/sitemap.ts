@@ -210,7 +210,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       city.id === "batam" ||
       city.id === "depok" ||
       city.id === "solo" ||
-      city.id === "pontianak"
+      city.id === "pontianak" ||
+      city.id === "pekanbaru"
         ? new Date("2026-07-10")
         : city.id === "manado" ||
             city.id === "bogor" ||
