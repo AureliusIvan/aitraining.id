@@ -93,3 +93,4 @@
 2026-07-09T13:27:29+07:00	action=heartbeat	query=	outcome=empty-backlog	notes=ticksSinceDiscovery=10/10;trigger-discovery
 2026-07-09T13:27:55+07:00	action=discovery	query=	outcome=seeded	notes=seeded=10;queries=pelatihan ai untuk finance indonesia;ai training untuk finance indonesia;pelatihan ai untuk sales indonesia;pelatihan ai untuk legal indonesia;pelatihan ai untuk operations indonesia;berapa lama pelatihan ai perusahaan indonesia;durasi pelatihan ai corporate indonesia;ai training medan;pelatihan ai medan untuk perusahaan;pelatihan ai semarang untuk perusahaan
 2026-07-09T13:28:56+07:00	action=improve-deploy	query="pelatihan ai untuk finance indonesia"	page=/pelatihan-ai-untuk-perusahaan	outcome=committed	commit=658d33e	notes=discovery+10;#pelatihan-ai-untuk-finance-indonesia+FAQPage;closed-finance-en-near-dup
+2026-07-09T13:29:00+07:00	action=deploy	query="pelatihan ai untuk finance indonesia"	commit=e4d3c59	notes=pushed-finance-aeo+discovery
