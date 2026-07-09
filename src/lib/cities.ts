@@ -1148,6 +1148,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "kediri",
+    name: "Kediri",
+    title: "Corporate AI Training Kediri",
+    description:
+      "Kediri adalah pusat industri, perdagangan, dan jasa di Jawa Timur. Corporate AI training di Kediri tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Kediri adalah pusat industri, perdagangan, dan jasa di Jawa Timur dengan banyak perusahaan manufaktur dan regional. Corporate AI training di Kediri dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Kediri (Dhoho, Bandar, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk manufaktur, perdagangan, jasa, dan perusahaan regional Jawa Timur",
+      "Tersedia on-site di kawasan bisnis Kediri dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Kediri",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Kediri",
+      "pelatihan AI Kediri untuk perusahaan",
+      "AI training Kediri",
+      "pelatihan AI Kediri",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Kediri saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-kediri-untuk-perusahaan",
+        q: "Pelatihan AI Kediri untuk perusahaan",
+        a: "Pelatihan AI Kediri untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks manufaktur dan perdagangan. AI Training Indonesia menyelenggarakannya di kawasan bisnis Kediri dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-kediri",
+          q: "What is corporate AI training in Kediri?",
+          a: "Corporate AI training in Kediri is an on-site or virtual program for company teams in East Java: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Kediri business districts (Dhoho, Bandar, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Kediri tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Kediri dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Kediri?",
+          a: "Program cocok untuk manufaktur, perdagangan, jasa, dan perusahaan regional Jawa Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {

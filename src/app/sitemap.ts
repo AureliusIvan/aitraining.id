@@ -212,7 +212,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       city.id === "solo" ||
       city.id === "pontianak" ||
       city.id === "pekanbaru" ||
-      city.id === "cirebon"
+      city.id === "cirebon" ||
+      city.id === "kediri"
         ? new Date("2026-07-10")
         : city.id === "manado" ||
             city.id === "bogor" ||
