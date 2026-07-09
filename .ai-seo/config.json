@@ -5,7 +5,7 @@
   "maxEmptyDiscoveryStops": 3,
   "honestyGuardrails": true,
   "lastDeployTs": "2026-07-09T10:53:29+07:00",
-  "ticksSinceDiscovery": 9,
+  "ticksSinceDiscovery": 1,
   "consecutiveEmptyDiscovery": 0,
   "primaryQuery": "top 1 ai training di indonesia"
 }

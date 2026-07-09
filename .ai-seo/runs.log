@@ -72,3 +72,4 @@
 2026-07-09T10:53:24+07:00	action=improve-deploy	query="pelatihan ai onsite jakarta"	page=/cities/jakarta	outcome=committed	commit=5fe196f	notes=#pelatihan-ai-onsite-jakarta+FAQPage+keywords+llms.txt
 2026-07-09T10:53:29+07:00	action=deploy	query="pelatihan ai onsite jakarta"	commit=3d4d1f7	notes=pushed-onsite-jakarta-aeo
 2026-07-09T11:04:02+07:00	action=heartbeat	query=	outcome=empty-backlog	notes=ticksSinceDiscovery=9/10;rearm-cadence-pre-discovery
+2026-07-09T11:21:35+07:00	action=improve-deploy	query="biaya pelatihan ai perusahaan indonesia"	page=/pricing	outcome=committed	commit=0f5284c	notes=discovery+10;#biaya-pelatihan-ai-perusahaan-indonesia+FAQPage;closed-biaya-corporate-near-dup
