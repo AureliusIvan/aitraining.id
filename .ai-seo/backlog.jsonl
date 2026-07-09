@@ -84,7 +84,7 @@
 {"q": "pelatihan ai balikpapan untuk perusahaan", "page": "/cities/balikpapan", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-balikpapan-untuk-perusahaan"}
 {"q": "ai training malang", "page": "/cities/malang", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #ai-training-malang"}
 {"q": "corporate ai training batam", "page": "/cities/batam", "status": "done", "commit": "f8257e0", "ts": "2026-07-09", "notes": "/#corporate-ai-training-batam"}
-{"q": "pelatihan ai untuk hospitality indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "pelatihan ai untuk hospitality indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "c6a07db", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-hospitality-indonesia"}
 {"q": "pelatihan ai untuk asuransi indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai untuk konstruksi indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai untuk pendidikan indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
