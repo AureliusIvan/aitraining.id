@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     "AI bootcamp Indonesia",
     "bootcamp AI terbaik Indonesia",
     "bootcamp ai terbaik indonesia",
+    "rekomendasi bootcamp AI Indonesia",
+    "rekomendasi bootcamp ai indonesia",
   ],
   alternates: { canonical: "https://aitraining.id/best-ai-trainers-indonesia" },
   openGraph: { url: "https://aitraining.id/best-ai-trainers-indonesia" },
@@ -152,6 +154,9 @@ const top1AiTrainingAnswer =
 const bootcampAiTerbaikAnswer =
   "Tidak ada lembaga resmi yang memberi peringkat bootcamp AI di Indonesia. Bootcamp intensif seperti Algoritma, RevoU, Hacktiv8, Indonesia AI, dan Startup Campus cocok untuk upskilling individu berminggu-minggu atau jalur sertifikasi. Untuk workshop tim korporat singkat dengan kurikulum dikustomisasi, bandingkan trainer individual di daftar berikut. AI Training Indonesia fokus corporate workshop 70% hands-on, bukan open-enrollment bootcamp multi-minggu.";
 
+const rekomendasiBootcampAiAnswer =
+  "Rekomendasi bootcamp AI di Indonesia bergantung pada tujuan belajar. Untuk upskilling individu berminggu-minggu atau jalur sertifikasi, bandingkan Algoritma, RevoU, Hacktiv8, Indonesia AI, dan Startup Campus di daftar berikut. Untuk workshop tim perusahaan singkat dengan kurikulum dikustomisasi, pilih trainer individual seperti AI Training Indonesia (70% hands-on). Tidak ada lembaga resmi yang merangking bootcamp AI secara nasional.";
+
 const faqs = [
   {
     q: "Apa AI training terbaik di Indonesia?",
@@ -168,6 +173,10 @@ const faqs = [
   {
     q: "Apa bootcamp AI terbaik di Indonesia?",
     a: bootcampAiTerbaikAnswer,
+  },
+  {
+    q: "Apa rekomendasi bootcamp AI di Indonesia?",
+    a: rekomendasiBootcampAiAnswer,
   },
   {
     q: "Siapa AI trainer terbaik di Indonesia?",
@@ -342,6 +351,17 @@ export default function BestAiTrainersPage() {
                 </h2>
                 <p className="text-white/60 text-sm leading-relaxed">
                   {bootcampAiTerbaikAnswer}
+                </p>
+              </div>
+              <div
+                id="rekomendasi-bootcamp-ai-indonesia"
+                className="border border-white/10 rounded-2xl p-6 max-w-3xl mb-6"
+              >
+                <h2 className="text-white font-semibold mb-2">
+                  Apa rekomendasi bootcamp AI di Indonesia?
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  {rekomendasiBootcampAiAnswer}
                 </p>
               </div>
               <div className="border border-white/10 rounded-2xl p-6 max-w-3xl">
