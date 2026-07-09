@@ -640,6 +640,8 @@ export const cities: City[] = [
       "pelatihan AI Balikpapan untuk perusahaan",
       "AI training Balikpapan",
       "pelatihan AI Balikpapan",
+      "pelatihan AI onsite Balikpapan",
+      "pelatihan AI on-site Balikpapan",
     ],
     aiTrainer: {
       intro:
@@ -654,6 +656,11 @@ export const cities: City[] = [
           id: "corporate-ai-training-balikpapan",
           q: "What is corporate AI training in Balikpapan?",
           a: "Corporate AI training in Balikpapan is an on-site or virtual program for company teams in East Kalimantan: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Balikpapan business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-balikpapan",
+          q: "Apa itu pelatihan AI onsite di Balikpapan?",
+          a: "Pelatihan AI onsite di Balikpapan adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di kawasan bisnis Balikpapan (Klandasan, Sepinggan, dan sekitarnya). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks energi dan jasa industri Kalimantan Timur, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Balikpapan tersedia on-site atau online?",

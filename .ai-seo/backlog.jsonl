@@ -124,7 +124,7 @@
 {"q": "pelatihan ai onsite palembang", "page": "/cities/palembang", "status": "done", "commit": "9e6d349", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-palembang"}
 {"q": "pelatihan ai onsite malang", "page": "/cities/malang", "status": "done", "commit": "b93e1c2", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-malang"}
 {"q": "pelatihan ai onsite batam", "page": "/cities/batam", "status": "done", "commit": "23fa910", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-batam"}
-{"q": "pelatihan ai onsite balikpapan", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
+{"q": "pelatihan ai onsite balikpapan", "page": "/cities/balikpapan", "status": "done", "commit": "18c1495", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-balikpapan"}
 {"q": "corporate ai training cirebon", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
 {"q": "corporate ai training kediri", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
 {"q": "corporate ai training banjarmasin", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
