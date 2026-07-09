@@ -90,8 +90,8 @@
 {"q": "pelatihan ai untuk pendidikan indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "de7d8cb", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-pendidikan-indonesia"}
 {"q": "ai training untuk data analyst indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "f7bd56f", "ts": "2026-07-09", "notes": "/#ai-training-untuk-data-analyst-indonesia"}
 {"q": "pelatihan ai onsite bandung", "page": "/cities/bandung", "status": "done", "commit": "437cb67", "ts": "2026-07-09", "notes": "/#pelatihan-ai-onsite-bandung"}
-{"q": "corporate ai training manado", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "corporate ai training manado", "page": "/cities/manado", "status": "done", "commit": "723853b", "ts": "2026-07-09", "notes": "/#corporate-ai-training-manado"}
 {"q": "pelatihan ai untuk startup indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai untuk bumn indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai batam untuk perusahaan", "page": "/cities/batam", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-batam-untuk-perusahaan"}
-{"q": "pelatihan ai manado untuk perusahaan", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "pelatihan ai manado untuk perusahaan", "page": "/cities/manado", "status": "done", "commit": "723853b", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-manado-untuk-perusahaan"}

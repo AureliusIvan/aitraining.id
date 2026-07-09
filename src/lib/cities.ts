@@ -709,6 +709,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "manado",
+    name: "Manado",
+    title: "Corporate AI Training Manado",
+    description:
+      "Manado adalah pusat bisnis dan jasa di Sulawesi Utara. Corporate AI training di Manado tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Manado adalah pusat bisnis, pemerintahan, dan jasa di Sulawesi Utara dengan banyak perusahaan regional dan sektor pariwisata. Corporate AI training di Manado dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Manado (Boulevard, Wenang, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk jasa, pemerintahan regional, pariwisata, dan perusahaan Sulawesi Utara",
+      "Tersedia on-site di kawasan bisnis Manado dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional kantor regional",
+      "Virtual session tersedia untuk tim di luar Manado",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Manado",
+      "pelatihan AI Manado untuk perusahaan",
+      "AI training Manado",
+      "pelatihan AI Manado",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Manado saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-manado-untuk-perusahaan",
+        q: "Pelatihan AI Manado untuk perusahaan",
+        a: "Pelatihan AI Manado untuk perusahaan adalah program corporate training on-site atau virtual di Sulawesi Utara yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks jasa dan pemerintahan regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Manado dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-manado",
+          q: "What is corporate AI training in Manado?",
+          a: "Corporate AI training in Manado is an on-site or virtual program for company teams in North Sulawesi: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Manado business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Manado tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Manado dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Manado?",
+          a: "Program cocok untuk jasa, pemerintahan regional, pariwisata, dan perusahaan Sulawesi Utara yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
