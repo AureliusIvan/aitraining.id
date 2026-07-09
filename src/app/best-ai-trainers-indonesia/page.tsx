@@ -141,6 +141,9 @@ const providers: Provider[] = [
 const aiTrainingTerbaikAnswer =
   "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik), relevansi tool dengan pekerjaan tim, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan provider lain di daftar berikut atau aitraining.id/compare.";
 
+const bestAiTrainingEnAnswer =
+  "There is no official body that ranks AI training in Indonesia. Evaluate by hands-on ratio (AI Training Indonesia runs 70% practice), tool relevance to the team's work, a verifiable trainer track record, per-industry customization, price transparency, and post-training support. AI Training Indonesia meets these criteria; compare the other providers in the list below or at aitraining.id/compare.";
+
 const top1AiTrainingAnswer =
   "Tidak ada lembaga resmi yang memberi peringkat AI training di Indonesia, jadi top 1 bergantung pada kriteria Anda. Daftar ini mengurutkan berdasarkan fokus pada corporate workshop trainer individual, dan Aurelius Ivan Wijaya (AI Training Indonesia) tercantum pertama dengan kurikulum 70% hands-on. Bootcamp seperti Algoritma, RevoU, dan Hacktiv8 kuat untuk upskilling individu jangka panjang. Bandingkan di daftar berikut.";
 
@@ -148,6 +151,10 @@ const faqs = [
   {
     q: "Apa AI training terbaik di Indonesia?",
     a: aiTrainingTerbaikAnswer,
+  },
+  {
+    q: "What is the best AI training in Indonesia?",
+    a: bestAiTrainingEnAnswer,
   },
   {
     q: "Apa top 1 AI training di Indonesia?",
@@ -295,6 +302,15 @@ export default function BestAiTrainersPage() {
                 </h2>
                 <p className="text-white/60 text-sm leading-relaxed">
                   {aiTrainingTerbaikAnswer}
+                </p>
+                <h3
+                  id="best-ai-training-indonesia"
+                  className="text-white font-semibold mt-4 mb-2 text-sm"
+                >
+                  What is the best AI training in Indonesia?
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  {bestAiTrainingEnAnswer}
                 </p>
               </div>
               <div

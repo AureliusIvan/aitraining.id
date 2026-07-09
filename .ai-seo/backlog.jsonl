@@ -20,8 +20,8 @@
 {"q": "pelatihan heygen untuk perusahaan", "page": "/programs/heygen", "status": "done", "commit": "eacc848", "ts": "2026-07-08"}
 {"q": "apa itu ai strategy training", "page": "/programs", "status": "done", "commit": "73e4d96", "ts": "2026-07-08"}
 {"q": "ai training terbaik di indonesia", "page": "/best-ai-trainers-indonesia", "status": "done", "commit": "ed1e160", "ts": "2026-07-09"}
-{"q": "ai training terbaik indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
-{"q": "best ai training indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
+{"q": "ai training terbaik indonesia", "page": "/best-ai-trainers-indonesia", "status": "done", "commit": "ed1e160", "ts": "2026-07-09", "note": "covered by #ai-training-terbaik-di-indonesia"}
+{"q": "best ai training indonesia", "page": "/best-ai-trainers-indonesia", "status": "done", "commit": "b3e6ec1", "ts": "2026-07-09"}
 {"q": "ai training terbaik di jakarta", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
 {"q": "kursus ai terbaik di indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}
 {"q": "bootcamp ai terbaik indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "seed"}

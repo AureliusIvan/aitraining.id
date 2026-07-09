@@ -43,3 +43,4 @@
 2026-07-09T07:57:19+07:00	action=deploy-all	notes=provider-vs-trainer-audit+brand-rename+top12+jakarta-bilingual+telkom-asset;commit="63e0204"
 2026-07-09T08:02:20+07:00	action=improve-hold-deploy	query="top 1 ai training di indonesia"	page=/best-ai-trainers-indonesia	outcome=committed	commit=934cfa7	notes=#top-1-ai-training-di-indonesia+FAQPage+keywords+llms.txt;deploy-gate-minDeployGap
 2026-07-09T08:07:37+07:00	action=deploy	notes=pushed-top1-aeo+msig-photo;commits=9c86686,6a25da5
+2026-07-09T08:08:55+07:00	action=improve-hold-deploy	query="best ai training indonesia"	page=/best-ai-trainers-indonesia	outcome=committed	commit=b3e6ec1	notes=#best-ai-training-indonesia+FAQPage-EN;also-closed-ai-training-terbaik-indonesia-seed
