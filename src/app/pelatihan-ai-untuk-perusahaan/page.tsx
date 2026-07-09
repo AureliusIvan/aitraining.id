@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     "pelatihan AI untuk sales Indonesia",
     "pelatihan AI untuk legal Indonesia",
     "pelatihan AI untuk operations Indonesia",
+    "berapa lama pelatihan AI perusahaan Indonesia",
+    "durasi pelatihan AI corporate Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -84,6 +86,9 @@ const pelatihanAiUntukLegal =
 
 const pelatihanAiUntukOperations =
   "Pelatihan AI untuk operations di Indonesia adalah program corporate yang mengajarkan tim operasional memakai Generative AI dan automation (n8n) untuk SOP, tiket, eskalasi, laporan harian, dan workflow lintas tools, dengan penekanan pada handoff manusia untuk keputusan kritis. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses operations perusahaan.";
+
+const berapaLamaPelatihanAiPerusahaan =
+  "Durasi pelatihan AI untuk perusahaan di Indonesia umumnya half-day (4 jam), full-day (8 jam), atau multi-day (2-5 hari) sesuai kedalaman adopsi. AI Training Indonesia biasanya memulai dengan satu full-day workshop 70% hands-on, lalu sesi lanjutan setelah tim mencoba implementasi. Durasi final ditentukan di discovery call gratis 30 menit berdasarkan jumlah peserta dan use case.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -246,6 +251,12 @@ const faqs: Array<{
   {
     q: "Berapa lama pelatihan AI untuk karyawan biasanya berlangsung?",
     a: "Durasi umum: half-day intensive (4 jam), full-day workshop (8 jam), atau program multi-day (2-5 hari) untuk adopsi lebih dalam. Sebagian besar perusahaan memulai dengan satu full-day workshop, lalu sesi lanjutan setelah tim mencoba implementasi di lapangan.",
+  },
+  {
+    id: "berapa-lama-pelatihan-ai-perusahaan-indonesia",
+    q: "Berapa lama pelatihan AI untuk perusahaan di Indonesia?",
+    a: berapaLamaPelatihanAiPerusahaan,
+    link: { href: "/pricing", text: "Lihat paket half-day, full-day, dan multi-day" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
