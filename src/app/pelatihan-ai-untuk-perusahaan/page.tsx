@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk asuransi Indonesia",
     "pelatihan AI untuk konstruksi Indonesia",
     "pelatihan AI untuk pendidikan Indonesia",
+    "pelatihan AI untuk startup Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -159,6 +160,9 @@ const pelatihanAiUntukKonstruksi =
 
 const pelatihanAiUntukPendidikan =
   "Pelatihan AI untuk pendidikan di Indonesia adalah program corporate yang mengajarkan staf akademik dan operasional memakai Generative AI dan automation (n8n) untuk draft materi ajar, ringkasan kebijakan, FAQ mahasiswa, dan workflow admin berulang, dengan penekanan pada review manusia untuk penilaian dan keputusan akademik. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses institusi pendidikan.";
+
+const pelatihanAiUntukStartup =
+  "Pelatihan AI untuk startup di Indonesia adalah program corporate yang mengajarkan founder dan tim lean memakai Generative AI dan automation (n8n) untuk riset pasar, draft pitch/PRD, konten growth, support awal, dan workflow admin berulang, dengan penekanan pada handoff manusia untuk keputusan produk dan investor. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke tahap dan stack startup.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -429,6 +433,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk pendidikan di Indonesia?",
     a: pelatihanAiUntukPendidikan,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk pendidikan" },
+  },
+  {
+    id: "pelatihan-ai-untuk-startup-indonesia",
+    q: "Apa itu pelatihan AI untuk startup di Indonesia?",
+    a: pelatihanAiUntukStartup,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk startup" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
