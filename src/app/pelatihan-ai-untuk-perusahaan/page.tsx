@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     "pelatihan AI untuk operations Indonesia",
     "berapa lama pelatihan AI perusahaan Indonesia",
     "durasi pelatihan AI corporate Indonesia",
+    "pelatihan AI untuk customer service Indonesia",
+    "AI training untuk customer service Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -89,6 +91,9 @@ const pelatihanAiUntukOperations =
 
 const berapaLamaPelatihanAiPerusahaan =
   "Durasi pelatihan AI untuk perusahaan di Indonesia umumnya half-day (4 jam), full-day (8 jam), atau multi-day (2-5 hari) sesuai kedalaman adopsi. AI Training Indonesia biasanya memulai dengan satu full-day workshop 70% hands-on, lalu sesi lanjutan setelah tim mencoba implementasi. Durasi final ditentukan di discovery call gratis 30 menit berdasarkan jumlah peserta dan use case.";
+
+const pelatihanAiUntukCustomerService =
+  "Pelatihan AI untuk customer service di Indonesia adalah program corporate yang mengajarkan tim CS memakai Generative AI dan automation (n8n) untuk draft balasan, FAQ, ringkasan tiket, dan eskalasi, dengan penekanan pada review manusia sebelum kirim ke pelanggan dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke channel dan SLA perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -257,6 +262,12 @@ const faqs: Array<{
     q: "Berapa lama pelatihan AI untuk perusahaan di Indonesia?",
     a: berapaLamaPelatihanAiPerusahaan,
     link: { href: "/pricing", text: "Lihat paket half-day, full-day, dan multi-day" },
+  },
+  {
+    id: "pelatihan-ai-untuk-customer-service-indonesia",
+    q: "Apa itu pelatihan AI untuk customer service di Indonesia?",
+    a: pelatihanAiUntukCustomerService,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk CS" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
