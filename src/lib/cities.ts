@@ -327,6 +327,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "bali",
+    name: "Bali",
+    title: "Corporate AI Training Bali",
+    description:
+      "Bali adalah hub hospitality, pariwisata, dan remote-first companies di Indonesia. Corporate AI training di Bali tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar pulau.",
+    intro:
+      "Bali adalah pusat hospitality, pariwisata, dan perusahaan remote-first di Indonesia. Corporate AI training di Bali dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di Denpasar, Badung (Kuta, Seminyak, Nusa Dua), dan sekitarnya, serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk hospitality, pariwisata, agensi, dan remote-first companies",
+      "Tersedia on-site di Denpasar, Badung (Kuta, Seminyak, Nusa Dua), dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional hotel, F&B, dan layanan tamu",
+      "Virtual session tersedia untuk tim di luar Bali",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "pelatihan AI Bali untuk perusahaan",
+      "pelatihan AI Bali",
+      "corporate AI training Bali",
+      "AI training Bali",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Bali saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-bali-untuk-perusahaan",
+        q: "Pelatihan AI Bali untuk perusahaan",
+        a: "Pelatihan AI Bali untuk perusahaan adalah program corporate training on-site atau virtual di Bali yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks hospitality, pariwisata, dan remote-first business. AI Training Indonesia menyelenggarakannya di Denpasar, Badung, dan sekitarnya dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "pelatihan-ai-bali-untuk-perusahaan-faq",
+          q: "Apa itu pelatihan AI Bali untuk perusahaan?",
+          a: "Pelatihan AI Bali untuk perusahaan adalah program corporate on-site atau virtual untuk tim di Bali: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di Denpasar, Badung (Kuta, Seminyak, Nusa Dua), dan sekitarnya; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Bali tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup Denpasar, Badung (Kuta, Seminyak, Nusa Dua), dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar pulau. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Bali?",
+          a: "Program cocok untuk hospitality, pariwisata, F&B, agensi, dan remote-first company di Bali yang ingin mengintegrasikan Generative AI ke operasional dan layanan: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
