@@ -419,6 +419,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "semarang",
+    name: "Semarang",
+    title: "Corporate AI Training Semarang",
+    description:
+      "Semarang adalah pusat industri dan pelabuhan di Jawa Tengah. Corporate AI training di Semarang tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Semarang adalah pusat industri, pelabuhan, dan jasa di Jawa Tengah. Corporate AI training di Semarang dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Semarang (Simpang Lima, Gajahmada, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk manufaktur, logistik pelabuhan, perdagangan, dan jasa Jawa Tengah",
+      "Tersedia on-site di kawasan bisnis Semarang dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Semarang",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "pelatihan AI Semarang untuk perusahaan",
+      "AI training Semarang",
+      "corporate AI training Semarang",
+      "pelatihan AI Semarang",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Semarang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-semarang-untuk-perusahaan",
+        q: "Pelatihan AI Semarang untuk perusahaan",
+        a: "Pelatihan AI Semarang untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Tengah yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks manufaktur, logistik, dan jasa. AI Training Indonesia menyelenggarakannya di kawasan bisnis Semarang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "pelatihan-ai-semarang-untuk-perusahaan-faq",
+          q: "Apa itu pelatihan AI Semarang untuk perusahaan?",
+          a: "Pelatihan AI Semarang untuk perusahaan adalah program corporate on-site atau virtual untuk tim di Jawa Tengah: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di kawasan bisnis Semarang; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Semarang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Semarang dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Semarang?",
+          a: "Program cocok untuk manufaktur, logistik pelabuhan, perdagangan, dan jasa di Jawa Tengah yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
