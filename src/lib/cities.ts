@@ -656,6 +656,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "batam",
+    name: "Batam",
+    title: "Corporate AI Training Batam",
+    description:
+      "Batam adalah pusat industri dan perdagangan di Kepulauan Riau. Corporate AI training di Batam tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Batam adalah pusat industri, perdagangan, dan jasa di Kepulauan Riau dengan banyak perusahaan manufaktur dan logistik. Corporate AI training di Batam dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Batam (Nagoya, Batam Centre, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk manufaktur, perdagangan, logistik, dan perusahaan regional Kepulauan Riau",
+      "Tersedia on-site di kawasan bisnis Batam dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Batam",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Batam",
+      "pelatihan AI Batam untuk perusahaan",
+      "AI training Batam",
+      "pelatihan AI Batam",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Batam saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-batam-untuk-perusahaan",
+        q: "Pelatihan AI Batam untuk perusahaan",
+        a: "Pelatihan AI Batam untuk perusahaan adalah program corporate training on-site atau virtual di Kepulauan Riau yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks manufaktur dan perdagangan. AI Training Indonesia menyelenggarakannya di kawasan bisnis Batam dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-batam",
+          q: "What is corporate AI training in Batam?",
+          a: "Corporate AI training in Batam is an on-site or virtual program for company teams in the Riau Islands: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Batam business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Batam tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Batam dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Batam?",
+          a: "Program cocok untuk manufaktur, perdagangan, logistik, dan perusahaan regional Kepulauan Riau yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
