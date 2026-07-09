@@ -739,6 +739,8 @@ export const cities: City[] = [
       "pelatihan AI Batam untuk perusahaan",
       "AI training Batam",
       "pelatihan AI Batam",
+      "pelatihan AI onsite Batam",
+      "pelatihan AI on-site Batam",
     ],
     aiTrainer: {
       intro:
@@ -753,6 +755,11 @@ export const cities: City[] = [
           id: "corporate-ai-training-batam",
           q: "What is corporate AI training in Batam?",
           a: "Corporate AI training in Batam is an on-site or virtual program for company teams in the Riau Islands: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Batam business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-batam",
+          q: "Apa itu pelatihan AI onsite di Batam?",
+          a: "Pelatihan AI onsite di Batam adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di kawasan bisnis Batam (Nagoya, Batam Centre, dan sekitarnya). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks manufaktur dan perdagangan Kepulauan Riau, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Batam tersedia on-site atau online?",
