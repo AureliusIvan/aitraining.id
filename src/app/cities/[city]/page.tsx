@@ -29,6 +29,7 @@ export async function generateMetadata({
           `corporate AI training ${city.name}`,
           `AI training ${city.name}`,
           `best AI training ${city.name}`,
+          `AI training terbaik di ${city.name}`,
           ...(city.keywords ?? []),
         ]
       : city.keywords,
@@ -359,7 +360,11 @@ export default async function CityPage({
                 )}
                 <div className="space-y-6 max-w-3xl">
                   {city.aiTrainer.faqs.map((f) => (
-                    <div key={f.q} className="border-b border-white/10 pb-6">
+                    <div
+                      key={f.q}
+                      id={f.id}
+                      className="border-b border-white/10 pb-6"
+                    >
                       <h3 className="text-white font-semibold mb-2">{f.q}</h3>
                       <p className="text-white/60 text-sm leading-relaxed">
                         {f.a}
@@ -383,7 +388,7 @@ export default async function CityPage({
                     href="/best-ai-trainers-indonesia"
                     className="underline hover:text-white/80 transition-colors"
                   >
-                    Top 10 AI Trainer Indonesia
+                    daftar AI Trainer Indonesia
                   </Link>{" "}
                   atau lihat{" "}
                   <Link

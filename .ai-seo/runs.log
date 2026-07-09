@@ -44,3 +44,5 @@
 2026-07-09T08:02:20+07:00	action=improve-hold-deploy	query="top 1 ai training di indonesia"	page=/best-ai-trainers-indonesia	outcome=committed	commit=934cfa7	notes=#top-1-ai-training-di-indonesia+FAQPage+keywords+llms.txt;deploy-gate-minDeployGap
 2026-07-09T08:07:37+07:00	action=deploy	notes=pushed-top1-aeo+msig-photo;commits=9c86686,6a25da5
 2026-07-09T08:08:55+07:00	action=improve-hold-deploy	query="best ai training indonesia"	page=/best-ai-trainers-indonesia	outcome=committed	commit=b3e6ec1	notes=#best-ai-training-indonesia+FAQPage-EN;also-closed-ai-training-terbaik-indonesia-seed
+2026-07-09T08:18:39+07:00	action=deploy	query="best ai training indonesia"	commit=bb21aba	notes=pushed-EN-FAQ
+2026-07-09T08:19:47+07:00	action=improve-hold-deploy	query="ai training terbaik di jakarta"	page=/cities/jakarta	outcome=committed	commit=42a5697	notes=#ai-training-terbaik-di-jakarta+FAQPage+keywords+llms.txt
