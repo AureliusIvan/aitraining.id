@@ -79,7 +79,7 @@
 {"q": "pelatihan ai untuk business analyst indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "06b6912", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-business-analyst-indonesia"}
 {"q": "corporate ai training balikpapan", "page": "/cities/balikpapan", "status": "done", "commit": "d8a6954", "ts": "2026-07-09", "notes": "/#corporate-ai-training-balikpapan"}
 {"q": "pelatihan ai malang untuk perusahaan", "page": "/cities/malang", "status": "done", "commit": "020c2d7", "ts": "2026-07-09", "notes": "/#pelatihan-ai-malang-untuk-perusahaan"}
-{"q": "pelatihan ai hybrid indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "pelatihan ai hybrid indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "50b17cd", "ts": "2026-07-09", "notes": "/#pelatihan-ai-hybrid-indonesia"}
 {"q": "pelatihan ai palembang untuk perusahaan", "page": "/cities/palembang", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-palembang-untuk-perusahaan"}
 {"q": "pelatihan ai balikpapan untuk perusahaan", "page": "/cities/balikpapan", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-balikpapan-untuk-perusahaan"}
 {"q": "ai training malang", "page": "/cities/malang", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #ai-training-malang"}

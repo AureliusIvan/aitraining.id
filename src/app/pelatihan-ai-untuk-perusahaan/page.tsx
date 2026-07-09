@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk engineering Indonesia",
     "in-house AI training Indonesia",
     "pelatihan AI virtual Indonesia",
+    "pelatihan AI hybrid Indonesia",
     "pelatihan AI untuk finance Indonesia",
     "AI training untuk finance Indonesia",
     "pelatihan AI untuk sales Indonesia",
@@ -87,6 +88,9 @@ const inHouseAiTrainingIndonesia =
 
 const pelatihanAiVirtualIndonesia =
   "Pelatihan AI virtual di Indonesia adalah program corporate live online untuk satu perusahaan atau kohort tertutup, dengan lab hands-on, breakout, dan materi yang sama dengan sesi on-site. AI Training Indonesia menyelenggarakan format virtual 70% praktik untuk automation (n8n), AI-powered development (Cursor), dan AI agents, cocok untuk tim remote/hybrid di seluruh Indonesia.";
+
+const pelatihanAiHybridIndonesia =
+  "Pelatihan AI hybrid di Indonesia adalah program corporate yang menggabungkan sesi on-site di kantor dengan sesi live online untuk cabang atau anggota tim remote, dengan kurikulum 70% hands-on yang sama di kedua format. AI Training Indonesia merancang hybrid untuk automation (n8n), AI-powered development (Cursor), dan AI agents agar satu perusahaan bisa melatih tim tersebar tanpa memecah materi.";
 
 const pelatihanAiUntukFinance =
   "Pelatihan AI untuk finance di Indonesia adalah program corporate yang mengajarkan tim finance memakai Generative AI dan automation (n8n) untuk draft laporan, rekonsiliasi awal, FAQ kebijakan, dan workflow admin berulang, dengan penekanan pada review manusia, akurasi angka, dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses finance perusahaan.";
@@ -241,6 +245,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI virtual di Indonesia?",
     a: pelatihanAiVirtualIndonesia,
     link: { href: "/contact", text: "Diskusikan format virtual untuk tim Anda" },
+  },
+  {
+    id: "pelatihan-ai-hybrid-indonesia",
+    q: "Apa itu pelatihan AI hybrid di Indonesia?",
+    a: pelatihanAiHybridIndonesia,
+    link: { href: "/contact", text: "Diskusikan format hybrid on-site + virtual untuk tim Anda" },
   },
   {
     id: "pelatihan-ai-untuk-finance-indonesia",

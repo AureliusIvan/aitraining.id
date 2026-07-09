@@ -62,6 +62,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `pelatihan AI untuk engineering Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-untuk-engineering-indonesia` + FAQPage, added 2026-07-09; Cursor/agentic coding with human-review framing) |
 | `in-house AI training Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#in-house-ai-training-indonesia` + FAQPage EN, added 2026-07-09; private company cohort / on-site or closed virtual) |
 | `pelatihan AI virtual Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-virtual-indonesia` + FAQPage, added 2026-07-09; live online closed cohort, same hands-on as on-site) |
+| `pelatihan AI hybrid Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-hybrid-indonesia` + FAQPage, added 2026-07-09; combined on-site + live online for distributed teams) |
 | `pelatihan AI untuk finance Indonesia` / `AI training untuk finance Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-untuk-finance-indonesia` + FAQPage, added 2026-07-09; finance reporting/reconciliation automation with human review) |
 | `pelatihan AI untuk sales Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-untuk-sales-indonesia` + FAQPage, added 2026-07-09; sales outreach/CRM/HeyGen with human review before send) |
 | `pelatihan AI untuk legal Indonesia` | `/pelatihan-ai-untuk-perusahaan` (`#pelatihan-ai-untuk-legal-indonesia` + FAQPage, added 2026-07-09; legal research/draft assist with mandatory counsel verification) |
