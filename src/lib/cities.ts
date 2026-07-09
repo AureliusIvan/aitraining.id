@@ -481,6 +481,8 @@ export const cities: City[] = [
       "AI training Semarang",
       "corporate AI training Semarang",
       "pelatihan AI Semarang",
+      "pelatihan AI onsite Semarang",
+      "pelatihan AI on-site Semarang",
     ],
     aiTrainer: {
       intro:
@@ -495,6 +497,11 @@ export const cities: City[] = [
           id: "pelatihan-ai-semarang-untuk-perusahaan-faq",
           q: "Apa itu pelatihan AI Semarang untuk perusahaan?",
           a: "Pelatihan AI Semarang untuk perusahaan adalah program corporate on-site atau virtual untuk tim di Jawa Tengah: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di kawasan bisnis Semarang; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-semarang",
+          q: "Apa itu pelatihan AI onsite di Semarang?",
+          a: "Pelatihan AI onsite di Semarang adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di kawasan bisnis Semarang (Simpang Lima, Gajahmada, dan sekitarnya). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks manufaktur dan logistik Jawa Tengah, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Semarang tersedia on-site atau online?",
