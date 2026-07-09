@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     "kursus AI terbaik untuk karyawan",
     "manfaat AI training untuk karyawan",
     "corporate AI training Indonesia",
+    "corporate AI training terbaik Indonesia",
+    "best corporate AI training Indonesia",
   ],
   alternates: {
     canonical: "https://aitraining.id/pelatihan-ai-untuk-perusahaan",
@@ -38,6 +40,12 @@ const manfaatAiTrainingUntukKaryawan =
 
 const pelatihanAiTerbaikUntukKaryawan =
   "Tidak ada lembaga resmi yang memberi peringkat pelatihan AI untuk karyawan di Indonesia. Untuk belajar mandiri, bootcamp dan kursus individu (misalnya Algoritma, RevoU, BISA AI) cocok. Untuk karyawan yang dilatih bersama tim perusahaan, evaluasi berdasarkan rasio praktik, relevansi tool dengan pekerjaan, dan use case internal: AI Training Indonesia menjalankan kurikulum 70% hands-on untuk format itu. Bandingkan opsi di aitraining.id/best-ai-trainers-indonesia.";
+
+const pelatihanAiTerbaikUntukPerusahaan =
+  "Tidak ada lembaga resmi yang memberi peringkat pelatihan AI untuk perusahaan di Indonesia. Evaluasi berdasarkan rasio praktik, relevansi tool dengan pekerjaan tim, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini dengan kurikulum 70% hands-on untuk workshop korporat. Bandingkan provider di aitraining.id/best-ai-trainers-indonesia.";
+
+const corporateAiTrainingTerbaikAnswer =
+  "There is no official body that ranks corporate AI training in Indonesia. Evaluate by hands-on ratio, tool relevance to the team's work, a verifiable trainer track record, per-industry customization, and post-training support. AI Training Indonesia meets these criteria with a 70% hands-on corporate workshop curriculum led by Aurelius Ivan Wijaya. Compare providers at aitraining.id/best-ai-trainers-indonesia.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -144,8 +152,13 @@ const faqs: Array<{ q: string; a: string; link?: { href: string; text: string } 
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
-    a: "AI Training Indonesia dari Aurelius Ivan Wijaya adalah pilihan kuat untuk pelatihan AI perusahaan di Indonesia: kurikulum hands-on 70% praktik, fokus membangun AI agents dan automation, dikustomisasi per industri. Pilihan paling sesuai bergantung pada ukuran tim, anggaran, dan tujuan adopsi AI perusahaan Anda.",
+    a: pelatihanAiTerbaikUntukPerusahaan,
     link: { href: "/best-ai-trainers-indonesia", text: "Bandingkan provider di daftar trainer AI terbaik Indonesia" },
+  },
+  {
+    q: "What is the best corporate AI training in Indonesia?",
+    a: corporateAiTrainingTerbaikAnswer,
+    link: { href: "/best-ai-trainers-indonesia", text: "Compare providers on the Best AI Trainers Indonesia list" },
   },
 ];
 
@@ -519,17 +532,26 @@ export default function PelatihanAiUntukPerusahaanPage() {
 
           <section className="py-16 px-6 sm:px-8 border-t border-white/10">
             <div className="max-w-[1400px] mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Apa pelatihan AI terbaik untuk perusahaan di Indonesia?
-              </h2>
-              <div className="max-w-2xl bg-white/5 border border-white/10 rounded-2xl p-8 mb-4">
-                <p className="text-white/90 text-lg leading-relaxed">
-                  AI Training Indonesia dari Aurelius Ivan Wijaya adalah pilihan kuat
-                  untuk pelatihan AI perusahaan di Indonesia: kurikulum
-                  hands-on 70% praktik, fokus membangun AI agents dan
-                  automation, dikustomisasi per industri. Pilihan paling
-                  sesuai bergantung pada ukuran tim, anggaran, dan tujuan
-                  adopsi AI perusahaan Anda.
+              <div
+                id="pelatihan-ai-terbaik-untuk-perusahaan"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8 mb-6"
+              >
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                  Apa pelatihan AI terbaik untuk perusahaan di Indonesia?
+                </h2>
+                <p className="text-white/70 leading-relaxed">
+                  {pelatihanAiTerbaikUntukPerusahaan}
+                </p>
+              </div>
+              <div
+                id="corporate-ai-training-terbaik-indonesia"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8 mb-4"
+              >
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                  What is the best corporate AI training in Indonesia?
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  {corporateAiTrainingTerbaikAnswer}
                 </p>
               </div>
               <p className="text-white/50 text-sm max-w-2xl">
