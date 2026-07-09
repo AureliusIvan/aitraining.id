@@ -889,6 +889,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "depok",
+    name: "Depok",
+    title: "Corporate AI Training Depok",
+    description:
+      "Depok adalah pusat pendidikan dan jasa di Jabodetabek yang dekat dengan Jakarta. Corporate AI training di Depok tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Depok adalah pusat pendidikan, jasa, dan bisnis di Jabodetabek dengan akses cepat ke Jakarta Selatan. Corporate AI training di Depok dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Depok (Margonda, UI, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk jasa, edukasi, startup, dan perusahaan Jabodetabek",
+      "Tersedia on-site di kawasan bisnis Depok dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional kantor regional",
+      "Virtual session tersedia untuk tim di luar Depok",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Depok",
+      "pelatihan AI Depok untuk perusahaan",
+      "AI training Depok",
+      "pelatihan AI Depok",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Depok saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-depok-untuk-perusahaan",
+        q: "Pelatihan AI Depok untuk perusahaan",
+        a: "Pelatihan AI Depok untuk perusahaan adalah program corporate training on-site atau virtual di Jabodetabek yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks jasa dan pendidikan. AI Training Indonesia menyelenggarakannya di kawasan bisnis Depok dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-depok",
+          q: "What is corporate AI training in Depok?",
+          a: "Corporate AI training in Depok is an on-site or virtual program for company teams in Jabodetabek near South Jakarta: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Depok business districts (Margonda, UI area, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Depok tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Depok dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Depok?",
+          a: "Program cocok untuk jasa, edukasi, startup, dan perusahaan Jabodetabek yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {

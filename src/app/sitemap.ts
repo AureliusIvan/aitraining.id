@@ -208,13 +208,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       city.id === "balikpapan" ||
       city.id === "malang" ||
       city.id === "batam" ||
-      city.id === "manado" ||
-      city.id === "bogor" ||
-      city.id === "bekasi"
-        ? new Date("2026-07-09")
-        : city.geo
-          ? new Date("2026-07-01")
-          : new Date("2026-06-06"),
+      city.id === "depok"
+        ? new Date("2026-07-10")
+        : city.id === "manado" ||
+            city.id === "bogor" ||
+            city.id === "bekasi"
+          ? new Date("2026-07-09")
+          : city.geo
+            ? new Date("2026-07-01")
+            : new Date("2026-06-06"),
     changeFrequency: "monthly",
     priority: city.geo ? 0.8 : 0.7,
   }));
