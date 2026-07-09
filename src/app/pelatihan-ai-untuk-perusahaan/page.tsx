@@ -50,6 +50,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk telekomunikasi Indonesia",
     "pelatihan AI untuk kesehatan Indonesia",
     "pelatihan AI untuk energi Indonesia",
+    "pelatihan AI untuk e-commerce Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -179,6 +180,9 @@ const pelatihanAiUntukKesehatan =
 
 const pelatihanAiUntukEnergi =
   "Pelatihan AI untuk energi di Indonesia adalah program corporate yang mengajarkan tim energi dan utilitas memakai Generative AI dan automation (n8n) untuk draft laporan operasional, ringkasan exception, FAQ prosedur, koordinasi vendor, dan workflow admin berulang, dengan penekanan pada handoff manusia untuk keputusan keselamatan dan kepatuhan. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses energi perusahaan.";
+
+const pelatihanAiUntukEcommerce =
+  "Pelatihan AI untuk e-commerce di Indonesia adalah program corporate yang mengajarkan tim marketplace dan toko online memakai Generative AI dan automation (n8n) untuk draft deskripsi produk, FAQ pelanggan, ringkasan ulasan, konten kampanye, dan workflow admin berulang, dengan penekanan pada review manusia sebelum publikasi atau kirim ke pelanggan. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses e-commerce perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -479,6 +483,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk energi di Indonesia?",
     a: pelatihanAiUntukEnergi,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk energi" },
+  },
+  {
+    id: "pelatihan-ai-untuk-e-commerce-indonesia",
+    q: "Apa itu pelatihan AI untuk e-commerce di Indonesia?",
+    a: pelatihanAiUntukEcommerce,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk e-commerce" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
