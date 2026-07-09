@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "AI training untuk finance Indonesia",
     "pelatihan AI untuk sales Indonesia",
     "pelatihan AI untuk legal Indonesia",
+    "pelatihan AI untuk operations Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -80,6 +81,9 @@ const pelatihanAiUntukSales =
 
 const pelatihanAiUntukLegal =
   "Pelatihan AI untuk legal di Indonesia adalah program corporate yang mengajarkan tim legal memakai Generative AI untuk riset awal, ringkasan dokumen, draft klausul, dan checklist review, dengan penekanan bahwa keluaran AI wajib diverifikasi counsel dan tidak menggantikan nasihat hukum. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke workflow legal perusahaan.";
+
+const pelatihanAiUntukOperations =
+  "Pelatihan AI untuk operations di Indonesia adalah program corporate yang mengajarkan tim operasional memakai Generative AI dan automation (n8n) untuk SOP, tiket, eskalasi, laporan harian, dan workflow lintas tools, dengan penekanan pada handoff manusia untuk keputusan kritis. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses operations perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -204,6 +208,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk legal di Indonesia?",
     a: pelatihanAiUntukLegal,
     link: { href: "/contact", text: "Diskusikan use case legal untuk tim Anda" },
+  },
+  {
+    id: "pelatihan-ai-untuk-operations-indonesia",
+    q: "Apa itu pelatihan AI untuk operations di Indonesia?",
+    a: pelatihanAiUntukOperations,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk operations" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",
