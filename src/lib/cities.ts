@@ -518,6 +518,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "palembang",
+    name: "Palembang",
+    title: "Corporate AI Training Palembang",
+    description:
+      "Palembang adalah pusat bisnis dan pemerintahan di Sumatera Selatan. Corporate AI training di Palembang tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Palembang adalah pusat bisnis, pemerintahan, dan jasa di Sumatera Selatan. Corporate AI training di Palembang dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Palembang (Sudirman, Ilir Barat, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk pemerintahan daerah, jasa, perdagangan, dan perusahaan regional Sumatera Selatan",
+      "Tersedia on-site di kawasan bisnis Palembang dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Palembang",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Palembang",
+      "pelatihan AI Palembang untuk perusahaan",
+      "AI training Palembang",
+      "pelatihan AI Palembang",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Palembang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-palembang-untuk-perusahaan",
+        q: "Pelatihan AI Palembang untuk perusahaan",
+        a: "Pelatihan AI Palembang untuk perusahaan adalah program corporate training on-site atau virtual di Sumatera Selatan yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks jasa dan pemerintahan regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Palembang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-palembang",
+          q: "What is corporate AI training in Palembang?",
+          a: "Corporate AI training in Palembang is an on-site or virtual program for company teams in South Sumatra: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Palembang business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Palembang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Palembang dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Palembang?",
+          a: "Program cocok untuk pemerintahan daerah, jasa, perdagangan, dan perusahaan regional Sumatera Selatan yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
