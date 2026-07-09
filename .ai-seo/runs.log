@@ -39,3 +39,5 @@
 2026-07-08T03:52+07:00	action=idle	pending=0	ticksSinceDiscovery=8	discovery_in=2
 2026-07-08T11:37+07:00	action=idle	pending=0	ticksSinceDiscovery=9	discovery_in=1	note=hourly-cron-resumed-after-8h-gap
 2026-07-08T12:07+07:00	action=blocked	pending=0	ticksSinceDiscovery=9	reason=29-file-provider-vs-trainer-audit-parked-uncommitted;normal-improve/discovery-cycle-unsafe-until-resolved;deploy-reserved-for-ivan
+2026-07-09T07:55:19+07:00	action=improve-deploy	query="ai training terbaik di indonesia"	page=/best-ai-trainers-indonesia	outcome=done	commit=b7988ab
+2026-07-09T07:55:19+07:00	action=improve-deploy	query="ai training terbaik di indonesia"	page=/best-ai-trainers-indonesia	outcome=done	commit=b7988ab	notes=#ai-training-terbaik-di-indonesia+FAQPage+keywords+llms.txt
