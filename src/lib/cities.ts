@@ -982,6 +982,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "pontianak",
+    name: "Pontianak",
+    title: "Corporate AI Training Pontianak",
+    description:
+      "Pontianak adalah pusat perdagangan, agribisnis, dan jasa di Kalimantan Barat. Corporate AI training di Pontianak tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Pontianak adalah ibu kota Kalimantan Barat dan pusat perdagangan, agribisnis, manufaktur ringan, dan jasa regional. Corporate AI training di Pontianak dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Pontianak (Ahmad Yani, Diponegoro, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, agribisnis, manufaktur ringan, dan jasa Kalimantan Barat",
+      "Tersedia on-site di kawasan bisnis Pontianak dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Pontianak",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Pontianak",
+      "pelatihan AI Pontianak untuk perusahaan",
+      "AI training Pontianak",
+      "pelatihan AI Pontianak",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Pontianak saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-pontianak-untuk-perusahaan",
+        q: "Pelatihan AI Pontianak untuk perusahaan",
+        a: "Pelatihan AI Pontianak untuk perusahaan adalah program corporate training on-site atau virtual di Kalimantan Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan, agribisnis, dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Pontianak dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-pontianak",
+          q: "What is corporate AI training in Pontianak?",
+          a: "Corporate AI training in Pontianak is an on-site or virtual program for company teams in West Kalimantan: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Pontianak business districts (Ahmad Yani, Diponegoro, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Pontianak tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Pontianak dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Pontianak?",
+          a: "Program cocok untuk perdagangan, agribisnis, manufaktur ringan, dan jasa di Kalimantan Barat yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
