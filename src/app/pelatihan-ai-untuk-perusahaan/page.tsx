@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "durasi pelatihan AI corporate Indonesia",
     "pelatihan AI untuk customer service Indonesia",
     "AI training untuk customer service Indonesia",
+    "pelatihan AI untuk procurement Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -94,6 +95,9 @@ const berapaLamaPelatihanAiPerusahaan =
 
 const pelatihanAiUntukCustomerService =
   "Pelatihan AI untuk customer service di Indonesia adalah program corporate yang mengajarkan tim CS memakai Generative AI dan automation (n8n) untuk draft balasan, FAQ, ringkasan tiket, dan eskalasi, dengan penekanan pada review manusia sebelum kirim ke pelanggan dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke channel dan SLA perusahaan.";
+
+const pelatihanAiUntukProcurement =
+  "Pelatihan AI untuk procurement di Indonesia adalah program corporate yang mengajarkan tim procurement memakai Generative AI dan automation (n8n) untuk riset vendor awal, draft RFP/RFQ, ringkasan penawaran, checklist compliance, dan workflow admin berulang, dengan penekanan pada review manusia untuk keputusan pembelian dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses procurement perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -268,6 +272,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk customer service di Indonesia?",
     a: pelatihanAiUntukCustomerService,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk CS" },
+  },
+  {
+    id: "pelatihan-ai-untuk-procurement-indonesia",
+    q: "Apa itu pelatihan AI untuk procurement di Indonesia?",
+    a: pelatihanAiUntukProcurement,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk procurement" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",

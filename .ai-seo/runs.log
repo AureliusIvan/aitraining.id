@@ -113,3 +113,4 @@
 2026-07-09T15:24:10+07:00	action=improve-deploy	query="pelatihan ai untuk customer service indonesia"	page=/pelatihan-ai-untuk-perusahaan	outcome=committed	commit=bd01a35	notes=discovery+10;#pelatihan-ai-untuk-customer-service-indonesia+FAQPage;closed-cs-en-near-dup
 2026-07-09T15:24:13+07:00	action=deploy	query="pelatihan ai untuk customer service indonesia"	commit=d3797df	notes=pushed-cs-aeo+discovery
 2026-07-09 deploy q=corporate ai training makassar commit=24a500a page=/cities/makassar
+2026-07-09 deploy q=pelatihan ai untuk procurement indonesia commit=e4e0645 page=/pelatihan-ai-untuk-perusahaan
