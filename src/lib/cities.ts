@@ -373,6 +373,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "medan",
+    name: "Medan",
+    title: "Corporate AI Training Medan",
+    description:
+      "Medan adalah pusat bisnis dan perdagangan terbesar di Sumatera Utara. Corporate AI training di Medan tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Medan adalah pusat bisnis, perdagangan, dan industri jasa terbesar di Sumatera Utara. Corporate AI training di Medan dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Medan (Polonia, Gatot Subroto, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, manufaktur, jasa, dan perusahaan regional Sumatera",
+      "Tersedia on-site di kawasan bisnis Medan dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor pusat regional",
+      "Virtual session tersedia untuk tim di luar Medan",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "AI training Medan",
+      "ai training medan",
+      "pelatihan AI Medan untuk perusahaan",
+      "corporate AI training Medan",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Medan saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-medan-untuk-perusahaan",
+        q: "Pelatihan AI Medan untuk perusahaan",
+        a: "Pelatihan AI Medan untuk perusahaan adalah program corporate training on-site atau virtual di Sumatera Utara yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Medan dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "ai-training-medan",
+          q: "Apa itu AI training di Medan?",
+          a: "AI training di Medan adalah program corporate on-site atau virtual untuk tim perusahaan di Sumatera Utara: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di kawasan bisnis Medan; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Medan tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Medan dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Medan?",
+          a: "Program cocok untuk perdagangan, manufaktur, jasa, dan perusahaan regional Sumatera yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {

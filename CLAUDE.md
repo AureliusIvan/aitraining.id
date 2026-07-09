@@ -72,6 +72,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `AI training terbaik di Tangerang` / `ai training terbaik Tangerang` | `/cities/tangerang` (`#ai-training-terbaik-di-tangerang` FAQ + keywords, added 2026-07-09; same honest city-level evaluation framing as Jakarta) |
 | `AI training Yogyakarta` / `ai training yogyakarta` | `/cities/yogyakarta` (`#ai-training-yogyakarta` FAQ + keywords + city page, added 2026-07-09; DIY on-site/virtual coverage) |
 | `pelatihan AI Bali untuk perusahaan` | `/cities/bali` (`#pelatihan-ai-bali-untuk-perusahaan` def + `#pelatihan-ai-bali-untuk-perusahaan-faq`, added 2026-07-09; hospitality/tourism on-site/virtual) |
+| `AI training Medan` / `pelatihan AI Medan untuk perusahaan` | `/cities/medan` (`#ai-training-medan` FAQ + `#pelatihan-ai-medan-untuk-perusahaan` def, added 2026-07-09; North Sumatra on-site/virtual) |
 | `GEO trainer Jakarta` | `/cities/jakarta` (`geo` block), `/geo-training`, `/best-geo-trainers-indonesia` |
 | `AI trainer terbaik Indonesia` (national) | `/best-ai-trainers-indonesia` (Top-10 listicle) |
 | `pelatihan AI terbaik Indonesia` (national, no audience qualifier) | `/best-ai-trainers-indonesia` (dedicated FAQ, added 2026-07-02, distinct from the trainer-bio FAQ — answers the evaluation-criteria angle and cites `/compare`); `pelatihan AI terbaik **untuk perusahaan** di Indonesia` (corporate-qualified) stays owned by `/pelatihan-ai-untuk-perusahaan` |

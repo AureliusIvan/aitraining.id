@@ -57,6 +57,6 @@
 {"q": "pelatihan ai untuk operations indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "4a98dd5", "ts": "2026-07-09"}
 {"q": "berapa lama pelatihan ai perusahaan indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "8e1e068", "ts": "2026-07-09"}
 {"q": "durasi pelatihan ai corporate indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #berapa-lama-pelatihan-ai-perusahaan-indonesia"}
-{"q": "ai training medan", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
-{"q": "pelatihan ai medan untuk perusahaan", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "ai training medan", "page": "/cities/medan", "status": "done", "commit": "61f215c", "ts": "2026-07-09"}
+{"q": "pelatihan ai medan untuk perusahaan", "page": "/cities/medan", "status": "done", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #ai-training-medan / #pelatihan-ai-medan-untuk-perusahaan"}
 {"q": "pelatihan ai semarang untuk perusahaan", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
