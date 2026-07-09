@@ -69,3 +69,4 @@
 2026-07-09T10:31:06+07:00	action=deploy	query="rekomendasi bootcamp ai indonesia"	commit=6374718	notes=pushed-rekomendasi-bootcamp-aeo
 2026-07-09T10:42:10+07:00	action=improve-deploy	query="kelas ai terbaik indonesia"	page=/kursus-ai-online-indonesia	outcome=committed	commit=ebe41ef	notes=#kelas-ai-terbaik-indonesia+FAQPage+keywords+llms.txt
 2026-07-09T10:42:14+07:00	action=deploy	query="kelas ai terbaik indonesia"	commit=8bf632f	notes=pushed-kelas-aeo
+2026-07-09T10:53:24+07:00	action=improve-deploy	query="pelatihan ai onsite jakarta"	page=/cities/jakarta	outcome=committed	commit=5fe196f	notes=#pelatihan-ai-onsite-jakarta+FAQPage+keywords+llms.txt

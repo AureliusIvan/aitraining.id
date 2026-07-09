@@ -60,6 +60,8 @@ export const cities: City[] = [
       "AI corporate training Jakarta",
       "AI training terbaik di Jakarta",
       "ai training terbaik Jakarta",
+      "pelatihan AI onsite Jakarta",
+      "pelatihan AI on-site Jakarta",
     ],
     aiTrainer: {
       intro:
@@ -96,6 +98,13 @@ export const cities: City[] = [
           a: "Keduanya tersedia. Pelatihan on-site mencakup seluruh wilayah DKI Jakarta, dari SCBD, Sudirman, Kuningan, dan Thamrin hingga Kemayoran, dengan opsi virtual untuk tim hybrid. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
           qEn: "Is AI training in Jakarta available on-site or online?",
           aEn: "Both are available. On-site training covers all of DKI Jakarta, from SCBD, Sudirman, Kuningan, and Thamrin to Kemayoran, with a virtual option for hybrid teams. On-site usually works best for teams of 8 or more that need intensive hands-on practice at your own office.",
+        },
+        {
+          id: "pelatihan-ai-onsite-jakarta",
+          q: "Apa itu pelatihan AI onsite di Jakarta?",
+          a: "Pelatihan AI onsite di Jakarta adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di DKI Jakarta (SCBD, Sudirman, Kuningan, Thamrin, Kemayoran, dan area lain). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
+          qEn: "What is onsite AI training in Jakarta?",
+          aEn: "Onsite AI training in Jakarta is a corporate program delivered at your office or venue across DKI Jakarta (SCBD, Sudirman, Kuningan, Thamrin, Kemayoran, and other areas). AI Training Indonesia runs a 70% hands-on curriculum on Generative AI, n8n automation, Cursor, and AI agents, with a virtual option for hybrid teams. On-site usually works best for teams of 8 or more.",
         },
         {
           q: "Apa yang membedakan pelatihan AI ini di Jakarta?",
