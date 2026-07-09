@@ -269,6 +269,8 @@ export const cities: City[] = [
       "ai training terbaik Tangerang",
       "pelatihan AI terbaik Tangerang",
       "corporate AI training Tangerang",
+      "pelatihan AI onsite Tangerang",
+      "pelatihan AI on-site Tangerang",
     ],
     aiTrainer: {
       intro:
@@ -283,6 +285,11 @@ export const cities: City[] = [
           id: "ai-training-terbaik-di-tangerang",
           q: "Apa AI training terbaik di Tangerang?",
           a: "Tidak ada lembaga resmi yang memberi peringkat AI training di Tangerang. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik on-site di Tangerang Kota, BSD, Serpong, dan Alam Sutera), relevansi tool dengan konteks industri Jabodetabek, rekam jejak trainer yang bisa diverifikasi (termasuk organizer Cursor Meetup Tangerang), kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-tangerang",
+          q: "Apa itu pelatihan AI onsite di Tangerang?",
+          a: "Pelatihan AI onsite di Tangerang adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di Tangerang Kota dan Tangerang Selatan (BSD, Serpong, Alam Sutera) serta kawasan industri Jababeka. AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Tangerang tersedia on-site atau online?",

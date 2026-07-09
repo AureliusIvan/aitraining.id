@@ -104,6 +104,6 @@
 {"q": "pelatihan ai untuk pemerintah indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "33bef96", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-pemerintah-indonesia"}
 {"q": "pelatihan ai onsite medan", "page": "/cities/medan", "status": "done", "commit": "6ce69ea", "ts": "2026-07-09", "notes": "/#pelatihan-ai-onsite-medan"}
 {"q": "pelatihan ai onsite makassar", "page": "/cities/makassar", "status": "done", "commit": "04fbc86", "ts": "2026-07-09", "notes": "/#pelatihan-ai-onsite-makassar"}
-{"q": "pelatihan ai onsite tangerang", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "pelatihan ai onsite tangerang", "page": "/cities/tangerang", "status": "done", "commit": "c5f612f", "ts": "2026-07-09", "notes": "/#pelatihan-ai-onsite-tangerang"}
 {"q": "corporate ai training bogor", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "corporate ai training bekasi", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
