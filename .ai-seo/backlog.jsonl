@@ -44,7 +44,7 @@
 {"q": "biaya ai training corporate indonesia", "page": "/pricing", "status": "done", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #biaya-pelatihan-ai-perusahaan-indonesia"}
 {"q": "pelatihan ai untuk tim marketing indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "9b8d222", "ts": "2026-07-09"}
 {"q": "ai training untuk marketing indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-untuk-tim-marketing-indonesia"}
-{"q": "pelatihan ai untuk hr indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "pelatihan ai untuk hr indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "7266c0e", "ts": "2026-07-09"}
 {"q": "pelatihan ai untuk engineering indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "in-house ai training indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai virtual indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "manfaat AI training untuk karyawan",
     "pelatihan AI untuk tim marketing Indonesia",
     "AI training untuk marketing Indonesia",
+    "pelatihan AI untuk HR Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -51,6 +52,9 @@ const corporateAiTrainingTerbaikAnswer =
 
 const pelatihanAiUntukTimMarketing =
   "Pelatihan AI untuk tim marketing di Indonesia adalah program corporate yang mengajarkan marketing, konten, dan growth memakai Generative AI untuk riset, draft konten, automation kampanye (n8n), video avatar (HeyGen), dan GEO agar brand dikutip mesin AI. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke stack dan funnel marketing perusahaan.";
+
+const pelatihanAiUntukHr =
+  "Pelatihan AI untuk HR di Indonesia adalah program corporate yang mengajarkan tim people/HR memakai Generative AI dan automation (n8n) untuk screening awal, draft JD, onboarding, FAQ karyawan, dan workflow admin yang berulang, dengan penekanan pada review manusia dan kebijakan data. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses HR perusahaan.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -133,6 +137,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk tim marketing di Indonesia?",
     a: pelatihanAiUntukTimMarketing,
     link: { href: "/programs#geo", text: "Lihat program GEO dan video automation untuk marketing" },
+  },
+  {
+    id: "pelatihan-ai-untuk-hr-indonesia",
+    q: "Apa itu pelatihan AI untuk HR di Indonesia?",
+    a: pelatihanAiUntukHr,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk HR" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",
