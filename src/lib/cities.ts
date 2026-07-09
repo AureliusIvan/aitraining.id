@@ -465,6 +465,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "makassar",
+    name: "Makassar",
+    title: "Corporate AI Training Makassar",
+    description:
+      "Makassar adalah pusat bisnis dan perdagangan terbesar di Sulawesi Selatan. Corporate AI training di Makassar tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Makassar adalah pusat bisnis, pelabuhan, dan jasa terbesar di Sulawesi Selatan dan kawasan Indonesia Timur. Corporate AI training di Makassar dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Makassar (Panakkukang, Losari, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, pelabuhan, jasa, dan perusahaan regional Indonesia Timur",
+      "Tersedia on-site di kawasan bisnis Makassar dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Makassar",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Makassar",
+      "pelatihan AI Makassar untuk perusahaan",
+      "AI training Makassar",
+      "pelatihan AI Makassar",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Makassar saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-makassar-untuk-perusahaan",
+        q: "Pelatihan AI Makassar untuk perusahaan",
+        a: "Pelatihan AI Makassar untuk perusahaan adalah program corporate training on-site atau virtual di Sulawesi Selatan yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Makassar dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-makassar",
+          q: "What is corporate AI training in Makassar?",
+          a: "Corporate AI training in Makassar is an on-site or virtual program for company teams in South Sulawesi: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Makassar business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Makassar tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Makassar dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Makassar?",
+          a: "Program cocok untuk perdagangan, pelabuhan, jasa, dan perusahaan regional Indonesia Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
