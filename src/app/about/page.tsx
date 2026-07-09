@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Corporate AI Trainer Indonesia | Aurelius Ivan Wijaya",
   description:
-    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker yang berbicara di 50+ event AI di Indonesia. n8n Official Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador. Telah melatih DPD RI, berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
+    "Aurelius Ivan Wijaya adalah Corporate AI Trainer, Generative AI consultant, dan speaker yang berbicara di 50+ event AI di Indonesia. n8n Official Ambassador Indonesia, Cursor Ambassador, dan HeyGen Ambassador. Perusahaan dan lembaga yang mempercayakan pelatihan AI-nya ke Ivan termasuk DPD RI, MSIG Indonesia, Bayer Indonesia, Redcomm, Insignia, Bukalapak, dan DPO&Co, ditambah 100+ peserta lewat public training. Berbicara di Tech in Asia Conference 2025. Profil lengkap di aurelivan.com.",
   alternates: {
     canonical: "https://aitraining.id/about",
   },

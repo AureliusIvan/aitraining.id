@@ -17,12 +17,22 @@
 //    speaking engagement, or organization Ivan has worked with at some
 //    level, linking out to their own official site instead.
 //  - For orgs with no internal engagement record (Domainesia, Cakap, Ekipa,
-//    Sagara Technology, DPO&Co, Indonesia Product Conference, UMT, Telkom
+//    Sagara Technology, Indonesia Product Conference, UMT, Telkom
 //    University), the caption stays deliberately generic ("organisasi yang
 //    bekerja sama dengan Aurelius Ivan Wijaya") rather than claiming a
 //    specific relationship (trained/spoke at/etc.) that isn't documented.
 //  - MSIG Indonesia is a confirmed corporate AI training delivery (photo
 //    proof at /assets/works/msig-indonesia-training.webp, added 2026-07-09).
+//  - DPO&Co is an active internal AI training engagement (Claude Cowork;
+//    content in build as of 2026-07-10, naming approved by Ivan 2026-07-10) —
+//    caption upgraded from generic to the real engagement.
+//  - Bukalapak is a won engagement (2026-07-07); delivery STARTS w/o 13 Jul
+//    2026, so its caption describes the program, not a completed delivery.
+//    Logo: official Bukalapak (2020) wordmark from Wikimedia Commons.
+//  - Redcomm (GEO session, completed 2026): logo is Redcomm's own site brand
+//    mark (red-website-icon.svg from redcomm.co.id) — they publish only the
+//    icon monogram, no horizontal wordmark, so it renders small in the white
+//    chip. Swap for a wordmark if one becomes available.
 //  - AMIKOM is a confirmed-but-not-yet-delivered seminar invite; caption
 //    uses "mengundang" (invited), not past/completed framing.
 
@@ -108,6 +118,20 @@ export const trustedBy: TrustedByItem[] = [
     href: "https://insignia.co.id",
   },
   {
+    src: "/assets/clients/bukalapak.svg",
+    alt: "Bukalapak (PT Bukalapak.com Tbk): corporate AI training untuk tim Ops & Tech oleh Aurelius Ivan Wijaya",
+    name: "Bukalapak",
+    caption: "Corporate AI training, tim Ops & Tech",
+    href: "https://www.bukalapak.com",
+  },
+  {
+    src: "/assets/clients/redcomm.svg",
+    alt: "Redcomm (Red Asia Group): GEO training oleh Aurelius Ivan Wijaya",
+    name: "Redcomm",
+    caption: "GEO training (Generative Engine Optimization)",
+    href: "https://redcomm.co.id",
+  },
+  {
     src: "/assets/clients/domainesia.png",
     alt: "Domainesia, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
     name: "Domainesia",
@@ -144,9 +168,9 @@ export const trustedBy: TrustedByItem[] = [
   },
   {
     src: "/assets/clients/dpoandco.jpeg",
-    alt: "DPO&Co, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+    alt: "DPO&Co: internal AI training (Claude Cowork) oleh Aurelius Ivan Wijaya",
     name: "DPO&Co",
-    caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+    caption: "Internal AI training tim (Claude Cowork)",
     href: "https://dpoandco.com",
   },
   {
