@@ -163,6 +163,8 @@ export const cities: City[] = [
       "ai training terbaik Surabaya",
       "pelatihan AI terbaik Surabaya",
       "corporate AI training Surabaya",
+      "pelatihan AI onsite Surabaya",
+      "pelatihan AI on-site Surabaya",
     ],
     aiTrainer: {
       intro:
@@ -177,6 +179,11 @@ export const cities: City[] = [
           id: "ai-training-terbaik-di-surabaya",
           q: "Apa AI training terbaik di Surabaya?",
           a: "Tidak ada lembaga resmi yang memberi peringkat AI training di Surabaya. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik on-site di Surabaya Barat, Timur, dan Selatan), relevansi tool dengan konteks industri Jawa Timur, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-surabaya",
+          q: "Apa itu pelatihan AI onsite di Surabaya?",
+          a: "Pelatihan AI onsite di Surabaya adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di Surabaya Barat, Timur, dan Selatan. AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks industri Jawa Timur, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Surabaya tersedia on-site atau online?",
