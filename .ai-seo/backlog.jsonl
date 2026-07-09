@@ -121,7 +121,7 @@
 {"q": "corporate ai training pekanbaru", "page": "/cities/pekanbaru", "status": "done", "commit": "4cf90fd", "ts": "2026-07-10", "notes": "/#corporate-ai-training-pekanbaru"}
 {"q": "pelatihan ai untuk marketing indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "covered", "ts": "2026-07-10", "notes": "covered by #pelatihan-ai-untuk-tim-marketing-indonesia"}
 {"q": "pelatihan ai untuk logistik indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "covered", "ts": "2026-07-10", "notes": "covered by #pelatihan-ai-untuk-supply-chain-indonesia"}
-{"q": "pelatihan ai onsite palembang", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
+{"q": "pelatihan ai onsite palembang", "page": "/cities/palembang", "status": "done", "commit": "9e6d349", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-palembang"}
 {"q": "pelatihan ai onsite malang", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
 {"q": "pelatihan ai onsite batam", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
 {"q": "pelatihan ai onsite balikpapan", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}

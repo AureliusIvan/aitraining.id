@@ -587,6 +587,8 @@ export const cities: City[] = [
       "pelatihan AI Palembang untuk perusahaan",
       "AI training Palembang",
       "pelatihan AI Palembang",
+      "pelatihan AI onsite Palembang",
+      "pelatihan AI on-site Palembang",
     ],
     aiTrainer: {
       intro:
@@ -601,6 +603,11 @@ export const cities: City[] = [
           id: "corporate-ai-training-palembang",
           q: "What is corporate AI training in Palembang?",
           a: "Corporate AI training in Palembang is an on-site or virtual program for company teams in South Sumatra: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Palembang business districts; compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-palembang",
+          q: "Apa itu pelatihan AI onsite di Palembang?",
+          a: "Pelatihan AI onsite di Palembang adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di kawasan bisnis Palembang (Sudirman, Ilir Barat, dan sekitarnya). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks jasa dan pemerintahan Sumatera Selatan, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Palembang tersedia on-site atau online?",
