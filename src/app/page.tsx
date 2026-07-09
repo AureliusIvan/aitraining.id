@@ -856,6 +856,12 @@ function DocumentationSection() {
       title: "Jagoan Hosting Tech Corner",
       caption: "AI workshop & speaker peluncuran VM Ultra",
     },
+    {
+      src: "/assets/works/msig-indonesia-training.webp",
+      alt: "Corporate AI training MSIG Indonesia: Aurelius Ivan Wijaya memimpin sesi hands-on Generative AI untuk tim di ruang kelas",
+      title: "MSIG Indonesia",
+      caption: "Corporate AI training, sesi hands-on Generative AI",
+    },
   ];
 
   return (

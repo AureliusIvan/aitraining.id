@@ -17,11 +17,12 @@
 //    speaking engagement, or organization Ivan has worked with at some
 //    level, linking out to their own official site instead.
 //  - For orgs with no internal engagement record (Domainesia, Cakap, Ekipa,
-//    MSIG Indonesia, Sagara Technology, DPO&Co, Indonesia Product
-//    Conference, UMT, Telkom University), the caption stays deliberately
-//    generic ("organisasi yang bekerja sama dengan Aurelius Ivan Wijaya")
-//    rather than claiming a specific relationship (trained/spoke at/etc.)
-//    that isn't documented anywhere.
+//    Sagara Technology, DPO&Co, Indonesia Product Conference, UMT, Telkom
+//    University), the caption stays deliberately generic ("organisasi yang
+//    bekerja sama dengan Aurelius Ivan Wijaya") rather than claiming a
+//    specific relationship (trained/spoke at/etc.) that isn't documented.
+//  - MSIG Indonesia is a confirmed corporate AI training delivery (photo
+//    proof at /assets/works/msig-indonesia-training.webp, added 2026-07-09).
 //  - AMIKOM is a confirmed-but-not-yet-delivered seminar invite; caption
 //    uses "mengundang" (invited), not past/completed framing.
 
@@ -129,9 +130,9 @@ export const trustedBy: TrustedByItem[] = [
   },
   {
     src: "/assets/clients/msig.svg",
-    alt: "MSIG Indonesia, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+    alt: "MSIG Indonesia: corporate AI training hands-on Generative AI oleh Aurelius Ivan Wijaya",
     name: "MSIG Indonesia",
-    caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+    caption: "Corporate AI training, sesi hands-on Generative AI",
     href: "https://www.msig.co.id/id",
   },
   {
