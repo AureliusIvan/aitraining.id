@@ -322,6 +322,8 @@ export const cities: City[] = [
       "ai training yogyakarta",
       "pelatihan AI Yogyakarta",
       "corporate AI training Yogyakarta",
+      "pelatihan AI onsite Yogyakarta",
+      "pelatihan AI on-site Yogyakarta",
     ],
     aiTrainer: {
       intro:
@@ -336,6 +338,11 @@ export const cities: City[] = [
           id: "ai-training-yogyakarta",
           q: "Apa itu AI training di Yogyakarta?",
           a: "AI training di Yogyakarta adalah program corporate on-site atau virtual untuk tim perusahaan di DIY: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di Sleman, Kota Yogyakarta, dan sekitarnya; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-yogyakarta",
+          q: "Apa itu pelatihan AI onsite di Yogyakarta?",
+          a: "Pelatihan AI onsite di Yogyakarta adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di Sleman, Kota Yogyakarta, dan sekitarnya. AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks pendidikan dan industri kreatif DIY, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Yogyakarta tersedia on-site atau online?",
