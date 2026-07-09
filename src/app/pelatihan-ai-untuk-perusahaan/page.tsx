@@ -58,6 +58,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk pertambangan Indonesia",
     "pelatihan AI untuk agribisnis Indonesia",
     "pelatihan AI untuk fintech Indonesia",
+    "pelatihan AI untuk NGO Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -211,6 +212,9 @@ const pelatihanAiUntukAgribisnis =
 
 const pelatihanAiUntukFintech =
   "Pelatihan AI untuk fintech di Indonesia adalah program corporate yang mengajarkan tim produk, risk ops, dan customer support memakai Generative AI dan automation (n8n) untuk draft FAQ produk, ringkasan tiket, konten edukasi pengguna, dan workflow admin berulang, dengan penekanan pada review manusia, kerahasiaan data nasabah, dan kepatuhan kebijakan internal. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses fintech perusahaan.";
+
+const pelatihanAiUntukNgo =
+  "Pelatihan AI untuk NGO di Indonesia adalah program corporate yang mengajarkan tim program, fundraising, dan komunikasi memakai Generative AI dan automation (n8n) untuk draft laporan donor, ringkasan kegiatan, FAQ mitra, konten kampanye, dan workflow admin berulang, dengan penekanan pada review manusia, akurasi data, dan tata kelola informasi organisasi. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses NGO.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -559,6 +563,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk fintech di Indonesia?",
     a: pelatihanAiUntukFintech,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk fintech" },
+  },
+  {
+    id: "pelatihan-ai-untuk-ngo-indonesia",
+    q: "Apa itu pelatihan AI untuk NGO di Indonesia?",
+    a: pelatihanAiUntukNgo,
+    link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk NGO" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",
