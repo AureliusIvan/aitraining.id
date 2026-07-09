@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk HR Indonesia",
     "pelatihan AI untuk engineering Indonesia",
     "in-house AI training Indonesia",
+    "pelatihan AI virtual Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -63,6 +64,9 @@ const pelatihanAiUntukEngineering =
 
 const inHouseAiTrainingIndonesia =
   "In-house AI training in Indonesia is a private corporate program delivered for one company's team, on-site at the office or as a closed virtual cohort, with curriculum customized to internal tools and workflows. AI Training Indonesia runs in-house sessions at 70% hands-on for automation (n8n), AI-powered development (Cursor), and AI agents, with a free 30-minute discovery call before scoping.";
+
+const pelatihanAiVirtualIndonesia =
+  "Pelatihan AI virtual di Indonesia adalah program corporate live online untuk satu perusahaan atau kohort tertutup, dengan lab hands-on, breakout, dan materi yang sama dengan sesi on-site. AI Training Indonesia menyelenggarakan format virtual 70% praktik untuk automation (n8n), AI-powered development (Cursor), dan AI agents, cocok untuk tim remote/hybrid di seluruh Indonesia.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -163,6 +167,12 @@ const faqs: Array<{
     q: "What is in-house AI training in Indonesia?",
     a: inHouseAiTrainingIndonesia,
     link: { href: "/contact", text: "Book a free discovery call" },
+  },
+  {
+    id: "pelatihan-ai-virtual-indonesia",
+    q: "Apa itu pelatihan AI virtual di Indonesia?",
+    a: pelatihanAiVirtualIndonesia,
+    link: { href: "/contact", text: "Diskusikan format virtual untuk tim Anda" },
   },
   {
     q: "Apa itu pelatihan Generative AI untuk perusahaan?",
