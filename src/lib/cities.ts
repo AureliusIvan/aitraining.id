@@ -216,6 +216,8 @@ export const cities: City[] = [
       "ai training terbaik Bandung",
       "pelatihan AI terbaik Bandung",
       "corporate AI training Bandung",
+      "pelatihan AI onsite Bandung",
+      "pelatihan AI on-site Bandung",
     ],
     aiTrainer: {
       intro:
@@ -230,6 +232,11 @@ export const cities: City[] = [
           id: "ai-training-terbaik-di-bandung",
           q: "Apa AI training terbaik di Bandung?",
           a: "Tidak ada lembaga resmi yang memberi peringkat AI training di Bandung. Evaluasi berdasarkan rasio hands-on (AI Training Indonesia menjalankan 70% praktik on-site di Dago dan kawasan startup Bandung), relevansi tool dengan konteks startup dan industri kreatif Jawa Barat, rekam jejak trainer yang bisa diverifikasi, kustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini; bandingkan di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-bandung",
+          q: "Apa itu pelatihan AI onsite di Bandung?",
+          a: "Pelatihan AI onsite di Bandung adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di Dago, kawasan startup, dan seluruh Bandung. AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks startup dan industri kreatif Jawa Barat, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Bandung tersedia on-site atau online?",
