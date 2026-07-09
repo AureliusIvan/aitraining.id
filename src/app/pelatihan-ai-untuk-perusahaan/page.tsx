@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     "pelatihan AI untuk procurement Indonesia",
     "pelatihan AI untuk supply chain Indonesia",
     "pelatihan AI untuk logistics Indonesia",
+    "AI training untuk product manager Indonesia",
     "corporate AI training Indonesia",
     "corporate AI training terbaik Indonesia",
     "best corporate AI training Indonesia",
@@ -103,6 +104,9 @@ const pelatihanAiUntukProcurement =
 
 const pelatihanAiUntukSupplyChain =
   "Pelatihan AI untuk supply chain di Indonesia adalah program corporate yang mengajarkan tim supply chain dan logistics memakai Generative AI dan automation (n8n) untuk status update, ringkasan exception, draft SOP, koordinasi vendor, dan workflow admin berulang, dengan penekanan pada handoff manusia untuk keputusan operasional kritis. AI Training Indonesia menyelenggarakannya on-site atau virtual dengan kurikulum 70% hands-on, dikustomisasi ke proses supply chain perusahaan.";
+
+const aiTrainingUntukProductManager =
+  "AI training for product managers in Indonesia is a corporate program that teaches PMs to use Generative AI and light automation (n8n) for research synthesis, PRD drafts, user-feedback summaries, roadmap notes, and handoffs to engineering, with human review before stakeholder decisions. AI Training Indonesia delivers it on-site or virtually at 70% hands-on, customized to the company's product process.";
 
 const pelatihanGenerativeAiUntukPerusahaan =
   "Pelatihan Generative AI untuk perusahaan adalah program corporate training yang mengajarkan karyawan memakai large language model (ChatGPT, Claude, Gemini) untuk automation workflow, development berbantuan AI, dan AI agents di pekerjaan harian. AI Training Indonesia menyelenggarakan pelatihan Generative AI on-site dan virtual di Indonesia dengan kurikulum 70% hands-on, dikustomisasi per industri.";
@@ -289,6 +293,12 @@ const faqs: Array<{
     q: "Apa itu pelatihan AI untuk supply chain di Indonesia?",
     a: pelatihanAiUntukSupplyChain,
     link: { href: "/programs#automation", text: "Lihat program AI Workflow Automation untuk supply chain" },
+  },
+  {
+    id: "ai-training-untuk-product-manager-indonesia",
+    q: "What is AI training for product managers in Indonesia?",
+    a: aiTrainingUntukProductManager,
+    link: { href: "/programs#development", text: "See AI-Powered Development for product and engineering teams" },
   },
   {
     q: "Apa pelatihan AI terbaik untuk perusahaan di Indonesia?",

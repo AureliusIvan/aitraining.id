@@ -64,7 +64,7 @@
 {"q": "corporate ai training makassar", "page": "/cities/makassar", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "24a500a", "ts": "2026-07-09", "notes": "/#corporate-ai-training-makassar"}
 {"q": "pelatihan ai untuk procurement indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "e4e0645", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-procurement-indonesia"}
 {"q": "pelatihan ai untuk supply chain indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "43f5a8e", "ts": "2026-07-09", "notes": "/#pelatihan-ai-untuk-supply-chain-indonesia"}
-{"q": "ai training untuk product manager indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
+{"q": "ai training untuk product manager indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "commit": "c33a865", "ts": "2026-07-09", "notes": "/#ai-training-untuk-product-manager-indonesia"}
 {"q": "pelatihan ai untuk c-suite indonesia", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai onsite surabaya", "page": null, "status": "pending", "found": "2026-07-09", "source": "discovery"}
 {"q": "pelatihan ai untuk logistics indonesia", "page": "/pelatihan-ai-untuk-perusahaan", "status": "done", "found": "2026-07-09", "source": "discovery", "commit": "covered", "ts": "2026-07-09", "notes": "covered by #pelatihan-ai-untuk-supply-chain-indonesia"}
