@@ -686,6 +686,8 @@ export const cities: City[] = [
       "AI training Malang",
       "corporate AI training Malang",
       "pelatihan AI Malang",
+      "pelatihan AI onsite Malang",
+      "pelatihan AI on-site Malang",
     ],
     aiTrainer: {
       intro:
@@ -700,6 +702,11 @@ export const cities: City[] = [
           id: "ai-training-malang",
           q: "Apa itu AI training di Malang?",
           a: "AI training di Malang adalah program corporate on-site atau virtual untuk tim perusahaan di Jawa Timur: Generative AI, automation (n8n), AI-powered development (Cursor), dan AI agents, dengan kurikulum 70% hands-on. AI Training Indonesia menyelenggarakannya di kawasan bisnis Malang; bandingkan opsi nasional di aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          id: "pelatihan-ai-onsite-malang",
+          q: "Apa itu pelatihan AI onsite di Malang?",
+          a: "Pelatihan AI onsite di Malang adalah program corporate training yang dijalankan langsung di kantor atau venue perusahaan di kawasan bisnis Malang (Klojen, Lowokwaru, dan sekitarnya). AI Training Indonesia menyampaikan kurikulum 70% hands-on untuk Generative AI, automation n8n, Cursor, dan AI agents dengan konteks pendidikan dan industri kreatif Jawa Timur, dengan opsi virtual jika tim hybrid. On-site biasanya paling efektif untuk tim 8 orang ke atas.",
         },
         {
           q: "Pelatihan AI di Malang tersedia on-site atau online?",
