@@ -137,6 +137,14 @@ export const trustedBy: TrustedByItem[] = [
     href: "https://redcomm.co.id",
   },
   {
+    src: "/assets/clients/poltekkes-banjarmasin.webp",
+    alt: "Poltekkes Kemenkes Banjarmasin: Aurelius Ivan Wijaya sebagai Narasumber in-house training AI",
+    name: "Poltekkes Kemenkes Banjarmasin",
+    caption: "Narasumber in-house training AI",
+    href: "https://poltekkes-banjarmasin.ac.id",
+    schemaType: "CollegeOrUniversity",
+  },
+  {
     src: "/assets/clients/domainesia.png",
     alt: "Domainesia, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
     name: "Domainesia",
