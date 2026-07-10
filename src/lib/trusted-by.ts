@@ -197,7 +197,7 @@ export const trustedBy: TrustedByItem[] = [
     bg: "#71075d", // light logo, invisible on white — use its purple brand bg
   },
   {
-    src: "/assets/clients/tech-in-asia.png",
+    src: "/assets/clients/tech-in-asia-conf25.png",
     alt: "Tech in Asia: Aurelius Ivan Wijaya sebagai speaker di Tech in Asia Conference 2025",
     name: "Tech in Asia",
     caption: "Speaker di Tech in Asia Conference 2025",
