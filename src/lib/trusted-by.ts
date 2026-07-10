@@ -143,6 +143,7 @@ export const trustedBy: TrustedByItem[] = [
     caption: "Narasumber in-house training AI",
     href: "https://poltekkes-banjarmasin.ac.id",
     schemaType: "CollegeOrUniversity",
+    bg: "#0d5959", // Kemenkes teal brand bg — logo greens pop against it
   },
   {
     src: "/assets/clients/domainesia.png",
