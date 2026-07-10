@@ -80,7 +80,7 @@ export const trustedBy: TrustedByItem[] = [
     href: "/partners/heygen",
   },
   {
-    src: "/assets/clients/dpd-ri.png",
+    src: "/assets/clients/dpd-ri-full.png",
     alt: "DPD RI: Aurelius Ivan Wijaya melatih staf DPD RI dalam transformasi digital",
     name: "DPD RI",
     caption: "Pelatihan AI & transformasi digital untuk lembaga negara",
@@ -95,7 +95,7 @@ export const trustedBy: TrustedByItem[] = [
     href: "https://www.bayer.com",
   },
   {
-    src: "/assets/clients/hacktiv8.svg",
+    src: "/assets/clients/hacktiv8.png",
     alt: "Hacktiv8: workshop Agentic AI with n8n & Hermes oleh Aurelius Ivan Wijaya",
     name: "Hacktiv8",
     caption: "Workshop publik: Agentic AI with n8n & Hermes, Juni 2026",
@@ -178,6 +178,7 @@ export const trustedBy: TrustedByItem[] = [
     name: "Sagara Technology",
     caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
     href: "https://sagaratechnology.com/en",
+    bg: "#000000", // white logo, invisible on white — use black bg
   },
   {
     src: "/assets/clients/dpoandco.jpeg",
