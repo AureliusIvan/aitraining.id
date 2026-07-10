@@ -43,6 +43,11 @@ export type TrustedByItem = {
   caption: string;
   href: string;
   schemaType?: "Organization" | "GovernmentOrganization" | "CollegeOrUniversity";
+  // Optional per-logo chip background. Chips default to white (`bg-white/90`);
+  // set this to a brand color (any CSS color, e.g. "#71075d") for logos that
+  // are light/white and vanish on white. Applied as an inline style that
+  // overrides the default white chip in both grids (homepage + /partners).
+  bg?: string;
 };
 
 export const trustedBy: TrustedByItem[] = [
@@ -179,6 +184,7 @@ export const trustedBy: TrustedByItem[] = [
     name: "Indonesia Product Conference",
     caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
     href: "https://indonesiaproductconference.id",
+    bg: "#71075d", // light logo, invisible on white — use its purple brand bg
   },
   {
     src: "/assets/clients/tech-in-asia.png",
@@ -194,6 +200,7 @@ export const trustedBy: TrustedByItem[] = [
     caption: "Undangan Seminar Nasional 'Human in the AI Era'",
     href: "https://home.amikom.ac.id",
     schemaType: "CollegeOrUniversity",
+    bg: "#4a1b9d", // light logo, invisible on white — use its indigo brand bg
   },
   {
     src: "/assets/clients/umt.png",

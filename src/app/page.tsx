@@ -571,7 +571,10 @@ function TrustedBySection() {
           {trusted.map((item) => {
             const isInternal = item.href.startsWith("/");
             const logo = (
-              <div className="flex items-center justify-center h-14 w-full rounded-xl bg-white/90 px-4 py-3">
+              <div
+                className="flex items-center justify-center h-14 w-full rounded-xl bg-white/90 px-4 py-3"
+                style={item.bg ? { backgroundColor: item.bg } : undefined}
+              >
                 <Image
                   src={item.src}
                   alt={item.alt}
