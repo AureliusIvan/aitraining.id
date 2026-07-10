@@ -17,9 +17,9 @@
 //    speaking engagement, or organization Ivan has worked with at some
 //    level, linking out to their own official site instead.
 //  - For orgs with no internal engagement record (Domainesia, Cakap, Ekipa,
-//    Sagara Technology, Indonesia Product Conference, UMT, Telkom
-//    University), the caption stays deliberately generic ("organisasi yang
-//    bekerja sama dengan Aurelius Ivan Wijaya") rather than claiming a
+//    Sagara Technology, Indonesia Product Conference, UMT, Telkom University,
+//    Universitas Raharja), the caption stays deliberately generic ("organisasi
+//    yang bekerja sama dengan Aurelius Ivan Wijaya") rather than claiming a
 //    specific relationship (trained/spoke at/etc.) that isn't documented.
 //  - MSIG Indonesia is a confirmed corporate AI training delivery (photo
 //    proof at /assets/works/msig-indonesia-training.webp, added 2026-07-09).
@@ -216,6 +216,14 @@ export const trustedBy: TrustedByItem[] = [
     name: "Telkom University",
     caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
     href: "https://telkomuniversity.ac.id",
+    schemaType: "CollegeOrUniversity",
+  },
+  {
+    src: "/assets/clients/raharja.png",
+    alt: "Universitas Raharja, organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+    name: "Universitas Raharja",
+    caption: "Organisasi yang bekerja sama dengan Aurelius Ivan Wijaya",
+    href: "https://raharja.ac.id",
     schemaType: "CollegeOrUniversity",
   },
 ];
