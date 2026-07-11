@@ -1562,6 +1562,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "cilegon",
+    name: "Cilegon",
+    title: "Corporate AI Training Cilegon",
+    description:
+      "Cilegon adalah kota industri di Banten, pusat industri baja (Krakatau Steel), petrokimia, energi, dan logistik pelabuhan (Merak) di ujung barat Jawa. Corporate AI training di Cilegon tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Cilegon adalah salah satu pusat industri terbesar di Banten, dengan basis industri baja (Krakatau Steel), petrokimia, energi, dan logistik Pelabuhan Merak (jalur Jawa-Sumatra). Corporate AI training di Cilegon dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis dan industri Cilegon (PCI, Jl. Ahmad Yani, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk industri baja, petrokimia, energi, logistik, dan perusahaan regional Banten",
+      "Tersedia on-site di kawasan bisnis dan industri Cilegon dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik, cabang, dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Cilegon",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Cilegon",
+      "pelatihan AI Cilegon untuk perusahaan",
+      "AI training Cilegon",
+      "pelatihan AI Cilegon",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Cilegon saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-cilegon-untuk-perusahaan",
+        q: "Pelatihan AI Cilegon untuk perusahaan",
+        a: "Pelatihan AI Cilegon untuk perusahaan adalah program corporate training on-site atau virtual di Banten yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks industri baja, petrokimia, energi, dan logistik regional. AI Training Indonesia menyelenggarakannya di kawasan industri Cilegon dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-cilegon",
+          q: "What is corporate AI training in Cilegon?",
+          a: "Corporate AI training in Cilegon is an on-site or virtual program for company teams in Banten's industrial belt: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Cilegon business and industrial districts (PCI, Jl. Ahmad Yani, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Cilegon tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis dan industri Cilegon dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Cilegon?",
+          a: "Program cocok untuk industri baja, petrokimia, energi, manufaktur, logistik pelabuhan, dan perusahaan regional Banten yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
