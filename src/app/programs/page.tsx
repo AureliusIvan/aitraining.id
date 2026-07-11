@@ -228,6 +228,9 @@ const apaItuOpenclawTraining =
 const apaItuAiStrategyTraining =
   "AI Strategy Training adalah program executive corporate training yang mengajarkan C-suite dan business leaders memetakan peluang AI, menyusun roadmap adopsi 6-12 bulan, membangun AI-first culture, serta governance dan risk management. AI Training Indonesia menyelenggarakannya sebagai half-day executive session untuk CEO, direktur, dan kepala departemen di Indonesia.";
 
+const apaItuPelatihanAiAgent =
+  "Pelatihan AI agent untuk perusahaan adalah program hands-on yang mengajarkan tim membangun AI agent dan alur kerja otomatis yang benar-benar berjalan: menghubungkan LLM ke tools, data, dan aksi memakai n8n, Cursor, dan Claude. AI Training Indonesia menyampaikannya dengan kurikulum 70% praktik, sehingga setiap peserta pulang membawa agent yang aktif di konteks bisnis mereka.";
+
 export default function ProgramsPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -320,6 +323,14 @@ export default function ProgramsPage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: apaItuAiStrategyTraining,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apa itu pelatihan AI agent untuk perusahaan?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuPelatihanAiAgent,
         },
       },
     ],
@@ -439,6 +450,17 @@ export default function ProgramsPage() {
                 </h2>
                 <p className="text-white/70 text-sm leading-relaxed">
                   {apaItuAiStrategyTraining}
+                </p>
+              </div>
+              <div
+                id="apa-itu-pelatihan-ai-agent"
+                className="max-w-3xl border border-white/10 rounded-2xl p-8"
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Apa itu pelatihan AI agent untuk perusahaan?
+                </h2>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {apaItuPelatihanAiAgent}
                 </p>
               </div>
             </div>
