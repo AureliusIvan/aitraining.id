@@ -135,6 +135,16 @@
 {"q": "what is ai training indonesia", "page": "/", "status": "done", "commit": "e143263", "ts": "2026-07-11", "source": "derived", "notes": "EN entity-definition twin in homepage FAQPage schema"}
 {"q": "pelatihan membuat ai agent untuk perusahaan", "page": "/programs", "status": "done", "commit": "0c68c25", "ts": "2026-07-11", "source": "discovery", "notes": "#apa-itu-pelatihan-ai-agent def block + FAQPage + llms.txt"}
 {"q": "narasumber ai untuk seminar perusahaan", "page": "/pembicara-ai-indonesia", "status": "done", "commit": "1939de0", "ts": "2026-07-11", "source": "discovery"}
-{"q": "corporate ai training jambi", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
-{"q": "corporate ai training mataram", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
-{"q": "corporate ai training jember", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training jambi", "page": "/cities/jambi", "status": "done", "commit": "6db171c", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training mataram", "page": "/cities/mataram", "status": "done", "commit": "d1baa70", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training jember", "page": "/cities/jember", "status": "done", "commit": "42ecf17", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training serang", "page": "/cities/serang", "status": "done", "commit": "ef4f9b3", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training cilegon", "page": "/cities/cilegon", "status": "done", "commit": "b9d355e", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training tasikmalaya", "page": "/cities/tasikmalaya", "status": "done", "commit": "5016d0a", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training kupang", "page": "/cities/kupang", "status": "done", "commit": "aef9286", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training palangkaraya", "page": "/cities/palangkaraya", "status": "done", "commit": "5a7f17c", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training karawang", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training gresik", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training sidoarjo", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training purwokerto", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training sukabumi", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}

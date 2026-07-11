@@ -182,3 +182,13 @@
 2026-07-11 discovery seeded=5 queries=pelatihan membuat ai agent untuk perusahaan,narasumber ai untuk seminar perusahaan,corporate ai training jambi,corporate ai training mataram,corporate ai training jember
 2026-07-11 deploy q=pelatihan membuat ai agent untuk perusahaan commit=0c68c25 page=/programs
 2026-07-11 deploy q=narasumber ai untuk seminar perusahaan commit=1939de0 page=/pembicara-ai-indonesia
+2026-07-11 deploy q=corporate ai training jambi commit=6db171c page=/cities/jambi
+2026-07-11 deploy q=corporate ai training mataram commit=d1baa70 page=/cities/mataram
+2026-07-11 deploy q=corporate ai training jember commit=42ecf17 page=/cities/jember
+2026-07-11 discovery seeded=5 queries=corporate ai training serang,cilegon,tasikmalaya,kupang,palangkaraya
+2026-07-11 deploy q=corporate ai training serang commit=ef4f9b3 page=/cities/serang
+2026-07-11 deploy q=corporate ai training cilegon commit=b9d355e page=/cities/cilegon
+2026-07-11 deploy q=corporate ai training tasikmalaya commit=5016d0a page=/cities/tasikmalaya
+2026-07-11 deploy q=corporate ai training kupang commit=aef9286 page=/cities/kupang
+2026-07-11 deploy q=corporate ai training palangkaraya commit=5a7f17c page=/cities/palangkaraya
+2026-07-11 discovery seeded=5 queries=corporate ai training karawang,gresik,sidoarjo,purwokerto,sukabumi

@@ -1746,6 +1746,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "karawang",
+    name: "Karawang",
+    title: "Corporate AI Training Karawang",
+    description:
+      "Karawang adalah salah satu pusat industri terbesar di Jawa Barat, dengan kawasan industri otomotif dan manufaktur (KIIC, Suryacipta) serta lahan pertanian padi. Corporate AI training di Karawang tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Karawang adalah salah satu pusat industri terbesar di Jawa Barat, dikenal dengan kawasan industri otomotif, manufaktur, dan elektronik (KIIC, Suryacipta, dan sekitarnya) serta lahan pertanian padi yang luas. Corporate AI training di Karawang dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan industri dan bisnis Karawang (KIIC, Suryacipta, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk otomotif, manufaktur, elektronik, logistik, agribisnis, dan perusahaan regional Jawa Barat",
+      "Tersedia on-site di kawasan industri dan bisnis Karawang dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik, cabang, dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Karawang",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Karawang",
+      "pelatihan AI Karawang untuk perusahaan",
+      "AI training Karawang",
+      "pelatihan AI Karawang",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Karawang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-karawang-untuk-perusahaan",
+        q: "Pelatihan AI Karawang untuk perusahaan",
+        a: "Pelatihan AI Karawang untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks industri otomotif, manufaktur, dan logistik regional. AI Training Indonesia menyelenggarakannya di kawasan industri Karawang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-karawang",
+          q: "What is corporate AI training in Karawang?",
+          a: "Corporate AI training in Karawang is an on-site or virtual program for company teams in West Java's industrial belt: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Karawang industrial and business estates (KIIC, Suryacipta, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Karawang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan industri dan bisnis Karawang dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Karawang?",
+          a: "Program cocok untuk otomotif, manufaktur, elektronik, logistik, agribisnis, dan perusahaan regional Jawa Barat yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
