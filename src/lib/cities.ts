@@ -1792,6 +1792,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "gresik",
+    name: "Gresik",
+    title: "Corporate AI Training Gresik",
+    description:
+      "Gresik adalah kota industri di Jawa Timur (pesisir utara, dekat Surabaya), pusat industri semen (Semen Indonesia), petrokimia dan pupuk (Petrokimia Gresik), manufaktur, dan pelabuhan. Corporate AI training di Gresik tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Gresik adalah salah satu pusat industri di Jawa Timur, berdekatan dengan Surabaya, dengan basis industri semen (Semen Indonesia), petrokimia dan pupuk (Petrokimia Gresik), manufaktur, serta pelabuhan dan kawasan industri (JIIPE). Corporate AI training di Gresik dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan industri dan bisnis Gresik (GKB, JIIPE, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk industri semen, petrokimia, pupuk, manufaktur, logistik pelabuhan, dan perusahaan regional Jawa Timur",
+      "Tersedia on-site di kawasan industri dan bisnis Gresik dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional pabrik, cabang, dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Gresik",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Gresik",
+      "pelatihan AI Gresik untuk perusahaan",
+      "AI training Gresik",
+      "pelatihan AI Gresik",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Gresik saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-gresik-untuk-perusahaan",
+        q: "Pelatihan AI Gresik untuk perusahaan",
+        a: "Pelatihan AI Gresik untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks industri semen, petrokimia, manufaktur, dan logistik regional. AI Training Indonesia menyelenggarakannya di kawasan industri Gresik dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-gresik",
+          q: "What is corporate AI training in Gresik?",
+          a: "Corporate AI training in Gresik is an on-site or virtual program for company teams in East Java's industrial belt near Surabaya: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Gresik industrial and business districts (GKB, JIIPE, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Gresik tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan industri dan bisnis Gresik dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Gresik?",
+          a: "Program cocok untuk industri semen, petrokimia, pupuk, manufaktur, logistik pelabuhan, dan perusahaan regional Jawa Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
