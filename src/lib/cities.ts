@@ -1470,6 +1470,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "jember",
+    name: "Jember",
+    title: "Corporate AI Training Jember",
+    description:
+      "Jember adalah kota di Jawa Timur bagian timur, pusat agribisnis (tembakau, kopi, kakao), perdagangan, dan pendidikan. Corporate AI training di Jember tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Jember adalah salah satu pusat ekonomi Jawa Timur bagian timur, dengan basis agribisnis (tembakau, kopi, kakao), perdagangan, dan pendidikan (Universitas Jember). Corporate AI training di Jember dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Jember (Jl. Gajah Mada, kawasan Alun-Alun, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk agribisnis (tembakau, kopi, kakao), perdagangan, pendidikan, dan perusahaan regional Jawa Timur",
+      "Tersedia on-site di kawasan bisnis Jember dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Jember",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Jember",
+      "pelatihan AI Jember untuk perusahaan",
+      "AI training Jember",
+      "pelatihan AI Jember",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Jember saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-jember-untuk-perusahaan",
+        q: "Pelatihan AI Jember untuk perusahaan",
+        a: "Pelatihan AI Jember untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks agribisnis, perdagangan, dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Jember dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-jember",
+          q: "What is corporate AI training in Jember?",
+          a: "Corporate AI training in Jember is an on-site or virtual program for company teams in East Java: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Jember business districts (Jl. Gajah Mada, the Alun-Alun area, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Jember tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Jember dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Jember?",
+          a: "Program cocok untuk agribisnis (tembakau, kopi, kakao), perdagangan, pendidikan, dan perusahaan regional Jawa Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
