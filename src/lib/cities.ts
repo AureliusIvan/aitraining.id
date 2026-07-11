@@ -1608,6 +1608,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "tasikmalaya",
+    name: "Tasikmalaya",
+    title: "Corporate AI Training Tasikmalaya",
+    description:
+      "Tasikmalaya adalah kota di Jawa Barat bagian timur (Priangan Timur), pusat kerajinan (bordir, batik, kelom geulis, anyaman), perdagangan, dan UMKM. Corporate AI training di Tasikmalaya tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Tasikmalaya adalah salah satu pusat ekonomi Jawa Barat bagian timur, dikenal dengan industri kerajinan (bordir, batik, kelom geulis, anyaman), perdagangan, pertanian, dan UMKM yang aktif. Corporate AI training di Tasikmalaya dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Tasikmalaya (Jl. HZ Mustofa, Cihideung, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk kerajinan, perdagangan, UMKM, pertanian, dan perusahaan regional Jawa Barat",
+      "Tersedia on-site di kawasan bisnis Tasikmalaya dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Tasikmalaya",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Tasikmalaya",
+      "pelatihan AI Tasikmalaya untuk perusahaan",
+      "AI training Tasikmalaya",
+      "pelatihan AI Tasikmalaya",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Tasikmalaya saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-tasikmalaya-untuk-perusahaan",
+        q: "Pelatihan AI Tasikmalaya untuk perusahaan",
+        a: "Pelatihan AI Tasikmalaya untuk perusahaan adalah program corporate training on-site atau virtual di Jawa Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks kerajinan, perdagangan, dan UMKM regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Tasikmalaya dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-tasikmalaya",
+          q: "What is corporate AI training in Tasikmalaya?",
+          a: "Corporate AI training in Tasikmalaya is an on-site or virtual program for company teams in West Java: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Tasikmalaya business districts (Jl. HZ Mustofa, Cihideung, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Tasikmalaya tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Tasikmalaya dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Tasikmalaya?",
+          a: "Program cocok untuk kerajinan, perdagangan, UMKM, pertanian, dan perusahaan regional Jawa Barat yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
