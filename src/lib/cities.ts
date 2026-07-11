@@ -1194,6 +1194,98 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "banjarmasin",
+    name: "Banjarmasin",
+    title: "Corporate AI Training Banjarmasin",
+    description:
+      "Banjarmasin adalah pusat perdagangan, pelabuhan sungai, dan jasa di Kalimantan Selatan. Corporate AI training di Banjarmasin tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Banjarmasin adalah ibu kota Kalimantan Selatan dan pusat perdagangan, pelabuhan sungai, serta jasa regional. Corporate AI training di Banjarmasin dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Banjarmasin (Ahmad Yani, Lambung Mangkurat, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, pelabuhan sungai, jasa, dan perusahaan regional Kalimantan Selatan",
+      "Tersedia on-site di kawasan bisnis Banjarmasin dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Banjarmasin",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Banjarmasin",
+      "pelatihan AI Banjarmasin untuk perusahaan",
+      "AI training Banjarmasin",
+      "pelatihan AI Banjarmasin",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Banjarmasin saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-banjarmasin-untuk-perusahaan",
+        q: "Pelatihan AI Banjarmasin untuk perusahaan",
+        a: "Pelatihan AI Banjarmasin untuk perusahaan adalah program corporate training on-site atau virtual di Kalimantan Selatan yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Banjarmasin dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-banjarmasin",
+          q: "What is corporate AI training in Banjarmasin?",
+          a: "Corporate AI training in Banjarmasin is an on-site or virtual program for company teams in South Kalimantan: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Banjarmasin business districts (Ahmad Yani, Lambung Mangkurat, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Banjarmasin tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Banjarmasin dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Banjarmasin?",
+          a: "Program cocok untuk perdagangan, pelabuhan sungai, jasa, dan perusahaan regional Kalimantan Selatan yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
+  {
+    id: "samarinda",
+    name: "Samarinda",
+    title: "Corporate AI Training Samarinda",
+    description:
+      "Samarinda adalah ibu kota Kalimantan Timur, pusat perdagangan, pelabuhan Sungai Mahakam, dan jasa, serta dekat dengan pengembangan Ibu Kota Nusantara (IKN). Corporate AI training di Samarinda tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Samarinda adalah ibu kota Kalimantan Timur dan pusat perdagangan, pelabuhan Sungai Mahakam, pertambangan, serta jasa regional, dekat dengan pengembangan Ibu Kota Nusantara (IKN). Corporate AI training di Samarinda dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Samarinda (Jl. Sudirman, Citra Niaga, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, pertambangan, energi, jasa, dan perusahaan regional Kalimantan Timur",
+      "Tersedia on-site di kawasan bisnis Samarinda dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional, termasuk mitra di sekitar IKN",
+      "Virtual session tersedia untuk tim di luar Samarinda",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Samarinda",
+      "pelatihan AI Samarinda untuk perusahaan",
+      "AI training Samarinda",
+      "pelatihan AI Samarinda",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Samarinda saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-samarinda-untuk-perusahaan",
+        q: "Pelatihan AI Samarinda untuk perusahaan",
+        a: "Pelatihan AI Samarinda untuk perusahaan adalah program corporate training on-site atau virtual di Kalimantan Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan, pertambangan, dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Samarinda dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-samarinda",
+          q: "What is corporate AI training in Samarinda?",
+          a: "Corporate AI training in Samarinda is an on-site or virtual program for company teams in East Kalimantan: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Samarinda business districts (Jl. Sudirman, Citra Niaga, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Samarinda tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Samarinda dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Samarinda?",
+          a: "Program cocok untuk perdagangan, pertambangan, energi, jasa, dan perusahaan regional Kalimantan Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
