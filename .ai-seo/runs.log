@@ -173,3 +173,12 @@
 2026-07-10 deploy q=pelatihan ai onsite balikpapan commit=18c1495 page=/cities/balikpapan
 2026-07-10 deploy q=corporate ai training cirebon commit=aa29a6f page=/cities/cirebon
 2026-07-10 deploy q=corporate ai training kediri commit=672b4ef page=/cities/kediri
+2026-07-11 deploy q=apa itu ai training indonesia commit=14da0d8 page=/ (user target: win "AI Training Indonesia" aeo)
+2026-07-11 deploy q=what is ai training indonesia commit=e143263 page=/ (EN entity twin)
+2026-07-11 deploy q=corporate ai training samarinda commit=c863df6 page=/cities/samarinda
+2026-07-11 reconcile q=corporate ai training banjarmasin working->done (page shipped 2026-07-10)
+2026-07-11 deploy q=corporate ai training padang commit=9fc0ba5 page=/cities/padang
+2026-07-11 deploy q=corporate ai training lampung commit=50d251f page=/cities/lampung
+2026-07-11 discovery seeded=5 queries=pelatihan membuat ai agent untuk perusahaan,narasumber ai untuk seminar perusahaan,corporate ai training jambi,corporate ai training mataram,corporate ai training jember
+2026-07-11 deploy q=pelatihan membuat ai agent untuk perusahaan commit=0c68c25 page=/programs
+2026-07-11 deploy q=narasumber ai untuk seminar perusahaan commit=1939de0 page=/pembicara-ai-indonesia

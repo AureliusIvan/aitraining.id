@@ -127,7 +127,14 @@
 {"q": "pelatihan ai onsite balikpapan", "page": "/cities/balikpapan", "status": "done", "commit": "18c1495", "ts": "2026-07-10", "notes": "/#pelatihan-ai-onsite-balikpapan"}
 {"q": "corporate ai training cirebon", "page": "/cities/cirebon", "status": "done", "commit": "aa29a6f", "ts": "2026-07-10", "notes": "/#corporate-ai-training-cirebon"}
 {"q": "corporate ai training kediri", "page": "/cities/kediri", "status": "done", "commit": "672b4ef", "ts": "2026-07-10", "notes": "/#corporate-ai-training-kediri"}
-{"q": "corporate ai training banjarmasin", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
-{"q": "corporate ai training samarinda", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
-{"q": "corporate ai training padang", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
-{"q": "corporate ai training lampung", "page": null, "status": "pending", "found": "2026-07-10", "source": "discovery"}
+{"q": "corporate ai training banjarmasin", "page": "/cities/banjarmasin", "status": "done", "commit": "prior", "ts": "2026-07-11", "source": "discovery", "notes": "page shipped 2026-07-10; stale working line reconciled"}
+{"q": "corporate ai training samarinda", "page": "/cities/samarinda", "status": "done", "commit": "c863df6", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training padang", "page": "/cities/padang", "status": "done", "commit": "9fc0ba5", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training lampung", "page": "/cities/lampung", "status": "done", "commit": "50d251f", "ts": "2026-07-11", "source": "discovery", "notes": "Bandar Lampung, capital of Lampung province"}
+{"q": "apa itu ai training indonesia", "page": "/", "status": "done", "commit": "14da0d8", "ts": "2026-07-11", "source": "user", "notes": "head-term entity answer block + FAQPage + llms.txt at #apa-itu-ai-training-indonesia"}
+{"q": "what is ai training indonesia", "page": "/", "status": "done", "commit": "e143263", "ts": "2026-07-11", "source": "derived", "notes": "EN entity-definition twin in homepage FAQPage schema"}
+{"q": "pelatihan membuat ai agent untuk perusahaan", "page": "/programs", "status": "done", "commit": "0c68c25", "ts": "2026-07-11", "source": "discovery", "notes": "#apa-itu-pelatihan-ai-agent def block + FAQPage + llms.txt"}
+{"q": "narasumber ai untuk seminar perusahaan", "page": "/pembicara-ai-indonesia", "status": "done", "commit": "1939de0", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training jambi", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training mataram", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training jember", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
