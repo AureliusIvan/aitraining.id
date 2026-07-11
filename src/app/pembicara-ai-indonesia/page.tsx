@@ -104,6 +104,10 @@ const faqs = [
     q: "Apakah Aurelius Ivan Wijaya menyediakan AI workshop di Indonesia?",
     a: "Ya. Selain sesi keynote dan panel, Aurelius Ivan Wijaya menyampaikan AI workshop korporat setengah hari atau satu hari penuh dengan praktik langsung untuk tim, tersedia di Jakarta dan kota lain di Indonesia. Topiknya meliputi agentic AI, AI agent building, AI automation, dan GEO. Untuk format kelas berkelanjutan dengan kurikulum bertahap, lihat program pelatihan korporat di aitraining.id/programs.",
   },
+  {
+    q: "Apakah tersedia narasumber AI untuk seminar perusahaan?",
+    a: "Ya. Aurelius Ivan Wijaya tersedia sebagai narasumber AI untuk seminar, in-house session, dan acara korporat di seluruh Indonesia, dengan lebih dari 50 acara sebagai pembicara. Ia membawakan topik agentic AI, AI agent building, AI automation, dan GEO, disesuaikan dengan audiens dan tujuan acara. Undangan lewat ivan@aurelivan.com atau WhatsApp +6281281032115.",
+  },
 ];
 
 export default function PembicaraAiIndonesiaPage() {
