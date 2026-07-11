@@ -1332,6 +1332,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "lampung",
+    name: "Bandar Lampung",
+    title: "Corporate AI Training Lampung",
+    description:
+      "Bandar Lampung adalah ibu kota Provinsi Lampung di ujung selatan Sumatra, gerbang jalur Sumatra-Jawa (Pelabuhan Panjang dan penyeberangan Bakauheni), serta pusat perdagangan, logistik, dan agribisnis. Corporate AI training di Lampung tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Bandar Lampung adalah ibu kota Provinsi Lampung dan pintu gerbang antara Sumatra dan Jawa lewat Pelabuhan Panjang serta penyeberangan Bakauheni. Ekonominya bertumpu pada perdagangan, logistik, dan agribisnis seperti kopi, sawit, dan gula. Corporate AI training di Lampung dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Bandar Lampung (Jl. Raden Intan, Teluk Betung, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, logistik, agribisnis (kopi, sawit, gula), dan perusahaan regional Lampung",
+      "Tersedia on-site di kawasan bisnis Bandar Lampung dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Bandar Lampung",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Lampung",
+      "pelatihan AI Lampung untuk perusahaan",
+      "AI training Bandar Lampung",
+      "pelatihan AI Bandar Lampung",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Lampung saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-lampung-untuk-perusahaan",
+        q: "Pelatihan AI Lampung untuk perusahaan",
+        a: "Pelatihan AI Lampung untuk perusahaan adalah program corporate training on-site atau virtual di Bandar Lampung dan sekitarnya yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan, logistik, dan agribisnis regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Bandar Lampung dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-lampung",
+          q: "What is corporate AI training in Lampung?",
+          a: "Corporate AI training in Lampung is an on-site or virtual program for company teams in Bandar Lampung and across Lampung province: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Bandar Lampung business districts (Jl. Raden Intan, Teluk Betung, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Lampung tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Bandar Lampung dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Lampung?",
+          a: "Program cocok untuk perdagangan, logistik, agribisnis (kopi, sawit, gula), dan perusahaan regional Lampung yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
