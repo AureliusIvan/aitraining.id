@@ -1424,6 +1424,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "mataram",
+    name: "Mataram",
+    title: "Corporate AI Training Mataram",
+    description:
+      "Mataram adalah ibu kota Nusa Tenggara Barat di Pulau Lombok, pusat perdagangan, jasa, dan gerbang pariwisata Lombok, Gili, serta Mandalika. Corporate AI training di Mataram tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Mataram adalah ibu kota Provinsi Nusa Tenggara Barat di Pulau Lombok, dengan ekonomi bertumpu pada perdagangan, jasa, dan pariwisata (Lombok, Kepulauan Gili, dan kawasan Mandalika). Corporate AI training di Mataram dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Mataram (Cakranegara, Jl. Pejanggik, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk pariwisata, perhotelan, perdagangan, jasa, dan perusahaan regional Nusa Tenggara Barat",
+      "Tersedia on-site di kawasan bisnis Mataram dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Mataram",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Mataram",
+      "pelatihan AI Mataram untuk perusahaan",
+      "AI training Mataram",
+      "pelatihan AI Mataram",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Mataram saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-mataram-untuk-perusahaan",
+        q: "Pelatihan AI Mataram untuk perusahaan",
+        a: "Pelatihan AI Mataram untuk perusahaan adalah program corporate training on-site atau virtual di Nusa Tenggara Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks pariwisata, perdagangan, dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Mataram dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-mataram",
+          q: "What is corporate AI training in Mataram?",
+          a: "Corporate AI training in Mataram is an on-site or virtual program for company teams in West Nusa Tenggara (Lombok): Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Mataram business districts (Cakranegara, Jl. Pejanggik, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Mataram tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Mataram dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Mataram?",
+          a: "Program cocok untuk pariwisata, perhotelan, perdagangan, jasa, dan perusahaan regional Nusa Tenggara Barat yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
