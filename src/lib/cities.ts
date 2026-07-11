@@ -1654,6 +1654,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "kupang",
+    name: "Kupang",
+    title: "Corporate AI Training Kupang",
+    description:
+      "Kupang adalah ibu kota Nusa Tenggara Timur di Pulau Timor, pusat pemerintahan, perdagangan, jasa, dan pelabuhan (Tenau) di Indonesia timur. Corporate AI training di Kupang tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Kupang adalah ibu kota Provinsi Nusa Tenggara Timur di Pulau Timor, dengan basis pemerintahan, perdagangan, jasa, perikanan, dan peternakan regional. Corporate AI training di Kupang dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Kupang (Jl. Sudirman, Kota Kupang, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk pemerintahan, perdagangan, jasa, perikanan, peternakan, dan perusahaan regional Nusa Tenggara Timur",
+      "Tersedia on-site di kawasan bisnis Kupang dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Kupang",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Kupang",
+      "pelatihan AI Kupang untuk perusahaan",
+      "AI training Kupang",
+      "pelatihan AI Kupang",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Kupang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-kupang-untuk-perusahaan",
+        q: "Pelatihan AI Kupang untuk perusahaan",
+        a: "Pelatihan AI Kupang untuk perusahaan adalah program corporate training on-site atau virtual di Nusa Tenggara Timur yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks pemerintahan, perdagangan, dan jasa regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Kupang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-kupang",
+          q: "What is corporate AI training in Kupang?",
+          a: "Corporate AI training in Kupang is an on-site or virtual program for company teams in East Nusa Tenggara (Timor): Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Kupang business districts (Jl. Sudirman, Kota Kupang, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Kupang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Kupang dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Kupang?",
+          a: "Program cocok untuk pemerintahan, perdagangan, jasa, perikanan, peternakan, dan perusahaan regional Nusa Tenggara Timur yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
