@@ -34,6 +34,9 @@ const workshopAiPerusahaanIndonesiaAnswer =
 const whatIsCorporateAiTrainingAnswerEn =
   "Corporate AI training is an in-house or virtual program that teaches a company's employees to use Generative AI, workflow automation (n8n), AI-assisted development (Cursor), and AI agents in daily work. AI Training Indonesia delivers hands-on corporate AI training across Indonesia with a 70% practice curriculum, led by Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia and Cursor Ambassador.";
 
+const whatIsAiTrainingIndonesiaAnswerEn =
+  "AI Training Indonesia is a corporate AI training service that helps company teams across Indonesia adopt Generative AI through hands-on workshops. Led by Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia and Cursor Ambassador, it covers AI automation (n8n), AI-powered development (Cursor), Claude, and AI strategy, with a 70% practice curriculum customized per industry, available on-site or virtual.";
+
 const whyCompaniesNeedAiTrainingAnswerEn =
   "Generative AI is changing how work gets done across many business functions. According to the Future of Jobs Report 2025 (World Economic Forum), around 39% of workers' core skills are expected to change over 2025-2030. Hands-on training helps a whole team apply automation (n8n), AI-assisted development (Cursor), and AI agents in the same business context, so they can use these tools in everyday work.";
 
@@ -221,6 +224,14 @@ export default function HomePage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: apaItuAiTrainingIndonesiaAnswer,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is AI Training Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: whatIsAiTrainingIndonesiaAnswerEn,
         },
       },
       {
