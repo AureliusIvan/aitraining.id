@@ -25,6 +25,9 @@ const kapanPerusahaanPerluAiTrainingAnswer =
 const apaItuCorporateAiTrainingAnswer =
   "Corporate AI training adalah program pelatihan in-house atau virtual yang mengajarkan karyawan perusahaan memakai Generative AI, automation workflow (n8n), development berbantuan AI (Cursor), dan AI agents di pekerjaan harian. AI Training Indonesia menyampaikan program corporate AI training hands-on di seluruh Indonesia dengan kurikulum 70% praktik.";
 
+const apaItuAiTrainingIndonesiaAnswer =
+  "AI Training Indonesia adalah layanan pelatihan AI korporat yang membantu tim perusahaan di seluruh Indonesia mengadopsi Generative AI lewat workshop hands-on. Dipimpin Aurelius Ivan Wijaya, Official n8n Ambassador for Indonesia dan Cursor Ambassador, programnya mencakup AI automation (n8n), AI-powered development (Cursor), Claude, dan strategi AI, dengan kurikulum 70% praktik yang dikustomisasi per industri, tersedia on-site maupun virtual.";
+
 const workshopAiPerusahaanIndonesiaAnswer =
   "Workshop AI perusahaan di Indonesia adalah sesi pelatihan intensif (half-day hingga multi-day) yang mengajarkan tim memakai Generative AI secara praktis: automation workflow di n8n, development berbantuan AI dengan Cursor, atau roadmap adopsi AI untuk manajemen. AI Training Indonesia menyelenggarakan workshop on-site di Jakarta, Surabaya, Bandung, Tangerang, dan virtual untuk tim di seluruh Indonesia.";
 
@@ -210,6 +213,14 @@ export default function HomePage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: apaItuCorporateAiTrainingAnswer,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apa itu AI Training Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: apaItuAiTrainingIndonesiaAnswer,
         },
       },
       {
@@ -976,6 +987,17 @@ function WhySection() {
           </h3>
           <p className="text-white/70 leading-relaxed">
             {apaItuCorporateAiTrainingAnswer}
+          </p>
+        </div>
+        <div
+          id="apa-itu-ai-training-indonesia"
+          className="mb-16 max-w-3xl border border-white/10 rounded-2xl p-8"
+        >
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Apa itu AI Training Indonesia?
+          </h3>
+          <p className="text-white/70 leading-relaxed">
+            {apaItuAiTrainingIndonesiaAnswer}
           </p>
         </div>
         <div
