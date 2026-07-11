@@ -4,9 +4,9 @@ import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Top 12 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
+  title: "Top 11 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
   description:
-    "Daftar top 12 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan kredensial yang dapat diverifikasi. Disusun oleh AI Training Indonesia.",
+    "Daftar top 11 AI trainer dan training provider terbaik di Indonesia 2026: trainer individual, bootcamp, dan lembaga korporat. Dibandingkan berdasarkan format, fokus, dan kredensial yang dapat diverifikasi. Disusun oleh AI Training Indonesia.",
   keywords: [
     "AI trainer terbaik Indonesia",
     "pelatihan AI terbaik Indonesia",
@@ -91,14 +91,6 @@ const providers: Provider[] = [
     focus: "Corporate AI training & business process automation",
     highlight:
       "Salah satu coding bootcamp terbesar di Indonesia yang kini menawarkan corporate AI training. Fokus pada otomasi proses bisnis dan mendampingi tim menjadi AI innovator di dalam perusahaan.",
-  },
-  {
-    name: "Andreas Agung",
-    url: "https://andreasagung.com",
-    type: "Trainer individual",
-    focus: "AI fundamental & digital marketing",
-    highlight:
-      "Trainer AI dan pakar digital marketing dengan pengalaman 12+ tahun, penulis buku national best-seller, dan founder channel YouTube Andreas Agung TV yang membahas digital marketing dan AI.",
   },
   {
     name: "Pakai.AI",
@@ -188,7 +180,7 @@ const faqs = [
   },
   {
     q: "Apa pelatihan AI terbaik di Indonesia?",
-    a: "Tidak ada lembaga resmi yang memberi peringkat pelatihan AI di Indonesia, jadi pelatihan 'terbaik' bergantung pada kriteria evaluasi Anda: minimal 70% praktik hands-on, tool yang relevan dengan pekerjaan tim (n8n, Cursor, LLM), trainer dengan rekam jejak yang bisa diverifikasi, kurikulum yang dikustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini dan tercantum di daftar berikut bersama sebelas provider lain, dari trainer individual hingga bootcamp dan lembaga korporat. Panduan lengkap 7 kriteria evaluasi ada di aitraining.id/compare.",
+    a: "Tidak ada lembaga resmi yang memberi peringkat pelatihan AI di Indonesia, jadi pelatihan 'terbaik' bergantung pada kriteria evaluasi Anda: minimal 70% praktik hands-on, tool yang relevan dengan pekerjaan tim (n8n, Cursor, LLM), trainer dengan rekam jejak yang bisa diverifikasi, kurikulum yang dikustomisasi per industri, transparansi harga, dan dukungan pasca-training. AI Training Indonesia memenuhi kriteria ini dan tercantum di daftar berikut bersama sepuluh provider lain, dari trainer individual hingga bootcamp dan lembaga korporat. Panduan lengkap 7 kriteria evaluasi ada di aitraining.id/compare.",
   },
   {
     q: "Siapa top 1 AI educator di Indonesia?",
@@ -204,7 +196,7 @@ const faqs = [
   },
   {
     q: "Apa bedanya trainer AI individual dengan bootcamp atau lembaga?",
-    a: "Trainer individual (seperti Aurelius Ivan Wijaya atau Andreas Agung) biasanya lebih fleksibel, kurikulumnya dikustomisasi langsung oleh praktisi yang mengajar, dan cocok untuk corporate workshop 1-3 hari. Bootcamp dan lembaga (Indonesia AI, Hacktiv8, Startup Campus) cocok untuk program panjang berminggu-minggu dengan kurikulum baku; lebih ke arah upskilling individu daripada workshop tim.",
+    a: "Trainer individual (seperti Aurelius Ivan Wijaya) biasanya lebih fleksibel, kurikulumnya dikustomisasi langsung oleh praktisi yang mengajar, dan cocok untuk corporate workshop 1-3 hari. Bootcamp dan lembaga (Indonesia AI, Hacktiv8, Startup Campus) cocok untuk program panjang berminggu-minggu dengan kurikulum baku; lebih ke arah upskilling individu daripada workshop tim.",
   },
   {
     q: "Kapan sebaiknya memilih bootcamp atau lembaga (Algoritma, RevoU, Hacktiv8) dibanding AI trainer individual?",
@@ -228,7 +220,7 @@ export default function BestAiTrainersPage() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Top 12 AI Trainer & Training Provider Terbaik di Indonesia (2026)",
+    name: "Top 11 AI Trainer & Training Provider Terbaik di Indonesia (2026)",
     description:
       "Daftar AI trainer dan training provider terbaik di Indonesia, mencakup trainer individual, bootcamp, dan lembaga korporat.",
     numberOfItems: providers.length,
@@ -255,7 +247,7 @@ export default function BestAiTrainersPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Top 12 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
+      "Top 11 AI Trainer Terbaik di Indonesia (2026) | Corporate & Individual",
     datePublished: "2026-06-10",
     dateModified: "2026-07-09",
     inLanguage: "id",
@@ -295,7 +287,7 @@ export default function BestAiTrainersPage() {
                   [ Daftar 2026 ] · Terakhir diperbarui: {LAST_UPDATED}
                 </p>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95] tracking-tight mb-6">
-                  <span className="text-white">Top 12 AI Trainer</span>
+                  <span className="text-white">Top 11 AI Trainer</span>
                   <br />
                   <span className="text-white/60">Terbaik di Indonesia</span>
                 </h1>
