@@ -1286,6 +1286,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "padang",
+    name: "Padang",
+    title: "Corporate AI Training Padang",
+    description:
+      "Padang adalah ibu kota Sumatera Barat, kota pelabuhan pesisir (Teluk Bayur), pusat perdagangan, industri semen, dan pariwisata Minangkabau. Corporate AI training di Padang tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Padang adalah ibu kota Sumatera Barat dan kota pelabuhan pesisir di pantai barat Sumatra, dengan Pelabuhan Teluk Bayur, industri semen, perdagangan, perikanan, dan pariwisata Minangkabau. Corporate AI training di Padang dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Padang (Jl. Sudirman, Khatib Sulaiman, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk perdagangan, pelabuhan, industri semen, perikanan, pariwisata, dan perusahaan regional Sumatera Barat",
+      "Tersedia on-site di kawasan bisnis Padang dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Padang",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Padang",
+      "pelatihan AI Padang untuk perusahaan",
+      "AI training Padang",
+      "pelatihan AI Padang",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Padang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-padang-untuk-perusahaan",
+        q: "Pelatihan AI Padang untuk perusahaan",
+        a: "Pelatihan AI Padang untuk perusahaan adalah program corporate training on-site atau virtual di Sumatera Barat yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks perdagangan, pelabuhan, dan pariwisata regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Padang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-padang",
+          q: "What is corporate AI training in Padang?",
+          a: "Corporate AI training in Padang is an on-site or virtual program for company teams in West Sumatra: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Padang business districts (Jl. Sudirman, Khatib Sulaiman, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Padang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Padang dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Padang?",
+          a: "Program cocok untuk perdagangan, pelabuhan, industri semen, perikanan, pariwisata, dan perusahaan regional Sumatera Barat yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
