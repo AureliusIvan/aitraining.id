@@ -1516,6 +1516,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "serang",
+    name: "Serang",
+    title: "Corporate AI Training Serang",
+    description:
+      "Serang adalah ibu kota Provinsi Banten di Jawa bagian barat, pusat pemerintahan, perdagangan, dan jasa, dekat dengan kawasan industri Cilegon dan Pelabuhan Merak. Corporate AI training di Serang tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Serang adalah ibu kota Provinsi Banten dengan basis pemerintahan, perdagangan, dan jasa, serta berdekatan dengan kawasan industri Cilegon dan Pelabuhan Merak (jalur Jawa-Sumatra). Corporate AI training di Serang dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Serang (Kota Serang, Jl. Ahmad Yani, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk pemerintahan, perdagangan, industri, jasa, dan perusahaan regional Banten",
+      "Tersedia on-site di kawasan bisnis Serang dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Serang",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Serang",
+      "pelatihan AI Serang untuk perusahaan",
+      "AI training Serang",
+      "pelatihan AI Serang",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Serang saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-serang-untuk-perusahaan",
+        q: "Pelatihan AI Serang untuk perusahaan",
+        a: "Pelatihan AI Serang untuk perusahaan adalah program corporate training on-site atau virtual di Banten yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks pemerintahan, perdagangan, dan industri regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Serang dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-serang",
+          q: "What is corporate AI training in Serang?",
+          a: "Corporate AI training in Serang is an on-site or virtual program for company teams in Banten: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Serang business districts (Kota Serang, Jl. Ahmad Yani, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Serang tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Serang dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Serang?",
+          a: "Program cocok untuk pemerintahan, perdagangan, industri (dekat kawasan Cilegon), jasa, dan perusahaan regional Banten yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
