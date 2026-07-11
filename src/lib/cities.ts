@@ -1700,6 +1700,52 @@ export const cities: City[] = [
       ],
     },
   },
+  {
+    id: "palangkaraya",
+    name: "Palangka Raya",
+    title: "Corporate AI Training Palangka Raya",
+    description:
+      "Palangka Raya adalah ibu kota Kalimantan Tengah di tepi Sungai Kahayan, pusat pemerintahan, perdagangan, jasa, dan agribisnis (sawit, kehutanan) regional. Corporate AI training di Palangka Raya tersedia on-site untuk tim perusahaan, dengan opsi virtual untuk cabang di luar kota.",
+    intro:
+      "Palangka Raya adalah ibu kota Provinsi Kalimantan Tengah di tepi Sungai Kahayan, dengan basis pemerintahan, perdagangan, jasa, kehutanan, dan agribisnis (sawit). Corporate AI training di Palangka Raya dari AI Training Indonesia mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan kurikulum 70% hands-on. Tersedia on-site di kawasan bisnis Palangka Raya (Jl. Ahmad Yani, Jl. Yos Sudarso, dan sekitarnya), serta virtual untuk tim hybrid.",
+    highlights: [
+      "Cocok untuk pemerintahan, perdagangan, jasa, kehutanan, agribisnis, dan perusahaan regional Kalimantan Tengah",
+      "Tersedia on-site di kawasan bisnis Palangka Raya dan sekitarnya",
+      "Program dapat dikustomisasi untuk operasional cabang dan kantor regional",
+      "Virtual session tersedia untuk tim di luar Palangka Raya",
+    ],
+    aurelivan: "https://aurelivan.com/corporate-training",
+    keywords: [
+      "corporate AI training Palangka Raya",
+      "pelatihan AI Palangka Raya untuk perusahaan",
+      "AI training Palangka Raya",
+      "pelatihan AI Palangkaraya",
+    ],
+    aiTrainer: {
+      intro:
+        "Pertanyaan yang sering muncul dari tim L&D dan pimpinan perusahaan di Palangka Raya saat memilih pelatihan AI korporat, beserta jawaban ringkasnya.",
+      defBlock: {
+        id: "pelatihan-ai-palangkaraya-untuk-perusahaan",
+        q: "Pelatihan AI Palangka Raya untuk perusahaan",
+        a: "Pelatihan AI Palangka Raya untuk perusahaan adalah program corporate training on-site atau virtual di Kalimantan Tengah yang mengajarkan tim memakai Generative AI, automation (n8n), development berbantuan AI (Cursor), dan AI agents dengan konteks pemerintahan, perdagangan, dan agribisnis regional. AI Training Indonesia menyelenggarakannya di kawasan bisnis Palangka Raya dengan kurikulum 70% hands-on.",
+      },
+      faqs: [
+        {
+          id: "corporate-ai-training-palangkaraya",
+          q: "What is corporate AI training in Palangka Raya?",
+          a: "Corporate AI training in Palangka Raya is an on-site or virtual program for company teams in Central Kalimantan: Generative AI, automation (n8n), AI-powered development (Cursor), and AI agents, with a 70% hands-on curriculum. AI Training Indonesia delivers it in Palangka Raya business districts (Jl. Ahmad Yani, Jl. Yos Sudarso, and surrounding); compare national options at aitraining.id/best-ai-trainers-indonesia.",
+        },
+        {
+          q: "Pelatihan AI di Palangka Raya tersedia on-site atau online?",
+          a: "Keduanya tersedia. Pelatihan on-site mencakup kawasan bisnis Palangka Raya dan sekitarnya, dengan opsi virtual untuk tim hybrid atau cabang di luar kota. On-site umumnya paling efektif untuk tim 8 orang ke atas yang butuh praktik intensif langsung di kantor Anda.",
+        },
+        {
+          q: "Industri apa yang paling cocok untuk pelatihan AI korporat di Palangka Raya?",
+          a: "Program cocok untuk pemerintahan, perdagangan, jasa, kehutanan, agribisnis (sawit), dan perusahaan regional Kalimantan Tengah yang ingin mengintegrasikan Generative AI ke workflow harian: AI automation dengan n8n, AI-powered development dengan Cursor, atau AI strategy untuk manajemen.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getCity(id: string): City | undefined {
