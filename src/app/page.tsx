@@ -1407,58 +1407,68 @@ function FAQSection() {
   return (
     <section
       id="faq"
-      className="bg-black py-24 px-6 sm:px-8 border-t border-white/10"
+      className="bg-black py-16 sm:py-20 px-6 sm:px-8 border-t border-white/10"
     >
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-10">
           <div>
-            <p className="text-white/70 text-sm mb-6 tracking-wide">[ FAQ ]</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-              Pertanyaan yang
-              <br />
+            <p className="text-white/70 text-sm mb-3 tracking-wide">[ FAQ ]</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
+              Pertanyaan yang{" "}
               <span className="text-white/60">sering ditanyakan</span>
             </h2>
-            <p className="text-white/60 mt-6 text-sm leading-relaxed">
-              Pertanyaan lain? Kunjungi{" "}
-              <a
-                href="https://aurelivan.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-white/80 transition-colors"
-              >
-                aurelivan.com
-              </a>{" "}
-              atau hubungi kami langsung.
-            </p>
           </div>
-          <div className="space-y-6">
-            {faqs.map((faq, i) => (
-              <details
-                key={i}
-                className="group border border-white/10 rounded-xl"
-              >
-                <summary className="flex items-center justify-between cursor-pointer p-6 text-white/90 font-medium text-lg hover:text-white transition-colors">
-                  <span>{faq.question}</span>
-                  <svg
-                    className="w-5 h-5 text-white/60 transition-transform group-open:rotate-45 flex-shrink-0 ml-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-6">
-                  <p className="text-white/70 leading-relaxed">{faq.answer}</p>
-                </div>
-              </details>
-            ))}
-          </div>
+          <p className="text-white/60 text-sm leading-relaxed sm:max-w-xs sm:text-right">
+            Pertanyaan lain?{" "}
+            <a
+              href="https://aurelivan.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white/80 transition-colors"
+            >
+              aurelivan.com
+            </a>{" "}
+            atau{" "}
+            <Link
+              href="/contact"
+              className="underline hover:text-white/80 transition-colors"
+            >
+              hubungi kami
+            </Link>
+            .
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 md:gap-x-10 border-t border-white/10">
+          {faqs.map((faq, i) => (
+            <details
+              key={i}
+              className="group border-b border-white/10 open:bg-white/[0.02]"
+            >
+              <summary className="flex items-start justify-between gap-3 cursor-pointer py-3.5 text-white/90 font-medium text-sm sm:text-[0.95rem] leading-snug hover:text-white transition-colors list-none [&::-webkit-details-marker]:hidden">
+                <span>{faq.question}</span>
+                <svg
+                  className="w-4 h-4 text-white/45 transition-transform group-open:rotate-45 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 4v16m8-8H4"
+                  />
+                </svg>
+              </summary>
+              <div className="pb-3.5 pr-6">
+                <p className="text-white/65 text-sm leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </details>
+          ))}
         </div>
       </div>
     </section>
