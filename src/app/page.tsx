@@ -359,7 +359,17 @@ export default function HomePage() {
 function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
+      <div className="absolute inset-0">
+        <Image
+          src="/assets/hero.webp"
+          alt="AI Training Indonesia — corporate AI training by Aurelius Ivan Wijaya"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+      </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 w-full">
         <div className="max-w-4xl">
