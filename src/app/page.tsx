@@ -8,12 +8,18 @@ import { trustedBy, buildTrustedBySchema } from "@/lib/trusted-by";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Training Indonesia",
+    absolute: "AI Training Indonesia | Corporate AI Training di Indonesia",
   },
   description:
     "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI automation, AI-powered development, and AI strategy for enterprise teams. Delivered by Aurelius Ivan Wijaya, Corporate AI Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador.",
   alternates: {
     canonical: "https://aitraining.id",
+  },
+  openGraph: {
+    title: "AI Training Indonesia | Corporate AI Training di Indonesia",
+  },
+  twitter: {
+    title: "AI Training Indonesia | Corporate AI Training di Indonesia",
   },
 };
 
