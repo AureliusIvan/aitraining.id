@@ -1,6 +1,6 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
-
-export const runtime = "edge";
 
 export const alt = "AI Training Indonesia by Aurelius Ivan Wijaya";
 export const size = {
@@ -10,6 +10,11 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
+  const logoData = await readFile(
+    join(process.cwd(), "public/assets/brand/logo-ondark.png"),
+  );
+  const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -25,50 +30,37 @@ export default async function Image() {
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        <div
+        <img
+          src={logoSrc}
+          alt="AI Training Indonesia"
+          width={720}
+          height={125}
+          style={{ marginBottom: 48 }}
+        />
+        <p
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            fontSize: "36px",
+            color: "#a0a0a0",
+            margin: "0 0 20px 0",
+            maxWidth: "900px",
+            lineHeight: 1.4,
             textAlign: "center",
           }}
         >
-          <h1
-            style={{
-              fontSize: "72px",
-              fontWeight: "bold",
-              color: "white",
-              margin: "0 0 32px 0",
-              letterSpacing: "-0.03em",
-              maxWidth: "1000px",
-              lineHeight: 1.1,
-            }}
-          >
-            AI Training Indonesia
-          </h1>
-          <p
-            style={{
-              fontSize: "36px",
-              color: "#a0a0a0",
-              margin: "0 0 20px 0",
-              maxWidth: "900px",
-              lineHeight: 1.4,
-            }}
-          >
-            Corporate AI Training by Aurelius Ivan Wijaya
-          </p>
-          <p
-            style={{
-              fontSize: "28px",
-              color: "#707070",
-              margin: "0",
-              maxWidth: "800px",
-              lineHeight: 1.5,
-            }}
-          >
-            Hands-on workshops · AI automation · AI development · AI strategy
-          </p>
-        </div>
+          Corporate AI Training by Aurelius Ivan Wijaya
+        </p>
+        <p
+          style={{
+            fontSize: "28px",
+            color: "#707070",
+            margin: "0",
+            maxWidth: "800px",
+            lineHeight: 1.5,
+            textAlign: "center",
+          }}
+        >
+          Hands-on workshops · AI automation · AI development · AI strategy
+        </p>
       </div>
     ),
     {

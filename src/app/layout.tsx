@@ -111,6 +111,8 @@ export default function RootLayout({
     "@id": "https://aitraining.id/#organization",
     name: "AI Training Indonesia",
     url: "https://aitraining.id",
+    logo: "https://aitraining.id/assets/brand/logo.png",
+    image: "https://aitraining.id/assets/brand/logo.png",
     description:
       "Corporate AI training programs in Indonesia. Hands-on Generative AI workshops covering AI agent building, AI automation, AI-powered development, and AI strategy for enterprise teams.",
     founder: {
