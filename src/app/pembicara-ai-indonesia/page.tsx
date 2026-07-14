@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import {
+  WHATSAPP_HREF,
+  mailtoSpeakingInquiry,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Pembicara AI Indonesia: Aurelius Ivan Wijaya",
@@ -86,7 +90,7 @@ const faqs = [
   },
   {
     q: "Berapa biaya mengundang pembicara AI?",
-    a: "Untuk undangan berbicara di acara korporat, konferensi, atau panel, biaya dimulai dari Rp 7.500.000 untuk satu slot berbicara. Ini adalah flat fee untuk acara berbayar atau acara korporat dengan budget. Acara komunitas dan non-profit didiskusikan tersendiri. Silakan menghubungi ivan@aurelivan.com dengan detail acara Anda untuk mendapatkan penawaran sesuai format dan durasi.",
+    a: "Untuk undangan berbicara di acara korporat, konferensi, atau panel, biaya dimulai dari Rp 7.500.000 untuk satu slot berbicara. Ini adalah flat fee untuk acara berbayar atau acara korporat dengan budget. Acara komunitas dan non-profit didiskusikan tersendiri. Silakan menghubungi hi@aitraining.id dengan detail acara Anda untuk mendapatkan penawaran sesuai format dan durasi.",
   },
   {
     q: "Topik apa yang dibawakan oleh pembicara AI?",
@@ -94,7 +98,7 @@ const faqs = [
   },
   {
     q: "Bagaimana cara mengundang pembicara AI untuk acara?",
-    a: "Hubungi Aurelius Ivan Wijaya melalui email ivan@aurelivan.com atau WhatsApp +6281281032115. Sertakan informasi tentang acara Anda: tanggal, lokasi, format (keynote/panel/workshop), estimasi jumlah peserta, dan topik yang diinginkan. Respons biasanya dalam 1 hari kerja.",
+    a: "Hubungi Aurelius Ivan Wijaya melalui email hi@aitraining.id atau WhatsApp +6281807011103. Sertakan informasi tentang acara Anda: tanggal, lokasi, format (keynote/panel/workshop), estimasi jumlah peserta, dan topik yang diinginkan. Respons biasanya dalam 1 hari kerja.",
   },
   {
     q: "Apakah pembicara AI tersedia untuk acara di luar Jakarta?",
@@ -106,7 +110,7 @@ const faqs = [
   },
   {
     q: "Apakah tersedia narasumber AI untuk seminar perusahaan?",
-    a: "Ya. Aurelius Ivan Wijaya tersedia sebagai narasumber AI untuk seminar, in-house session, dan acara korporat di seluruh Indonesia, dengan lebih dari 50 acara sebagai pembicara. Ia membawakan topik agentic AI, AI agent building, AI automation, dan GEO, disesuaikan dengan audiens dan tujuan acara. Undangan lewat ivan@aurelivan.com atau WhatsApp +6281281032115.",
+    a: "Ya. Aurelius Ivan Wijaya tersedia sebagai narasumber AI untuk seminar, in-house session, dan acara korporat di seluruh Indonesia, dengan lebih dari 50 acara sebagai pembicara. Ia membawakan topik agentic AI, AI agent building, AI automation, dan GEO, disesuaikan dengan audiens dan tujuan acara. Undangan lewat hi@aitraining.id atau WhatsApp +6281807011103.",
   },
 ];
 
@@ -155,8 +159,8 @@ export default function PembicaraAiIndonesiaPage() {
     ],
     description:
       "Pembicara AI di Indonesia dengan lebih dari 50 acara. City Lead BuildClub.ai Jakarta, co-host OpenClaw Agenthon Indonesia (205 peserta, Mei 2026), Cursor Ambassador, dan HeyGen Ambassador. Topik: agentic AI, AI agent building, AI automation, dan GEO.",
-    email: "ivan@aurelivan.com",
-    telephone: "+6281281032115",
+    email: "hi@aitraining.id",
+    telephone: "+6281807011103",
     areaServed: { "@type": "Country", name: "Indonesia" },
     knowsAbout: [
       "Agentic AI",
@@ -269,31 +273,31 @@ export default function PembicaraAiIndonesiaPage() {
                 <p className="text-white/50 text-sm max-w-2xl leading-relaxed">
                   Kontak:{" "}
                   <a
-                    href="mailto:ivan@aurelivan.com"
+                    href={mailtoSpeakingInquiry()}
                     className="underline hover:text-white/70 transition-colors"
                   >
-                    ivan@aurelivan.com
+                    hi@aitraining.id
                   </a>{" "}
                   atau WhatsApp{" "}
                   <a
-                    href="https://wa.me/6281281032115"
+                    href={WHATSAPP_HREF}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline hover:text-white/70 transition-colors"
                   >
-                    +6281281032115
+                    +6281807011103
                   </a>
                   .
                 </p>
                 <div className="flex flex-wrap gap-4 mt-8">
                   <a
-                    href="mailto:ivan@aurelivan.com"
+                    href={mailtoSpeakingInquiry()}
                     className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full hover:bg-white/90 transition-all font-medium"
                   >
                     Kirim undangan
                   </a>
                   <a
-                    href="https://wa.me/6281281032115"
+                    href={WHATSAPP_HREF}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 rounded-full hover:bg-white/5 transition-colors text-white/80"
@@ -417,18 +421,18 @@ export default function PembicaraAiIndonesiaPage() {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <a
-                    href="mailto:ivan@aurelivan.com"
+                    href={mailtoSpeakingInquiry()}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all text-lg font-medium"
                   >
-                    ivan@aurelivan.com
+                    hi@aitraining.id
                   </a>
                   <a
-                    href="https://wa.me/6281281032115"
+                    href={WHATSAPP_HREF}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-all text-lg text-white/90"
                   >
-                    WhatsApp +6281281032115
+                    WhatsApp +6281807011103
                   </a>
                 </div>
                 <p className="mt-6 text-white/40 text-sm">

@@ -1,4 +1,10 @@
 import Link from "next/link";
+import {
+  CONTACT_EMAIL,
+  WHATSAPP_DISPLAY,
+  WHATSAPP_HREF,
+  mailtoTrainingInquiry,
+} from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -199,6 +205,25 @@ export function Footer() {
               className="block text-white/70 hover:text-white transition-colors"
             >
               AICON Network ↗
+            </a>
+          </div>
+          <div className="space-y-3 col-span-2 md:col-span-1">
+            <p className="text-white/50 text-xs tracking-widest uppercase mb-1">
+              Contact
+            </p>
+            <a
+              href={mailtoTrainingInquiry()}
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              WhatsApp {WHATSAPP_DISPLAY}
             </a>
           </div>
         </div>

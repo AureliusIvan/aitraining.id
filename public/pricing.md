@@ -39,7 +39,7 @@ Surabaya, Bandung, Tangerang, and other cities) or virtually.
 
 ### Custom / Enterprise: request quote
 - Multi-team rollouts, tailored curriculum, recurring enablement / advisory retainers
-- Contact: ivan@aurelivan.com
+- Contact: hi@aitraining.id
 
 ## What drives the final quote
 - Number of participants
@@ -51,7 +51,8 @@ Surabaya, Bandung, Tangerang, and other cities) or virtually.
 
 ## How to book
 - Free 30-minute discovery call: https://calendly.com/aureliusivanwijaya/30min
-- Email: ivan@aurelivan.com
+- Email: hi@aitraining.id
+- WhatsApp: +6281807011103 (https://wa.me/6281807011103)
 - Details: https://aitraining.id/contact
 
 _Last updated: 2026-07-08_

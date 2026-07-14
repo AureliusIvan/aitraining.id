@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { CONTACT_EMAIL, WHATSAPP_DISPLAY } from "@/lib/contact";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -186,11 +188,12 @@ export default function RootLayout({
       "Cursor AI Development",
       "AI Strategy",
     ],
-    email: "ivan@aurelivan.com",
+    email: CONTACT_EMAIL,
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "ivan@aurelivan.com",
+      email: CONTACT_EMAIL,
+      telephone: WHATSAPP_DISPLAY,
       availableLanguage: ["Indonesian", "English"],
     },
     sameAs: [
@@ -301,6 +304,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );

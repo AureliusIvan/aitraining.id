@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { mailtoTrainingInquiry } from "@/lib/contact";
 import { trustedBy, buildTrustedBySchema } from "@/lib/trusted-by";
 
 export const metadata: Metadata = {
@@ -365,10 +366,10 @@ function HeroSection() {
           alt="AI Training Indonesia — corporate AI training by Aurelius Ivan Wijaya"
           fill
           priority
-          className="object-cover"
+          className="object-cover brightness-[0.45]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black" />
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 w-full">
@@ -1506,7 +1507,7 @@ function CTASection() {
             </svg>
           </a>
           <a
-            href="mailto:ivan@aurelivan.com"
+            href={mailtoTrainingInquiry()}
             className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-all text-lg"
           >
             <span className="text-white/90">Email trainer</span>

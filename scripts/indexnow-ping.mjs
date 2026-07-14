@@ -4,7 +4,7 @@
  *
  * The URL list is derived from the built sitemap (see lib/sitemap-urls.mjs), so
  * any newly-shipped page is pinged automatically. Non-page assets that aren't in
- * the sitemap (llms.txt, pricing.md) are appended explicitly.
+ * the sitemap (llms.txt, llms-full.txt, pricing.md) are appended explicitly.
  *
  * Key file: public/8026434a1e2f3b4c5d6e7f8091a2b3c4.txt
  */
@@ -18,7 +18,7 @@ const BASE = `https://${HOST}`;
 
 // Machine-readable assets that live outside the sitemap but should still be
 // crawled fresh.
-const EXTRA_URLS = [`${BASE}/llms.txt`, `${BASE}/pricing.md`];
+const EXTRA_URLS = [`${BASE}/llms.txt`, `${BASE}/llms-full.txt`, `${BASE}/pricing.md`];
 
 function buildUrlList() {
   const fromSitemap = readSitemapUrls();

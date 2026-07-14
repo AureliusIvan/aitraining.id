@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import {
+  CONTACT_EMAIL,
+  WHATSAPP_DISPLAY,
+  WHATSAPP_HREF,
+  mailtoTrainingInquiry,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Hubungi Kami | Book Corporate AI Training",
@@ -29,9 +35,18 @@ export default function ContactPage() {
       label: "Email",
       title: "Email langsung",
       description:
-        "Kirim brief tentang tim Anda, jumlah peserta, dan program yang Anda minati. Kami respond dalam 1 hari kerja.",
-      cta: "ivan@aurelivan.com",
-      href: "mailto:ivan@aurelivan.com",
+        "Kirim brief tentang tim Anda, jumlah peserta, dan program yang Anda minati. Template email sudah tersedia; tinggal dilengkapi. Kami respond dalam 1 hari kerja.",
+      cta: CONTACT_EMAIL,
+      href: mailtoTrainingInquiry(),
+      primary: false,
+    },
+    {
+      label: "WhatsApp",
+      title: "Chat via WhatsApp",
+      description:
+        "Hubungi langsung untuk pertanyaan cepat tentang corporate AI training, jadwal, atau speaking engagement.",
+      cta: WHATSAPP_DISPLAY,
+      href: WHATSAPP_HREF,
       primary: false,
     },
     {
@@ -171,7 +186,8 @@ export default function ContactPage() {
                 ))}
                 <p className="text-white/50 text-sm pt-4">
                   Tidak perlu menjawab semuanya sekarang; kami bisa diskusikan
-                  di konsultasi call.
+                  di konsultasi call. Tombol email membuka template yang sudah
+                  berisi field di atas.
                 </p>
               </div>
             </div>

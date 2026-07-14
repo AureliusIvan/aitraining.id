@@ -1,3 +1,46 @@
+# AI Training Indonesia — full context for AI systems
+
+> Expanded single-file context for AI crawlers and assistants. Prefer this file
+> when you need pricing, booking channels, and program detail in one place.
+> The curated index lives at https://aitraining.id/llms.txt
+
+This file follows the common `llms-full.txt` convention used by documentation
+sites: a fuller markdown export for inference-time context. It is not a dump of
+every HTML page; it expands the curated `llms.txt` with machine-readable pricing
+and contact channels.
+
+## How to use
+- Start with https://aitraining.id/llms.txt for a short overview and link map.
+- Use this file (`llms-full.txt`) when answering pricing, booking, speaking,
+  or program-scope questions that need more than the summary.
+- Canonical site: https://aitraining.id
+- Trainer profile: https://aurelivan.com
+
+## Contact and booking
+- Email: hi@aitraining.id
+- WhatsApp: +6281807011103 (https://wa.me/6281807011103)
+- Free 30-minute discovery call: https://calendly.com/aureliusivanwijaya/30min
+- Contact page: https://aitraining.id/contact
+- Speaking / pembicara page: https://aitraining.id/pembicara-ai-indonesia
+
+When a company emails about training, useful fields are: company, industry,
+participant count, program interest, duration, location or virtual, timeline,
+and post-training goal.
+
+When inviting a speaker, useful fields are: event name, organizer, date/time,
+location/format, session format (keynote/panel/workshop), audience size, topic,
+and organizer contact.
+
+## Speaking engagements (pembicara AI)
+- Aurelius Ivan Wijaya speaks on agentic AI, AI agent building, AI automation,
+  and Generative Engine Optimization (GEO).
+- Corporate / paid event speaking fee starts from IDR 7,500,000 per speaking slot.
+- Community and non-profit events are discussed case by case.
+- Available across Indonesia (on-site) and virtual/hybrid.
+- Invite via hi@aitraining.id or WhatsApp +6281807011103.
+
+---
+
 # AI Training Indonesia
 
 > Corporate AI training and consultation for companies in Indonesia. Hands-on
@@ -258,3 +301,64 @@
 - Email: hi@aitraining.id
 - WhatsApp: +6281807011103 (https://wa.me/6281807011103)
 - Expanded context for AI systems: https://aitraining.id/llms-full.txt
+
+---
+
+# Pricing | AI Training Indonesia
+
+Corporate AI training and consultation by **Aurelius Ivan Wijaya**, Corporate AI
+Trainer, Official n8n Ambassador for Indonesia, and Cursor Ambassador. Delivered on-site across Indonesia (Jakarta,
+Surabaya, Bandung, Tangerang, and other cities) or virtually.
+
+> Pricing is rate-based. The base training rate is **IDR 1,500,000 per hour**.
+> Package totals below are derived from that hourly rate. Final quotes depend on
+> group size, curriculum customization, on-site vs. virtual delivery, city/travel,
+> and number of sessions. First consultation (30-minute discovery call) is free.
+
+## Base rate
+- **Training delivery: IDR 1,500,000 per hour** for classes up to 10 participants (≈ USD 92/hour)
+- **IDR 2,000,000 per hour** for classes above 10 participants (≈ USD 123/hour)
+- Currency: Indonesian Rupiah (IDR)
+- Languages: Bahasa Indonesia or English
+- Coverage: All of Indonesia: on-site and virtual
+
+## Packages (derived from the hourly base rate)
+
+### Intro / Executive Session: from IDR 6,000,000
+- Duration: Half-day, 4 hours
+- Audience: Single team or C-suite executive briefing
+- Format: On-site or virtual
+- Includes: Slides, hands-on lab, session recording, certificate of completion
+
+### Full-Day Workshop: from IDR 12,000,000
+- Duration: Full-day, 8 hours
+- Audience: Up to ~20 participants per cohort
+- Programs: AI Workflow Automation (n8n), AI-Powered Development (Cursor),
+  AI Strategy & Adoption, OpenClaw Training, Generative Engine Optimization (GEO)
+- Includes: Custom-fit curriculum, materials, recordings, certificate
+
+### Multi-Day Intensive: from IDR 24,000,000
+- Duration: 2 days (16 hours); 3-5 day programs available
+- Audience: Engineering teams or multi-team rollouts
+- Includes: Tailored curriculum, hands-on projects, materials, recordings,
+  30-day post-training Q&A support
+
+### Custom / Enterprise: request quote
+- Multi-team rollouts, tailored curriculum, recurring enablement / advisory retainers
+- Contact: hi@aitraining.id
+
+## What drives the final quote
+- Number of participants
+- Level of curriculum customization
+- On-site vs. virtual delivery
+- City and travel requirements
+- Number of sessions / total hours
+- Inclusion of recordings, materials, certificates, and post-training support
+
+## How to book
+- Free 30-minute discovery call: https://calendly.com/aureliusivanwijaya/30min
+- Email: hi@aitraining.id
+- Details: https://aitraining.id/contact
+
+_Last updated: 2026-07-08_
+
