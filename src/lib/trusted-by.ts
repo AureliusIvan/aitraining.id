@@ -26,9 +26,6 @@
 //  - DPO&Co is an active internal AI training engagement (Claude Cowork;
 //    content in build as of 2026-07-10, naming approved by Ivan 2026-07-10) —
 //    caption upgraded from generic to the real engagement.
-//  - Bukalapak is a won engagement (2026-07-07); delivery STARTS w/o 13 Jul
-//    2026, so its caption describes the program, not a completed delivery.
-//    Logo: official Bukalapak (2020) wordmark from Wikimedia Commons.
 //  - Redcomm (GEO session, completed 2026): logo is Redcomm's own site brand
 //    mark (red-website-icon.svg from redcomm.co.id) — they publish only the
 //    icon monogram, no horizontal wordmark, so it renders small in the white
@@ -121,13 +118,6 @@ export const trustedBy: TrustedByItem[] = [
     name: "Insignia",
     caption: "Corporate AI training, agent building cohort",
     href: "https://insignia.co.id",
-  },
-  {
-    src: "/assets/clients/bukalapak.svg",
-    alt: "Bukalapak (PT Bukalapak.com Tbk): corporate AI training untuk tim Ops & Tech oleh Aurelius Ivan Wijaya",
-    name: "Bukalapak",
-    caption: "Corporate AI training, tim Ops & Tech",
-    href: "https://www.bukalapak.com",
   },
   {
     src: "/assets/clients/redcomm.svg",
