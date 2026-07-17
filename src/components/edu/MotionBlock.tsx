@@ -187,13 +187,31 @@ function ClaudeSkillScene({
       <g className={styles.user}>
         <path
           className={styles.userBody}
-          d="M30 222c5-31 20-49 42-49s37 18 42 49Z"
+          d="M28 222c3-25 13-40 29-46l15 14 15-14c16 6 26 21 29 46Z"
+        />
+        <path
+          className={styles.userCollar}
+          d="m57 176 15 14-10 10-12-18Zm30 0-15 14 10 10 12-18Z"
+        />
+        <path className={styles.userShirtLine} d="M72 190v32" />
+        <rect
+          className={styles.userPocket}
+          x="84"
+          y="201"
+          width="15"
+          height="11"
+          rx="2"
         />
         <circle className={styles.userFace} cx="72" cy="151" r="25" />
-        <path
-          className={styles.userHair}
-          d="M48 150c-2-21 10-34 26-34 14 0 24 8 27 21-8-3-15-8-20-14-6 10-17 17-33 20Z"
-        />
+        <g className={styles.userHair}>
+          <circle cx="49" cy="141" r="8" />
+          <circle cx="52" cy="131" r="9" />
+          <circle cx="58" cy="122" r="10" />
+          <circle cx="69" cy="118" r="11" />
+          <circle cx="81" cy="120" r="11" />
+          <circle cx="91" cy="126" r="10" />
+          <circle cx="96" cy="136" r="9" />
+        </g>
         <circle className={styles.userEye} cx="64" cy="153" r="2.5" />
         <circle className={styles.userEye} cx="81" cy="153" r="2.5" />
         <path className={styles.userSmile} d="M65 163c5 4 10 4 15 0" />
