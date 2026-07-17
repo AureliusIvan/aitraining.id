@@ -12,6 +12,31 @@ import type { Question } from "@/lib/assessment-sheets";
 
 const AUTO_ADVANCE_DELAY_MS = 250;
 
+function safeGetItem(key: string): string | null {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function safeSetItem(key: string, value: string): void {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // private browsing / storage full / disabled — draft persistence is a
+    // convenience, not a hard requirement, so fail silently
+  }
+}
+
+function safeRemoveItem(key: string): void {
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // see safeSetItem
+  }
+}
+
 export function AssessmentForm({
   token,
   questions,
@@ -21,8 +46,13 @@ export function AssessmentForm({
   questions: Question[];
   clientLabel?: string;
 }) {
+  const draftKey = `assessment:${token}:draft`;
+  const submissionIdKey = `assessment:${token}:submissionId`;
+
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [step, setStep] = useState(0);
+  const [submissionId, setSubmissionId] = useState<string | null>(null);
+  const [hydrated, setHydrated] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [status, setStatus] = useState<
     "idle" | "submitting" | "done" | "error"
@@ -40,6 +70,41 @@ export function AssessmentForm({
   // never auto-submitted into. Only the review screen's own button submits.
   const isReview = step === total;
   const current = questions[step];
+
+  // Restore from localStorage on mount. Deferred to an effect (not a useState
+  // lazy initializer) so the very first client render matches the
+  // server-rendered HTML exactly — reading localStorage during the initial
+  // render would produce a hydration mismatch.
+  useEffect(() => {
+    const draftRaw = safeGetItem(draftKey);
+    if (draftRaw) {
+      try {
+        const parsed = JSON.parse(draftRaw) as {
+          step?: number;
+          answers?: Record<string, string>;
+        };
+        const restored = parsed.answers ?? {};
+        answersRef.current = restored;
+        setAnswers(restored);
+        setStep(Math.min(Math.max(Number(parsed.step) || 0, 0), total));
+      } catch {
+        // corrupt entry — ignore, start fresh
+      }
+    }
+    const savedSubmissionId = safeGetItem(submissionIdKey);
+    if (savedSubmissionId) setSubmissionId(savedSubmissionId);
+    setHydrated(true);
+    // Restoring is keyed to this form instance (token/total are fixed props)
+    // — intentionally runs once on mount, not on every draftKey change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep the draft mirrored to localStorage continuously, so a refresh mid
+  // -fill (or mid-edit of an already-submitted response) never loses work.
+  useEffect(() => {
+    if (!hydrated) return;
+    safeSetItem(draftKey, JSON.stringify({ step, answers }));
+  }, [step, answers, hydrated, draftKey]);
 
   function setAnswer(id: string, value: string) {
     answersRef.current = { ...answersRef.current, [id]: value };
@@ -78,6 +143,20 @@ export function AssessmentForm({
     setStep((s) => Math.max(0, s - 1));
   }
 
+  // Clears this device's saved draft/submission and resets to a blank form —
+  // for when a second person picks up the same shared link on the same
+  // browser and shouldn't silently overwrite the first person's answers.
+  function startFresh() {
+    safeRemoveItem(draftKey);
+    safeRemoveItem(submissionIdKey);
+    answersRef.current = {};
+    setAnswers({});
+    setSubmissionId(null);
+    setErrorMsg(null);
+    setStatus("idle");
+    setStep(0);
+  }
+
   async function submit() {
     setStatus("submitting");
     try {
@@ -88,9 +167,15 @@ export function AssessmentForm({
           token,
           answers: answersRef.current,
           website: honeypotRef.current?.value ?? "",
+          submissionId,
         }),
       });
       if (!res.ok) throw new Error("submit failed");
+      const data = (await res.json()) as { submissionId?: string };
+      if (data.submissionId) {
+        setSubmissionId(data.submissionId);
+        safeSetItem(submissionIdKey, data.submissionId);
+      }
       setStatus("done");
     } catch {
       setStatus("error");
@@ -124,6 +209,14 @@ export function AssessmentForm({
     if (!isReview) textInputRef.current?.focus();
   }, [step, isReview]);
 
+  if (!hydrated) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-neutral-400">Memuat...</p>
+      </div>
+    );
+  }
+
   if (status === "done") {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center">
@@ -137,9 +230,26 @@ export function AssessmentForm({
         <p className="text-4xl sm:text-5xl font-semibold mb-4">
           Terima kasih!
         </p>
-        <p className="text-neutral-500 text-lg">
-          Jawaban Anda sudah kami terima. Sampai jumpa di sesi training.
+        <p className="text-neutral-500 text-lg mb-8">
+          Jawaban Anda sudah kami terima. Sampai jumpa di sesi training. Anda
+          bisa kembali ke halaman ini kapan saja untuk mengedit jawaban.
         </p>
+        <div className="flex items-center gap-6">
+          <button
+            type="button"
+            onClick={() => setStatus("idle")}
+            className="text-amber-600 font-medium hover:underline"
+          >
+            Edit jawaban
+          </button>
+          <button
+            type="button"
+            onClick={startFresh}
+            className="text-neutral-400 hover:text-neutral-600 text-sm"
+          >
+            Isi sebagai peserta baru
+          </button>
+        </div>
       </div>
     );
   }
@@ -190,10 +300,23 @@ export function AssessmentForm({
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-4">
                 Review jawaban Anda
               </h1>
-              <p className="text-neutral-500 mb-8">
+              <p className="text-neutral-500 mb-4">
                 Cek lagi sebelum dikirim. Klik &quot;Ubah&quot; untuk mengedit
                 jawaban.
               </p>
+              {submissionId && (
+                <div className="mb-6 rounded-lg bg-amber-50 border border-amber-200 px-4 py-3 text-sm text-amber-800">
+                  Kami menemukan jawaban tersimpan di perangkat ini
+                  {answers.q1 ? ` atas nama ${answers.q1}` : ""}.{" "}
+                  <button
+                    type="button"
+                    onClick={startFresh}
+                    className="underline font-medium"
+                  >
+                    Bukan Anda? Isi sebagai peserta baru
+                  </button>
+                </div>
+              )}
               <div className="space-y-4 mb-4">
                 {questions.map((q, idx) => {
                   const raw = answers[q.id];

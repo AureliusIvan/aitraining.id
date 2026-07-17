@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { google } from "googleapis";
 
 export type QuestionType =
@@ -95,27 +96,54 @@ export async function resolveToken(
   };
 }
 
+function columnLetter(n: number): string {
+  let s = "";
+  let num = n;
+  while (num > 0) {
+    const rem = (num - 1) % 26;
+    s = String.fromCharCode(65 + rem) + s;
+    num = Math.floor((num - 1) / 26);
+  }
+  return s;
+}
+
+async function getSubmissionsGrid(
+  sheets: ReturnType<typeof getSheetsClient>,
+): Promise<{ headers: string[]; rows: string[][] }> {
+  const res = await sheets.spreadsheets.values.get({
+    spreadsheetId: SHEET_ID,
+    range: "Submissions!A:Z",
+  });
+  const values = (res.data.values ?? []) as string[][];
+  return { headers: values[0] ?? [], rows: values.slice(1) };
+}
+
+function buildRow(
+  headers: string[],
+  clientSlug: string,
+  submissionId: string,
+  answers: Record<string, string>,
+): string[] {
+  return headers.map((h) => {
+    if (h === "timestamp") return new Date().toISOString();
+    if (h === "client_slug") return clientSlug;
+    if (h === "submission_id") return submissionId;
+    return answers[h] ?? "";
+  });
+}
+
 // Aligns to whatever the Submissions header row currently says (not to
-// Questions order), so a manual header edit doesn't silently misalign columns.
+// Questions order), so a manual header edit doesn't silently misalign
+// columns. Returns the generated submission_id so the caller can persist it
+// client-side and pass it back on a future edit.
 export async function appendSubmission(
   clientSlug: string,
   answers: Record<string, string>,
-): Promise<void> {
+): Promise<string> {
   const sheets = getSheetsClient();
-  const headerRes = await sheets.spreadsheets.values.get({
-    spreadsheetId: SHEET_ID,
-    range: "Submissions!1:1",
-  });
-  const headers = (headerRes.data.values?.[0] ?? [
-    "timestamp",
-    "client_slug",
-  ]) as string[];
-
-  const row = headers.map((h) => {
-    if (h === "timestamp") return new Date().toISOString();
-    if (h === "client_slug") return clientSlug;
-    return answers[h] ?? "";
-  });
+  const { headers } = await getSubmissionsGrid(sheets);
+  const submissionId = randomUUID();
+  const row = buildRow(headers, clientSlug, submissionId, answers);
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: SHEET_ID,
@@ -126,4 +154,42 @@ export async function appendSubmission(
     insertDataOption: "INSERT_ROWS",
     requestBody: { values: [row] },
   });
+
+  return submissionId;
+}
+
+// Overwrites an existing row in place (found by submission_id, cross-checked
+// against client_slug) instead of appending a new one — an edited response
+// replaces the original rather than creating a duplicate. Returns false if
+// the id no longer resolves to a row (e.g. manually deleted from the Sheet),
+// so the caller can fall back to creating a fresh submission.
+export async function updateSubmission(
+  submissionId: string,
+  clientSlug: string,
+  answers: Record<string, string>,
+): Promise<boolean> {
+  const sheets = getSheetsClient();
+  const { headers, rows } = await getSubmissionsGrid(sheets);
+  const idCol = headers.indexOf("submission_id");
+  const slugCol = headers.indexOf("client_slug");
+  if (idCol === -1) return false;
+
+  const rowIndex = rows.findIndex(
+    (r) =>
+      r[idCol] === submissionId &&
+      (slugCol === -1 || r[slugCol] === clientSlug),
+  );
+  if (rowIndex === -1) return false;
+
+  const sheetRowNumber = rowIndex + 2; // +1 for the header row, +1 to 1-index
+  const row = buildRow(headers, clientSlug, submissionId, answers);
+
+  await sheets.spreadsheets.values.update({
+    spreadsheetId: SHEET_ID,
+    range: `Submissions!A${sheetRowNumber}:${columnLetter(headers.length)}${sheetRowNumber}`,
+    valueInputOption: "RAW",
+    requestBody: { values: [row] },
+  });
+
+  return true;
 }

@@ -3,6 +3,7 @@ import {
   appendSubmission,
   getQuestions,
   resolveToken,
+  updateSubmission,
 } from "@/lib/assessment-sheets";
 
 export async function POST(request: Request) {
@@ -11,10 +12,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 
-  const { token, answers, website } = body as {
+  const { token, answers, website, submissionId } = body as {
     token?: string;
     answers?: Record<string, string>;
     website?: string;
+    submissionId?: string;
   };
 
   // Honeypot field: real users never fill it (hidden via CSS). Bots that
@@ -51,6 +53,23 @@ export async function POST(request: Request) {
     );
   }
 
-  await appendSubmission(link.clientSlug, answers);
-  return NextResponse.json({ ok: true });
+  // A submissionId means "this is an edit" — overwrite the existing row
+  // instead of appending a duplicate. If the id no longer resolves to a row
+  // (e.g. someone deleted it from the Sheet by hand), fall back to creating
+  // a fresh one rather than silently losing the answers.
+  let finalId: string;
+  if (submissionId && typeof submissionId === "string") {
+    const updated = await updateSubmission(
+      submissionId,
+      link.clientSlug,
+      answers,
+    );
+    finalId = updated
+      ? submissionId
+      : await appendSubmission(link.clientSlug, answers);
+  } else {
+    finalId = await appendSubmission(link.clientSlug, answers);
+  }
+
+  return NextResponse.json({ ok: true, submissionId: finalId });
 }
