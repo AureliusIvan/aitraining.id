@@ -15,9 +15,11 @@ function groupBySection(questions: Question[]): [string, Question[]][] {
 export function AssessmentForm({
   token,
   questions,
+  clientLabel,
 }: {
   token: string;
   questions: Question[];
+  clientLabel?: string;
 }) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<
@@ -79,6 +81,11 @@ export function AssessmentForm({
         <h1 className="text-2xl font-semibold mb-1">
           Assessment Awal Peserta
         </h1>
+        {clientLabel && (
+          <p className="text-amber-400 text-sm mb-1">
+            Untuk peserta training AI di {clientLabel}
+          </p>
+        )}
         <p className="text-white/60 text-sm">
           Isi sebelum sesi training dimulai, sekitar 3-5 menit.
         </p>

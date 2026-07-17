@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getQuestions, resolveToken } from "@/lib/assessment-sheets";
 import { AssessmentForm } from "./AssessmentForm";
@@ -35,7 +36,15 @@ export default async function AssessmentPage({
   if (!loadError && !link) notFound();
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 py-16">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center px-6 py-16">
+      <Image
+        src="/assets/brand/logo-ondark.png"
+        alt="AI Training Indonesia"
+        width={200}
+        height={35}
+        priority
+        className="h-8 w-auto mb-10"
+      />
       <div className="w-full max-w-2xl">
         {loadError || questions.length === 0 ? (
           <p className="text-white/70 text-center">
@@ -43,7 +52,11 @@ export default async function AssessmentPage({
             Anda.
           </p>
         ) : (
-          <AssessmentForm token={token} questions={questions} />
+          <AssessmentForm
+            token={token}
+            questions={questions}
+            clientLabel={link?.label}
+          />
         )}
       </div>
     </div>
