@@ -59,6 +59,7 @@ export function PresentationMode({
   const [index, setIndex] = useState(0);
   const [pen, setPen] = useState(false);
   const [scale, setScale] = useState(1);
+  const [qrOpen, setQrOpen] = useState(false);
 
   const deck = useMemo<DeckItem[]>(
     () => [
@@ -71,6 +72,7 @@ export function PresentationMode({
   const total = deck.length;
   const clampedIndex = Math.min(index, total - 1);
 
+  const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fitRef = useRef<HTMLDivElement>(null);
   const drawing = useRef(false);
@@ -82,6 +84,16 @@ export function PresentationMode({
     (dir: 1 | -1) => setIndex((i) => Math.max(0, Math.min(total - 1, i + dir))),
     [total],
   );
+
+  const toggleFullscreen = useCallback(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    if (document.fullscreenElement) {
+      document.exitFullscreen?.();
+    } else {
+      el.requestFullscreen?.();
+    }
+  }, []);
 
   // --- drawing helpers ------------------------------------------------------
   const drawStroke = useCallback((ctx: CanvasRenderingContext2D, stroke: Point[]) => {
@@ -197,13 +209,16 @@ export function PresentationMode({
         setPen((p) => !p);
       } else if (e.key === "c" || e.key === "C") {
         clearCurrent();
+      } else if (e.key === "f" || e.key === "F") {
+        toggleFullscreen();
       } else if (e.key === "Escape") {
-        setOpen(false);
+        if (qrOpen) setQrOpen(false);
+        else setOpen(false);
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, go, clearCurrent]);
+  }, [open, go, clearCurrent, toggleFullscreen, qrOpen]);
 
   const toPoint = (e: React.PointerEvent): Point => {
     const c = canvasRef.current;
@@ -256,6 +271,13 @@ export function PresentationMode({
       : current.kind === "faq"
         ? "faq"
         : current.slide.id;
+  const qrUrl =
+    current.kind === "title"
+      ? pageUrl
+      : current.kind === "faq"
+        ? `${pageUrl}#faq`
+        : `${pageUrl}#${current.slide.id}`;
+  const qrSrc = `${qrPrefix}${qrKey}.svg`;
 
   return (
     <>
@@ -278,6 +300,7 @@ export function PresentationMode({
 
       {open ? (
         <div
+          ref={containerRef}
           className="fixed inset-0 z-[100] select-none overflow-hidden bg-[#f7f7f4] text-stone-900"
           role="dialog"
           aria-modal="true"
@@ -383,17 +406,23 @@ export function PresentationMode({
             <img src={logoSrc} alt="AI Training Indonesia" className="h-7 w-auto opacity-90" />
           </div>
 
-          {/* Per-slide QR (bottom-right): deep-links to this section on the page. */}
-          <div className="pointer-events-none absolute bottom-6 right-6 z-30 flex flex-col items-center gap-1">
-            <div className="rounded-xl bg-white p-2 shadow-md ring-1 ring-black/5">
+          {/* Per-slide QR (bottom-right): deep-links to this section on the page.
+              Click to enlarge (in case it is hard to scan from a distance). */}
+          <div className="absolute bottom-6 right-6 z-30 flex flex-col items-center gap-1">
+            <button
+              type="button"
+              onClick={() => setQrOpen(true)}
+              className="rounded-xl bg-white p-2 shadow-md ring-1 ring-black/5 transition-transform hover:scale-105"
+              title="Perbesar QR"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`${qrPrefix}${qrKey}.svg`}
-                alt={`QR menuju ${pageUrl} bagian ini`}
+                src={qrSrc}
+                alt={`QR menuju ${qrUrl}`}
                 className="h-24 w-24"
               />
-            </div>
-            <span className="text-[11px] font-medium text-stone-400">scan untuk buka bagian ini</span>
+            </button>
+            <span className="text-[11px] font-medium text-stone-400">scan atau klik untuk perbesar</span>
           </div>
 
           {/* Top-right controls. */}
@@ -421,6 +450,14 @@ export function PresentationMode({
             </button>
             <button
               type="button"
+              onClick={toggleFullscreen}
+              className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm ring-1 ring-black/5 backdrop-blur hover:text-stone-900"
+              title="Layar penuh (F)"
+            >
+              Layar penuh
+            </button>
+            <button
+              type="button"
               onClick={() => setOpen(false)}
               className="rounded-full bg-stone-900 px-3 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-stone-700"
               title="Keluar (Esc)"
@@ -428,6 +465,42 @@ export function PresentationMode({
               Keluar
             </button>
           </div>
+
+          {/* Enlarged QR (click the small QR): easier to scan, with the link
+              spelled out below for anyone who prefers to type it. */}
+          {qrOpen ? (
+            <button
+              type="button"
+              aria-label="Tutup QR"
+              onClick={() => setQrOpen(false)}
+              className="absolute inset-0 z-[110] flex cursor-default items-center justify-center bg-black/50 p-6"
+            >
+              {/* biome-ignore lint/a11y/noStaticElementInteractions: stop-propagation panel */}
+              <div
+                className="relative flex flex-col items-center gap-5 rounded-3xl bg-white p-8 shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  onClick={() => setQrOpen(false)}
+                  aria-label="Tutup"
+                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-stone-400 hover:bg-stone-100 hover:text-stone-700"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </button>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={qrSrc} alt={`QR menuju ${qrUrl}`} className="h-64 w-64 sm:h-80 sm:w-80" />
+                <div className="max-w-xs text-center">
+                  <p className="text-sm text-stone-500">Scan, atau buka tautan ini:</p>
+                  <p className="mt-1 select-all break-all font-mono text-sm text-stone-800">
+                    {qrUrl}
+                  </p>
+                </div>
+              </div>
+            </button>
+          ) : null}
 
           {/* Bottom navigation + page number. */}
           <div className="absolute bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-4">

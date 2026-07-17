@@ -19,7 +19,15 @@ export function GlossaryTerm({
   mode?: "web" | "slide";
 }) {
   const [open, setOpen] = useState(false);
+  // Which way the popover opens, chosen from the term's position so it never
+  // spills off-screen: flip above when the term sits low, align right when it
+  // sits far right.
+  const [pos, setPos] = useState<{ v: "top" | "bottom"; h: "left" | "right" }>({
+    v: "bottom",
+    h: "left",
+  });
   const ref = useRef<HTMLSpanElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -37,14 +45,31 @@ export function GlossaryTerm({
     };
   }, [open]);
 
+  const toggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setOpen((wasOpen) => {
+      if (!wasOpen && btnRef.current) {
+        const r = btnRef.current.getBoundingClientRect();
+        setPos({
+          v: r.bottom > window.innerHeight * 0.55 ? "top" : "bottom",
+          h: r.left > window.innerWidth * 0.6 ? "right" : "left",
+        });
+      }
+      return !wasOpen;
+    });
+  };
+
+  const placement = [
+    pos.v === "top" ? "bottom-full mb-2" : "top-full mt-2",
+    pos.h === "right" ? "right-0" : "left-0",
+  ].join(" ");
+
   return (
     <span ref={ref} className="relative inline-block align-baseline">
       <button
+        ref={btnRef}
         type="button"
-        onClick={(e) => {
-          e.stopPropagation();
-          setOpen((o) => !o);
-        }}
+        onClick={toggle}
         aria-expanded={open}
         className="cursor-help font-medium text-blue-700 underline decoration-blue-500 decoration-wavy decoration-2 underline-offset-[3px] transition-colors hover:text-blue-900"
       >
@@ -53,7 +78,7 @@ export function GlossaryTerm({
       {open ? (
         <span
           role="tooltip"
-          className={`absolute left-0 top-full z-[60] mt-2 block rounded-xl border border-stone-200 bg-white p-4 text-left font-normal leading-relaxed text-stone-600 shadow-2xl ${
+          className={`absolute z-[60] block rounded-xl border border-stone-200 bg-white p-4 text-left font-normal leading-relaxed text-stone-600 shadow-2xl ${placement} ${
             mode === "slide"
               ? "w-80 max-w-[70vw] text-base"
               : "w-72 max-w-[85vw] text-sm"
