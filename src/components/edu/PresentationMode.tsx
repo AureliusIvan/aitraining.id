@@ -1,43 +1,64 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { EduFaq, EduSlide } from "@/lib/edu";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import type { EduFaq, EduGlossaryEntry, EduSlide } from "@/lib/edu";
 import { EduBlocks } from "./EduBlocks";
 
-// Client-side presentation overlay. The corner "Present" pill opens a
+// Client-side presentation overlay. The corner "Mode presentasi" pill opens a
 // full-screen, light-themed deck rendered from the SAME slide data the page
-// shows. Features Ivan asked for: one slide per screen with page numbers, his
-// logo as a screenshot-surviving watermark, a QR (bottom-right) that opens this
-// page, and hold-to-draw highlighting for pointing at parts of a slide live.
+// shows. Features:
+//   - one slide per screen with page numbers; content auto-scales to fit the
+//     viewport (algorithmic, measured — never clipped regardless of slide size)
+//   - Ivan's logo as a screenshot-surviving watermark
+//   - a per-slide QR (bottom-right) that deep-links to that section on the page
+//   - drawing that is toggled on/off (off by default, so clicks reach glossary
+//     terms); strokes are kept per slide and restored when you navigate back
+//   - glossary term popovers (handled by GlossaryTerm inside the blocks)
 
 type DeckItem =
   | { kind: "title" }
   | { kind: "slide"; slide: EduSlide }
   | { kind: "faq"; faqs: EduFaq[] };
 
-type Point = { x: number; y: number };
+type Point = { x: number; y: number }; // normalized 0..1 to the viewport
 
 type Props = {
   title: string;
   tagline: string;
   slides: EduSlide[];
   faqs: EduFaq[];
-  qrSrc: string;
+  glossary: EduGlossaryEntry[];
+  qrPrefix: string; // e.g. "/assets/edu/claude-skills--"; key + ".svg" appended
   logoSrc: string;
   pageUrl: string;
 };
+
+// Vertical/horizontal room reserved for the top logo + controls and bottom
+// nav + QR, so auto-fit never tucks content under the chrome.
+const RESERVE_V = 176;
+const RESERVE_H = 128;
 
 export function PresentationMode({
   title,
   tagline,
   slides,
   faqs,
-  qrSrc,
+  glossary,
+  qrPrefix,
   logoSrc,
   pageUrl,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const [pen, setPen] = useState(false);
+  const [scale, setScale] = useState(1);
 
   const deck = useMemo<DeckItem[]>(
     () => [
@@ -48,29 +69,82 @@ export function PresentationMode({
     [slides, faqs],
   );
   const total = deck.length;
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const drawing = useRef(false);
-  const stroke = useRef<Point[]>([]);
-
   const clampedIndex = Math.min(index, total - 1);
 
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const fitRef = useRef<HTMLDivElement>(null);
+  const drawing = useRef(false);
+  const currentStroke = useRef<Point[]>([]);
+  // Per-slide strokes: index -> list of strokes -> list of normalized points.
+  const strokesBySlide = useRef<Record<number, Point[][]>>({});
+
   const go = useCallback(
-    (dir: 1 | -1) => {
-      setIndex((i) => Math.max(0, Math.min(total - 1, i + dir)));
-    },
+    (dir: 1 | -1) => setIndex((i) => Math.max(0, Math.min(total - 1, i + dir))),
     [total],
   );
 
-  const clearCanvas = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // --- drawing helpers ------------------------------------------------------
+  const drawStroke = useCallback((ctx: CanvasRenderingContext2D, stroke: Point[]) => {
+    const canvas = ctx.canvas;
+    if (stroke.length === 0) return;
+    ctx.strokeStyle = "rgba(245, 158, 11, 0.55)";
+    ctx.fillStyle = "rgba(245, 158, 11, 0.55)";
+    ctx.lineWidth = 12;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    if (stroke.length === 1) {
+      const p = stroke[0];
+      ctx.beginPath();
+      ctx.arc(p.x * canvas.width, p.y * canvas.height, 6, 0, Math.PI * 2);
+      ctx.fill();
+      return;
+    }
+    ctx.beginPath();
+    ctx.moveTo(stroke[0].x * canvas.width, stroke[0].y * canvas.height);
+    for (let i = 1; i < stroke.length; i++) {
+      ctx.lineTo(stroke[i].x * canvas.width, stroke[i].y * canvas.height);
+    }
+    ctx.stroke();
   }, []);
 
-  // Lock body scroll while the deck is open.
+  const redraw = useCallback(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!canvas || !ctx) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const stroke of strokesBySlide.current[clampedIndex] ?? []) {
+      drawStroke(ctx, stroke);
+    }
+  }, [clampedIndex, drawStroke]);
+
+  const sizeCanvas = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }, []);
+
+  const clearCurrent = useCallback(() => {
+    delete strokesBySlide.current[clampedIndex];
+    redraw();
+  }, [clampedIndex, redraw]);
+
+  // --- auto-fit: measure natural content, scale to fit the viewport ---------
+  const fit = useCallback(() => {
+    const el = fitRef.current;
+    if (!el) return;
+    // scrollHeight/Width are layout sizes, unaffected by the transform we apply,
+    // so this reads the natural (unscaled) content box and converges in one pass.
+    const h = el.scrollHeight;
+    const w = el.scrollWidth;
+    if (h === 0 || w === 0) return;
+    const availH = window.innerHeight - RESERVE_V;
+    const availW = window.innerWidth - RESERVE_H;
+    const next = Math.max(0.3, Math.min(1, availH / h, availW / w));
+    setScale(next);
+  }, []);
+
+  // Lock body scroll while open.
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -80,27 +154,36 @@ export function PresentationMode({
     };
   }, [open]);
 
-  // Wipe any highlighter strokes whenever the slide changes so marks from one
-  // slide never bleed onto the next.
-  useEffect(() => {
-    clearCanvas();
-  }, [clearCanvas]);
-
-  // Size the drawing canvas to the viewport (and keep it sized on resize).
+  // Size the canvas and restore this slide's strokes on open / slide change / resize.
   useEffect(() => {
     if (!open) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    sizeCanvas();
+    redraw();
+    const onResize = () => {
+      sizeCanvas();
+      redraw();
+      fit();
     };
-    resize();
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
-  }, [open]);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [open, sizeCanvas, redraw, fit]);
 
-  // Keyboard: arrows/space navigate, "c" clears drawing, Escape exits.
+  // Re-fit whenever the slide changes or the content resizes (e.g. a GIF loads).
+  useLayoutEffect(() => {
+    if (!open) return;
+    fit();
+  }, [open, clampedIndex, fit]);
+
+  useEffect(() => {
+    if (!open) return;
+    const el = fitRef.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(() => fit());
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [open, clampedIndex, fit]);
+
+  // Keyboard: arrows/space navigate, "d" toggles drawing, "c" clears, Esc exits.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -110,63 +193,72 @@ export function PresentationMode({
       } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
         e.preventDefault();
         go(-1);
+      } else if (e.key === "d" || e.key === "D") {
+        setPen((p) => !p);
       } else if (e.key === "c" || e.key === "C") {
-        clearCanvas();
+        clearCurrent();
       } else if (e.key === "Escape") {
         setOpen(false);
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, go, clearCanvas]);
+  }, [open, go, clearCurrent]);
+
+  const toPoint = (e: React.PointerEvent): Point => {
+    const c = canvasRef.current;
+    return {
+      x: c ? e.clientX / c.width : 0,
+      y: c ? e.clientY / c.height : 0,
+    };
+  };
 
   const onPointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!pen) return;
     drawing.current = true;
-    stroke.current = [{ x: e.clientX, y: e.clientY }];
-    canvas.setPointerCapture(e.pointerId);
+    currentStroke.current = [toPoint(e)];
+    canvasRef.current?.setPointerCapture(e.pointerId);
+    redraw();
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    if (!drawing.current) return;
+    if (!pen || !drawing.current) return;
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
-    const pt = { x: e.clientX, y: e.clientY };
-    const prev = stroke.current[stroke.current.length - 1];
-    stroke.current.push(pt);
+    const pt = toPoint(e);
+    const prev = currentStroke.current[currentStroke.current.length - 1];
+    currentStroke.current.push(pt);
     ctx.strokeStyle = "rgba(245, 158, 11, 0.55)";
     ctx.lineWidth = 12;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
     ctx.beginPath();
-    ctx.moveTo(prev.x, prev.y);
-    ctx.lineTo(pt.x, pt.y);
+    ctx.moveTo(prev.x * canvas.width, prev.y * canvas.height);
+    ctx.lineTo(pt.x * canvas.width, pt.y * canvas.height);
     ctx.stroke();
   };
 
   const onPointerUp = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (!drawing.current) return;
     drawing.current = false;
-    stroke.current = [];
+    if (currentStroke.current.length > 0) {
+      (strokesBySlide.current[clampedIndex] ||= []).push(currentStroke.current);
+    }
+    currentStroke.current = [];
     canvasRef.current?.releasePointerCapture(e.pointerId);
   };
 
-  const toggleFullscreen = () => {
-    const el = containerRef.current;
-    if (!el) return;
-    if (document.fullscreenElement) {
-      document.exitFullscreen?.();
-    } else {
-      el.requestFullscreen?.();
-    }
-  };
-
   const current = deck[clampedIndex];
+  const qrKey =
+    current.kind === "title"
+      ? "top"
+      : current.kind === "faq"
+        ? "faq"
+        : current.slide.id;
 
   return (
     <>
-      {/* Corner trigger (hidden while the deck is open). */}
       {!open ? (
         <button
           type="button"
@@ -177,12 +269,7 @@ export function PresentationMode({
           className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2 rounded-full bg-stone-900 px-4 py-2.5 text-sm font-medium text-white shadow-lg ring-1 ring-black/10 transition-transform hover:scale-[1.03]"
           aria-label="Buka mode presentasi"
         >
-          <svg
-            className="h-4 w-4"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M8 5v14l11-7z" />
           </svg>
           Mode presentasi
@@ -191,8 +278,7 @@ export function PresentationMode({
 
       {open ? (
         <div
-          ref={containerRef}
-          className="fixed inset-0 z-[100] select-none bg-[#f7f7f4] text-stone-900"
+          className="fixed inset-0 z-[100] select-none overflow-hidden bg-[#f7f7f4] text-stone-900"
           role="dialog"
           aria-modal="true"
           aria-label="Mode presentasi"
@@ -210,9 +296,14 @@ export function PresentationMode({
             />
           </div>
 
-          {/* Slide content (never intercepts pointer events, so drags draw). */}
-          <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-6 sm:px-16">
-            <div className="mx-auto w-full max-w-4xl">
+          {/* Slide content, auto-scaled to fit. The inner element carries the
+              transform; its glossary terms stay clickable (pointer-events-auto). */}
+          <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center overflow-hidden px-6 sm:px-16">
+            <div
+              ref={fitRef}
+              style={{ transform: `scale(${scale})`, transformOrigin: "center" }}
+              className="pointer-events-auto w-full max-w-4xl"
+            >
               {current.kind === "title" ? (
                 <div className="text-center">
                   <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#B3282D]">
@@ -224,9 +315,7 @@ export function PresentationMode({
                   <p className="mx-auto mt-5 max-w-2xl text-xl text-stone-600 sm:text-2xl">
                     {tagline}
                   </p>
-                  <p className="mt-8 text-base text-stone-400">
-                    Aurelius Ivan Wijaya
-                  </p>
+                  <p className="mt-8 text-base text-stone-400">Aurelius Ivan Wijaya</p>
                 </div>
               ) : null}
 
@@ -246,7 +335,11 @@ export function PresentationMode({
                     </p>
                   ) : null}
                   <div className="mt-8">
-                    <EduBlocks blocks={current.slide.blocks} mode="slide" />
+                    <EduBlocks
+                      blocks={current.slide.blocks}
+                      mode="slide"
+                      glossary={glossary}
+                    />
                   </div>
                 </div>
               ) : null}
@@ -262,12 +355,8 @@ export function PresentationMode({
                   <div className="mt-8 space-y-5">
                     {current.faqs.map((faq) => (
                       <div key={faq.q}>
-                        <p className="text-xl font-semibold text-stone-900">
-                          {faq.q}
-                        </p>
-                        <p className="mt-1 text-lg leading-relaxed text-stone-600">
-                          {faq.a}
-                        </p>
+                        <p className="text-xl font-semibold text-stone-900">{faq.q}</p>
+                        <p className="mt-1 text-lg leading-relaxed text-stone-600">{faq.a}</p>
                       </div>
                     ))}
                   </div>
@@ -276,50 +365,59 @@ export function PresentationMode({
             </div>
           </div>
 
-          {/* Drawing surface: sits above content, below the control chrome. */}
+          {/* Drawing surface: above content, below the control chrome. Only
+              captures pointer events while the pen is on. */}
           <canvas
             ref={canvasRef}
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
-            className="absolute inset-0 z-20 cursor-crosshair touch-none"
+            style={{ pointerEvents: pen ? "auto" : "none" }}
+            className={`absolute inset-0 z-20 touch-none ${pen ? "cursor-crosshair" : ""}`}
           />
 
-          {/* Corner logo credit (top-left) — the visible provenance mark. */}
+          {/* Corner logo credit (top-left). */}
           <div className="pointer-events-none absolute left-6 top-6 z-30">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={logoSrc} alt="AI Training Indonesia" className="h-7 w-auto opacity-90" />
           </div>
 
-          {/* QR (bottom-right): scan to open this page. */}
+          {/* Per-slide QR (bottom-right): deep-links to this section on the page. */}
           <div className="pointer-events-none absolute bottom-6 right-6 z-30 flex flex-col items-center gap-1">
             <div className="rounded-xl bg-white p-2 shadow-md ring-1 ring-black/5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={qrSrc} alt={`QR menuju ${pageUrl}`} className="h-24 w-24" />
+              <img
+                src={`${qrPrefix}${qrKey}.svg`}
+                alt={`QR menuju ${pageUrl} bagian ini`}
+                className="h-24 w-24"
+              />
             </div>
-            <span className="text-[11px] font-medium text-stone-400">
-              scan untuk buka halaman
-            </span>
+            <span className="text-[11px] font-medium text-stone-400">scan untuk buka bagian ini</span>
           </div>
 
           {/* Top-right controls. */}
           <div className="absolute right-6 top-6 z-40 flex items-center gap-2">
             <button
               type="button"
-              onClick={clearCanvas}
-              className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm ring-1 ring-black/5 backdrop-blur hover:text-stone-900"
-              title="Hapus coretan (C)"
+              onClick={() => setPen((p) => !p)}
+              aria-pressed={pen}
+              className={`rounded-full px-3 py-1.5 text-xs font-medium shadow-sm ring-1 backdrop-blur transition-colors ${
+                pen
+                  ? "bg-amber-400 text-stone-900 ring-amber-500"
+                  : "bg-white/90 text-stone-600 ring-black/5 hover:text-stone-900"
+              }`}
+              title="Aktifkan / matikan coretan (D)"
             >
-              Hapus coretan
+              {pen ? "Coret: nyala" : "Coret: mati"}
             </button>
             <button
               type="button"
-              onClick={toggleFullscreen}
+              onClick={clearCurrent}
               className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm ring-1 ring-black/5 backdrop-blur hover:text-stone-900"
-              title="Layar penuh"
+              title="Hapus coretan slide ini (C)"
             >
-              Layar penuh
+              Hapus coretan
             </button>
             <button
               type="button"

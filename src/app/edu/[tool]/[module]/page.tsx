@@ -47,7 +47,7 @@ export default async function EduModulePage({
   if (!mod) notFound();
 
   const url = `https://aitraining.id/edu/${mod.toolSlug}/${mod.slug}`;
-  const qrSrc = `/assets/edu/${mod.toolSlug}-${mod.slug}-qr.svg`;
+  const qrPrefix = `/assets/edu/${mod.toolSlug}-${mod.slug}--`;
   const logoSrc = "/assets/brand/logo.png";
 
   const learningSchema = {
@@ -193,7 +193,7 @@ export default async function EduModulePage({
                   <p className="mt-3 text-lg text-stone-500">{slide.subtitle}</p>
                 ) : null}
                 <div className="mt-8">
-                  <EduBlocks blocks={slide.blocks} mode="web" />
+                  <EduBlocks blocks={slide.blocks} mode="web" glossary={mod.glossary} />
                 </div>
               </div>
             </section>
@@ -252,7 +252,7 @@ export default async function EduModulePage({
           <section className="border-t border-stone-200 px-6 py-16 sm:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Ingin tim Anda dilatih langsung?
+                Ingin tim kamu dilatih langsung?
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-stone-600">
                 AI Training Indonesia membawakan pelatihan AI praktis untuk tim
@@ -283,7 +283,8 @@ export default async function EduModulePage({
         tagline={mod.tagline}
         slides={mod.slides}
         faqs={mod.faqs}
-        qrSrc={qrSrc}
+        glossary={mod.glossary}
+        qrPrefix={qrPrefix}
         logoSrc={logoSrc}
         pageUrl={url}
       />

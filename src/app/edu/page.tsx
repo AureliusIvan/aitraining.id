@@ -86,7 +86,7 @@ export default function EduIndexPage() {
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
                 Setiap tool punya modulnya sendiri, ditulis dengan bahasa dasar
-                supaya mudah diikuti walau Anda baru mengenal AI. Setiap halaman
+                supaya mudah diikuti walau kamu baru mengenal AI. Setiap halaman
                 juga punya mode presentasi, jadi materinya bisa langsung dipakai
                 untuk mengajar.
               </p>

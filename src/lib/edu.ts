@@ -61,6 +61,12 @@ export type EduFaq = { q: string; a: string };
 
 export type EduSource = { label: string; url: string };
 
+// A hard-to-translate technical term. Inside slide-block prose, wrap the term in
+// double brackets ([[SKILL.md]]) and the renderer turns it into a wavy-underlined
+// word that pops a short definition on click. `term` must match the bracketed key
+// exactly. Keep markers out of FAQ/HowTo/meta strings (those feed JSON-LD).
+export type EduGlossaryEntry = { term: string; def: string };
+
 export type EduModule = {
   toolSlug: string; // "claude"
   toolName: string; // "Claude"
@@ -79,6 +85,7 @@ export type EduModule = {
   dateModified: string; // ISO
   slides: EduSlide[];
   faqs: EduFaq[];
+  glossary: EduGlossaryEntry[];
   // Feeds HowTo JSON-LD for the "cara membuat skill" query.
   howto: { name: string; steps: { name: string; text: string }[] };
   sources: EduSource[];
@@ -120,7 +127,7 @@ export const eduTools: EduTool[] = [
         slug: "skills",
         name: "Skills",
         blurb:
-          "Jurus siap pakai yang Anda ajarkan sekali ke Claude, lalu dipanggil hanya dengan mengetik namanya.",
+          "Jurus siap pakai yang kamu ajarkan sekali ke Claude, lalu dipanggil hanya dengan mengetik namanya.",
         status: "live",
       },
     ],
@@ -136,7 +143,7 @@ export const eduTools: EduTool[] = [
   {
     slug: "chatgpt-agent",
     name: "ChatGPT Agent",
-    tagline: "Mode agent di ChatGPT yang bisa mengerjakan tugas bertahap untuk Anda.",
+    tagline: "Mode agent di ChatGPT yang bisa mengerjakan tugas bertahap untuk kamu.",
     status: "soon",
     accent: "#10A37F",
     modules: [],
@@ -155,12 +162,12 @@ const claudeSkills: EduModule = {
   level: "Level dasar",
   readingLabel: "sekitar 10 menit",
   h1: "Skills di Claude",
-  tagline: "Ajarkan cara kerja Anda sekali, panggil kapan saja.",
+  tagline: "Ajarkan cara kerjamu sekali, panggil kapan saja.",
   heroLede:
-    "Skills adalah cara Anda menyimpan sebuah cara kerja ke dalam Claude satu kali, lalu memanggilnya kembali kapan saja hanya dengan mengetik namanya. Halaman ini menjelaskannya dari nol untuk Anda yang baru mengenal AI: apa itu Skills, di mana letaknya, bagaimana cara memakainya lewat tombol garis miring, dan bagaimana membuat skill pertama Anda.",
+    "Skills adalah cara kamu menyimpan sebuah cara kerja ke dalam Claude satu kali, lalu memanggilnya kembali kapan saja hanya dengan mengetik namanya. Halaman ini menjelaskannya dari nol untuk kamu yang baru mengenal AI: apa itu Skills, di mana letaknya, bagaimana cara memakainya lewat tombol garis miring, dan bagaimana membuat skill pertamamu.",
   metaTitle: "Apa itu Skills di Claude? Panduan Dasar untuk Pemula",
   metaDescription:
-    "Penjelasan dasar Skills di Claude untuk pemula: apa itu skill, di mana letak file SKILL.md, cara menjalankannya dengan mengetik garis miring, dan cara membuat skill pertama Anda. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+    "Penjelasan dasar Skills di Claude untuk pemula: apa itu skill, di mana letak file SKILL.md, cara menjalankannya dengan mengetik garis miring, dan cara membuat skill pertamamu. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
   keywords: [
     "apa itu skills claude",
     "claude skills adalah",
@@ -185,13 +192,13 @@ const claudeSkills: EduModule = {
       blocks: [
         {
           type: "lead",
-          text: "Bayangkan Anda punya asisten baru. Setiap kali Anda minta bantuan, Anda harus menjelaskan ulang cara kerjanya dari awal. Skills membuat penjelasan itu cukup sekali. Anda simpan cara kerjanya, beri nama, lalu panggil namanya setiap kali dibutuhkan.",
+          text: "Bayangkan kamu punya asisten baru. Setiap kali kamu minta bantuan, kamu harus menjelaskan ulang cara kerjanya dari awal. Skills membuat penjelasan itu cukup sekali. Kamu simpan cara kerjanya, beri nama, lalu panggil namanya setiap kali dibutuhkan.",
         },
         {
           type: "callout",
           tone: "tip",
           title: "Analogi singkat",
-          text: "Skill itu seperti jurus yang sudah Anda ajarkan ke Claude. Sekali diajarkan, tinggal sebut namanya dan Claude langsung tahu harus melakukan apa.",
+          text: "Skill itu seperti jurus yang sudah kamu ajarkan ke [[Claude]]. Sekali diajarkan, tinggal sebut namanya dan Claude langsung tahu harus melakukan apa.",
         },
         {
           type: "paragraph",
@@ -233,7 +240,7 @@ const claudeSkills: EduModule = {
       blocks: [
         {
           type: "paragraph",
-          text: "Setiap skill tinggal di dalam folder bernama sesuai skill itu, dan di dalamnya ada satu file utama bernama SKILL.md. Struktur foldernya seperti ini:",
+          text: "Setiap skill tinggal di dalam folder bernama sesuai skill itu, dan di dalamnya ada satu file utama bernama [[SKILL.md]]. Struktur foldernya seperti ini:",
         },
         {
           type: "code",
@@ -250,11 +257,11 @@ const claudeSkills: EduModule = {
           items: [
             {
               title: "Skill proyek",
-              text: "Diletakkan di folder .claude/skills/ di dalam proyek. Hanya aktif saat Anda bekerja di proyek itu.",
+              text: "Diletakkan di folder [[.claude/skills/]] di dalam proyek. Cuma aktif waktu kamu kerja di proyek itu.",
             },
             {
               title: "Skill pribadi",
-              text: "Diletakkan di ~/.claude/skills/ di komputer Anda. Aktif di semua proyek yang Anda buka.",
+              text: "Diletakkan di [[~/.claude/skills/]] di komputermu. Aktif di semua proyek yang kamu buka.",
             },
           ],
         },
@@ -268,7 +275,7 @@ const claudeSkills: EduModule = {
       blocks: [
         {
           type: "paragraph",
-          text: "File SKILL.md dibuka dengan blok identitas di antara dua garis tiga strip, lalu diikuti instruksinya dalam bahasa biasa. Contoh sederhana:",
+          text: "File [[SKILL.md]] dibuka dengan blok identitas di antara dua garis tiga strip, lalu diikuti instruksinya dalam bahasa biasa. Contoh sederhana:",
         },
         {
           type: "code",
@@ -290,7 +297,7 @@ const claudeSkills: EduModule = {
           items: [
             {
               title: "name",
-              text: "Nama singkat skill. Inilah yang Anda ketik setelah garis miring untuk memanggilnya.",
+              text: "Nama singkat skill. Inilah yang kamu ketik setelah garis miring untuk memanggilnya.",
             },
             {
               title: "description",
@@ -312,9 +319,9 @@ const claudeSkills: EduModule = {
             { text: "Ketik tanda garis miring ( / ) di kolom obrolan." },
             {
               text: "Daftar skill yang tersedia akan muncul secara otomatis.",
-              hint: "Anda bisa mengetik beberapa huruf nama skill untuk menyaring daftarnya.",
+              hint: "Kamu bisa mengetik beberapa huruf nama skill untuk menyaring daftarnya.",
             },
-            { text: "Pilih skill yang Anda mau, lalu tekan Enter." },
+            { text: "Pilih skill yang kamu mau, lalu tekan Enter." },
             { text: "Claude langsung menjalankan langkah-langkah di dalam skill itu." },
           ],
         },
@@ -332,15 +339,15 @@ const claudeSkills: EduModule = {
       id: "contoh-nyata",
       kicker: "Contoh",
       title: "Contoh saat dipakai",
-      subtitle: "Misalnya Anda punya skill bernama ringkas-rapat.",
+      subtitle: "Misalnya kamu punya skill bernama ringkas-rapat.",
       blocks: [
         {
           type: "paragraph",
-          text: "Anda tempel catatan rapat yang panjang, lalu panggil skill dengan mengetik namanya. Claude mengikuti langkah yang sudah Anda simpan tadi dan mengembalikan rangkuman yang rapi.",
+          text: "Kamu tempel catatan rapat yang panjang, lalu panggil skill dengan mengetik namanya. Claude mengikuti langkah yang sudah kamu simpan tadi dan mengembalikan rangkuman yang rapi.",
         },
         {
           type: "code",
-          caption: "Yang Anda ketik",
+          caption: "Yang kamu ketik",
           lines: ["/ringkas-rapat"],
         },
         {
@@ -356,14 +363,14 @@ const claudeSkills: EduModule = {
     {
       id: "buat-skill",
       kicker: "Praktik",
-      title: "Membuat skill pertama Anda",
+      title: "Membuat skill pertamamu",
       subtitle: "Empat langkah, tanpa perlu bisa coding.",
       blocks: [
         {
           type: "steps",
           items: [
             {
-              text: "Buat folder baru di dalam .claude/skills/ dan beri nama skill Anda.",
+              text: "Buat folder baru di dalam .claude/skills/ dan beri nama skillmu.",
               hint: "Contoh: .claude/skills/ringkas-rapat/",
             },
             { text: "Di dalam folder itu, buat file bernama SKILL.md." },
@@ -371,7 +378,7 @@ const claudeSkills: EduModule = {
               text: "Isi file dengan blok identitas (name dan description) lalu tulis instruksinya dalam bahasa biasa.",
             },
             {
-              text: "Buka Claude, ketik garis miring, dan panggil skill baru Anda.",
+              text: "Buka Claude, ketik garis miring, dan panggil skill barumu.",
             },
           ],
         },
@@ -389,13 +396,13 @@ const claudeSkills: EduModule = {
       id: "tips",
       kicker: "Supaya rapi",
       title: "Tips dan kesalahan umum",
-      subtitle: "Tiga hal kecil yang membuat skill Anda jauh lebih andal.",
+      subtitle: "Tiga hal kecil yang membuat skillmu jauh lebih andal.",
       blocks: [
         {
           type: "callout",
           tone: "tip",
           title: "Tulis description yang jelas",
-          text: "Deskripsi yang jelas membuat skill mudah dikenali saat Anda mencarinya di daftar.",
+          text: "Deskripsi yang jelas membuat skill mudah dikenali saat kamu mencarinya di daftar.",
         },
         {
           type: "callout",
@@ -407,31 +414,49 @@ const claudeSkills: EduModule = {
           type: "callout",
           tone: "warn",
           title: "Pasang hanya dari sumber terpercaya",
-          text: "Skill berisi instruksi yang akan dijalankan Claude. Pastikan Anda memahami isinya sebelum memasang skill buatan orang lain.",
+          text: "Skill berisi instruksi yang akan dijalankan Claude. Pastikan kamu memahami isinya sebelum memasang skill buatan orang lain.",
         },
       ],
     },
   ],
   faqs: [
     {
-      q: "Apakah saya perlu bisa coding untuk membuat skill?",
-      a: "Tidak. Sebuah skill pada dasarnya adalah instruksi dalam bahasa biasa yang disimpan di file SKILL.md. Anda cukup menulis langkah kerja yang Anda mau, mirip menulis catatan untuk rekan kerja.",
+      q: "Apakah aku perlu bisa coding untuk membuat skill?",
+      a: "Tidak. Sebuah skill pada dasarnya adalah instruksi dalam bahasa biasa yang disimpan di file SKILL.md. Kamu cukup menulis langkah kerja yang kamu mau, mirip menulis catatan untuk rekan kerja.",
     },
     {
-      q: "Di mana file skill saya disimpan?",
+      q: "Di mana file skillku disimpan?",
       a: "Di dalam folder .claude/skills/ untuk skill yang khusus satu proyek, atau di ~/.claude/skills/ untuk skill pribadi yang aktif di semua proyek. Setiap skill adalah satu folder yang berisi file SKILL.md.",
     },
     {
       q: "Bagaimana cara memanggil skill?",
-      a: "Ketik tanda garis miring ( / ) di kolom obrolan, pilih skill dari daftar yang muncul, lalu tekan Enter. Anda juga bisa mengetik sebagian nama skill untuk menyaring daftarnya.",
+      a: "Ketik tanda garis miring ( / ) di kolom obrolan, pilih skill dari daftar yang muncul, lalu tekan Enter. Kamu juga bisa mengetik sebagian nama skill untuk menyaring daftarnya.",
     },
     {
       q: "Apa bedanya name dan description di SKILL.md?",
-      a: "name adalah nama singkat yang Anda ketik untuk memanggil skill. description adalah penjelasan satu kalimat tentang kapan skill itu sebaiknya dipakai, supaya mudah dikenali saat Anda memilihnya dari daftar.",
+      a: "name adalah nama singkat yang kamu ketik untuk memanggil skill. description adalah penjelasan satu kalimat tentang kapan skill itu sebaiknya dipakai, supaya mudah dikenali saat kamu memilihnya dari daftar.",
     },
     {
       q: "Apakah satu skill bisa dipakai seluruh tim?",
-      a: "Bisa. Karena skill hanyalah sebuah folder, Anda dapat membagikannya ke rekan tim atau menyimpannya di dalam proyek bersama, sehingga semua orang memakai cara kerja yang sama.",
+      a: "Bisa. Karena skill hanyalah sebuah folder, kamu bisa membagikannya ke rekan tim atau menyimpannya di dalam proyek bersama, sehingga semua orang memakai cara kerja yang sama.",
+    },
+  ],
+  glossary: [
+    {
+      term: "Claude",
+      def: "Asisten AI buatan perusahaan Anthropic. Kamu ajak ngobrol lewat teks untuk mengerjakan macam-macam tugas.",
+    },
+    {
+      term: "SKILL.md",
+      def: "File utama sebuah skill. Isinya identitas skill (nama dan deskripsi) plus langkah kerja yang kamu mau Claude jalankan.",
+    },
+    {
+      term: ".claude/skills/",
+      def: "Folder tempat skill disimpan di dalam sebuah proyek. Skill di sini cuma aktif waktu kamu kerja di proyek itu.",
+    },
+    {
+      term: "~/.claude/skills/",
+      def: "Folder skill pribadi di komputermu. Skill di sini aktif di semua proyek yang kamu buka.",
     },
   ],
   howto: {
@@ -439,7 +464,7 @@ const claudeSkills: EduModule = {
     steps: [
       {
         name: "Buat folder skill",
-        text: "Buat folder baru di dalam .claude/skills/ dan beri nama sesuai skill Anda.",
+        text: "Buat folder baru di dalam .claude/skills/ dan beri nama sesuai skillmu.",
       },
       {
         name: "Buat file SKILL.md",
@@ -451,7 +476,7 @@ const claudeSkills: EduModule = {
       },
       {
         name: "Panggil lewat garis miring",
-        text: "Buka Claude, ketik garis miring, pilih skill Anda, lalu tekan Enter.",
+        text: "Buka Claude, ketik garis miring, pilih skillmu, lalu tekan Enter.",
       },
     ],
   },

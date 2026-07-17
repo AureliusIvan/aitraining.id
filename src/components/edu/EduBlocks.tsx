@@ -1,10 +1,15 @@
-import type { EduBlock } from "@/lib/edu";
+import type { EduBlock, EduGlossaryEntry } from "@/lib/edu";
+import { GlossaryTerm } from "./GlossaryTerm";
 
 // Shared renderer for a slide's blocks. Used in two places with no "use client"
 // directive so it works in both trees: the server-rendered web page (mode
 // "web") and the client presentation overlay (mode "slide"). `slide` mode uses
 // larger type + tighter vertical rhythm to fit one screen, and drops any block
 // flagged `webOnly` (extra reading that belongs on the page, off the deck).
+//
+// Prose fields run through RichText, which turns [[term]] markers into clickable
+// GlossaryTerm islands (wavy underline + definition popover). Titles and code
+// are left literal on purpose.
 
 type Mode = "web" | "slide";
 
@@ -19,6 +24,45 @@ const toneDot: Record<string, string> = {
   tip: "bg-[#B3282D]",
   warn: "bg-amber-500",
 };
+
+// Splits a string on [[term]] markers and renders matched terms as glossary
+// islands. Directive-free: renders static text on the server, GlossaryTerm
+// hydrates as a client island.
+function RichText({
+  text,
+  glossary,
+  mode,
+}: {
+  text: string;
+  glossary: EduGlossaryEntry[];
+  mode: Mode;
+}) {
+  if (glossary.length === 0 || !text.includes("[[")) return <>{text}</>;
+  const parts = text.split(/(\[\[.+?\]\])/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = /^\[\[(.+?)\]\]$/.exec(part);
+        if (match) {
+          const entry = glossary.find((g) => g.term === match[1]);
+          if (entry) {
+            return (
+              <GlossaryTerm
+                // biome-ignore lint/suspicious/noArrayIndexKey: static tokens
+                key={i}
+                term={entry.term}
+                def={entry.def}
+                mode={mode}
+              />
+            );
+          }
+          return match[1];
+        }
+        return part;
+      })}
+    </>
+  );
+}
 
 function CodePanel({
   caption,
@@ -110,7 +154,19 @@ function GifFrame({
   );
 }
 
-function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
+function Block({
+  block,
+  mode,
+  glossary,
+}: {
+  block: EduBlock;
+  mode: Mode;
+  glossary: EduGlossaryEntry[];
+}) {
+  const rich = (text: string) => (
+    <RichText text={text} glossary={glossary} mode={mode} />
+  );
+
   switch (block.type) {
     case "lead":
       return (
@@ -119,7 +175,7 @@ function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
             mode === "slide" ? "text-2xl sm:text-3xl" : "text-xl"
           }`}
         >
-          {block.text}
+          {rich(block.text)}
         </p>
       );
     case "paragraph":
@@ -129,7 +185,7 @@ function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
             mode === "slide" ? "text-xl sm:text-2xl" : "text-lg"
           }`}
         >
-          {block.text}
+          {rich(block.text)}
         </p>
       );
     case "steps":
@@ -150,7 +206,7 @@ function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
                     mode === "slide" ? "text-xl" : "text-lg"
                   }`}
                 >
-                  {step.text}
+                  {rich(step.text)}
                 </p>
                 {step.hint ? (
                   <p
@@ -158,7 +214,7 @@ function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
                       mode === "slide" ? "text-base" : "text-sm"
                     }`}
                   >
-                    {step.hint}
+                    {rich(step.hint)}
                   </p>
                 ) : null}
               </div>
@@ -186,7 +242,7 @@ function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
                   mode === "slide" ? "text-lg" : "text-base"
                 }`}
               >
-                {card.text}
+                {rich(card.text)}
               </p>
             </div>
           ))}
@@ -216,7 +272,7 @@ function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
                   mode === "slide" ? "text-lg sm:text-xl" : "text-base"
                 }`}
               >
-                {block.text}
+                {rich(block.text)}
               </p>
             </div>
           </div>
@@ -245,16 +301,22 @@ function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
 export function EduBlocks({
   blocks,
   mode,
+  glossary = [],
 }: {
   blocks: EduBlock[];
   mode: Mode;
+  glossary?: EduGlossaryEntry[];
 }) {
-  const visible =
-    mode === "slide" ? blocks.filter((b) => !b.webOnly) : blocks;
+  const visible = mode === "slide" ? blocks.filter((b) => !b.webOnly) : blocks;
   return (
     <div className={mode === "slide" ? "space-y-5" : "space-y-6"}>
       {visible.map((block, i) => (
-        <Block key={`${block.type}-${i}`} block={block} mode={mode} />
+        <Block
+          key={`${block.type}-${i}`}
+          block={block}
+          mode={mode}
+          glossary={glossary}
+        />
       ))}
     </div>
   );
