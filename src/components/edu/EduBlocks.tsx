@@ -1,5 +1,7 @@
 import type { EduBlock, EduGlossaryEntry } from "@/lib/edu";
+import { CodeBlock } from "./CodeBlock";
 import { GlossaryTerm } from "./GlossaryTerm";
+import { MotionBlock } from "./MotionBlock";
 
 // Shared renderer for a slide's blocks. Used in two places with no "use client"
 // directive so it works in both trees: the server-rendered web page (mode
@@ -61,33 +63,6 @@ function RichText({
         return part;
       })}
     </>
-  );
-}
-
-function CodePanel({
-  caption,
-  lines,
-  mode,
-}: {
-  caption?: string;
-  lines: string[];
-  mode: Mode;
-}) {
-  return (
-    <figure className="not-prose">
-      {caption ? (
-        <figcaption className="mb-2 text-xs font-medium uppercase tracking-wide text-stone-400">
-          {caption}
-        </figcaption>
-      ) : null}
-      <pre
-        className={`overflow-x-auto rounded-2xl bg-[#0f0f10] text-stone-100 ring-1 ring-black/10 ${
-          mode === "slide" ? "p-6 text-base sm:text-lg" : "p-5 text-sm"
-        }`}
-      >
-        <code className="font-mono leading-relaxed">{lines.join("\n")}</code>
-      </pre>
-    </figure>
   );
 }
 
@@ -281,7 +256,7 @@ function Block({
     }
     case "code":
       return (
-        <CodePanel caption={block.caption} lines={block.lines} mode={mode} />
+        <CodeBlock caption={block.caption} lines={block.lines} mode={mode} />
       );
     case "gif":
       return (
@@ -290,6 +265,17 @@ function Block({
           alt={block.alt}
           caption={block.caption}
           describe={block.describe}
+          mode={mode}
+        />
+      );
+    case "motion":
+      return (
+        <MotionBlock
+          scene={block.scene}
+          alt={block.alt}
+          caption={block.caption}
+          command={block.command}
+          output={block.output}
           mode={mode}
         />
       );

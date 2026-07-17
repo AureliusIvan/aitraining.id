@@ -22,6 +22,8 @@ export type EduStep = { text: string; hint?: string };
 
 type BlockBase = { webOnly?: boolean };
 
+export type EduMotionScene = "claude-skill";
+
 export type EduBlock = BlockBase &
   (
     | { type: "lead"; text: string }
@@ -46,6 +48,14 @@ export type EduBlock = BlockBase &
         alt: string;
         caption: string;
         describe: string;
+      }
+    | {
+        type: "motion";
+        scene: EduMotionScene;
+        alt: string;
+        caption: string;
+        command: string;
+        output: string;
       }
   );
 
@@ -119,7 +129,8 @@ export const eduTools: EduTool[] = [
   {
     slug: "claude",
     name: "Claude",
-    tagline: "Asisten AI dari Anthropic untuk kerja sehari-hari dan membangun agent.",
+    tagline:
+      "Asisten AI dari Anthropic untuk kerja sehari-hari dan membangun agent.",
     status: "live",
     accent: "#B3282D",
     modules: [
@@ -133,9 +144,27 @@ export const eduTools: EduTool[] = [
     ],
   },
   {
+    slug: "n8n",
+    name: "n8n",
+    tagline:
+      "Alat otomatisasi alur kerja. Kamu susun langkah lewat kotak-kotak tanpa banyak ngoding.",
+    status: "live",
+    accent: "#EA4B71",
+    modules: [
+      {
+        slug: "node",
+        name: "Node",
+        blurb:
+          "Kenali unit paling dasar di n8n: node, satu kotak yang mengerjakan satu tugas.",
+        status: "live",
+      },
+    ],
+  },
+  {
     slug: "cursor",
     name: "Cursor",
-    tagline: "Editor kode dengan AI untuk membangun perangkat lunak lebih cepat.",
+    tagline:
+      "Editor kode dengan AI untuk membangun perangkat lunak lebih cepat.",
     status: "soon",
     accent: "#4B5563",
     modules: [],
@@ -143,7 +172,8 @@ export const eduTools: EduTool[] = [
   {
     slug: "chatgpt-agent",
     name: "ChatGPT Agent",
-    tagline: "Mode agent di ChatGPT yang bisa mengerjakan tugas bertahap untuk kamu.",
+    tagline:
+      "Mode agent di ChatGPT yang bisa mengerjakan tugas bertahap untuk kamu.",
     status: "soon",
     accent: "#10A37F",
     modules: [],
@@ -193,12 +223,23 @@ const claudeSkills: EduModule = {
         {
           type: "lead",
           text: "Bayangkan kamu punya asisten baru. Setiap kali kamu minta bantuan, kamu harus menjelaskan ulang cara kerjanya dari awal. Skills membuat penjelasan itu cukup sekali. Kamu simpan cara kerjanya, beri nama, lalu panggil namanya setiap kali dibutuhkan.",
+          webOnly: true,
+        },
+        {
+          type: "motion",
+          scene: "claude-skill",
+          alt: "Kartu Tujuan, Data, dan Langkah kerja bergerak menjadi satu Skill bernama buat-laporan. Perintah /buat-laporan kemudian mengaktifkan Claude dan menghasilkan laporan.",
+          caption:
+            "30 detik: pilih satu tugas berulang dan beri nama /skill-mu. Angkat tangan kalau siap cerita.",
+          command: "/buat-laporan",
+          output: "Laporan siap",
         },
         {
           type: "callout",
           tone: "tip",
           title: "Analogi singkat",
           text: "Skill itu seperti jurus yang sudah kamu ajarkan ke [[Claude]]. Sekali diajarkan, tinggal sebut namanya dan Claude langsung tahu harus melakukan apa.",
+          webOnly: true,
         },
         {
           type: "paragraph",
@@ -322,7 +363,9 @@ const claudeSkills: EduModule = {
               hint: "Kamu bisa mengetik beberapa huruf nama skill untuk menyaring daftarnya.",
             },
             { text: "Pilih skill yang kamu mau, lalu tekan Enter." },
-            { text: "Claude langsung menjalankan langkah-langkah di dalam skill itu." },
+            {
+              text: "Claude langsung menjalankan langkah-langkah di dalam skill itu.",
+            },
           ],
         },
         {
@@ -492,7 +535,283 @@ const claudeSkills: EduModule = {
   ],
 };
 
-export const eduModules: EduModule[] = [claudeSkills];
+const n8nNode: EduModule = {
+  toolSlug: "n8n",
+  toolName: "n8n",
+  slug: "node",
+  moduleName: "Node",
+  level: "Level dasar",
+  readingLabel: "sekitar 8 menit",
+  h1: "Node di n8n",
+  tagline: "Satu kotak, satu tugas.",
+  heroLede:
+    "Node adalah kotak paling dasar di n8n. Satu node mengerjakan satu tugas, lalu memberikan hasilnya ke node berikutnya. Halaman ini menjelaskannya dari nol untuk kamu yang baru mengenal otomatisasi: apa itu node, apa bedanya node pemicu dan node aksi, bagaimana data mengalir, dan cara menambah node pertamamu.",
+  metaTitle: "Apa itu Node di n8n? Panduan Dasar untuk Pemula",
+  metaDescription:
+    "Penjelasan dasar node di n8n untuk pemula: apa itu node, bedanya node trigger dan node aksi, bagaimana data mengalir antar-node, dan cara menambah node. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+  keywords: [
+    "apa itu node n8n",
+    "node n8n adalah",
+    "trigger n8n",
+    "workflow n8n",
+    "belajar n8n bahasa indonesia",
+    "cara menambah node n8n",
+    "n8n untuk pemula",
+    "otomatisasi n8n",
+  ],
+  updated: "17 Juli 2026",
+  datePublished: "2026-07-17",
+  dateModified: "2026-07-17",
+  slides: [
+    {
+      id: "apa-itu",
+      kicker: "n8n · Modul Node",
+      title: "Apa itu node?",
+      subtitle: "Mulai dari satu kotak.",
+      blocks: [
+        {
+          type: "lead",
+          text: "Di [[n8n]], sebuah pekerjaan otomatis dibangun dari kotak-kotak yang disambung. Satu kotak itu namanya [[node]]. Setiap node mengerjakan satu tugas, lalu memberikan hasilnya ke node berikutnya.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Analogi singkat",
+          text: "Node itu seperti satu langkah di resep masakan. Satu langkah melakukan satu hal, dan langkah-langkah itu berjalan berurutan sampai masakannya jadi.",
+        },
+        {
+          type: "paragraph",
+          text: "Kumpulan node yang tersambung disebut [[workflow]]. Di halaman ini kita bahas node dulu, satu per satu.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "kenapa-berguna",
+      kicker: "Kenapa penting",
+      title: "Kenapa node berguna?",
+      subtitle: "Tiga hal yang bikin otomatisasi jadi gampang.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Kelihatan jelas",
+              text: "Setiap langkah jadi satu kotak, jadi kamu bisa lihat alurnya dari awal sampai akhir.",
+            },
+            {
+              title: "Sedikit ngoding",
+              text: "Kebanyakan node cukup diatur lewat isian, tanpa harus menulis kode panjang.",
+            },
+            {
+              title: "Bisa dipakai ulang",
+              text: "Node yang sama bisa dipakai di banyak workflow, tinggal atur ulang isinya.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "jenis-node",
+      kicker: "Dua jenis utama",
+      title: "Node pemicu dan node aksi",
+      subtitle: "Hampir semua workflow dibangun dari dua jenis ini.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Node pemicu (trigger)",
+              text: "[[trigger]] adalah node yang memulai workflow, misalnya saat ada form baru diisi atau pada jadwal tertentu.",
+            },
+            {
+              title: "Node aksi (action)",
+              text: "Node yang melakukan sesuatu setelah dipicu, misalnya kirim WhatsApp, simpan ke spreadsheet, atau ambil data.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Satu trigger untuk memulai",
+          text: "Sebuah workflow biasanya diawali satu node trigger, lalu disusul beberapa node aksi.",
+        },
+      ],
+    },
+    {
+      id: "aliran-data",
+      kicker: "Cara jalannya",
+      title: "Bagaimana data mengalir",
+      subtitle: "Searah, mengikuti garis sambungan.",
+      blocks: [
+        {
+          type: "paragraph",
+          text: "Node disambung pakai garis. Data mengalir searah: keluaran satu node jadi masukan untuk node sesudahnya. Kalau satu node berhenti, node sesudahnya ikut menunggu.",
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Urutan itu penting",
+          text: "n8n menjalankan node satu per satu mengikuti garis sambungannya, dari trigger sampai node terakhir.",
+        },
+      ],
+    },
+    {
+      id: "contoh-nyata",
+      kicker: "Contoh",
+      title: "Contoh workflow tiga node",
+      subtitle: "Setiap ada form masuk, kirim WhatsApp lalu catat.",
+      blocks: [
+        {
+          type: "paragraph",
+          text: "Misalnya kamu mau: setiap ada pengisian form, kirim WhatsApp lalu catat ke spreadsheet. Workflow-nya jadi tiga node yang tersambung berurutan.",
+        },
+        {
+          type: "code",
+          caption: "Alur tiga node",
+          lines: [
+            "[ Form baru ]        (trigger)",
+            "      |",
+            "      v",
+            "[ Kirim WhatsApp ]   (aksi)",
+            "      |",
+            "      v",
+            "[ Simpan ke Sheet ]  (aksi)",
+          ],
+        },
+      ],
+    },
+    {
+      id: "cara-menambah",
+      kicker: "Praktik",
+      title: "Cara menambah node",
+      subtitle: "Empat langkah di dalam editor n8n.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Buka sebuah workflow di n8n, lalu klik tombol tambah (tanda +).",
+            },
+            {
+              text: "Ketik nama aplikasi atau aksi yang kamu cari di kolom pencarian.",
+              hint: "Misalnya 'Gmail', 'WhatsApp', atau 'Schedule'.",
+            },
+            { text: "Pilih node yang cocok dari daftar hasil pencarian." },
+            { text: "Atur isian node, lalu sambungkan garisnya ke node lain." },
+          ],
+        },
+        {
+          type: "gif",
+          src: "",
+          alt: "Menambah node baru di editor n8n",
+          caption: "Dari tombol + sampai node tersambung.",
+          describe:
+            "GIF: menekan tombol +, mencari node, memilihnya, lalu menyambungkan garisnya ke node lain.",
+        },
+      ],
+    },
+    {
+      id: "tips",
+      kicker: "Supaya rapi",
+      title: "Tips membangun dengan node",
+      subtitle: "Tiga kebiasaan kecil yang bikin workflow lebih andal.",
+      blocks: [
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Beri nama tiap node",
+          text: "Ganti nama node sesuai tugasnya, biar workflow gampang dibaca lagi nanti.",
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Uji satu per satu",
+          text: "Jalankan node satu per satu waktu membangun, jadi kamu tahu di node mana yang bermasalah.",
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Simpan rahasia di credential",
+          text: "Jangan tempel token atau password langsung di isian node. Pakai fitur credential n8n.",
+        },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Apa itu node di n8n?",
+      a: "Node adalah satu kotak di dalam workflow n8n yang mengerjakan satu tugas, misalnya mengirim email atau mengambil data. Beberapa node yang tersambung membentuk satu proses otomatis.",
+    },
+    {
+      q: "Apa bedanya node trigger dan node aksi?",
+      a: "Node trigger memulai workflow, misalnya saat ada form baru atau pada jadwal tertentu. Node aksi melakukan pekerjaan setelah dipicu, seperti mengirim pesan atau menyimpan data.",
+    },
+    {
+      q: "Apakah aku perlu bisa coding untuk memakai node?",
+      a: "Untuk kebanyakan node, tidak. Sebagian besar node cukup diatur lewat isian. Kalau butuh logika khusus ada node Code, tetapi itu opsional.",
+    },
+    {
+      q: "Berapa node yang boleh ada dalam satu workflow?",
+      a: "Tidak ada batas kaku. Mulai dari beberapa node, lalu tambah sesuai kebutuhan proses yang mau kamu otomatiskan.",
+    },
+    {
+      q: "Bagaimana data berpindah antar-node?",
+      a: "Data mengalir searah mengikuti garis sambungan: keluaran satu node menjadi masukan untuk node berikutnya.",
+    },
+  ],
+  glossary: [
+    {
+      term: "n8n",
+      def: "Alat otomatisasi alur kerja. Kamu susun langkah-langkah lewat kotak-kotak (node) tanpa harus banyak ngoding.",
+    },
+    {
+      term: "node",
+      def: "Satu kotak di dalam workflow n8n yang mengerjakan satu tugas, misalnya kirim email atau ambil data.",
+    },
+    {
+      term: "workflow",
+      def: "Rangkaian node yang tersambung dan berjalan berurutan untuk menyelesaikan satu proses otomatis.",
+    },
+    {
+      term: "trigger",
+      def: "Node pertama yang memulai workflow, misalnya jadwal, form baru, atau pesan masuk.",
+    },
+  ],
+  howto: {
+    name: "Cara menambah node di n8n",
+    steps: [
+      {
+        name: "Klik tombol tambah",
+        text: "Buka sebuah workflow di n8n, lalu klik tombol tambah (tanda +).",
+      },
+      {
+        name: "Cari node",
+        text: "Ketik nama aplikasi atau aksi yang kamu cari di kolom pencarian.",
+      },
+      {
+        name: "Pilih node",
+        text: "Pilih node yang cocok dari daftar hasil pencarian.",
+      },
+      {
+        name: "Atur dan sambungkan",
+        text: "Atur isian node, lalu sambungkan garisnya ke node lain.",
+      },
+    ],
+  },
+  sources: [
+    {
+      label: "n8n Docs: Nodes",
+      url: "https://docs.n8n.io/workflows/components/nodes/",
+    },
+    {
+      label: "n8n Docs: Glossary",
+      url: "https://docs.n8n.io/glossary/",
+    },
+  ],
+};
+
+export const eduModules: EduModule[] = [claudeSkills, n8nNode];
 
 // ---------------------------------------------------------------------------
 // Lookups.

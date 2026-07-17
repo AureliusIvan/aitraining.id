@@ -9,13 +9,14 @@ import {
   useState,
 } from "react";
 import type { EduFaq, EduGlossaryEntry, EduSlide } from "@/lib/edu";
+import { AuthorPopover } from "./AuthorPopover";
 import { EduBlocks } from "./EduBlocks";
 
 // Client-side presentation overlay. The corner "Mode presentasi" pill opens a
 // full-screen, light-themed deck rendered from the SAME slide data the page
 // shows. Features:
 //   - one slide per screen with page numbers; content auto-scales to fit the
-//     viewport (algorithmic, measured — never clipped regardless of slide size)
+//     viewport (algorithmic and measured, so slides never clip)
 //   - Ivan's logo as a screenshot-surviving watermark
 //   - a per-slide QR (bottom-right) that deep-links to that section on the page
 //   - drawing that is toggled on/off (off by default, so clicks reach glossary
@@ -96,28 +97,31 @@ export function PresentationMode({
   }, []);
 
   // --- drawing helpers ------------------------------------------------------
-  const drawStroke = useCallback((ctx: CanvasRenderingContext2D, stroke: Point[]) => {
-    const canvas = ctx.canvas;
-    if (stroke.length === 0) return;
-    ctx.strokeStyle = "rgba(245, 158, 11, 0.55)";
-    ctx.fillStyle = "rgba(245, 158, 11, 0.55)";
-    ctx.lineWidth = 12;
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
-    if (stroke.length === 1) {
-      const p = stroke[0];
+  const drawStroke = useCallback(
+    (ctx: CanvasRenderingContext2D, stroke: Point[]) => {
+      const canvas = ctx.canvas;
+      if (stroke.length === 0) return;
+      ctx.strokeStyle = "rgba(245, 158, 11, 0.55)";
+      ctx.fillStyle = "rgba(245, 158, 11, 0.55)";
+      ctx.lineWidth = 12;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      if (stroke.length === 1) {
+        const p = stroke[0];
+        ctx.beginPath();
+        ctx.arc(p.x * canvas.width, p.y * canvas.height, 6, 0, Math.PI * 2);
+        ctx.fill();
+        return;
+      }
       ctx.beginPath();
-      ctx.arc(p.x * canvas.width, p.y * canvas.height, 6, 0, Math.PI * 2);
-      ctx.fill();
-      return;
-    }
-    ctx.beginPath();
-    ctx.moveTo(stroke[0].x * canvas.width, stroke[0].y * canvas.height);
-    for (let i = 1; i < stroke.length; i++) {
-      ctx.lineTo(stroke[i].x * canvas.width, stroke[i].y * canvas.height);
-    }
-    ctx.stroke();
-  }, []);
+      ctx.moveTo(stroke[0].x * canvas.width, stroke[0].y * canvas.height);
+      for (let i = 1; i < stroke.length; i++) {
+        ctx.lineTo(stroke[i].x * canvas.width, stroke[i].y * canvas.height);
+      }
+      ctx.stroke();
+    },
+    [],
+  );
 
   const redraw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -181,11 +185,13 @@ export function PresentationMode({
   }, [open, sizeCanvas, redraw, fit]);
 
   // Re-fit whenever the slide changes or the content resizes (e.g. a GIF loads).
+  // biome-ignore lint/correctness/useExhaustiveDependencies: clampedIndex intentionally retriggers fitting
   useLayoutEffect(() => {
     if (!open) return;
     fit();
   }, [open, clampedIndex, fit]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: clampedIndex replaces the observed slide node
   useEffect(() => {
     if (!open) return;
     const el = fitRef.current;
@@ -199,6 +205,13 @@ export function PresentationMode({
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (
+        e.key === " " &&
+        target?.closest("button, a, input, textarea, select")
+      ) {
+        return;
+      }
       if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") {
         e.preventDefault();
         go(1);
@@ -258,7 +271,9 @@ export function PresentationMode({
     if (!drawing.current) return;
     drawing.current = false;
     if (currentStroke.current.length > 0) {
-      (strokesBySlide.current[clampedIndex] ||= []).push(currentStroke.current);
+      const strokes = strokesBySlide.current[clampedIndex] ?? [];
+      strokes.push(currentStroke.current);
+      strokesBySlide.current[clampedIndex] = strokes;
     }
     currentStroke.current = [];
     canvasRef.current?.releasePointerCapture(e.pointerId);
@@ -291,7 +306,12 @@ export function PresentationMode({
           className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2 rounded-full bg-stone-900 px-4 py-2.5 text-sm font-medium text-white shadow-lg ring-1 ring-black/10 transition-transform hover:scale-[1.03]"
           aria-label="Buka mode presentasi"
         >
-          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg
+            className="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
             <path d="M8 5v14l11-7z" />
           </svg>
           Mode presentasi
@@ -301,6 +321,11 @@ export function PresentationMode({
       {open ? (
         <div
           ref={containerRef}
+          onContextMenu={(e) => {
+            // Right-click is a fast toggle between drawing and normal clicking.
+            e.preventDefault();
+            setPen((p) => !p);
+          }}
           className="fixed inset-0 z-[100] select-none overflow-hidden bg-[#f7f7f4] text-stone-900"
           role="dialog"
           aria-modal="true"
@@ -324,7 +349,10 @@ export function PresentationMode({
           <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center overflow-hidden px-6 sm:px-16">
             <div
               ref={fitRef}
-              style={{ transform: `scale(${scale})`, transformOrigin: "center" }}
+              style={{
+                transform: `scale(${scale})`,
+                transformOrigin: "center",
+              }}
               className="pointer-events-auto w-full max-w-4xl"
             >
               {current.kind === "title" ? (
@@ -338,7 +366,13 @@ export function PresentationMode({
                   <p className="mx-auto mt-5 max-w-2xl text-xl text-stone-600 sm:text-2xl">
                     {tagline}
                   </p>
-                  <p className="mt-8 text-base text-stone-400">Aurelius Ivan Wijaya</p>
+                  <p className="mt-8 text-base text-stone-500">
+                    <AuthorPopover
+                      name="Aurelius Ivan Wijaya"
+                      bio="Corporate AI Trainer di Indonesia. Official n8n Ambassador dan Cursor Ambassador, dan sudah berbicara di 50+ acara AI."
+                      photo="/assets/hero.webp"
+                    />
+                  </p>
                 </div>
               ) : null}
 
@@ -378,8 +412,12 @@ export function PresentationMode({
                   <div className="mt-8 space-y-5">
                     {current.faqs.map((faq) => (
                       <div key={faq.q}>
-                        <p className="text-xl font-semibold text-stone-900">{faq.q}</p>
-                        <p className="mt-1 text-lg leading-relaxed text-stone-600">{faq.a}</p>
+                        <p className="text-xl font-semibold text-stone-900">
+                          {faq.q}
+                        </p>
+                        <p className="mt-1 text-lg leading-relaxed text-stone-600">
+                          {faq.a}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -403,7 +441,11 @@ export function PresentationMode({
           {/* Corner logo credit (top-left). */}
           <div className="pointer-events-none absolute left-6 top-6 z-30">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logoSrc} alt="AI Training Indonesia" className="h-7 w-auto opacity-90" />
+            <img
+              src={logoSrc}
+              alt="AI Training Indonesia"
+              className="h-7 w-auto opacity-90"
+            />
           </div>
 
           {/* Per-slide QR (bottom-right): deep-links to this section on the page.
@@ -422,47 +464,109 @@ export function PresentationMode({
                 className="h-24 w-24"
               />
             </button>
-            <span className="text-[11px] font-medium text-stone-400">scan atau klik untuk perbesar</span>
+            <span className="text-[11px] font-medium text-stone-400">
+              scan atau klik untuk perbesar
+            </span>
           </div>
 
-          {/* Top-right controls. */}
+          {/* Top-right controls (icon-only for compactness). */}
           <div className="absolute right-6 top-6 z-40 flex items-center gap-2">
             <button
               type="button"
               onClick={() => setPen((p) => !p)}
               aria-pressed={pen}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium shadow-sm ring-1 backdrop-blur transition-colors ${
+              className={`flex h-9 w-9 items-center justify-center rounded-full shadow-sm ring-1 backdrop-blur transition-colors ${
                 pen
                   ? "bg-amber-400 text-stone-900 ring-amber-500"
                   : "bg-white/90 text-stone-600 ring-black/5 hover:text-stone-900"
               }`}
-              title="Aktifkan / matikan coretan (D)"
+              title={
+                pen
+                  ? "Coret nyala. Klik, klik kanan, atau D untuk mematikan."
+                  : "Coret mati. Klik, klik kanan, atau D untuk menyalakan."
+              }
+              aria-label="Aktifkan atau matikan coretan"
             >
-              {pen ? "Coret: nyala" : "Coret: mati"}
+              <svg
+                className="h-[18px] w-[18px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.232 5.232l3.536 3.536M9 11l6.5-6.5a2.121 2.121 0 013 3L12 14l-4 1 1-4z"
+                />
+              </svg>
             </button>
             <button
               type="button"
               onClick={clearCurrent}
-              className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm ring-1 ring-black/5 backdrop-blur hover:text-stone-900"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-stone-600 shadow-sm ring-1 ring-black/5 backdrop-blur transition-colors hover:text-stone-900"
               title="Hapus coretan slide ini (C)"
+              aria-label="Hapus coretan slide ini"
             >
-              Hapus coretan
+              <svg
+                className="h-[18px] w-[18px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M4 7h16m-9 0V4a1 1 0 011-1h2a1 1 0 011 1v3"
+                />
+              </svg>
             </button>
             <button
               type="button"
               onClick={toggleFullscreen}
-              className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm ring-1 ring-black/5 backdrop-blur hover:text-stone-900"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-stone-600 shadow-sm ring-1 ring-black/5 backdrop-blur transition-colors hover:text-stone-900"
               title="Layar penuh (F)"
+              aria-label="Layar penuh"
             >
-              Layar penuh
+              <svg
+                className="h-[18px] w-[18px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8 4H4v4m0 8v4h4m8-16h4v4m0 8v4h-4"
+                />
+              </svg>
             </button>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="rounded-full bg-stone-900 px-3 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-stone-700"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-stone-900 text-white shadow-sm transition-colors hover:bg-stone-700"
               title="Keluar (Esc)"
+              aria-label="Keluar"
             >
-              Keluar
+              <svg
+                className="h-[18px] w-[18px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           </div>
 
@@ -479,6 +583,7 @@ export function PresentationMode({
               <div
                 className="relative flex flex-col items-center gap-5 rounded-3xl bg-white p-8 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
+                onKeyDown={(e) => e.stopPropagation()}
               >
                 <button
                   type="button"
@@ -486,14 +591,31 @@ export function PresentationMode({
                   aria-label="Tutup"
                   className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-stone-400 hover:bg-stone-100 hover:text-stone-700"
                 >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 6l12 12M18 6L6 18"
+                    />
                   </svg>
                 </button>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={qrSrc} alt={`QR menuju ${qrUrl}`} className="h-64 w-64 sm:h-80 sm:w-80" />
+                <img
+                  src={qrSrc}
+                  alt={`QR menuju ${qrUrl}`}
+                  className="h-64 w-64 sm:h-80 sm:w-80"
+                />
                 <div className="max-w-xs text-center">
-                  <p className="text-sm text-stone-500">Scan, atau buka tautan ini:</p>
+                  <p className="text-sm text-stone-500">
+                    Scan, atau buka tautan ini:
+                  </p>
                   <p className="mt-1 select-all break-all font-mono text-sm text-stone-800">
                     {qrUrl}
                   </p>
@@ -511,8 +633,19 @@ export function PresentationMode({
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md ring-1 ring-black/5 transition-opacity disabled:opacity-30"
               aria-label="Slide sebelumnya"
             >
-              <svg className="h-5 w-5 text-stone-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              <svg
+                className="h-5 w-5 text-stone-700"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </button>
             <span className="min-w-[64px] text-center text-sm font-medium tabular-nums text-stone-500">
@@ -525,8 +658,19 @@ export function PresentationMode({
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md ring-1 ring-black/5 transition-opacity disabled:opacity-30"
               aria-label="Slide berikutnya"
             >
-              <svg className="h-5 w-5 text-stone-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              <svg
+                className="h-5 w-5 text-stone-700"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           </div>
