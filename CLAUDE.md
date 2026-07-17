@@ -48,6 +48,17 @@ Two separate content types cover third-party tools/communities, and they are **n
 
 Both engines share the same shape: a typed array + `[slug]` page (Article/Breadcrumb/FAQPage JSON-LD, bilingual `defId`/`defEn` 40-60 word answer blocks for the literal query, body sections, optional `features`, `faqs`), auto-expanded into `sitemap.ts` by `dateModified`, and mirrored in `public/llms.txt`. Reuse this shape for the next "what is X" page rather than inventing a third pattern.
 
+### Edu learning surface (`/edu`) — one content model, two renders
+
+A light-themed, Bahasa-first learning surface that doubles as reusable slides. Purpose: rank for beginner "what is X / how do I use X" tool queries, and let Ivan present the same material live. The rest of the site is dark; the edu pages are deliberately bright (`bg-[#f7f7f4]`, form-like) because they get projected in lit rooms, so they carry their own light chrome (`EduHeader`/`EduFooter`, light `logo.png`) instead of the dark `Nav`/`Footer`.
+
+- **Data:** `src/lib/edu.ts` is PURE serializable data (no JSX/functions). `eduTools` drives the `/edu` index (grouped by tool: Claude live, Cursor + ChatGPT Agent `soon`). `eduModules` holds full content. Each module is authored as `slides: EduSlide[]`; each slide is a list of typed `EduBlock`s (`lead`/`paragraph`/`steps`/`cards`/`callout`/`code`/`gif`). A block may set `webOnly: true` to show on the page but stay off the projected deck. First module: Claude → Skills at `/edu/claude/skills`.
+- **Author each slide to fit one 16:9 screen; add more slides for depth rather than overloading one.** `gif` blocks render a labelled placeholder frame until a `src` is set (drop clips in `public/assets/edu/<tool>-<module>/`, then set `src`).
+- **Renders:** `src/components/edu/EduBlocks.tsx` is a shared, directive-free renderer used both server-side (web sections, `mode="web"`) and inside the client overlay (`mode="slide"`, which drops `webOnly` blocks and caps media height). The server page (`src/app/edu/[tool]/[module]/page.tsx`) emits the crawlable HTML + `LearningResource`/`HowTo`/`FAQPage`/`BreadcrumbList` JSON-LD; the FAQ is the last section.
+- **Presentation mode:** `src/components/edu/PresentationMode.tsx` (`"use client"`) is the corner "Mode presentasi" pill + full-screen deck: one slide per screen with page numbers, Ivan's logo as a screenshot-surviving watermark (corner credit + faint diagonal), a static QR (bottom-right → the page URL), arrow/space/button nav, and hold-to-draw amber highlighting (drag draws, `c`/Esc clears, strokes clear on slide change). Canvas sits above content (`z-20`), control chrome above canvas (`z-40`).
+- **QR:** static per module at `public/assets/edu/<tool>-<module>-qr.svg`, generated once with `segno` (pure-python). No runtime QR dependency.
+- **Wiring:** dynamic `/edu/[tool]/[module]` routes are expanded into `sitemap.ts` from `eduModules` (same pattern as articles/partners); `/edu` has a `STATIC_META` entry; both are mirrored in `public/llms.txt`; `/edu` is linked from the main `Nav`.
+
 ### Keyword → page ownership
 
 | Intent | Owning page |
@@ -131,6 +142,7 @@ Both engines share the same shape: a typed array + `[slug]` page (Article/Breadc
 | `corporate AI training Pekanbaru` / `pelatihan AI Pekanbaru untuk perusahaan` | `/cities/pekanbaru` (`#corporate-ai-training-pekanbaru` FAQ EN + `#pelatihan-ai-pekanbaru-untuk-perusahaan` def, added 2026-07-10; Riau energy/trade/services on-site/virtual) |
 | `corporate AI training Cirebon` / `pelatihan AI Cirebon untuk perusahaan` | `/cities/cirebon` (`#corporate-ai-training-cirebon` FAQ EN + `#pelatihan-ai-cirebon-untuk-perusahaan` def, added 2026-07-10; West Java Pantura trade/port on-site/virtual) |
 | `corporate AI training Kediri` / `pelatihan AI Kediri untuk perusahaan` | `/cities/kediri` (`#corporate-ai-training-kediri` FAQ EN + `#pelatihan-ai-kediri-untuk-perusahaan` def, added 2026-07-10; East Java manufacturing/trade on-site/virtual) |
+| `corporate AI training Banjarmasin` / `pelatihan AI Banjarmasin untuk perusahaan` | `/cities/banjarmasin` (`#corporate-ai-training-banjarmasin` FAQ EN + `#pelatihan-ai-banjarmasin-untuk-perusahaan` def, added 2026-07-10; South Kalimantan trade/services on-site/virtual) |
 | `GEO trainer Jakarta` | `/cities/jakarta` (`geo` block), `/geo-training`, `/best-geo-trainers-indonesia` |
 | `AI trainer terbaik Indonesia` (national) | `/best-ai-trainers-indonesia` (Top-10 listicle) |
 | `pelatihan AI terbaik Indonesia` (national, no audience qualifier) | `/best-ai-trainers-indonesia` (dedicated FAQ, added 2026-07-02, distinct from the trainer-bio FAQ — answers the evaluation-criteria angle and cites `/compare`); `pelatihan AI terbaik **untuk perusahaan** di Indonesia` (corporate-qualified) stays owned by `/pelatihan-ai-untuk-perusahaan` |

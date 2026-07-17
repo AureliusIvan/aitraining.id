@@ -1,0 +1,261 @@
+import type { EduBlock } from "@/lib/edu";
+
+// Shared renderer for a slide's blocks. Used in two places with no "use client"
+// directive so it works in both trees: the server-rendered web page (mode
+// "web") and the client presentation overlay (mode "slide"). `slide` mode uses
+// larger type + tighter vertical rhythm to fit one screen, and drops any block
+// flagged `webOnly` (extra reading that belongs on the page, off the deck).
+
+type Mode = "web" | "slide";
+
+const toneStyles: Record<string, string> = {
+  info: "border-stone-200 bg-stone-50",
+  tip: "border-[#B3282D]/25 bg-[#B3282D]/5",
+  warn: "border-amber-300/60 bg-amber-50",
+};
+
+const toneDot: Record<string, string> = {
+  info: "bg-stone-400",
+  tip: "bg-[#B3282D]",
+  warn: "bg-amber-500",
+};
+
+function CodePanel({
+  caption,
+  lines,
+  mode,
+}: {
+  caption?: string;
+  lines: string[];
+  mode: Mode;
+}) {
+  return (
+    <figure className="not-prose">
+      {caption ? (
+        <figcaption className="mb-2 text-xs font-medium uppercase tracking-wide text-stone-400">
+          {caption}
+        </figcaption>
+      ) : null}
+      <pre
+        className={`overflow-x-auto rounded-2xl bg-[#0f0f10] text-stone-100 ring-1 ring-black/10 ${
+          mode === "slide" ? "p-6 text-base sm:text-lg" : "p-5 text-sm"
+        }`}
+      >
+        <code className="font-mono leading-relaxed">{lines.join("\n")}</code>
+      </pre>
+    </figure>
+  );
+}
+
+function GifFrame({
+  src,
+  alt,
+  caption,
+  describe,
+  mode,
+}: {
+  src?: string;
+  alt: string;
+  caption: string;
+  describe: string;
+  mode: Mode;
+}) {
+  return (
+    <figure className="not-prose">
+      <div
+        className={`overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm ${
+          mode === "slide" ? "mx-auto max-h-[34vh] w-fit" : ""
+        }`}
+      >
+        {src ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={src}
+            alt={alt}
+            className={
+              mode === "slide"
+                ? "mx-auto max-h-[34vh] w-auto object-contain"
+                : "h-auto w-full"
+            }
+          />
+        ) : (
+          <div
+            className={`flex flex-col items-center justify-center gap-3 bg-[repeating-linear-gradient(45deg,#faf9f7,#faf9f7_14px,#f3f1ee_14px,#f3f1ee_28px)] text-center ${
+              mode === "slide"
+                ? "h-[34vh] w-[60.4vh] max-w-full px-8"
+                : "aspect-video px-6"
+            }`}
+          >
+            <span className="rounded-full bg-[#B3282D] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+              GIF
+            </span>
+            <p
+              className={`max-w-md text-stone-500 ${
+                mode === "slide" ? "text-base" : "text-sm"
+              }`}
+            >
+              {describe}
+            </p>
+          </div>
+        )}
+      </div>
+      <figcaption
+        className={`mt-2 text-stone-400 ${
+          mode === "slide" ? "text-center text-base" : "text-sm"
+        }`}
+      >
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function Block({ block, mode }: { block: EduBlock; mode: Mode }) {
+  switch (block.type) {
+    case "lead":
+      return (
+        <p
+          className={`font-medium leading-relaxed text-stone-800 ${
+            mode === "slide" ? "text-2xl sm:text-3xl" : "text-xl"
+          }`}
+        >
+          {block.text}
+        </p>
+      );
+    case "paragraph":
+      return (
+        <p
+          className={`leading-relaxed text-stone-600 ${
+            mode === "slide" ? "text-xl sm:text-2xl" : "text-lg"
+          }`}
+        >
+          {block.text}
+        </p>
+      );
+    case "steps":
+      return (
+        <ol className={mode === "slide" ? "space-y-3" : "space-y-4"}>
+          {block.items.map((step, i) => (
+            <li key={step.text} className="flex gap-4">
+              <span
+                className={`flex shrink-0 items-center justify-center rounded-full bg-[#B3282D] font-semibold text-white ${
+                  mode === "slide" ? "h-9 w-9 text-base" : "h-8 w-8 text-sm"
+                }`}
+              >
+                {i + 1}
+              </span>
+              <div>
+                <p
+                  className={`leading-relaxed text-stone-800 ${
+                    mode === "slide" ? "text-xl" : "text-lg"
+                  }`}
+                >
+                  {step.text}
+                </p>
+                {step.hint ? (
+                  <p
+                    className={`mt-1 text-stone-500 ${
+                      mode === "slide" ? "text-base" : "text-sm"
+                    }`}
+                  >
+                    {step.hint}
+                  </p>
+                ) : null}
+              </div>
+            </li>
+          ))}
+        </ol>
+      );
+    case "cards":
+      return (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {block.items.map((card) => (
+            <div
+              key={card.title}
+              className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"
+            >
+              <h3
+                className={`mb-2 font-semibold text-stone-900 ${
+                  mode === "slide" ? "text-xl" : "text-lg"
+                }`}
+              >
+                {card.title}
+              </h3>
+              <p
+                className={`leading-relaxed text-stone-600 ${
+                  mode === "slide" ? "text-lg" : "text-base"
+                }`}
+              >
+                {card.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      );
+    case "callout": {
+      const tone = block.tone ?? "info";
+      return (
+        <div className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
+          <div className="flex items-start gap-3">
+            <span
+              className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full ${toneDot[tone]}`}
+              aria-hidden="true"
+            />
+            <div>
+              {block.title ? (
+                <p
+                  className={`mb-1 font-semibold text-stone-900 ${
+                    mode === "slide" ? "text-xl" : "text-base"
+                  }`}
+                >
+                  {block.title}
+                </p>
+              ) : null}
+              <p
+                className={`leading-relaxed text-stone-700 ${
+                  mode === "slide" ? "text-lg sm:text-xl" : "text-base"
+                }`}
+              >
+                {block.text}
+              </p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    case "code":
+      return (
+        <CodePanel caption={block.caption} lines={block.lines} mode={mode} />
+      );
+    case "gif":
+      return (
+        <GifFrame
+          src={block.src}
+          alt={block.alt}
+          caption={block.caption}
+          describe={block.describe}
+          mode={mode}
+        />
+      );
+    default:
+      return null;
+  }
+}
+
+export function EduBlocks({
+  blocks,
+  mode,
+}: {
+  blocks: EduBlock[];
+  mode: Mode;
+}) {
+  const visible =
+    mode === "slide" ? blocks.filter((b) => !b.webOnly) : blocks;
+  return (
+    <div className={mode === "slide" ? "space-y-5" : "space-y-6"}>
+      {visible.map((block, i) => (
+        <Block key={`${block.type}-${i}`} block={block} mode={mode} />
+      ))}
+    </div>
+  );
+}

@@ -3,6 +3,7 @@ import { join } from "node:path";
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
 import { cities } from "@/lib/cities";
+import { eduModules } from "@/lib/edu";
 import { partners } from "@/lib/partners";
 
 const baseUrl = "https://aitraining.id";
@@ -121,6 +122,11 @@ const STATIC_META: Record<string, Meta> = {
     changeFrequency: "monthly",
     priority: 0.75,
   },
+  "/edu": {
+    lastModified: new Date("2026-07-17"),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
   "/playbook/daily-prompt": {
     lastModified: new Date("2026-06-06"),
     changeFrequency: "monthly",
@@ -213,7 +219,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       city.id === "pontianak" ||
       city.id === "pekanbaru" ||
       city.id === "cirebon" ||
-      city.id === "kediri"
+      city.id === "kediri" ||
+      city.id === "banjarmasin"
         ? new Date("2026-07-10")
         : city.id === "manado" ||
             city.id === "bogor" ||
@@ -244,5 +251,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...cityPages, ...partnerPages, ...articlePages];
+  // Edu modules live under the dynamic /edu/[tool]/[module] route, so the
+  // filesystem walk can't see them — expand from the data source, same pattern
+  // as articles/partners.
+  const eduPages: MetadataRoute.Sitemap = eduModules.map((m) => ({
+    url: `${baseUrl}/edu/${m.toolSlug}/${m.slug}`,
+    lastModified: new Date(m.dateModified),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [
+    ...staticPages,
+    ...cityPages,
+    ...partnerPages,
+    ...articlePages,
+    ...eduPages,
+  ];
 }

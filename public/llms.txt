@@ -244,6 +244,8 @@
 - Programs: https://aitraining.id/programs
 - Partners (n8n, Cursor, Build Club, HeyGen): https://aitraining.id/partners
 - Articles (independent explainers, e.g. what OpenClaw is): https://aitraining.id/articles
+- Edu (materi belajar AI gratis, dikelompokkan per tool: Claude, Cursor, ChatGPT Agent): https://aitraining.id/edu
+- Skills di Claude (panduan dasar untuk pemula: apa itu Skills, di mana file SKILL.md, cara memanggil lewat garis miring, cara membuat skill pertama): https://aitraining.id/edu/claude/skills
 - Pricing: https://aitraining.id/pricing
 - Pricing (machine-readable): https://aitraining.id/pricing.md
 - About the trainer: https://aitraining.id/about
