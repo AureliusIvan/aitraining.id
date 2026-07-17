@@ -1,10 +1,10 @@
 .frame {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgb(231 229 228);
-  border-radius: 1rem;
+  border: 2px solid #202020;
+  border-radius: 1.25rem;
   background: #fff;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  box-shadow: 4px 4px 0 rgb(32 32 32 / 0.12);
 }
 
 .slideFrame {
@@ -33,24 +33,65 @@
 
 .guide {
   fill: none;
-  stroke: #e7e5e4;
-  stroke-width: 2;
-  stroke-dasharray: 5 8;
+  stroke: #202020;
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.18;
 }
 
-.user circle,
-.user path {
+.guideArrow,
+.connectorHead {
   fill: none;
-  stroke: #57534e;
+  stroke: #202020;
   stroke-width: 4;
   stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.guideArrow {
+  opacity: 0.18;
+}
+
+.userBody {
+  fill: #2f80ed;
+  stroke: #202020;
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.userFace {
+  fill: #ffd7b8;
+  stroke: #202020;
+  stroke-width: 4;
+}
+
+.userHair {
+  fill: #202020;
+}
+
+.userEye {
+  fill: #202020;
+}
+
+.userSmile,
+.userArm {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.userPhone {
+  fill: #ff4b3e;
+  stroke: #202020;
+  stroke-width: 3;
 }
 
 .user text,
 .assistant text {
-  fill: #57534e;
+  fill: #202020;
   font-size: 19px;
-  font-weight: 600;
+  font-weight: 700;
   text-anchor: middle;
 }
 
@@ -61,18 +102,18 @@
 
 .chip rect {
   fill: #fff;
-  stroke: #d6d3d1;
-  stroke-width: 2;
+  stroke: #202020;
+  stroke-width: 3;
 }
 
 .chip circle {
-  fill: #b3282d;
+  fill: #ff4b3e;
 }
 
 .chip text {
-  fill: #44403c;
+  fill: #202020;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .dataMissingMarker {
@@ -108,13 +149,19 @@
 
 .skillTab,
 .skillCard {
-  fill: #fff7f7;
-  stroke: #b3282d;
-  stroke-width: 2;
+  fill: #fff;
+  stroke: #202020;
+  stroke-width: 3;
+}
+
+.skillTab {
+  fill: #ff4b3e;
 }
 
 .skill circle {
-  fill: #b3282d;
+  fill: #ff4b3e;
+  stroke: #202020;
+  stroke-width: 2;
 }
 
 .skill path {
@@ -125,13 +172,13 @@
 }
 
 .skillTitle {
-  fill: #292524;
+  fill: #202020;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .skillCommand {
-  fill: #b3282d;
+  fill: #2f80ed;
   font-family: var(--font-geist-mono), monospace;
   font-size: 20px;
   font-weight: 700;
@@ -139,8 +186,8 @@
 
 .connector {
   fill: none;
-  stroke: #b3282d;
-  stroke-width: 3;
+  stroke: #202020;
+  stroke-width: 4;
   stroke-linecap: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
@@ -149,12 +196,22 @@
 
 .assistantRing {
   fill: #fff;
-  stroke: #d6d3d1;
-  stroke-width: 2;
+  stroke: #202020;
+  stroke-width: 3;
 }
 
 .assistantSpark {
   fill: #d97757;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.assistantAccents {
+  fill: none;
+  stroke: #ff4b3e;
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
 }
@@ -165,14 +222,16 @@
 }
 
 .command rect {
-  fill: #1c1917;
+  fill: #2f80ed;
+  stroke: #202020;
+  stroke-width: 3;
 }
 
 .command text {
   fill: #fff;
   font-family: var(--font-geist-mono), monospace;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .output {
@@ -182,8 +241,8 @@
 
 .output rect {
   fill: #fff;
-  stroke: #d6d3d1;
-  stroke-width: 2;
+  stroke: #202020;
+  stroke-width: 3;
 }
 
 .output circle {
@@ -199,7 +258,7 @@
 }
 
 .output text {
-  fill: #292524;
+  fill: #202020;
   font-size: 17px;
   font-weight: 700;
 }
@@ -238,27 +297,26 @@
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  border: 1px solid rgb(214 211 209);
+  border: 2px solid #202020;
   border-radius: 999px;
   background: rgb(255 255 255 / 0.92);
   padding: 0.4rem 0.65rem;
-  color: #57534e;
+  color: #202020;
   font-size: 0.75rem;
-  font-weight: 600;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+  font-weight: 700;
+  box-shadow: 2px 2px 0 #202020;
   backdrop-filter: blur(6px);
   transition:
     color 150ms ease,
-    border-color 150ms ease;
+    transform 150ms ease,
+    box-shadow 150ms ease;
 }
 
 .failureControl {
-  border-color: rgb(251 191 36 / 0.55);
   color: #92400e;
 }
 
 .activeControl {
-  border-color: #d97706;
   background: #fffbeb;
   color: #78350f;
 }
@@ -281,13 +339,14 @@
 }
 
 .control:hover {
-  border-color: #a8a29e;
-  color: #1c1917;
+  color: #2f80ed;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #202020;
 }
 
 .control:focus-visible {
-  outline: 2px solid #b3282d;
-  outline-offset: 2px;
+  outline: 3px solid #2f80ed;
+  outline-offset: 3px;
 }
 
 .running .chipOne {
@@ -310,12 +369,20 @@
   animation: connector-draw 10s ease both;
 }
 
+.running .connectorHead {
+  animation: connector-head 10s ease both;
+}
+
 .running .command {
   animation: command-travel 10s cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
 .running .assistantSpark {
   animation: assistant-spark 10s ease both;
+}
+
+.running .assistantAccents {
+  animation: accent-pop 10s ease both;
 }
 
 .running .output {
@@ -340,8 +407,10 @@
 .running .chipThree,
 .running .skill,
 .running .connector,
+.running .connectorHead,
 .running .command,
 .running .assistantSpark,
+.running .assistantAccents,
 .running .output,
 .running.failure .dataChip,
 .running.failure .failureOutput {
@@ -469,6 +538,17 @@
   }
 }
 
+@keyframes connector-head {
+  0%,
+  41% {
+    opacity: 0;
+  }
+  46%,
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes command-travel {
   0%,
   38% {
@@ -502,6 +582,20 @@
   }
   56% {
     transform: rotate(-3deg) scale(0.96);
+  }
+}
+
+@keyframes accent-pop {
+  0%,
+  47%,
+  60%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  52% {
+    opacity: 1;
+    transform: scale(1.08);
   }
 }
 
@@ -539,8 +633,10 @@
   .running .chip,
   .running .skill,
   .running .connector,
+  .running .connectorHead,
   .running .command,
   .running .assistantSpark,
+  .running .assistantAccents,
   .running .output,
   .running.failure .dataChip,
   .running.failure .failureOutput {
@@ -557,7 +653,8 @@
     transform: none;
   }
 
-  .connector {
+  .connector,
+  .connectorHead {
     opacity: 1;
     stroke-dashoffset: 0;
   }
@@ -569,6 +666,10 @@
   .assistantSpark,
   .output {
     transform: none;
+  }
+
+  .assistantAccents {
+    opacity: 0;
   }
 
   .failure .successOutput {

@@ -182,10 +182,31 @@ function ClaudeSkillScene({
 
       <rect className={styles.backdrop} x="0" y="0" width="720" height="405" />
       <path className={styles.guide} d="M92 255C214 274 436 265 601 214" />
+      <path className={styles.guideArrow} d="m584 204 17 10-18 8" />
 
       <g className={styles.user}>
-        <circle cx="72" cy="154" r="24" />
-        <path d="M31 222c5-31 20-48 41-48s36 17 41 48" />
+        <path
+          className={styles.userBody}
+          d="M30 222c5-31 20-49 42-49s37 18 42 49Z"
+        />
+        <circle className={styles.userFace} cx="72" cy="151" r="25" />
+        <path
+          className={styles.userHair}
+          d="M48 150c-2-21 10-34 26-34 14 0 24 8 27 21-8-3-15-8-20-14-6 10-17 17-33 20Z"
+        />
+        <circle className={styles.userEye} cx="64" cy="153" r="2.5" />
+        <circle className={styles.userEye} cx="81" cy="153" r="2.5" />
+        <path className={styles.userSmile} d="M65 163c5 4 10 4 15 0" />
+        <path className={styles.userArm} d="M91 190c10-3 16-10 18-21" />
+        <rect
+          className={styles.userPhone}
+          x="102"
+          y="146"
+          width="16"
+          height="29"
+          rx="3"
+          transform="rotate(8 110 160)"
+        />
         <text x="72" y="249">
           Kamu
         </text>
@@ -295,6 +316,7 @@ function ClaudeSkillScene({
         pathLength="1"
         d={`M${382 + skillWidth / 2 + 1} 165C511 165 528 157 548 157`}
       />
+      <path className={styles.connectorHead} d="m535 148 13 9-14 9" />
 
       <g className={styles.assistant}>
         <circle className={styles.assistantRing} cx="603" cy="157" r="52" />
@@ -304,6 +326,11 @@ function ClaudeSkillScene({
         <text x="603" y="230">
           Claude
         </text>
+        <g className={styles.assistantAccents}>
+          <path d="m646 119 13-10" />
+          <path d="m653 138 17-2" />
+          <path d="m638 101 4-15" />
+        </g>
       </g>
 
       <SmartSvgCard

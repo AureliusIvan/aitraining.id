@@ -26,6 +26,8 @@ export type SmartSvgCardLayout = {
   paddingX: number;
 };
 
+const TEXT_MEASUREMENT_SAFETY = 6;
+
 export function SmartSvgCard({
   className,
   rectClassName,
@@ -85,7 +87,8 @@ export function SmartSvgCard({
         (measuredWidths[index] ?? 0) +
         (row.leadingWidth ?? 0) +
         (row.trailingWidth ?? 0) +
-        paddingX * 2;
+        paddingX * 2 +
+        TEXT_MEASUREMENT_SAFETY;
       return Math.max(largest, rowWidth);
     }, minWidth);
     return Math.min(maxWidth, Math.ceil(required));
