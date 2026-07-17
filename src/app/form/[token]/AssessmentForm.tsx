@@ -160,7 +160,7 @@ export function AssessmentForm({
   async function submit() {
     setStatus("submitting");
     try {
-      const res = await fetch("/api/assessment/submit", {
+      const res = await fetch("/api/form/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
