@@ -29,15 +29,17 @@ export function AssessmentForm({
   >("idle");
 
   // Answers are read from this ref at submit time, not the `answers` state —
-  // the single_choice auto-advance path can fire the submit before a delayed
-  // render has caught up, and a stale closure would drop the last answer.
+  // the single_choice auto-advance path can fire before a delayed render has
+  // caught up, and a stale closure would drop the last answer.
   const answersRef = useRef<Record<string, string>>({});
   const honeypotRef = useRef<HTMLInputElement>(null);
   const textInputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
 
   const total = questions.length;
+  // step === total is the review screen — one past the last real question,
+  // never auto-submitted into. Only the review screen's own button submits.
+  const isReview = step === total;
   const current = questions[step];
-  const isLast = step === total - 1;
 
   function setAnswer(id: string, value: string) {
     answersRef.current = { ...answersRef.current, [id]: value };
@@ -64,13 +66,11 @@ export function AssessmentForm({
     return true;
   }
 
+  // Always just advances one step — the last question lands on the review
+  // screen like any other, it never submits directly.
   function goNext() {
     if (!validateCurrent()) return;
-    if (isLast) {
-      submit();
-    } else {
-      setStep((s) => s + 1);
-    }
+    setStep((s) => s + 1);
   }
 
   function goBack() {
@@ -100,7 +100,11 @@ export function AssessmentForm({
 
   function handleFormSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    goNext();
+    if (isReview) {
+      submit();
+    } else {
+      goNext();
+    }
   }
 
   function handleTextareaKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
@@ -117,8 +121,8 @@ export function AssessmentForm({
   }
 
   useEffect(() => {
-    textInputRef.current?.focus();
-  }, [step]);
+    if (!isReview) textInputRef.current?.focus();
+  }, [step, isReview]);
 
   if (status === "done") {
     return (
@@ -159,7 +163,7 @@ export function AssessmentForm({
           className="h-7 w-auto"
         />
         <span className="text-neutral-400 text-sm font-medium">
-          {step + 1} / {total}
+          {isReview ? "Review" : `${step + 1} / ${total}`}
         </span>
       </div>
 
@@ -178,91 +182,144 @@ export function AssessmentForm({
         />
 
         <div key={step} className="w-full max-w-3xl mx-auto animate-fade-in-up">
-          {clientLabel && step === 0 && (
-            <p className="text-amber-600 font-medium text-sm sm:text-base mb-3">
-              Untuk peserta training AI di {clientLabel}
-            </p>
-          )}
-          <p className="text-sm uppercase tracking-wide text-neutral-400 font-semibold mb-3">
-            {current.section}
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-10">
-            <span className="text-amber-500">{step + 1} → </span>
-            {current.question}
-            {current.required && <span className="text-amber-500">*</span>}
-          </h1>
+          {isReview ? (
+            <>
+              <p className="text-sm uppercase tracking-wide text-neutral-400 font-semibold mb-3">
+                Terakhir
+              </p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-4">
+                Review jawaban Anda
+              </h1>
+              <p className="text-neutral-500 mb-8">
+                Cek lagi sebelum dikirim. Klik &quot;Ubah&quot; untuk mengedit
+                jawaban.
+              </p>
+              <div className="space-y-4 mb-4">
+                {questions.map((q, idx) => {
+                  const raw = answers[q.id];
+                  const display =
+                    q.type === "multi_choice"
+                      ? raw?.split("|").join(", ")
+                      : raw;
+                  return (
+                    <div
+                      key={q.id}
+                      className="flex items-start justify-between gap-4 border-b border-neutral-100 pb-4"
+                    >
+                      <div>
+                        <p className="text-sm text-neutral-400 mb-1">
+                          {q.question}
+                        </p>
+                        <p className="text-lg font-medium">
+                          {display || (
+                            <span className="text-neutral-300 italic">
+                              Tidak dijawab
+                            </span>
+                          )}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setStep(idx)}
+                        className="text-amber-600 text-sm font-medium hover:underline shrink-0"
+                      >
+                        Ubah
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            <>
+              {clientLabel && step === 0 && (
+                <p className="text-amber-600 font-medium text-sm sm:text-base mb-3">
+                  Untuk peserta training AI di {clientLabel}
+                </p>
+              )}
+              <p className="text-sm uppercase tracking-wide text-neutral-400 font-semibold mb-3">
+                {current.section}
+              </p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-10">
+                <span className="text-amber-500">{step + 1} → </span>
+                {current.question}
+                {current.required && (
+                  <span className="text-amber-500">*</span>
+                )}
+              </h1>
 
-          {current.type === "short_text" && (
-            <input
-              ref={textInputRef as React.RefObject<HTMLInputElement>}
-              type="text"
-              value={answers[current.id] ?? ""}
-              onChange={(e) => setAnswer(current.id, e.target.value)}
-              className="w-full border-b-2 border-neutral-200 focus:border-amber-500 outline-none text-xl sm:text-2xl py-3 bg-transparent transition-colors"
-              placeholder="Ketik jawaban Anda di sini..."
-            />
+              {current.type === "short_text" && (
+                <input
+                  ref={textInputRef as React.RefObject<HTMLInputElement>}
+                  type="text"
+                  value={answers[current.id] ?? ""}
+                  onChange={(e) => setAnswer(current.id, e.target.value)}
+                  className="w-full border-b-2 border-neutral-200 focus:border-amber-500 outline-none text-xl sm:text-2xl py-3 bg-transparent transition-colors"
+                  placeholder="Ketik jawaban Anda di sini..."
+                />
+              )}
+
+              {current.type === "long_text" && (
+                <textarea
+                  ref={textInputRef as React.RefObject<HTMLTextAreaElement>}
+                  value={answers[current.id] ?? ""}
+                  onChange={(e) => setAnswer(current.id, e.target.value)}
+                  onKeyDown={handleTextareaKeyDown}
+                  rows={4}
+                  className="w-full border-b-2 border-neutral-200 focus:border-amber-500 outline-none text-xl sm:text-2xl py-3 bg-transparent transition-colors resize-none"
+                  placeholder="Ketik jawaban Anda di sini..."
+                />
+              )}
+
+              {(current.type === "single_choice" ||
+                current.type === "rating") && (
+                <div className="space-y-3">
+                  {current.options.map((opt) => (
+                    <button
+                      key={opt}
+                      type="button"
+                      aria-pressed={answers[current.id] === opt}
+                      onClick={() => selectSingleChoice(opt)}
+                      className={`w-full text-left rounded-xl border-2 px-5 py-4 text-lg sm:text-xl transition-colors ${
+                        answers[current.id] === opt
+                          ? "border-amber-500 bg-amber-50"
+                          : "border-neutral-200 hover:border-neutral-300"
+                      }`}
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {current.type === "multi_choice" && (
+                <div className="space-y-3">
+                  {current.options.map((opt) => {
+                    const selected = (answers[current.id] ?? "")
+                      .split("|")
+                      .includes(opt);
+                    return (
+                      <button
+                        key={opt}
+                        type="button"
+                        aria-pressed={selected}
+                        onClick={() => toggleMultiChoice(current.id, opt)}
+                        className={`w-full text-left rounded-xl border-2 px-5 py-4 text-lg sm:text-xl transition-colors ${
+                          selected
+                            ? "border-amber-500 bg-amber-50"
+                            : "border-neutral-200 hover:border-neutral-300"
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </>
           )}
 
-          {current.type === "long_text" && (
-            <textarea
-              ref={textInputRef as React.RefObject<HTMLTextAreaElement>}
-              value={answers[current.id] ?? ""}
-              onChange={(e) => setAnswer(current.id, e.target.value)}
-              onKeyDown={handleTextareaKeyDown}
-              rows={4}
-              className="w-full border-b-2 border-neutral-200 focus:border-amber-500 outline-none text-xl sm:text-2xl py-3 bg-transparent transition-colors resize-none"
-              placeholder="Ketik jawaban Anda di sini..."
-            />
-          )}
-
-          {(current.type === "single_choice" || current.type === "rating") && (
-            <div className="space-y-3">
-              {current.options.map((opt) => (
-                <button
-                  key={opt}
-                  type="button"
-                  aria-pressed={answers[current.id] === opt}
-                  onClick={() => selectSingleChoice(opt)}
-                  className={`w-full text-left rounded-xl border-2 px-5 py-4 text-lg sm:text-xl transition-colors ${
-                    answers[current.id] === opt
-                      ? "border-amber-500 bg-amber-50"
-                      : "border-neutral-200 hover:border-neutral-300"
-                  }`}
-                >
-                  {opt}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {current.type === "multi_choice" && (
-            <div className="space-y-3">
-              {current.options.map((opt) => {
-                const selected = (answers[current.id] ?? "")
-                  .split("|")
-                  .includes(opt);
-                return (
-                  <button
-                    key={opt}
-                    type="button"
-                    aria-pressed={selected}
-                    onClick={() => toggleMultiChoice(current.id, opt)}
-                    className={`w-full text-left rounded-xl border-2 px-5 py-4 text-lg sm:text-xl transition-colors ${
-                      selected
-                        ? "border-amber-500 bg-amber-50"
-                        : "border-neutral-200 hover:border-neutral-300"
-                    }`}
-                  >
-                    {opt}
-                  </button>
-                );
-              })}
-            </div>
-          )}
-
-          {errorMsg && (
-            <p className="text-red-600 text-sm mt-4">{errorMsg}</p>
-          )}
+          {errorMsg && <p className="text-red-600 text-sm mt-4">{errorMsg}</p>}
 
           <div className="flex items-center gap-4 mt-10">
             {step > 0 && (
@@ -281,7 +338,7 @@ export function AssessmentForm({
             >
               {status === "submitting"
                 ? "Mengirim..."
-                : isLast
+                : isReview
                   ? "Kirim Jawaban"
                   : "Lanjut"}
             </button>
