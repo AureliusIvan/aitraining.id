@@ -64,6 +64,37 @@ export async function getQuestions(): Promise<Question[]> {
     .sort((a, b) => a.order - b.order);
 }
 
+export type ResolvedLink = {
+  clientSlug: string;
+  label: string;
+};
+
+// The URL segment is an opaque random token, never a guessable client name.
+// This is the only place a token is turned into a real client identity — the
+// page and the submit API both call it fresh server-side, so a client can
+// never claim to be a different client by sending a different value.
+export async function resolveToken(
+  token: string,
+): Promise<ResolvedLink | null> {
+  if (!token || !/^[a-zA-Z0-9_-]+$/.test(token)) return null;
+
+  const sheets = getSheetsClient();
+  const res = await sheets.spreadsheets.values.get({
+    spreadsheetId: SHEET_ID,
+    range: "Links!A2:E",
+  });
+  const rows = res.data.values ?? [];
+  const match = rows.find(
+    (r) => r[0] === token && String(r[3] ?? "").toUpperCase() === "TRUE",
+  );
+  if (!match) return null;
+
+  return {
+    clientSlug: String(match[1] ?? ""),
+    label: String(match[2] ?? ""),
+  };
+}
+
 // Aligns to whatever the Submissions header row currently says (not to
 // Questions order), so a manual header edit doesn't silently misalign columns.
 export async function appendSubmission(

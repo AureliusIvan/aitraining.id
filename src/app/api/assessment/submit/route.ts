@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
-import { appendSubmission, getQuestions } from "@/lib/assessment-sheets";
+import {
+  appendSubmission,
+  getQuestions,
+  resolveToken,
+} from "@/lib/assessment-sheets";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -7,8 +11,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 
-  const { slug, answers, website } = body as {
-    slug?: string;
+  const { token, answers, website } = body as {
+    token?: string;
     answers?: Record<string, string>;
     website?: string;
   };
@@ -20,12 +24,20 @@ export async function POST(request: Request) {
   }
 
   if (
-    !slug ||
-    typeof slug !== "string" ||
+    !token ||
+    typeof token !== "string" ||
     !answers ||
     typeof answers !== "object"
   ) {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
+  }
+
+  // Re-resolve server-side rather than trusting a client-supplied client
+  // identity — a submitted token can only ever write under whichever client
+  // it's mapped to in the Links tab, never an arbitrary caller-chosen name.
+  const link = await resolveToken(token);
+  if (!link) {
+    return NextResponse.json({ error: "invalid token" }, { status: 404 });
   }
 
   const questions = await getQuestions();
@@ -39,6 +51,6 @@ export async function POST(request: Request) {
     );
   }
 
-  await appendSubmission(slug, answers);
+  await appendSubmission(link.clientSlug, answers);
   return NextResponse.json({ ok: true });
 }

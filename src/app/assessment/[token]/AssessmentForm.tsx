@@ -13,10 +13,10 @@ function groupBySection(questions: Question[]): [string, Question[]][] {
 }
 
 export function AssessmentForm({
-  slug,
+  token,
   questions,
 }: {
-  slug: string;
+  token: string;
   questions: Question[];
 }) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -53,7 +53,7 @@ export function AssessmentForm({
       const res = await fetch("/api/assessment/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug, answers, website: honeypot }),
+        body: JSON.stringify({ token, answers, website: honeypot }),
       });
       if (!res.ok) throw new Error("submit failed");
       setStatus("done");
