@@ -75,10 +75,35 @@
   font-weight: 600;
 }
 
+.dataMissingMarker {
+  display: none;
+  fill: none;
+  stroke: #b45309;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.failure .dataChip rect {
+  fill: #fffbeb;
+  stroke: #d97706;
+}
+
+.failure .dataChip circle {
+  fill: #d97706;
+}
+
+.failure .dataChip text {
+  fill: #92400e;
+}
+
+.failure .dataMissingMarker {
+  display: block;
+}
+
 .skill {
   opacity: 0;
   transform-box: view-box;
-  transform-origin: 381px 160px;
+  transform-origin: 382px 160px;
 }
 
 .skillTab,
@@ -128,16 +153,9 @@
   stroke-width: 2;
 }
 
-.assistantCore {
-  fill: #b3282d;
-  transform-box: view-box;
-  transform-origin: 603px 157px;
-}
-
 .assistantSpark {
-  fill: #fff;
-  transform-box: view-box;
-  transform-origin: 603px 157px;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .command {
@@ -234,14 +252,17 @@
   color: #92400e;
 }
 
-.control:hover {
-  border-color: #a8a29e;
-  color: #1c1917;
+.activeControl {
+  border-color: #d97706;
+  background: #fffbeb;
+  color: #78350f;
 }
 
-.control:focus-visible {
-  outline: 2px solid #b3282d;
-  outline-offset: 2px;
+.pauseControl {
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  padding: 0;
 }
 
 .control svg {
@@ -254,40 +275,46 @@
   stroke-linejoin: round;
 }
 
+.control:hover {
+  border-color: #a8a29e;
+  color: #1c1917;
+}
+
+.control:focus-visible {
+  outline: 2px solid #b3282d;
+  outline-offset: 2px;
+}
+
 .running .chipOne {
-  animation: chip-one 6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: chip-one 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .running .chipTwo {
-  animation: chip-two 6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: chip-two 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .running .chipThree {
-  animation: chip-three 6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: chip-three 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .running .skill {
-  animation: skill-arrive 6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: skill-arrive 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .running .connector {
-  animation: connector-draw 6s ease both;
+  animation: connector-draw 10s ease both;
 }
 
 .running .command {
-  animation: command-travel 6s cubic-bezier(0.65, 0, 0.35, 1) both;
-}
-
-.running .assistantCore {
-  animation: assistant-pulse 6s ease both;
+  animation: command-travel 10s cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
 .running .assistantSpark {
-  animation: assistant-spark 6s ease both;
+  animation: assistant-spark 10s ease both;
 }
 
 .running .output {
-  animation: output-arrive 6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: output-arrive 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .failure .successOutput {
@@ -296,25 +323,42 @@
 }
 
 .running.failure .dataChip {
-  animation: chip-missing 6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: chip-missing 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .running.failure .failureOutput {
-  animation: failure-arrive 6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: failure-arrive 10s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.running .chipOne,
+.running .chipTwo,
+.running .chipThree,
+.running .skill,
+.running .connector,
+.running .command,
+.running .assistantSpark,
+.running .output,
+.running.failure .dataChip,
+.running.failure .failureOutput {
+  animation-iteration-count: infinite;
+}
+
+.running.paused * {
+  animation-play-state: paused;
 }
 
 @keyframes chip-one {
   0%,
-  3% {
+  2% {
     opacity: 0;
     transform: translateY(10px);
   }
-  8%,
-  38% {
+  5%,
+  24% {
     opacity: 1;
     transform: translate(0) scale(1);
   }
-  52%,
+  33%,
   100% {
     opacity: 0;
     transform: translate(220px, 78px) scale(0.18);
@@ -323,16 +367,16 @@
 
 @keyframes chip-two {
   0%,
-  6% {
+  4% {
     opacity: 0;
     transform: translateY(10px);
   }
-  11%,
-  40% {
+  7%,
+  25% {
     opacity: 1;
     transform: translate(0) scale(1);
   }
-  54%,
+  34%,
   100% {
     opacity: 0;
     transform: translate(198px, 15px) scale(0.18);
@@ -341,16 +385,16 @@
 
 @keyframes chip-three {
   0%,
-  9% {
+  6% {
     opacity: 0;
     transform: translateY(10px);
   }
-  14%,
-  42% {
+  9%,
+  27% {
     opacity: 1;
     transform: translate(0) scale(1);
   }
-  56%,
+  36%,
   100% {
     opacity: 0;
     transform: translate(230px, -48px) scale(0.18);
@@ -359,28 +403,28 @@
 
 @keyframes chip-missing {
   0%,
-  6% {
+  4% {
     opacity: 0;
     transform: translateY(10px);
   }
-  11%,
-  36% {
+  7%,
+  23% {
     opacity: 1;
     transform: translate(0);
   }
-  40% {
+  26% {
     opacity: 1;
     transform: translateX(-7px);
   }
-  44% {
+  28% {
     opacity: 1;
     transform: translateX(7px);
   }
-  48% {
+  31% {
     opacity: 1;
     transform: translateX(-5px);
   }
-  55%,
+  35%,
   100% {
     opacity: 0;
     transform: translate(-14px, 16px) scale(0.92);
@@ -389,15 +433,15 @@
 
 @keyframes skill-arrive {
   0%,
-  45% {
+  29% {
     opacity: 0;
     transform: scale(0.72);
   }
-  53% {
+  34% {
     opacity: 1;
     transform: scale(1.06);
   }
-  59%,
+  38%,
   100% {
     opacity: 1;
     transform: scale(1);
@@ -406,14 +450,14 @@
 
 @keyframes connector-draw {
   0%,
-  55% {
+  35% {
     opacity: 0;
     stroke-dashoffset: 1;
   }
-  61% {
+  39% {
     opacity: 1;
   }
-  72%,
+  46%,
   100% {
     opacity: 1;
     stroke-dashoffset: 0;
@@ -422,57 +466,44 @@
 
 @keyframes command-travel {
   0%,
-  59% {
+  38% {
     opacity: 0;
     transform: translateX(0);
   }
-  63% {
+  40% {
     opacity: 1;
     transform: translateX(0);
   }
-  79% {
+  51% {
     opacity: 1;
     transform: translateX(435px);
   }
-  84%,
+  54%,
   100% {
     opacity: 0;
     transform: translateX(435px);
-  }
-}
-
-@keyframes assistant-pulse {
-  0%,
-  74%,
-  100% {
-    transform: scale(1);
-  }
-  79% {
-    transform: scale(1.14);
-  }
-  84% {
-    transform: scale(0.96);
   }
 }
 
 @keyframes assistant-spark {
   0%,
-  73%,
+  47%,
+  60%,
   100% {
-    transform: rotate(0deg) scale(1);
+    transform: scale(1);
   }
-  82% {
-    transform: rotate(90deg) scale(1.12);
+  52% {
+    transform: scale(1.12);
   }
 }
 
 @keyframes output-arrive {
   0%,
-  82% {
+  52% {
     opacity: 0;
     transform: translateY(10px) scale(0.96);
   }
-  90%,
+  58%,
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -481,11 +512,11 @@
 
 @keyframes failure-arrive {
   0%,
-  82% {
+  52% {
     opacity: 0;
     transform: translateY(10px) scale(0.96);
   }
-  90%,
+  58%,
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -493,11 +524,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .pauseControl {
+    display: none;
+  }
+
   .running .chip,
   .running .skill,
   .running .connector,
   .running .command,
-  .running .assistantCore,
   .running .assistantSpark,
   .running .output,
   .running.failure .dataChip,
@@ -524,7 +558,6 @@
     display: none;
   }
 
-  .assistantCore,
   .assistantSpark,
   .output {
     transform: none;

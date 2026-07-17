@@ -26,6 +26,7 @@ export function MotionBlock({
   const [started, setStarted] = useState(mode === "slide");
   const [runId, setRunId] = useState(0);
   const [variant, setVariant] = useState<SceneVariant>("success");
+  const [paused, setPaused] = useState(false);
   const id = useId();
   const titleId = `${id}-title`;
   const descId = `${id}-desc`;
@@ -54,8 +55,10 @@ export function MotionBlock({
     return () => observer.disconnect();
   }, [mode]);
 
-  const play = (nextVariant: SceneVariant) => {
+  const toggleMissingData = () => {
+    const nextVariant = variant === "missing-data" ? "success" : "missing-data";
     setVariant(nextVariant);
+    setPaused(false);
     setStarted(true);
     setRunId((value) => value + 1);
   };
@@ -69,21 +72,31 @@ export function MotionBlock({
         <div className={styles.controls}>
           <button
             type="button"
-            onClick={() => play("missing-data")}
-            className={`${styles.control} ${styles.failureControl}`}
+            onClick={toggleMissingData}
+            aria-pressed={variant === "missing-data"}
+            className={`${styles.control} ${styles.failureControl} ${
+              variant === "missing-data" ? styles.activeControl : ""
+            }`}
           >
-            Coba tanpa Data
+            {variant === "missing-data" ? "Pakai Data lagi" : "Coba tanpa Data"}
           </button>
           <button
             type="button"
-            onClick={() => play("success")}
-            className={styles.control}
-            aria-label="Putar ulang animasi"
+            onClick={() => setPaused((value) => !value)}
+            aria-pressed={paused}
+            aria-label={paused ? "Lanjutkan animasi" : "Jeda animasi"}
+            className={`${styles.control} ${styles.pauseControl}`}
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7" />
+              {paused ? (
+                <path d="m9 7 8 5-8 5Z" />
+              ) : (
+                <>
+                  <path d="M9 7v10" />
+                  <path d="M15 7v10" />
+                </>
+              )}
             </svg>
-            Putar ulang
           </button>
         </div>
 
@@ -91,6 +104,7 @@ export function MotionBlock({
           <ClaudeSkillScene
             key={runId}
             running={started}
+            paused={paused}
             variant={variant}
             titleId={titleId}
             descId={descId}
@@ -120,6 +134,7 @@ export function MotionBlock({
 
 function ClaudeSkillScene({
   running,
+  paused,
   variant,
   titleId,
   descId,
@@ -128,6 +143,7 @@ function ClaudeSkillScene({
   output,
 }: {
   running: boolean;
+  paused: boolean;
   variant: SceneVariant;
   titleId: string;
   descId: string;
@@ -139,7 +155,7 @@ function ClaudeSkillScene({
     <svg
       className={`${styles.art} ${running ? styles.running : ""} ${
         variant === "missing-data" ? styles.failure : ""
-      }`}
+      } ${paused ? styles.paused : ""}`}
       viewBox="0 0 720 405"
       role="img"
       aria-labelledby={`${titleId} ${descId}`}
@@ -180,6 +196,10 @@ function ClaudeSkillScene({
         <text x="183" y="155">
           Data
         </text>
+        <path
+          className={styles.dataMissingMarker}
+          d="m257 140 14 19m0-19-14 19"
+        />
       </g>
       <g className={`${styles.chip} ${styles.chipThree}`}>
         <rect x="114" y="190" width="175" height="43" rx="13" />
@@ -192,26 +212,31 @@ function ClaudeSkillScene({
       <g className={styles.skill}>
         <rect
           className={styles.skillTab}
-          x="321"
+          x="310"
           y="93"
-          width="76"
+          width="80"
           height="28"
           rx="10"
         />
         <rect
           className={styles.skillCard}
-          x="294"
+          x="280"
           y="108"
-          width="174"
+          width="204"
           height="116"
           rx="21"
         />
-        <circle cx="329" cy="151" r="15" />
-        <path d="M329 141v20M319 151h20" />
-        <text className={styles.skillTitle} x="354" y="151">
+        <circle cx="314" cy="151" r="15" />
+        <path d="M314 141v20M304 151h20" />
+        <text className={styles.skillTitle} x="340" y="151">
           Skill tersimpan
         </text>
-        <text className={styles.skillCommand} x="316" y="194">
+        <text
+          className={styles.skillCommand}
+          x="382"
+          y="194"
+          textAnchor="middle"
+        >
           {command}
         </text>
       </g>
@@ -219,15 +244,18 @@ function ClaudeSkillScene({
       <path
         className={styles.connector}
         pathLength="1"
-        d="M469 165C505 165 523 157 548 157"
+        d="M485 165C511 165 528 157 548 157"
       />
 
       <g className={styles.assistant}>
         <circle className={styles.assistantRing} cx="603" cy="157" r="52" />
-        <circle className={styles.assistantCore} cx="603" cy="157" r="35" />
-        <path
+        <image
           className={styles.assistantSpark}
-          d="M603 132c3 14 9 21 23 25-14 3-20 10-23 25-3-15-9-22-23-25 14-4 20-11 23-25Z"
+          href="/assets/edu/claude-spark.svg"
+          x="568"
+          y="122"
+          width="70"
+          height="70"
         />
         <text x="603" y="230">
           Claude
