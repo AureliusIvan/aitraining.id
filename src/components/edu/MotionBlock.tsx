@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import type { EduMotionScene } from "@/lib/edu";
 import styles from "./MotionBlock.module.css";
+import { SmartSvgCard } from "./SmartSvgCard";
 
 type Mode = "web" | "slide";
 type SceneVariant = "success" | "missing-data";
@@ -156,6 +157,8 @@ function ClaudeSkillScene({
   command: string;
   output: string;
 }) {
+  const [skillWidth, setSkillWidth] = useState(204);
+
   return (
     <svg
       className={`${styles.art} ${running ? styles.running : ""} ${
@@ -188,68 +191,109 @@ function ClaudeSkillScene({
         </text>
       </g>
 
-      <g className={`${styles.chip} ${styles.chipOne}`}>
-        <rect x="122" y="66" width="142" height="43" rx="13" />
-        <circle cx="144" cy="87.5" r="5" />
-        <text x="158" y="93">
-          Tujuan
-        </text>
-      </g>
-      <g className={`${styles.chip} ${styles.chipTwo} ${styles.dataChip}`}>
-        <rect x="147" y="128" width="142" height="43" rx="13" />
-        <circle cx="169" cy="149.5" r="5" />
-        <text x="183" y="155">
-          Data
-        </text>
-        <path
-          className={styles.dataMissingMarker}
-          d="m257 140 14 19m0-19-14 19"
-        />
-      </g>
-      <g className={`${styles.chip} ${styles.chipThree}`}>
-        <rect x="114" y="190" width="175" height="43" rx="13" />
-        <circle cx="136" cy="211.5" r="5" />
-        <text x="150" y="217">
-          Langkah kerja
-        </text>
-      </g>
+      <SmartSvgCard
+        className={`${styles.chip} ${styles.chipOne}`}
+        centerX={193}
+        y={66}
+        height={43}
+        minWidth={142}
+        maxWidth={210}
+        paddingX={14}
+        rx={13}
+        rows={[{ text: "Tujuan", y: 93, leadingWidth: 22 }]}
+      >
+        {({ x }) => <circle cx={x + 22} cy="87.5" r="5" />}
+      </SmartSvgCard>
+      <SmartSvgCard
+        className={`${styles.chip} ${styles.chipTwo} ${styles.dataChip}`}
+        centerX={218}
+        y={128}
+        height={43}
+        minWidth={142}
+        maxWidth={220}
+        paddingX={14}
+        rx={13}
+        rows={[
+          {
+            text: "Data",
+            y: 155,
+            leadingWidth: 22,
+            trailingWidth: 28,
+          },
+        ]}
+      >
+        {({ x, width }) => (
+          <>
+            <circle cx={x + 22} cy="149.5" r="5" />
+            <path
+              className={styles.dataMissingMarker}
+              d={`m${x + width - 32} 140 14 19m0-19-14 19`}
+            />
+          </>
+        )}
+      </SmartSvgCard>
+      <SmartSvgCard
+        className={`${styles.chip} ${styles.chipThree}`}
+        centerX={201.5}
+        y={190}
+        height={43}
+        minWidth={175}
+        maxWidth={235}
+        paddingX={14}
+        rx={13}
+        rows={[{ text: "Langkah kerja", y: 217, leadingWidth: 22 }]}
+      >
+        {({ x }) => <circle cx={x + 22} cy="211.5" r="5" />}
+      </SmartSvgCard>
 
-      <g className={styles.skill}>
-        <rect
-          className={styles.skillTab}
-          x="310"
-          y="93"
-          width="80"
-          height="28"
-          rx="10"
-        />
-        <rect
-          className={styles.skillCard}
-          x="280"
-          y="108"
-          width="204"
-          height="116"
-          rx="21"
-        />
-        <circle cx="314" cy="151" r="15" />
-        <path d="M314 141v20M304 151h20" />
-        <text className={styles.skillTitle} x="340" y="151">
-          Skill tersimpan
-        </text>
-        <text
-          className={styles.skillCommand}
-          x="382"
-          y="194"
-          textAnchor="middle"
-        >
-          {command}
-        </text>
-      </g>
+      <SmartSvgCard
+        className={styles.skill}
+        rectClassName={styles.skillCard}
+        centerX={382}
+        y={108}
+        height={116}
+        minWidth={204}
+        maxWidth={260}
+        paddingX={18}
+        rx={21}
+        rows={[
+          {
+            text: "Skill tersimpan",
+            y: 151,
+            className: styles.skillTitle,
+            leadingWidth: 40,
+          },
+          {
+            text: command,
+            y: 194,
+            className: styles.skillCommand,
+            align: "center",
+          },
+        ]}
+        underlay={({ x }) => (
+          <rect
+            className={styles.skillTab}
+            x={x + 30}
+            y="93"
+            width="80"
+            height="28"
+            rx="10"
+          />
+        )}
+        onWidthChange={setSkillWidth}
+      >
+        {({ x }) => (
+          <>
+            <circle cx={x + 34} cy="151" r="15" />
+            <path d={`M${x + 34} 141v20M${x + 24} 151h20`} />
+          </>
+        )}
+      </SmartSvgCard>
 
       <path
         className={styles.connector}
         pathLength="1"
-        d="M485 165C511 165 528 157 548 157"
+        d={`M${382 + skillWidth / 2 + 1} 165C511 165 528 157 548 157`}
       />
 
       <g className={styles.assistant}>
@@ -262,30 +306,73 @@ function ClaudeSkillScene({
         </text>
       </g>
 
-      <g className={styles.command}>
-        <rect x="86" y="298" width="163" height="44" rx="15" />
-        <text x="106" y="326">
-          {command}
-        </text>
-      </g>
+      <SmartSvgCard
+        className={styles.command}
+        centerX={167.5}
+        y={298}
+        height={44}
+        minWidth={163}
+        maxWidth={230}
+        paddingX={20}
+        rx={15}
+        rows={[
+          {
+            text: command,
+            y: 326,
+            align: "center",
+          },
+        ]}
+      />
 
-      <g className={`${styles.output} ${styles.successOutput}`}>
-        <rect x="512" y="286" width="166" height="66" rx="18" />
-        <circle cx="541" cy="319" r="13" />
-        <path d="m535 319 4 4 8-9" />
-        <text x="563" y="325">
-          {output}
-        </text>
-      </g>
+      <SmartSvgCard
+        className={`${styles.output} ${styles.successOutput}`}
+        centerX={595}
+        y={286}
+        height={66}
+        minWidth={166}
+        maxWidth={225}
+        paddingX={18}
+        rx={18}
+        rows={[
+          {
+            text: output,
+            y: 325,
+            leadingWidth: 36,
+          },
+        ]}
+      >
+        {({ x }) => (
+          <>
+            <circle cx={x + 29} cy="319" r="13" />
+            <path d={`m${x + 23} 319 4 4 8-9`} />
+          </>
+        )}
+      </SmartSvgCard>
 
-      <g className={`${styles.output} ${styles.failureOutput}`}>
-        <rect x="462" y="286" width="216" height="66" rx="18" />
-        <circle cx="492" cy="319" r="13" />
-        <path d="M492 311v10M492 327h.01" />
-        <text x="516" y="325">
-          Data belum lengkap
-        </text>
-      </g>
+      <SmartSvgCard
+        className={`${styles.output} ${styles.failureOutput}`}
+        centerX={570}
+        y={286}
+        height={66}
+        minWidth={216}
+        maxWidth={250}
+        paddingX={18}
+        rx={18}
+        rows={[
+          {
+            text: "Data belum lengkap",
+            y: 325,
+            leadingWidth: 36,
+          },
+        ]}
+      >
+        {({ x }) => (
+          <>
+            <circle cx={x + 30} cy="319" r="13" />
+            <path d={`M${x + 30} 311v10M${x + 30} 327h.01`} />
+          </>
+        )}
+      </SmartSvgCard>
     </svg>
   );
 }
