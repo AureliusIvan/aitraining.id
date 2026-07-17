@@ -190,6 +190,11 @@ function ClaudeSkillScene({
           d="M28 222c3-25 13-40 29-46l15 14 15-14c16 6 26 21 29 46Z"
         />
         <path
+          className={styles.userBodyShade}
+          d="m72 190 15-14c16 6 26 21 29 46H72Z"
+        />
+        <path className={styles.userNeck} d="M64 169h16v13l-8 8-8-8Z" />
+        <path
           className={styles.userCollar}
           d="m57 176 15 14-10 10-12-18Zm30 0-15 14 10 10 12-18Z"
         />
@@ -215,16 +220,22 @@ function ClaudeSkillScene({
         <circle className={styles.userEye} cx="64" cy="153" r="2.5" />
         <circle className={styles.userEye} cx="81" cy="153" r="2.5" />
         <path className={styles.userSmile} d="M65 163c5 4 10 4 15 0" />
-        <path className={styles.userArm} d="M91 190c10-3 16-10 18-21" />
-        <rect
-          className={styles.userPhone}
-          x="102"
-          y="146"
-          width="16"
-          height="29"
-          rx="3"
-          transform="rotate(8 110 160)"
-        />
+        <path className={styles.userOtherArm} d="M52 186c-8 9-11 20-11 32" />
+        <g className={styles.userPhoneArm}>
+          <path className={styles.userUpperArm} d="m86 180 19 10-6 13-20-11Z" />
+          <path className={styles.userForearm} d="m99 190 8-22 11 4-7 28Z" />
+          <circle className={styles.userHand} cx="112" cy="170" r="6" />
+          <rect
+            className={styles.userPhone}
+            x="106"
+            y="140"
+            width="18"
+            height="32"
+            rx="3"
+            transform="rotate(6 115 156)"
+          />
+          <path className={styles.userPhoneScreen} d="m112 146 7 1" />
+        </g>
         <text x="72" y="249">
           Kamu
         </text>
