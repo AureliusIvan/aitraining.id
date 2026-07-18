@@ -446,24 +446,19 @@ function ClaudeSkillScene({
         centerX={595}
         y={286}
         height={66}
-        minWidth={166}
-        maxWidth={225}
+        minWidth={148}
+        maxWidth={210}
         paddingX={18}
         rx={18}
         rows={[
           {
             text: output,
             y: 325,
-            leadingWidth: 36,
+            align: "center",
           },
         ]}
       >
-        {({ x }) => (
-          <>
-            <circle cx={x + 29} cy="319" r="13" />
-            <path d={`m${x + 23} 319 4 4 8-9`} />
-          </>
-        )}
+        {(layout) => <StatusPin layout={layout} tone="check" />}
       </SmartSvgCard>
 
       <SmartSvgCard
@@ -471,24 +466,19 @@ function ClaudeSkillScene({
         centerX={570}
         y={286}
         height={66}
-        minWidth={216}
-        maxWidth={250}
+        minWidth={196}
+        maxWidth={240}
         paddingX={18}
         rx={18}
         rows={[
           {
             text: "Data belum lengkap",
             y: 325,
-            leadingWidth: 36,
+            align: "center",
           },
         ]}
       >
-        {({ x }) => (
-          <>
-            <circle cx={x + 30} cy="319" r="13" />
-            <path d={`M${x + 30} 311v10M${x + 30} 327h.01`} />
-          </>
-        )}
+        {(layout) => <StatusPin layout={layout} tone="warn" />}
       </SmartSvgCard>
     </svg>
   );
@@ -603,19 +593,35 @@ function ClaudeSkillBenefitsScene({
 
       <g className={`${styles.benefitPanel} ${styles.benefitConsistent}`}>
         <g className={styles.outputStack}>
-          {outputRows.map((row) => (
-            <g key={row.y}>
-              <rect x={row.x} y={row.y} width={row.width} height="38" rx="12" />
-              <circle cx={row.x + 21} cy={row.y + 19} r="10" />
-              <path d={`m${row.x + 16} ${row.y + 19} 3 3 6-7`} />
-              <path
-                className={styles.outputLine}
-                d={`M${row.x + 38} ${row.y + 14}h${row.lineOne}M${
-                  row.x + 38
-                } ${row.y + 24}h${row.lineTwo}`}
-              />
-            </g>
-          ))}
+          {outputRows.map((row, index) => {
+            const tone =
+              randomFormat && index === 1
+                ? "warn"
+                : randomFormat && index === 2
+                  ? "error"
+                  : "check";
+            return (
+              <g key={row.y}>
+                <rect
+                  x={row.x}
+                  y={row.y}
+                  width={row.width}
+                  height="38"
+                  rx="12"
+                />
+                <path
+                  className={styles.outputLine}
+                  d={`M${row.x + 14} ${row.y + 14}h${row.lineOne}M${
+                    row.x + 14
+                  } ${row.y + 24}h${row.lineTwo}`}
+                />
+                <StatusPin
+                  layout={{ x: row.x, y: row.y, width: row.width }}
+                  tone={tone}
+                />
+              </g>
+            );
+          })}
         </g>
         <SmartSvgCard
           className={styles.benefitLabel}
@@ -696,11 +702,41 @@ function StepPin({
   const cx = layout.x + 2;
   const cy = layout.y + 2;
   return (
-    <g className={styles.stepPin}>
+    <g className={`${styles.cornerPin} ${styles.stepPin}`}>
       <circle cx={cx} cy={cy} r="15" />
       <text x={cx} y={cy + 5} textAnchor="middle">
         {step}
       </text>
+    </g>
+  );
+}
+
+function StatusPin({
+  layout,
+  tone = "check",
+}: {
+  layout: { x: number; y: number; width: number };
+  tone?: "check" | "warn" | "error";
+}) {
+  const cx = layout.x + layout.width - 2;
+  const cy = layout.y + 2;
+  const toneClass =
+    tone === "warn"
+      ? styles.statusWarn
+      : tone === "error"
+        ? styles.statusError
+        : styles.statusCheck;
+
+  return (
+    <g className={`${styles.cornerPin} ${styles.statusPin} ${toneClass}`}>
+      <circle cx={cx} cy={cy} r="14" />
+      {tone === "check" ? (
+        <path d={`m${cx - 6} ${cy} 4 4 8-9`} />
+      ) : tone === "warn" ? (
+        <path d={`M${cx} ${cy - 7}v8M${cx} ${cy + 6}h.01`} />
+      ) : (
+        <path d={`m${cx - 5} ${cy - 5} 10 10m0-10-10 10`} />
+      )}
     </g>
   );
 }

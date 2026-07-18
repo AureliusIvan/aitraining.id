@@ -297,26 +297,10 @@
   stroke-width: 3;
 }
 
-.output circle {
-  fill: #dcfce7;
-}
-
-.output path {
-  fill: none;
-  stroke: #15803d;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .output text {
   fill: #202020;
   font-size: 17px;
   font-weight: 700;
-}
-
-.failureOutput circle {
-  fill: #fef3c7;
 }
 
 .failureOutput {
@@ -325,10 +309,6 @@
 
 .failure .failureOutput {
   display: block;
-}
-
-.failureOutput path {
-  stroke: #b45309;
 }
 
 .failureOutput text {
@@ -419,6 +399,38 @@
   font-family: var(--font-geist-sans), sans-serif;
 }
 
+.cornerPin {
+  opacity: 0;
+  transform: scale(0.35);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.statusPin circle {
+  stroke: #202020;
+  stroke-width: 3;
+}
+
+.statusPin path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.statusCheck circle {
+  fill: #22c55e;
+}
+
+.statusWarn circle {
+  fill: #f59e0b;
+}
+
+.statusError circle {
+  fill: #ef4444;
+}
+
 .flowArrow {
   fill: none;
   stroke: #202020;
@@ -447,26 +459,12 @@
   transform-origin: left center;
 }
 
-.outputStack circle {
-  fill: #dcfce7;
-  stroke: #202020;
-  stroke-width: 2;
-}
-
 .outputStack > g:nth-child(2) rect {
   fill: #eef5ff;
 }
 
 .outputStack > g:nth-child(3) rect {
   fill: #fff3f1;
-}
-
-.outputStack > g > path:not(.outputLine) {
-  fill: none;
-  stroke: #15803d;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .randomFormat .outputStack > g:first-child {
@@ -477,22 +475,6 @@
 .randomFormat .outputStack > g:nth-child(3) {
   transform: rotate(4deg);
   transform-origin: 365px 185px;
-}
-
-.randomFormat .outputStack > g:nth-child(2) circle {
-  fill: #fef3c7;
-}
-
-.randomFormat .outputStack > g:nth-child(2) > path:not(.outputLine) {
-  stroke: #b45309;
-}
-
-.randomFormat .outputStack > g:nth-child(3) circle {
-  fill: #ffe4e6;
-}
-
-.randomFormat .outputStack > g:nth-child(3) > path:not(.outputLine) {
-  stroke: #be123c;
 }
 
 .shareFolder rect:first-child {
@@ -598,6 +580,40 @@
   outline-offset: 3px;
 }
 
+.running .benefitTime .stepPin {
+  animation: pin-pop-8 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+.running .benefitConsistent .stepPin {
+  animation: pin-pop-28 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+.running .benefitConsistent .outputStack > g:nth-child(1) .statusPin {
+  animation: pin-pop-31 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+.running .benefitConsistent .outputStack > g:nth-child(2) .statusPin {
+  animation: pin-pop-34 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+.running .benefitConsistent .outputStack > g:nth-child(3) .statusPin {
+  animation: pin-pop-37 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+.running .benefitShare .stepPin {
+  animation: pin-pop-48 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+.running .successOutput .statusPin,
+.running .failureOutput .statusPin {
+  animation: pin-pop-58 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+.running .storyStep .stepPin {
+  animation: pin-pop 10s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+  animation-delay: calc(var(--story-index, 0) * 1.1s + 0.18s);
+}
+
 .running .benefitTime {
   animation: benefit-one 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -696,6 +712,13 @@
 }
 
 .running .benefitTime,
+.running .benefitTime .stepPin,
+.running .benefitConsistent .stepPin,
+.running .benefitConsistent .outputStack .statusPin,
+.running .benefitShare .stepPin,
+.running .successOutput .statusPin,
+.running .failureOutput .statusPin,
+.running .storyStep .stepPin,
 .running .benefitArrowOne .flowArrowShaft,
 .running .benefitArrowOne .flowArrowHead,
 .running .benefitConsistent,
@@ -757,6 +780,142 @@
     transform: scale(0.55);
   }
   26%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop {
+  0%,
+  2% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  8% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  14%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop-8 {
+  0%,
+  6% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  13%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop-28 {
+  0%,
+  26% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  33%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop-31 {
+  0%,
+  29% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  36%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop-34 {
+  0%,
+  32% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  36% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  39%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop-37 {
+  0%,
+  35% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  39% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  42%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop-48 {
+  0%,
+  46% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  53%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pin-pop-58 {
+  0%,
+  56% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+  63%,
   100% {
     opacity: 1;
     transform: scale(1);
@@ -1045,6 +1204,7 @@
   .running .benefitPanel,
   .running .flowArrowShaft,
   .running .flowArrowHead,
+  .running .cornerPin,
   .running .clockHand,
   .running .shareLines,
   .running .userPhoneArm,
@@ -1075,6 +1235,7 @@
 
   .flowArrowShaft,
   .flowArrowHead,
+  .cornerPin,
   .clockHand {
     opacity: 1;
     transform: none;
