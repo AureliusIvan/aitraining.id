@@ -8,7 +8,12 @@ export const metadata: Metadata = {
   title: "Articles: AI Agents & Tools Explained | AI Training Indonesia",
   description:
     "Penjelasan independen tentang tools dan konsep AI agent yang relevan untuk tim di Indonesia, ditulis oleh Aurelius Ivan Wijaya berdasarkan pengalaman pelatihan langsung.",
-  keywords: ["artikel AI Indonesia", "apa itu OpenClaw", "AI agent explained"],
+  keywords: [
+    "artikel AI Indonesia",
+    "apa itu OpenClaw",
+    "apa itu Claude for Chrome",
+    "AI agent explained",
+  ],
   alternates: { canonical: "https://aitraining.id/articles" },
   openGraph: { url: "https://aitraining.id/articles" },
 };
@@ -18,8 +23,18 @@ export default function ArticlesPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Beranda", item: "https://aitraining.id" },
-      { "@type": "ListItem", position: 2, name: "Articles", item: "https://aitraining.id/articles" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Beranda",
+        item: "https://aitraining.id",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Articles",
+        item: "https://aitraining.id/articles",
+      },
     ],
   };
 
@@ -49,32 +64,48 @@ export default function ArticlesPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
       <div className="min-h-screen bg-black text-white">
         <Nav />
         <main>
           <section className="relative pt-32 pb-16 px-6 sm:px-8">
             <div className="max-w-[1400px] mx-auto">
-              <nav aria-label="Breadcrumb" className="text-sm text-white/50 mb-8">
-                <Link href="/" className="hover:text-white/80 transition-colors">
+              <nav
+                aria-label="Breadcrumb"
+                className="text-sm text-white/50 mb-8"
+              >
+                <Link
+                  href="/"
+                  className="hover:text-white/80 transition-colors"
+                >
                   Beranda
                 </Link>
                 <span className="mx-2">/</span>
                 <span className="text-white/70">Articles</span>
               </nav>
               <div className="max-w-3xl">
-                <p className="text-white/70 text-sm mb-4 tracking-wide">[ Articles ]</p>
+                <p className="text-white/70 text-sm mb-4 tracking-wide">
+                  [ Articles ]
+                </p>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95] tracking-tight mb-6">
                   <span className="text-white">Penjelasan independen</span>
                   <br />
-                  <span className="text-white/60">tentang AI agent dan tools</span>
+                  <span className="text-white/60">
+                    tentang AI agent dan tools
+                  </span>
                 </h1>
                 <p className="text-white/70 text-lg sm:text-xl max-w-2xl leading-relaxed">
-                  Tulisan tentang tools dan konsep AI agent yang relevan untuk tim di
-                  Indonesia, berdasarkan pengalaman pelatihan langsung Aurelius Ivan
-                  Wijaya. Setiap artikel menyebutkan kredensial penulis untuk topik
-                  yang dibahas secara spesifik.
+                  Tulisan tentang tools dan konsep AI agent yang relevan untuk
+                  tim di Indonesia, berdasarkan pengalaman pelatihan langsung
+                  Aurelius Ivan Wijaya. Setiap artikel menyebutkan kredensial
+                  penulis untuk topik yang dibahas secara spesifik.
                 </p>
               </div>
             </div>

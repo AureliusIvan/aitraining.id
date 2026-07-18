@@ -162,6 +162,156 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "apa-itu-claude-for-chrome",
+    category: "Claude Tools Explained",
+    metaTitle:
+      "Apa itu Claude for Chrome? Extensi Browser Claude yang Bisa Klik dan Isi Form | AI Training Indonesia",
+    metaDescription:
+      "Apa itu Claude for Chrome: ekstensi Chrome dari Anthropic yang membuat Claude bisa membaca halaman, mengklik, menavigasi, dan mengisi form di browser. Penjelasan independen dari Aurelius Ivan Wijaya untuk tim di Indonesia.",
+    keywords: [
+      "apa itu Claude for Chrome",
+      "Claude in Chrome",
+      "Claude Chrome extension",
+      "Claude for Chrome adalah",
+      "cara pakai Claude di Chrome",
+      "ekstensi Claude Chrome",
+      "Claude browser agent",
+      "Claude Cowork Chrome",
+      "Claude Code Chrome",
+      "pelatihan Claude Indonesia",
+    ],
+    updated: "18 Juli 2026",
+    datePublished: "2026-07-18",
+    dateModified: "2026-07-18",
+    h1: "Apa itu Claude for Chrome?",
+    h1sub:
+      "Ekstensi Chrome yang membuat Claude bisa bekerja langsung di tab browser Anda",
+    lede: "Claude for Chrome adalah ekstensi Google Chrome dari Anthropic yang membuat Claude bisa membaca halaman web, mengklik, menavigasi, dan mengisi form bersama Anda. Fitur ini tersedia untuk paket berbayar (Pro, Max, Team, dan Enterprise), berstatus beta di browser Chrome, dan juga bisa dipakai bersama Claude Cowork serta Claude Code. Artikel ini adalah penjelasan independen dari Aurelius Ivan Wijaya berdasarkan dokumentasi resmi Anthropic dan praktik pelatihan Claude untuk tim di Indonesia.",
+    authorNote:
+      "pelatih Claude untuk tim korporat di Indonesia; tidak berafiliasi dengan Anthropic",
+    externalName: "claude.com/claude-for-chrome",
+    externalUrl: "https://claude.com/claude-for-chrome",
+    relatedHref: "/programs/claude",
+    relatedLabel: "Lihat program Claude Training",
+    defId: {
+      q: "Apa itu Claude for Chrome?",
+      a: "Claude for Chrome (juga disebut Claude in Chrome) adalah ekstensi Google Chrome dari Anthropic. Claude bisa membaca isi halaman, mengklik, mengetik, menavigasi antar tab, dan mengisi form di browser. Anda bisa membukanya lewat panel samping Chrome, atau menghubungkannya dari Claude Desktop, Cowork, dan Claude Code. Fitur ini tersedia di paket Pro, Max, Team, dan Enterprise.",
+    },
+    defEn: {
+      q: "What is Claude for Chrome?",
+      a: "Claude for Chrome (also called Claude in Chrome) is Anthropic’s Google Chrome extension. Claude can read page content, click, type, navigate tabs, and fill forms in the browser. You can open it from the Chrome side panel, or connect it from Claude Desktop, Cowork, and Claude Code. It is available on Pro, Max, Team, and Enterprise plans.",
+    },
+    sections: [
+      {
+        h2: "Kenapa AI Training Indonesia menulis tentang Claude for Chrome",
+        body: [
+          "Aurelius Ivan Wijaya melatih tim di Indonesia memakai Claude untuk kerja sehari-hari dan membangun agent. Banyak peserta sudah memakai Claude di web atau Desktop, lalu bertanya bagaimana Claude bisa ikut mengerjakan tugas yang terjadi di dalam browser: membuka dashboard, menyalin angka, mengisi form, atau menguji situs yang baru dibangun.",
+          "Claude for Chrome menjawab kebutuhan itu. Artikel ini merangkum cara kerjanya dari dokumentasi resmi Anthropic (support.claude.com dan claude.com/claude-for-chrome), lalu menempatkannya dalam konteks pelatihan: kapan fitur ini berguna untuk tim, dan risiko apa yang harus dipahami sebelum mengaktifkannya di akun kerja.",
+          "AI Training Indonesia tidak berafiliasi dengan Anthropic. Detail produk, harga paket, dan ketersediaan bisa berubah; selalu cek halaman resmi Claude sebelum memutuskan adopsi di organisasi.",
+        ],
+      },
+      {
+        h2: "Apa yang bisa dilakukan Claude di Chrome",
+        body: [
+          "Setelah ekstensi terpasang dan izin diberikan, Claude bisa melihat halaman yang sedang dibuka, lalu bertindak seperti pengguna: mengklik tombol, mengetik di kolom, pindah tab, mengisi formulir, dan mengunduh file jika tugasnya meminta itu. Anthropic juga menyediakan navigasi bawaan untuk beberapa platform umum seperti Gmail, Google Docs, Google Calendar, Slack, dan GitHub.",
+          "Kemampuan lain yang relevan untuk kerja rutin: merekam alur kerja agar bisa diulang, menyimpan instruksi yang sudah terbukti sebagai shortcut (dipanggil dengan garis miring), menjadwalkan tugas berulang, membaca console browser untuk debugging, dan tetap menjalankan alur di latar belakang selama Chrome terbuka.",
+          "Claude for Chrome bisa dipasangkan dengan Claude Cowork. Chrome mengerjakan riset dan aksi di web; Cowork menyusun hasil menjadi berkas seperti spreadsheet, deck, atau laporan tanpa salin-tempel manual.",
+        ],
+      },
+      {
+        h2: "Cara memasang dan membuka Claude for Chrome",
+        body: [
+          "Claude for Chrome hanya didukung di Google Chrome di desktop. Browser Chromium lain dan perangkat mobile belum didukung menurut dokumentasi resmi Anthropic.",
+          "Langkah ringkas: buka Chrome Web Store, cari ekstensi Claude, klik Add to Chrome, masuk dengan akun Claude berbayar, pin ikon Claude di toolbar, lalu berikan izin yang diminta. Klik ikon Claude untuk membuka panel samping yang tetap terlihat saat Anda browsing.",
+          "Dari Claude Desktop, aktifkan konektor Claude in Chrome lewat Settings → Connectors, lalu nyalakan konektor itu per percakapan. Dari situ, tugas yang butuh aksi di situs bisa dibuka langsung di Chrome tanpa pindah jendela kerja.",
+        ],
+      },
+      {
+        h2: "Risiko yang perlu dipahami sebelum dipakai di kerja",
+        body: [
+          "Claude for Chrome memberi Claude akses langsung ke situs yang Anda buka. Anthropic menyatakan fitur ini masih berisiko meski sudah dilengkapi pengaman, dan meminta pengguna membaca panduan Using Claude in Chrome safely sebelum memakai.",
+          "Risiko utama yang disebut Anthropic termasuk prompt injection: instruksi tersembunyi di halaman web yang mencoba mengalihkan tindakan Claude. Anthropic menganjurkan memulai dari situs yang dipercaya, mengonfirmasi aksi sensitif (keuangan, data pribadi, keputusan kritis), dan menghentikan sesi jika perilaku Claude terlihat tidak wajar.",
+          "Di paket Team dan Enterprise, admin organisasi bisa mengontrol ketersediaan ekstensi serta daftar situs yang diizinkan atau diblokir. Jika instalasi gagal di akun perusahaan, hubungi admin terlebih dahulu.",
+        ],
+      },
+      {
+        h2: "Kenapa topik ini relevan untuk tim di Indonesia",
+        body: [
+          "Banyak pekerjaan kantor di Indonesia sudah berjalan di Chrome: email, spreadsheet online, CRM, dashboard analytics, dan portal internal. Claude for Chrome menempatkan agent di permukaan kerja yang sama, sehingga tugas riset web, ringkasan tab, dan pengisian form berulang bisa dikerjakan tanpa memindahkan konteks ke chat terpisah.",
+          "Untuk developer, integrasi dengan Claude Code memungkinkan alur bangun-uji-verifikasi: kode ditulis di terminal atau editor, lalu diuji di browser dengan Claude yang bisa membaca error console, network request, dan keadaan DOM.",
+          "Adopsi yang aman tetap butuh kebijakan internal: situs mana yang boleh diakses Claude, aksi mana yang wajib dikonfirmasi manusia, dan siapa yang boleh memasang ekstensi di perangkat kerja. Pelatihan Claude AI Training Indonesia membahas pola agent building di permukaan Claude yang dipakai tim, termasuk kapan browser automation masuk ke alur kerja.",
+        ],
+      },
+    ],
+    features: {
+      heading: "Yang perlu Anda ingat tentang Claude for Chrome",
+      intro:
+        "Enam poin praktis dari dokumentasi resmi Anthropic yang paling relevan untuk evaluasi awal.",
+      items: [
+        {
+          title: "Bekerja di tab Chrome yang sedang dibuka",
+          detail:
+            "Claude membaca halaman, mengklik, mengetik, menavigasi, dan mengisi form dari panel samping atau dari konektor di Desktop, Cowork, dan Claude Code.",
+        },
+        {
+          title: "Tersedia di paket berbayar",
+          detail:
+            "Menurut Anthropic, Claude in Chrome tersedia untuk Pro, Max, Team, dan Enterprise. Di Chrome statusnya beta; di Cowork dan Claude Code sudah generally available.",
+        },
+        {
+          title: "Chrome desktop saja",
+          detail:
+            "Instalasi resmi mengarah ke Google Chrome di desktop. Browser Chromium lain dan mobile belum didukung.",
+        },
+        {
+          title: "Bisa dijadwalkan dan dijalankan di latar",
+          detail:
+            "Shortcut dan alur kerja bisa dijadwalkan harian sampai tahunan. Claude bisa terus bekerja saat Anda pindah tab, selama Chrome tetap terbuka.",
+        },
+        {
+          title: "Terhubung ke Cowork dan Claude Code",
+          detail:
+            "Cowork bisa menyusun deliverable dari hasil riset browser. Claude Code bisa memakai ekstensi untuk uji dan debug di situs yang baru dibangun.",
+        },
+        {
+          title: "Butuh pengawasan untuk aksi sensitif",
+          detail:
+            "Anthropic menyarankan menghindari transaksi keuangan, pengelolaan password, dan data pribadi berisiko tinggi tanpa pengawasan ketat.",
+        },
+      ],
+    },
+    faqs: [
+      {
+        q: "Apa itu Claude for Chrome?",
+        a: "Claude for Chrome (Claude in Chrome) adalah ekstensi Google Chrome dari Anthropic yang memungkinkan Claude membaca halaman, mengklik, mengetik, menavigasi tab, dan mengisi form di browser. Fitur ini tersedia untuk paket Pro, Max, Team, dan Enterprise.",
+      },
+      {
+        q: "Apakah Claude for Chrome gratis?",
+        a: "Menurut dokumentasi resmi Anthropic, Claude in Chrome tersedia untuk semua paket berbayar: Pro, Max, Team, dan Enterprise. Paket gratis tidak termasuk akses fitur ini.",
+      },
+      {
+        q: "Bagaimana Claude for Chrome dipakai dibanding chat Claude biasa?",
+        a: "Chat Claude biasa menjawab di jendela chat; Anda membawa konteks dari browser ke percakapan itu. Claude for Chrome bekerja di tab Chrome yang sama: Claude melihat halaman dan bisa melakukan aksi di situs atas permintaan Anda.",
+      },
+      {
+        q: "Bagaimana cara memasang Claude for Chrome?",
+        a: "Buka Google Chrome di desktop, pasang ekstensi Claude dari Chrome Web Store, masuk dengan akun Claude berbayar, pin ikon Claude, lalu berikan izin yang diminta. Buka panel samping lewat ikon Claude di toolbar.",
+      },
+      {
+        q: "Apakah aman dipakai untuk akun kerja?",
+        a: "Anthropic menyebut Claude in Chrome masih berisiko, termasuk prompt injection dari konten halaman. Mulai dari situs tepercaya, konfirmasi aksi sensitif, dan ikuti kebijakan admin jika Anda memakai paket Team atau Enterprise.",
+      },
+      {
+        q: "What is Claude for Chrome?",
+        a: "Claude for Chrome (also called Claude in Chrome) is Anthropic’s Google Chrome extension that lets Claude read pages, click, type, navigate tabs, and fill forms in the browser. It is available on Pro, Max, Team, and Enterprise plans.",
+      },
+      {
+        q: "Apa beda artikel ini dengan program pelatihan Claude?",
+        a: "Artikel ini menjelaskan apa itu Claude for Chrome berdasarkan dokumentasi resmi Anthropic, ditulis sebagai penjelasan independen. Untuk kurikulum dan pemesanan pelatihan Claude, kunjungi aitraining.id/programs/claude.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
