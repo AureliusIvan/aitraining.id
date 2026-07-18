@@ -212,6 +212,42 @@ export default async function EduModulePage({
             </div>
           </section>
 
+          {/* Outline */}
+          {/* biome-ignore lint/correctness/useUniqueElementIds: stable #outline deep-link for presentation QR and TOC */}
+          <section
+            id="outline"
+            className="border-t border-stone-200 px-6 py-14 sm:px-8"
+          >
+            <div className="mx-auto max-w-3xl">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#B3282D]">
+                Outline
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Isi modul ini
+              </h2>
+              <p className="mt-3 max-w-xl text-stone-600">
+                Ringkasan urutan topik sebelum masuk ke detail.
+              </p>
+              <ol className="mt-8 grid gap-3 sm:grid-cols-2">
+                {mod.slides.map((slide, i) => (
+                  <li key={slide.id}>
+                    <a
+                      href={`#${slide.id}`}
+                      className="flex items-start gap-3 rounded-2xl border-2 border-[#202020] bg-[#fffdf8] px-4 py-3 shadow-[3px_3px_0_rgba(32,32,32,0.12)] transition-colors hover:bg-[#faf7f0]"
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FF4B3E] text-sm font-bold text-white ring-2 ring-[#202020]">
+                        {i + 1}
+                      </span>
+                      <span className="pt-1 text-base font-semibold leading-snug text-stone-900">
+                        {slide.title}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+
           {/* Web sections, one per slide */}
           {mod.slides.map((slide) => (
             <section

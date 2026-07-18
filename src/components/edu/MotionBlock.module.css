@@ -322,8 +322,7 @@
 }
 
 .paperStack rect,
-.outputStack rect,
-.shareFolder rect {
+.outputStack rect {
   fill: #fff;
   stroke: #202020;
   stroke-width: 3;
@@ -334,12 +333,60 @@
 }
 
 .paperStack path,
-.shareFolder path,
 .outputLine {
   fill: none;
   stroke: #202020;
   stroke-width: 3;
   stroke-linecap: round;
+}
+
+.folderBack {
+  fill: #f3ebe0;
+  stroke: #202020;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+
+.folderTab {
+  fill: #e8dccb;
+  stroke: #202020;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+
+.folderFront {
+  fill: #fffdf8;
+  stroke: #202020;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+
+.folderShine {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.35;
+}
+
+.toneRed .folderFront {
+  fill: #ffe8e6;
+}
+
+.toneBlue .folderFront {
+  fill: #e8f1fc;
+}
+
+.toneYellow .folderFront {
+  fill: #fff4d6;
+}
+
+.toneClay .folderFront {
+  fill: #f7ebe4;
+}
+
+.toneGreen .folderFront {
+  fill: #e6f6ea;
 }
 
 .clock circle:first-child {
@@ -477,12 +524,16 @@
   transform-origin: 365px 185px;
 }
 
-.shareFolder rect:first-child {
-  fill: #eef5ff;
+.shareFolder .folderBack {
+  fill: #dce9fb;
 }
 
-.shareFolder rect:nth-child(2) {
+.shareFolder .folderTab {
   fill: #ff4b3e;
+}
+
+.shareFolder .folderFront {
+  fill: #eef5ff;
 }
 
 .shareLines {
@@ -1348,7 +1399,7 @@
 
 .storyLabel text {
   fill: #202020;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
 }
 

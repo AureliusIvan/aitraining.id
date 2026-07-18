@@ -653,9 +653,19 @@ function ClaudeSkillBenefitsScene({
 
       <g className={`${styles.benefitPanel} ${styles.benefitShare}`}>
         <g className={styles.shareFolder}>
-          <rect x="548" y="72" width="104" height="80" rx="17" />
-          <rect x="564" y="58" width="53" height="27" rx="9" />
-          <path d="M575 111h50M575 124h36" />
+          <path
+            className={styles.folderBack}
+            d="M548 78h34l10 9h60a12 12 0 0 1 12 12v41a12 12 0 0 1-12 12h-104a12 12 0 0 1-12-12V90a12 12 0 0 1 12-12Z"
+          />
+          <path
+            className={styles.folderTab}
+            d="M548 78h30c3 0 5 1.5 7 4l4 5h-41V90a12 12 0 0 1 12-12Z"
+          />
+          <path
+            className={styles.folderFront}
+            d="M540 98h120a10 10 0 0 1 10 10v36a10 10 0 0 1-10 10H540a10 10 0 0 1-10-10v-36a10 10 0 0 1 10-10Z"
+          />
+          <path className={styles.folderShine} d="M560 114h42M560 126h28" />
         </g>
         <g className={styles.shareLines}>
           <path pathLength="1" d="M600 151v30M600 181l-48 26M600 181l48 26" />
@@ -794,16 +804,20 @@ function StoryboardIcon({
   switch (icon) {
     case "folder":
       return (
-        <g transform={`translate(${x} ${y})`}>
-          <path className={styles.storySolid} d="M-30-10h20l8 8h32v30H-30Z" />
-          <rect
-            className={styles.storySolid}
-            x="-30"
-            y="-2"
-            width="60"
-            height="30"
-            rx="5"
+        <g transform={`translate(${x} ${y})`} className={styles.folderIcon}>
+          <path
+            className={styles.folderBack}
+            d="M-34-6h22l7 7h39a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6H-34a6 6 0 0 1-6-6V0a6 6 0 0 1 6-6Z"
           />
+          <path
+            className={styles.folderTab}
+            d="M-34-6h20c2 0 3.5 1 5 3l3 3h-28V0a6 6 0 0 1 6-6Z"
+          />
+          <path
+            className={styles.folderFront}
+            d="M-40 8h80a5 5 0 0 1 5 5v24a5 5 0 0 1-5 5h-80a5 5 0 0 1-5-5V13a5 5 0 0 1 5-5Z"
+          />
+          <path className={styles.folderShine} d="M-28 18h28" />
         </g>
       );
     case "file":
@@ -955,10 +969,11 @@ function EduStoryboardScene({
   const safeItems = items.slice(0, 5);
   const count = Math.max(safeItems.length, 1);
   const gap = 720 / (count + 1);
-  const panelWidth = Math.min(156, Math.max(108, gap - 52));
+  const panelWidth = Math.min(168, Math.max(118, gap - 40));
   const panelHalf = panelWidth / 2;
-  const arrowY = 168;
+  const arrowY = 158;
   const arrowPad = 6;
+  const labelMax = Math.min(panelWidth + 12, gap - 16);
 
   return (
     <svg
@@ -1008,23 +1023,24 @@ function EduStoryboardScene({
             <rect
               className={styles.storyPanel}
               x={x - panelHalf}
-              y="104"
+              y="88"
               width={panelWidth}
-              height="148"
+              height="152"
               rx="24"
             />
-            <StepPin layout={{ x: x - panelHalf, y: 104 }} step={index + 1} />
-            <StoryboardIcon icon={item.icon} x={x} y={164} />
+            <StepPin layout={{ x: x - panelHalf, y: 88 }} step={index + 1} />
+            <StoryboardIcon icon={item.icon} x={x} y={152} />
             <SmartSvgCard
               className={styles.storyLabel}
               centerX={x}
-              y={278}
+              y={268}
               height={44}
-              minWidth={Math.min(118, panelWidth - 8)}
-              maxWidth={panelWidth}
-              paddingX={12}
+              minWidth={Math.min(122, labelMax - 8)}
+              maxWidth={labelMax}
+              paddingX={10}
               rx={14}
-              rows={[{ text: item.label, y: 306, align: "center" }]}
+              lineHeight={18}
+              rows={[{ text: item.label, y: 294, align: "center" }]}
             />
           </g>
         );

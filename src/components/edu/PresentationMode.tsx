@@ -26,6 +26,7 @@ import { FaqTarotDeck, type FaqTarotHandle } from "./FaqTarotDeck";
 
 type DeckItem =
   | { kind: "title" }
+  | { kind: "outline"; items: { id: string; title: string }[] }
   | { kind: "slide"; slide: EduSlide }
   | { kind: "faq"; faqs: EduFaq[] };
 
@@ -66,6 +67,10 @@ export function PresentationMode({
   const deck = useMemo<DeckItem[]>(
     () => [
       { kind: "title" },
+      {
+        kind: "outline",
+        items: slides.map((slide) => ({ id: slide.id, title: slide.title })),
+      },
       ...slides.map((slide) => ({ kind: "slide" as const, slide })),
       { kind: "faq" as const, faqs },
     ],
@@ -316,15 +321,19 @@ export function PresentationMode({
   const qrKey =
     current.kind === "title"
       ? "top"
-      : current.kind === "faq"
-        ? "faq"
-        : current.slide.id;
+      : current.kind === "outline"
+        ? "top"
+        : current.kind === "faq"
+          ? "faq"
+          : current.slide.id;
   const qrUrl =
     current.kind === "title"
       ? pageUrl
-      : current.kind === "faq"
-        ? `${pageUrl}#faq`
-        : `${pageUrl}#${current.slide.id}`;
+      : current.kind === "outline"
+        ? `${pageUrl}#outline`
+        : current.kind === "faq"
+          ? `${pageUrl}#faq`
+          : `${pageUrl}#${current.slide.id}`;
   const qrSrc = `${qrPrefix}${qrKey}.svg`;
 
   return (
@@ -406,6 +415,35 @@ export function PresentationMode({
                       photo="/assets/hero.webp"
                     />
                   </p>
+                </div>
+              ) : null}
+
+              {current.kind === "outline" ? (
+                <div>
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#B3282D]">
+                    Outline
+                  </p>
+                  <h2 className="text-3xl font-bold leading-tight tracking-tight text-stone-900 sm:text-5xl">
+                    Isi modul ini
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-lg text-stone-500 sm:text-xl">
+                    Ringkasan urutan topik sebelum kita masuk satu per satu.
+                  </p>
+                  <ol className="mt-8 grid gap-3 sm:grid-cols-2">
+                    {current.items.map((item, i) => (
+                      <li
+                        key={item.id}
+                        className="flex items-start gap-3 rounded-2xl border-2 border-[#202020] bg-[#fffdf8] px-4 py-3 shadow-[3px_3px_0_rgba(32,32,32,0.12)]"
+                      >
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FF4B3E] text-sm font-bold text-white ring-2 ring-[#202020]">
+                          {i + 1}
+                        </span>
+                        <span className="pt-1 text-base font-semibold leading-snug text-stone-900 sm:text-lg">
+                          {item.title}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
                 </div>
               ) : null}
 
