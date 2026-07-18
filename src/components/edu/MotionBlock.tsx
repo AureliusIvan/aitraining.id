@@ -578,24 +578,28 @@ function ClaudeSkillBenefitsScene({
           centerX={120}
           y={264}
           height={48}
-          minWidth={174}
+          minWidth={168}
           maxWidth={210}
-          paddingX={16}
+          paddingX={18}
           rx={16}
           rows={[
             {
-              text: "1. Satu perintah",
+              text: "Satu perintah",
               y: 295,
               align: "center",
             },
           ]}
-        />
+        >
+          {(layout) => <StepPin layout={layout} step={1} />}
+        </SmartSvgCard>
       </g>
 
-      <g className={`${styles.benefitArrow} ${styles.benefitArrowOne}`}>
-        <path pathLength="1" d="M220 201c23-12 40-12 62 0" />
-        <path d="m270 190 13 11-15 8" />
-      </g>
+      <FlowArrow
+        className={styles.benefitArrowOne}
+        fromX={214}
+        toX={290}
+        y={158}
+      />
 
       <g className={`${styles.benefitPanel} ${styles.benefitConsistent}`}>
         <g className={styles.outputStack}>
@@ -618,24 +622,28 @@ function ClaudeSkillBenefitsScene({
           centerX={365}
           y={264}
           height={48}
-          minWidth={174}
+          minWidth={168}
           maxWidth={210}
-          paddingX={16}
+          paddingX={18}
           rx={16}
           rows={[
             {
-              text: "2. Satu format",
+              text: "Satu format",
               y: 295,
               align: "center",
             },
           ]}
-        />
+        >
+          {(layout) => <StepPin layout={layout} step={2} />}
+        </SmartSvgCard>
       </g>
 
-      <g className={`${styles.benefitArrow} ${styles.benefitArrowTwo}`}>
-        <path pathLength="1" d="M460 201c22-12 39-12 61 0" />
-        <path d="m509 190 13 11-15 8" />
-      </g>
+      <FlowArrow
+        className={styles.benefitArrowTwo}
+        fromX={454}
+        toX={530}
+        y={158}
+      />
 
       <g className={`${styles.benefitPanel} ${styles.benefitShare}`}>
         <g className={styles.shareFolder}>
@@ -659,20 +667,74 @@ function ClaudeSkillBenefitsScene({
           centerX={600}
           y={264}
           height={48}
-          minWidth={184}
+          minWidth={176}
           maxWidth={220}
-          paddingX={16}
+          paddingX={18}
           rx={16}
           rows={[
             {
-              text: "3. Bagikan skill",
+              text: "Bagikan skill",
               y: 295,
               align: "center",
             },
           ]}
-        />
+        >
+          {(layout) => <StepPin layout={layout} step={3} />}
+        </SmartSvgCard>
       </g>
     </svg>
+  );
+}
+
+function StepPin({
+  layout,
+  step,
+}: {
+  layout: { x: number; y: number };
+  step: number;
+}) {
+  const cx = layout.x + 2;
+  const cy = layout.y + 2;
+  return (
+    <g className={styles.stepPin}>
+      <circle cx={cx} cy={cy} r="15" />
+      <text x={cx} y={cy + 5} textAnchor="middle">
+        {step}
+      </text>
+    </g>
+  );
+}
+
+function FlowArrow({
+  fromX,
+  toX,
+  y,
+  className,
+}: {
+  fromX: number;
+  toX: number;
+  y: number;
+  className?: string;
+}) {
+  const span = Math.max(24, toX - fromX);
+  const tip = fromX + span;
+  const head = span < 42 ? 11 : 15;
+  const shaftEnd = tip - head;
+  const mid = (fromX + shaftEnd) / 2;
+  const rise = y - Math.min(14, Math.max(8, span * 0.28));
+
+  return (
+    <g className={`${styles.flowArrow} ${className ?? ""}`}>
+      <path
+        className={styles.flowArrowShaft}
+        pathLength="1"
+        d={`M${fromX} ${y}C${mid - span * 0.18} ${rise} ${mid + span * 0.18} ${rise} ${shaftEnd} ${y}`}
+      />
+      <path
+        className={styles.flowArrowHead}
+        d={`M${tip - head} ${y - head * 0.55}L${tip} ${y}L${tip - head} ${y + head * 0.55}Z`}
+      />
+    </g>
   );
 }
 
@@ -854,10 +916,13 @@ function EduStoryboardScene({
   alt: string;
   items: EduStoryboardItem[];
 }) {
-  const markerId = useId().replace(/:/g, "");
   const safeItems = items.slice(0, 5);
   const count = Math.max(safeItems.length, 1);
   const gap = 720 / (count + 1);
+  const panelWidth = Math.min(156, Math.max(108, gap - 52));
+  const panelHalf = panelWidth / 2;
+  const arrowY = 168;
+  const arrowPad = 6;
 
   return (
     <svg
@@ -876,18 +941,23 @@ function EduStoryboardScene({
         <path d="M96 48V357M624 48V357" />
       </g>
 
-      <defs>
-        <marker
-          id={markerId}
-          markerWidth="8"
-          markerHeight="8"
-          refX="6"
-          refY="3"
-          orient="auto"
-        >
-          <path d="M0 0 6 3 0 6Z" className={styles.storyArrowHead} />
-        </marker>
-      </defs>
+      {safeItems.map((item, index) => {
+        if (index === 0) return null;
+        const x = gap * (index + 1);
+        const prevX = gap * index;
+        const arrowFrom = prevX + panelHalf + arrowPad;
+        const arrowTo = x - panelHalf - arrowPad;
+
+        return (
+          <g
+            key={`arrow-${item.label}-${index}`}
+            className={styles.storyArrowWrap}
+            style={{ ["--story-index" as string]: String(index) }}
+          >
+            <FlowArrow fromX={arrowFrom} toX={arrowTo} y={arrowY} />
+          </g>
+        );
+      })}
 
       {safeItems.map((item, index) => {
         const x = gap * (index + 1);
@@ -899,30 +969,23 @@ function EduStoryboardScene({
             className={`${styles.storyStep} ${toneClass}`}
             style={{ ["--story-index" as string]: String(index) }}
           >
-            {index > 0 ? (
-              <path
-                className={styles.storyArrow}
-                pathLength="1"
-                d={`M${gap * index + 48} 168H${x - 64}`}
-                markerEnd={`url(#${markerId})`}
-              />
-            ) : null}
             <rect
               className={styles.storyPanel}
-              x={x - 78}
+              x={x - panelHalf}
               y="104"
-              width="156"
+              width={panelWidth}
               height="148"
               rx="24"
             />
+            <StepPin layout={{ x: x - panelHalf, y: 104 }} step={index + 1} />
             <StoryboardIcon icon={item.icon} x={x} y={164} />
             <SmartSvgCard
               className={styles.storyLabel}
               centerX={x}
               y={278}
               height={44}
-              minWidth={118}
-              maxWidth={156}
+              minWidth={Math.min(118, panelWidth - 8)}
+              maxWidth={panelWidth}
               paddingX={12}
               rx={14}
               rows={[{ text: item.label, y: 306, align: "center" }]}

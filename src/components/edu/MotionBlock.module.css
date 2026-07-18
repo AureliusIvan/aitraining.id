@@ -406,18 +406,45 @@
   font-weight: 800;
 }
 
-.benefitArrow {
+.stepPin circle {
+  fill: #ff4b3e;
+  stroke: #202020;
+  stroke-width: 3;
+}
+
+.stepPin text {
+  fill: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.flowArrow {
   fill: none;
   stroke: #202020;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0;
-  stroke-dashoffset: 1;
 }
 
-.benefitArrow > path:first-child {
+.flowArrowShaft {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 4;
+  stroke-linecap: round;
   stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+}
+
+.flowArrowHead {
+  fill: #202020;
+  stroke: #202020;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: left center;
 }
 
 .outputStack circle {
@@ -575,16 +602,28 @@
   animation: benefit-one 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.running .benefitArrowOne {
-  animation: benefit-arrow-one 10s ease both;
+.running .benefitArrowOne .flowArrowShaft {
+  animation: flow-arrow-shaft 10s ease both;
+  animation-delay: 0.7s;
+}
+
+.running .benefitArrowOne .flowArrowHead {
+  animation: flow-arrow-head 10s ease both;
+  animation-delay: 0.7s;
 }
 
 .running .benefitConsistent {
   animation: benefit-two 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.running .benefitArrowTwo {
-  animation: benefit-arrow-two 10s ease both;
+.running .benefitArrowTwo .flowArrowShaft {
+  animation: flow-arrow-shaft 10s ease both;
+  animation-delay: 1.9s;
+}
+
+.running .benefitArrowTwo .flowArrowHead {
+  animation: flow-arrow-head 10s ease both;
+  animation-delay: 1.9s;
 }
 
 .running .benefitShare {
@@ -657,9 +696,11 @@
 }
 
 .running .benefitTime,
-.running .benefitArrowOne,
+.running .benefitArrowOne .flowArrowShaft,
+.running .benefitArrowOne .flowArrowHead,
 .running .benefitConsistent,
-.running .benefitArrowTwo,
+.running .benefitArrowTwo .flowArrowShaft,
+.running .benefitArrowTwo .flowArrowHead,
 .running .benefitShare,
 .running .clockHand,
 .running .shareLines,
@@ -696,16 +737,29 @@
   }
 }
 
-@keyframes benefit-arrow-one {
+@keyframes flow-arrow-shaft {
   0%,
-  16% {
+  14% {
     opacity: 0;
     stroke-dashoffset: 1;
   }
-  23%,
+  22%,
   100% {
     opacity: 1;
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flow-arrow-head {
+  0%,
+  20% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  26%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -719,19 +773,6 @@
   100% {
     opacity: 1;
     transform: none;
-  }
-}
-
-@keyframes benefit-arrow-two {
-  0%,
-  35% {
-    opacity: 0;
-    stroke-dashoffset: 1;
-  }
-  42%,
-  100% {
-    opacity: 1;
-    stroke-dashoffset: 0;
   }
 }
 
@@ -1002,7 +1043,8 @@
   }
 
   .running .benefitPanel,
-  .running .benefitArrow,
+  .running .flowArrowShaft,
+  .running .flowArrowHead,
   .running .clockHand,
   .running .shareLines,
   .running .userPhoneArm,
@@ -1024,15 +1066,17 @@
   }
 
   .benefitPanel,
-  .benefitArrow,
+  .flowArrow,
   .shareLines {
     opacity: 1;
     transform: none;
     stroke-dashoffset: 0;
   }
 
-  .benefitArrow > path:first-child,
+  .flowArrowShaft,
+  .flowArrowHead,
   .clockHand {
+    opacity: 1;
     transform: none;
     stroke-dashoffset: 0;
   }
@@ -1135,20 +1179,6 @@
   font-family: var(--font-geist-mono), monospace;
 }
 
-.storyArrow {
-  fill: none;
-  stroke: #202020;
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  opacity: 0;
-}
-
-.storyArrowHead {
-  fill: #202020;
-}
-
 .storyLabel rect {
   fill: #fff;
   stroke: #202020;
@@ -1210,9 +1240,14 @@
   animation-delay: calc(var(--story-index, 0) * 1.1s);
 }
 
-.running .storyStep .storyArrow {
-  animation: story-arrow 10s ease both;
-  animation-delay: calc(var(--story-index, 0) * 1.1s - 0.35s);
+.running .storyArrowWrap .flowArrowShaft {
+  animation: flow-arrow-shaft 10s ease both;
+  animation-delay: calc(var(--story-index, 0) * 1.1s - 0.2s);
+}
+
+.running .storyArrowWrap .flowArrowHead {
+  animation: flow-arrow-head 10s ease both;
+  animation-delay: calc(var(--story-index, 0) * 1.1s - 0.2s);
 }
 
 @keyframes story-step {
@@ -1228,27 +1263,16 @@
   }
 }
 
-@keyframes story-arrow {
-  0%,
-  8% {
-    opacity: 0;
-    stroke-dashoffset: 1;
-  }
-  18%,
-  100% {
-    opacity: 1;
-    stroke-dashoffset: 0;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .running .storyStep,
-  .running .storyStep .storyArrow {
+  .running .storyArrowWrap .flowArrowShaft,
+  .running .storyArrowWrap .flowArrowHead {
     animation: none;
   }
 
   .storyStep,
-  .storyArrow {
+  .flowArrowShaft,
+  .flowArrowHead {
     opacity: 1;
     transform: none;
     stroke-dashoffset: 0;
