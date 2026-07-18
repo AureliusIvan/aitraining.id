@@ -11,6 +11,7 @@ import {
 import type { EduFaq, EduGlossaryEntry, EduSlide } from "@/lib/edu";
 import { AuthorPopover } from "./AuthorPopover";
 import { EduBlocks } from "./EduBlocks";
+import { FaqTarotDeck, type FaqTarotHandle } from "./FaqTarotDeck";
 
 // Client-side presentation overlay. The corner "Mode presentasi" pill opens a
 // full-screen, light-themed deck rendered from the SAME slide data the page
@@ -76,6 +77,7 @@ export function PresentationMode({
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fitRef = useRef<HTMLDivElement>(null);
+  const faqDeckRef = useRef<FaqTarotHandle>(null);
   const drawing = useRef(false);
   const currentStroke = useRef<Point[]>([]);
   // Per-slide strokes: index -> list of strokes -> list of normalized points.
@@ -202,6 +204,7 @@ export function PresentationMode({
   }, [open, clampedIndex, fit]);
 
   // Keyboard: arrows/space navigate, "d" toggles drawing, "c" clears, Esc exits.
+  // On the FAQ slide, arrows/space drive the tarot deck first, then advance the deck.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -212,6 +215,36 @@ export function PresentationMode({
       ) {
         return;
       }
+
+      const onFaq = deck[clampedIndex]?.kind === "faq";
+      const faqDeck = faqDeckRef.current;
+
+      if (onFaq && faqDeck) {
+        if (e.key === " " || e.key === "Enter") {
+          e.preventDefault();
+          faqDeck.flip();
+          return;
+        }
+        if (e.key === "ArrowRight" || e.key === "PageDown") {
+          e.preventDefault();
+          if (!faqDeck.isFlipped()) {
+            faqDeck.flip();
+            return;
+          }
+          if (!faqDeck.next()) go(1);
+          return;
+        }
+        if (e.key === "ArrowLeft" || e.key === "PageUp") {
+          e.preventDefault();
+          if (faqDeck.isFlipped()) {
+            faqDeck.flip();
+            return;
+          }
+          if (!faqDeck.prev()) go(-1);
+          return;
+        }
+      }
+
       if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") {
         e.preventDefault();
         go(1);
@@ -231,7 +264,7 @@ export function PresentationMode({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, go, clearCurrent, toggleFullscreen, qrOpen]);
+  }, [open, go, clearCurrent, toggleFullscreen, qrOpen, deck, clampedIndex]);
 
   const toPoint = (e: React.PointerEvent): Point => {
     const c = canvasRef.current;
@@ -409,17 +442,17 @@ export function PresentationMode({
                   <h2 className="text-3xl font-bold leading-tight tracking-tight text-stone-900 sm:text-5xl">
                     FAQ
                   </h2>
-                  <div className="mt-8 space-y-5">
-                    {current.faqs.map((faq) => (
-                      <div key={faq.q}>
-                        <p className="text-xl font-semibold text-stone-900">
-                          {faq.q}
-                        </p>
-                        <p className="mt-1 text-lg leading-relaxed text-stone-600">
-                          {faq.a}
-                        </p>
-                      </div>
-                    ))}
+                  <p className="mt-3 max-w-2xl text-lg text-stone-600">
+                    Ketuk kartu untuk membuka jawaban. Geser atau panah untuk
+                    kartu berikutnya.
+                  </p>
+                  <div className="mt-6">
+                    <FaqTarotDeck
+                      ref={faqDeckRef}
+                      faqs={current.faqs}
+                      mode="slide"
+                      captureKeys={false}
+                    />
                   </div>
                 </div>
               ) : null}

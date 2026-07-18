@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { EduBlocks } from "@/components/edu/EduBlocks";
 import { EduFooter } from "@/components/edu/EduFooter";
 import { EduHeader } from "@/components/edu/EduHeader";
+import { FaqTarotDeck } from "@/components/edu/FaqTarotDeck";
 import { PresentationMode } from "@/components/edu/PresentationMode";
-import { eduModules, getEduModule } from "@/lib/edu";
 import { mailtoTrainingInquiry } from "@/lib/contact";
+import { eduModules, getEduModule } from "@/lib/edu";
 
 export function generateStaticParams() {
   return eduModules.map((m) => ({ tool: m.toolSlug, module: m.slug }));
@@ -103,19 +104,46 @@ export default async function EduModulePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Beranda", item: "https://aitraining.id" },
-      { "@type": "ListItem", position: 2, name: "Edu", item: "https://aitraining.id/edu" },
-      { "@type": "ListItem", position: 3, name: mod.toolName, item: `https://aitraining.id/edu/${mod.toolSlug}/${mod.slug}` },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Beranda",
+        item: "https://aitraining.id",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Edu",
+        item: "https://aitraining.id/edu",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: mod.toolName,
+        item: `https://aitraining.id/edu/${mod.toolSlug}/${mod.slug}`,
+      },
       { "@type": "ListItem", position: 4, name: mod.moduleName, item: url },
     ],
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(learningSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(learningSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       <div className="min-h-screen bg-[#f7f7f4] text-stone-900">
         <EduHeader />
@@ -123,8 +151,14 @@ export default async function EduModulePage({
           {/* Hero */}
           <section className="px-6 pt-14 pb-10 sm:px-8 sm:pt-20">
             <div className="mx-auto max-w-3xl">
-              <nav aria-label="Breadcrumb" className="mb-8 text-sm text-stone-400">
-                <Link href="/edu" className="transition-colors hover:text-stone-700">
+              <nav
+                aria-label="Breadcrumb"
+                className="mb-8 text-sm text-stone-400"
+              >
+                <Link
+                  href="/edu"
+                  className="transition-colors hover:text-stone-700"
+                >
                   Edu
                 </Link>
                 <span className="mx-2">/</span>
@@ -165,7 +199,12 @@ export default async function EduModulePage({
                 . Terakhir diperbarui {mod.updated}.
               </p>
               <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-2 text-sm text-stone-500">
-                <svg className="h-4 w-4 text-[#B3282D]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <svg
+                  className="h-4 w-4 text-[#B3282D]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
                   <path d="M8 5v14l11-7z" />
                 </svg>
                 Tekan tombol Mode presentasi di pojok untuk menjadikannya slide.
@@ -190,17 +229,27 @@ export default async function EduModulePage({
                   {slide.title}
                 </h2>
                 {slide.subtitle ? (
-                  <p className="mt-3 text-lg text-stone-500">{slide.subtitle}</p>
+                  <p className="mt-3 text-lg text-stone-500">
+                    {slide.subtitle}
+                  </p>
                 ) : null}
                 <div className="mt-8">
-                  <EduBlocks blocks={slide.blocks} mode="web" glossary={mod.glossary} />
+                  <EduBlocks
+                    blocks={slide.blocks}
+                    mode="web"
+                    glossary={mod.glossary}
+                  />
                 </div>
               </div>
             </section>
           ))}
 
           {/* FAQ */}
-          <section id="faq" className="border-t border-stone-200 px-6 py-14 sm:px-8">
+          {/* biome-ignore lint/correctness/useUniqueElementIds: stable #faq deep-link for presentation QR and in-page anchors */}
+          <section
+            id="faq"
+            className="border-t border-stone-200 px-6 py-14 sm:px-8"
+          >
             <div className="mx-auto max-w-3xl">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#B3282D]">
                 Pertanyaan umum
@@ -208,15 +257,12 @@ export default async function EduModulePage({
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                 FAQ
               </h2>
-              <div className="mt-8 space-y-8">
-                {mod.faqs.map((faq) => (
-                  <div key={faq.q}>
-                    <h3 className="text-lg font-semibold text-stone-900">
-                      {faq.q}
-                    </h3>
-                    <p className="mt-2 leading-relaxed text-stone-600">{faq.a}</p>
-                  </div>
-                ))}
+              <p className="mt-3 max-w-xl text-stone-600">
+                Satu kartu, satu pertanyaan. Ketuk untuk membuka jawaban, geser
+                untuk lanjut ke kartu berikutnya.
+              </p>
+              <div className="mt-8">
+                <FaqTarotDeck faqs={mod.faqs} mode="web" />
               </div>
             </div>
           </section>
@@ -224,7 +270,9 @@ export default async function EduModulePage({
           {/* Further reading */}
           <section className="border-t border-stone-200 px-6 py-14 sm:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-2xl font-bold tracking-tight">Bacaan lanjutan</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Bacaan lanjutan
+              </h2>
               <ul className="mt-6 space-y-3 text-sm">
                 {mod.sources.map((s) => (
                   <li key={s.url}>
@@ -240,7 +288,10 @@ export default async function EduModulePage({
                 ))}
                 <li className="text-stone-500">
                   Semua materi belajar:{" "}
-                  <Link href="/edu" className="underline transition-colors hover:text-stone-900">
+                  <Link
+                    href="/edu"
+                    className="underline transition-colors hover:text-stone-900"
+                  >
                     aitraining.id/edu
                   </Link>
                 </li>
