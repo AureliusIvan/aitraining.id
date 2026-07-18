@@ -274,8 +274,8 @@ function Block({
           scene={block.scene}
           alt={block.alt}
           caption={block.caption}
-          command={block.command}
-          output={block.output}
+          command={block.scene === "claude-skill" ? block.command : undefined}
+          output={block.scene === "claude-skill" ? block.output : undefined}
           mode={mode}
         />
       );

@@ -22,7 +22,22 @@ export type EduStep = { text: string; hint?: string };
 
 type BlockBase = { webOnly?: boolean };
 
-export type EduMotionScene = "claude-skill";
+export type EduMotionScene = "claude-skill" | "claude-skill-benefits";
+
+type EduMotionBlock = {
+  type: "motion";
+  alt: string;
+  caption: string;
+} & (
+  | {
+      scene: "claude-skill";
+      command: string;
+      output: string;
+    }
+  | {
+      scene: "claude-skill-benefits";
+    }
+);
 
 export type EduBlock = BlockBase &
   (
@@ -49,14 +64,7 @@ export type EduBlock = BlockBase &
         caption: string;
         describe: string;
       }
-    | {
-        type: "motion";
-        scene: EduMotionScene;
-        alt: string;
-        caption: string;
-        command: string;
-        output: string;
-      }
+    | EduMotionBlock
   );
 
 export type EduSlide = {
@@ -255,6 +263,13 @@ const claudeSkills: EduModule = {
       subtitle: "Tiga alasan yang langsung terasa saat pertama dipakai.",
       blocks: [
         {
+          type: "motion",
+          scene: "claude-skill-benefits",
+          alt: "Tiga adegan: /buat-laporan dijalankan sekali, tiga hasil mengikuti satu format, dan satu folder skill dibagikan ke tiga anggota tim.",
+          caption:
+            "Untuk /skill-mu tadi, pilih 1, 2, atau 3 dan catat. Satu orang dari tiap pilihan cerita. Kelas pilih contoh paling relevan.",
+        },
+        {
           type: "cards",
           items: [
             {
@@ -270,6 +285,7 @@ const claudeSkills: EduModule = {
               text: "Satu skill bisa dipakai seluruh tim. Cukup bagikan foldernya, semua orang punya jurus yang sama.",
             },
           ],
+          webOnly: true,
         },
       ],
     },

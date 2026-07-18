@@ -6,7 +6,7 @@ import styles from "./MotionBlock.module.css";
 import { SmartSvgCard } from "./SmartSvgCard";
 
 type Mode = "web" | "slide";
-type SceneVariant = "success" | "missing-data";
+type SceneVariant = "success" | "missing-data" | "random-format";
 
 // Official Claude Spark vector from Anthropic's press kit:
 // https://anthropic.com/press-kit
@@ -24,8 +24,8 @@ export function MotionBlock({
   scene: EduMotionScene;
   alt: string;
   caption: string;
-  command: string;
-  output: string;
+  command?: string;
+  output?: string;
   mode: Mode;
 }) {
   const frameRef = useRef<HTMLDivElement>(null);
@@ -69,6 +69,15 @@ export function MotionBlock({
     setRunId((value) => value + 1);
   };
 
+  const toggleRandomFormat = () => {
+    const nextVariant =
+      variant === "random-format" ? "success" : "random-format";
+    setVariant(nextVariant);
+    setPaused(false);
+    setStarted(true);
+    setRunId((value) => value + 1);
+  };
+
   return (
     <figure className="not-prose">
       <div
@@ -76,16 +85,34 @@ export function MotionBlock({
         className={`${styles.frame} ${mode === "slide" ? styles.slideFrame : ""}`}
       >
         <div className={styles.controls}>
-          <button
-            type="button"
-            onClick={toggleMissingData}
-            aria-pressed={variant === "missing-data"}
-            className={`${styles.control} ${styles.failureControl} ${
-              variant === "missing-data" ? styles.activeControl : ""
-            }`}
-          >
-            {variant === "missing-data" ? "Pakai Data lagi" : "Coba tanpa Data"}
-          </button>
+          {scene === "claude-skill" ? (
+            <button
+              type="button"
+              onClick={toggleMissingData}
+              aria-pressed={variant === "missing-data"}
+              className={`${styles.control} ${styles.failureControl} ${
+                variant === "missing-data" ? styles.activeControl : ""
+              }`}
+            >
+              {variant === "missing-data"
+                ? "Pakai Data lagi"
+                : "Coba tanpa Data"}
+            </button>
+          ) : null}
+          {scene === "claude-skill-benefits" ? (
+            <button
+              type="button"
+              onClick={toggleRandomFormat}
+              aria-pressed={variant === "random-format"}
+              className={`${styles.control} ${styles.failureControl} ${
+                variant === "random-format" ? styles.activeControl : ""
+              }`}
+            >
+              {variant === "random-format"
+                ? "Pakai satu format"
+                : "Acak format"}
+            </button>
+          ) : null}
           <button
             type="button"
             onClick={() => setPaused((value) => !value)}
@@ -106,7 +133,7 @@ export function MotionBlock({
           </button>
         </div>
 
-        {scene === "claude-skill" ? (
+        {scene === "claude-skill" && command && output ? (
           <ClaudeSkillScene
             key={runId}
             running={started}
@@ -119,10 +146,25 @@ export function MotionBlock({
             output={output}
           />
         ) : null}
+        {scene === "claude-skill-benefits" ? (
+          <ClaudeSkillBenefitsScene
+            key={runId}
+            running={started}
+            paused={paused}
+            randomFormat={variant === "random-format"}
+            titleId={titleId}
+            descId={descId}
+            alt={alt}
+          />
+        ) : null}
         <span className="sr-only" aria-live="polite">
-          {variant === "missing-data"
-            ? "Percobaan tanpa data menghasilkan status Data belum lengkap."
-            : `Skill menghasilkan ${output}.`}
+          {scene === "claude-skill-benefits"
+            ? variant === "random-format"
+              ? "Tiga hasil memakai format yang berbeda."
+              : "Tiga adegan menunjukkan satu perintah, satu format hasil, dan satu skill yang dibagikan ke tim."
+            : variant === "missing-data"
+              ? "Percobaan tanpa data menghasilkan status Data belum lengkap."
+              : `Skill menghasilkan ${output}.`}
         </span>
       </div>
       <figcaption
@@ -429,6 +471,188 @@ function ClaudeSkillScene({
           </>
         )}
       </SmartSvgCard>
+    </svg>
+  );
+}
+
+function ClaudeSkillBenefitsScene({
+  running,
+  paused,
+  randomFormat,
+  titleId,
+  descId,
+  alt,
+}: {
+  running: boolean;
+  paused: boolean;
+  randomFormat: boolean;
+  titleId: string;
+  descId: string;
+  alt: string;
+}) {
+  const outputRows = randomFormat
+    ? [
+        { x: 324, y: 74, width: 82, lineOne: 37, lineTwo: 23 },
+        { x: 292, y: 120, width: 130, lineOne: 66, lineTwo: 46 },
+        { x: 329, y: 166, width: 72, lineOne: 29, lineTwo: 18 },
+      ]
+    : [
+        { x: 313, y: 74, width: 104, lineOne: 49, lineTwo: 38 },
+        { x: 313, y: 120, width: 104, lineOne: 49, lineTwo: 38 },
+        { x: 313, y: 166, width: 104, lineOne: 49, lineTwo: 38 },
+      ];
+
+  return (
+    <svg
+      className={`${styles.art} ${styles.benefitsArt} ${
+        running ? styles.running : ""
+      } ${paused ? styles.paused : ""} ${
+        randomFormat ? styles.randomFormat : ""
+      }`}
+      viewBox="0 0 720 405"
+      role="img"
+      aria-labelledby={`${titleId} ${descId}`}
+    >
+      <title id={titleId}>
+        {randomFormat
+          ? "Tiga hasil dengan format acak"
+          : "Tiga adegan Claude Skills"}
+      </title>
+      <desc id={descId}>
+        {alt}
+        {randomFormat
+          ? " Mode Acak format menampilkan tiga kartu hasil dengan ukuran dan susunan yang berbeda."
+          : ""}
+      </desc>
+      <rect className={styles.backdrop} x="0" y="0" width="720" height="405" />
+
+      <g className={`${styles.benefitPanel} ${styles.benefitTime}`}>
+        <g className={styles.paperStack}>
+          <rect x="45" y="78" width="72" height="82" rx="10" />
+          <rect x="58" y="66" width="72" height="82" rx="10" />
+          <path d="M73 87h42M73 100h34M73 113h39" />
+        </g>
+        <g className={styles.clock}>
+          <circle cx="145" cy="124" r="42" />
+          <circle cx="145" cy="124" r="5" />
+          <path className={styles.clockHand} d="M145 124v-25M145 124l19 10" />
+        </g>
+        <SmartSvgCard
+          className={styles.benefitCommand}
+          centerX={120}
+          y={183}
+          height={39}
+          minWidth={164}
+          maxWidth={210}
+          paddingX={18}
+          rx={14}
+          rows={[
+            {
+              text: "/buat-laporan",
+              y: 209,
+              align: "center",
+            },
+          ]}
+        />
+        <SmartSvgCard
+          className={styles.benefitLabel}
+          centerX={120}
+          y={264}
+          height={48}
+          minWidth={174}
+          maxWidth={210}
+          paddingX={16}
+          rx={16}
+          rows={[
+            {
+              text: "1. Satu perintah",
+              y: 295,
+              align: "center",
+            },
+          ]}
+        />
+      </g>
+
+      <g className={`${styles.benefitArrow} ${styles.benefitArrowOne}`}>
+        <path pathLength="1" d="M220 201c23-12 40-12 62 0" />
+        <path d="m270 190 13 11-15 8" />
+      </g>
+
+      <g className={`${styles.benefitPanel} ${styles.benefitConsistent}`}>
+        <g className={styles.outputStack}>
+          {outputRows.map((row) => (
+            <g key={row.y}>
+              <rect x={row.x} y={row.y} width={row.width} height="38" rx="12" />
+              <circle cx={row.x + 21} cy={row.y + 19} r="10" />
+              <path d={`m${row.x + 16} ${row.y + 19} 3 3 6-7`} />
+              <path
+                className={styles.outputLine}
+                d={`M${row.x + 38} ${row.y + 14}h${row.lineOne}M${
+                  row.x + 38
+                } ${row.y + 24}h${row.lineTwo}`}
+              />
+            </g>
+          ))}
+        </g>
+        <SmartSvgCard
+          className={styles.benefitLabel}
+          centerX={365}
+          y={264}
+          height={48}
+          minWidth={174}
+          maxWidth={210}
+          paddingX={16}
+          rx={16}
+          rows={[
+            {
+              text: "2. Satu format",
+              y: 295,
+              align: "center",
+            },
+          ]}
+        />
+      </g>
+
+      <g className={`${styles.benefitArrow} ${styles.benefitArrowTwo}`}>
+        <path pathLength="1" d="M460 201c22-12 39-12 61 0" />
+        <path d="m509 190 13 11-15 8" />
+      </g>
+
+      <g className={`${styles.benefitPanel} ${styles.benefitShare}`}>
+        <g className={styles.shareFolder}>
+          <rect x="548" y="72" width="104" height="80" rx="17" />
+          <rect x="564" y="58" width="53" height="27" rx="9" />
+          <path d="M575 111h50M575 124h36" />
+        </g>
+        <g className={styles.shareLines}>
+          <path pathLength="1" d="M600 151v30M600 181l-48 26M600 181l48 26" />
+        </g>
+        <g className={styles.sharePeople}>
+          {[552, 600, 648].map((x) => (
+            <g key={x}>
+              <circle cx={x} cy="213" r="11" />
+              <path d={`M${x - 18} 246c3-14 9-22 18-22s15 8 18 22Z`} />
+            </g>
+          ))}
+        </g>
+        <SmartSvgCard
+          className={styles.benefitLabel}
+          centerX={600}
+          y={264}
+          height={48}
+          minWidth={184}
+          maxWidth={220}
+          paddingX={16}
+          rx={16}
+          rows={[
+            {
+              text: "3. Bagikan skill",
+              y: 295,
+              align: "center",
+            },
+          ]}
+        />
+      </g>
     </svg>
   );
 }

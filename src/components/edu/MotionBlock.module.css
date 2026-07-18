@@ -335,6 +335,176 @@
   font-size: 16px;
 }
 
+.benefitPanel {
+  opacity: 0;
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.paperStack rect,
+.outputStack rect,
+.shareFolder rect {
+  fill: #fff;
+  stroke: #202020;
+  stroke-width: 3;
+}
+
+.paperStack rect:first-child {
+  fill: #ffd9d5;
+}
+
+.paperStack path,
+.shareFolder path,
+.outputLine {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.clock circle:first-child {
+  fill: #ffbe18;
+  stroke: #202020;
+  stroke-width: 4;
+}
+
+.clock circle:nth-child(2) {
+  fill: #202020;
+}
+
+.clockHand {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transform-box: view-box;
+  transform-origin: 145px 124px;
+}
+
+.benefitCommand rect {
+  fill: #2f80ed;
+  stroke: #202020;
+  stroke-width: 3;
+}
+
+.benefitCommand text {
+  fill: #fff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.benefitLabel rect {
+  fill: #fff;
+  stroke: #202020;
+  stroke-width: 3;
+}
+
+.benefitLabel text {
+  fill: #202020;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.benefitArrow {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  stroke-dashoffset: 1;
+}
+
+.benefitArrow > path:first-child {
+  stroke-dasharray: 1;
+}
+
+.outputStack circle {
+  fill: #dcfce7;
+  stroke: #202020;
+  stroke-width: 2;
+}
+
+.outputStack > g:nth-child(2) rect {
+  fill: #eef5ff;
+}
+
+.outputStack > g:nth-child(3) rect {
+  fill: #fff3f1;
+}
+
+.outputStack > g > path:not(.outputLine) {
+  fill: none;
+  stroke: #15803d;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.randomFormat .outputStack > g:first-child {
+  transform: rotate(-4deg);
+  transform-origin: 365px 93px;
+}
+
+.randomFormat .outputStack > g:nth-child(3) {
+  transform: rotate(4deg);
+  transform-origin: 365px 185px;
+}
+
+.randomFormat .outputStack > g:nth-child(2) circle {
+  fill: #fef3c7;
+}
+
+.randomFormat .outputStack > g:nth-child(2) > path:not(.outputLine) {
+  stroke: #b45309;
+}
+
+.randomFormat .outputStack > g:nth-child(3) circle {
+  fill: #ffe4e6;
+}
+
+.randomFormat .outputStack > g:nth-child(3) > path:not(.outputLine) {
+  stroke: #be123c;
+}
+
+.shareFolder rect:first-child {
+  fill: #eef5ff;
+}
+
+.shareFolder rect:nth-child(2) {
+  fill: #ff4b3e;
+}
+
+.shareLines {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.sharePeople circle {
+  fill: #ffd7b8;
+  stroke: #202020;
+  stroke-width: 2.5;
+}
+
+.sharePeople path {
+  fill: #2f80ed;
+  stroke: #202020;
+  stroke-width: 2.5;
+}
+
+.sharePeople > g:nth-child(2) path {
+  fill: #ff4b3e;
+}
+
+.sharePeople > g:nth-child(3) path {
+  fill: #d97757;
+}
+
 .controls {
   position: absolute;
   top: 0.75rem;
@@ -401,6 +571,34 @@
   outline-offset: 3px;
 }
 
+.running .benefitTime {
+  animation: benefit-one 10s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.running .benefitArrowOne {
+  animation: benefit-arrow-one 10s ease both;
+}
+
+.running .benefitConsistent {
+  animation: benefit-two 10s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.running .benefitArrowTwo {
+  animation: benefit-arrow-two 10s ease both;
+}
+
+.running .benefitShare {
+  animation: benefit-three 10s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.running .clockHand {
+  animation: benefit-clock 10s ease-in-out both;
+}
+
+.running .shareLines {
+  animation: benefit-share-lines 10s ease both;
+}
+
 .running .userPhoneArm {
   animation: user-gesture 10s ease-in-out both;
 }
@@ -458,6 +656,13 @@
   animation: failure-arrive 10s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.running .benefitTime,
+.running .benefitArrowOne,
+.running .benefitConsistent,
+.running .benefitArrowTwo,
+.running .benefitShare,
+.running .clockHand,
+.running .shareLines,
 .running .userPhoneArm,
 .running .chipOne,
 .running .chipTwo,
@@ -476,6 +681,98 @@
 
 .running.paused * {
   animation-play-state: paused;
+}
+
+@keyframes benefit-one {
+  0%,
+  3% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  9%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes benefit-arrow-one {
+  0%,
+  16% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  23%,
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes benefit-two {
+  0%,
+  22% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  30%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes benefit-arrow-two {
+  0%,
+  35% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  42%,
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes benefit-three {
+  0%,
+  42% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  50%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes benefit-clock {
+  0%,
+  5% {
+    transform: rotate(-70deg);
+  }
+  18% {
+    transform: rotate(20deg);
+  }
+  30%,
+  100% {
+    transform: rotate(95deg);
+  }
+}
+
+@keyframes benefit-share-lines {
+  0%,
+  45% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  52%,
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes user-gesture {
@@ -704,6 +1001,10 @@
     display: none;
   }
 
+  .running .benefitPanel,
+  .running .benefitArrow,
+  .running .clockHand,
+  .running .shareLines,
   .running .userPhoneArm,
   .running .chip,
   .running .skill,
@@ -720,6 +1021,20 @@
 
   .chip {
     display: none;
+  }
+
+  .benefitPanel,
+  .benefitArrow,
+  .shareLines {
+    opacity: 1;
+    transform: none;
+    stroke-dashoffset: 0;
+  }
+
+  .benefitArrow > path:first-child,
+  .clockHand {
+    transform: none;
+    stroke-dashoffset: 0;
   }
 
   .skill,
