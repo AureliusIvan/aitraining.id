@@ -1075,3 +1075,182 @@
     opacity: 1;
   }
 }
+
+/* --- edu-storyboard --- */
+
+.storyArt {
+  background: #fafaf9;
+}
+
+.storyGrid {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.12;
+}
+
+.storyStep {
+  opacity: 0;
+  transform: translateY(14px);
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.storyPanel {
+  fill: #fff;
+  stroke: #202020;
+  stroke-width: 3.5;
+}
+
+.storyIcon rect,
+.storyIcon circle,
+.storySolid {
+  fill: #fff;
+  stroke: #202020;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+
+.storyIcon path,
+.storyStroke {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.storyIconFill path {
+  fill: currentColor;
+  stroke: #202020;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+
+.storyGlyph {
+  fill: #202020;
+  font-size: 28px;
+  font-weight: 800;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.storyArrow {
+  fill: none;
+  stroke: #202020;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+}
+
+.storyArrowHead {
+  fill: #202020;
+}
+
+.storyLabel rect {
+  fill: #fff;
+  stroke: #202020;
+  stroke-width: 3;
+}
+
+.storyLabel text {
+  fill: #202020;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.toneInk {
+  color: #202020;
+}
+
+.toneRed .storyPanel {
+  fill: #ffe8e6;
+}
+
+.toneRed {
+  color: #ff4b3e;
+}
+
+.toneBlue .storyPanel {
+  fill: #e8f1fc;
+}
+
+.toneBlue {
+  color: #2f80ed;
+}
+
+.toneYellow .storyPanel {
+  fill: #fff4d6;
+}
+
+.toneYellow {
+  color: #e6a700;
+}
+
+.toneClay .storyPanel {
+  fill: #f7ebe4;
+}
+
+.toneClay {
+  color: #d97757;
+}
+
+.toneGreen .storyPanel {
+  fill: #e6f6ea;
+}
+
+.toneGreen {
+  color: #2f9e64;
+}
+
+.running .storyStep {
+  animation: story-step 10s ease both;
+  animation-delay: calc(var(--story-index, 0) * 1.1s);
+}
+
+.running .storyStep .storyArrow {
+  animation: story-arrow 10s ease both;
+  animation-delay: calc(var(--story-index, 0) * 1.1s - 0.35s);
+}
+
+@keyframes story-step {
+  0%,
+  4% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  12%,
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes story-arrow {
+  0%,
+  8% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  18%,
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .running .storyStep,
+  .running .storyStep .storyArrow {
+    animation: none;
+  }
+
+  .storyStep,
+  .storyArrow {
+    opacity: 1;
+    transform: none;
+    stroke-dashoffset: 0;
+  }
+}

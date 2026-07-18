@@ -276,6 +276,7 @@ function Block({
           caption={block.caption}
           command={block.scene === "claude-skill" ? block.command : undefined}
           output={block.scene === "claude-skill" ? block.output : undefined}
+          items={block.scene === "edu-storyboard" ? block.items : undefined}
           mode={mode}
         />
       );

@@ -22,7 +22,36 @@ export type EduStep = { text: string; hint?: string };
 
 type BlockBase = { webOnly?: boolean };
 
-export type EduMotionScene = "claude-skill" | "claude-skill-benefits";
+export type EduMotionScene =
+  | "claude-skill"
+  | "claude-skill-benefits"
+  | "edu-storyboard";
+
+export type EduStoryboardIcon =
+  | "folder"
+  | "file"
+  | "slash"
+  | "select"
+  | "enter"
+  | "spark"
+  | "notes"
+  | "list"
+  | "plus"
+  | "search"
+  | "trigger"
+  | "message"
+  | "sheet"
+  | "node"
+  | "tag"
+  | "test"
+  | "lock"
+  | "settings";
+
+export type EduStoryboardItem = {
+  label: string;
+  icon: EduStoryboardIcon;
+  tone?: "red" | "blue" | "yellow" | "clay" | "green";
+};
 
 type EduMotionBlock = {
   type: "motion";
@@ -36,6 +65,10 @@ type EduMotionBlock = {
     }
   | {
       scene: "claude-skill-benefits";
+    }
+  | {
+      scene: "edu-storyboard";
+      items: EduStoryboardItem[];
     }
 );
 
@@ -218,9 +251,9 @@ const claudeSkills: EduModule = {
     "belajar claude bahasa indonesia",
     "tutorial claude skills",
   ],
-  updated: "17 Juli 2026",
+  updated: "18 Juli 2026",
   datePublished: "2026-07-17",
-  dateModified: "2026-07-17",
+  dateModified: "2026-07-18",
   slides: [
     {
       id: "apa-itu",
@@ -296,8 +329,21 @@ const claudeSkills: EduModule = {
       subtitle: "Sebuah skill adalah satu folder berisi satu file.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Folder skills berisi folder ringkas-rapat, lalu file SKILL.md di dalamnya.",
+          caption:
+            "Ivan keliling 60 detik. Tunjuk di laptopmu: mana skill proyek, mana skill pribadi?",
+          items: [
+            { label: ".claude/skills", icon: "folder", tone: "blue" },
+            { label: "ringkas-rapat", icon: "folder", tone: "red" },
+            { label: "SKILL.md", icon: "file", tone: "clay" },
+          ],
+        },
+        {
           type: "paragraph",
           text: "Setiap skill tinggal di dalam folder bernama sesuai skill itu, dan di dalamnya ada satu file utama bernama [[SKILL.md]]. Struktur foldernya seperti ini:",
+          webOnly: true,
         },
         {
           type: "code",
@@ -308,6 +354,7 @@ const claudeSkills: EduModule = {
             "    └── ringkas-rapat/",
             "        └── SKILL.md",
           ],
+          webOnly: true,
         },
         {
           type: "cards",
@@ -321,6 +368,7 @@ const claudeSkills: EduModule = {
               text: "Diletakkan di [[~/.claude/skills/]] di komputermu. Aktif di semua proyek yang kamu buka.",
             },
           ],
+          webOnly: true,
         },
       ],
     },
@@ -331,8 +379,21 @@ const claudeSkills: EduModule = {
       subtitle: "Dua bagian saja: identitas dan instruksi.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Blok name, description, lalu langkah instruksi di dalam SKILL.md.",
+          caption:
+            "30 detik: tulis name skill yang mau kamu buat. Angkat tangan, lalu kita panggil satu skill demo bareng.",
+          items: [
+            { label: "name", icon: "tag", tone: "blue" },
+            { label: "description", icon: "notes", tone: "yellow" },
+            { label: "langkah", icon: "list", tone: "green" },
+          ],
+        },
+        {
           type: "paragraph",
           text: "File [[SKILL.md]] dibuka dengan blok identitas di antara dua garis tiga strip, lalu diikuti instruksinya dalam bahasa biasa. Contoh sederhana:",
+          webOnly: true,
         },
         {
           type: "code",
@@ -348,6 +409,7 @@ const claudeSkills: EduModule = {
             "2. Daftar tugas beserta penanggung jawabnya.",
             "3. Keputusan yang sudah disepakati.",
           ],
+          webOnly: true,
         },
         {
           type: "cards",
@@ -361,6 +423,7 @@ const claudeSkills: EduModule = {
               text: "Penjelasan singkat tentang kapan skill ini dipakai, supaya mudah dikenali di daftar.",
             },
           ],
+          webOnly: true,
         },
       ],
     },
@@ -370,6 +433,19 @@ const claudeSkills: EduModule = {
       title: "Menjalankannya: ketik garis miring",
       subtitle: "Semua skill dipanggil dengan cara yang sama.",
       blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Ketik garis miring, pilih skill, tekan Enter, lalu Claude menjalankan skill.",
+          caption:
+            "Ikuti empat ketukan: / → pilih → Enter → hasil. Volunter pertama: kelas tepuk untuk hasil paling rapi.",
+          items: [
+            { label: "Ketik /", icon: "slash", tone: "blue" },
+            { label: "Pilih skill", icon: "select", tone: "yellow" },
+            { label: "Enter", icon: "enter", tone: "green" },
+            { label: "Claude jalan", icon: "spark", tone: "clay" },
+          ],
+        },
         {
           type: "steps",
           items: [
@@ -383,6 +459,7 @@ const claudeSkills: EduModule = {
               text: "Claude langsung menjalankan langkah-langkah di dalam skill itu.",
             },
           ],
+          webOnly: true,
         },
         {
           type: "gif",
@@ -391,6 +468,7 @@ const claudeSkills: EduModule = {
           caption: "Ketik / lalu daftar skill muncul.",
           describe:
             "GIF: kursor mengetik tanda / di kolom obrolan, daftar skill muncul, lalu satu skill dipilih.",
+          webOnly: true,
         },
       ],
     },
@@ -401,13 +479,28 @@ const claudeSkills: EduModule = {
       subtitle: "Misalnya kamu punya skill bernama ringkas-rapat.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Catatan rapat dipanggil lewat /ringkas-rapat lalu keluar poin dan daftar tugas.",
+          caption:
+            "Pakai catatan rapatmu. Setelah /ringkas-rapat, tulis 1 baris di chat: format hasil yang kamu butuh besok pagi.",
+          items: [
+            { label: "Catatan panjang", icon: "notes", tone: "yellow" },
+            { label: "/ringkas-rapat", icon: "slash", tone: "blue" },
+            { label: "Claude", icon: "spark", tone: "clay" },
+            { label: "Poin + tugas", icon: "list", tone: "green" },
+          ],
+        },
+        {
           type: "paragraph",
           text: "Kamu tempel catatan rapat yang panjang, lalu panggil skill dengan mengetik namanya. Claude mengikuti langkah yang sudah kamu simpan tadi dan mengembalikan rangkuman yang rapi.",
+          webOnly: true,
         },
         {
           type: "code",
           caption: "Yang kamu ketik",
           lines: ["/ringkas-rapat"],
+          webOnly: true,
         },
         {
           type: "gif",
@@ -416,6 +509,7 @@ const claudeSkills: EduModule = {
           caption: "Satu perintah, hasil langsung keluar.",
           describe:
             "GIF: skill /ringkas-rapat dijalankan atas sebuah catatan rapat, lalu hasil rangkuman berupa poin dan daftar tugas muncul.",
+          webOnly: true,
         },
       ],
     },
@@ -425,6 +519,19 @@ const claudeSkills: EduModule = {
       title: "Membuat skill pertamamu",
       subtitle: "Empat langkah, tanpa perlu bisa coding.",
       blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Buat folder, buat SKILL.md, isi instruksi, lalu panggil skill baru.",
+          caption:
+            "Langkah 1–3 di laptop sekarang. Di langkah 4: panggil / dengan 1 langkah sengaja salah, baca error bareng, lalu betulkan.",
+          items: [
+            { label: "Buat folder", icon: "folder", tone: "blue" },
+            { label: "SKILL.md", icon: "file", tone: "yellow" },
+            { label: "Isi langkah", icon: "notes", tone: "green" },
+            { label: "Panggil /", icon: "slash", tone: "clay" },
+          ],
+        },
         {
           type: "steps",
           items: [
@@ -440,6 +547,7 @@ const claudeSkills: EduModule = {
               text: "Buka Claude, ketik garis miring, dan panggil skill barumu.",
             },
           ],
+          webOnly: true,
         },
         {
           type: "gif",
@@ -448,6 +556,7 @@ const claudeSkills: EduModule = {
           caption: "Dari folder kosong sampai skill yang bisa dipanggil.",
           describe:
             "GIF: membuat folder skill, membuat file SKILL.md, mengisinya, lalu memanggil skill lewat garis miring.",
+          webOnly: true,
         },
       ],
     },
@@ -458,22 +567,37 @@ const claudeSkills: EduModule = {
       subtitle: "Tiga hal kecil yang membuat skillmu jauh lebih andal.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Tiga tip: deskripsi jelas, satu tugas per skill, pasang dari sumber terpercaya.",
+          caption:
+            "Berdiri. Pilih tip yang paling sering kamu langgar. 45 detik cerita ke sebelahmu. Duduk, panggil /skill-mu sekali lagi, screenshot hasilnya.",
+          items: [
+            { label: "Description jelas", icon: "notes", tone: "blue" },
+            { label: "Satu tugas", icon: "tag", tone: "green" },
+            { label: "Sumber aman", icon: "lock", tone: "red" },
+          ],
+        },
+        {
           type: "callout",
           tone: "tip",
           title: "Tulis description yang jelas",
           text: "Deskripsi yang jelas membuat skill mudah dikenali saat kamu mencarinya di daftar.",
+          webOnly: true,
         },
         {
           type: "callout",
           tone: "info",
           title: "Satu skill untuk satu tugas",
           text: "Skill yang fokus lebih mudah dipanggil dan dirawat. Sebaiknya satu skill menangani satu tugas.",
+          webOnly: true,
         },
         {
           type: "callout",
           tone: "warn",
           title: "Pasang hanya dari sumber terpercaya",
           text: "Skill berisi instruksi yang akan dijalankan Claude. Pastikan kamu memahami isinya sebelum memasang skill buatan orang lain.",
+          webOnly: true,
         },
       ],
     },
@@ -575,9 +699,9 @@ const n8nNode: EduModule = {
     "n8n untuk pemula",
     "otomatisasi n8n",
   ],
-  updated: "17 Juli 2026",
+  updated: "18 Juli 2026",
   datePublished: "2026-07-17",
-  dateModified: "2026-07-17",
+  dateModified: "2026-07-18",
   slides: [
     {
       id: "apa-itu",
@@ -586,14 +710,28 @@ const n8nNode: EduModule = {
       subtitle: "Mulai dari satu kotak.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Satu node menerima data, mengerjakan tugas, lalu mengirim hasil ke node berikutnya.",
+          caption:
+            "Bayangkan satu kotak di meja kerjamu. 20 detik: tulis tugas nyata yang mau masuk ke kotak itu.",
+          items: [
+            { label: "Data masuk", icon: "message", tone: "yellow" },
+            { label: "Satu node", icon: "node", tone: "blue" },
+            { label: "Hasil keluar", icon: "sheet", tone: "green" },
+          ],
+        },
+        {
           type: "lead",
           text: "Di [[n8n]], sebuah pekerjaan otomatis dibangun dari kotak-kotak yang disambung. Satu kotak itu namanya [[node]]. Setiap node mengerjakan satu tugas, lalu memberikan hasilnya ke node berikutnya.",
+          webOnly: true,
         },
         {
           type: "callout",
           tone: "tip",
           title: "Analogi singkat",
           text: "Node itu seperti satu langkah di resep masakan. Satu langkah melakukan satu hal, dan langkah-langkah itu berjalan berurutan sampai masakannya jadi.",
+          webOnly: true,
         },
         {
           type: "paragraph",
@@ -608,6 +746,18 @@ const n8nNode: EduModule = {
       title: "Kenapa node berguna?",
       subtitle: "Tiga hal yang bikin otomatisasi jadi gampang.",
       blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Tiga manfaat node: alur kelihatan, sedikit kode, dan bisa dipakai ulang.",
+          caption:
+            "Pilih satu manfaat yang paling kamu butuhkan di kerjaanmu. Angkat tangan, bilang kenapa dalam satu kalimat.",
+          items: [
+            { label: "Kelihatan", icon: "list", tone: "blue" },
+            { label: "Sedikit kode", icon: "settings", tone: "yellow" },
+            { label: "Pakai ulang", icon: "plus", tone: "green" },
+          ],
+        },
         {
           type: "cards",
           items: [
@@ -624,6 +774,7 @@ const n8nNode: EduModule = {
               text: "Node yang sama bisa dipakai di banyak workflow, tinggal atur ulang isinya.",
             },
           ],
+          webOnly: true,
         },
       ],
     },
@@ -633,6 +784,18 @@ const n8nNode: EduModule = {
       title: "Node pemicu dan node aksi",
       subtitle: "Hampir semua workflow dibangun dari dua jenis ini.",
       blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Node trigger memulai workflow, lalu node aksi mengerjakan tugas berikutnya.",
+          caption:
+            "30 detik: tulis trigger dari kerjaanmu di chat. Dua orang dibacakan; kelas pilih yang paling sering muncul.",
+          items: [
+            { label: "Trigger", icon: "trigger", tone: "yellow" },
+            { label: "Aksi 1", icon: "message", tone: "blue" },
+            { label: "Aksi 2", icon: "sheet", tone: "green" },
+          ],
+        },
         {
           type: "cards",
           items: [
@@ -645,12 +808,14 @@ const n8nNode: EduModule = {
               text: "Node yang melakukan sesuatu setelah dipicu, misalnya kirim WhatsApp, simpan ke spreadsheet, atau ambil data.",
             },
           ],
+          webOnly: true,
         },
         {
           type: "callout",
           tone: "info",
           title: "Satu trigger untuk memulai",
           text: "Sebuah workflow biasanya diawali satu node trigger, lalu disusul beberapa node aksi.",
+          webOnly: true,
         },
       ],
     },
@@ -661,14 +826,29 @@ const n8nNode: EduModule = {
       subtitle: "Searah, mengikuti garis sambungan.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Data mengalir searah dari trigger ke proses lalu ke hasil akhir.",
+          caption:
+            "Kalau node tengah berhenti, node berikutnya menunggu. Tunjuk bottleneck-mu, lalu ceritakan error terakhir yang pernah kamu lihat.",
+          items: [
+            { label: "Mulai", icon: "trigger", tone: "yellow" },
+            { label: "Proses", icon: "node", tone: "blue" },
+            { label: "Lanjut", icon: "node", tone: "clay" },
+            { label: "Selesai", icon: "sheet", tone: "green" },
+          ],
+        },
+        {
           type: "paragraph",
           text: "Node disambung pakai garis. Data mengalir searah: keluaran satu node jadi masukan untuk node sesudahnya. Kalau satu node berhenti, node sesudahnya ikut menunggu.",
+          webOnly: true,
         },
         {
           type: "callout",
           tone: "info",
           title: "Urutan itu penting",
           text: "n8n menjalankan node satu per satu mengikuti garis sambungannya, dari trigger sampai node terakhir.",
+          webOnly: true,
         },
       ],
     },
@@ -679,8 +859,21 @@ const n8nNode: EduModule = {
       subtitle: "Setiap ada form masuk, kirim WhatsApp lalu catat.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Form baru memicu kirim WhatsApp lalu menyimpan data ke spreadsheet.",
+          caption:
+            "Ganti contoh ini dengan alurmu: trigger apa, aksi terakhir apa. Ivan gambar satu alur anonim dari ruangan ke kanvas.",
+          items: [
+            { label: "Form baru", icon: "trigger", tone: "yellow" },
+            { label: "WhatsApp", icon: "message", tone: "blue" },
+            { label: "Sheet", icon: "sheet", tone: "green" },
+          ],
+        },
+        {
           type: "paragraph",
           text: "Misalnya kamu mau: setiap ada pengisian form, kirim WhatsApp lalu catat ke spreadsheet. Workflow-nya jadi tiga node yang tersambung berurutan.",
+          webOnly: true,
         },
         {
           type: "code",
@@ -694,6 +887,7 @@ const n8nNode: EduModule = {
             "      v",
             "[ Simpan ke Sheet ]  (aksi)",
           ],
+          webOnly: true,
         },
       ],
     },
@@ -703,6 +897,19 @@ const n8nNode: EduModule = {
       title: "Cara menambah node",
       subtitle: "Empat langkah di dalam editor n8n.",
       blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Tombol plus, cari node, pilih, lalu atur isian dan sambungkan.",
+          caption:
+            "Sekarang: klik +, cari satu node, drop ke kanvas. Jangan connect dulu. Kalau error merah muncul, angkat tangan: itu bahan kelas.",
+          items: [
+            { label: "Tombol +", icon: "plus", tone: "blue" },
+            { label: "Cari", icon: "search", tone: "yellow" },
+            { label: "Pilih", icon: "select", tone: "clay" },
+            { label: "Atur", icon: "settings", tone: "green" },
+          ],
+        },
         {
           type: "steps",
           items: [
@@ -716,6 +923,7 @@ const n8nNode: EduModule = {
             { text: "Pilih node yang cocok dari daftar hasil pencarian." },
             { text: "Atur isian node, lalu sambungkan garisnya ke node lain." },
           ],
+          webOnly: true,
         },
         {
           type: "gif",
@@ -724,6 +932,7 @@ const n8nNode: EduModule = {
           caption: "Dari tombol + sampai node tersambung.",
           describe:
             "GIF: menekan tombol +, mencari node, memilihnya, lalu menyambungkan garisnya ke node lain.",
+          webOnly: true,
         },
       ],
     },
@@ -734,22 +943,37 @@ const n8nNode: EduModule = {
       subtitle: "Tiga kebiasaan kecil yang bikin workflow lebih andal.",
       blocks: [
         {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Tiga tip: beri nama node, uji satu per satu, simpan rahasia di credential.",
+          caption:
+            "Uji satu node tanpa credential dulu. Error merah = bahan kelas. Lalu beri nama node-mu dan simpan workflow dengan namamu.",
+          items: [
+            { label: "Beri nama", icon: "tag", tone: "blue" },
+            { label: "Uji satu-satu", icon: "test", tone: "yellow" },
+            { label: "Credential", icon: "lock", tone: "red" },
+          ],
+        },
+        {
           type: "callout",
           tone: "tip",
           title: "Beri nama tiap node",
           text: "Ganti nama node sesuai tugasnya, biar workflow gampang dibaca lagi nanti.",
+          webOnly: true,
         },
         {
           type: "callout",
           tone: "info",
           title: "Uji satu per satu",
           text: "Jalankan node satu per satu waktu membangun, jadi kamu tahu di node mana yang bermasalah.",
+          webOnly: true,
         },
         {
           type: "callout",
           tone: "warn",
           title: "Simpan rahasia di credential",
           text: "Jangan tempel token atau password langsung di isian node. Pakai fitur credential n8n.",
+          webOnly: true,
         },
       ],
     },

@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import type { EduMotionScene } from "@/lib/edu";
+import type {
+  EduMotionScene,
+  EduStoryboardIcon,
+  EduStoryboardItem,
+} from "@/lib/edu";
 import styles from "./MotionBlock.module.css";
 import { SmartSvgCard } from "./SmartSvgCard";
 
@@ -19,6 +23,7 @@ export function MotionBlock({
   caption,
   command,
   output,
+  items,
   mode,
 }: {
   scene: EduMotionScene;
@@ -26,6 +31,7 @@ export function MotionBlock({
   caption: string;
   command?: string;
   output?: string;
+  items?: EduStoryboardItem[];
   mode: Mode;
 }) {
   const frameRef = useRef<HTMLDivElement>(null);
@@ -157,14 +163,27 @@ export function MotionBlock({
             alt={alt}
           />
         ) : null}
+        {scene === "edu-storyboard" ? (
+          <EduStoryboardScene
+            key={runId}
+            running={started}
+            paused={paused}
+            titleId={titleId}
+            descId={descId}
+            alt={alt}
+            items={items ?? []}
+          />
+        ) : null}
         <span className="sr-only" aria-live="polite">
-          {scene === "claude-skill-benefits"
-            ? variant === "random-format"
-              ? "Tiga hasil memakai format yang berbeda."
-              : "Tiga adegan menunjukkan satu perintah, satu format hasil, dan satu skill yang dibagikan ke tim."
-            : variant === "missing-data"
-              ? "Percobaan tanpa data menghasilkan status Data belum lengkap."
-              : `Skill menghasilkan ${output}.`}
+          {scene === "edu-storyboard"
+            ? alt
+            : scene === "claude-skill-benefits"
+              ? variant === "random-format"
+                ? "Tiga hasil memakai format yang berbeda."
+                : "Tiga adegan menunjukkan satu perintah, satu format hasil, dan satu skill yang dibagikan ke tim."
+              : variant === "missing-data"
+                ? "Percobaan tanpa data menghasilkan status Data belum lengkap."
+                : `Skill menghasilkan ${output}.`}
         </span>
       </div>
       <figcaption
@@ -653,6 +672,264 @@ function ClaudeSkillBenefitsScene({
           ]}
         />
       </g>
+    </svg>
+  );
+}
+
+const TONE_CLASS: Record<NonNullable<EduStoryboardItem["tone"]>, string> = {
+  red: styles.toneRed,
+  blue: styles.toneBlue,
+  yellow: styles.toneYellow,
+  clay: styles.toneClay,
+  green: styles.toneGreen,
+};
+
+function StoryboardIcon({
+  icon,
+  x,
+  y,
+}: {
+  icon: EduStoryboardIcon;
+  x: number;
+  y: number;
+}) {
+  switch (icon) {
+    case "folder":
+      return (
+        <g transform={`translate(${x} ${y})`}>
+          <path className={styles.storySolid} d="M-30-10h20l8 8h32v30H-30Z" />
+          <rect
+            className={styles.storySolid}
+            x="-30"
+            y="-2"
+            width="60"
+            height="30"
+            rx="5"
+          />
+        </g>
+      );
+    case "file":
+      return (
+        <g transform={`translate(${x} ${y})`}>
+          <path className={styles.storySolid} d="M-18-26h24l14 14v38H-18Z" />
+          <path className={styles.storyStroke} d="M6-26v14h14" />
+          <path className={styles.storyStroke} d="M-8-4h20M-8 8h16" />
+        </g>
+      );
+    case "slash":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-36" y="-20" width="72" height="40" rx="12" />
+          <text x="0" y="8" textAnchor="middle" className={styles.storyGlyph}>
+            /
+          </text>
+        </g>
+      );
+    case "select":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-38" y="-24" width="76" height="48" rx="12" />
+          <rect x="-28" y="-10" width="56" height="20" rx="6" />
+          <path d="M18-2l6 6 6-6" />
+        </g>
+      );
+    case "enter":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-36" y="-20" width="72" height="40" rx="12" />
+          <path d="M-8-8h18v18H0" />
+          <path d="M0 10l-8-6 8-6" />
+        </g>
+      );
+    case "spark":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIconFill}>
+          <path d="M0-28 9-9 28 0 9 9 0 28-9 9-28 0-9-9Z" />
+        </g>
+      );
+    case "notes":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-28" y="-26" width="56" height="52" rx="8" />
+          <path d="M-14-10h28M-14 2h22M-14 14h18" />
+        </g>
+      );
+    case "list":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <circle cx="-18" cy="-14" r="5" />
+          <circle cx="-18" cy="0" r="5" />
+          <circle cx="-18" cy="14" r="5" />
+          <path d="M-8-14h32M-8 0h28M-8 14h24" />
+        </g>
+      );
+    case "plus":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <circle cx="0" cy="0" r="26" />
+          <path d="M0-14v28M-14 0h28" />
+        </g>
+      );
+    case "search":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <circle cx="-4" cy="-4" r="18" />
+          <path d="M10 10 24 24" />
+        </g>
+      );
+    case "trigger":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIconFill}>
+          <path d="M-6-28 16-2H4l10 32-24-24h14Z" />
+        </g>
+      );
+    case "message":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-32" y="-22" width="64" height="40" rx="12" />
+          <path d="M-10 18 0 30 10 18" />
+        </g>
+      );
+    case "sheet":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-30" y="-26" width="60" height="52" rx="6" />
+          <path d="M-30-8h60M-30 8h60M-10-26v52M10-26v52" />
+        </g>
+      );
+    case "node":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-34" y="-24" width="68" height="48" rx="14" />
+          <circle cx="-14" cy="0" r="7" />
+          <path d="M-2 0h24" />
+        </g>
+      );
+    case "tag":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <path d="M-6-24h28l20 24-20 24H-6L-26 0Z" />
+          <circle cx="14" cy="0" r="5" />
+        </g>
+      );
+    case "test":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <path d="M-18-26h36l-10 30h-16Z" />
+          <path d="M-8 4h16v22H-8Z" />
+          <path d="M-4 14h8" />
+        </g>
+      );
+    case "lock":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <rect x="-20" y="-2" width="40" height="30" rx="6" />
+          <path d="M-12-2v-12a12 12 0 0 1 24 0v12" />
+        </g>
+      );
+    case "settings":
+      return (
+        <g transform={`translate(${x} ${y})`} className={styles.storyIcon}>
+          <circle cx="0" cy="0" r="11" />
+          <path d="M0-26v8M0 18v8M-26 0h8M18 0h8M-18-18-12-12M12 12l6 6M18-18 12-12M-12 12l-6 6" />
+        </g>
+      );
+    default:
+      return null;
+  }
+}
+
+function EduStoryboardScene({
+  running,
+  paused,
+  titleId,
+  descId,
+  alt,
+  items,
+}: {
+  running: boolean;
+  paused: boolean;
+  titleId: string;
+  descId: string;
+  alt: string;
+  items: EduStoryboardItem[];
+}) {
+  const markerId = useId().replace(/:/g, "");
+  const safeItems = items.slice(0, 5);
+  const count = Math.max(safeItems.length, 1);
+  const gap = 720 / (count + 1);
+
+  return (
+    <svg
+      className={`${styles.art} ${styles.storyArt} ${
+        running ? styles.running : ""
+      } ${paused ? styles.paused : ""}`}
+      viewBox="0 0 720 405"
+      role="img"
+      aria-labelledby={`${titleId} ${descId}`}
+    >
+      <title id={titleId}>Alur langkah edukasi</title>
+      <desc id={descId}>{alt}</desc>
+      <rect className={styles.backdrop} x="0" y="0" width="720" height="405" />
+      <g className={styles.storyGrid}>
+        <path d="M48 72H672M48 333H672" />
+        <path d="M96 48V357M624 48V357" />
+      </g>
+
+      <defs>
+        <marker
+          id={markerId}
+          markerWidth="8"
+          markerHeight="8"
+          refX="6"
+          refY="3"
+          orient="auto"
+        >
+          <path d="M0 0 6 3 0 6Z" className={styles.storyArrowHead} />
+        </marker>
+      </defs>
+
+      {safeItems.map((item, index) => {
+        const x = gap * (index + 1);
+        const toneClass = item.tone ? TONE_CLASS[item.tone] : styles.toneInk;
+
+        return (
+          <g
+            key={`${item.label}-${index}`}
+            className={`${styles.storyStep} ${toneClass}`}
+            style={{ ["--story-index" as string]: String(index) }}
+          >
+            {index > 0 ? (
+              <path
+                className={styles.storyArrow}
+                pathLength="1"
+                d={`M${gap * index + 48} 168H${x - 64}`}
+                markerEnd={`url(#${markerId})`}
+              />
+            ) : null}
+            <rect
+              className={styles.storyPanel}
+              x={x - 78}
+              y="104"
+              width="156"
+              height="148"
+              rx="24"
+            />
+            <StoryboardIcon icon={item.icon} x={x} y={164} />
+            <SmartSvgCard
+              className={styles.storyLabel}
+              centerX={x}
+              y={278}
+              height={44}
+              minWidth={118}
+              maxWidth={156}
+              paddingX={12}
+              rx={14}
+              rows={[{ text: item.label, y: 306, align: "center" }]}
+            />
+          </g>
+        );
+      })}
     </svg>
   );
 }
