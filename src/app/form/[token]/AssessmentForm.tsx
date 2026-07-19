@@ -8,9 +8,26 @@ import {
   useRef,
   useState,
 } from "react";
-import type { Question } from "@/lib/assessment-sheets";
+import {
+  acceptAttrFor,
+  allowedExtensionsFor,
+  MAX_UPLOAD_BYTES,
+  parseFileAnswer,
+  type Question,
+} from "@/lib/assessment-form-shared";
+import { FORM_UPLOAD_RETENTION_DAYS } from "@/lib/form-upload-constants";
 
 const AUTO_ADVANCE_DELAY_MS = 250;
+
+function formatMaxUpload(): string {
+  return `${Math.round(MAX_UPLOAD_BYTES / (1024 * 1024))} MB`;
+}
+
+function fileAnswerLabel(raw: string | undefined): string {
+  const parsed = parseFileAnswer(raw);
+  if (!parsed) return "";
+  return parsed.name || "File terunggah";
+}
 
 function safeGetItem(key: string): string | null {
   try {
@@ -57,6 +74,9 @@ export function AssessmentForm({
   const [status, setStatus] = useState<
     "idle" | "submitting" | "done" | "error"
   >("idle");
+  const [uploadStatus, setUploadStatus] = useState<
+    "idle" | "uploading" | "error"
+  >("idle");
 
   // Answers are read from this ref at submit time, not the `answers` state —
   // the single_choice auto-advance path can fire before a delayed render has
@@ -64,6 +84,7 @@ export function AssessmentForm({
   const answersRef = useRef<Record<string, string>>({});
   const honeypotRef = useRef<HTMLInputElement>(null);
   const textInputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const total = questions.length;
   // step === total is the review screen — one past the last real question,
@@ -135,11 +156,13 @@ export function AssessmentForm({
   // screen like any other, it never submits directly.
   function goNext() {
     if (!validateCurrent()) return;
+    setUploadStatus("idle");
     setStep((s) => s + 1);
   }
 
   function goBack() {
     setErrorMsg(null);
+    setUploadStatus("idle");
     setStep((s) => Math.max(0, s - 1));
   }
 
@@ -154,6 +177,7 @@ export function AssessmentForm({
     setSubmissionId(null);
     setErrorMsg(null);
     setStatus("idle");
+    setUploadStatus("idle");
     setStep(0);
   }
 
@@ -170,9 +194,23 @@ export function AssessmentForm({
           submissionId,
         }),
       });
-      if (!res.ok) throw new Error("submit failed");
-      const data = (await res.json()) as { submissionId?: string };
-      if (data.submissionId) {
+      const data = (await res.json().catch(() => null)) as {
+        submissionId?: string;
+        error?: string;
+        retryAfterSec?: number;
+      } | null;
+      if (!res.ok) {
+        if (res.status === 429) {
+          const wait = data?.retryAfterSec ?? 60;
+          setStatus("error");
+          setErrorMsg(
+            `Terlalu banyak percobaan kirim. Coba lagi dalam ${wait} detik.`,
+          );
+          return;
+        }
+        throw new Error("submit failed");
+      }
+      if (data?.submissionId) {
         setSubmissionId(data.submissionId);
         safeSetItem(submissionIdKey, data.submissionId);
       }
@@ -205,9 +243,87 @@ export function AssessmentForm({
     window.setTimeout(goNext, AUTO_ADVANCE_DELAY_MS);
   }
 
+  async function handleFilePicked(fileList: FileList | null) {
+    const file = fileList?.[0];
+    if (!file || !current || current.type !== "file") return;
+
+    const allowed = allowedExtensionsFor(current);
+    const ext = file.name.includes(".")
+      ? file.name.slice(file.name.lastIndexOf(".") + 1).toLowerCase()
+      : "";
+    if (!ext || !allowed.includes(ext)) {
+      setUploadStatus("error");
+      setErrorMsg(
+        `Tipe file tidak didukung. Unggah: ${allowed.map((e) => `.${e}`).join(", ")}.`,
+      );
+      return;
+    }
+    if (file.size > MAX_UPLOAD_BYTES) {
+      setUploadStatus("error");
+      setErrorMsg(`Ukuran file maksimal ${formatMaxUpload()}.`);
+      return;
+    }
+
+    setUploadStatus("uploading");
+    setErrorMsg(null);
+    try {
+      const body = new FormData();
+      body.set("token", token);
+      body.set("questionId", current.id);
+      body.set("file", file);
+      body.set("website", honeypotRef.current?.value ?? "");
+      const res = await fetch("/api/form/upload", {
+        method: "POST",
+        body,
+      });
+      const data = (await res.json().catch(() => null)) as {
+        answer?: string;
+        error?: string;
+        retryAfterSec?: number;
+      } | null;
+      if (!res.ok) {
+        if (res.status === 429) {
+          const wait = data?.retryAfterSec ?? 60;
+          throw new Error(`rate limit:${wait}`);
+        }
+        throw new Error(data?.error || "upload failed");
+      }
+      if (!data?.answer) throw new Error("upload failed");
+      setAnswer(current.id, data.answer);
+      setUploadStatus("idle");
+    } catch (err) {
+      setUploadStatus("error");
+      const msg = err instanceof Error ? err.message : "";
+      if (msg.startsWith("rate limit:")) {
+        const wait = msg.slice("rate limit:".length) || "60";
+        setErrorMsg(
+          `Terlalu banyak unggahan. Coba lagi dalam ${wait} detik.`,
+        );
+      } else if (msg === "file type not allowed") {
+        setErrorMsg(
+          `Tipe file tidak didukung. Unggah: ${allowed.map((e) => `.${e}`).join(", ")}.`,
+        );
+      } else if (msg === "file too large") {
+        setErrorMsg(`Ukuran file maksimal ${formatMaxUpload()}.`);
+      } else {
+        setErrorMsg("Gagal mengunggah file. Coba lagi.");
+      }
+    } finally {
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  }
+
+  function clearFileAnswer() {
+    if (!current) return;
+    setAnswer(current.id, "");
+    setUploadStatus("idle");
+    setErrorMsg(null);
+  }
+
   useEffect(() => {
-    if (!isReview) textInputRef.current?.focus();
-  }, [step, isReview]);
+    if (isReview || current?.type === "file") return;
+    textInputRef.current?.focus();
+  }, [step, isReview, current?.type]);
 
   if (!hydrated) {
     return (
@@ -320,10 +436,14 @@ export function AssessmentForm({
               <div className="space-y-4 mb-4">
                 {questions.map((q, idx) => {
                   const raw = answers[q.id];
+                  const fileMeta =
+                    q.type === "file" ? parseFileAnswer(raw) : null;
                   const display =
                     q.type === "multi_choice"
                       ? raw?.split("|").join(", ")
-                      : raw;
+                      : q.type === "file"
+                        ? fileAnswerLabel(raw)
+                        : raw;
                   return (
                     <div
                       key={q.id}
@@ -333,13 +453,24 @@ export function AssessmentForm({
                         <p className="text-sm text-neutral-400 mb-1">
                           {q.question}
                         </p>
-                        <p className="text-lg font-medium">
-                          {display || (
-                            <span className="text-neutral-300 italic">
-                              Tidak dijawab
-                            </span>
-                          )}
-                        </p>
+                        {fileMeta ? (
+                          <a
+                            href={fileMeta.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lg font-medium text-amber-700 hover:underline"
+                          >
+                            {fileMeta.name}
+                          </a>
+                        ) : (
+                          <p className="text-lg font-medium">
+                            {display || (
+                              <span className="text-neutral-300 italic">
+                                Tidak dijawab
+                              </span>
+                            )}
+                          </p>
+                        )}
                       </div>
                       <button
                         type="button"
@@ -439,6 +570,81 @@ export function AssessmentForm({
                   })}
                 </div>
               )}
+
+              {current.type === "file" && (
+                <div className="space-y-4">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept={acceptAttrFor(current)}
+                    disabled={uploadStatus === "uploading"}
+                    onChange={(e) => handleFilePicked(e.target.files)}
+                    className="sr-only"
+                  />
+                  {(() => {
+                    const uploaded = parseFileAnswer(answers[current.id]);
+                    if (uploaded) {
+                      return (
+                        <div className="rounded-xl border-2 border-amber-500 bg-amber-50 px-5 py-4">
+                          <p className="text-sm text-neutral-500 mb-1">
+                            File terunggah
+                          </p>
+                          <a
+                            href={uploaded.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lg sm:text-xl font-medium text-amber-800 hover:underline break-all"
+                          >
+                            {uploaded.name}
+                          </a>
+                          <div className="flex flex-wrap gap-4 mt-4">
+                            <button
+                              type="button"
+                              onClick={() => fileInputRef.current?.click()}
+                              disabled={uploadStatus === "uploading"}
+                              className="text-amber-700 text-sm font-medium hover:underline disabled:opacity-50"
+                            >
+                              {uploadStatus === "uploading"
+                                ? "Mengunggah..."
+                                : "Ganti file"}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={clearFileAnswer}
+                              disabled={uploadStatus === "uploading"}
+                              className="text-neutral-400 text-sm hover:text-neutral-600 disabled:opacity-50"
+                            >
+                              Hapus
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    }
+                    return (
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={uploadStatus === "uploading"}
+                        className="flex flex-col items-start gap-3 w-full text-left rounded-xl border-2 border-dashed border-neutral-300 hover:border-amber-400 px-5 py-8 transition-colors disabled:opacity-50"
+                      >
+                        <span className="text-lg sm:text-xl font-medium">
+                          {uploadStatus === "uploading"
+                            ? "Mengunggah..."
+                            : "Pilih file untuk diunggah"}
+                        </span>
+                        <span className="text-sm text-neutral-500">
+                          Maksimal {formatMaxUpload()}. Format:{" "}
+                          {allowedExtensionsFor(current)
+                            .map((e) => `.${e}`)
+                            .join(", ")}
+                          . File disimpan hingga {FORM_UPLOAD_RETENTION_DAYS}{" "}
+                          hari.
+                        </span>
+                      </button>
+                    );
+                  })()}
+                </div>
+              )}
             </>
           )}
 
@@ -456,18 +662,29 @@ export function AssessmentForm({
             )}
             <button
               type="submit"
-              disabled={status === "submitting"}
+              disabled={
+                status === "submitting" ||
+                uploadStatus === "uploading" ||
+                (!isReview &&
+                  current?.type === "file" &&
+                  current.required &&
+                  !answers[current.id])
+              }
               className="inline-flex items-center gap-2 rounded-full bg-amber-500 hover:bg-amber-400 text-black font-semibold text-lg px-8 py-3 disabled:opacity-50 transition-colors"
             >
               {status === "submitting"
                 ? "Mengirim..."
-                : isReview
-                  ? "Kirim Jawaban"
-                  : "Lanjut"}
+                : uploadStatus === "uploading"
+                  ? "Mengunggah..."
+                  : isReview
+                    ? "Kirim Jawaban"
+                    : "Lanjut"}
             </button>
-            <span className="hidden sm:inline text-neutral-400 text-sm">
-              tekan Enter ↵
-            </span>
+            {current?.type !== "file" && (
+              <span className="hidden sm:inline text-neutral-400 text-sm">
+                tekan Enter ↵
+              </span>
+            )}
           </div>
         </div>
       </form>

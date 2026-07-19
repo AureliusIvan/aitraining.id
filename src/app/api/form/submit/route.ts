@@ -5,6 +5,11 @@ import {
   resolveToken,
   updateSubmission,
 } from "@/lib/assessment-sheets";
+import {
+  clientIp,
+  enforceFormSubmitLimits,
+  rateLimitResponse,
+} from "@/lib/form-rate-limit";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -40,6 +45,11 @@ export async function POST(request: Request) {
   const link = await resolveToken(token);
   if (!link) {
     return NextResponse.json({ error: "invalid token" }, { status: 404 });
+  }
+
+  const limited = enforceFormSubmitLimits(token, clientIp(request));
+  if (!limited.ok) {
+    return rateLimitResponse(limited.retryAfterSec);
   }
 
   const questions = await getQuestions();

@@ -1,22 +1,26 @@
 import { randomUUID } from "node:crypto";
+import { put } from "@vercel/blob";
 import { google } from "googleapis";
+import {
+  EXT_TO_MIME,
+  MAX_UPLOAD_BYTES,
+  type FileAnswer,
+  type Question,
+  type QuestionType,
+} from "@/lib/assessment-form-shared";
 
-export type QuestionType =
-  | "short_text"
-  | "long_text"
-  | "single_choice"
-  | "multi_choice"
-  | "rating";
-
-export type Question = {
-  id: string;
-  section: string;
-  question: string;
-  type: QuestionType;
-  options: string[];
-  required: boolean;
-  order: number;
-};
+export type {
+  FileAnswer,
+  Question,
+  QuestionType,
+} from "@/lib/assessment-form-shared";
+export {
+  MAX_UPLOAD_BYTES,
+  acceptAttrFor,
+  allowedExtensionsFor,
+  parseFileAnswer,
+  serializeFileAnswer,
+} from "@/lib/assessment-form-shared";
 
 const SHEET_ID = process.env.ASSESSMENT_SHEET_ID;
 
@@ -34,6 +38,69 @@ function getSheetsClient() {
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
   return google.sheets({ version: "v4", auth });
+}
+
+function extensionOf(filename: string): string {
+  const base = filename.split(/[/\\]/).pop() ?? filename;
+  const dot = base.lastIndexOf(".");
+  if (dot <= 0) return "";
+  return base.slice(dot + 1).toLowerCase();
+}
+
+function sanitizeFilename(name: string): string {
+  const base = name.split(/[/\\]/).pop() ?? "upload";
+  const cleaned = base.replace(/[^\w.\- ()[\]]+/g, "_").slice(0, 120);
+  return cleaned || "upload";
+}
+
+export type UploadAssessmentFileInput = {
+  clientSlug: string;
+  questionId: string;
+  filename: string;
+  bytes: Buffer;
+  /** From Questions.options allowlist (already validated against the question). */
+  allowedExtensions: string[];
+};
+
+export type UploadAssessmentFileResult = FileAnswer;
+
+// Files go to Vercel Blob (not Google Drive): personal-Drive folders shared
+// with a service account hit "Service Accounts do not have storage quota."
+// Blob URLs are public-read and stored in the Submissions cell as JSON.
+export async function uploadAssessmentFile(
+  input: UploadAssessmentFileInput,
+): Promise<UploadAssessmentFileResult> {
+  if (!process.env.BLOB_READ_WRITE_TOKEN) {
+    throw new Error("BLOB_READ_WRITE_TOKEN is not configured");
+  }
+  if (input.bytes.byteLength === 0) {
+    throw new Error("empty file");
+  }
+  if (input.bytes.byteLength > MAX_UPLOAD_BYTES) {
+    throw new Error("file too large");
+  }
+
+  const ext = extensionOf(input.filename);
+  if (!ext || !input.allowedExtensions.includes(ext)) {
+    throw new Error("file type not allowed");
+  }
+  const contentType = EXT_TO_MIME[ext];
+  const safeSlug =
+    input.clientSlug.replace(/[^\w\-]+/g, "_").slice(0, 64) || "unknown";
+  const safeName = sanitizeFilename(input.filename);
+  const pathname = `assessment/${safeSlug}/${input.questionId}/${Date.now()}-${safeName}`;
+
+  const blob = await put(pathname, input.bytes, {
+    access: "public",
+    contentType,
+    token: process.env.BLOB_READ_WRITE_TOKEN,
+    addRandomSuffix: true,
+  });
+
+  return {
+    name: safeName,
+    url: blob.url,
+  };
 }
 
 // Questions tab drives what renders on the live form — edit rows there (id,
