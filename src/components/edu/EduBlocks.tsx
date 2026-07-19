@@ -2,6 +2,7 @@ import type { EduBlock, EduGlossaryEntry } from "@/lib/edu";
 import { CodeBlock } from "./CodeBlock";
 import { GlossaryTerm } from "./GlossaryTerm";
 import { MotionBlock } from "./MotionBlock";
+import { OsCodeBlock } from "./OsCodeBlock";
 
 // Shared renderer for a slide's blocks. Used in two places with no "use client"
 // directive so it works in both trees: the server-rendered web page (mode
@@ -257,6 +258,16 @@ function Block({
     case "code":
       return (
         <CodeBlock caption={block.caption} lines={block.lines} mode={mode} />
+      );
+    case "os-code":
+      return (
+        <OsCodeBlock
+          caption={block.caption}
+          note={block.note}
+          variants={block.variants}
+          defaultOs={block.defaultOs}
+          mode={mode}
+        />
       );
     case "gif":
       return (

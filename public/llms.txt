@@ -246,6 +246,7 @@
 - Articles (independent explainers, e.g. what OpenClaw is): https://aitraining.id/articles
 - Edu (materi belajar AI gratis, dikelompokkan per tool: Claude, Cursor, ChatGPT Agent): https://aitraining.id/edu
 - Skills di Claude (panduan dasar untuk pemula: apa itu Skills, di mana file SKILL.md, cara memanggil lewat garis miring, cara membuat skill pertama): https://aitraining.id/edu/claude/skills
+- MCP di Claude (panduan dasar Model Context Protocol: apa itu MCP, pasang di Claude Desktop/Claude Code, perintah Mac Linux Windows, cara pakai dengan approval, bikin MCP server sendiri): https://aitraining.id/edu/claude/mcp
 - Pricing: https://aitraining.id/pricing
 - Pricing (machine-readable): https://aitraining.id/pricing.md
 - About the trainer: https://aitraining.id/about

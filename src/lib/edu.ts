@@ -72,6 +72,13 @@ type EduMotionBlock = {
     }
 );
 
+export type EduOsKey = "mac" | "linux" | "windows";
+
+export type EduOsVariant = {
+  lines: string[];
+  caption?: string;
+};
+
 export type EduBlock = BlockBase &
   (
     | { type: "lead"; text: string }
@@ -88,6 +95,15 @@ export type EduBlock = BlockBase &
         text: string;
       }
     | { type: "code"; caption?: string; lines: string[] }
+    | {
+        // Commands/config that differ by OS. Renders Mac / Linux / Windows tabs
+        // so a mixed classroom can follow along without guessing paths.
+        type: "os-code";
+        caption?: string;
+        note?: string;
+        defaultOs?: EduOsKey;
+        variants: Record<EduOsKey, EduOsVariant>;
+      }
     | {
         type: "gif";
         // When `src` is empty the page renders a labelled placeholder frame
@@ -180,6 +196,13 @@ export const eduTools: EduTool[] = [
         name: "Skills",
         blurb:
           "Jurus siap pakai yang kamu ajarkan sekali ke Claude, lalu dipanggil hanya dengan mengetik namanya.",
+        status: "live",
+      },
+      {
+        slug: "mcp",
+        name: "MCP",
+        blurb:
+          "Sambungkan Claude ke alat dan data di luar chat: file, API, spreadsheet, lewat Model Context Protocol.",
         status: "live",
       },
     ],
@@ -675,6 +698,751 @@ const claudeSkills: EduModule = {
   ],
 };
 
+const claudeMcp: EduModule = {
+  toolSlug: "claude",
+  toolName: "Claude",
+  slug: "mcp",
+  moduleName: "MCP",
+  level: "Level dasar",
+  readingLabel: "sekitar 14 menit",
+  h1: "MCP di Claude",
+  tagline: "Sambungkan Claude ke alat di luar chat.",
+  heroLede:
+    "[[MCP]] (Model Context Protocol) adalah cara standar supaya Claude bisa memakai alat dan data di luar obrolan: folder di laptop, spreadsheet, ticket, API. Halaman ini menjelaskan dari nol: apa itu MCP, cara memasang server siap pakai, cara memakainya dengan persetujuanmu, dan cara membuat MCP sendiri yang rapi. Perintah ditampilkan untuk Mac, Linux, dan Windows.",
+  metaTitle: "Apa itu MCP di Claude? Panduan Dasar Model Context Protocol",
+  metaDescription:
+    "Penjelasan dasar MCP (Model Context Protocol) untuk pemula: apa itu MCP, cara pasang di Claude Desktop dan Claude Code, perintah Mac Linux Windows, cara pakai dengan approval, dan cara bikin MCP server sendiri. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+  keywords: [
+    "apa itu mcp claude",
+    "model context protocol",
+    "cara pasang mcp claude",
+    "claude desktop mcp",
+    "claude code mcp",
+    "bikin mcp server",
+    "mcp untuk pemula",
+    "tutorial mcp bahasa indonesia",
+    "claude_desktop_config.json",
+    "belajar claude mcp",
+  ],
+  updated: "19 Juli 2026",
+  datePublished: "2026-07-19",
+  dateModified: "2026-07-19",
+  slides: [
+    {
+      id: "apa-itu",
+      kicker: "Claude · Modul MCP",
+      title: "Apa itu MCP?",
+      subtitle: "Colokan standar antara Claude dan alatmu.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Claude terhubung ke MCP server lalu membuka alat seperti file dan API.",
+          caption:
+            "Ivan demo MCP 60 detik dulu. Lalu 30 detik: tulis satu alat di luar chat yang barusan terasa relevan. Angkat tangan kalau siap cerita.",
+          items: [
+            { label: "Claude", icon: "spark", tone: "clay" },
+            { label: "MCP server", icon: "node", tone: "blue" },
+            { label: "Alat / data", icon: "folder", tone: "green" },
+          ],
+        },
+        {
+          type: "lead",
+          text: "Bayangkan Claude punya colokan universal. [[MCP]] adalah colokan itu: satu cara standar supaya Claude bisa memanggil alat di luar chat, dengan izinmu tiap kali ada aksi penting.",
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Analogi singkat",
+          text: "MCP itu seperti adaptor listrik. Alatnya bisa beda-beda, tapi colokannya sama, jadi Claude tahu cara menyambung.",
+          webOnly: true,
+        },
+        {
+          type: "paragraph",
+          text: "Yang kamu pasang disebut [[MCP server]]: program kecil yang menawarkan tool (baca file, kirim request, query database). Claude jadi [[MCP client]] yang memanggil tool itu.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "kenapa-berguna",
+      kicker: "Kenapa penting",
+      title: "Kenapa MCP berguna?",
+      subtitle: "Tiga alasan yang langsung terasa di kerja sehari-hari.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Tiga manfaat MCP: akses langsung, satu format, dan kontrol persetujuan.",
+          caption:
+            "Ringkas: pilih 1, 2, atau 3 untuk use case slide 1. Satu orang per angka, satu kalimat. Ivan 20 detik: satu error MCP yang pernah dia alami. Total 2 menit, lalu lanjut pasang.",
+          items: [
+            { label: "Akses langsung", icon: "folder", tone: "blue" },
+            { label: "Satu format", icon: "list", tone: "yellow" },
+            { label: "Tetap izinmu", icon: "lock", tone: "red" },
+          ],
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Akses langsung",
+              text: "Claude bisa baca folder, ticket, atau API tanpa kamu bolak-balik copy-paste.",
+            },
+            {
+              title: "Satu cara sambung",
+              text: "Banyak alat ikut protokol yang sama, jadi pola pasangnya mirip dari satu server ke server lain.",
+            },
+            {
+              title: "Kamu yang setuju",
+              text: "Sebelum aksi penting, Claude meminta persetujuan. Kamu bisa tolak kapan saja.",
+            },
+          ],
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "cara-kerja",
+      kicker: "Alur",
+      title: "Bagaimana MCP bekerja",
+      subtitle: "Claude minta, server jalan, hasil kembali.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Permintaan dari Claude masuk ke MCP server, tool dijalankan, hasil dikembalikan.",
+          caption:
+            "Kalau demo Ivan sudah jalan, skip chant. Kalau belum: empat ketukan bareng minta → server → tool → hasil. Volunter: tool paling berbahaya kalau salah approve.",
+          items: [
+            { label: "Kamu minta", icon: "message", tone: "yellow" },
+            { label: "Claude", icon: "spark", tone: "clay" },
+            { label: "MCP server", icon: "settings", tone: "blue" },
+            { label: "Hasil + approve", icon: "test", tone: "green" },
+          ],
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Kamu minta sesuatu yang butuh alat luar, misalnya daftar file di Desktop.",
+            },
+            {
+              text: "Claude memilih tool dari MCP server yang sudah terpasang.",
+            },
+            {
+              text: "Kalau aksi menyentuh sistemmu, Claude meminta persetujuan dulu.",
+            },
+            {
+              text: "Server menjalankan tool, lalu hasilnya masuk kembali ke obrolan.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Dua tempat pakai yang umum",
+          text: "[[Claude Desktop]] memakai file konfigurasi JSON. [[Claude Code]] bisa menambah server lewat perintah claude mcp add. Di Linux, jalur paling mulus biasanya Claude Code.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "persiapan",
+      kicker: "Sebelum pasang",
+      title: "Persiapan di laptopmu",
+      subtitle: "Cek Node.js, lalu pilih jalur Claude-mu.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Cek Node.js, buka Claude, lalu siap memasang MCP.",
+          caption:
+            "Sekarang: buka terminal, jalankan node --version. Angkat tangan kalau versinya muncul. Kalau error, duduk berdua dengan tetangga yang sukses.",
+          items: [
+            { label: "Terminal", icon: "enter", tone: "blue" },
+            { label: "node --version", icon: "tag", tone: "yellow" },
+            { label: "Claude siap", icon: "spark", tone: "clay" },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Banyak MCP server lokal jalan lewat Node.js (perintah npx). Cek dulu instalasinya. Kalau belum ada, unduh LTS dari nodejs.org.",
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Cek Node.js terpasang",
+          note: "Pilih tab OS-mu. Hasil yang diharapkan mirip v20.x atau v22.x.",
+          variants: {
+            mac: {
+              caption: "Terminal di Mac",
+              lines: ["node --version", "npx --version"],
+            },
+            linux: {
+              caption: "Terminal di Linux",
+              lines: ["node --version", "npx --version"],
+            },
+            windows: {
+              caption: "Command Prompt atau PowerShell",
+              lines: ["node --version", "npx --version"],
+            },
+          },
+          webOnly: true,
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Claude Desktop",
+              text: "Aplikasi desktop resmi (macOS dan Windows). MCP diatur lewat claude_desktop_config.json.",
+            },
+            {
+              title: "Claude Code",
+              text: "CLI agent di terminal (Mac, Linux, Windows). MCP diatur lewat claude mcp add atau file .mcp.json.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Catatan Linux",
+          text: "Claude Desktop resmi fokus ke macOS dan Windows. Di Linux, ikuti jalur Claude Code di slide berikutnya.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "pasang-siap-pakai",
+      kicker: "Praktik 1",
+      title: "Pasang MCP siap pakai",
+      subtitle: "Contoh: Filesystem Server ke folder yang kamu izinkan.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Edit config, restart Claude, lalu MCP filesystem muncul sebagai konektor.",
+          caption:
+            "Pilih jalur Desktop atau Claude Code. Ivan hitung 90 detik. Yang dulu lihat filesystem connected: berdiri. Yang error: tetap berdiri, kita debug bareng 2 menit.",
+          items: [
+            { label: "Edit config", icon: "file", tone: "yellow" },
+            { label: "Restart / add", icon: "settings", tone: "blue" },
+            { label: "Server hidup", icon: "spark", tone: "green" },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Kita pakai server resmi @modelcontextprotocol/server-filesystem. Ganti username dan path folder dengan milikmu. Hanya izinkan folder yang kamu nyaman Claude baca dan ubah.",
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Claude Desktop: lokasi file config",
+          note: "Di Claude Desktop: Settings → Developer → Edit Config. File yang terbuka biasanya di path berikut.",
+          variants: {
+            mac: {
+              caption: "macOS",
+              lines: [
+                "~/Library/Application Support/Claude/claude_desktop_config.json",
+              ],
+            },
+            linux: {
+              caption: "Linux (pakai Claude Code)",
+              lines: [
+                "# Claude Desktop belum jadi jalur utama di Linux.",
+                "# Lewati blok JSON di bawah; pakai perintah Claude Code.",
+                "claude mcp add --transport stdio filesystem -- \\",
+                "  npx -y @modelcontextprotocol/server-filesystem \\",
+                '  "$HOME/Desktop" "$HOME/Downloads"',
+              ],
+            },
+            windows: {
+              caption: "Windows",
+              lines: ["%APPDATA%\\Claude\\claude_desktop_config.json"],
+            },
+          },
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Claude Desktop: isi claude_desktop_config.json",
+          note: "Ganti username. Simpan file, lalu quit Claude Desktop sepenuhnya dan buka lagi.",
+          variants: {
+            mac: {
+              lines: [
+                "{",
+                '  "mcpServers": {',
+                '    "filesystem": {',
+                '      "command": "npx",',
+                '      "args": [',
+                '        "-y",',
+                '        "@modelcontextprotocol/server-filesystem",',
+                '        "/Users/username/Desktop",',
+                '        "/Users/username/Downloads"',
+                "      ]",
+                "    }",
+                "  }",
+                "}",
+              ],
+            },
+            linux: {
+              caption: "Setara di Claude Code (sudah di tab sebelumnya)",
+              lines: ["claude mcp list", "claude mcp get filesystem"],
+            },
+            windows: {
+              lines: [
+                "{",
+                '  "mcpServers": {',
+                '    "filesystem": {',
+                '      "command": "npx",',
+                '      "args": [',
+                '        "-y",',
+                '        "@modelcontextprotocol/server-filesystem",',
+                '        "C:\\\\Users\\\\username\\\\Desktop",',
+                '        "C:\\\\Users\\\\username\\\\Downloads"',
+                "      ]",
+                "    }",
+                "  }",
+                "}",
+              ],
+            },
+          },
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Claude Code: perintah yang sama di ketiga OS",
+          note: "Jalankan di folder proyekmu. Scope default = local (hanya proyek ini, untukmu).",
+          variants: {
+            mac: {
+              lines: [
+                "claude mcp add --transport stdio filesystem -- \\",
+                "  npx -y @modelcontextprotocol/server-filesystem \\",
+                '  "$HOME/Desktop" "$HOME/Downloads"',
+                "",
+                "claude mcp list",
+              ],
+            },
+            linux: {
+              lines: [
+                "claude mcp add --transport stdio filesystem -- \\",
+                "  npx -y @modelcontextprotocol/server-filesystem \\",
+                '  "$HOME/Desktop" "$HOME/Downloads"',
+                "",
+                "claude mcp list",
+              ],
+            },
+            windows: {
+              caption: "PowerShell",
+              lines: [
+                "claude mcp add --transport stdio filesystem -- `",
+                "  npx -y @modelcontextprotocol/server-filesystem `",
+                '  "$env:USERPROFILE\\Desktop" "$env:USERPROFILE\\Downloads"',
+                "",
+                "claude mcp list",
+              ],
+            },
+          },
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Uji manual di terminal",
+          text: "Kalau server tidak muncul, jalankan perintah npx server-filesystem dengan path yang sama di terminal. Error di situ biasanya lebih jelas daripada di UI.",
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Setelah race: debug bareng",
+          text: "Ivan ambil satu error dari ruangan (path salah, JSON rusak, atau server diam), buka log sesuai OS, perbaiki di layar. Semua yang berhasil ikut spot-check tetangga.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "cara-pakai",
+      kicker: "Praktik 2",
+      title: "Cara memakai MCP",
+      subtitle: "Minta tugas nyata, lalu approve dengan sadar.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Minta tugas, Claude mengajukan tool, kamu approve, hasil muncul.",
+          caption:
+            "Ketik permintaan ke Claude memakai alat atau folder yang kamu tulis di slide pertama. Saat approve: baca path keras-keras sebelum Allow.",
+          items: [
+            { label: "Minta tugas", icon: "message", tone: "yellow" },
+            { label: "Pilih tool", icon: "select", tone: "blue" },
+            { label: "Approve", icon: "lock", tone: "red" },
+            { label: "Hasil", icon: "sheet", tone: "green" },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Setelah filesystem terhubung, coba permintaan sederhana. Di Claude Desktop, cek konektor lewat tombol lampiran / connectors. Di Claude Code, ketik /mcp untuk status server.",
+          webOnly: true,
+        },
+        {
+          type: "code",
+          caption: "Contoh permintaan (ganti path/folder dengan milikmu)",
+          lines: [
+            "Lihat isi folder kerja yang sudah aku izinkan di MCP filesystem,",
+            "lalu buat file catatan-kerja.txt berisi 3 bullet ringkas",
+            "tentang tugas yang paling sering aku copy-paste ke chat.",
+          ],
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Cek status di Claude Code",
+          variants: {
+            mac: {
+              lines: ["/mcp", "claude mcp list"],
+            },
+            linux: {
+              lines: ["/mcp", "claude mcp list"],
+            },
+            windows: {
+              lines: ["/mcp", "claude mcp list"],
+            },
+          },
+          webOnly: true,
+        },
+        {
+          type: "steps",
+          items: [
+            { text: "Pastikan server filesystem terlihat connected." },
+            {
+              text: "Tulis permintaan yang jelas menyebut folder yang sudah kamu izinkan.",
+            },
+            {
+              text: "Saat Claude meminta izin, baca tool name dan path-nya sebelum approve.",
+            },
+            {
+              text: "Kalau ragu, Deny dulu. Minta Claude jelaskan rencananya, baru ulangi.",
+            },
+          ],
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "bikin-sendiri",
+      kicker: "Praktik 3",
+      title: "Bikin MCP yang proper",
+      subtitle: "Satu server, satu tujuan, tool yang jelas.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Buat folder proyek, tulis server, daftarkan tool, lalu sambungkan ke Claude.",
+          caption:
+            "45 detik: /nama-server → tool_apa untuk use case-mu tadi. Tempeld di chat kelas. Lanjut scaffold (Ivan keliling cek). Ganti waktu_sekarang kalau sempat.",
+          items: [
+            { label: "Folder proyek", icon: "folder", tone: "blue" },
+            { label: "server.ts", icon: "file", tone: "yellow" },
+            { label: "Daftar tool", icon: "list", tone: "green" },
+            { label: "Sambung", icon: "spark", tone: "clay" },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "MCP yang rapi punya batas yang jelas: satu domain masalah, nama tool yang bisa ditebak, deskripsi kapan dipakai, dan tidak menyimpan rahasia di kode. Di bawah ini kerangka TypeScript minimal dengan SDK resmi.",
+          webOnly: true,
+        },
+        {
+          type: "code",
+          caption: "Struktur folder yang rapi",
+          lines: [
+            "my-mcp-server/",
+            "├── package.json",
+            "├── tsconfig.json",
+            "└── src/",
+            "    └── index.ts",
+          ],
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Scaffold proyek",
+          note: "Jalankan di folder kosong. Lalu isi src/index.ts dengan kerangka di blok berikutnya.",
+          variants: {
+            mac: {
+              lines: [
+                "mkdir my-mcp-server && cd my-mcp-server",
+                "npm init -y",
+                "npm install @modelcontextprotocol/sdk zod",
+                "npm install -D typescript @types/node tsx",
+                "npx tsc --init --rootDir src --outDir dist \\",
+                "  --module nodenext --moduleResolution nodenext \\",
+                "  --target es2022 --esModuleInterop",
+              ],
+            },
+            linux: {
+              lines: [
+                "mkdir my-mcp-server && cd my-mcp-server",
+                "npm init -y",
+                "npm install @modelcontextprotocol/sdk zod",
+                "npm install -D typescript @types/node tsx",
+                "npx tsc --init --rootDir src --outDir dist \\",
+                "  --module nodenext --moduleResolution nodenext \\",
+                "  --target es2022 --esModuleInterop",
+              ],
+            },
+            windows: {
+              caption: "PowerShell",
+              lines: [
+                "mkdir my-mcp-server; cd my-mcp-server",
+                "npm init -y",
+                "npm install @modelcontextprotocol/sdk zod",
+                "npm install -D typescript @types/node tsx",
+                "npx tsc --init --rootDir src --outDir dist `",
+                "  --module nodenext --moduleResolution nodenext `",
+                "  --target es2022 --esModuleInterop",
+              ],
+            },
+          },
+          webOnly: true,
+        },
+        {
+          type: "code",
+          caption: "src/index.ts: kerangka tool satu fungsi",
+          lines: [
+            'import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";',
+            'import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";',
+            'import { z } from "zod";',
+            "",
+            "const server = new McpServer({",
+            '  name: "halo-waktu",',
+            '  version: "1.0.0",',
+            "});",
+            "",
+            "server.tool(",
+            '  "waktu_sekarang",',
+            '  "Mengembalikan tanggal dan jam lokal mesin ini.",',
+            "  {},",
+            "  async () => ({",
+            '    content: [{ type: "text", text: new Date().toString() }],',
+            "  }),",
+            ");",
+            "",
+            "const transport = new StdioServerTransport();",
+            "await server.connect(transport);",
+          ],
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Sambungkan server buatanmu ke Claude Code",
+          note: "Ganti path absolut ke folder proyekmu. Di Desktop, masukkan command/args yang sama ke mcpServers.",
+          variants: {
+            mac: {
+              lines: [
+                "claude mcp add --transport stdio halo-waktu -- \\",
+                "  npx tsx /Users/username/my-mcp-server/src/index.ts",
+                "",
+                "claude mcp get halo-waktu",
+              ],
+            },
+            linux: {
+              lines: [
+                "claude mcp add --transport stdio halo-waktu -- \\",
+                '  npx tsx "$HOME/my-mcp-server/src/index.ts"',
+                "",
+                "claude mcp get halo-waktu",
+              ],
+            },
+            windows: {
+              caption: "PowerShell",
+              lines: [
+                "claude mcp add --transport stdio halo-waktu -- `",
+                '  npx tsx "$env:USERPROFILE\\my-mcp-server\\src\\index.ts"',
+                "",
+                "claude mcp get halo-waktu",
+              ],
+            },
+          },
+          webOnly: true,
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Nama tool jelas",
+              text: "Pakai kata kerja + objek, misalnya waktu_sekarang atau list_invoice_open.",
+            },
+            {
+              title: "Deskripsi jujur",
+              text: "Tulis kapan tool ini dipakai, supaya Claude tidak menebak-nebak.",
+            },
+            {
+              title: "Rahasia di env",
+              text: "API key masuk lewat environment variable, jangan di-hardcode di index.ts.",
+            },
+          ],
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "tips",
+      kicker: "Supaya aman",
+      title: "Tips dan kesalahan umum",
+      subtitle: "Tiga kebiasaan yang menjaga MCP tetap sehat.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Tiga tip: folder sempit, sumber terpercaya, dan uji di terminal dulu.",
+          caption:
+            "Berdiri. Pilih tip yang paling sering kamu langgar. 40 detik ke sebelah. Duduk: screenshot /mcp atau konektor plus satu permintaan kerja asli yang sudah berhasil.",
+          items: [
+            { label: "Folder sempit", icon: "folder", tone: "blue" },
+            { label: "Sumber aman", icon: "lock", tone: "red" },
+            { label: "Uji dulu", icon: "test", tone: "yellow" },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Izinkan folder seminimal mungkin",
+          text: "Jangan langsung kasih akses ke seluruh home directory. Mulai dari satu folder kerja.",
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Pasang hanya dari sumber yang kamu percaya",
+          text: "MCP server bisa menjalankan perintah di mesinmu. Baca dulu apa yang dia tawarkan sebelum menyambung.",
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "JSON salah = server diam",
+          text: "Di Desktop, koma atau path relatif yang salah sering membuat server tidak muncul. Cek log Claude, atau jalankan perintah server manual di terminal.",
+          webOnly: true,
+        },
+        {
+          type: "os-code",
+          caption: "Lihat log Claude Desktop (kalau server gagal connect)",
+          variants: {
+            mac: {
+              lines: ["tail -n 20 -f ~/Library/Logs/Claude/mcp*.log"],
+            },
+            linux: {
+              caption: "Claude Code",
+              lines: [
+                "claude mcp list",
+                "claude mcp get filesystem",
+                "# Error koneksi biasanya tampil di output perintah di atas",
+              ],
+            },
+            windows: {
+              caption: "Command Prompt",
+              lines: ['type "%APPDATA%\\Claude\\logs\\mcp.log"'],
+            },
+          },
+          webOnly: true,
+        },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Apa itu MCP di Claude?",
+      a: "MCP (Model Context Protocol) adalah cara standar supaya Claude bisa memakai alat dan data di luar chat, misalnya file di laptop atau layanan online, lewat program kecil yang disebut MCP server.",
+    },
+    {
+      q: "Kapan aku pakai Skills, kapan MCP?",
+      a: "Pakai Skills waktu kamu mau menyimpan cara kerja yang dipanggil berulang dengan nama. Pakai MCP waktu Claude perlu menyentuh alat atau data di luar chat, misalnya file di laptop atau layanan online.",
+    },
+    {
+      q: "Apakah aku perlu bisa coding untuk memakai MCP?",
+      a: "Untuk memasang server siap pakai, biasanya cukup mengedit file config atau menjalankan perintah claude mcp add. Untuk membuat server sendiri, kamu perlu dasar Node.js atau mengikuti scaffold resmi.",
+    },
+    {
+      q: "Di mana file config Claude Desktop disimpan?",
+      a: "Di macOS: ~/Library/Application Support/Claude/claude_desktop_config.json. Di Windows: %APPDATA%\\Claude\\claude_desktop_config.json. Di Linux, jalur utama biasanya Claude Code dengan claude mcp add atau file .mcp.json.",
+    },
+    {
+      q: "Bagaimana cara cek MCP sudah tersambung?",
+      a: "Di Claude Desktop, buka connectors / manage connectors dan pastikan servermu muncul. Di Claude Code, ketik /mcp atau jalankan claude mcp list di terminal.",
+    },
+    {
+      q: "Apakah MCP aman?",
+      a: "Aman kalau kamu membatasi folder atau API yang diizinkan, hanya memasang server dari sumber terpercaya, dan membaca dialog approve sebelum mengizinkan aksi. Server berjalan dengan izin akunmu.",
+    },
+  ],
+  glossary: [
+    {
+      term: "MCP",
+      def: "Model Context Protocol: cara standar supaya asisten AI seperti Claude bisa menyambung ke alat dan data di luar chat.",
+    },
+    {
+      term: "MCP server",
+      def: "Program yang menawarkan tool (baca file, panggil API, dll.) kepada Claude lewat protokol MCP.",
+    },
+    {
+      term: "MCP client",
+      def: "Aplikasi yang memanggil MCP server. Di sini client-nya adalah Claude Desktop atau Claude Code.",
+    },
+    {
+      term: "Claude Desktop",
+      def: "Aplikasi desktop resmi Claude (macOS dan Windows) yang bisa memuat MCP lewat file konfigurasi JSON.",
+    },
+    {
+      term: "Claude Code",
+      def: "CLI agent Claude di terminal. MCP bisa ditambah lewat perintah claude mcp add atau file .mcp.json.",
+    },
+  ],
+  howto: {
+    name: "Cara memasang MCP filesystem di Claude",
+    steps: [
+      {
+        name: "Pasang Node.js",
+        text: "Pastikan node --version dan npx --version berjalan di terminal Mac, Linux, atau Windows.",
+      },
+      {
+        name: "Pilih jalur Claude",
+        text: "Pakai Claude Desktop (edit claude_desktop_config.json) atau Claude Code (claude mcp add).",
+      },
+      {
+        name: "Tambah server filesystem",
+        text: "Daftarkan @modelcontextprotocol/server-filesystem dengan path folder yang kamu izinkan saja.",
+      },
+      {
+        name: "Restart atau cek status",
+        text: "Restart Claude Desktop, atau jalankan claude mcp list / ketik /mcp di Claude Code.",
+      },
+      {
+        name: "Uji dengan permintaan nyata",
+        text: "Minta Claude membuat atau membaca file di folder yang diizinkan, lalu approve dengan membaca path-nya.",
+      },
+    ],
+  },
+  sources: [
+    {
+      label: "Model Context Protocol: Connect to local MCP servers",
+      url: "https://modelcontextprotocol.io/docs/develop/connect-local-servers",
+    },
+    {
+      label: "Model Context Protocol: Build a server",
+      url: "https://modelcontextprotocol.io/docs/develop/build-server",
+    },
+    {
+      label: "Claude Code Docs: MCP",
+      url: "https://code.claude.com/docs/en/mcp",
+    },
+  ],
+};
+
 const n8nNode: EduModule = {
   toolSlug: "n8n",
   toolName: "n8n",
@@ -1051,7 +1819,7 @@ const n8nNode: EduModule = {
   ],
 };
 
-export const eduModules: EduModule[] = [claudeSkills, n8nNode];
+export const eduModules: EduModule[] = [claudeSkills, claudeMcp, n8nNode];
 
 // ---------------------------------------------------------------------------
 // Lookups.

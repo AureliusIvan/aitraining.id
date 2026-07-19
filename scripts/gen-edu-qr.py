@@ -12,32 +12,47 @@ Regenerate after adding or renaming slides:
     python3 scripts/gen-edu-qr.py
 
 Requires: segno  (pip install segno)
-
-Note: this parses every `id: "..."` out of edu.ts, which is correct while there
-is a single module. When a second module is added, scope the id parse per
-module before relying on this.
 """
+
+from __future__ import annotations
 
 import pathlib
 import re
-
-import segno
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 EDU_TS = ROOT / "src/lib/edu.ts"
 OUT_DIR = ROOT / "public/assets/edu"
 
-# One entry per module: (toolSlug, slug, base URL). Extend when adding modules.
-MODULES = [("claude", "skills", "https://aitraining.id/edu/claude/skills")]
+# One entry per live module: (toolSlug, slug, base URL).
+MODULES = [
+    ("claude", "skills", "https://aitraining.id/edu/claude/skills"),
+    ("claude", "mcp", "https://aitraining.id/edu/claude/mcp"),
+    ("n8n", "node", "https://aitraining.id/edu/n8n/node"),
+]
 
 
-def slide_ids(text: str) -> list[str]:
-    return re.findall(r'\bid:\s*"([^"]+)"', text)
+def module_slide_ids(text: str, tool_slug: str, module_slug: str) -> list[str]:
+    """Pull slide ids from one EduModule block only (not the whole file)."""
+    pattern = (
+        rf'toolSlug:\s*"{re.escape(tool_slug)}"\s*,\s*'
+        rf"[\s\S]*?"
+        rf'slug:\s*"{re.escape(module_slug)}"\s*,'
+        rf"[\s\S]*?"
+        rf"slides:\s*\[([\s\S]*?)\]\s*,\s*faqs:"
+    )
+    match = re.search(pattern, text)
+    if not match:
+        raise SystemExit(
+            f"Could not find slides for {tool_slug}/{module_slug} in edu.ts"
+        )
+    return re.findall(r'\bid:\s*"([^"]+)"', match.group(1))
 
 
 def main() -> None:
-    ids = slide_ids(EDU_TS.read_text())
+    text = EDU_TS.read_text()
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
     for tool, slug, base in MODULES:
+        ids = module_slide_ids(text, tool, slug)
         prefix = OUT_DIR / f"{tool}-{slug}--"
         anchors = (
             [("top", base)]
@@ -53,4 +68,6 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    import segno
+
     main()
