@@ -295,6 +295,7 @@ and organizer contact.
 - Cities served: https://aitraining.id/cities
 - Daily Prompt Playbook: https://aitraining.id/playbook/daily-prompt
 - Contact / book: https://aitraining.id/contact
+- Brand kit (logo, mark, palette): https://aitraining.id/brand
 
 ## Booking
 - Free 30-minute discovery call: https://calendly.com/aureliusivanwijaya/30min

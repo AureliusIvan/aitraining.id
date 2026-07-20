@@ -148,6 +148,12 @@ export function Footer() {
             >
               Contact
             </Link>
+            <Link
+              href="/brand"
+              className="block text-white/70 hover:text-white transition-colors"
+            >
+              Brand
+            </Link>
           </div>
           <div className="space-y-3">
             <a

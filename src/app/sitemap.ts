@@ -117,6 +117,11 @@ const STATIC_META: Record<string, Meta> = {
     changeFrequency: "monthly",
     priority: 0.7,
   },
+  "/brand": {
+    lastModified: new Date("2026-07-20"),
+    changeFrequency: "monthly",
+    priority: 0.5,
+  },
   "/playbook": {
     lastModified: new Date("2026-06-06"),
     changeFrequency: "monthly",
