@@ -27,6 +27,7 @@ OUT_DIR = ROOT / "public/assets/edu"
 MODULES = [
     ("claude", "skills", "https://aitraining.id/edu/claude/skills"),
     ("claude", "mcp", "https://aitraining.id/edu/claude/mcp"),
+    ("claude", "cowork", "https://aitraining.id/edu/claude/cowork"),
     ("n8n", "node", "https://aitraining.id/edu/n8n/node"),
 ]
 

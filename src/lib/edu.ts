@@ -205,6 +205,13 @@ export const eduTools: EduTool[] = [
           "Sambungkan Claude ke alat dan data di luar chat: file, API, spreadsheet, lewat Model Context Protocol.",
         status: "live",
       },
+      {
+        slug: "cowork",
+        name: "Cowork",
+        blurb:
+          "Pasang Claude Desktop sampai Cowork siap dipakai: login, computer use, izin folder, dan perbaikan Missing HCS di Windows.",
+        status: "live",
+      },
     ],
   },
   {
@@ -1443,6 +1450,579 @@ const claudeMcp: EduModule = {
   ],
 };
 
+const claudeCowork: EduModule = {
+  toolSlug: "claude",
+  toolName: "Claude",
+  slug: "cowork",
+  moduleName: "Cowork",
+  level: "Level dasar",
+  readingLabel: "sekitar 16 menit",
+  h1: "Claude Cowork siap pakai",
+  tagline: "Dari unduh Claude Desktop sampai tab Cowork hidup.",
+  heroLede:
+    "[[Claude Cowork]] adalah mode kerja di Claude Desktop yang bisa mengerjakan tugas bertahap di komputermu: baca file, tulis file, dan (kalau kamu izinkan) menggerakkan mouse serta keyboard. Halaman ini memandu dari cek kelayakan, install, login, setup Cowork, computer use, izin folder, sampai perbaikan error Windows yang sering muncul: Missing HCS services.",
+  metaTitle: "Cara Pasang Claude Cowork di Windows | Fix Missing HCS",
+  metaDescription:
+    "Panduan pasang Claude Desktop dan Claude Cowork sampai siap pakai: cek plan berbayar, install, login, setup Cowork, enable computer use, izin folder, dan cara memperbaiki Missing HCS services (HNS, vmcomputer, vfpext) di Windows. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+  keywords: [
+    "cara pasang claude cowork",
+    "claude cowork windows",
+    "missing hcs services claude",
+    "missing hcs services hns vmcomputer vfpext",
+    "claude desktop install windows",
+    "enable computer use claude",
+    "virtual machine platform claude cowork",
+    "setup claude cowork bahasa indonesia",
+    "tutorial claude cowork",
+    "claude cowork untuk pemula",
+  ],
+  updated: "20 Juli 2026",
+  datePublished: "2026-07-20",
+  dateModified: "2026-07-20",
+  slides: [
+    {
+      id: "apa-itu",
+      kicker: "Claude · Modul Cowork",
+      title: "Apa itu Claude Cowork?",
+      subtitle: "Mode kerja yang bisa menyentuh file di laptopmu.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Claude Desktop membuka tab Cowork lalu mengerjakan tugas di folder kerja.",
+          caption:
+            "30 detik: tulis satu tugas berulang di laptopmu yang ingin diserahkan ke Cowork. Angkat tangan kalau siap cerita.",
+          items: [
+            { label: "Claude Desktop", icon: "spark", tone: "clay" },
+            { label: "Tab Cowork", icon: "message", tone: "blue" },
+            { label: "File di laptop", icon: "folder", tone: "green" },
+          ],
+        },
+        {
+          type: "lead",
+          text: "Di Claude Desktop ada dua jalur umum: [[Chat]] untuk ngobrol biasa, dan [[Claude Cowork]] untuk menyerahkan tugas yang butuh akses ke file atau layar. Menurut Help Center Anthropic, Cowork tersedia di plan berbayar (Pro, Max, Team, Enterprise).",
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Analogi singkat",
+          text: "Chat itu seperti ngobrol di meja. Cowork itu seperti kasih kunci folder kerja ke asisten, lalu biarkan dia kerjakan sampai selesai.",
+          webOnly: true,
+        },
+        {
+          type: "paragraph",
+          text: "Halaman ini mengikuti alur Windows di kelas. Menurut dokumentasi Anthropic, Claude Desktop (dan Cowork) juga ada di macOS; langkah installernya beda, tapi login, tab Cowork, computer use, dan izin folder polanya sama.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "kelayakan",
+      kicker: "Sebelum unduh",
+      title: "Cek kelayakan dulu",
+      subtitle: "Cowork tidak jalan di free tier.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Cek plan berbayar, admin Windows, dan virtualisasi sebelum install.",
+          caption:
+            "Sekarang: buka claude.ai/settings. Angkat tangan kalau plan-mu Pro, Max, Team, atau Enterprise.",
+          items: [
+            { label: "Plan berbayar", icon: "lock", tone: "red" },
+            { label: "Hak admin", icon: "settings", tone: "yellow" },
+            { label: "Virtualisasi", icon: "test", tone: "blue" },
+          ],
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Plan berbayar",
+              text: "Claude Cowork butuh Pro, Max, Team, atau Enterprise. Free tier tidak punya Cowork.",
+            },
+            {
+              title: "Hak admin (Windows)",
+              text: "Install dan fitur Virtual Machine Platform sering minta izin admin. Siapkan password admin sebelum mulai.",
+            },
+            {
+              title: "Virtualisasi hardware",
+              text: "Di Windows, error Missing HCS di kelas sering terkait Virtual Machine Platform yang belum nyala. Kalau tab Cowork abu-abu, cek fitur itu dulu.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Jangan unduh dulu kalau plan masih free",
+          text: "Upgrade dulu, atau pakai akun Google/email yang sudah punya subscription Anthropic. Baru lanjut install.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "install-desktop",
+      kicker: "Install",
+      title: "Install Claude Desktop",
+      subtitle: "Unduh dari claude.com/download, lalu jalankan installer.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Unduh installer Claude Desktop, buka file, lalu install sampai selesai.",
+          caption:
+            "Ivan demo unduh 40 detik. Kamu ikuti di laptop: Download for Windows, lalu buka file .exe dari folder Downloads.",
+          items: [
+            { label: "claude.com/download", icon: "search", tone: "blue" },
+            { label: "Installer .exe", icon: "file", tone: "yellow" },
+            { label: "Allow / Install", icon: "enter", tone: "green" },
+          ],
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Buka https://claude.com/download dan pilih Download for Windows.",
+              hint: "Mac: pilih unduhan macOS di halaman yang sama.",
+            },
+            {
+              text: "Simpan file installer (biasanya ke folder Downloads).",
+            },
+            {
+              text: "Buka file dari Recent downloads di browser, atau double-click di File Explorer.",
+            },
+            {
+              text: "Biarkan instalasi selesai. Kalau Windows minta permission, pilih Allow. Izin kamera boleh ditunda.",
+            },
+            {
+              text: "Tunggu layar Get Started muncul. Sampai sini instalasi selesai.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "gif",
+          alt: "Proses unduh dan install Claude Desktop di Windows sampai layar Get Started.",
+          caption: "Rekaman: unduh → buka .exe → Allow → Get Started.",
+          describe:
+            "Browser di claude.com/download, klik Download for Windows, buka file dari Downloads, izin UAC Allow, tunggu sampai jendela Claude menampilkan Get Started.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "login",
+      kicker: "Auth",
+      title: "Login akun Anthropic",
+      subtitle: "Google atau email, yang penting plan-nya berbayar.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Get Started lalu login dengan Google atau email yang punya subscription.",
+          caption:
+            "Pilih jalur loginmu: Google atau email. Pastikan akun yang sama dengan subscription Anthropic.",
+          items: [
+            { label: "Get Started", icon: "enter", tone: "clay" },
+            { label: "Google / Email", icon: "message", tone: "blue" },
+            { label: "Masuk Desktop", icon: "spark", tone: "green" },
+          ],
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Continue with Google",
+              text: "Klik Continue with Google, pilih akun Google yang punya subscription Anthropic, lalu lanjut.",
+            },
+            {
+              title: "Continue with email",
+              text: "Isi email akun Anthropic, klik continue, buka email verifikasi, lalu klik Sign in to Claude.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Akun salah = Cowork tetap kosong",
+          text: "Kalau kamu login pakai akun free sementara subscription ada di akun lain, tab Cowork tidak akan hidup. Cek lagi email yang dipakai bayar.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "setup-cowork",
+      kicker: "Setup",
+      title: "Setup Cowork",
+      subtitle: "Pindah ke tab Cowork, lalu biarkan workspace siap.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Buka tab Cowork, jalankan setup, tunggu download workspace selesai.",
+          caption:
+            "Pastikan kamu di tab Cowork. Kalau kelas memakai /setup-cowork, ketik sekarang dan tunggu selesai.",
+          items: [
+            { label: "Tab Cowork", icon: "select", tone: "blue" },
+            { label: "/setup-cowork", icon: "slash", tone: "yellow" },
+            { label: "Workspace siap", icon: "spark", tone: "green" },
+          ],
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Setelah login, buka Claude Desktop dan pilih tab Cowork.",
+            },
+            {
+              text: "Di kelas, ketik /setup-cowork (pintasan kelas) untuk setup dengan instalasi default.",
+              hint: "Di luar kelas, pilih Cowork di kotak pesan lalu deskripsikan tugasmu, sesuai Get started with Claude Cowork di Help Center Anthropic.",
+            },
+            {
+              text: "Tunggu beberapa menit sampai Claude selesai mengunduh workspace. Jangan tutup aplikasinya di tengah jalan.",
+            },
+            {
+              text: "Kalau muncul Setting up Claude's workspace, itu normal: Cowork sedang update ke versi terbaru.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Tab Cowork abu-abu?",
+          text: "Kalau tab tidak bisa diklik dan hover menampilkan Missing HCS services, loncat ke slide Missing HCS. Selesaikan dulu sebelum lanjut computer use.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "computer-use",
+      kicker: "Izin layar",
+      title: "Nyalakan Computer Use",
+      subtitle: "Izinkan Claude pakai screenshot, mouse, dan keyboard.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Buka Settings General lalu nyalakan toggle Enable computer use.",
+          caption:
+            "Ikuti bareng: Profile → Settings → General → Enable computer use → Turn on. Toggle biru = sudah hidup.",
+          items: [
+            { label: "Profile", icon: "settings", tone: "clay" },
+            { label: "General", icon: "list", tone: "blue" },
+            { label: "Computer use ON", icon: "lock", tone: "green" },
+          ],
+        },
+        {
+          type: "steps",
+          items: [
+            { text: "Klik ikon profile di Claude Desktop." },
+            { text: "Buka Settings." },
+            { text: "Pilih General." },
+            {
+              text: "Scroll ke bawah sampai menemukan toggle Enable computer use.",
+            },
+            {
+              text: "Klik Turn on. Toggle berwarna biru berarti izin sudah diberikan.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Apa yang diizinkan",
+          text: "Computer use memberi Claude akses screenshot, kontrol mouse, input keyboard, dan interaksi dengan antarmuka di layar. Dokumentasi: platform.claude.com/docs (computer-use-tool).",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "izin-folder",
+      kicker: "Izin file",
+      title: "Kasih akses folder kerja",
+      subtitle: "Claude hanya menyentuh folder yang kamu pilih.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Buat project Cowork, add folder belajar-claude, lalu Select folder.",
+          caption:
+            "Buat project belajar claude + folder belajar-claude. Select folder. Itu saja untuk latihan pertama.",
+          items: [
+            { label: "New project", icon: "plus", tone: "blue" },
+            { label: "Add folder", icon: "folder", tone: "yellow" },
+            { label: "Read / write", icon: "file", tone: "green" },
+          ],
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Di tab Cowork, klik Project or folder, lalu Create new project.",
+            },
+            {
+              text: "Isi nama project, misalnya belajar claude.",
+            },
+            {
+              text: "Klik Add folder di kanan atas, buat folder baru bernama belajar-claude, lalu Enter.",
+            },
+            {
+              text: "Double-click folder itu sampai path menunjukkan kamu berada di dalam belajar-claude.",
+            },
+            {
+              text: "Klik Select folder. Claude mendapat izin read, write, dan manage di folder ini saja.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Mulai dari folder sempit",
+          text: "Jangan langsung kasih akses ke seluruh Documents atau home. Satu folder latihan dulu, baru tambah folder kerja yang benar-benar dibutuhkan.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "missing-hcs",
+      kicker: "Troubleshooting Windows",
+      title: "Fix Missing HCS Services",
+      subtitle: "Tab Cowork abu-abu? Di kelas, cek Virtual Machine Platform dulu.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Pesan Missing HCS services diperbaiki dengan menyalakan Virtual Machine Platform lalu restart.",
+          caption:
+            "Hover tab Cowork. Kalau muncul Missing HCS services: HNS, vmcomputer, vfpext, ikuti langkah Windows Features sekarang.",
+          items: [
+            { label: "HCS missing", icon: "tag", tone: "red" },
+            { label: "VM Platform", icon: "settings", tone: "yellow" },
+            { label: "Restart", icon: "enter", tone: "green" },
+          ],
+        },
+        {
+          type: "lead",
+          text: "Gejala: tab Cowork abu-abu dan tidak bisa diklik. Saat di-hover muncul pesan Missing HCS services: HNS, vmcomputer, vfpext. HCS di sini merujuk layanan hypervisor Windows; di kelas, error ini sering hilang setelah Virtual Machine Platform nyala.",
+          webOnly: true,
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Penyebab umum",
+              text: "Virtual Machine Platform belum dicentang, virtualisasi BIOS belum nyala, akun tanpa hak admin, atau hardware tidak mendukung virtualisasi.",
+            },
+            {
+              title: "Perbaikan pertama",
+              text: "Nyalakan Windows feature Virtual Machine Platform, lalu restart. Di kelas Windows, ini yang paling sering membuat tab Cowork bisa diklik lagi.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Klik tombol Windows di kiri bawah, cari turn windows features on or off, lalu buka.",
+            },
+            {
+              text: "Scroll ke bawah sampai Virtual Machine Platform.",
+            },
+            {
+              text: "Centang Virtual Machine Platform kalau belum, lalu klik OK.",
+            },
+            {
+              text: "Tunggu Windows mencari file yang dibutuhkan.",
+            },
+            {
+              text: "Simpan semua pekerjaan, lalu Restart now.",
+            },
+            {
+              text: "Setelah boot ulang, buka Claude Desktop lagi dan cek tab Cowork sudah bisa diklik.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Kalau masih gagal setelah restart",
+          text: "Cek di BIOS/UEFI apakah Intel VT-x atau AMD-V sudah enabled, pastikan kamu login sebagai admin, dan update Claude Desktop ke versi terbaru dari claude.com/download.",
+          webOnly: true,
+        },
+        {
+          type: "gif",
+          alt: "Menyalakan Virtual Machine Platform di Windows Features lalu restart.",
+          caption: "Rekaman: Windows Features → centang Virtual Machine Platform → OK → Restart.",
+          describe:
+            "Start menu → turn windows features on or off → scroll ke Virtual Machine Platform → centang → OK → dialog restart → Restart now → setelah boot, Claude Desktop dengan tab Cowork aktif.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "tips",
+      kicker: "Siap pakai",
+      title: "Checklist sebelum tugas pertama",
+      subtitle: "Empat centang, baru mulai kerja.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Checklist: plan, Cowork hidup, computer use, folder izin.",
+          caption:
+            "Berdiri. Sebut angka yang belum kamu centang. Duduk lagi kalau keempatnya sudah hijau.",
+          items: [
+            { label: "Plan berbayar", icon: "lock", tone: "red" },
+            { label: "Cowork hidup", icon: "spark", tone: "clay" },
+            { label: "Computer use", icon: "settings", tone: "blue" },
+            { label: "Folder izin", icon: "folder", tone: "green" },
+          ],
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Plan & login benar",
+              text: "Akun di Desktop sama dengan akun yang bayar Pro/Max/Team/Enterprise.",
+            },
+            {
+              title: "Tab Cowork bisa diklik",
+              text: "Tidak abu-abu. Kalau masih Missing HCS, selesaikan Virtual Machine Platform dulu.",
+            },
+            {
+              title: "Computer use ON",
+              text: "Toggle di Settings → General sudah biru.",
+            },
+            {
+              title: "Satu folder latihan",
+              text: "Project punya folder sempit (misalnya belajar-claude) sebelum menyentuh file penting.",
+            },
+          ],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Tugas pertama yang aman",
+          text: "Minta Cowork merapikan isi folder latihan: buat subfolder, pindahkan file dummy, tulis satu catatan Markdown. Baru naik ke file kerja sungguhan.",
+          webOnly: true,
+        },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Apa itu Claude Cowork?",
+      a: "Claude Cowork adalah mode kerja di Claude Desktop yang bisa mengerjakan tugas bertahap. Menurut Help Center Anthropic, Cowork juga ada di web dan mobile untuk plan berbayar (rollout bertahap). Di Desktop, Cowork bisa membaca dan menulis file di folder yang kamu izinkan, dan kalau dinyalakan, memakai computer use di layarmu.",
+    },
+    {
+      q: "Apakah Claude Cowork gratis?",
+      a: "Tidak. Menurut Get started with Claude Cowork di Help Center Anthropic, Cowork tersedia di plan berbayar: Pro, Max, Team, dan Enterprise. Free tier tidak punya Cowork.",
+    },
+    {
+      q: "Apa arti Missing HCS services di Claude Cowork?",
+      a: "Di Windows, pesan Missing HCS services: HNS, vmcomputer, vfpext biasanya muncul saat tab Cowork abu-abu. Di kelas, perbaikan pertama yang sering berhasil: nyalakan Virtual Machine Platform di Turn Windows features on or off, lalu restart.",
+    },
+    {
+      q: "Bagaimana cara memperbaiki Missing HCS services Claude?",
+      a: "Buka Turn Windows features on or off, centang Virtual Machine Platform, klik OK, simpan pekerjaan, lalu restart. Setelah boot ulang, buka Claude Desktop dan cek tab Cowork. Kalau masih gagal, cek virtualisasi di BIOS dan hak admin. Langkah ini dari runbook kelas AI Training Indonesia, diselaraskan dengan gejala yang muncul di Windows.",
+    },
+    {
+      q: "Di mana tombol Enable computer use?",
+      a: "Di Claude Desktop: Profile → Settings → General, lalu scroll ke Enable computer use dan Turn on. Toggle biru berarti sudah aktif.",
+    },
+    {
+      q: "Apakah Mac juga bisa pakai Claude Cowork?",
+      a: "Ya. Help Center Anthropic mencantumkan Claude Desktop untuk macOS dan Windows. Langkah Missing HCS dan Virtual Machine Platform hanya relevan di Windows.",
+    },
+  ],
+  glossary: [
+    {
+      term: "Claude Cowork",
+      def: "Mode kerja di Claude yang mengerjakan tugas bertahap dan, di Desktop, bisa menyentuh file serta layar sesuai izinmu.",
+    },
+    {
+      term: "Chat",
+      def: "Mode obrolan biasa di Claude Desktop. Beda tab dengan Cowork.",
+    },
+    {
+      term: "Computer use",
+      def: "Izin supaya Claude bisa memakai screenshot, mouse, dan keyboard di komputermu.",
+    },
+    {
+      term: "HCS",
+      def: "Layanan terkait hypervisor di Windows. Di kelas, error Missing HCS services di tab Cowork sering hilang setelah Virtual Machine Platform dinyalakan dan PC di-restart.",
+    },
+    {
+      term: "Virtual Machine Platform",
+      def: "Fitur Windows yang harus dinyalakan; di kelas, error Missing HCS di tab Cowork sering hilang setelah ini dinyalakan dan PC di-restart.",
+    },
+    {
+      term: "Claude Desktop",
+      def: "Aplikasi desktop resmi Claude untuk macOS dan Windows, tempat Cowork, computer use, dan akses folder lokal dijalankan.",
+    },
+  ],
+  howto: {
+    name: "Cara pasang Claude Cowork sampai siap pakai di Windows",
+    steps: [
+      {
+        name: "Cek plan berbayar",
+        text: "Pastikan akun Anthropic-mu Pro, Max, Team, atau Enterprise sebelum mengunduh.",
+      },
+      {
+        name: "Install Claude Desktop",
+        text: "Unduh dari claude.com/download, jalankan installer Windows, izinkan permission yang diminta.",
+      },
+      {
+        name: "Login",
+        text: "Masuk dengan Google atau email yang terhubung ke subscription Anthropic.",
+      },
+      {
+        name: "Setup Cowork",
+        text: "Buka tab Cowork. Di kelas, jalankan /setup-cowork (pintasan kelas) dan tunggu workspace selesai diunduh.",
+      },
+      {
+        name: "Nyalakan computer use dan izin folder",
+        text: "Settings → General → Enable computer use, lalu buat project dengan satu folder latihan.",
+      },
+      {
+        name: "Perbaiki Missing HCS bila perlu",
+        text: "Kalau tab abu-abu, centang Virtual Machine Platform di Windows Features, restart, lalu buka Claude lagi.",
+      },
+    ],
+  },
+  sources: [
+    {
+      label: "Anthropic Help: Get started with Claude Cowork",
+      url: "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+    },
+    {
+      label: "Anthropic Help: Let Claude use your computer in Cowork",
+      url: "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
+    },
+    {
+      label: "Claude Desktop download",
+      url: "https://claude.com/download",
+    },
+    {
+      label: "Anthropic Docs: Computer use tool",
+      url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
+    },
+    {
+      label: "Runbook kelas: Install Claude Desktop & fix Missing HCS (AI Training Indonesia)",
+      url: "https://docs.google.com/document/d/1Jef4OUnI5-vQ-FcLd2A7PrVBMCPNUkZ4nwYFrtUIgBM/edit",
+    },
+  ],
+};
+
 const n8nNode: EduModule = {
   toolSlug: "n8n",
   toolName: "n8n",
@@ -1819,7 +2399,12 @@ const n8nNode: EduModule = {
   ],
 };
 
-export const eduModules: EduModule[] = [claudeSkills, claudeMcp, n8nNode];
+export const eduModules: EduModule[] = [
+  claudeSkills,
+  claudeMcp,
+  claudeCowork,
+  n8nNode,
+];
 
 // ---------------------------------------------------------------------------
 // Lookups.
