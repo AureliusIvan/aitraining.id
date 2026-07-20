@@ -14,6 +14,8 @@ export type Question = {
   options: string[];
   required: boolean;
   order: number;
+  /** Optional answer example from Questions.example — shown as a hint, never prefilled. */
+  example?: string;
 };
 
 /** Stored in the Submissions cell for type=file questions. */

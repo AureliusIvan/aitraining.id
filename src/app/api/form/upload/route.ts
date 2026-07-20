@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     return rateLimitResponse(limited.retryAfterSec);
   }
 
-  const questions = await getQuestions();
+  const questions = await getQuestions(link.formKind);
   const question = questions.find((q) => q.id === questionId);
   if (!question || question.type !== "file") {
     return NextResponse.json({ error: "invalid question" }, { status: 400 });

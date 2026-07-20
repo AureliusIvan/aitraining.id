@@ -58,10 +58,13 @@ export function AssessmentForm({
   token,
   questions,
   clientLabel,
+  doneMessage,
 }: {
   token: string;
   questions: Question[];
   clientLabel?: string;
+  formKind?: string;
+  doneMessage?: string;
 }) {
   const draftKey = `assessment:${token}:draft`;
   const submissionIdKey = `assessment:${token}:submissionId`;
@@ -347,8 +350,8 @@ export function AssessmentForm({
           Terima kasih!
         </p>
         <p className="text-neutral-500 text-lg mb-8">
-          Jawaban Anda sudah kami terima. Sampai jumpa di sesi training. Anda
-          bisa kembali ke halaman ini kapan saja untuk mengedit jawaban.
+          {doneMessage ??
+            "Jawaban Anda sudah kami terima. Sampai jumpa di sesi training. Anda bisa kembali ke halaman ini kapan saja untuk mengedit jawaban."}
         </p>
         <div className="flex items-center gap-6">
           <button
@@ -494,13 +497,24 @@ export function AssessmentForm({
               <p className="text-sm uppercase tracking-wide text-neutral-400 font-semibold mb-3">
                 {current.section}
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-10">
+              <h1
+                className={`text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight ${
+                  current.example ? "mb-4" : "mb-10"
+                }`}
+              >
                 <span className="text-amber-500">{step + 1} → </span>
                 {current.question}
                 {current.required && (
                   <span className="text-amber-500">*</span>
                 )}
               </h1>
+
+              {current.example ? (
+                <p className="mb-8 text-base sm:text-lg text-neutral-500 leading-relaxed">
+                  <span className="font-medium text-neutral-400">Contoh: </span>
+                  {current.example}
+                </p>
+              ) : null}
 
               {current.type === "short_text" && (
                 <input

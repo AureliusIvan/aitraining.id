@@ -103,44 +103,66 @@ export async function uploadAssessmentFile(
   };
 }
 
+/** Default bank when Links.form_kind / Questions.form_kind is blank. */
+export const DEFAULT_FORM_KIND = "assessment";
+
+function normalizeFormKind(raw: string | undefined | null): string {
+  const value = String(raw ?? "")
+    .trim()
+    .toLowerCase();
+  return value || DEFAULT_FORM_KIND;
+}
+
 // Questions tab drives what renders on the live form — edit rows there (id,
-// section, question, type, options, required, order) and this reads it fresh
-// on every request, no redeploy needed.
-export async function getQuestions(): Promise<Question[]> {
+// section, question, type, options, required, order, form_kind, example) and
+// this reads it fresh on every request, no redeploy needed. form_kind (col H)
+// filters which bank a link sees; blank = assessment. example (col I) is an
+// optional answer hint for free-text questions.
+export async function getQuestions(
+  formKind: string = DEFAULT_FORM_KIND,
+): Promise<Question[]> {
+  const wanted = normalizeFormKind(formKind);
   const sheets = getSheetsClient();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: SHEET_ID,
-    range: "Questions!A2:G",
+    range: "Questions!A2:I",
   });
   const rows = res.data.values ?? [];
   return rows
     .filter((r) => r[0])
-    .map((r) => ({
-      id: String(r[0]),
-      section: String(r[1] ?? ""),
-      question: String(r[2] ?? ""),
-      type: (r[3] || "short_text") as QuestionType,
-      options: r[4]
-        ? String(r[4])
-            .split("|")
-            .map((o) => o.trim())
-            .filter(Boolean)
-        : [],
-      required: String(r[5] ?? "").toUpperCase() === "TRUE",
-      order: Number(r[6]) || 0,
-    }))
+    .filter((r) => normalizeFormKind(r[7]) === wanted)
+    .map((r) => {
+      const example = String(r[8] ?? "").trim();
+      return {
+        id: String(r[0]),
+        section: String(r[1] ?? ""),
+        question: String(r[2] ?? ""),
+        type: (r[3] || "short_text") as QuestionType,
+        options: r[4]
+          ? String(r[4])
+              .split("|")
+              .map((o) => o.trim())
+              .filter(Boolean)
+          : [],
+        required: String(r[5] ?? "").toUpperCase() === "TRUE",
+        order: Number(r[6]) || 0,
+        ...(example ? { example } : {}),
+      };
+    })
     .sort((a, b) => a.order - b.order);
 }
 
 export type ResolvedLink = {
   clientSlug: string;
   label: string;
+  formKind: string;
 };
 
 // The URL segment is an opaque random token, never a guessable client name.
 // This is the only place a token is turned into a real client identity — the
 // page and the submit API both call it fresh server-side, so a client can
 // never claim to be a different client by sending a different value.
+// Links col F = form_kind (blank = assessment).
 export async function resolveToken(
   token: string,
 ): Promise<ResolvedLink | null> {
@@ -149,7 +171,7 @@ export async function resolveToken(
   const sheets = getSheetsClient();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: SHEET_ID,
-    range: "Links!A2:E",
+    range: "Links!A2:F",
   });
   const rows = res.data.values ?? [];
   const match = rows.find(
@@ -160,6 +182,7 @@ export async function resolveToken(
   return {
     clientSlug: String(match[1] ?? ""),
     label: String(match[2] ?? ""),
+    formKind: normalizeFormKind(match[5]),
   };
 }
 
@@ -177,9 +200,10 @@ function columnLetter(n: number): string {
 async function getSubmissionsGrid(
   sheets: ReturnType<typeof getSheetsClient>,
 ): Promise<{ headers: string[]; rows: string[][] }> {
+  // Full used range (not A:Z) — daily-work ids w1+ push past column Z.
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: SHEET_ID,
-    range: "Submissions!A:Z",
+    range: "Submissions",
   });
   const values = (res.data.values ?? []) as string[][];
   return { headers: values[0] ?? [], rows: values.slice(1) };
@@ -189,12 +213,14 @@ function buildRow(
   headers: string[],
   clientSlug: string,
   submissionId: string,
+  formKind: string,
   answers: Record<string, string>,
 ): string[] {
   return headers.map((h) => {
     if (h === "timestamp") return new Date().toISOString();
     if (h === "client_slug") return clientSlug;
     if (h === "submission_id") return submissionId;
+    if (h === "form_kind") return formKind;
     return answers[h] ?? "";
   });
 }
@@ -205,12 +231,19 @@ function buildRow(
 // client-side and pass it back on a future edit.
 export async function appendSubmission(
   clientSlug: string,
+  formKind: string,
   answers: Record<string, string>,
 ): Promise<string> {
   const sheets = getSheetsClient();
   const { headers } = await getSubmissionsGrid(sheets);
   const submissionId = randomUUID();
-  const row = buildRow(headers, clientSlug, submissionId, answers);
+  const row = buildRow(
+    headers,
+    clientSlug,
+    submissionId,
+    normalizeFormKind(formKind),
+    answers,
+  );
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: SHEET_ID,
@@ -233,6 +266,7 @@ export async function appendSubmission(
 export async function updateSubmission(
   submissionId: string,
   clientSlug: string,
+  formKind: string,
   answers: Record<string, string>,
 ): Promise<boolean> {
   const sheets = getSheetsClient();
@@ -249,7 +283,13 @@ export async function updateSubmission(
   if (rowIndex === -1) return false;
 
   const sheetRowNumber = rowIndex + 2; // +1 for the header row, +1 to 1-index
-  const row = buildRow(headers, clientSlug, submissionId, answers);
+  const row = buildRow(
+    headers,
+    clientSlug,
+    submissionId,
+    normalizeFormKind(formKind),
+    answers,
+  );
 
   await sheets.spreadsheets.values.update({
     spreadsheetId: SHEET_ID,

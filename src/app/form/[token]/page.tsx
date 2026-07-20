@@ -5,13 +5,17 @@ import { getQuestions, resolveToken } from "@/lib/assessment-sheets";
 import { AssessmentForm } from "./AssessmentForm";
 
 export const metadata: Metadata = {
-  title: "Assessment Peserta Training",
+  title: "Form Training",
   robots: { index: false, follow: false },
 };
 
 // Always reads live — never statically cached, so a Sheet edit (new question,
 // new/revoked token) shows up on the next load with no redeploy.
 export const dynamic = "force-dynamic";
+
+function isHomeworkKind(formKind: string | undefined): boolean {
+  return Boolean(formKind?.startsWith("homework"));
+}
 
 export default async function AssessmentPage({
   params,
@@ -25,7 +29,7 @@ export default async function AssessmentPage({
   let link: Awaited<ReturnType<typeof resolveToken>> = null;
   try {
     link = await resolveToken(token);
-    if (link) questions = await getQuestions();
+    if (link) questions = await getQuestions(link.formKind);
   } catch {
     loadError = true;
   }
@@ -34,6 +38,8 @@ export default async function AssessmentPage({
   // hint that distinguishes "wrong token" from "page doesn't exist", so the
   // URL space can't be probed for valid links.
   if (!loadError && !link) notFound();
+
+  const homework = isHomeworkKind(link?.formKind);
 
   return (
     <div className="min-h-screen bg-white text-neutral-900">
@@ -48,8 +54,7 @@ export default async function AssessmentPage({
             className="h-9 w-auto mb-10"
           />
           <p className="text-neutral-500 text-center text-lg">
-            Form assessment belum tersedia saat ini. Silakan hubungi trainer
-            Anda.
+            Form belum tersedia saat ini. Silakan hubungi trainer Anda.
           </p>
         </div>
       ) : (
@@ -57,6 +62,12 @@ export default async function AssessmentPage({
           token={token}
           questions={questions}
           clientLabel={link?.label}
+          formKind={link?.formKind}
+          doneMessage={
+            homework
+              ? "Homework sudah kami terima. Kamu bisa kembali ke halaman ini kapan saja untuk mengedit."
+              : undefined
+          }
         />
       )}
     </div>

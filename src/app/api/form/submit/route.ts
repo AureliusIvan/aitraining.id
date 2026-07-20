@@ -52,7 +52,7 @@ export async function POST(request: Request) {
     return rateLimitResponse(limited.retryAfterSec);
   }
 
-  const questions = await getQuestions();
+  const questions = await getQuestions(link.formKind);
   const missing = questions.filter(
     (q) => q.required && !answers[q.id]?.toString().trim(),
   );
@@ -72,13 +72,14 @@ export async function POST(request: Request) {
     const updated = await updateSubmission(
       submissionId,
       link.clientSlug,
+      link.formKind,
       answers,
     );
     finalId = updated
       ? submissionId
-      : await appendSubmission(link.clientSlug, answers);
+      : await appendSubmission(link.clientSlug, link.formKind, answers);
   } else {
-    finalId = await appendSubmission(link.clientSlug, answers);
+    finalId = await appendSubmission(link.clientSlug, link.formKind, answers);
   }
 
   return NextResponse.json({ ok: true, submissionId: finalId });
