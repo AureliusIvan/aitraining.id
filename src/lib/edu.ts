@@ -20,7 +20,13 @@
 
 export type EduStep = { text: string; hint?: string };
 
-type BlockBase = { webOnly?: boolean };
+// `webOnly` keeps a block off the projected deck (extra reading for the page).
+// `deckOnly` is the mirror: room-dependent facilitation cues ("angkat tangan",
+// "kita baca bareng") that belong on the projected slide but would read as a
+// dangling stage direction to a solo reader on the crawlable page. Set at most
+// one of the two. Slide-level fields (title/subtitle) and captions inside a
+// block cannot carry either flag, so those must be worded for both surfaces.
+type BlockBase = { webOnly?: boolean; deckOnly?: boolean };
 
 export type EduMotionScene =
   | "claude-skill"
@@ -210,6 +216,20 @@ export const eduTools: EduTool[] = [
         name: "Cowork",
         blurb:
           "Pasang Claude Desktop sampai Cowork siap dipakai: login, computer use, izin folder, dan perbaikan Missing HCS di Windows.",
+        status: "live",
+      },
+      {
+        slug: "subagent",
+        name: "Subagent",
+        blurb:
+          "Titipkan satu tugas panjang ke asisten terpisah, atau jalankan beberapa sekaligus, lalu terima ringkasannya saja.",
+        status: "live",
+      },
+      {
+        slug: "agent-team",
+        name: "Agent Team",
+        blurb:
+          "Beberapa agent dalam satu ruangan yang saling mengecek hasil kerja sebelum laporan akhir sampai ke kamu.",
         status: "live",
       },
     ],
@@ -554,7 +574,7 @@ const claudeSkills: EduModule = {
           scene: "edu-storyboard",
           alt: "Buat folder, buat SKILL.md, isi instruksi, lalu panggil skill baru.",
           caption:
-            "Langkah 1–3 di laptop sekarang. Di langkah 4: panggil / dengan 1 langkah sengaja salah, baca error bareng, lalu betulkan.",
+            "Langkah 1 sampai 3 di laptop sekarang. Di langkah 4: panggil / dengan 1 langkah sengaja salah, baca error bareng, lalu betulkan.",
           items: [
             { label: "Buat folder", icon: "folder", tone: "blue" },
             { label: "SKILL.md", icon: "file", tone: "yellow" },
@@ -2399,10 +2419,1113 @@ const n8nNode: EduModule = {
   ],
 };
 
+const claudeSubagent: EduModule = {
+  toolSlug: "claude",
+  toolName: "Claude",
+  slug: "subagent",
+  moduleName: "Subagent",
+  level: "Level menengah",
+  readingLabel: "sekitar 12 menit",
+  h1: "Subagent di Claude",
+  tagline: "Satu tugas besar, dibagi ke asisten terpisah.",
+  heroLede:
+    "Subagent adalah asisten tambahan yang dipanggil Claude untuk mengerjakan satu tugas khusus di ruang terpisah, lalu mengirim ringkasan hasilnya ke percakapan utama. Halaman ini membahasnya dari nol: apa itu subagent, cara membuat satu subagent di Claude Code, cara menjalankan beberapa subagent sekaligus, hasil percobaan waktu dan token, dan cara memakainya di Claude Cowork.",
+  metaTitle: "Apa itu Subagent Claude? Cara Membuat dan Memakainya",
+  metaDescription:
+    "Panduan dasar subagent Claude untuk pemula: apa itu subagent dan multiple subagent, cara membuatnya di Claude Code, hasil perbandingan waktu dan token, dan cara memakainya di Claude Cowork. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+  keywords: [
+    "apa itu subagent claude",
+    "subagent claude code",
+    "multiple subagent",
+    "cara membuat subagent claude",
+    "claude agents folder",
+    "subagent claude cowork",
+    "belajar claude bahasa indonesia",
+    "agent claude untuk pemula",
+  ],
+  updated: "22 Juli 2026",
+  datePublished: "2026-07-22",
+  dateModified: "2026-07-22",
+  slides: [
+    {
+      id: "apa-itu",
+      kicker: "Claude · Modul Subagent",
+      title: "Apa itu subagent?",
+      subtitle: "Satu asisten, satu tugas, satu ringkasan.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Tugas besar masuk ke agen utama, diteruskan ke satu subagent, lalu kembali sebagai ringkasan.",
+          caption:
+            "Bayangkan satu tugas panjang di meja kerjamu. 20 detik: tulis satu tugas nyata yang mau kamu titipkan.",
+          items: [
+            { label: "Tugas besar", icon: "message", tone: "yellow" },
+            { label: "Subagent kerja", icon: "search", tone: "blue" },
+            { label: "Ringkasan balik", icon: "notes", tone: "green" },
+          ],
+        },
+        {
+          type: "lead",
+          text: "Bayangkan seorang manajer proyek menerima tugas besar. Ia menugaskan satu staf untuk mencari data. Staf itu bekerja di ruangannya sendiri, membuka banyak arsip, lalu menyerahkan satu lembar kesimpulan.",
+        },
+        {
+          type: "paragraph",
+          text: "Begitulah cara kerja [[subagent]]. Claude sebagai agen utama memanggil asisten tambahan untuk satu tugas khusus, asisten itu bekerja terpisah, dan yang kembali ke percakapan utama hanya ringkasan hasilnya.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Kenapa ini berguna",
+          text: "Percakapan utama tetap rapi karena semua detail pencarian tinggal di dalam subagent.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "multiple-subagent",
+      kicker: "Konsep",
+      title: "Multiple subagent",
+      subtitle: "Beberapa staf bekerja di waktu yang sama.",
+      blocks: [
+        {
+          type: "lead",
+          text: "Sekarang proyeknya makin besar. Manajer menugaskan tiga staf sekaligus: satu mencari data penjualan, satu memeriksa laporan tahun lalu, satu merangkum komunikasi klien. Ketiganya bekerja bersamaan, lalu masing-masing menyerahkan ringkasannya. Inilah [[multiple subagent]].",
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Lebih cepat",
+              text: "Beberapa tugas berjalan bersamaan, jadi total waktunya mendekati tugas yang paling lama saja.",
+            },
+            {
+              title: "Lebih rapi",
+              text: "Percakapan utama hanya menerima ringkasan dari tiap subagent.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Satu batasan penting",
+          text: "Para staf ini tidak saling bicara. Mereka hanya melapor ke agen utama. Kalau mereka perlu berdiskusi dulu sebelum melapor, itu konsep lain namanya Agent Team, dibahas di modul terpisah.",
+        },
+      ],
+    },
+    {
+      id: "buat-folder",
+      kicker: "Praktik · Claude Code",
+      title: "Langkah 1: siapkan folder project",
+      subtitle: "Subagent disimpan di dalam folder project.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/01-buat-folder-project.png",
+          alt: "Jendela File Explorer memperlihatkan folder bernama cahaya-topup di dalam folder Repositories.",
+          caption:
+            "Folder project bernama cahaya-topup. Nama dan lokasinya bebas. Buat sekarang, 60 detik.",
+          describe:
+            "Membuat folder project baru di File Explorer sebagai tempat subagent disimpan.",
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Buat satu folder project baru, misalnya cahaya-topup.",
+              hint: "Lokasinya bebas. Contoh di sini memakai folder Repositories.",
+            },
+            {
+              text: "Ingat lokasinya, karena semua langkah berikutnya dijalankan dari folder ini.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "buka-terminal",
+      kicker: "Praktik · Claude Code",
+      title: "Langkah 2: buka terminal di folder itu",
+      subtitle: "Terminal harus berada di dalam folder project.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/02-open-in-terminal.png",
+          alt: "Menu klik kanan di File Explorer dengan pilihan Open in Terminal disorot.",
+          caption:
+            "Di Windows: klik kanan di dalam folder, lalu pilih Open in Terminal.",
+          describe:
+            "Klik kanan di dalam folder project lalu memilih Open in Terminal.",
+        },
+        {
+          type: "os-code",
+          caption: "Kalau lebih suka mengetik, pindah folder dari terminal",
+          note: "Ganti nama folder sesuai punyamu.",
+          defaultOs: "windows",
+          variants: {
+            windows: {
+              lines: ["cd C:\\Users\\<nama>\\Repositories\\cahaya-topup"],
+              caption: "PowerShell",
+            },
+            mac: {
+              lines: ["cd ~/Repositories/cahaya-topup"],
+              caption: "Terminal",
+            },
+            linux: {
+              lines: ["cd ~/Repositories/cahaya-topup"],
+              caption: "Terminal",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "jalankan-claude",
+      kicker: "Praktik · Claude Code",
+      title: "Langkah 3: jalankan Claude",
+      subtitle: "Satu kata perintah untuk masuk ke Claude Code.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/03-jalankan-claude.png",
+          alt: "Jendela PowerShell dengan perintah claude diketik di dalam folder project.",
+          caption:
+            "Ketik claude lalu tekan Enter. Perhatikan path-nya sudah menunjuk ke folder project.",
+          describe:
+            "Mengetik perintah claude di terminal yang berada di folder project.",
+        },
+        {
+          type: "code",
+          caption: "Di dalam folder project",
+          lines: ["claude"],
+        },
+      ],
+    },
+    {
+      id: "claude-siap",
+      kicker: "Praktik · Claude Code",
+      title: "Tampilan ketika Claude siap",
+      subtitle: "Kalau layarmu seperti ini, kamu sudah masuk.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/04-claude-code-siap.png",
+          alt: "Layar sambutan Claude Code menampilkan versi, model, dan path folder project.",
+          caption:
+            "Layar sambutan [[Claude Code]]. Di bagian bawah kotak terlihat folder project yang sedang aktif.",
+          describe:
+            "Layar sambutan Claude Code setelah perintah claude dijalankan.",
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Cek dulu sebelum lanjut",
+          text: "Folder di layar sambutan harus sama dengan folder project kamu. Kalau beda, ketik /exit, pindah folder, lalu jalankan claude lagi.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Angkat tangan kalau folder kamu belum cocok. Ivan keliling cek.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "minta-subagent",
+      kicker: "Praktik · Claude Code",
+      title: "Langkah 4: minta Claude membuat subagent",
+      subtitle: "Jelaskan tugasnya, Claude yang menyusun filenya.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/05-minta-buat-subagent.png",
+          alt: "Permintaan pembuatan subagent price-checker diketik di kolom input Claude Code.",
+          caption: "Tulis tugas subagent-nya sejelas mungkin, lalu tekan Enter.",
+          describe:
+            "Mengetik permintaan pembuatan subagent di kolom input Claude Code.",
+        },
+        {
+          type: "code",
+          caption: "Contoh permintaan",
+          lines: [
+            "Buat subagent price-checker yang membandingkan harga top up game",
+            "di beberapa toko Indonesia lalu mengembalikan tabel perbandingan.",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Pakai tugasmu sendiri",
+          text: "Ganti isi permintaannya dengan tugas yang kamu tulis di slide pertama. Ketik sekarang, 3 menit.",
+        },
+        {
+          type: "code",
+          caption: "Versi panjang dalam bahasa Inggris, kalau mau menyalin persis",
+          lines: [
+            "Create a price-checker subagent that compares game top-up",
+            "prices (diamonds, UC, points, vouchers) across Indonesian",
+            "marketplaces and official channels for any game, discovers",
+            "relevant stores itself via web search, and returns a",
+            "comparison table flagging the cheapest legitimate option",
+          ],
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "subagent-jadi",
+      kicker: "Praktik · Claude Code",
+      title: "Subagent selesai dibuat",
+      subtitle: "Claude melaporkan lokasi filenya.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/06-subagent-selesai-dibuat.png",
+          alt: "Claude Code melaporkan bahwa definisi subagent price-checker sudah dibuat beserta ringkasan tugasnya.",
+          caption:
+            "Claude menyebut file yang dibuat dan alat apa saja yang boleh dipakai subagent itu.",
+          describe:
+            "Laporan Claude Code setelah selesai menyusun definisi subagent.",
+        },
+        {
+          type: "paragraph",
+          text: "Perhatikan dua hal di laporan itu: lokasi file yang dibuat, dan daftar alat yang boleh dipakai subagent tersebut. Subagent hanya bisa memakai alat yang disebut di situ.",
+        },
+      ],
+    },
+    {
+      id: "cek-file",
+      kicker: "Praktik · Claude Code",
+      title: "Langkah 5: cek filenya",
+      subtitle: "Subagent tersimpan sebagai satu file teks biasa.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/07-file-subagent-tersimpan.png",
+          alt: "File Explorer membuka folder .claude/agents dan menampilkan file price-checker.md.",
+          caption:
+            "File price-checker.md ada di folder [[.claude/agents]]. Kalau file ini ada, subagent siap dipakai.",
+          describe:
+            "Membuka folder .claude/agents dan melihat file definisi subagent.",
+        },
+        {
+          type: "os-code",
+          caption: "Lokasi file subagent",
+          note: "Folder .claude di dalam project berlaku untuk project itu saja. Folder di home berlaku untuk semua project.",
+          defaultOs: "windows",
+          variants: {
+            windows: {
+              lines: [
+                "cahaya-topup\\.claude\\agents\\price-checker.md",
+                "%USERPROFILE%\\.claude\\agents\\price-checker.md",
+              ],
+              caption: "Project, lalu global",
+            },
+            mac: {
+              lines: [
+                "cahaya-topup/.claude/agents/price-checker.md",
+                "~/.claude/agents/price-checker.md",
+              ],
+              caption: "Project, lalu global",
+            },
+            linux: {
+              lines: [
+                "cahaya-topup/.claude/agents/price-checker.md",
+                "~/.claude/agents/price-checker.md",
+              ],
+              caption: "Project, lalu global",
+            },
+          },
+        },
+        {
+          type: "paragraph",
+          text: "Filenya berbentuk markdown, jadi bisa kamu buka dan sunting sendiri kapan saja. Cara lain membuat subagent adalah menulis file ini langsung tanpa meminta Claude.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "jalankan-subagent",
+      kicker: "Praktik · Claude Code",
+      title: "Langkah 6: jalankan subagent-mu",
+      subtitle: "Sekarang kita pakai subagent yang barusan kamu buat.",
+      blocks: [
+        {
+          type: "code",
+          caption:
+            "Panggil subagent yang baru kamu buat. Ganti nama dan isi tugasnya dengan punyamu.",
+          lines: [
+            "Pakai subagent <nama-subagent-kamu> untuk <tugas yang kamu tulis",
+            "di slide pertama>.",
+          ],
+        },
+        {
+          type: "code",
+          caption: "Kalau kamu tadi ikut contohnya persis",
+          lines: [
+            "Pakai subagent price-checker untuk cek harga termurah",
+            "top up 85 diamond Mobile Legends.",
+          ],
+        },
+        {
+          type: "gif",
+          src: "",
+          alt: "Claude memanggil subagent price-checker, lalu menampilkan tabel perbandingan harga.",
+          caption:
+            "Claude memanggil subagent-nya sendiri, lalu menyerahkan tabel hasilnya.",
+          describe:
+            "Claude Code memanggil subagent price-checker dan menampilkan tabel perbandingan harga sebagai hasil akhir.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Giliran kamu",
+          text: "Jalankan sekarang, 4 menit. Pakai nama subagent yang tadi kamu buat, dan isi tugasnya dengan pekerjaanmu sendiri. Kalau muncul error, baca pesannya dari baris paling bawah.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Yang tabelnya sudah keluar, angkat tangan. Yang error, biarkan di layar, kita baca bareng. Dua orang tunjukkan tabelnya di layar depan.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "use-case",
+      kicker: "Use case",
+      title: "Satu tugas, tiga cara",
+      subtitle: "Bandingkan harga top up 5 game di 7 toko.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Tanpa subagent",
+              text: "Claude mengerjakan semua pencarian sendiri di percakapan utama, satu per satu.",
+            },
+            {
+              title: "1 subagent",
+              text: "Semua pencarian dititipkan ke satu subagent. Percakapan utama hanya menerima tabel akhirnya.",
+            },
+            {
+              title: "5 subagent paralel",
+              text: "Satu subagent memegang satu game, semuanya jalan bersamaan, hasilnya digabung jadi satu tabel.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Coba sendiri",
+          text: "Pakai tugas rutinmu sendiri sebagai gantinya, misalnya membandingkan harga dari beberapa pemasok.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "tebak-hasil",
+      kicker: "Tebak dulu",
+      title: "Mana yang paling cepat?",
+      subtitle: "Pilih satu sebelum lanjut.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "A. Tanpa subagent",
+              text: "Nol waktu persiapan, tapi semua detail menumpuk di percakapan utama.",
+            },
+            {
+              title: "B. 1 subagent",
+              text: "Sekali waktu persiapan, dan context percakapan utama paling hemat.",
+            },
+            {
+              title: "C. 5 subagent paralel",
+              text: "Lima kali waktu persiapan, tapi kelimanya jalan bersamaan.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Catat dulu",
+          text: "Catat pilihanmu, lalu cocokkan dengan hasil pengukuran di slide berikutnya.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Angkat tangan, satu pilihan per orang. Hitung jumlah suara tiap pilihan sebelum lanjut.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "hasil-perbandingan",
+      kicker: "Hasil percobaan",
+      title: "Waktu dan pemakaian context",
+      subtitle: "Angka dari satu kali percobaan di kelas.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Tanpa subagent",
+              text: "Waktu 7 menit 6 detik. Context percakapan utama terpakai 95 ribu token.",
+            },
+            {
+              title: "1 subagent",
+              text: "Waktu 8 menit 10 detik. Context percakapan utama terpakai 31,7 ribu token.",
+            },
+            {
+              title: "5 subagent paralel",
+              text: "Waktu 5 menit 24 detik. Context percakapan utama terpakai 47,9 ribu token.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Baca angkanya sebagai pembanding",
+          text: "Ini hasil satu kali percobaan di kelas pada Juli 2026 memakai Claude Code v2.1.216. Angka [[context]] di sini hanya menghitung sesi utama, jadi token yang dipakai di dalam subagent belum ikut dijumlahkan. Kalau kamu ulangi sendiri, angkanya bisa berbeda karena kecepatan situs yang dibuka ikut berpengaruh.",
+        },
+      ],
+    },
+    {
+      id: "kapan-pakai",
+      kicker: "Panduan pakai",
+      title: "Kapan memakai subagent?",
+      subtitle: "Lihat dua hal: panjang prosesnya, dan bisa dibagi atau tidak.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Pakai satu subagent",
+              text: "Kalau prosesnya panjang dan penuh detail, tapi yang kamu butuhkan cuma kesimpulannya. Di percobaan tadi context utama turun dari 95 ribu ke 31,7 ribu token.",
+            },
+            {
+              title: "Pakai beberapa subagent",
+              text: "Kalau tugasnya bisa dibagi jadi bagian yang tidak saling menunggu, misalnya satu subagent satu game.",
+            },
+            {
+              title: "Kerjakan langsung saja",
+              text: "Kalau tugasnya pendek, sekali jalan, atau kamu perlu sering menjawab pertanyaan Claude di tengah proses.",
+            },
+            {
+              title: "Hindari membagi tugas berantai",
+              text: "Kalau subagent B baru bisa mulai setelah hasil A keluar, hasilnya tidak akan nyambung karena subagent tidak bisa saling bicara.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Cerita dari lapangan",
+          text: "Ivan, 30 detik: satu cerita nyata soal batas subagent.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "downside",
+      kicker: "Jujur soal batasannya",
+      title: "Yang perlu kamu terima",
+      subtitle: "Empat hal yang sering bikin kaget di awal.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Mulai dari nol",
+              text: "Subagent tidak tahu isi percakapan utama. Semua yang ia butuhkan harus ditulis ulang di perintahnya.",
+            },
+            {
+              title: "Ada waktu ekstra",
+              text: "Setiap pemanggilan butuh waktu persiapan di awal dan merangkum di akhir. Di percobaan tadi satu subagent malah lebih lambat daripada dikerjakan langsung.",
+            },
+            {
+              title: "Detail prosesnya hilang",
+              text: "Yang kembali cuma ringkasan. Kalau ada angka yang terlihat aneh, kamu sulit menelusuri asalnya.",
+            },
+            {
+              title: "Total token naik",
+              text: "Tiap subagent punya context sendiri, jadi total token yang terpakai lebih banyak daripada satu proses biasa. Angka di slide sebelumnya hanya menghitung sesi utama, belum menjumlahkan sesi subagent.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "di-cowork",
+      kicker: "Claude Cowork",
+      title: "Subagent di Claude Cowork",
+      subtitle: "Tanpa setup, cukup lewat permintaan biasa.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/08-cowork-satu-subagent.png",
+          alt: "Claude Cowork menampilkan satu agent berjalan dengan daftar langkah dan situs yang dibuka.",
+          caption:
+            "Satu subagent di [[Claude Cowork]]. Langkah dan situs yang dibuka terlihat, termasuk yang gagal diambil.",
+          describe:
+            "Tampilan Claude Cowork saat satu subagent sedang mengerjakan tugas.",
+        },
+        {
+          type: "paragraph",
+          text: "Di Claude Cowork kamu tidak perlu membuat file subagent lebih dulu. Cukup tulis permintaannya, misalnya minta satu bagian dititipkan ke subagent, atau minta beberapa bagian dikerjakan bersamaan. Contoh di bawah memakai tugas yang lebih kecil: cek harga satu game di lima platform.",
+        },
+      ],
+    },
+    {
+      id: "cowork-paralel",
+      kicker: "Claude Cowork",
+      title: "Lima subagent berjalan bersamaan",
+      subtitle: "Apa yang terjadi di balik layar.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-subagent/09-cowork-lima-subagent-paralel.png",
+          alt: "Claude Cowork menampilkan lima agent berjalan bersamaan, masing-masing memeriksa satu platform.",
+          caption:
+            "Lima subagent jalan bersamaan, satu platform per subagent.",
+          describe:
+            "Tampilan Claude Cowork saat lima subagent berjalan paralel.",
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Claude memecah permintaanmu jadi lima tugas serupa, satu untuk tiap platform.",
+            },
+            {
+              text: "Kelimanya jalan bersamaan, jadi total waktunya mendekati satu platform saja.",
+            },
+            {
+              text: "Tiap subagent melapor sendiri. Yang gagal tetap dilaporkan sebagai tidak ditemukan.",
+              hint: "Hasil yang gagal tetap muncul supaya kamu tahu datanya belum lengkap.",
+            },
+            {
+              text: "Semua hasil disatukan jadi satu tabel, dan platform termurah ditandai.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "punyamu-sekarang",
+      kicker: "Penutup",
+      title: "Yang kamu punya sekarang",
+      subtitle: "Isi empat baris ini sekarang.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            { text: "Nama subagent yang kamu buat hari ini." },
+            { text: "Satu kalimat tugasnya, pakai bahasamu sendiri." },
+            {
+              text: "Satu pekerjaan nyata yang mau kamu kasih ke dia besok pagi.",
+              hint: "Ambil dari tugas yang kamu tulis di slide pertama.",
+            },
+            { text: "Screenshot hasil pertamanya, simpan buat catatanmu." },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Berdiri. Sebut nama subagent kamu ke orang di sebelahmu, 30 detik.",
+          deckOnly: true,
+        },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Apa itu subagent di Claude?",
+      a: "Subagent adalah asisten tambahan yang dipanggil Claude untuk mengerjakan satu tugas khusus di ruang terpisah. Setelah selesai, ia hanya mengirim ringkasan hasilnya ke percakapan utama.",
+    },
+    {
+      q: "Apa bedanya subagent dan multiple subagent?",
+      a: "Subagent berarti satu asisten mengerjakan satu tugas. Multiple subagent berarti beberapa asisten bekerja di waktu yang sama, masing-masing memegang satu bagian tugas.",
+    },
+    {
+      q: "Di mana file subagent disimpan?",
+      a: "Di folder .claude/agents di dalam project kalau subagent itu khusus untuk satu project, atau di folder .claude/agents pada folder home kalau mau dipakai di semua project. Formatnya file markdown.",
+    },
+    {
+      q: "Apakah subagent bisa saling berkomunikasi?",
+      a: "Tidak. Setiap subagent hanya melapor ke agen utama. Kalau antar bagian tugas perlu saling mengecek, konsep yang dipakai adalah Agent Team.",
+    },
+    {
+      q: "Apakah memakai subagent selalu lebih cepat?",
+      a: "Tidak selalu. Setiap pemanggilan subagent butuh waktu persiapan, jadi untuk tugas pendek mengerjakan langsung bisa lebih cepat. Keuntungan terbesarnya muncul saat tugas panjang dibagi ke beberapa subagent yang jalan bersamaan.",
+    },
+    {
+      q: "Apakah subagent bisa dipakai di Claude Cowork?",
+      a: "Bisa, dan tanpa setup tambahan. Cukup tulis permintaannya, misalnya minta satu bagian dititipkan ke subagent atau minta beberapa bagian dikerjakan bersamaan.",
+    },
+  ],
+  glossary: [
+    {
+      term: "subagent",
+      def: "Asisten tambahan yang dipanggil Claude untuk satu tugas khusus di ruang terpisah, lalu mengirim ringkasan hasilnya ke percakapan utama.",
+    },
+    {
+      term: "multiple subagent",
+      def: "Beberapa subagent yang dijalankan bersamaan, masing-masing memegang satu bagian tugas.",
+    },
+    {
+      term: "context",
+      def: "Ingatan percakapan yang sedang berjalan. Ukurannya terbatas, jadi makin banyak detail yang masuk, makin cepat penuh.",
+    },
+    {
+      term: "Claude Code",
+      def: "Claude yang dijalankan lewat terminal, bisa membaca dan mengubah file di folder project kamu.",
+    },
+    {
+      term: "Claude Cowork",
+      def: "Claude versi desktop untuk pekerjaan sehari-hari, dipakai tanpa menulis kode.",
+    },
+    {
+      term: ".claude/agents",
+      def: "Folder tempat file definisi subagent disimpan, satu file markdown untuk satu subagent.",
+    },
+  ],
+  howto: {
+    name: "Cara membuat subagent di Claude Code",
+    steps: [
+      {
+        name: "Siapkan folder project",
+        text: "Buat satu folder project baru, misalnya cahaya-topup, di lokasi mana saja.",
+      },
+      {
+        name: "Buka terminal di folder itu",
+        text: "Di Windows, klik kanan di dalam folder lalu pilih Open in Terminal. Pastikan path terminal menunjuk ke folder project.",
+      },
+      {
+        name: "Jalankan Claude",
+        text: "Ketik claude lalu tekan Enter untuk masuk ke Claude Code.",
+      },
+      {
+        name: "Minta Claude membuat subagent",
+        text: "Tulis tugas subagent yang kamu inginkan sejelas mungkin, lalu tekan Enter dan tunggu sampai selesai.",
+      },
+      {
+        name: "Cek filenya",
+        text: "Buka folder .claude/agents di dalam project. Kalau file markdown subagent sudah ada di situ, subagent siap dipakai.",
+      },
+    ],
+  },
+  sources: [
+    {
+      label: "Claude Docs: Subagents",
+      url: "https://docs.claude.com/en/docs/claude-code/sub-agents",
+    },
+    {
+      label: "Claude Docs: Claude Code overview",
+      url: "https://docs.claude.com/en/docs/claude-code/overview",
+    },
+    {
+      label: "Claude Support: Get started with Claude Cowork",
+      url: "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+    },
+  ],
+};
+
+const claudeAgentTeam: EduModule = {
+  toolSlug: "claude",
+  toolName: "Claude",
+  slug: "agent-team",
+  moduleName: "Agent Team",
+  level: "Level lanjutan",
+  readingLabel: "sekitar 9 menit",
+  h1: "Agent Team di Claude Code",
+  tagline: "Beberapa agent dalam satu ruangan, saling mengecek.",
+  heroLede:
+    "Agent Team adalah beberapa agent Claude yang bekerja di ruang yang sama sehingga bisa saling melihat hasil kerja dan saling mengoreksi sebelum laporan akhir sampai ke kamu. Halaman ini menjelaskan bedanya dengan subagent biasa, cara mengaktifkannya di Claude Code, satu contoh nyata dengan anggota verifikator, dan hal yang perlu kamu siapkan sebelum memakainya.",
+  metaTitle: "Apa itu Agent Team di Claude Code? Cara Mengaktifkan dan Memakai",
+  metaDescription:
+    "Panduan Agent Team di Claude Code: bedanya dengan multiple subagent, cara mengaktifkan lewat settings.local.json, contoh tim riset dengan anggota verifikator, dan batasannya. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+  keywords: [
+    "apa itu agent team claude",
+    "claude code agent teams",
+    "multi agent claude",
+    "beda subagent dan agent team",
+    "cara mengaktifkan agent team",
+    "settings local json claude",
+    "belajar claude bahasa indonesia",
+  ],
+  updated: "22 Juli 2026",
+  datePublished: "2026-07-22",
+  dateModified: "2026-07-22",
+  slides: [
+    {
+      id: "apa-itu",
+      kicker: "Claude · Modul Agent Team",
+      title: "Apa itu Agent Team?",
+      subtitle: "Staf yang dikumpulkan dalam satu ruangan.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Beberapa agent bekerja di satu ruangan, saling mengoreksi, lalu satu laporan akhir keluar.",
+          caption:
+            "Bayangkan tim kecil di satu ruangan. 20 detik: tentukan siapa yang bertugas mengecek ulang.",
+          items: [
+            { label: "Ketua tim", icon: "message", tone: "yellow" },
+            { label: "Anggota riset", icon: "search", tone: "blue" },
+            { label: "Verifikator", icon: "test", tone: "clay" },
+            { label: "Laporan akhir", icon: "notes", tone: "green" },
+          ],
+        },
+        {
+          type: "lead",
+          text: "Bayangkan lima staf duduk di satu meja yang sama. Tiap orang bisa melihat pekerjaan tetangganya, dan hasilnya baru dikirim setelah semua sepakat.",
+        },
+        {
+          type: "paragraph",
+          text: "Itulah [[Agent Team]]. Ketua tim membagi tugas di awal, anggota bisa saling mengoreksi bahkan melempar hasil kerja untuk dilanjutkan, lalu ketua tim menyerahkan laporan akhir.",
+        },
+      ],
+    },
+    {
+      id: "beda-subagent",
+      kicker: "Perbandingan",
+      title: "Bedanya dengan multiple subagent",
+      subtitle: "Sama-sama paralel, beda di tahap pengecekan.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Multiple subagent",
+              text: "Tiga staf meneliti tiga hal sekaligus. Hasilnya ditumpuk jadi satu tanpa ada yang mengecek ulang.",
+            },
+            {
+              title: "Agent Team",
+              text: "Satu anggota bisa membaca hasil anggota lain, menemukan yang keliru, dan meminta diperbaiki sebelum semuanya dianggap selesai.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Contoh gampangnya",
+          text: "Pada tugas membandingkan harga tadi, satu anggota mengumpulkan harga dari semua toko, lalu anggota lain bertugas khusus mengecek apakah harga itu benar dan masih berlaku, sebelum keduanya sepakat mengirim laporan akhir.",
+        },
+      ],
+    },
+    {
+      id: "aktifkan",
+      kicker: "Praktik",
+      title: "Cara mengaktifkannya",
+      subtitle: "Satu baris tambahan di settings.local.json.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-agent-team/01-aktifkan-agent-teams.png",
+          alt: "File settings.local.json dengan bagian env berisi CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS bernilai 1.",
+          caption:
+            "Tambahkan bagian env di [[settings.local.json]], lalu simpan.",
+          describe:
+            "Menyunting settings.local.json untuk menyalakan fitur Agent Team.",
+        },
+        {
+          type: "code",
+          caption: "Tambahkan di settings.local.json",
+          lines: [
+            '"env": {',
+            '  "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"',
+            "}",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Pengaturan eksperimental",
+          text: "Nama pengaturannya sendiri memuat kata experimental, jadi perilakunya bisa berubah kapan saja. Semua contoh di halaman ini diuji langsung dengan Claude Code v2.1.216 pada Juli 2026. Setelah nilainya diisi 1, kamu tinggal meminta Claude membentuk tim lewat permintaan biasa.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Ketik sekarang",
+          text: "2 menit, lalu simpan. Kalau editornya menandai merah, cek koma dan kurung kurawalnya dulu.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Yang filenya merah, biarkan di layar, kita betulkan bareng. Angkat tangan kalau panel timnya sudah muncul.",
+          deckOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Pastikan pengaturannya kebaca",
+          text: "Setelah simpan, minta Claude membentuk tim kecil 2 anggota sebagai tes. Kalau panel timnya belum muncul, tutup sesi Claude Code lalu buka lagi, dan coba sekali lagi.",
+        },
+      ],
+    },
+    {
+      id: "use-case",
+      kicker: "Use case",
+      title: "Tim dengan satu verifikator",
+      subtitle: "Lima anggota riset, satu tukang cek.",
+      blocks: [
+        {
+          type: "lead",
+          text: "Tugasnya sama seperti di modul subagent: bandingkan harga top up 5 game dari 7 toko. Bedanya, timnya punya satu anggota tambahan yang tugasnya mengecek ulang temuan anggota lain sebelum masuk ke laporan akhir.",
+        },
+        {
+          type: "code",
+          caption: "Inti permintaannya",
+          lines: [
+            "Buat tim dengan 5 anggota riset harga, satu anggota per game",
+            "(ml, ff, pubgm, genshin, valorant), plus satu anggota bernama",
+            "verifikator. Tiap anggota riset mengerjakan 7 toko untuk game",
+            "yang jadi tanggung jawabnya, lalu kirim hasilnya ke verifikator,",
+            "bukan langsung ke saya. Verifikator mengecek kewajaran harga dan",
+            "memastikan sumbernya diakses hari ini. Kalau ada yang janggal,",
+            "kirim balik ke anggota riset untuk dicek ulang. Setelah semua",
+            "lolos, gabungkan jadi satu tabel dan laporkan ke saya.",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Giliran kamu",
+          text: "Jalankan sekarang, 6 menit. Ganti 5 game dengan 5 hal yang benar-benar kamu urus di kerjaanmu, dan sisakan satu anggota verifikator. Ada anggota yang macet atau berhenti, biarkan di layar, kita lihat bareng.",
+        },
+      ],
+    },
+    {
+      id: "visualisasi",
+      kicker: "Praktik",
+      title: "Tampilan saat tim berjalan",
+      subtitle: "Tahapan dan anggota terlihat di layar.",
+      blocks: [
+        {
+          type: "gif",
+          src: "/assets/edu/claude-agent-team/02-tim-agent-berjalan.png",
+          alt: "Terminal Claude Code menampilkan empat tahapan tim dan lima anggota riset beserta pemakaian tokennya.",
+          caption:
+            "Kolom kiri menampilkan tahapan, kolom kanan menampilkan anggota tim dan token yang sudah terpakai. Perhatikan anggota mana yang paling lama selesai.",
+          describe:
+            "Tampilan terminal saat Agent Team berjalan, lengkap dengan daftar tahapan dan anggota.",
+        },
+        {
+          type: "paragraph",
+          text: "Setiap anggota yang sudah selesai ditandai dengan centang, jadi kamu bisa melihat tahapan mana yang masih berjalan.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Sambil tim kamu jalan, sebut anggota yang paling lama selesai. Kita bandingkan antar meja.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "apa-yang-terjadi",
+      kicker: "Di balik layar",
+      title: "Apa yang terjadi",
+      subtitle: "Alurnya lewat verifikator dulu.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Riset: kelima anggota bekerja bersamaan, masing-masing untuk satu game, lalu mengirim hasilnya ke verifikator.",
+            },
+            {
+              text: "Verifikasi: verifikator membaca satu per satu, mengecek harganya masuk akal dan sumbernya diakses hari ini.",
+              hint: "Harga yang jauh berbeda dari toko lain jadi tanda tanya.",
+            },
+            {
+              text: "Verifikasi ulang: yang janggal dikirim balik ke anggota yang pegang game itu untuk dicek lagi.",
+            },
+            {
+              text: "Gabung: setelah semua lolos, hasilnya disatukan jadi satu tabel dan itulah yang sampai ke kamu.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "kapan-pakai",
+      kicker: "Panduan pakai",
+      title: "Kapan memakai Agent Team?",
+      subtitle: "Patokannya: perlu saling cek atau tidak.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Ada risiko salah diam-diam",
+              text: "Anggota lain bisa mengecek dan menegur sebelum kesalahan itu masuk ke laporan akhir.",
+            },
+            {
+              title: "Beberapa dugaan bersaing",
+              text: "Misalnya mencari penyebab bug yang belum jelas. Tiap anggota menyelidiki satu teori dan saling membantah sampai ketemu yang paling kuat.",
+            },
+            {
+              title: "Butuh beberapa sudut pandang",
+              text: "Misalnya review kode dari sisi keamanan, performa, dan kelengkapan tes, masing-masing oleh anggota berbeda.",
+            },
+            {
+              title: "Bagian tugasnya saling terkait",
+              text: "Misalnya satu anggota mengerjakan tampilan, satu bagian belakang, satu lagi tesnya, dan mereka perlu menyesuaikan di tengah jalan.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          text: "Untuk tugas yang urut, sederhana, atau menyentuh file yang sama, kerjakan langsung atau lewat subagent biasa.",
+        },
+      ],
+    },
+    {
+      id: "downside",
+      kicker: "Jujur soal batasannya",
+      title: "Yang perlu kamu siapkan",
+      subtitle: "Tiap anggota punya sesi Claude sendiri.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Total token naik",
+              text: "Setiap anggota punya sesi dan ingatannya sendiri, jadi tokennya dijumlahkan dari semua anggota. Batasi jumlah anggota ke yang benar-benar perlu.",
+            },
+            {
+              title: "Perlu diawasi",
+              text: "Anggota bisa keliru arah atau berhenti saat kena error. Sesekali cek progres tim, lalu arahkan ulang anggota yang macet.",
+            },
+            {
+              title: "Risiko bentrok",
+              text: "Dua anggota bisa menyunting file yang sama bersamaan. Bagi tugas supaya tiap anggota pegang bagian berbeda.",
+            },
+            {
+              title: "Masih tahap percobaan",
+              text: "Pada versi yang kami uji, satu sesi hanya bisa punya satu tim, dan anggota tim tidak otomatis kembali saat sesi dibuka ulang. Cek lagi di versi Claude Code yang kamu pakai.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "Cerita dari lapangan",
+          text: "Ivan, 30 detik: satu cerita nyata soal anggota tim yang bentrok.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "punyamu-sekarang",
+      kicker: "Penutup",
+      title: "Yang kamu punya sekarang",
+      subtitle: "Tulis spesifikasi tim kamu sendiri sekarang.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            { text: "Berapa anggota yang benar-benar kamu butuhkan." },
+            { text: "Tugas tiap anggota, satu baris per anggota." },
+            {
+              text: "Siapa verifikatornya, dan apa yang dia cek.",
+              hint: "Tanpa verifikator, timmu jadi mirip multiple subagent biasa.",
+            },
+            {
+              text: "Simpan spesifikasi ini di catatanmu, lalu jalankan sekali besok pagi buat satu pekerjaan aslimu.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Berdiri. Sebut jumlah anggota tim kamu dan siapa verifikatornya ke orang di sebelahmu, 30 detik.",
+          deckOnly: true,
+        },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Apa itu Agent Team di Claude Code?",
+      a: "Agent Team adalah beberapa agent Claude yang bekerja di ruang yang sama sehingga bisa saling melihat hasil kerja dan saling mengoreksi sebelum laporan akhir dikirim ke pengguna.",
+    },
+    {
+      q: "Apa bedanya Agent Team dengan multiple subagent?",
+      a: "Pada multiple subagent, tiap subagent bekerja sendiri dan hasilnya digabung tanpa pengecekan silang. Pada Agent Team, anggota bisa membaca hasil anggota lain dan meminta perbaikan sebelum laporan akhir disusun.",
+    },
+    {
+      q: "Bagaimana cara mengaktifkan Agent Team?",
+      a: "Buka file settings.local.json, tambahkan bagian env berisi CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS dengan nilai 1, lalu simpan. Setelah itu kamu bisa meminta Claude membentuk tim lewat permintaan biasa.",
+    },
+    {
+      q: "Apakah Agent Team lebih boros daripada subagent biasa?",
+      a: "Ya. Setiap anggota tim adalah sesi Claude terpisah dengan ingatannya sendiri, jadi tokennya dijumlahkan dari semua anggota.",
+    },
+    {
+      q: "Apakah anggota tim kembali otomatis saat sesi dibuka ulang?",
+      a: "Pada Claude Code v2.1.216 yang kami uji pada Juli 2026, anggota tim perlu dibentuk ulang saat kamu membuka sesi baru. Fitur ini masih tahap percobaan, jadi cek lagi di versi yang kamu pakai.",
+    },
+  ],
+  glossary: [
+    {
+      term: "Agent Team",
+      def: "Beberapa agent Claude yang bekerja di ruang yang sama sehingga bisa saling melihat hasil kerja dan saling mengoreksi sebelum laporan akhir keluar.",
+    },
+    {
+      term: "settings.local.json",
+      def: "File pengaturan Claude Code khusus untuk mesin kamu sendiri, tempat menyimpan izin dan variabel lingkungan.",
+    },
+  ],
+  howto: {
+    name: "Cara mengaktifkan Agent Team di Claude Code",
+    steps: [
+      {
+        name: "Buka file pengaturan",
+        text: "Buka file settings.local.json milik project atau milik akun kamu.",
+      },
+      {
+        name: "Tambahkan bagian env",
+        text: "Tambahkan bagian env berisi CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS dengan nilai 1.",
+      },
+      {
+        name: "Simpan filenya",
+        text: "Simpan perubahan file settings.local.json.",
+      },
+      {
+        name: "Minta Claude membentuk tim",
+        text: "Tulis permintaan yang menyebut jumlah anggota, tugas tiap anggota, dan siapa yang bertugas mengecek ulang.",
+      },
+    ],
+  },
+  sources: [
+    {
+      label: "Claude Docs: Subagents",
+      url: "https://docs.claude.com/en/docs/claude-code/sub-agents",
+    },
+    {
+      label: "Claude Docs: Claude Code settings",
+      url: "https://docs.claude.com/en/docs/claude-code/settings",
+    },
+  ],
+};
+
 export const eduModules: EduModule[] = [
   claudeSkills,
   claudeMcp,
   claudeCowork,
+  claudeSubagent,
+  claudeAgentTeam,
   n8nNode,
 ];
 

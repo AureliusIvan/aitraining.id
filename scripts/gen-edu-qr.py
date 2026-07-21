@@ -28,6 +28,8 @@ MODULES = [
     ("claude", "skills", "https://aitraining.id/edu/claude/skills"),
     ("claude", "mcp", "https://aitraining.id/edu/claude/mcp"),
     ("claude", "cowork", "https://aitraining.id/edu/claude/cowork"),
+    ("claude", "subagent", "https://aitraining.id/edu/claude/subagent"),
+    ("claude", "agent-team", "https://aitraining.id/edu/claude/agent-team"),
     ("n8n", "node", "https://aitraining.id/edu/n8n/node"),
 ]
 

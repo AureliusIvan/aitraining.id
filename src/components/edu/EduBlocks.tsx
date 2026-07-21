@@ -305,7 +305,10 @@ export function EduBlocks({
   mode: Mode;
   glossary?: EduGlossaryEntry[];
 }) {
-  const visible = mode === "slide" ? blocks.filter((b) => !b.webOnly) : blocks;
+  const visible =
+    mode === "slide"
+      ? blocks.filter((b) => !b.webOnly)
+      : blocks.filter((b) => !b.deckOnly);
   return (
     <div className={mode === "slide" ? "space-y-5" : "space-y-6"}>
       {visible.map((block, i) => (

@@ -248,6 +248,8 @@
 - Skills di Claude (panduan dasar untuk pemula: apa itu Skills, di mana file SKILL.md, cara memanggil lewat garis miring, cara membuat skill pertama): https://aitraining.id/edu/claude/skills
 - MCP di Claude (panduan dasar Model Context Protocol: apa itu MCP, pasang di Claude Desktop/Claude Code, perintah Mac Linux Windows, cara pakai dengan approval, bikin MCP server sendiri): https://aitraining.id/edu/claude/mcp
 - Cowork di Claude (pasang Claude Desktop sampai Cowork siap pakai: login, computer use, izin folder, fix Missing HCS services di Windows): https://aitraining.id/edu/claude/cowork
+- Subagent di Claude (panduan dasar: apa itu subagent dan multiple subagent, cara membuat subagent di Claude Code, folder .claude/agents, perbandingan waktu dan context, cara pakai di Claude Cowork): https://aitraining.id/edu/claude/subagent
+- Agent Team di Claude Code (beberapa agent yang saling mengecek: bedanya dengan multiple subagent, cara mengaktifkan lewat settings.local.json, contoh tim riset dengan verifikator, batasannya): https://aitraining.id/edu/claude/agent-team
 - Pricing: https://aitraining.id/pricing
 - Pricing (machine-readable): https://aitraining.id/pricing.md
 - About the trainer: https://aitraining.id/about
