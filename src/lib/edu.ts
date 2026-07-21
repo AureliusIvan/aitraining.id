@@ -3297,7 +3297,14 @@ const claudeAgentTeam: EduModule = {
           type: "callout",
           tone: "tip",
           title: "Giliran kamu",
-          text: "Jalankan sekarang, 6 menit. Ganti 5 game dengan 5 hal yang benar-benar kamu urus di kerjaanmu, dan sisakan satu anggota verifikator. Ada anggota yang macet atau berhenti, biarkan di layar, kita lihat bareng.",
+          text: "Jalankan sekarang, 6 menit. Ganti 5 game dengan 5 hal yang benar-benar kamu urus di kerjaanmu, dan sisakan satu anggota verifikator.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Ada anggota yang macet atau berhenti, biarkan di layar, kita lihat bareng.",
+          deckOnly: true,
         },
       ],
     },
@@ -3324,7 +3331,7 @@ const claudeAgentTeam: EduModule = {
           type: "callout",
           tone: "tip",
           title: "Di kelas",
-          text: "Sambil tim kamu jalan, sebut anggota yang paling lama selesai. Kita bandingkan antar meja.",
+          text: "Sambil tim kamu jalan, sebut anggota yang paling lama selesai. Kita bandingkan antar meja. Dua orang tunjukkan panel timnya di layar depan.",
           deckOnly: true,
         },
       ],
@@ -3500,7 +3507,7 @@ const claudeAgentTeam: EduModule = {
       },
       {
         name: "Simpan filenya",
-        text: "Simpan perubahan file settings.local.json.",
+        text: "Simpan perubahan file settings.local.json. Kalau panel timnya belum muncul saat dicoba, tutup sesi Claude Code lalu buka lagi.",
       },
       {
         name: "Minta Claude membentuk tim",
