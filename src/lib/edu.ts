@@ -252,6 +252,30 @@ export const eduTools: EduTool[] = [
     ],
   },
   {
+    slug: "git",
+    name: "Git",
+    tagline:
+      "Pencatat riwayat perubahan file. Kamu bisa balik ke versi sebelumnya kapan saja.",
+    status: "live",
+    accent: "#F05032",
+    modules: [
+      {
+        slug: "dasar",
+        name: "Dasar Git",
+        blurb:
+          "Dari nol sampai bisa: pasang Git, simpan versi pertama, lihat riwayat, balik ke versi lama, dan simpan ke GitHub.",
+        status: "live",
+      },
+      {
+        slug: "untuk-ai-agent",
+        name: "Git untuk AI Agent",
+        blurb:
+          "Cara aman membiarkan Claude Code atau Cursor mengubah filemu: simpan dulu, baca hasilnya, batalkan kalau meleset.",
+        status: "live",
+      },
+    ],
+  },
+  {
     slug: "cursor",
     name: "Cursor",
     tagline:
@@ -3145,17 +3169,19 @@ const claudeAgentTeam: EduModule = {
   h1: "Agent Team di Claude Code",
   tagline: "Beberapa agent dalam satu ruangan, saling mengecek.",
   heroLede:
-    "Agent Team adalah beberapa agent Claude yang bekerja di ruang yang sama sehingga bisa saling melihat hasil kerja dan saling mengoreksi sebelum laporan akhir sampai ke kamu. Halaman ini menjelaskan bedanya dengan subagent biasa, cara mengaktifkannya di Claude Code, satu contoh nyata dengan anggota verifikator, dan hal yang perlu kamu siapkan sebelum memakainya.",
+    "Agent Team adalah beberapa agent Claude yang bekerja di ruang yang sama sehingga bisa saling melihat hasil kerja dan saling mengoreksi sebelum laporan akhir sampai ke kamu. Halaman ini menjelaskan bedanya dengan subagent biasa, skrip siap tempel untuk mengaktifkannya di ~/.claude/settings.json (termasuk tampilan split pane lewat tmux), satu contoh nyata dengan anggota verifikator, dan hal yang perlu kamu siapkan sebelum memakainya.",
   metaTitle: "Apa itu Agent Team di Claude Code? Cara Mengaktifkan dan Memakai",
   metaDescription:
-    "Panduan Agent Team di Claude Code: bedanya dengan multiple subagent, cara mengaktifkan lewat settings.local.json, contoh tim riset dengan anggota verifikator, dan batasannya. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+    "Panduan Agent Team di Claude Code: bedanya dengan multiple subagent, cara mengaktifkan lewat ~/.claude/settings.json lengkap dengan tampilan split pane tmux, contoh tim riset dengan anggota verifikator, dan batasannya. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
   keywords: [
     "apa itu agent team claude",
     "claude code agent teams",
     "multi agent claude",
     "beda subagent dan agent team",
     "cara mengaktifkan agent team",
-    "settings local json claude",
+    "claude code teammateMode tmux",
+    "claude code split pane agent team",
+    "settings json claude",
     "belajar claude bahasa indonesia",
   ],
   updated: "22 Juli 2026",
@@ -3222,50 +3248,96 @@ const claudeAgentTeam: EduModule = {
       id: "aktifkan",
       kicker: "Praktik",
       title: "Cara mengaktifkannya",
-      subtitle: "Satu baris tambahan di settings.local.json.",
+      subtitle: "Satu skrip: nyalakan tim, plus tampilan split pane.",
       blocks: [
         {
           type: "gif",
           src: "/assets/edu/claude-agent-team/01-aktifkan-agent-teams.png",
-          alt: "File settings.local.json dengan bagian env berisi CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS bernilai 1.",
+          alt: "File ~/.claude/settings.json dengan env CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS bernilai 1 dan teammateMode bernilai tmux.",
           caption:
-            "Tambahkan bagian env di [[settings.local.json]], lalu simpan.",
+            "Isi [[settings.json]] di folder ~/.claude/, lalu simpan. Kunci env menyalakan Agent Team; kunci teammateMode mengatur tampilan split pane.",
           describe:
-            "Menyunting settings.local.json untuk menyalakan fitur Agent Team.",
+            "Menulis ~/.claude/settings.json supaya Agent Team dan tampilan split pane tmux aktif.",
         },
         {
           type: "code",
-          caption: "Tambahkan di settings.local.json",
+          caption: "Salin, tempel, jalankan di terminal (Mac / Linux)",
           lines: [
-            '"env": {',
-            '  "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"',
+            "mkdir -p ~/.claude",
+            "cat > ~/.claude/settings.json << 'EOF'",
+            "{",
+            '  "env": {',
+            '    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"',
+            "  },",
+            '  "teammateMode": "tmux"',
             "}",
+            "EOF",
           ],
         },
         {
           type: "callout",
           tone: "warn",
+          title: "Skrip di atas menimpa settings.json",
+          text: "Kalau kamu sudah punya ~/.claude/settings.json berisi hook, plugin, atau pengaturan lain, jangan jalankan skrip itu. Buka filenya, lalu gabungkan dua kunci di atas ke dalam objek JSON yang sudah ada.",
+        },
+        {
+          type: "callout",
+          tone: "info",
+          title: "teammateMode: tmux",
+          text: "Nilai tmux membuat tiap anggota tim punya panel sendiri di terminal, jadi kamu bisa melihat output semua anggota sekaligus. Butuh tmux terpasang. Kalau kamu di iTerm2 dan mau panel native iTerm2, ganti nilainya jadi iterm2 (perlu CLI it2). Tanpa tmux atau iTerm2, pakai in-process: semua anggota tetap di satu terminal, diganti lewat panel agent.",
+        },
+        {
+          type: "os-code",
+          caption: "Pasang tmux dulu kalau belum ada",
+          note: "Cek dengan perintah tmux -V. Kalau versinya keluar, lanjut saja.",
+          defaultOs: "linux",
+          webOnly: true,
+          variants: {
+            mac: {
+              lines: ["brew install tmux"],
+              caption: "Homebrew",
+            },
+            linux: {
+              lines: [
+                "sudo dnf install tmux    # Fedora",
+                "sudo apt install tmux    # Ubuntu, Debian",
+              ],
+              caption: "Sesuaikan dengan distromu",
+            },
+            windows: {
+              lines: [
+                "# Split pane butuh tmux atau iTerm2.",
+                "# Di Windows, pakai WSL lalu: sudo apt install tmux",
+                "# Atau set teammateMode ke in-process di settings.json.",
+              ],
+              caption: "WSL / in-process",
+            },
+          },
+        },
+        {
+          type: "callout",
+          tone: "warn",
           title: "Pengaturan eksperimental",
-          text: "Nama pengaturannya sendiri memuat kata experimental, jadi perilakunya bisa berubah kapan saja. Semua contoh di halaman ini diuji langsung dengan Claude Code v2.1.216 pada Juli 2026. Setelah nilainya diisi 1, kamu tinggal meminta Claude membentuk tim lewat permintaan biasa.",
+          text: "Nama pengaturannya sendiri memuat kata experimental, jadi perilakunya bisa berubah kapan saja. Semua contoh di halaman ini diuji langsung dengan Claude Code v2.1.216 pada Juli 2026, merujuk ke dokumentasi resmi Agent Teams. Setelah skrip jalan, tutup sesi Claude Code lalu buka lagi, lalu minta Claude membentuk tim lewat permintaan biasa.",
         },
         {
           type: "callout",
           tone: "tip",
           title: "Ketik sekarang",
-          text: "2 menit, lalu simpan. Kalau editornya menandai merah, cek koma dan kurung kurawalnya dulu.",
+          text: "2 menit. Jalankan skripnya, atau gabungkan dua kunci itu manual kalau settings.json-mu sudah terisi.",
         },
         {
           type: "callout",
           tone: "tip",
           title: "Di kelas",
-          text: "Yang filenya merah, biarkan di layar, kita betulkan bareng. Angkat tangan kalau panel timnya sudah muncul.",
+          text: "Yang settings.json-nya sudah ada isi lain, gabungkan manual, jangan timpa. Angkat tangan kalau panel timnya sudah muncul, atau kalau split pane-nya sudah terbuka.",
           deckOnly: true,
         },
         {
           type: "callout",
           tone: "info",
           title: "Pastikan pengaturannya kebaca",
-          text: "Setelah simpan, minta Claude membentuk tim kecil 2 anggota sebagai tes. Kalau panel timnya belum muncul, tutup sesi Claude Code lalu buka lagi, dan coba sekali lagi.",
+          text: "Setelah sesi dibuka ulang, minta Claude membentuk tim kecil 2 anggota sebagai tes. Kalau panel timnya belum muncul, cek lagi isinya di ~/.claude/settings.json, pastikan JSON-nya valid, lalu buka sesi sekali lagi.",
         },
       ],
     },
@@ -3319,13 +3391,13 @@ const claudeAgentTeam: EduModule = {
           src: "/assets/edu/claude-agent-team/02-tim-agent-berjalan.png",
           alt: "Terminal Claude Code menampilkan empat tahapan tim dan lima anggota riset beserta pemakaian tokennya.",
           caption:
-            "Kolom kiri menampilkan tahapan, kolom kanan menampilkan anggota tim dan token yang sudah terpakai. Perhatikan anggota mana yang paling lama selesai.",
+            "Dengan teammateMode in-process, kolom kiri menampilkan tahapan dan kolom kanan menampilkan anggota plus tokennya. Dengan teammateMode tmux, tiap anggota punya panel sendiri di terminal.",
           describe:
             "Tampilan terminal saat Agent Team berjalan, lengkap dengan daftar tahapan dan anggota.",
         },
         {
           type: "paragraph",
-          text: "Setiap anggota yang sudah selesai ditandai dengan centang, jadi kamu bisa melihat tahapan mana yang masih berjalan.",
+          text: "Setiap anggota yang sudah selesai ditandai dengan centang, jadi kamu bisa melihat tahapan mana yang masih berjalan. Kalau kamu pakai split pane, klik panel anggota itu untuk membaca outputnya langsung.",
         },
         {
           type: "callout",
@@ -3473,7 +3545,11 @@ const claudeAgentTeam: EduModule = {
     },
     {
       q: "Bagaimana cara mengaktifkan Agent Team?",
-      a: "Buka file settings.local.json, tambahkan bagian env berisi CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS dengan nilai 1, lalu simpan. Setelah itu kamu bisa meminta Claude membentuk tim lewat permintaan biasa.",
+      a: "Tulis ke ~/.claude/settings.json dua kunci: env.CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS bernilai 1, dan teammateMode bernilai tmux kalau kamu mau tampilan split pane. Simpan, buka ulang sesi Claude Code, lalu minta Claude membentuk tim lewat permintaan biasa.",
+    },
+    {
+      q: "Apa itu teammateMode tmux di Agent Team?",
+      a: "teammateMode mengatur tampilan anggota tim. Nilai tmux memberi tiap anggota panel sendiri di terminal supaya outputnya kelihatan bersamaan. Nilai in-process menjaga semua anggota di satu terminal dan diganti lewat panel agent. Split pane butuh tmux, atau iTerm2 dengan CLI it2.",
     },
     {
       q: "Apakah Agent Team lebih boros daripada subagent biasa?",
@@ -3490,24 +3566,28 @@ const claudeAgentTeam: EduModule = {
       def: "Beberapa agent Claude yang bekerja di ruang yang sama sehingga bisa saling melihat hasil kerja dan saling mengoreksi sebelum laporan akhir keluar.",
     },
     {
-      term: "settings.local.json",
-      def: "File pengaturan Claude Code khusus untuk mesin kamu sendiri, tempat menyimpan izin dan variabel lingkungan.",
+      term: "settings.json",
+      def: "File pengaturan Claude Code. Di akun kamu filenya ada di ~/.claude/settings.json; di project bisa juga .claude/settings.json atau .claude/settings.local.json.",
+    },
+    {
+      term: "teammateMode",
+      def: "Pengaturan tampilan anggota Agent Team: in-process (satu terminal), tmux (split pane via tmux atau iTerm2), auto, atau iterm2.",
     },
   ],
   howto: {
     name: "Cara mengaktifkan Agent Team di Claude Code",
     steps: [
       {
-        name: "Buka file pengaturan",
-        text: "Buka file settings.local.json milik project atau milik akun kamu.",
+        name: "Pasang tmux kalau mau split pane",
+        text: "Kalau kamu mau tiap anggota punya panel sendiri, pasang tmux dulu (atau pakai iTerm2 dengan CLI it2). Kalau tidak, kamu bisa pakai teammateMode in-process.",
       },
       {
-        name: "Tambahkan bagian env",
-        text: "Tambahkan bagian env berisi CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS dengan nilai 1.",
+        name: "Tulis pengaturan Agent Team",
+        text: "Di ~/.claude/settings.json, isi env.CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS dengan nilai 1, dan set teammateMode ke tmux (atau in-process). Kalau file itu sudah ada isinya, gabungkan kunci-kunci tersebut, jangan timpa seluruh file.",
       },
       {
-        name: "Simpan filenya",
-        text: "Simpan perubahan file settings.local.json. Kalau panel timnya belum muncul saat dicoba, tutup sesi Claude Code lalu buka lagi.",
+        name: "Buka ulang sesi Claude Code",
+        text: "Tutup sesi Claude Code lalu buka lagi supaya pengaturan baru terbaca.",
       },
       {
         name: "Minta Claude membentuk tim",
@@ -3517,13 +3597,924 @@ const claudeAgentTeam: EduModule = {
   },
   sources: [
     {
+      label: "Claude Docs: Agent teams",
+      url: "https://code.claude.com/docs/en/agent-teams",
+    },
+    {
       label: "Claude Docs: Subagents",
       url: "https://docs.claude.com/en/docs/claude-code/sub-agents",
     },
     {
       label: "Claude Docs: Claude Code settings",
-      url: "https://docs.claude.com/en/docs/claude-code/settings",
+      url: "https://code.claude.com/docs/en/settings",
     },
+  ],
+};
+
+const gitDasar: EduModule = {
+  toolSlug: "git",
+  toolName: "Git",
+  slug: "dasar",
+  moduleName: "Dasar Git",
+  level: "Level dasar",
+  readingLabel: "sekitar 12 menit",
+  h1: "Dasar Git",
+  tagline: "Simpan versi, lihat riwayat, balik kalau perlu.",
+  heroLede:
+    "Git mencatat setiap versi filemu, jadi kamu bisa melihat apa yang berubah dan kembali ke versi sebelumnya kapan saja. Halaman ini membahasnya dari nol untuk kamu yang belum pernah memakainya: apa itu Git, cara memasangnya, cara menyimpan versi pertama, cara membaca riwayat, cara membatalkan perubahan, dan cara menyimpan salinannya di GitHub.",
+  metaTitle: "Belajar Git untuk Pemula: Panduan Dasar Bahasa Indonesia",
+  metaDescription:
+    "Panduan Git dari nol untuk pemula: apa itu Git, cara pasang di Mac Linux Windows, git init, add, commit, log, cara balik ke versi lama, branch, dan push ke GitHub. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+  keywords: [
+    "belajar git untuk pemula",
+    "apa itu git",
+    "tutorial git bahasa indonesia",
+    "cara pakai github",
+    "git init add commit",
+    "cara push ke github",
+    "perintah git dasar",
+    "git untuk pemula",
+  ],
+  updated: "22 Juli 2026",
+  datePublished: "2026-07-22",
+  dateModified: "2026-07-22",
+  slides: [
+    {
+      id: "apa-itu",
+      kicker: "Git · Modul Dasar",
+      title: "Apa itu Git?",
+      subtitle: "Tombol simpan yang mengingat semua versi.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "File berubah, disimpan sebagai versi bernomor, dan bisa dipanggil kembali.",
+          caption:
+            "Ingat-ingat file kamu yang namanya laporan-fix-fix-final. 20 detik: tulis satu file yang pernah kamu timpa dan kamu sesali.",
+          items: [
+            { label: "File berubah", icon: "file", tone: "yellow" },
+            { label: "Simpan versi", icon: "plus", tone: "blue" },
+            { label: "Bisa balik", icon: "notes", tone: "green" },
+          ],
+        },
+        {
+          type: "lead",
+          text: "Banyak orang menyimpan versi dengan cara menyalin file: laporan.docx, laporan-revisi.docx, laporan-fix-fix-final.docx. Lama-lama kamu lupa mana yang terbaru dan apa bedanya.",
+        },
+        {
+          type: "paragraph",
+          text: "[[Git]] mengerjakan itu untukmu. Setiap kali kamu bilang simpan, Git mencatat kondisi seluruh foldermu saat itu beserta catatan singkat dari kamu. Semua versi lama tetap tersimpan, dan kamu bisa kembali ke salah satunya kapan saja.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Analogi singkat",
+          text: "Git itu seperti save point di game. Kamu bisa maju dengan berani, karena kalau gagal tinggal muat ulang dari save point terakhir.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "kenapa-perlu",
+      kicker: "Kenapa penting",
+      title: "Tiga hal yang bikin Git berguna",
+      subtitle: "Bukan cuma buat programmer.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Bisa mundur",
+              text: "Salah hapus atau salah ubah, tinggal balik ke versi sebelumnya. Kerjaanmu tidak hilang.",
+            },
+            {
+              title: "Riwayat jelas",
+              text: "Kamu bisa lihat siapa mengubah apa, kapan, dan alasannya. Berguna waktu ada yang tiba-tiba rusak.",
+            },
+            {
+              title: "Kerja bareng",
+              text: "Beberapa orang bisa menggarap folder yang sama tanpa saling menimpa pekerjaan.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "info",
+          text: "Git dipakai untuk file teks apa pun, termasuk catatan, konfigurasi, dan naskah. Kode cuma salah satu isinya yang paling umum.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "pasang",
+      kicker: "Praktik",
+      title: "Langkah 1: pasang Git",
+      subtitle: "Sekali pasang, dipakai untuk semua project.",
+      blocks: [
+        {
+          type: "os-code",
+          caption: "Pilih sesuai sistem operasimu",
+          note: "Di Mac, Git sering sudah ikut terpasang bersama Xcode Command Line Tools.",
+          defaultOs: "windows",
+          variants: {
+            windows: {
+              lines: ["winget install --id Git.Git"],
+              caption: "Atau unduh pemasangnya dari git-scm.com/download/win",
+            },
+            mac: {
+              lines: ["brew install git"],
+              caption: "Homebrew",
+            },
+            linux: {
+              lines: [
+                "sudo dnf install git    # Fedora",
+                "sudo apt install git    # Ubuntu, Debian",
+              ],
+              caption: "Sesuaikan dengan distromu",
+            },
+          },
+        },
+        {
+          type: "code",
+          caption: "Cek berhasil atau belum",
+          lines: ["git --version"],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Ketik sekarang, 2 menit. Angkat tangan kalau nomor versinya belum keluar.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "atur-identitas",
+      kicker: "Praktik",
+      title: "Langkah 2: kenalkan dirimu",
+      subtitle: "Sekali saja, supaya tiap simpanan ada namanya.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Ganti dengan nama dan email kamu",
+          lines: [
+            'git config --global user.name "Nama Kamu"',
+            'git config --global user.email "email@kamu.com"',
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Git menempelkan nama dan email ini ke setiap versi yang kamu simpan, supaya nanti kelihatan siapa yang mengubah apa. Kalau nanti kamu pakai GitHub, pakai email yang sama dengan akun GitHub-mu.",
+        },
+      ],
+    },
+    {
+      id: "repo-pertama",
+      kicker: "Praktik",
+      title: "Langkah 3: bikin repo pertama",
+      subtitle: "Satu folder yang riwayatnya dicatat Git.",
+      blocks: [
+        {
+          type: "os-code",
+          caption: "Buat folder project, lalu nyalakan Git di dalamnya",
+          note: "Tanda -b main memberi nama cabang utamanya main, nama yang sekarang umum dipakai.",
+          defaultOs: "windows",
+          variants: {
+            windows: {
+              lines: [
+                "mkdir catatan-ai",
+                "cd catatan-ai",
+                "git init -b main",
+              ],
+              caption: "PowerShell",
+            },
+            mac: {
+              lines: [
+                "mkdir catatan-ai",
+                "cd catatan-ai",
+                "git init -b main",
+              ],
+              caption: "Terminal",
+            },
+            linux: {
+              lines: [
+                "mkdir catatan-ai",
+                "cd catatan-ai",
+                "git init -b main",
+              ],
+              caption: "Terminal",
+            },
+          },
+        },
+        {
+          type: "paragraph",
+          text: "Folder yang sudah dinyalakan Git disebut [[repository]], sering disingkat repo. Di dalamnya muncul folder tersembunyi bernama .git berisi seluruh riwayatnya. Biarkan folder itu, jangan dihapus.",
+        },
+      ],
+    },
+    {
+      id: "siklus",
+      kicker: "Inti materi",
+      title: "Siklus dasar Git",
+      subtitle: "Tiga langkah yang akan kamu ulang terus.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Ubah file, pilih yang mau disimpan, lalu simpan sebagai satu versi.",
+          caption:
+            "Tiga langkah ini yang kamu pakai setiap hari. Sisanya cuma pelengkap.",
+          items: [
+            { label: "Ubah file", icon: "file", tone: "yellow" },
+            { label: "git add", icon: "select", tone: "blue" },
+            { label: "git commit", icon: "spark", tone: "green" },
+          ],
+        },
+        {
+          type: "code",
+          caption: "Simpan versi pertamamu",
+          lines: [
+            "git add .",
+            'git commit -m "catatan pertama"',
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "[[add]] berarti memilih perubahan mana yang mau ikut disimpan. [[commit]] berarti menyimpannya jadi satu versi beserta catatan singkat. Titik pada git add berarti semua perubahan di folder ini.",
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Bikin satu file apa saja di folder itu, lalu jalankan dua perintah tadi. 3 menit. Angkat tangan kalau commit pertamamu sudah jadi.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "status-diff",
+      kicker: "Praktik",
+      title: "Lihat apa yang berubah",
+      subtitle: "Dua perintah yang paling sering dipakai.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Sebelum menyimpan, cek dulu",
+          lines: [
+            "git status    # file mana saja yang berubah",
+            "git diff      # baris mana saja yang berubah",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Kebiasaan yang bagus",
+          text: "Biasakan menjalankan git status sebelum commit. Itu cara paling gampang menghindari menyimpan file yang sebenarnya tidak mau kamu simpan.",
+        },
+      ],
+    },
+    {
+      id: "riwayat",
+      kicker: "Praktik",
+      title: "Baca riwayatnya",
+      subtitle: "Semua versi lama ada di sini.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Daftar versi, satu baris per versi",
+          lines: ["git log --oneline"],
+        },
+        {
+          type: "paragraph",
+          text: "Tiap baris punya kode pendek berisi huruf dan angka, misalnya a1b2c3d. Kode itu alamat versi tersebut, dan kamu memakainya kalau mau melihat atau membatalkan versi itu.",
+        },
+      ],
+    },
+    {
+      id: "balik",
+      kicker: "Inti materi",
+      title: "Balik ke versi sebelumnya",
+      subtitle: "Bagian yang bikin Git terasa berguna.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Dua cara yang aman",
+          lines: [
+            "git restore nama-file.txt   # buang perubahan yang belum di-commit",
+            "git revert a1b2c3d          # batalkan satu commit lama",
+          ],
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "git restore",
+              text: "Untuk perubahan yang belum kamu commit. Filenya kembali seperti commit terakhir.",
+            },
+            {
+              title: "git revert",
+              text: "Untuk commit yang sudah terlanjur. Git membuat commit baru yang membatalkan commit lama, jadi riwayatnya tetap utuh.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Hati-hati dengan yang satu ini",
+          text: "Ada juga git reset --hard yang membuang perubahan tanpa bisa dikembalikan. Selama masih belajar, pakai git restore dan git revert dulu.",
+        },
+      ],
+    },
+    {
+      id: "branch",
+      kicker: "Inti materi",
+      title: "Branch: coba tanpa merusak",
+      subtitle: "Jalur terpisah untuk percobaan.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Satu jalur utama bercabang jadi jalur percobaan, lalu kembali menyatu.",
+          caption:
+            "Branch itu jalur samping. Yang utama tetap aman selama kamu bereksperimen.",
+          items: [
+            { label: "main aman", icon: "lock", tone: "green" },
+            { label: "buat cabang", icon: "node", tone: "blue" },
+            { label: "coba bebas", icon: "test", tone: "yellow" },
+          ],
+        },
+        {
+          type: "code",
+          caption: "Pindah ke jalur percobaan, lalu balik lagi",
+          lines: [
+            "git switch -c coba-fitur   # buat cabang baru dan pindah ke sana",
+            "git switch main            # balik ke jalur utama",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Apa pun yang kamu commit di cabang coba-fitur tidak mengubah main. Kalau hasilnya bagus, cabang itu bisa digabungkan. Kalau gagal, tinggal ditinggalkan.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "github-apa",
+      kicker: "GitHub",
+      title: "Lalu GitHub itu apa?",
+      subtitle: "Tempat menyimpan salinan repo kamu di internet.",
+      blocks: [
+        {
+          type: "lead",
+          text: "Git berjalan di laptopmu. [[GitHub]] adalah layanan tempat kamu menitipkan salinan repo itu supaya aman dan bisa dibagikan.",
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Cadangan",
+              text: "Laptop hilang atau rusak, pekerjaanmu masih ada.",
+            },
+            {
+              title: "Kerja bareng",
+              text: "Orang lain bisa ikut menggarap repo yang sama dari komputer mereka.",
+            },
+            {
+              title: "Bisa ditunjukkan",
+              text: "Repo publik bisa dilihat siapa saja, jadi berguna sebagai bukti kerjamu.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "push",
+      kicker: "Praktik",
+      title: "Kirim ke GitHub",
+      subtitle: "Sambungkan repo lokal ke repo online.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            {
+              text: "Buat repo kosong baru di GitHub lewat tombol New.",
+              hint: "Jangan centang opsi menambah README dulu, supaya tidak bentrok.",
+            },
+            { text: "Salin alamat repo yang diberikan GitHub." },
+            { text: "Jalankan dua perintah di bawah dari folder projectmu." },
+          ],
+        },
+        {
+          type: "code",
+          caption: "Ganti alamatnya dengan punyamu",
+          lines: [
+            "git remote add origin https://github.com/nama-kamu/catatan-ai.git",
+            "git push -u origin main",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "info",
+          text: "origin cuma nama panggilan untuk alamat repo online itu. Tanda -u membuat Git mengingatnya, jadi berikutnya kamu cukup mengetik git push.",
+          webOnly: true,
+        },
+      ],
+    },
+    {
+      id: "clone-pull",
+      kicker: "Praktik",
+      title: "Ambil dari GitHub",
+      subtitle: "Dua perintah untuk arah sebaliknya.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Menyalin repo orang lain, dan menarik perubahan terbaru",
+          lines: [
+            "git clone https://github.com/nama-orang/nama-repo.git",
+            "git pull",
+          ],
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "git clone",
+              text: "Dipakai sekali di awal, untuk menyalin seluruh repo ke komputermu.",
+            },
+            {
+              title: "git pull",
+              text: "Dipakai berulang, untuk menarik perubahan terbaru dari GitHub ke folder yang sudah ada.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "gitignore",
+      kicker: "Wajib tahu",
+      title: "File yang jangan ikut tersimpan",
+      subtitle: "Satu file kecil yang menyelamatkanmu.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Buat file bernama .gitignore di folder project",
+          lines: [
+            ".env",
+            "node_modules/",
+            "*.log",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Ini yang paling sering bikin celaka",
+          text: "Kunci API dan kata sandi biasanya disimpan di file .env. Kalau file itu ikut ter-commit lalu terkirim ke repo publik, kuncinya dianggap bocor. Ganti kuncinya, karena menghapus filenya saja tidak cukup: riwayat lama masih menyimpannya.",
+        },
+      ],
+    },
+    {
+      id: "punyamu-sekarang",
+      kicker: "Penutup",
+      title: "Yang kamu punya sekarang",
+      subtitle: "Isi empat baris ini sekarang.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            { text: "Nama folder project yang sudah kamu jadikan repo." },
+            { text: "Jumlah commit yang sudah kamu buat hari ini." },
+            {
+              text: "Satu folder kerjaan nyata yang mau kamu jadikan repo besok pagi.",
+              hint: "Ambil dari file yang kamu tulis di slide pertama.",
+            },
+            { text: "Satu isi .gitignore yang wajib ada di project itu." },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Berdiri. Sebut nama repo kamu dan jumlah commit-nya ke orang di sebelahmu, 30 detik.",
+          deckOnly: true,
+        },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Apa itu Git?",
+      a: "Git adalah alat yang mencatat riwayat perubahan file di sebuah folder. Setiap kali kamu menyimpan, Git merekam kondisi folder saat itu, sehingga kamu bisa melihat apa yang berubah dan kembali ke versi sebelumnya.",
+    },
+    {
+      q: "Apa bedanya Git dan GitHub?",
+      a: "Git adalah programnya, berjalan di komputermu dan mencatat riwayat. GitHub adalah layanan online tempat menyimpan salinan repo Git supaya aman, bisa dibagikan, dan bisa digarap bersama orang lain.",
+    },
+    {
+      q: "Apa itu commit?",
+      a: "Commit adalah satu versi tersimpan beserta catatan singkat dari kamu. Kamu memilih perubahan yang ikut lewat git add, lalu menyimpannya lewat git commit.",
+    },
+    {
+      q: "Bagaimana cara membatalkan perubahan di Git?",
+      a: "Untuk perubahan yang belum di-commit, pakai git restore diikuti nama filenya. Untuk commit yang sudah terlanjur, pakai git revert diikuti kode commit-nya, yang membuat commit baru untuk membatalkannya tanpa menghapus riwayat.",
+    },
+    {
+      q: "Apakah Git hanya untuk programmer?",
+      a: "Tidak. Git bekerja untuk file teks apa pun, termasuk catatan, naskah, dan berkas konfigurasi. Kode memang isi yang paling umum, tetapi bukan satu-satunya.",
+    },
+    {
+      q: "Kenapa file .env tidak boleh ikut di-commit?",
+      a: "File .env biasanya berisi kunci API dan kata sandi. Kalau ikut tersimpan dan terkirim ke repo publik, kunci itu dianggap bocor dan harus diganti, karena riwayat lama masih menyimpannya walau filenya sudah dihapus.",
+    },
+  ],
+  glossary: [
+    {
+      term: "Git",
+      def: "Program yang mencatat riwayat perubahan file di sebuah folder, sehingga setiap versi lama bisa dilihat dan dipanggil kembali.",
+    },
+    {
+      term: "repository",
+      def: "Folder yang riwayatnya dicatat Git, sering disingkat repo. Riwayatnya disimpan di folder tersembunyi bernama .git.",
+    },
+    {
+      term: "add",
+      def: "Perintah untuk memilih perubahan mana yang ikut disimpan pada commit berikutnya.",
+    },
+    {
+      term: "commit",
+      def: "Satu versi tersimpan beserta catatan singkat, punya kode pendek sebagai alamatnya.",
+    },
+    {
+      term: "GitHub",
+      def: "Layanan online untuk menyimpan salinan repository Git, membagikannya, dan menggarapnya bersama orang lain.",
+    },
+  ],
+  howto: {
+    name: "Cara membuat repo Git pertama",
+    steps: [
+      {
+        name: "Pasang Git",
+        text: "Pasang Git lewat pemasang resmi atau paket sistem operasimu, lalu cek dengan menjalankan git --version.",
+      },
+      {
+        name: "Atur nama dan email",
+        text: "Jalankan git config --global user.name dan git config --global user.email supaya tiap commit ada identitasnya.",
+      },
+      {
+        name: "Nyalakan Git di folder project",
+        text: "Masuk ke folder projectmu, lalu jalankan git init -b main.",
+      },
+      {
+        name: "Pilih dan simpan perubahan",
+        text: "Jalankan git add titik untuk memilih semua perubahan, lalu git commit dengan pesan singkat.",
+      },
+      {
+        name: "Cek hasilnya",
+        text: "Jalankan git log --oneline untuk memastikan commit pertamamu sudah tercatat.",
+      },
+    ],
+  },
+  sources: [
+    { label: "Git Documentation", url: "https://git-scm.com/doc" },
+    {
+      label: "Pro Git: First-Time Git Setup",
+      url: "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup",
+    },
+    {
+      label: "GitHub Docs: About GitHub and Git",
+      url: "https://docs.github.com/en/get-started/start-your-journey/about-github-and-git",
+    },
+  ],
+};
+
+const gitUntukAiAgent: EduModule = {
+  toolSlug: "git",
+  toolName: "Git",
+  slug: "untuk-ai-agent",
+  moduleName: "Git untuk AI Agent",
+  level: "Level menengah",
+  readingLabel: "sekitar 9 menit",
+  h1: "Git untuk Kerja Bareng AI Agent",
+  tagline: "Biarkan agent berani mengubah, karena kamu bisa mundur.",
+  heroLede:
+    "Claude Code dan Cursor bisa mengubah banyak file sekaligus dalam satu perintah. Git membuat itu aman: kamu simpan dulu kondisi sebelum agent jalan, baca persis apa yang dia ubah, lalu batalkan kalau hasilnya meleset. Halaman ini membahas kebiasaan kerja yang perlu kamu pakai saat agent ikut menyentuh filemu.",
+  metaTitle: "Git untuk AI Coding Agent: Cara Aman Pakai Claude Code & Cursor",
+  metaDescription:
+    "Cara memakai Git saat AI agent seperti Claude Code atau Cursor mengubah filemu: commit sebelum agent jalan, baca diff hasilnya, batalkan perubahan yang meleset, dan jaga kunci API tidak ikut ter-commit. Dari AI Training Indonesia oleh Aurelius Ivan Wijaya.",
+  keywords: [
+    "git untuk ai agent",
+    "claude code git",
+    "cursor git workflow",
+    "cara aman pakai ai coding agent",
+    "git diff hasil ai",
+    "membatalkan perubahan ai agent",
+    "version control ai coding",
+  ],
+  updated: "22 Juli 2026",
+  datePublished: "2026-07-22",
+  dateModified: "2026-07-22",
+  slides: [
+    {
+      id: "kenapa",
+      kicker: "Git · Modul AI Agent",
+      title: "Kenapa ini penting",
+      subtitle: "Agent mengubah banyak file sekaligus.",
+      blocks: [
+        {
+          type: "motion",
+          scene: "edu-storyboard",
+          alt: "Satu perintah ke agent mengubah beberapa file sekaligus, lalu perubahannya diperiksa.",
+          caption:
+            "20 detik: ingat satu kali kamu minta AI mengubah sesuatu dan hasilnya malah bikin bingung.",
+          items: [
+            { label: "Satu perintah", icon: "message", tone: "yellow" },
+            { label: "Banyak file berubah", icon: "file", tone: "clay" },
+            { label: "Kamu periksa", icon: "search", tone: "green" },
+          ],
+        },
+        {
+          type: "lead",
+          text: "Waktu kamu mengetik sendiri, perubahannya kecil dan kamu ingat persis apa yang kamu sentuh. Waktu agent yang mengerjakan, satu permintaan bisa mengubah lima file dalam beberapa detik.",
+        },
+        {
+          type: "paragraph",
+          text: "Git memberi kamu dua hal yang dibutuhkan di situasi itu: catatan persis apa yang berubah, dan tombol mundur kalau hasilnya tidak sesuai. Dengan itu kamu bisa membiarkan agent bekerja lebih berani.",
+        },
+      ],
+    },
+    {
+      id: "commit-dulu",
+      kicker: "Kebiasaan 1",
+      title: "Simpan dulu sebelum agent jalan",
+      subtitle: "Ini kebiasaan yang paling menolong.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Jalankan ini sebelum memberi perintah besar ke agent",
+          lines: [
+            "git add -A",
+            'git commit -m "sebelum agent"',
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Sekarang kamu punya [[titik aman]]. Apa pun yang agent lakukan setelah ini bisa dibandingkan dengan titik itu, dan bisa dibatalkan seluruhnya kalau perlu.",
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Ketik sekarang, 2 menit. Angkat tangan kalau commit titik amanmu sudah jadi.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "baca-diff",
+      kicker: "Kebiasaan 2",
+      title: "Baca hasil kerja agent",
+      subtitle: "Jangan langsung percaya, lihat dulu.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Setelah agent selesai",
+          lines: [
+            "git status          # file mana saja yang dia sentuh",
+            "git diff --stat     # ringkasan: berapa baris per file",
+            "git diff            # detail baris per baris",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Cara membacanya",
+          text: "Mulai dari git diff --stat. Kalau ada file yang berubah jauh lebih banyak dari dugaanmu, buka file itu dulu dengan git diff. Itu tempat kesalahan paling sering bersembunyi.",
+        },
+      ],
+    },
+    {
+      id: "undo",
+      kicker: "Kebiasaan 3",
+      title: "Kalau hasilnya meleset",
+      subtitle: "Dua pilihan, tergantung seberapa meleset.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Membatalkan perubahan yang belum di-commit",
+          lines: [
+            "git restore nama-file.txt   # batalkan satu file saja",
+            "git restore .               # batalkan semua perubahan agent",
+          ],
+        },
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Sebagian saja yang salah",
+              text: "Batalkan per file dengan git restore nama-file, dan biarkan file lain yang sudah benar.",
+            },
+            {
+              title: "Semuanya kacau",
+              text: "Jalankan git restore titik untuk kembali ke titik aman yang kamu buat sebelum agent jalan.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          text: "Perintah ini membuang pekerjaan agent yang belum di-commit dan tidak bisa dikembalikan. Pastikan kamu sudah membaca [[diff]]-nya dulu.",
+        },
+      ],
+    },
+    {
+      id: "branch-agent",
+      kicker: "Kebiasaan 4",
+      title: "Kasih agent jalur sendiri",
+      subtitle: "Untuk perubahan yang besar atau berisiko.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Kerjakan di cabang terpisah",
+          lines: [
+            "git switch -c coba-agent",
+            "# minta agent bekerja di sini",
+            "git switch main            # main tetap bersih",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Dengan cara ini jalur utamamu tidak pernah tersentuh selama percobaan. Kalau hasil agent bagus, cabangnya digabungkan. Kalau tidak, cabangnya ditinggalkan dan tidak ada yang perlu dibersihkan.",
+        },
+      ],
+    },
+    {
+      id: "commit-kecil",
+      kicker: "Kebiasaan 5",
+      title: "Commit kecil-kecil",
+      subtitle: "Satu commit, satu perubahan yang jelas.",
+      blocks: [
+        {
+          type: "cards",
+          items: [
+            {
+              title: "Gampang dibaca",
+              text: "Diff yang pendek bisa kamu periksa betulan. Diff sepanjang lima ratus baris biasanya cuma dilewati.",
+            },
+            {
+              title: "Gampang dimundurkan",
+              text: "Kalau ada yang rusak, kamu bisa membatalkan satu commit kecil tanpa ikut membuang pekerjaan lain yang sudah benar.",
+            },
+            {
+              title: "Gampang dicari",
+              text: "Waktu ada yang tiba-tiba error, riwayat yang rapi memudahkan kamu menemukan commit mana penyebabnya.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "rahasia",
+      kicker: "Wajib tahu",
+      title: "Jaga kuncimu jangan ikut tersimpan",
+      subtitle: "Risiko yang naik waktu agent ikut menulis file.",
+      blocks: [
+        {
+          type: "code",
+          caption: "Pastikan .gitignore kamu memuat ini",
+          lines: [
+            ".env",
+            ".env.local",
+            "*.key",
+          ],
+        },
+        {
+          type: "callout",
+          tone: "warn",
+          title: "Kenapa ini makin penting",
+          text: "Agent kadang membuat file konfigurasi baru atau menyalin contoh yang berisi kunci. Karena itu, cek keluaran git status setiap kali agent selesai, dan pastikan tidak ada file rahasia yang ikut masuk daftar.",
+        },
+        {
+          type: "paragraph",
+          text: "Kalau kunci terlanjur ter-commit dan terkirim, anggap kunci itu bocor lalu ganti dari dasbor layanannya. Menghapus filenya saja tidak cukup, karena riwayat lama masih menyimpan isinya.",
+        },
+      ],
+    },
+    {
+      id: "alur-lengkap",
+      kicker: "Rangkuman",
+      title: "Alur lengkapnya",
+      subtitle: "Lima langkah yang diulang tiap kali.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            { text: "Commit dulu, supaya punya titik aman." },
+            { text: "Beri perintah ke agent." },
+            {
+              text: "Baca git status dan git diff --stat sebelum menyentuh apa pun.",
+              hint: "File yang berubah jauh lebih banyak dari dugaan patut dicurigai.",
+            },
+            { text: "Cocok, commit. Meleset, git restore." },
+            { text: "Ulangi dengan permintaan yang lebih kecil." },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Jalankan satu putaran penuh sekarang, 6 menit. Yang diff-nya sudah kebaca, angkat tangan. Dua orang tunjukkan diff-nya di layar depan.",
+          deckOnly: true,
+        },
+      ],
+    },
+    {
+      id: "punyamu-sekarang",
+      kicker: "Penutup",
+      title: "Yang kamu punya sekarang",
+      subtitle: "Tulis tiga baris ini sekarang.",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            { text: "Satu kalimat kebiasaan barumu sebelum menyuruh agent bekerja." },
+            { text: "Isi .gitignore yang wajib ada di project kerjaanmu." },
+            {
+              text: "Simpan catatan ini, lalu pakai alurnya sekali besok pagi di kerjaan aslimu.",
+              hint: "Mulai dari satu permintaan kecil dulu, jangan yang mengubah banyak file.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Di kelas",
+          text: "Berdiri. Sebut kebiasaan barumu ke orang di sebelahmu, 30 detik.",
+          deckOnly: true,
+        },
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Kenapa perlu Git kalau pakai AI coding agent?",
+      a: "Karena agent bisa mengubah banyak file sekaligus dalam satu perintah. Git menyimpan kondisi sebelum agent jalan, menunjukkan persis apa yang dia ubah, dan memungkinkan kamu membatalkannya kalau hasilnya meleset.",
+    },
+    {
+      q: "Apa yang harus dilakukan sebelum menyuruh agent mengubah file?",
+      a: "Simpan dulu kondisi saat ini dengan git add -A lalu git commit. Itu menjadi titik aman yang bisa kamu pakai untuk membandingkan dan untuk mundur.",
+    },
+    {
+      q: "Bagaimana cara memeriksa hasil kerja AI agent?",
+      a: "Jalankan git status untuk melihat file mana yang tersentuh, git diff --stat untuk ringkasan jumlah baris per file, lalu git diff untuk membaca detailnya. Mulai dari file yang berubah paling banyak.",
+    },
+    {
+      q: "Bagaimana membatalkan perubahan yang dibuat AI agent?",
+      a: "Kalau belum di-commit, pakai git restore diikuti nama file untuk membatalkan satu file, atau git restore titik untuk membatalkan semuanya dan kembali ke commit terakhir.",
+    },
+    {
+      q: "Apakah perlu branch terpisah untuk AI agent?",
+      a: "Untuk perubahan besar atau berisiko, ya. Jalankan git switch -c dengan nama cabang baru supaya jalur utama tetap bersih. Kalau hasilnya bagus cabangnya digabungkan, kalau tidak tinggal ditinggalkan.",
+    },
+  ],
+  glossary: [
+    {
+      term: "diff",
+      def: "Tampilan perbedaan baris per baris antara kondisi sekarang dan versi tersimpan sebelumnya.",
+    },
+    {
+      term: "titik aman",
+      def: "Commit yang sengaja kamu buat sebelum agent bekerja, supaya ada kondisi yang pasti bisa kamu tuju saat mundur.",
+    },
+  ],
+  howto: {
+    name: "Cara aman membiarkan AI agent mengubah file",
+    steps: [
+      {
+        name: "Buat titik aman",
+        text: "Jalankan git add -A lalu git commit dengan pesan singkat sebelum memberi perintah ke agent.",
+      },
+      {
+        name: "Beri perintah ke agent",
+        text: "Minta agent mengerjakan satu perubahan yang jelas cakupannya.",
+      },
+      {
+        name: "Periksa hasilnya",
+        text: "Jalankan git status dan git diff --stat, lalu baca detailnya dengan git diff mulai dari file yang paling banyak berubah.",
+      },
+      {
+        name: "Terima atau batalkan",
+        text: "Kalau hasilnya cocok, simpan dengan git commit. Kalau meleset, batalkan dengan git restore.",
+      },
+      {
+        name: "Cek tidak ada rahasia ikut",
+        text: "Pastikan keluaran git status tidak memuat file seperti .env sebelum kamu commit atau push.",
+      },
+    ],
+  },
+  sources: [
+    { label: "Git Documentation", url: "https://git-scm.com/doc" },
+    { label: "git restore", url: "https://git-scm.com/docs/git-restore" },
+    { label: "git switch", url: "https://git-scm.com/docs/git-switch" },
   ],
 };
 
@@ -3534,6 +4525,8 @@ export const eduModules: EduModule[] = [
   claudeSubagent,
   claudeAgentTeam,
   n8nNode,
+  gitDasar,
+  gitUntukAiAgent,
 ];
 
 // ---------------------------------------------------------------------------

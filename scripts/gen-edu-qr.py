@@ -31,6 +31,8 @@ MODULES = [
     ("claude", "subagent", "https://aitraining.id/edu/claude/subagent"),
     ("claude", "agent-team", "https://aitraining.id/edu/claude/agent-team"),
     ("n8n", "node", "https://aitraining.id/edu/n8n/node"),
+    ("git", "dasar", "https://aitraining.id/edu/git/dasar"),
+    ("git", "untuk-ai-agent", "https://aitraining.id/edu/git/untuk-ai-agent"),
 ]
 
 
