@@ -3287,6 +3287,19 @@ const claudeAgentTeam: EduModule = {
           text: "Nilai tmux membuat tiap anggota tim punya panel sendiri di terminal, jadi kamu bisa melihat output semua anggota sekaligus. Butuh tmux terpasang. Kalau kamu di iTerm2 dan mau panel native iTerm2, ganti nilainya jadi iterm2 (perlu CLI it2). Tanpa tmux atau iTerm2, pakai in-process: semua anggota tetap di satu terminal, diganti lewat panel agent.",
         },
         {
+          type: "code",
+          caption: "Alternatif sekali jalan, tanpa ubah settings.json",
+          lines: ["claude --teammate-mode tmux"],
+          webOnly: true,
+        },
+        {
+          type: "callout",
+          tone: "tip",
+          title: "Flag CLI",
+          text: "Perintah di atas hanya berlaku untuk sesi itu. Agent Team tetap harus nyala lewat env CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS. Flag --teammate-mode masih eksperimental dan belum muncul di claude --help.",
+          webOnly: true,
+        },
+        {
           type: "os-code",
           caption: "Pasang tmux dulu kalau belum ada",
           note: "Cek dengan perintah tmux -V. Kalau versinya keluar, lanjut saja.",
@@ -3549,7 +3562,11 @@ const claudeAgentTeam: EduModule = {
     },
     {
       q: "Apa itu teammateMode tmux di Agent Team?",
-      a: "teammateMode mengatur tampilan anggota tim. Nilai tmux memberi tiap anggota panel sendiri di terminal supaya outputnya kelihatan bersamaan. Nilai in-process menjaga semua anggota di satu terminal dan diganti lewat panel agent. Split pane butuh tmux, atau iTerm2 dengan CLI it2.",
+      a: "teammateMode mengatur tampilan anggota tim. Nilai tmux memberi tiap anggota panel sendiri di terminal supaya outputnya kelihatan bersamaan. Nilai in-process menjaga semua anggota di satu terminal dan diganti lewat panel agent. Split pane butuh tmux, atau iTerm2 dengan CLI it2. Untuk satu sesi saja, jalankan claude --teammate-mode tmux tanpa mengubah settings.json.",
+    },
+    {
+      q: "Bagaimana memakai claude --teammate-mode tmux?",
+      a: "Jalankan claude --teammate-mode tmux di terminal. Flag itu hanya mengatur tampilan split pane untuk sesi tersebut. Agent Team tetap perlu dinyalakan lewat CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS di settings.json atau di environment shell-mu.",
     },
     {
       q: "Apakah Agent Team lebih boros daripada subagent biasa?",
@@ -3587,7 +3604,7 @@ const claudeAgentTeam: EduModule = {
       },
       {
         name: "Buka ulang sesi Claude Code",
-        text: "Tutup sesi Claude Code lalu buka lagi supaya pengaturan baru terbaca.",
+        text: "Tutup sesi Claude Code lalu buka lagi supaya pengaturan baru terbaca. Kalau kamu hanya mau split pane untuk satu sesi, jalankan claude --teammate-mode tmux sebagai ganti mengubah teammateMode di settings.json.",
       },
       {
         name: "Minta Claude membentuk tim",
