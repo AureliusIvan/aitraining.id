@@ -143,8 +143,8 @@
 {"q": "corporate ai training tasikmalaya", "page": "/cities/tasikmalaya", "status": "done", "commit": "5016d0a", "ts": "2026-07-11", "source": "discovery"}
 {"q": "corporate ai training kupang", "page": "/cities/kupang", "status": "done", "commit": "aef9286", "ts": "2026-07-11", "source": "discovery"}
 {"q": "corporate ai training palangkaraya", "page": "/cities/palangkaraya", "status": "done", "commit": "5a7f17c", "ts": "2026-07-11", "source": "discovery"}
-{"q": "corporate ai training karawang", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
-{"q": "corporate ai training gresik", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training karawang", "page": "/cities/karawang", "status": "done", "commit": "8eeeccb", "ts": "2026-07-11", "source": "discovery"}
+{"q": "corporate ai training gresik", "page": "/cities/gresik", "status": "done", "commit": "50e10b3", "ts": "2026-07-11", "source": "discovery"}
 {"q": "corporate ai training sidoarjo", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
 {"q": "corporate ai training purwokerto", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}
 {"q": "corporate ai training sukabumi", "page": null, "status": "pending", "found": "2026-07-11", "source": "discovery"}

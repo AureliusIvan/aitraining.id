@@ -192,3 +192,4 @@
 2026-07-11 deploy q=corporate ai training kupang commit=aef9286 page=/cities/kupang
 2026-07-11 deploy q=corporate ai training palangkaraya commit=5a7f17c page=/cities/palangkaraya
 2026-07-11 discovery seeded=5 queries=corporate ai training karawang,gresik,sidoarjo,purwokerto,sukabumi
+2026-07-11 deploy q=corporate ai training karawang commit=8eeeccb page=/cities/karawang
