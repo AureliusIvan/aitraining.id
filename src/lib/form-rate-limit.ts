@@ -73,13 +73,22 @@ export function clientIp(request: Request): string {
   return "unknown";
 }
 
-// Tuned for pre-training screening: a real participant retries a few times;
-// a scraper burning a shared token gets cut quickly.
+// Sized for a whole cohort, because that is the real unit of traffic here:
+// one link token is handed to every participant of a client, and an on-site
+// room shares a single office NAT IP. So a session where the trainer says
+// "isi formnya sekarang" arrives as one synchronized burst on one token and
+// one IP. Headroom covers a 200+ participant cohort at a couple of writes
+// each (edit-after-submit re-POSTs, plus retries on flaky venue wifi), which
+// also absorbs a link reused across batches.
+//
+// Generous is the right call: the counters are per-isolate and best-effort
+// anyway, tokens are opaque and only ever reach the cohort, and a burnt token
+// can only write RAW rows under its own client_slug.
 export const FORM_RATE_LIMITS = {
-  uploadPerToken: { limit: 8, windowMs: 15 * 60 * 1000 },
-  uploadPerIp: { limit: 20, windowMs: 60 * 60 * 1000 },
-  submitPerToken: { limit: 10, windowMs: 15 * 60 * 1000 },
-  submitPerIp: { limit: 30, windowMs: 60 * 60 * 1000 },
+  uploadPerToken: { limit: 600, windowMs: 15 * 60 * 1000 },
+  uploadPerIp: { limit: 800, windowMs: 60 * 60 * 1000 },
+  submitPerToken: { limit: 600, windowMs: 15 * 60 * 1000 },
+  submitPerIp: { limit: 800, windowMs: 60 * 60 * 1000 },
 } as const;
 
 export function enforceFormUploadLimits(
